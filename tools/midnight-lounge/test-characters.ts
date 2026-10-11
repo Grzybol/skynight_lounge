@@ -122,13 +122,12 @@ await test("tier -> category mapping reuses existing celebration tiers", () => {
   }
 });
 
-await test("animation table: 8 woman + 8 bartender clips, bartender has its own mega clip", () => {
-  assert.equal(animationIdsFor("woman").length, 8);
-  assert.equal(animationIdsFor("bartender").length, 8);
-  assert.equal(CHARACTER_ANIMATIONS.bartender.wins.mega, "bartender_mega_win");
-  assert.notEqual(CHARACTER_ANIMATIONS.bartender.wins.mega, CHARACTER_ANIMATIONS.bartender.wins.big);
-  assert.ok(CHARACTER_ANIMATIONS.bartender.variations.includes("bartender_idle_alt"));
-  assert.equal(CHARACTER_ANIMATIONS.bartender.variations.length, 4);
+await test("animation table: 9 woman + 4 bartender clips, bartender big and mega share one clip", () => {
+  assert.equal(animationIdsFor("woman").length, 9);
+  assert.equal(animationIdsFor("bartender").length, 4);
+  assert.equal(CHARACTER_ANIMATIONS.bartender.wins.mega, CHARACTER_ANIMATIONS.bartender.wins.big);
+  assert.deepEqual(CHARACTER_ANIMATIONS.bartender.variations, ["bartender_idle_1"]);
+  assert.ok(CHARACTER_ANIMATIONS.woman.variations.includes("woman_idle_alt"));
   assert.equal(CHARACTER_ANIMATIONS.woman.wins.mega, "woman_mega_win");
 });
 
@@ -284,14 +283,14 @@ await test("win counter categories: mini only above the bet", () => {
   assert.equal(categoryForWinX(1000, th), "mega");
 });
 
-await test("controller: bartender mega plays the dedicated mega clip", async () => {
+await test("controller: bartender mega plays the shared big-win clip", async () => {
   const f = fakePlayer();
   const c = new CharacterController("bartender", f.player as any, quiet);
   c.start();
   f.calls[0].resolve(true);
   await tick();
   c.requestWin("mega");
-  assert.equal(f.calls.at(-1)!.id, "bartender_mega_win");
+  assert.equal(f.calls.at(-1)!.id, "bartender_big_win");
   c.destroy();
 });
 
@@ -350,8 +349,11 @@ await test("controller: idle variations fire on a timer, play once, return to id
       idle.resolve(true);
       await tick();
     }
-    for (let i = 1; i < played.length; i++)
-      assert.notEqual(played[i], played[i - 1]);
+    // With a single variation (the current bartender) repeating is the only option.
+    if (CHARACTER_ANIMATIONS.bartender.variations.length > 1) {
+      for (let i = 1; i < played.length; i++)
+        assert.notEqual(played[i], played[i - 1]);
+    }
     c.destroy();
   } finally {
     [t.idleVariationMinMs, t.idleVariationMaxMs] = saved;

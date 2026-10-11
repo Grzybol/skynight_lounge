@@ -206,3 +206,20 @@ from production builds.
 - **Win sounds**: `WIN_MINI` / `WIN_BIG` / `WIN_MEGA` hooks in the V2 audio catalogue (`sfx_win_*.mp3`), fired once per
   announced category through `winReaction.ts`. They are polyphonic (no stop, no music duck), so they play on top of the
   background music and of each other.
+
+## Hand-drawn art pass (current)
+
+- **Packs** are built **lossless** (`build-character-anims.py`, default; `--lossy-quality N` for a smaller lossy build).
+  Sources: `feet2_*` (woman, 9 clips), `barman2_*` (bartender, 4 clips), `background_asset_plant`, `bodyguard_drawn`;
+  pass every folder that holds the zips with `--zips DIR [DIR ...]`. All clips are 562x748 (bodyguard 488x862), 150 frames, 30 fps.
+- Woman: `podstawowa1` = idle, `podstawowa2` = idle variation, `przerywnik1-3` + `extra_przerywnik` = variations,
+  `win` = mini, `bigwin_v1` = big, `bigwin` = mega. Bartender: `idle`, one variation (`przerywnik1`), `win` = mini,
+  `bigwin` = big **and** mega and above (one clip, `wins.big === wins.mega`).
+- **Slot scene** (`SkyJumpBackground.svelte`, assets in `static/assets/midnight-lounge/scene/`), back to front:
+  plane 3 animated sky (`game/loungeScene/skyAnimation.svelte.ts`: clip 1 forward 0.2 s + reverse 0.2 s, rest 5-15 s on the
+  first frame, then clip 2, alternating; cross-fade on the switch) -> plane 2 `background_2_static.png` -> plane 1
+  `background_1.png` -> animated plants (`SCENE_PLANTS`) -> characters -> board and HUD. The bar overlay is gone.
+  The lifted win plate is the same stack; its plants mount only during a celebration.
+- **Start screen**: `start_screen.png` is the new doorway artwork; animated bodyguard and plants are placed over it
+  (`INTRO_GUARD`, `INTRO_PLANTS`). Leaving it is 0.45 s of growing backdrop blur, then 0.45 s of the blur clearing
+  over the slot (same timing as the previous fade through black).

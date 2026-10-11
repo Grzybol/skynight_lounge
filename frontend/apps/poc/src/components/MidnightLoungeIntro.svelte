@@ -4,12 +4,7 @@
 	import { getContext } from '../game/context';
 	import { resolveGameAsset } from '../game/resolveGameAsset';
 	import { startSkyJumpBgm } from '../game/skyjump/skyjumpAudio';
-	import {
-		INTRO_GUARD,
-		INTRO_PLANTS,
-		INTRO_STANCHIONS,
-		propBox,
-	} from '../game/loungeCharacters/propLayout';
+	import { INTRO_GUARD, INTRO_PLANTS, propBox } from '../game/loungeCharacters/propLayout';
 	import LoopingProp from './skyjump/LoopingProp.svelte';
 
 	type Props = {
@@ -21,7 +16,6 @@
 	const context = getContext();
 
 	const startSrc = resolveGameAsset('assets/midnight-lounge/ui/start_screen.png');
-	const stanchionSrc = resolveGameAsset('assets/midnight-lounge/ui/intro_stanchion.png');
 	const ctaSrc = resolveGameAsset(
 		'assets/midnight-lounge/ui/ui_click_anywhere_to_continue_midnight_lounge.png',
 	);
@@ -41,10 +35,11 @@
 		ctaIdle = false;
 		props.onunlock();
 		startSkyJumpBgm();
-		// 0.9 s in total: 0.45 s to black over the start screen, 0.45 s from black to the slot.
+		// 0.9 s in total: 0.45 s of growing blur over the start screen, 0.45 s of the blur
+		// clearing over the slot.
 		veil = 'in';
 		window.setTimeout(() => {
-			// Fully black: drop the entrance so the fade reveals the slot.
+			// Fully blurred: drop the entrance so the blur clears over the slot.
 			veil = 'hold';
 			revealGame = true;
 			window.setTimeout(() => {
@@ -110,18 +105,10 @@
 				delayMs={i * 2100}
 				rate={0.5}
 				z={1}
+				sharp
 			/>
 		{/each}
-		<LoopingProp prop="guard" {...propBox('guard', INTRO_GUARD)} z={2} />
-		{#each INTRO_STANCHIONS as anchor, i}
-			<img
-				class="stanchion"
-				src={stanchionSrc}
-				alt=""
-				draggable="false"
-				style={`left:${propBox('stanchion', anchor).left};top:${propBox('stanchion', anchor).top};height:${propBox('stanchion', anchor).height};z-index:${i < 2 ? 2 : 3};${anchor.flip ? 'transform:scaleX(-1);' : ''}`}
-			/>
-		{/each}
+		<LoopingProp prop="guard" {...propBox('guard', INTRO_GUARD)} z={2} sharp />
 	</div>
 	{#if ready}
 		<button class="hit" type="button" aria-label="Click anywhere to continue" onclick={continueIn}>
@@ -169,20 +156,11 @@
 		position: absolute;
 		width: max(100cqw, calc(100cqh * 1448 / 1086));
 		height: max(100cqh, calc(100cqw * 1086 / 1448));
-		/* Centred horizontally; vertically only 20 % of the crop is taken at the top (STAGE_TOP_SHARE). */
+		/* Centred horizontally; vertically only 10 % of the crop is taken at the top (STAGE_TOP_SHARE). */
 		left: calc((100cqw - max(100cqw, calc(100cqh * 1448 / 1086))) / 2);
-		top: calc((100cqh - max(100cqh, calc(100cqw * 1086 / 1448))) * 0.2);
+		top: calc((100cqh - max(100cqh, calc(100cqw * 1086 / 1448))) * 0.1);
 		container-type: size;
 		pointer-events: none;
-	}
-
-	.stanchion {
-		/* Slightly soft, like the (upscaled) artwork behind it. */
-		filter: blur(0.7px);
-		position: absolute;
-		width: auto;
-		pointer-events: none;
-		user-select: none;
 	}
 
 	.entrance {
@@ -262,22 +240,29 @@
 		opacity: 0.85;
 	}
 
+	/*
+	 * Blur transition: a backdrop blur over everything below it. It reaches past the edges so the
+	 * blurred border does not fade to transparent at the screen edge.
+	 */
 	.veil {
 		position: absolute;
-		inset: 0;
-		background: #000;
-		opacity: 0;
+		inset: -80px;
+		backdrop-filter: blur(0px);
+		-webkit-backdrop-filter: blur(0px);
 		pointer-events: none;
-		transition: opacity 450ms linear;
+		transition:
+			backdrop-filter 450ms linear,
+			-webkit-backdrop-filter 450ms linear;
 	}
 
 	.veil.in {
-		opacity: 1;
+		backdrop-filter: blur(36px);
+		-webkit-backdrop-filter: blur(36px);
 	}
 
 	.veil.out {
-		opacity: 0;
-		transition-duration: 450ms;
+		backdrop-filter: blur(0px);
+		-webkit-backdrop-filter: blur(0px);
 	}
 
 	.reduce .entrance,

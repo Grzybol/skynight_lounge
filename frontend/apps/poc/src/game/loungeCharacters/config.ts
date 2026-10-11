@@ -23,14 +23,15 @@ export type CharacterAnimationSet = {
 export const CHARACTER_ANIMATIONS: Record<CharacterId, CharacterAnimationSet> = {
 	woman: {
 		idle: 'woman_idle',
-		variations: ['woman_idle_1', 'woman_idle_2', 'woman_idle_3', 'woman_idle_4'],
+		variations: ['woman_idle_alt', 'woman_idle_1', 'woman_idle_2', 'woman_idle_3', 'woman_idle_4'],
 		wins: { mini: 'woman_mini_win', big: 'woman_big_win', mega: 'woman_mega_win' },
 	},
 	bartender: {
 		idle: 'bartender_idle',
-		// Secondary idle + three interruptions, all one-shots that return to the main idle.
-		variations: ['bartender_idle_alt', 'bartender_idle_1', 'bartender_idle_2', 'bartender_idle_3'],
-		wins: { mini: 'bartender_mini_win', big: 'bartender_big_win', mega: 'bartender_mega_win' },
+		// One interruption (a one-shot that returns to the main idle).
+		variations: ['bartender_idle_1'],
+		// The pack has a single big-win clip: it serves big and every tier above.
+		wins: { mini: 'bartender_mini_win', big: 'bartender_big_win', mega: 'bartender_big_win' },
 	},
 };
 
@@ -118,12 +119,9 @@ export type CharacterPlacement = {
 };
 
 export const CHARACTER_PLACEMENT: Record<CharacterId, CharacterPlacement> = {
-	// 15% smaller than the old figure's footprint (0.822), nudged right.
 	woman: { heightFrac: 0.699, centerXFrac: 0.865, bottomFrac: 0.962 },
-	// V3 bartender: ~15% larger than the old 0.84, ankles at the bottom edge (shoes
-	// bleed off-screen), left gutter (reels start at x ~408). Frame bbox y 77-707 of 748.
-	// Background figure on the left, 25% smaller than before, feet on the floor in front of the shelves.
-	bartender: { heightFrac: 0.614, centerXFrac: 0.085, bottomFrac: 0.869, clipBottomFrac: 0.15 },
+	// Hand-drawn bartender: standing on the terrace floor left of the board, no bar in front of him.
+	bartender: { heightFrac: 0.68, centerXFrac: 0.095, bottomFrac: 0.905 },
 };
 
 /** Source frame size per character (bartender V3 is 562x748, woman 554x740). */
@@ -131,19 +129,6 @@ export const CHARACTER_FRAME: Record<CharacterId, { w: number; h: number }> = {
 	woman: { w: 554, h: 740 },
 	bartender: { w: 562, h: 748 },
 };
-
-/**
- * Bar overlay in front of the bartender so the counter hides him from the belt down.
- * The image shares the plate's 1672x941 canvas; it is drawn at `scale` times that size
- * and shifted by (offsetX, offsetY) in fractions of the play area. Counter front edge lands
- * at the bartender's belt. The whole image is used; it runs off the left edge of the screen so
- * its right end stops before the carpet.
- */
-export const LOUNGE_BAR_PLACEMENT = {
-	scale: 0.64,
-	offsetX: -561 / 1672,
-	offsetY: 282 / 941,
-} as const;
 
 export const CHARACTER_BASE_URL = 'assets/midnight-lounge/characters';
 export const manifestUrl = () => resolveGameAsset(`${CHARACTER_BASE_URL}/manifest.json`);

@@ -10,8 +10,6 @@
 import { v2UiAssetUrl } from './skyjump_v2/uiAssetRegistry';
 
 export {
-	playBgSrc as loungePlateSrc,
-	loungeBarSrc,
 	menuBgSrc as loungeMenuPlateSrc,
 	jumperMenuSrc as loungeMenuFigureSrc,
 } from '../components/skyjump/skyjumpArt';
@@ -98,7 +96,7 @@ export const loungeSymbolName = (id: string, fallback = '') =>
 export const LOUNGE_CHARACTER_FILES = {
 	packs: 'static/assets/midnight-lounge/characters/*.pack',
 	manifest: 'static/assets/midnight-lounge/characters/manifest.json',
-	plate: 'src/assets/skyjump/backgrounds/lounge-bg.png',
+	scene: 'static/assets/midnight-lounge/scene/*.png',
 } as const;
 
 export const WAITING_FOR_REPLACEMENT = [

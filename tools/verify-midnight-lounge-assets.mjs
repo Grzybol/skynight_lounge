@@ -38,7 +38,11 @@ const required = [
 	'assets/midnight-lounge/symbols/sym_token_t6_royal_ruby.png',
 	'assets/midnight-lounge/ui/ui_logo_midnight_lounge.png',
 	'assets/midnight-lounge/ui/start_screen.png',
-	'assets/midnight-lounge/ui/intro_stanchion.png',
+	'assets/midnight-lounge/scene/background_1.png',
+	'assets/midnight-lounge/scene/background_2_static.png',
+	...[1, 2].flatMap((clip) =>
+		[1, 2, 3, 4, 5, 6].map((n) => `assets/midnight-lounge/scene/background_3_animation_${clip}_frame_${n}.png`),
+	),
 	'assets/midnight-lounge/ui/betui2/spin.png',
 	'assets/midnight-lounge/ui/betui2/stop.png',
 	'assets/fonts/skyjump/marcellus-400.woff2',
@@ -87,6 +91,7 @@ const required = [
 	'assets/midnight-lounge/characters/manifest.json',
 	...[
 		'woman_idle',
+		'woman_idle_alt',
 		'woman_idle_1',
 		'woman_idle_2',
 		'woman_idle_3',
@@ -96,10 +101,10 @@ const required = [
 		'woman_mega_win',
 		'bartender_idle',
 		'bartender_idle_1',
-		'bartender_idle_2',
-		'bartender_idle_3',
 		'bartender_mini_win',
 		'bartender_big_win',
+		'plant_loop',
+		'guard_loop',
 	].map((id) => `assets/midnight-lounge/characters/${id}.pack`),
 ];
 
@@ -127,14 +132,6 @@ for (const rel of required) {
 	const folded = [...files].find((file) => file.toLowerCase() === rel.toLowerCase());
 	if (folded) failures.push(`CASE ${rel} stored as ${folded}`);
 	else failures.push(`MISSING ${rel}`);
-}
-
-// Lounge plate and bar are lossless PNGs (above the 1 MB inline limit, so emitted as hashed files).
-const immutable = [...files].filter((file) => file.startsWith('_app/immutable/assets/'));
-for (const pattern of [/^lounge-bg\.[^/]+\.png$/, /^lounge-bar\.[^/]+\.png$/]) {
-	if (!immutable.some((file) => pattern.test(file.split('/').pop() ?? ''))) {
-		failures.push(`MISSING hashed ${pattern}`);
-	}
 }
 
 // Every pack must be exactly the size the manifest says (truncated upload = broken clip).

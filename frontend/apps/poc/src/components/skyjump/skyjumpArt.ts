@@ -34,17 +34,6 @@ export const jumperInrunSrc = new URL('../../assets/skyjump/jumper/inrun.webp', 
 	.href;
 export const menuBgSrc = new URL('../../assets/skyjump/backgrounds/menu.webp', import.meta.url)
 	.href;
-export const playBgSrc = new URL(
-	'../../assets/skyjump/backgrounds/lounge-bg.png',
-	import.meta.url,
-).href;
-
-/** Transparent bar overlay (1672x941 canvas), drawn in front of the bartender. */
-export const loungeBarSrc = new URL(
-	'../../assets/skyjump/backgrounds/lounge-bar.png',
-	import.meta.url,
-).href;
-
 export const resultArtSrc = {
 	normal: new URL('../../assets/skyjump/result/normal-win.webp', import.meta.url).href,
 	big: new URL('../../assets/skyjump/result/big-win.webp', import.meta.url).href,

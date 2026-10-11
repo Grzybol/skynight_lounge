@@ -1,8 +1,8 @@
 """
 Build the runtime character animation packs for Midnight Lounge.
 
-Reads the supplied spritesheet ZIPs (8 bartender V3 + 8 woman) (kept OUTSIDE the repo, default
-~/Downloads), validates every JSON + PNG, cuts each frame out with the
+Reads the supplied spritesheet ZIPs (hand-drawn pack: woman, bartender, plant, bodyguard) (kept OUTSIDE
+the repo, default ~/Downloads), validates every JSON + PNG, cuts each frame out with the
 EXPLICIT x/y/w/h from the metadata (never from the grid), and writes:
 
   <out>/<animation id>.pack   concatenated lossless-alpha WebP frames
@@ -10,11 +10,11 @@ EXPLICIT x/y/w/h from the metadata (never from the grid), and writes:
   <out>/validation.json       frame accounting + loop-pose seam diffs
 
 Usage (from repo root):
-  python -I tools/midnight-lounge/build-character-anims.py [--zips DIR] [--out DIR] [--quality 90]
-                                                            [--only woman|bartender] [--legacy-bartender]
+  python -I tools/midnight-lounge/build-character-anims.py [--zips DIR [DIR ...]] [--out DIR] [--lossy-quality N]
+                                                            [--only woman|bartender|plant|guard]
 
 Both source layouts are supported: the old one (`sheets` is a list of objects,
-frame `sheet` is an index) and the V3 one (`sheets` is a list of file names,
+frame `sheet` is an index) and the current one (`sheets` is a list of file names,
 frame `sheet` is the file name). `--only` rebuilds one character and merges into
 the existing manifest, leaving the other character's packs byte-for-byte alone.
 
@@ -29,67 +29,60 @@ from PIL import Image
 import numpy as np
 
 # animation id -> (zip basename without .zip)
+# Hand-drawn pack: woman = feet2_*, bartender = barman2_* (no extra idles, one win clip for big and mega),
+# plant = background_asset_plant, bodyguard = bodyguard_drawn. The bartender's mega win reuses
+# `bartender_big_win` (see CHARACTER_ANIMATIONS), so it has no pack of its own.
 MAP = {
-    'woman_idle': 'podstawowa_v1_spritesheet',
-    'woman_idle_1': 'przerywnik1_v1_spritesheet',
-    'woman_idle_2': 'przerywnik2_v1_spritesheet',
-    'woman_idle_3': 'przerywnik_3_v1_spritesheet',
-    'woman_idle_4': 'przerywnik4_v1_spritesheet',
-    'woman_mini_win': 'mini_wow_v1_spritesheet',
-    'woman_big_win': 'wow_v2_spritesheet',
-    'woman_mega_win': 'mega_win_spritesheet',
-    # Bartender V3 (562x748, 30 sheets of 1 column x 5 rows per animation).
-    'bartender_idle': 'barman_idle_1_v1_spritesheet',
-    'bartender_idle_alt': 'barman_idle_2_spritesheet',
-    'bartender_idle_1': 'barman_przerywnik_1_spritesheet',
-    'bartender_idle_2': 'barman_przerywnik_2_spritesheet',
-    'bartender_idle_3': 'barman_przerywnik_3_spritesheet',
-    'bartender_mini_win': 'barman_przerywnik_mini_win_spritesheet',
-    'bartender_big_win': 'barman_przerywnik_win_spritesheet',
-    'bartender_mega_win': 'barman_przerywnik_mega_win_spritesheet',
-    # Looping scene props (not characters): plant 562x748, bodyguard 530x792.
-    'plant_loop': 'background_plant5',
-    'guard_loop': 'bodyguard3',
+    'woman_idle': 'feet2_podstawowa1_spritesheet',
+    'woman_idle_alt': 'feet2_podstawowa2_spritesheet',
+    'woman_idle_1': 'feet2_przerywnik1_spritesheet',
+    'woman_idle_2': 'feet2_przerywnik2_spritesheet',
+    'woman_idle_3': 'feet2_przerywnik3_spritesheet',
+    'woman_idle_4': 'feet2_extra_przerywnik_spritesheet',
+    'woman_mini_win': 'feet2_win_spritesheet',
+    'woman_big_win': 'feet2_bigwin_v1_spritesheet',
+    'woman_mega_win': 'feet2_bigwin_spritesheet',
+    'bartender_idle': 'barman2_idle_spritesheet',
+    'bartender_idle_1': 'barman2_przerywnik1_spritesheet',
+    'bartender_mini_win': 'barman2_win_spritesheet',
+    'bartender_big_win': 'barman2_bigwin_spritesheet',
+    # Looping scene props (not characters): plant 562x748, bodyguard 488x862.
+    'plant_loop': 'background_asset_plant',
+    'guard_loop': 'bodyguard_drawn',
 }
-# The pre-V3 bartender sources (5 sheets of 7x5, 554x740) are still readable:
-LEGACY_BARTENDER = {
-    'bartender_idle': 'barman_podstawiwa_v1_spritesheet',
-    'bartender_idle_1': 'barman_przerywnik1_v2_spritesheet',
-    'bartender_idle_2': 'barman_przerywnik2_spritesheet',
-    'bartender_idle_3': 'barman_przerywnik3_spritesheet',
-    'bartender_mini_win': 'barman_mini_wow_spritesheet',
-    'bartender_big_win': 'barman_wow_spritesheet',
-}
-
 def encode(args):
-    sheet_path, rects, quality = args
+    sheet_path, rects, quality = args  # quality None = lossless WebP
     im = Image.open(sheet_path).convert('RGBA')
     out = []
     for idx, x, y, w, h in rects:
         fr = im.crop((x, y, x + w, y + h))
         buf = io.BytesIO()
-        fr.save(buf, 'WEBP', quality=quality, alpha_quality=100, method=4)
+        if quality is None:
+            fr.save(buf, 'WEBP', lossless=True, quality=100, method=4)
+        else:
+            fr.save(buf, 'WEBP', quality=quality, alpha_quality=100, method=4)
         arr = np.asarray(fr)
         out.append((idx, buf.getvalue(), arr))
     return out
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument('--zips', default=str(Path.home() / 'Downloads'))
+    ap.add_argument('--zips', nargs='+', default=[str(Path.home() / 'Downloads')],
+                    help='directories searched (in order) for <base>.zip')
     ROOT = Path(__file__).resolve().parents[2]
     ap.add_argument('--out', default=str(ROOT / 'frontend/apps/poc/static/assets/midnight-lounge/characters'))
-    ap.add_argument('--quality', type=int, default=90)
+    ap.add_argument('--lossy-quality', type=int, default=None,
+                    help='lossy WebP quality; default is lossless (what the game ships)')
     ap.add_argument('--only', choices=['woman', 'bartender', 'plant', 'guard'])
-    ap.add_argument('--legacy-bartender', action='store_true')
     a = ap.parse_args()
     table = dict(MAP)
-    if a.legacy_bartender:
-        for k in [k for k in table if k.startswith('bartender_')]:
-            del table[k]
-        table.update(LEGACY_BARTENDER)
     if a.only:
         table = {k: v for k, v in table.items() if k.startswith(a.only + '_')}
     out = Path(a.out); out.mkdir(parents=True, exist_ok=True)
+    if not a.only:
+        for stale in out.glob('*.pack'):
+            if stale.stem not in table:
+                stale.unlink(); print('removed stale', stale.name)
     manifest = {'version': 1, 'frame': None, 'frames': {}, 'animations': {}}
     report = {'animations': {}, 'seams': {}}
     prev = out / 'manifest.json'
@@ -102,7 +95,8 @@ def main():
     total = 0
     with tempfile.TemporaryDirectory() as tmp, ProcessPoolExecutor() as pool:
         for aid, base in table.items():
-            zp = Path(a.zips) / f'{base}.zip'
+            zp = next((Path(dd) / f'{base}.zip' for dd in a.zips if (Path(dd) / f'{base}.zip').exists()), None)
+            assert zp, f'{base}.zip not found in {a.zips}'
             d = Path(tmp) / aid
             with zipfile.ZipFile(zp) as z:
                 z.extractall(d)
@@ -126,7 +120,7 @@ def main():
                     assert im.mode in ('RGBA', 'LA', 'P'), f'{aid}: {name} has no alpha ({im.mode})'
                     for (_, x, y, w, h) in by_sheet.get(name, []):
                         assert x + w <= im.width and y + h <= im.height, f'{aid}: frame outside sheet'
-                jobs.append((str(p), by_sheet.get(name, []), a.quality))
+                jobs.append((str(p), by_sheet.get(name, []), a.lossy_quality))
             frames = {}
             for res in pool.map(encode, jobs):
                 for idx, blob, arr in res:

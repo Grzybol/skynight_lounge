@@ -17,9 +17,11 @@
 		blur?: number;
 		/** Playback speed (0.5 = twice as slow). */
 		rate?: number;
+		/** Opt out of the celebration blur (scene plants stay crisp under the lifted plate). */
+		sharp?: boolean;
 	};
 
-	let { prop, left, top, height, flip = false, delayMs = 0, z = 1, blur = 0, rate = 1 }: Props = $props();
+	let { prop, left, top, height, flip = false, delayMs = 0, z = 1, blur = 0, rate = 1, sharp = false }: Props = $props();
 
 	let canvas = $state<HTMLCanvasElement | null>(null);
 	const frame = $derived(PROP_FRAME[prop]);
@@ -39,6 +41,7 @@
 <canvas
 	bind:this={canvas}
 	class="looping-prop"
+	class:figure={sharp}
 	data-prop={prop}
 	width={frame.w}
 	height={frame.h}
