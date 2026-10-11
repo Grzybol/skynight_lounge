@@ -1,0 +1,16 @@
+{
+  "phase": "7C.4",
+  "prePromotionConfigSha256": "d6879d5c9ef3d08386486cd03712d6042e366543597a5c453ca8b1da6f2edbd0",
+  "expected": "d6879d5c9ef3d08386486cd03712d6042e366543597a5c453ca8b1da6f2edbd0",
+  "match": true,
+  "mathVersionBefore": 1,
+  "economy": "PT2H_LADDER+BODY1+WR-C H2+Phase6 PURE W2",
+  "authBaseRtpPct": 96.39073610676338,
+  "priceADesign": {
+    "LARGE_HILL": 30.2,
+    "SKI_FLYING": 196.9,
+    "WORLD_CUP": 412.8,
+    "PERFECT_V": 1369.1
+  },
+  "note": "Final production freeze; no economy retune"
+}

@@ -1,0 +1,117 @@
+{
+  "unpaired": [
+    {
+      "seed": 20260925,
+      "n": 1000000,
+      "meanX": 36.420338,
+      "incrementalPp": 5.854260089219676,
+      "pCap": 1.3e-05,
+      "meanCapDrag": 1.5507546,
+      "source": "phase6b_live_validate"
+    },
+    {
+      "n": 200000,
+      "seed": 2026092600,
+      "mode": "live",
+      "meanX": 37.531259500000004,
+      "pCap": 2.5e-05,
+      "meanCapDrag": 2.727273,
+      "incrementalPp": 6.579656085313429,
+      "gameRtp": 95.71870490188148
+    },
+    {
+      "n": 200000,
+      "seed": 3026092600,
+      "mode": "live",
+      "meanX": 37.6527685,
+      "pCap": 3e-05,
+      "meanCapDrag": 1.401345,
+      "incrementalPp": 6.658997552815276,
+      "gameRtp": 95.79804636938333
+    },
+    {
+      "n": 200000,
+      "seed": 4026092600,
+      "mode": "live",
+      "meanX": 38.8024385,
+      "pCap": 2.5e-05,
+      "meanCapDrag": 1.9874379999999998,
+      "incrementalPp": 7.409695072693234,
+      "gameRtp": 96.54874388926129
+    },
+    {
+      "n": 200000,
+      "seed": 5026092600,
+      "mode": "live",
+      "meanX": 37.3704145,
+      "pCap": 1e-05,
+      "meanCapDrag": 1.3026689999999999,
+      "incrementalPp": 6.474629475429921,
+      "gameRtp": 95.61367829199797
+    }
+  ],
+  "paired": [
+    {
+      "seed": 20260925,
+      "n": 200000,
+      "offMean": 27.7275885,
+      "onMean": 36.696974,
+      "deltaX": 8.969385500000001,
+      "incrementalPp": 5.856720145502035,
+      "source": "phase6b_live_validate"
+    },
+    {
+      "seed": 6026092600,
+      "n": 100000,
+      "deltaX": 7.203481,
+      "incrementalPp": 4.703641324195637
+    },
+    {
+      "seed": 7026092600,
+      "n": 100000,
+      "deltaX": 8.968343,
+      "incrementalPp": 5.85603942654401
+    },
+    {
+      "seed": 8026092600,
+      "n": 100000,
+      "deltaX": 8.872513,
+      "incrementalPp": 5.79346551983173
+    },
+    {
+      "seed": 9026092600,
+      "n": 100000,
+      "deltaX": 9.209128,
+      "incrementalPp": 6.0132642843934905
+    }
+  ],
+  "unpairedAgg": {
+    "mean": 6.595447655094307,
+    "median": 6.579656085313429,
+    "std": 0.5548069169962616,
+    "se": 0.24811719615814487,
+    "min": 5.854260089219676,
+    "max": 7.409695072693234,
+    "ci95": [
+      6.109137950624343,
+      7.08175735956427
+    ]
+  },
+  "pairedAgg": {
+    "mean": 5.644626140093381,
+    "median": 5.85603942654401,
+    "std": 0.5322544295170727,
+    "se": 0.238031417145109,
+    "min": 4.703641324195637,
+    "max": 6.0132642843934905,
+    "ci95": [
+      5.1780845624889675,
+      6.1111677176977945
+    ]
+  },
+  "certifiedSuggestion": {
+    "prefer": "pairedAgg.mean",
+    "gameRtp": 94.78367495666143,
+    "note": "gameRtp uses certified Phase5B core + paired Phase6 incremental"
+  }
+}

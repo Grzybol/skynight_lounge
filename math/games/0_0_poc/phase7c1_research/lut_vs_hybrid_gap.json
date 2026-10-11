@@ -1,0 +1,55 @@
+{
+  "parts": [
+    {
+      "bucket": "basegame/eNone",
+      "lutMean": 0.7264310000002436,
+      "hybridMean": 0.726431,
+      "p": 0.9934702935821819,
+      "gapPp": 2.4199240657100186e-11
+    },
+    {
+      "bucket": "freegame_LARGE_HILL",
+      "lutMean": 31.144479999999916,
+      "hybridMean": 30.060255,
+      "p": 0.006213519959860661,
+      "gapPp": 0.6736853678479396
+    },
+    {
+      "bucket": "freegame_SKI_FLYING",
+      "lutMean": 190.2517360000002,
+      "hybridMean": 187.61263100000002,
+      "p": 0.000309899997998046,
+      "gapPp": 0.08178586342166863
+    },
+    {
+      "bucket": "freegame_WORLD_CUP",
+      "lutMean": 394.8133950000014,
+      "hybridMean": 398.6141805,
+      "p": 6.1799999600772e-06,
+      "gapPp": -0.0023488854238253327
+    },
+    {
+      "bucket": "freegame_PERFECT_V",
+      "lutMean": 1316.580066666672,
+      "hybridMean": 1304.7186425,
+      "p": 1.4999999903100002e-08,
+      "gapPp": 1.7792136135070988e-05
+    },
+    {
+      "bucket": "world_record",
+      "lutMean": 50000.0,
+      "hybridMean": 49964.0828933614,
+      "p": 9.14599994091684e-08,
+      "gapPp": 0.00032849785519451234
+    }
+  ],
+  "sumGapPp": 0.7534686358613117,
+  "reportedLutMinusHybridPp": 0.7550519992178266,
+  "primaryDriver": {
+    "bucket": "freegame_LARGE_HILL",
+    "lutMean": 31.144479999999916,
+    "hybridMean": 30.060255,
+    "p": 0.006213519959860661,
+    "gapPp": 0.6736853678479396
+  }
+}

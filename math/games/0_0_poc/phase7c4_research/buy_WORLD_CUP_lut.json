@@ -1,0 +1,22 @@
+{
+  "tier": "WORLD_CUP",
+  "authMeanFinal": 398.49973410614126,
+  "targetNatMean": 395.2119578987115,
+  "pWr": 6.627941247605573e-05,
+  "lutMean": 398.49973410627746,
+  "lutMeanPathB": 398.49973410627894,
+  "meanDelta": 1.36196831590496e-10,
+  "nNat": 60000,
+  "nWr": 24,
+  "bookCount": 60024,
+  "rawNatMean": 391.49265,
+  "weightedNatMean": 395.21195789885047,
+  "shaBook": "0e92c3a708a19ece1ae7a403d9e1bf6f08346c6b626aa9bfe805166b162e6699",
+  "shaLut": "4bb984f7a87ee69c9c6d004e39471186d0e1779d395036842a4b78c54e934e29",
+  "paths": {
+    "books": "C:\\Users\\grzyb\\OneDrive\\Dokumenty\\skifly-casino-v2\\math\\games\\0_0_poc\\library_v2_phase7c4\\publish_files\\books_WORLD_CUP.jsonl.zst",
+    "lut": "C:\\Users\\grzyb\\OneDrive\\Dokumenty\\skifly-casino-v2\\math\\games\\0_0_poc\\library_v2_phase7c4\\publish_files\\lookUpTable_WORLD_CUP_0.csv"
+  },
+  "wallSeconds": 173.8494164943695,
+  "dualPathMatch": false
+}

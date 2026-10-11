@@ -1,0 +1,441 @@
+{
+  "id": "FS5A_U2_P2_M40_mid_E15j2",
+  "upgradeRule": "U2",
+  "maxPersistentTargets": 2,
+  "maxFreeSpins": 40,
+  "duplicateTargetBehaviour": "B",
+  "economyId": "E_s15_j2",
+  "families": {
+    "LARGE_HILL": "LH_C2_Smid",
+    "SKI_FLYING": "SF_C3_Smid",
+    "WORLD_CUP": "WC_C4_Smid",
+    "PERFECT_V": "PV_C5_Smid"
+  },
+  "mysteryWeights": {
+    "FLIGHT_TOKEN": 752,
+    "THERMAL_LIFT": 42,
+    "GATE_UPGRADE": 6,
+    "JUDGE": 170,
+    "HEAD_JUDGE": 30
+  },
+  "tokenValueScale": 1.5,
+  "reelStats": {
+    "LARGE_HILL": {
+      "pAnyCoach": 0.13680555555555562,
+      "pCoachGe2": 0.02777777777777778,
+      "pScatterGe3": 0.008305448480883023,
+      "lineRtp": 0.5810139864809336,
+      "coachDist": {
+        "0": 0.8631944444444444,
+        "1": 0.10902777777777778,
+        "2": 0.025694444444444447,
+        "3": 0.0020833333333333333
+      },
+      "scatterDist": {
+        "1": 0.32746247546370055,
+        "2": 0.07198485031671976,
+        "3": 0.00786835860453649,
+        "4": 0.0004278294976103778,
+        "5": 9.260378736155364e-06
+      }
+    },
+    "SKI_FLYING": {
+      "pAnyCoach": 0.19791666666666674,
+      "pCoachGe2": 0.046875,
+      "pScatterGe3": 0.008305448480883023,
+      "lineRtp": 0.5723155624936789,
+      "coachDist": {
+        "0": 0.8020833333333333,
+        "1": 0.15104166666666666,
+        "2": 0.041666666666666664,
+        "3": 0.005208333333333333
+      },
+      "scatterDist": {
+        "1": 0.32746247546370055,
+        "2": 0.07198485031671976,
+        "3": 0.00786835860453649,
+        "4": 0.0004278294976103778,
+        "5": 9.260378736155364e-06
+      }
+    },
+    "WORLD_CUP": {
+      "pAnyCoach": 0.23611111111111116,
+      "pCoachGe2": 0.04861111111111112,
+      "pScatterGe3": 0.008305448480883023,
+      "lineRtp": 0.5653560201252974,
+      "coachDist": {
+        "0": 0.7638888888888888,
+        "1": 0.1875,
+        "2": 0.04166666666666667,
+        "3": 0.006944444444444444
+      },
+      "scatterDist": {
+        "1": 0.32746247546370055,
+        "2": 0.07198485031671976,
+        "3": 0.00786835860453649,
+        "4": 0.0004278294976103778,
+        "5": 9.260378736155364e-06
+      }
+    },
+    "PERFECT_V": {
+      "pAnyCoach": 0.29999999999999993,
+      "pCoachGe2": 0.065625,
+      "pScatterGe3": 0.008305448480883023,
+      "lineRtp": 0.5568749563404024,
+      "coachDist": {
+        "0": 0.7000000000000001,
+        "1": 0.234375,
+        "2": 0.05659722222222222,
+        "3": 0.008680555555555554,
+        "4": 0.0003472222222222222
+      },
+      "scatterDist": {
+        "1": 0.32746247546370055,
+        "2": 0.07198485031671976,
+        "3": 0.00786835860453649,
+        "4": 0.0004278294976103778,
+        "5": 9.260378736155364e-06
+      }
+    }
+  },
+  "mixWeighted": {
+    "n": 1000000,
+    "seed": 20260921,
+    "meanX": 24.531982600000003,
+    "medianX": 9.499999999999998,
+    "meanMedianRatio": 2.582313957894738,
+    "p25": 5.4,
+    "p75": 18.700000000000003,
+    "p90": 40.2,
+    "p95": 75.0,
+    "p99": 245.2,
+    "p999": 1063.8002000000095,
+    "pGe": {
+      "10": 0.476901,
+      "25": 0.179178,
+      "50": 0.077415,
+      "100": 0.03656,
+      "250": 0.009673,
+      "500": 0.003019,
+      "1000": 0.001107,
+      "5000": 5.7e-05
+    },
+    "pBelow5": 0.215566,
+    "pBelow10": 0.523099,
+    "meanSpins": 10.26484,
+    "pSpinsGt15": 0.004993,
+    "pSpinsGt20": 5.3e-05,
+    "pSpinsGt30": 0.0,
+    "pSpinsGt50": 0.0,
+    "maxSpinsObserved": 24,
+    "pTierUpgrade": 0.080021,
+    "pRetrigger": 0.080022,
+    "pReach": {
+      "LARGE_HILL": 0.951526,
+      "SKI_FLYING": 0.1236,
+      "WORLD_CUP": 0.009455,
+      "PERFECT_V": 0.000677
+    },
+    "pNoCoach": 0.214005,
+    "pNoCollector": 0.441841,
+    "pCap": 7e-06,
+    "startCounts": {
+      "LARGE_HILL": 951526,
+      "SKI_FLYING": 47513,
+      "WORLD_CUP": 960,
+      "PERFECT_V": 1
+    },
+    "perStartMeans": {
+      "LARGE_HILL": 19.947759073320118,
+      "SKI_FLYING": 112.76584934649463,
+      "WORLD_CUP": 201.21885416666666,
+      "PERFECT_V": 157.3
+    },
+    "fsRtpContribution": 0.1601859533214682,
+    "fsRtpPp": 16.01859533214682,
+    "basePlusFs": 0.8723079533214683,
+    "futureReservePp": 9.26920466785317
+  },
+  "perTier": {
+    "LARGE_HILL": {
+      "n": 100000,
+      "seed": 20260921,
+      "startTier": "LARGE_HILL",
+      "meanX": 20.804387,
+      "medianX": 9.1,
+      "meanMedianRatio": 2.2861963736263737,
+      "p25": 5.300000000000001,
+      "p75": 17.3,
+      "p90": 33.8,
+      "p95": 54.0,
+      "p99": 177.30199999999897,
+      "p999": 719.8031000000118,
+      "pGe": {
+        "10": 0.45868,
+        "25": 0.15497,
+        "50": 0.05594,
+        "100": 0.02225,
+        "250": 0.00564,
+        "500": 0.00177,
+        "1000": 0.0007,
+        "5000": 5e-05
+      },
+      "pBelow5": 0.22208,
+      "pBelow10": 0.54132,
+      "meanSpins": 10.26904,
+      "pSpinsGt15": 0.00543,
+      "pSpinsGt20": 7e-05,
+      "pSpinsGt30": 0.0,
+      "pSpinsGt50": 0.0,
+      "maxSpinsObserved": 24,
+      "pUpgrade": 0.0806,
+      "pReach": {
+        "LARGE_HILL": 1.0,
+        "SKI_FLYING": 0.0805,
+        "WORLD_CUP": 0.00543,
+        "PERFECT_V": 0.00048
+      },
+      "pNoCoach": 0.21963,
+      "pNoCollector": 0.45791,
+      "pCap": 2e-05,
+      "avgLinePerBonus": 5.947057999999865,
+      "avgFeaturePerBonus": 15.209295,
+      "avgLinePerSpin": 0.579125020449805,
+      "avgFeaturePerSpin": 1.4810824575617585,
+      "avgMysteriesPerSpin": 0.6840064894089418,
+      "pBonusHadJudge": 0.50438,
+      "pBonusHadHeadJudge": 0.16375,
+      "pBonusHadGate": 0.04378,
+      "pBonusHadThermal": 0.21108,
+      "avgFloor": {
+        "1": 1.00343,
+        "5": 1.01694,
+        "10": 1.03821,
+        "end": 1.04718
+      },
+      "avgPersist": {
+        "1": 0.0,
+        "5": 0.01831,
+        "10": 0.07037,
+        "end": 0.10586
+      }
+    },
+    "SKI_FLYING": {
+      "n": 100000,
+      "seed": 20360924,
+      "startTier": "SKI_FLYING",
+      "meanX": 112.367941,
+      "medianX": 54.5,
+      "meanMedianRatio": 2.0617970825688072,
+      "p25": 15.2,
+      "p75": 126.8,
+      "p90": 234.4,
+      "p95": 347.7,
+      "p99": 969.2,
+      "p999": 2830.1139000000535,
+      "pGe": {
+        "10": 0.81593,
+        "25": 0.67026,
+        "50": 0.52274,
+        "100": 0.32209,
+        "250": 0.08955,
+        "500": 0.02769,
+        "1000": 0.00951,
+        "5000": 0.00022
+      },
+      "pBelow5": 0.07222,
+      "pBelow10": 0.18407,
+      "meanSpins": 10.26448,
+      "pSpinsGt15": 0.00523,
+      "pSpinsGt20": 8e-05,
+      "pSpinsGt30": 0.0,
+      "pSpinsGt50": 0.0,
+      "maxSpinsObserved": 22,
+      "pUpgrade": 0.07959,
+      "pReach": {
+        "LARGE_HILL": 0.0,
+        "SKI_FLYING": 1.0,
+        "WORLD_CUP": 0.07952,
+        "PERFECT_V": 0.00528
+      },
+      "pNoCoach": 0.10514,
+      "pNoCollector": 0.14437,
+      "pCap": 2e-05,
+      "avgLinePerBonus": 5.868776999999733,
+      "avgFeaturePerBonus": 107.675625,
+      "avgLinePerSpin": 0.5717558999578871,
+      "avgFeaturePerSpin": 10.490119811232523,
+      "avgMysteriesPerSpin": 3.467530746808411,
+      "pBonusHadJudge": 0.84576,
+      "pBonusHadHeadJudge": 0.55856,
+      "pBonusHadGate": 0.23873,
+      "pBonusHadThermal": 0.63998,
+      "avgFloor": {
+        "1": 1.00462,
+        "5": 1.08677,
+        "10": 1.2654926549265493,
+        "end": 1.28379
+      },
+      "avgPersist": {
+        "1": 0.24249,
+        "5": 1.02325,
+        "10": 1.5769557695576957,
+        "end": 1.59068
+      }
+    },
+    "WORLD_CUP": {
+      "n": 100000,
+      "seed": 20460927,
+      "startTier": "WORLD_CUP",
+      "meanX": 206.666715,
+      "medianX": 85.39999999999999,
+      "meanMedianRatio": 2.4199849531615927,
+      "p25": 28.0,
+      "p75": 195.1,
+      "p90": 460.3100000000006,
+      "p95": 813.5049999999989,
+      "p99": 1805.0009999999995,
+      "p999": 4229.30280000001,
+      "pGe": {
+        "10": 0.87242,
+        "25": 0.7671,
+        "50": 0.6427,
+        "100": 0.45201,
+        "250": 0.19178,
+        "500": 0.09111,
+        "1000": 0.03618,
+        "5000": 0.00078
+      },
+      "pBelow5": 0.05145,
+      "pBelow10": 0.12758,
+      "meanSpins": 10.26425,
+      "pSpinsGt15": 0.00519,
+      "pSpinsGt20": 3e-05,
+      "pSpinsGt30": 0.0,
+      "pSpinsGt50": 0.0,
+      "maxSpinsObserved": 23,
+      "pUpgrade": 0.07991,
+      "pReach": {
+        "LARGE_HILL": 0.0,
+        "SKI_FLYING": 0.0,
+        "WORLD_CUP": 1.0,
+        "PERFECT_V": 0.07991
+      },
+      "pNoCoach": 0.06297,
+      "pNoCollector": 0.09402,
+      "pCap": 0.00011,
+      "avgLinePerBonus": 5.808028999999828,
+      "avgFeaturePerBonus": 207.93171,
+      "avgLinePerSpin": 0.5658503056725848,
+      "avgFeaturePerSpin": 20.257857125459726,
+      "avgMysteriesPerSpin": 4.0800389702121445,
+      "pBonusHadJudge": 0.89771,
+      "pBonusHadHeadJudge": 0.61872,
+      "pBonusHadGate": 0.93567,
+      "pBonusHadThermal": 0.67206,
+      "avgFloor": {
+        "1": 1.22695,
+        "5": 1.8110262205244105,
+        "10": 2.1365722915062357,
+        "end": 2.14641
+      },
+      "avgPersist": {
+        "1": 0.28672,
+        "5": 1.1818536370727415,
+        "10": 1.7188746987228851,
+        "end": 1.72155
+      }
+    },
+    "PERFECT_V": {
+      "n": 100000,
+      "seed": 20560930,
+      "startTier": "PERFECT_V",
+      "meanX": 576.301072,
+      "medianX": 319.70000000000005,
+      "meanMedianRatio": 1.8026308163903657,
+      "p25": 194.8,
+      "p75": 637.3,
+      "p90": 1299.1100000000004,
+      "p95": 1801.6099999999976,
+      "p99": 3101.2009999999996,
+      "p999": 9172.604400000017,
+      "pGe": {
+        "10": 0.99997,
+        "25": 0.99951,
+        "50": 0.99374,
+        "100": 0.94233,
+        "250": 0.62877,
+        "500": 0.31566,
+        "1000": 0.1512,
+        "5000": 0.00243
+      },
+      "pBelow5": 0.0,
+      "pBelow10": 3e-05,
+      "meanSpins": 10.26425,
+      "pSpinsGt15": 0.00444,
+      "pSpinsGt20": 1e-05,
+      "pSpinsGt30": 0.0,
+      "pSpinsGt50": 0.0,
+      "maxSpinsObserved": 23,
+      "pUpgrade": 0.0,
+      "pReach": {
+        "LARGE_HILL": 0.0,
+        "SKI_FLYING": 0.0,
+        "WORLD_CUP": 0.0,
+        "PERFECT_V": 1.0
+      },
+      "pNoCoach": 0.0,
+      "pNoCollector": 0.0,
+      "pCap": 0.00026,
+      "avgLinePerBonus": 5.724754999999782,
+      "avgFeaturePerBonus": 586.33503,
+      "avgLinePerSpin": 0.5577372920573624,
+      "avgFeaturePerSpin": 57.12400126653189,
+      "avgMysteriesPerSpin": 8.515984119638551,
+      "pBonusHadJudge": 0.99999,
+      "pBonusHadHeadJudge": 0.91633,
+      "pBonusHadGate": 1.0,
+      "pBonusHadThermal": 0.96273,
+      "avgFloor": {
+        "1": 1.94919,
+        "5": 2.2039842788995228,
+        "10": 2.3960492098419683,
+        "end": 2.40394
+      },
+      "avgPersist": {
+        "1": 1.06568,
+        "5": 2.0,
+        "10": 2.0,
+        "end": 2.0
+      }
+    }
+  },
+  "budget": {
+    "lineRtp": 0.596962,
+    "baseFeatureCapped": 0.11516,
+    "baseBeforeFs": 0.712122,
+    "fullTarget": 0.965
+  },
+  "mix": {
+    "P_exact3": 0.0062135906602437665,
+    "P_exact4": 0.00030991400836999946,
+    "P_5plus": 6.173585824103574e-06,
+    "P_5plus_not_PV": 6.171610276639861e-06,
+    "P_directPerfectV": 1.9755474637131444e-09,
+    "P_scatterGe3": 0.00652967825443787,
+    "conditional": {
+      "LARGE_HILL": 0.9515921639815444,
+      "SKI_FLYING": 0.047462370471220025,
+      "WORLD_CUP": 0.0009451629982603432,
+      "PERFECT_V": 3.0254897511534684e-07
+    },
+    "absolute": {
+      "LARGE_HILL": 0.0062135906602437665,
+      "SKI_FLYING": 0.00030991400836999946,
+      "WORLD_CUP": 6.171610276639861e-06,
+      "PERFECT_V": 1.9755474637131444e-09
+    }
+  },
+  "nMix": 1000000,
+  "nTier": 100000
+}

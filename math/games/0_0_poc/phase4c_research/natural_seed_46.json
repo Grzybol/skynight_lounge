@@ -1,0 +1,11 @@
+{
+  "spins": 10000000,
+  "seed": 46,
+  "lineRtp": 0.5967392399896174,
+  "featureRtpRaw": 0.1345379,
+  "featureRtpCapped": 0.12703565,
+  "capHits": 3,
+  "capFrequency": 3e-07,
+  "capDragRtp": 0.00750225,
+  "maxRawTotalWinX": 100004.5
+}

@@ -1,0 +1,250 @@
+{
+  "phase": "6C.1",
+  "liveWindRule": "PURE_W2",
+  "chargedPriorityRemoved": true,
+  "pickerParity": {
+    "trials": 16000,
+    "mismatches": 0,
+    "pass": true,
+    "examples": []
+  },
+  "featureOff": {
+    "n": 50000,
+    "featureOffMeanX": 29.075708,
+    "phase5bCertifiedMeanX": 27.45472,
+    "deltaX": 1.6209880000000005,
+    "deltaPp": 1.0584530094304738,
+    "pass": false
+  },
+  "persist": {
+    "researchSemantic": "append persistentMysteryTargets immediately after each Coach (incl. Rejump)",
+    "liveSemantic": "append after full spin feature resolve; mid-chain Rejump uses pre-spin targets only",
+    "canonical": "Phase 5B/6 design: persist AFTER lines on a board; list growth timing mid-chain not required to match research",
+    "action": "KEEP_LIVE",
+    "pCoachAfterRejump": 0.0315,
+    "evImpactPp": null,
+    "note": "Secondary difference retained; charged-priority was primary. EV isolated only if mid-spin patch counterfactual is run separately.",
+    "evCounterfactual": {
+      "n": 100000,
+      "seed": 6200000000,
+      "liveMeanX": 33.700666,
+      "midSpinAppendMeanX": 34.336614,
+      "deltaX": 0.6359479999999991,
+      "deltaPp": 0.41525358265532486,
+      "action": "KEEP_LIVE",
+      "note": "Positive delta means research mid-spin append is hotter than live."
+    }
+  },
+  "visibility": {
+    "n": 100000,
+    "mix": {
+      "pRejump": 0.1657,
+      "pWind": 0.07454,
+      "pAny": 0.19606
+    },
+    "largeHill": {
+      "n": 95112,
+      "pRejump": 0.14261081672133905,
+      "pWind": 0.05777399276642274,
+      "pAny": 0.17054630330557657
+    },
+    "windStates": {
+      "pAnyWind": 0.07454,
+      "pAnyCharge": 0.07388,
+      "pTwoPlusPartialCharges": 0.01354,
+      "pThreePartialCharges": 0.0017,
+      "pCompletedStage": 0.01103,
+      "pGlobalGe2": 0.01103,
+      "pGlobalGe4": 0.00209,
+      "pGlobalGe8": 0.00061,
+      "pGlobalGe12": 0.00014,
+      "pGlobalGe18": 0.0,
+      "pGlobalEq27": 0.0,
+      "meanFinalGlobal": 1.01821,
+      "pAnyUpgrade": 0.01103
+    }
+  },
+  "tails": {
+    "n": 100000,
+    "pCap": 1e-05,
+    "meanCapDragX": 0.104775,
+    "capDragPp": 0.06841470391087277,
+    "cases": {
+      "active_mult_ge2": 1125,
+      "active_mult_ge4": 188
+    },
+    "maxPayoutOk": true
+  },
+  "paired": [
+    {
+      "seed": 7026092700,
+      "n": 500000,
+      "mode": "FULL",
+      "offMean": 27.2422566,
+      "onMean": 34.7201154,
+      "deltaX": 7.4778588,
+      "incrementalPp": 4.882801199611686,
+      "deltaStd": 330.3805058855086
+    },
+    {
+      "seed": 7027192700,
+      "n": 500000,
+      "mode": "FULL",
+      "offMean": 27.5816694,
+      "onMean": 34.424086,
+      "deltaX": 6.8424166,
+      "incrementalPp": 4.46787788808247,
+      "deltaStd": 377.06551566158663
+    },
+    {
+      "seed": 7028292700,
+      "n": 500000,
+      "mode": "FULL",
+      "offMean": 27.7437622,
+      "onMean": 34.409031399999996,
+      "deltaX": 6.6652692,
+      "incrementalPp": 4.3522063355214495,
+      "deltaStd": 349.95894356735033
+    },
+    {
+      "seed": 7029392700,
+      "n": 500000,
+      "mode": "FULL",
+      "offMean": 27.5050056,
+      "onMean": 34.847079799999996,
+      "deltaX": 7.3420742,
+      "incrementalPp": 4.794138224620932,
+      "deltaStd": 371.41152991229393
+    },
+    {
+      "seed": 7030492700,
+      "n": 500000,
+      "mode": "FULL",
+      "offMean": 27.394547,
+      "onMean": 35.016869,
+      "deltaX": 7.622322,
+      "incrementalPp": 4.977131021172337,
+      "deltaStd": 369.94177496736165
+    },
+    {
+      "seed": 7031592700,
+      "n": 500000,
+      "mode": "FULL",
+      "offMean": 27.4334056,
+      "onMean": 34.93178279999999,
+      "deltaX": 7.4983772,
+      "incrementalPp": 4.896199054641272,
+      "deltaStd": 354.91539517569817
+    },
+    {
+      "seed": 7032692700,
+      "n": 500000,
+      "mode": "FULL",
+      "offMean": 28.192543,
+      "onMean": 34.774816799999996,
+      "deltaX": 6.582273799999999,
+      "incrementalPp": 4.298013009661612,
+      "deltaStd": 378.5105182242452
+    },
+    {
+      "seed": 7033792700,
+      "n": 500000,
+      "mode": "FULL",
+      "offMean": 27.6256136,
+      "onMean": 34.624806,
+      "deltaX": 6.9991924,
+      "incrementalPp": 4.570247441290681,
+      "deltaStd": 366.2623798244771
+    },
+    {
+      "seed": 7034892700,
+      "n": 500000,
+      "mode": "FULL",
+      "offMean": 27.311780199999998,
+      "onMean": 34.812152,
+      "deltaX": 7.5003718,
+      "incrementalPp": 4.897501464265902,
+      "deltaStd": 365.67734207385445
+    },
+    {
+      "seed": 7035992700,
+      "n": 500000,
+      "mode": "FULL",
+      "offMean": 27.373638,
+      "onMean": 34.659202799999996,
+      "deltaX": 7.2855647999999995,
+      "incrementalPp": 4.757239404585799,
+      "deltaStd": 383.66769033206094
+    }
+  ],
+  "pairedAgg": {
+    "seeds": 10,
+    "mean": 4.689335504345414,
+    "std": 0.24765347515040542,
+    "se": 0.07831490519311919,
+    "ci95": [
+      4.5358382901669,
+      4.842832718523928
+    ],
+    "min": 4.298013009661612,
+    "max": 4.977131021172337,
+    "pairedBonuses": 5000000
+  },
+  "decomposition": {
+    "seed": 7026092700,
+    "n": 200000,
+    "rejumpPp": 3.1645295569064356,
+    "windPp": 1.0333548851238905,
+    "fullPp": 4.66607314684264,
+    "interactionPp": 0.4681887048123141,
+    "closure": true,
+    "rows": {
+      "FULL": {
+        "seed": 7026092700,
+        "n": 200000,
+        "mode": "FULL",
+        "offMean": 27.613438,
+        "onMean": 34.7593845,
+        "deltaX": 7.1459465,
+        "incrementalPp": 4.66607314684264,
+        "deltaStd": 362.093596206466
+      },
+      "RJ": {
+        "seed": 7026092700,
+        "n": 200000,
+        "mode": "RJ",
+        "offMean": 27.613438,
+        "onMean": 32.459817,
+        "deltaX": 4.846379000000001,
+        "incrementalPp": 3.1645295569064356,
+        "deltaStd": 358.73061032025447
+      },
+      "WIND": {
+        "seed": 7026092700,
+        "n": 200000,
+        "mode": "WIND",
+        "offMean": 27.613438,
+        "onMean": 29.195988999999997,
+        "deltaX": 1.582551,
+        "incrementalPp": 1.0333548851238905,
+        "deltaStd": 327.6885611393811
+      }
+    }
+  },
+  "historicalE1Pp": 5.195,
+  "historical6cResearchRerunPp": 5.655,
+  "historical6cLivePureW2_200kPp": 4.415,
+  "certifiedLivePureW2Pp": 4.689335504345414,
+  "differenceVsE1": -0.5056644956545862,
+  "gameRtp": 93.8283855043454,
+  "pointFutureReservePp": 2.6716144956545946,
+  "safeFutureReservePp": 2.518117281476081,
+  "classification": "STABLE",
+  "freeze": {
+    "liveConfigSha256": "1a737f24ff3b75ceebb80b276e4fa23dde076699d2cfc7ac8e9a6f7fbcc7b8fe",
+    "stageRule": "W2_PURE",
+    "candidateOrigin": "P6A1_E_E1",
+    "windArch": "W-CHARGE",
+    "rejumpArch": "R-BATCH"
+  }
+}

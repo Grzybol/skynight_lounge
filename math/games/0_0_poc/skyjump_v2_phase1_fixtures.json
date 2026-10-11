@@ -1,0 +1,118 @@
+{
+  "nonProduction": true,
+  "usage": "FIXTURE/TEST ONLY",
+  "label": "PHASE 1 DETERMINISTIC FIXTURES",
+  "note": "NON-PRODUCTION. Local DEV fixture rounds only. Must never enter production books or V2 RTP config. Background cells use Scatter so only intended regular lines can win.",
+  "fixtures": [
+    {
+      "id": "01",
+      "title": "no win",
+      "board": [
+        ["P1", "P1", "P1", "P1", "P1"],
+        ["S", "S", "S", "S", "S"],
+        ["S", "S", "S", "S", "S"],
+        ["S", "S", "S", "S", "S"],
+        ["S", "S", "S", "S", "S"]
+      ]
+    },
+    {
+      "id": "02",
+      "title": "one 3-symbol win",
+      "board": [
+        ["S", "S", "P1", "S", "S"],
+        ["S", "S", "P1", "S", "S"],
+        ["S", "S", "P1", "S", "S"],
+        ["S", "S", "S", "S", "S"],
+        ["S", "S", "S", "S", "S"]
+      ]
+    },
+    {
+      "id": "03",
+      "title": "one 4-symbol win",
+      "board": [
+        ["S", "S", "P2", "S", "S"],
+        ["S", "S", "P2", "S", "S"],
+        ["S", "S", "P2", "S", "S"],
+        ["S", "S", "P2", "S", "S"],
+        ["S", "S", "S", "S", "S"]
+      ]
+    },
+    {
+      "id": "04",
+      "title": "one 5-symbol win",
+      "board": [
+        ["S", "S", "P1", "S", "S"],
+        ["S", "S", "P1", "S", "S"],
+        ["S", "S", "P1", "S", "S"],
+        ["S", "S", "P1", "S", "S"],
+        ["S", "S", "P1", "S", "S"]
+      ]
+    },
+    {
+      "id": "05",
+      "title": "multiple simultaneous paylines",
+      "board": [
+        ["M1", "S", "S", "S", "M2"],
+        ["M1", "S", "S", "S", "M2"],
+        ["M1", "S", "S", "S", "M2"],
+        ["S", "S", "S", "S", "S"],
+        ["S", "S", "S", "S", "S"]
+      ]
+    },
+    {
+      "id": "06",
+      "title": "overlapping paylines",
+      "board": [
+        ["S", "P3", "S", "S", "S"],
+        ["S", "P3", "P3", "S", "S"],
+        ["S", "P3", "S", "S", "S"],
+        ["S", "S", "S", "S", "S"],
+        ["S", "S", "S", "S", "S"]
+      ]
+    },
+    {
+      "id": "07",
+      "title": "match does not start on reel 1",
+      "board": [
+        ["S", "S", "S", "S", "S"],
+        ["P1", "P1", "P1", "P1", "P1"],
+        ["P1", "P1", "P1", "P1", "P1"],
+        ["P1", "P1", "P1", "P1", "P1"],
+        ["P1", "P1", "P1", "P1", "P1"]
+      ]
+    },
+    {
+      "id": "08",
+      "title": "gap in adjacent reels",
+      "board": [
+        ["S", "S", "P1", "S", "S"],
+        ["S", "S", "P1", "S", "S"],
+        ["S", "S", "S", "S", "S"],
+        ["S", "S", "P1", "S", "S"],
+        ["S", "S", "P1", "S", "S"]
+      ]
+    },
+    {
+      "id": "09",
+      "title": "scatter ignored by paylines",
+      "board": [
+        ["S", "S", "S", "S", "S"],
+        ["S", "S", "S", "S", "S"],
+        ["S", "S", "S", "S", "S"],
+        ["S", "S", "S", "S", "S"],
+        ["S", "S", "S", "S", "S"]
+      ]
+    },
+    {
+      "id": "10",
+      "title": "multiple wins sharing cells",
+      "board": [
+        ["L1", "S", "S", "S", "S"],
+        ["L1", "S", "S", "S", "S"],
+        ["L1", "L1", "S", "S", "S"],
+        ["L1", "S", "S", "S", "S"],
+        ["L1", "S", "S", "S", "S"]
+      ]
+    }
+  ]
+}

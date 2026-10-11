@@ -1,0 +1,87 @@
+{
+  "0.35": {
+    "architecture": "WR-C",
+    "availability": "Free Spins only; tier-weighted independent board special",
+    "targetRtpPp": 0.35,
+    "eIncrementalX": 49988.0,
+    "pPaidRound": 7.00168040329679e-08,
+    "oneInPaidRounds": 14282285.714285716,
+    "pPerTriggeredBonus": 1.0722856671441852e-05,
+    "oneInBonuses": 93258.73045224008,
+    "byTierP": {
+      "LARGE_HILL": 9.75111971842071e-06,
+      "SKI_FLYING": 2.925335915526213e-05,
+      "WORLD_CUP": 5.850671831052426e-05,
+      "PERFECT_V": 0.00011701343662104852
+    },
+    "pWrGivenPerfectVTierStart": 0.00011701343662104852
+  },
+  "0.40": {
+    "architecture": "WR-C",
+    "availability": "Free Spins only; tier-weighted independent board special",
+    "targetRtpPp": 0.4,
+    "eIncrementalX": 49988.0,
+    "pPaidRound": 8.001920460910619e-08,
+    "oneInPaidRounds": 12496999.999999998,
+    "pPerTriggeredBonus": 1.225469333879069e-05,
+    "oneInBonuses": 81601.38914571005,
+    "byTierP": {
+      "LARGE_HILL": 1.1144136821052244e-05,
+      "SKI_FLYING": 3.343241046315673e-05,
+      "WORLD_CUP": 6.686482092631346e-05,
+      "PERFECT_V": 0.00013372964185262692
+    },
+    "pWrGivenPerfectVTierStart": 0.00013372964185262692
+  },
+  "0.45": {
+    "architecture": "WR-C",
+    "availability": "Free Spins only; tier-weighted independent board special",
+    "targetRtpPp": 0.45,
+    "eIncrementalX": 49988.0,
+    "pPaidRound": 9.002160518524447e-08,
+    "oneInPaidRounds": 11108444.444444442,
+    "pPerTriggeredBonus": 1.3786530006139528e-05,
+    "oneInBonuses": 72534.56812952005,
+    "byTierP": {
+      "LARGE_HILL": 1.2537153923683775e-05,
+      "SKI_FLYING": 3.7611461771051324e-05,
+      "WORLD_CUP": 7.522292354210265e-05,
+      "PERFECT_V": 0.0001504458470842053
+    },
+    "pWrGivenPerfectVTierStart": 0.0001504458470842053
+  },
+  "0.50": {
+    "architecture": "WR-C",
+    "availability": "Free Spins only; tier-weighted independent board special",
+    "targetRtpPp": 0.5,
+    "eIncrementalX": 49988.0,
+    "pPaidRound": 1.0002400576138274e-07,
+    "oneInPaidRounds": 9997600.0,
+    "pPerTriggeredBonus": 1.5318366673488364e-05,
+    "oneInBonuses": 65281.11131656804,
+    "byTierP": {
+      "LARGE_HILL": 1.3930171026315304e-05,
+      "SKI_FLYING": 4.179051307894591e-05,
+      "WORLD_CUP": 8.358102615789182e-05,
+      "PERFECT_V": 0.00016716205231578365
+    },
+    "pWrGivenPerfectVTierStart": 0.00016716205231578365
+  },
+  "0.55": {
+    "architecture": "WR-C",
+    "availability": "Free Spins only; tier-weighted independent board special",
+    "targetRtpPp": 0.55,
+    "eIncrementalX": 49988.0,
+    "pPaidRound": 1.1002640633752102e-07,
+    "oneInPaidRounds": 9088727.272727272,
+    "pPerTriggeredBonus": 1.68502033408372e-05,
+    "oneInBonuses": 59346.46483324368,
+    "byTierP": {
+      "LARGE_HILL": 1.5323188128946834e-05,
+      "SKI_FLYING": 4.5969564386840505e-05,
+      "WORLD_CUP": 9.193912877368101e-05,
+      "PERFECT_V": 0.00018387825754736202
+    },
+    "pWrGivenPerfectVTierStart": 0.00018387825754736202
+  }
+}

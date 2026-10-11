@@ -1,0 +1,147 @@
+{
+  "costs": {
+    "BASE": 1.0,
+    "LARGE_HILL": 32.5,
+    "SKI_FLYING": 197.7,
+    "WORLD_CUP": 416.7,
+    "PERFECT_V": 1381.2
+  },
+  "modes": {
+    "BASE": {
+      "bookCount": 200020,
+      "compressedBytes": 250669779,
+      "uncompressedBytesEst": 4479948699,
+      "lutBytes": 3414967,
+      "shaBook": "830d733a67f5139e2d20091d58a6554e2f354c7753b7d9db01c3630373a3f633",
+      "shaLut": "724b2389b4cb1659df7e629c60ef0883432a979ad8b610c1c4689a55da9059b5",
+      "lutRtp": 0.981196174999114,
+      "meanPayoutX": 0.981196174999114,
+      "effectiveWrP": 9.14599994091684e-08,
+      "maxPayoutX": 50000.0,
+      "minPayoutX": 0.0,
+      "pCap": 0.00015998400159984,
+      "cost": 1.0,
+      "meanBookCharsSample": 22397.50374812594,
+      "maxBookCharsSample": 181281,
+      "natural": 100000,
+      "tierStrata": {
+        "LARGE_HILL": 40000,
+        "SKI_FLYING": 25000,
+        "WORLD_CUP": 20000,
+        "PERFECT_V": 15000
+      },
+      "wrStrata": 20,
+      "stratified": true,
+      "bonusSource": "buy_mode_books"
+    },
+    "LARGE_HILL": {
+      "bookCount": 100020,
+      "natural": 100000,
+      "wrStrata": 20,
+      "compressedBytes": 127208429,
+      "lutBytes": 1839163,
+      "shaBook": "400fe67c5fa06cf9d893d69282b35903a82cd2a0432b8078afd3126ed5d738ae",
+      "shaLut": "0ce72a276617afe528bd8cf2014761e23cffd74f51c9b66379bd303c50c39560",
+      "lutRtp": 0.9649747070533364,
+      "effectiveWrP": 1.0970420324505033e-05,
+      "maxPayoutX": 50000.0,
+      "minPayoutX": 0.0,
+      "pCap": 0.00021995600879824034,
+      "cost": 32.5,
+      "meanBookCharsSample": 24837.912043978013,
+      "maxBookCharsSample": 129125,
+      "meanPayoutX": 31.361677979233434
+    },
+    "SKI_FLYING": {
+      "bookCount": 100020,
+      "natural": 100000,
+      "wrStrata": 20,
+      "compressedBytes": 243507591,
+      "lutBytes": 1916177,
+      "shaBook": "3f92c4487560647c631eda76df00d8c902f1f04d32e545a0d1517c8afa513492",
+      "shaLut": "970f0724af5e7e8dc864668f14ac9bdf4f23c4793626150611acd2efa5dcb3fc",
+      "lutRtp": 0.964895915787697,
+      "effectiveWrP": 3.2901919936828316e-05,
+      "maxPayoutX": 50000.0,
+      "minPayoutX": 0.0,
+      "pCap": 0.00035992801439712057,
+      "cost": 197.7,
+      "meanBookCharsSample": 42925.12293853074,
+      "maxBookCharsSample": 208756,
+      "meanPayoutX": 190.75992255122767
+    },
+    "WORLD_CUP": {
+      "bookCount": 100020,
+      "natural": 100000,
+      "wrStrata": 20,
+      "compressedBytes": 289191502,
+      "lutBytes": 1942229,
+      "shaBook": "2db5e46d23522fbd16c2fe3bce31b8a0edb579be1453eaba83195eeeb6dc74cb",
+      "shaLut": "c18ca04171b2537c8f3c39acf45fc42b5b9826ffc75c19e155fba87f52b3c05a",
+      "lutRtp": 0.9649699287518985,
+      "effectiveWrP": 6.583025800797639e-05,
+      "maxPayoutX": 50000.0,
+      "minPayoutX": 0.0,
+      "pCap": 0.0003799240151969606,
+      "cost": 416.7,
+      "meanBookCharsSample": 50446.78460769615,
+      "maxBookCharsSample": 232582,
+      "meanPayoutX": 402.1029693109161
+    },
+    "PERFECT_V": {
+      "bookCount": 100020,
+      "natural": 100000,
+      "wrStrata": 20,
+      "compressedBytes": 488906266,
+      "lutBytes": 2024125,
+      "shaBook": "6a4fd4f195db60f137a2409fa58cdc57f786a8c6cd0e50af3a868702039228ac",
+      "shaLut": "36457c009b1f67226dc242f6b8c45f18dab183f7972cac9db4acd621d2168f41",
+      "lutRtp": 0.9649789386830318,
+      "effectiveWrP": 0.00013158610182904682,
+      "maxPayoutX": 50000.0,
+      "minPayoutX": 9.8,
+      "pCap": 0.0008898220355928815,
+      "cost": 1381.2,
+      "meanBookCharsSample": 87788.4607696152,
+      "maxBookCharsSample": 265279,
+      "meanPayoutX": 1332.8289101090036
+    }
+  },
+  "staging": {
+    "path": "C:\\Users\\grzyb\\OneDrive\\Dokumenty\\skifly-casino-v2\\stake-upload\\math",
+    "leaked": []
+  },
+  "crossMode": {
+    "rtps": {
+      "BASE": 98.1196174999114,
+      "LARGE_HILL": 96.49747070533364,
+      "SKI_FLYING": 96.48959157876969,
+      "WORLD_CUP": 96.49699287518985,
+      "PERFECT_V": 96.49789386830318
+    },
+    "spreadPp": 1.630025921141709
+  },
+  "buyReprice": {
+    "costs": {
+      "BASE": 1.0,
+      "LARGE_HILL": 32.5,
+      "SKI_FLYING": 197.7,
+      "WORLD_CUP": 416.7,
+      "PERFECT_V": 1381.2
+    },
+    "means": {
+      "LARGE_HILL": 31.361677979233434,
+      "SKI_FLYING": 190.75992255122767,
+      "WORLD_CUP": 402.1029693109161,
+      "PERFECT_V": 1332.8289101090036
+    },
+    "rtps": {
+      "LARGE_HILL": 96.49747070533364,
+      "SKI_FLYING": 96.48959157876969,
+      "WORLD_CUP": 96.49699287518985,
+      "PERFECT_V": 96.49789386830318
+    },
+    "spreadPp": 0.008302289533489216,
+    "pass": true
+  }
+}

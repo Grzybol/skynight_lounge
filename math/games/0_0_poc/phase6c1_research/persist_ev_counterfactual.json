@@ -1,0 +1,10 @@
+{
+  "n": 100000,
+  "seed": 6200000000,
+  "liveMeanX": 33.700666,
+  "midSpinAppendMeanX": 34.336614,
+  "deltaX": 0.6359479999999991,
+  "deltaPp": 0.41525358265532486,
+  "action": "KEEP_LIVE",
+  "note": "Positive delta means research mid-spin append is hotter than live."
+}

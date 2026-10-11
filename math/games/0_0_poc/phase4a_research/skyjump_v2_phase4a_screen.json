@@ -1,0 +1,3894 @@
+{
+  "seed": 20260921,
+  "screenSpins": 120000,
+  "rows": [
+    {
+      "id": "S0361_B_m4_leaner_mild_g3",
+      "coach": "B",
+      "gateMaxFloor": 3,
+      "featureRtpCapped": 0.099225,
+      "featureRtpRaw": 0.099225,
+      "baseRtpBeforeFs": 0.6839552155911907,
+      "pDeadCoach": 0.7948874541964753,
+      "pFeatureWinGivenCoach": 0.2051125458035247,
+      "pFeatureWin": 0.019591666666666667,
+      "capFrequency": 0.0,
+      "remainingFsRtp": 0.2810447844088093,
+      "impliedBonus": 36.703945111137834,
+      "score": -0.9747619961612293,
+      "inFeatureBand": true,
+      "candidate": {
+        "id": "S0361_B_m4_leaner_mild_g3",
+        "coachModelId": "B",
+        "notes": "search coach=B mystery=4 tokens=leaner thermal=mild gateMax=3",
+        "maxWinX": 50000,
+        "gateMaxFloor": 3,
+        "mysteryResultWeights": {
+          "FLIGHT_TOKEN": 865,
+          "THERMAL_LIFT": 55,
+          "GATE_UPGRADE": 5,
+          "JUDGE": 72,
+          "HEAD_JUDGE": 10
+        },
+        "tokenTierWeights": {
+          "1": 998000,
+          "2": 1500,
+          "3": 300,
+          "4": 100,
+          "5": 92,
+          "6": 8
+        },
+        "tokenValueWeights": {
+          "1": {
+            "1": 90,
+            "2": 3,
+            "3": 1,
+            "4": 1
+          },
+          "2": {
+            "5": 22,
+            "10": 2,
+            "15": 1
+          },
+          "3": {
+            "25": 20,
+            "50": 2,
+            "100": 1
+          },
+          "4": {
+            "150": 14,
+            "200": 3,
+            "250": 2,
+            "500": 1
+          },
+          "5": {
+            "750": 14,
+            "1000": 3,
+            "2500": 2,
+            "5000": 1
+          },
+          "6": {
+            "10000": 8,
+            "25000": 2,
+            "50000": 1
+          }
+        },
+        "thermalWeights": {
+          "2": 55,
+          "3": 28,
+          "4": 12,
+          "5": 4,
+          "10": 1,
+          "20": 1
+        }
+      }
+    },
+    {
+      "id": "H03_B_R3",
+      "coach": "B",
+      "gateMaxFloor": 3,
+      "featureRtpCapped": 0.09823333333333334,
+      "featureRtpRaw": 0.09823333333333334,
+      "baseRtpBeforeFs": 0.682963548924524,
+      "pDeadCoach": 0.7948874541964753,
+      "pFeatureWinGivenCoach": 0.2051125458035247,
+      "pFeatureWin": 0.019591666666666667,
+      "capFrequency": 0.0,
+      "remainingFsRtp": 0.2820364510754759,
+      "impliedBonus": 36.833455000383566,
+      "score": -1.0144286628278953,
+      "inFeatureBand": true,
+      "candidate": {
+        "id": "H03_B_R3",
+        "coachModelId": "B",
+        "notes": "Coach B higher Judge rate for feel (~11pp screen)",
+        "maxWinX": 50000,
+        "gateMaxFloor": 3,
+        "mysteryResultWeights": {
+          "FLIGHT_TOKEN": 865,
+          "THERMAL_LIFT": 55,
+          "GATE_UPGRADE": 5,
+          "JUDGE": 72,
+          "HEAD_JUDGE": 10
+        },
+        "tokenTierWeights": {
+          "1": 997200,
+          "2": 2200,
+          "3": 450,
+          "4": 100,
+          "5": 42,
+          "6": 8
+        },
+        "tokenValueWeights": {
+          "1": {
+            "1": 90,
+            "2": 3,
+            "3": 1,
+            "4": 1
+          },
+          "2": {
+            "5": 22,
+            "10": 2,
+            "15": 1
+          },
+          "3": {
+            "25": 20,
+            "50": 2,
+            "100": 1
+          },
+          "4": {
+            "150": 14,
+            "200": 3,
+            "250": 2,
+            "500": 1
+          },
+          "5": {
+            "750": 14,
+            "1000": 3,
+            "2500": 2,
+            "5000": 1
+          },
+          "6": {
+            "10000": 8,
+            "25000": 2,
+            "50000": 1
+          }
+        },
+        "thermalWeights": {
+          "2": 70,
+          "3": 20,
+          "4": 7,
+          "5": 2,
+          "10": 1,
+          "20": 1
+        }
+      }
+    },
+    {
+      "id": "H01_B_R2",
+      "coach": "B",
+      "gateMaxFloor": 3,
+      "featureRtpCapped": 0.09964166666666667,
+      "featureRtpRaw": 0.09964166666666667,
+      "baseRtpBeforeFs": 0.6843718822578573,
+      "pDeadCoach": 0.8079562233996352,
+      "pFeatureWinGivenCoach": 0.1920437766003648,
+      "pFeatureWin": 0.018425,
+      "capFrequency": 0.0,
+      "remainingFsRtp": 0.2806281177421427,
+      "impliedBonus": 36.64952919128669,
+      "score": -1.101518457395988,
+      "inFeatureBand": true,
+      "candidate": {
+        "id": "H01_B_R2",
+        "coachModelId": "B",
+        "notes": "Primary: Coach B, rare Gate, moderate Judge, crushed paying tokens (~10pp screen)",
+        "maxWinX": 50000,
+        "gateMaxFloor": 3,
+        "mysteryResultWeights": {
+          "FLIGHT_TOKEN": 875,
+          "THERMAL_LIFT": 55,
+          "GATE_UPGRADE": 5,
+          "JUDGE": 65,
+          "HEAD_JUDGE": 10
+        },
+        "tokenTierWeights": {
+          "1": 997200,
+          "2": 2200,
+          "3": 450,
+          "4": 100,
+          "5": 42,
+          "6": 8
+        },
+        "tokenValueWeights": {
+          "1": {
+            "1": 90,
+            "2": 3,
+            "3": 1,
+            "4": 1
+          },
+          "2": {
+            "5": 22,
+            "10": 2,
+            "15": 1
+          },
+          "3": {
+            "25": 20,
+            "50": 2,
+            "100": 1
+          },
+          "4": {
+            "150": 14,
+            "200": 3,
+            "250": 2,
+            "500": 1
+          },
+          "5": {
+            "750": 14,
+            "1000": 3,
+            "2500": 2,
+            "5000": 1
+          },
+          "6": {
+            "10000": 8,
+            "25000": 2,
+            "50000": 1
+          }
+        },
+        "thermalWeights": {
+          "2": 70,
+          "3": 20,
+          "4": 7,
+          "5": 2,
+          "10": 1,
+          "20": 1
+        }
+      }
+    },
+    {
+      "id": "S0341_B_m3_richer_default_g3",
+      "coach": "B",
+      "gateMaxFloor": 3,
+      "featureRtpCapped": 0.10955833333333333,
+      "featureRtpRaw": 0.10955833333333333,
+      "baseRtpBeforeFs": 0.694288548924524,
+      "pDeadCoach": 0.8079562233996352,
+      "pFeatureWinGivenCoach": 0.1920437766003648,
+      "pFeatureWin": 0.018425,
+      "capFrequency": 0.0,
+      "remainingFsRtp": 0.270711451075476,
+      "impliedBonus": 35.354430298829264,
+      "score": -1.4691851240626541,
+      "inFeatureBand": true,
+      "candidate": {
+        "id": "S0341_B_m3_richer_default_g3",
+        "coachModelId": "B",
+        "notes": "search coach=B mystery=3 tokens=richer thermal=default gateMax=3",
+        "maxWinX": 50000,
+        "gateMaxFloor": 3,
+        "mysteryResultWeights": {
+          "FLIGHT_TOKEN": 875,
+          "THERMAL_LIFT": 55,
+          "GATE_UPGRADE": 5,
+          "JUDGE": 65,
+          "HEAD_JUDGE": 10
+        },
+        "tokenTierWeights": {
+          "1": 994000,
+          "2": 4500,
+          "3": 1000,
+          "4": 350,
+          "5": 142,
+          "6": 8
+        },
+        "tokenValueWeights": {
+          "1": {
+            "1": 90,
+            "2": 3,
+            "3": 1,
+            "4": 1
+          },
+          "2": {
+            "5": 22,
+            "10": 2,
+            "15": 1
+          },
+          "3": {
+            "25": 20,
+            "50": 2,
+            "100": 1
+          },
+          "4": {
+            "150": 14,
+            "200": 3,
+            "250": 2,
+            "500": 1
+          },
+          "5": {
+            "750": 14,
+            "1000": 3,
+            "2500": 2,
+            "5000": 1
+          },
+          "6": {
+            "10000": 8,
+            "25000": 2,
+            "50000": 1
+          }
+        },
+        "thermalWeights": {
+          "2": 70,
+          "3": 20,
+          "4": 7,
+          "5": 2,
+          "10": 1,
+          "20": 1
+        }
+      }
+    },
+    {
+      "id": "S0401_B_m5_richer_default_g3",
+      "coach": "B",
+      "gateMaxFloor": 3,
+      "featureRtpCapped": 0.09383333333333334,
+      "featureRtpRaw": 0.09383333333333334,
+      "baseRtpBeforeFs": 0.678563548924524,
+      "pDeadCoach": 0.8282881002087683,
+      "pFeatureWinGivenCoach": 0.17171189979123172,
+      "pFeatureWin": 0.01645,
+      "capFrequency": 0.0,
+      "remainingFsRtp": 0.286436451075476,
+      "impliedBonus": 37.40808711401174,
+      "score": -1.5575024356297846,
+      "inFeatureBand": true,
+      "candidate": {
+        "id": "S0401_B_m5_richer_default_g3",
+        "coachModelId": "B",
+        "notes": "search coach=B mystery=5 tokens=richer thermal=default gateMax=3",
+        "maxWinX": 50000,
+        "gateMaxFloor": 3,
+        "mysteryResultWeights": {
+          "FLIGHT_TOKEN": 880,
+          "THERMAL_LIFT": 50,
+          "GATE_UPGRADE": 6,
+          "JUDGE": 55,
+          "HEAD_JUDGE": 10
+        },
+        "tokenTierWeights": {
+          "1": 994000,
+          "2": 4500,
+          "3": 1000,
+          "4": 350,
+          "5": 142,
+          "6": 8
+        },
+        "tokenValueWeights": {
+          "1": {
+            "1": 90,
+            "2": 3,
+            "3": 1,
+            "4": 1
+          },
+          "2": {
+            "5": 22,
+            "10": 2,
+            "15": 1
+          },
+          "3": {
+            "25": 20,
+            "50": 2,
+            "100": 1
+          },
+          "4": {
+            "150": 14,
+            "200": 3,
+            "250": 2,
+            "500": 1
+          },
+          "5": {
+            "750": 14,
+            "1000": 3,
+            "2500": 2,
+            "5000": 1
+          },
+          "6": {
+            "10000": 8,
+            "25000": 2,
+            "50000": 1
+          }
+        },
+        "thermalWeights": {
+          "2": 70,
+          "3": 20,
+          "4": 7,
+          "5": 2,
+          "10": 1,
+          "20": 1
+        }
+      }
+    },
+    {
+      "id": "S0301_B_m2_leaner_mild_g3",
+      "coach": "B",
+      "gateMaxFloor": 3,
+      "featureRtpCapped": 0.09064166666666666,
+      "featureRtpRaw": 0.09064166666666666,
+      "baseRtpBeforeFs": 0.6753718822578573,
+      "pDeadCoach": 0.8191795139796185,
+      "pFeatureWinGivenCoach": 0.1808204860203815,
+      "pFeatureWin": 0.0173,
+      "capFrequency": 0.0,
+      "remainingFsRtp": 0.2896281177421427,
+      "impliedBonus": 37.82491306007157,
+      "score": -1.5849746537758045,
+      "inFeatureBand": true,
+      "candidate": {
+        "id": "S0301_B_m2_leaner_mild_g3",
+        "coachModelId": "B",
+        "notes": "search coach=B mystery=2 tokens=leaner thermal=mild gateMax=3",
+        "maxWinX": 50000,
+        "gateMaxFloor": 3,
+        "mysteryResultWeights": {
+          "FLIGHT_TOKEN": 885,
+          "THERMAL_LIFT": 50,
+          "GATE_UPGRADE": 5,
+          "JUDGE": 60,
+          "HEAD_JUDGE": 10
+        },
+        "tokenTierWeights": {
+          "1": 998000,
+          "2": 1500,
+          "3": 300,
+          "4": 100,
+          "5": 92,
+          "6": 8
+        },
+        "tokenValueWeights": {
+          "1": {
+            "1": 90,
+            "2": 3,
+            "3": 1,
+            "4": 1
+          },
+          "2": {
+            "5": 22,
+            "10": 2,
+            "15": 1
+          },
+          "3": {
+            "25": 20,
+            "50": 2,
+            "100": 1
+          },
+          "4": {
+            "150": 14,
+            "200": 3,
+            "250": 2,
+            "500": 1
+          },
+          "5": {
+            "750": 14,
+            "1000": 3,
+            "2500": 2,
+            "5000": 1
+          },
+          "6": {
+            "10000": 8,
+            "25000": 2,
+            "50000": 1
+          }
+        },
+        "thermalWeights": {
+          "2": 55,
+          "3": 28,
+          "4": 12,
+          "5": 4,
+          "10": 1,
+          "20": 1
+        }
+      }
+    },
+    {
+      "id": "H05_C_mid",
+      "coach": "C",
+      "gateMaxFloor": 3,
+      "featureRtpCapped": 0.10763333333333333,
+      "featureRtpRaw": 0.10763333333333333,
+      "baseRtpBeforeFs": 0.7185447467609527,
+      "pDeadCoach": 0.8821883230904302,
+      "pFeatureWinGivenCoach": 0.1178116769095698,
+      "pFeatureWin": 0.017891666666666667,
+      "capFrequency": 0.0,
+      "remainingFsRtp": 0.24645525323904727,
+      "impliedBonus": 40.19206630775314,
+      "score": -2.209238220661398,
+      "inFeatureBand": true,
+      "candidate": {
+        "id": "H05_C_mid",
+        "coachModelId": "C",
+        "notes": "Mid Coach frequency (~15%) with rarer collectors",
+        "maxWinX": 50000,
+        "gateMaxFloor": 3,
+        "mysteryResultWeights": {
+          "FLIGHT_TOKEN": 915,
+          "THERMAL_LIFT": 40,
+          "GATE_UPGRADE": 3,
+          "JUDGE": 35,
+          "HEAD_JUDGE": 7
+        },
+        "tokenTierWeights": {
+          "1": 997200,
+          "2": 2200,
+          "3": 450,
+          "4": 100,
+          "5": 42,
+          "6": 8
+        },
+        "tokenValueWeights": {
+          "1": {
+            "1": 90,
+            "2": 3,
+            "3": 1,
+            "4": 1
+          },
+          "2": {
+            "5": 22,
+            "10": 2,
+            "15": 1
+          },
+          "3": {
+            "25": 20,
+            "50": 2,
+            "100": 1
+          },
+          "4": {
+            "150": 14,
+            "200": 3,
+            "250": 2,
+            "500": 1
+          },
+          "5": {
+            "750": 14,
+            "1000": 3,
+            "2500": 2,
+            "5000": 1
+          },
+          "6": {
+            "10000": 8,
+            "25000": 2,
+            "50000": 1
+          }
+        },
+        "thermalWeights": {
+          "2": 70,
+          "3": 20,
+          "4": 7,
+          "5": 2,
+          "10": 1,
+          "20": 1
+        }
+      }
+    },
+    {
+      "id": "S0541_C_m0_leaner_mild_g3",
+      "coach": "C",
+      "gateMaxFloor": 3,
+      "featureRtpCapped": 0.09604166666666666,
+      "featureRtpRaw": 0.09604166666666666,
+      "baseRtpBeforeFs": 0.706953080094286,
+      "pDeadCoach": 0.8960149098284274,
+      "pFeatureWinGivenCoach": 0.10398509017157266,
+      "pFeatureWin": 0.015808333333333334,
+      "capFrequency": 0.0,
+      "remainingFsRtp": 0.25804691990571393,
+      "impliedBonus": 42.08244206221981,
+      "score": -2.2141640081127014,
+      "inFeatureBand": true,
+      "candidate": {
+        "id": "S0541_C_m0_leaner_mild_g3",
+        "coachModelId": "C",
+        "notes": "search coach=C mystery=0 tokens=leaner thermal=mild gateMax=3",
+        "maxWinX": 50000,
+        "gateMaxFloor": 3,
+        "mysteryResultWeights": {
+          "FLIGHT_TOKEN": 920,
+          "THERMAL_LIFT": 40,
+          "GATE_UPGRADE": 3,
+          "JUDGE": 30,
+          "HEAD_JUDGE": 7
+        },
+        "tokenTierWeights": {
+          "1": 998000,
+          "2": 1500,
+          "3": 300,
+          "4": 100,
+          "5": 92,
+          "6": 8
+        },
+        "tokenValueWeights": {
+          "1": {
+            "1": 90,
+            "2": 3,
+            "3": 1,
+            "4": 1
+          },
+          "2": {
+            "5": 22,
+            "10": 2,
+            "15": 1
+          },
+          "3": {
+            "25": 20,
+            "50": 2,
+            "100": 1
+          },
+          "4": {
+            "150": 14,
+            "200": 3,
+            "250": 2,
+            "500": 1
+          },
+          "5": {
+            "750": 14,
+            "1000": 3,
+            "2500": 2,
+            "5000": 1
+          },
+          "6": {
+            "10000": 8,
+            "25000": 2,
+            "50000": 1
+          }
+        },
+        "thermalWeights": {
+          "2": 55,
+          "3": 28,
+          "4": 12,
+          "5": 4,
+          "10": 1,
+          "20": 1
+        }
+      }
+    },
+    {
+      "id": "H06_A_phase3_coach",
+      "coach": "A",
+      "gateMaxFloor": 3,
+      "featureRtpCapped": 0.09886666666666667,
+      "featureRtpRaw": 0.09886666666666667,
+      "baseRtpBeforeFs": 0.6793525706141551,
+      "pDeadCoach": 0.9077458659704091,
+      "pFeatureWinGivenCoach": 0.09225413402959094,
+      "pFeatureWin": 0.016783333333333334,
+      "capFrequency": 0.0,
+      "remainingFsRtp": 0.28564742938584486,
+      "impliedBonus": 37.30504229555465,
+      "score": -2.2298711923411667,
+      "inFeatureBand": true,
+      "candidate": {
+        "id": "H06_A_phase3_coach",
+        "coachModelId": "A",
+        "notes": "Keep Phase 3 Coach rate; collectors must be very rare \u2192 worse dead-Coach feel",
+        "maxWinX": 50000,
+        "gateMaxFloor": 3,
+        "mysteryResultWeights": {
+          "FLIGHT_TOKEN": 935,
+          "THERMAL_LIFT": 32,
+          "GATE_UPGRADE": 2,
+          "JUDGE": 26,
+          "HEAD_JUDGE": 5
+        },
+        "tokenTierWeights": {
+          "1": 997200,
+          "2": 2200,
+          "3": 450,
+          "4": 100,
+          "5": 42,
+          "6": 8
+        },
+        "tokenValueWeights": {
+          "1": {
+            "1": 90,
+            "2": 3,
+            "3": 1,
+            "4": 1
+          },
+          "2": {
+            "5": 22,
+            "10": 2,
+            "15": 1
+          },
+          "3": {
+            "25": 20,
+            "50": 2,
+            "100": 1
+          },
+          "4": {
+            "150": 14,
+            "200": 3,
+            "250": 2,
+            "500": 1
+          },
+          "5": {
+            "750": 14,
+            "1000": 3,
+            "2500": 2,
+            "5000": 1
+          },
+          "6": {
+            "10000": 8,
+            "25000": 2,
+            "50000": 1
+          }
+        },
+        "thermalWeights": {
+          "2": 70,
+          "3": 20,
+          "4": 7,
+          "5": 2,
+          "10": 1,
+          "20": 1
+        }
+      }
+    },
+    {
+      "id": "S0201_A_m8_leaner_soft20_g3",
+      "coach": "A",
+      "gateMaxFloor": 3,
+      "featureRtpCapped": 0.10575833333333333,
+      "featureRtpRaw": 0.10575833333333333,
+      "baseRtpBeforeFs": 0.6862442372808217,
+      "pDeadCoach": 0.9077500916086478,
+      "pFeatureWinGivenCoach": 0.09224990839135214,
+      "pFeatureWin": 0.016783333333333334,
+      "capFrequency": 0.0,
+      "remainingFsRtp": 0.27875576271917824,
+      "impliedBonus": 36.4050029812166,
+      "score": -2.4149176743617926,
+      "inFeatureBand": true,
+      "candidate": {
+        "id": "S0201_A_m8_leaner_soft20_g3",
+        "coachModelId": "A",
+        "notes": "search coach=A mystery=8 tokens=leaner thermal=soft20 gateMax=3",
+        "maxWinX": 50000,
+        "gateMaxFloor": 3,
+        "mysteryResultWeights": {
+          "FLIGHT_TOKEN": 935,
+          "THERMAL_LIFT": 32,
+          "GATE_UPGRADE": 2,
+          "JUDGE": 26,
+          "HEAD_JUDGE": 5
+        },
+        "tokenTierWeights": {
+          "1": 998000,
+          "2": 1500,
+          "3": 300,
+          "4": 100,
+          "5": 92,
+          "6": 8
+        },
+        "tokenValueWeights": {
+          "1": {
+            "1": 90,
+            "2": 3,
+            "3": 1,
+            "4": 1
+          },
+          "2": {
+            "5": 22,
+            "10": 2,
+            "15": 1
+          },
+          "3": {
+            "25": 20,
+            "50": 2,
+            "100": 1
+          },
+          "4": {
+            "150": 14,
+            "200": 3,
+            "250": 2,
+            "500": 1
+          },
+          "5": {
+            "750": 14,
+            "1000": 3,
+            "2500": 2,
+            "5000": 1
+          },
+          "6": {
+            "10000": 8,
+            "25000": 2,
+            "50000": 1
+          }
+        },
+        "thermalWeights": {
+          "2": 90,
+          "3": 55,
+          "4": 30,
+          "5": 16,
+          "10": 7,
+          "20": 1
+        }
+      }
+    },
+    {
+      "id": "S0521_B_m9_richer_default_g3",
+      "coach": "B",
+      "gateMaxFloor": 3,
+      "featureRtpCapped": 0.11400833333333334,
+      "featureRtpRaw": 0.11400833333333334,
+      "baseRtpBeforeFs": 0.698738548924524,
+      "pDeadCoach": 0.7744569939183319,
+      "pFeatureWinGivenCoach": 0.2255430060816681,
+      "pFeatureWin": 0.021633333333333334,
+      "capFrequency": 0.0,
+      "remainingFsRtp": 0.26626145107547594,
+      "impliedBonus": 34.77326827481895,
+      "score": -3.2791935997683175,
+      "inFeatureBand": false,
+      "candidate": {
+        "id": "S0521_B_m9_richer_default_g3",
+        "coachModelId": "B",
+        "notes": "search coach=B mystery=9 tokens=richer thermal=default gateMax=3",
+        "maxWinX": 50000,
+        "gateMaxFloor": 3,
+        "mysteryResultWeights": {
+          "FLIGHT_TOKEN": 850,
+          "THERMAL_LIFT": 60,
+          "GATE_UPGRADE": 5,
+          "JUDGE": 80,
+          "HEAD_JUDGE": 12
+        },
+        "tokenTierWeights": {
+          "1": 994000,
+          "2": 4500,
+          "3": 1000,
+          "4": 350,
+          "5": 142,
+          "6": 8
+        },
+        "tokenValueWeights": {
+          "1": {
+            "1": 90,
+            "2": 3,
+            "3": 1,
+            "4": 1
+          },
+          "2": {
+            "5": 22,
+            "10": 2,
+            "15": 1
+          },
+          "3": {
+            "25": 20,
+            "50": 2,
+            "100": 1
+          },
+          "4": {
+            "150": 14,
+            "200": 3,
+            "250": 2,
+            "500": 1
+          },
+          "5": {
+            "750": 14,
+            "1000": 3,
+            "2500": 2,
+            "5000": 1
+          },
+          "6": {
+            "10000": 8,
+            "25000": 2,
+            "50000": 1
+          }
+        },
+        "thermalWeights": {
+          "2": 70,
+          "3": 20,
+          "4": 7,
+          "5": 2,
+          "10": 1,
+          "20": 1
+        }
+      }
+    },
+    {
+      "id": "H02_B_R1",
+      "coach": "B",
+      "gateMaxFloor": 3,
+      "featureRtpCapped": 0.089825,
+      "featureRtpRaw": 0.089825,
+      "baseRtpBeforeFs": 0.6745552155911907,
+      "pDeadCoach": 0.8191795139796185,
+      "pFeatureWinGivenCoach": 0.1808204860203815,
+      "pFeatureWin": 0.0173,
+      "capFrequency": 0.0,
+      "remainingFsRtp": 0.2904447844088093,
+      "impliedBonus": 37.93156826297982,
+      "score": -3.6176413204424707,
+      "inFeatureBand": false,
+      "candidate": {
+        "id": "H02_B_R1",
+        "coachModelId": "B",
+        "notes": "Coach B slightly fewer Judges than H01",
+        "maxWinX": 50000,
+        "gateMaxFloor": 3,
+        "mysteryResultWeights": {
+          "FLIGHT_TOKEN": 885,
+          "THERMAL_LIFT": 50,
+          "GATE_UPGRADE": 5,
+          "JUDGE": 60,
+          "HEAD_JUDGE": 10
+        },
+        "tokenTierWeights": {
+          "1": 997200,
+          "2": 2200,
+          "3": 450,
+          "4": 100,
+          "5": 42,
+          "6": 8
+        },
+        "tokenValueWeights": {
+          "1": {
+            "1": 90,
+            "2": 3,
+            "3": 1,
+            "4": 1
+          },
+          "2": {
+            "5": 22,
+            "10": 2,
+            "15": 1
+          },
+          "3": {
+            "25": 20,
+            "50": 2,
+            "100": 1
+          },
+          "4": {
+            "150": 14,
+            "200": 3,
+            "250": 2,
+            "500": 1
+          },
+          "5": {
+            "750": 14,
+            "1000": 3,
+            "2500": 2,
+            "5000": 1
+          },
+          "6": {
+            "10000": 8,
+            "25000": 2,
+            "50000": 1
+          }
+        },
+        "thermalWeights": {
+          "2": 70,
+          "3": 20,
+          "4": 7,
+          "5": 2,
+          "10": 1,
+          "20": 1
+        }
+      }
+    },
+    {
+      "id": "H04_B_gate4",
+      "coach": "B",
+      "gateMaxFloor": 4,
+      "featureRtpCapped": 0.08704166666666667,
+      "featureRtpRaw": 0.08704166666666667,
+      "baseRtpBeforeFs": 0.6717718822578573,
+      "pDeadCoach": 0.828375086986778,
+      "pFeatureWinGivenCoach": 0.171624913013222,
+      "pFeatureWin": 0.016441666666666667,
+      "capFrequency": 0.0,
+      "remainingFsRtp": 0.29322811774214264,
+      "impliedBonus": 38.29506660758552,
+      "score": -3.8304592901878918,
+      "inFeatureBand": false,
+      "candidate": {
+        "id": "H04_B_gate4",
+        "coachModelId": "B",
+        "notes": "Gate max floor T4 comparison under rare Gate",
+        "maxWinX": 50000,
+        "gateMaxFloor": 4,
+        "mysteryResultWeights": {
+          "FLIGHT_TOKEN": 880,
+          "THERMAL_LIFT": 50,
+          "GATE_UPGRADE": 6,
+          "JUDGE": 55,
+          "HEAD_JUDGE": 10
+        },
+        "tokenTierWeights": {
+          "1": 997200,
+          "2": 2200,
+          "3": 450,
+          "4": 100,
+          "5": 42,
+          "6": 8
+        },
+        "tokenValueWeights": {
+          "1": {
+            "1": 90,
+            "2": 3,
+            "3": 1,
+            "4": 1
+          },
+          "2": {
+            "5": 22,
+            "10": 2,
+            "15": 1
+          },
+          "3": {
+            "25": 20,
+            "50": 2,
+            "100": 1
+          },
+          "4": {
+            "150": 14,
+            "200": 3,
+            "250": 2,
+            "500": 1
+          },
+          "5": {
+            "750": 14,
+            "1000": 3,
+            "2500": 2,
+            "5000": 1
+          },
+          "6": {
+            "10000": 8,
+            "25000": 2,
+            "50000": 1
+          }
+        },
+        "thermalWeights": {
+          "2": 70,
+          "3": 20,
+          "4": 7,
+          "5": 2,
+          "10": 1,
+          "20": 1
+        }
+      }
+    },
+    {
+      "id": "S0421_B_m6_leaner_mild_g3",
+      "coach": "B",
+      "gateMaxFloor": 3,
+      "featureRtpCapped": 0.07859166666666667,
+      "featureRtpRaw": 0.07859166666666667,
+      "baseRtpBeforeFs": 0.6633218822578573,
+      "pDeadCoach": 0.8409269100095828,
+      "pFeatureWinGivenCoach": 0.15907308999041728,
+      "pFeatureWin": 0.015216666666666667,
+      "capFrequency": 0.0,
+      "remainingFsRtp": 0.3016781177421427,
+      "impliedBonus": 39.39862146216689,
+      "score": -4.3065293434387435,
+      "inFeatureBand": false,
+      "candidate": {
+        "id": "S0421_B_m6_leaner_mild_g3",
+        "coachModelId": "B",
+        "notes": "search coach=B mystery=6 tokens=leaner thermal=mild gateMax=3",
+        "maxWinX": 50000,
+        "gateMaxFloor": 3,
+        "mysteryResultWeights": {
+          "FLIGHT_TOKEN": 890,
+          "THERMAL_LIFT": 48,
+          "GATE_UPGRADE": 7,
+          "JUDGE": 50,
+          "HEAD_JUDGE": 9
+        },
+        "tokenTierWeights": {
+          "1": 998000,
+          "2": 1500,
+          "3": 300,
+          "4": 100,
+          "5": 92,
+          "6": 8
+        },
+        "tokenValueWeights": {
+          "1": {
+            "1": 90,
+            "2": 3,
+            "3": 1,
+            "4": 1
+          },
+          "2": {
+            "5": 22,
+            "10": 2,
+            "15": 1
+          },
+          "3": {
+            "25": 20,
+            "50": 2,
+            "100": 1
+          },
+          "4": {
+            "150": 14,
+            "200": 3,
+            "250": 2,
+            "500": 1
+          },
+          "5": {
+            "750": 14,
+            "1000": 3,
+            "2500": 2,
+            "5000": 1
+          },
+          "6": {
+            "10000": 8,
+            "25000": 2,
+            "50000": 1
+          }
+        },
+        "thermalWeights": {
+          "2": 55,
+          "3": 28,
+          "4": 12,
+          "5": 4,
+          "10": 1,
+          "20": 1
+        }
+      }
+    },
+    {
+      "id": "S0761_C_m7_richer_default_g3",
+      "coach": "C",
+      "gateMaxFloor": 3,
+      "featureRtpCapped": 0.113975,
+      "featureRtpRaw": 0.113975,
+      "baseRtpBeforeFs": 0.7248864134276194,
+      "pDeadCoach": 0.8821883230904302,
+      "pFeatureWinGivenCoach": 0.1178116769095698,
+      "pFeatureWin": 0.017891666666666667,
+      "capFrequency": 0.0,
+      "remainingFsRtp": 0.24011358657238058,
+      "impliedBonus": 39.1578636124626,
+      "score": -4.4624048873280655,
+      "inFeatureBand": false,
+      "candidate": {
+        "id": "S0761_C_m7_richer_default_g3",
+        "coachModelId": "C",
+        "notes": "search coach=C mystery=7 tokens=richer thermal=default gateMax=3",
+        "maxWinX": 50000,
+        "gateMaxFloor": 3,
+        "mysteryResultWeights": {
+          "FLIGHT_TOKEN": 915,
+          "THERMAL_LIFT": 40,
+          "GATE_UPGRADE": 3,
+          "JUDGE": 35,
+          "HEAD_JUDGE": 7
+        },
+        "tokenTierWeights": {
+          "1": 994000,
+          "2": 4500,
+          "3": 1000,
+          "4": 350,
+          "5": 142,
+          "6": 8
+        },
+        "tokenValueWeights": {
+          "1": {
+            "1": 90,
+            "2": 3,
+            "3": 1,
+            "4": 1
+          },
+          "2": {
+            "5": 22,
+            "10": 2,
+            "15": 1
+          },
+          "3": {
+            "25": 20,
+            "50": 2,
+            "100": 1
+          },
+          "4": {
+            "150": 14,
+            "200": 3,
+            "250": 2,
+            "500": 1
+          },
+          "5": {
+            "750": 14,
+            "1000": 3,
+            "2500": 2,
+            "5000": 1
+          },
+          "6": {
+            "10000": 8,
+            "25000": 2,
+            "50000": 1
+          }
+        },
+        "thermalWeights": {
+          "2": 70,
+          "3": 20,
+          "4": 7,
+          "5": 2,
+          "10": 1,
+          "20": 1
+        }
+      }
+    },
+    {
+      "id": "S0281_B_m1_richer_default_g3",
+      "coach": "B",
+      "gateMaxFloor": 3,
+      "featureRtpCapped": 0.07543333333333334,
+      "featureRtpRaw": 0.07543333333333334,
+      "baseRtpBeforeFs": 0.660163548924524,
+      "pDeadCoach": 0.8591020265548568,
+      "pFeatureWinGivenCoach": 0.14089797344514327,
+      "pFeatureWin": 0.013441666666666666,
+      "capFrequency": 0.0,
+      "remainingFsRtp": 0.30483645107547597,
+      "impliedBonus": 39.811094134638616,
+      "score": -4.632622292103425,
+      "inFeatureBand": false,
+      "candidate": {
+        "id": "S0281_B_m1_richer_default_g3",
+        "coachModelId": "B",
+        "notes": "search coach=B mystery=1 tokens=richer thermal=default gateMax=3",
+        "maxWinX": 50000,
+        "gateMaxFloor": 3,
+        "mysteryResultWeights": {
+          "FLIGHT_TOKEN": 900,
+          "THERMAL_LIFT": 45,
+          "GATE_UPGRADE": 4,
+          "JUDGE": 40,
+          "HEAD_JUDGE": 11
+        },
+        "tokenTierWeights": {
+          "1": 994000,
+          "2": 4500,
+          "3": 1000,
+          "4": 350,
+          "5": 142,
+          "6": 8
+        },
+        "tokenValueWeights": {
+          "1": {
+            "1": 90,
+            "2": 3,
+            "3": 1,
+            "4": 1
+          },
+          "2": {
+            "5": 22,
+            "10": 2,
+            "15": 1
+          },
+          "3": {
+            "25": 20,
+            "50": 2,
+            "100": 1
+          },
+          "4": {
+            "150": 14,
+            "200": 3,
+            "250": 2,
+            "500": 1
+          },
+          "5": {
+            "750": 14,
+            "1000": 3,
+            "2500": 2,
+            "5000": 1
+          },
+          "6": {
+            "10000": 8,
+            "25000": 2,
+            "50000": 1
+          }
+        },
+        "thermalWeights": {
+          "2": 70,
+          "3": 20,
+          "4": 7,
+          "5": 2,
+          "10": 1,
+          "20": 1
+        }
+      }
+    },
+    {
+      "id": "S0001_A_m0_paying_mild_g3",
+      "coach": "A",
+      "gateMaxFloor": 3,
+      "featureRtpCapped": 0.11929166666666667,
+      "featureRtpRaw": 0.11929166666666667,
+      "baseRtpBeforeFs": 0.6997775706141551,
+      "pDeadCoach": 0.8909199467230056,
+      "pFeatureWinGivenCoach": 0.10908005327699444,
+      "pFeatureWin": 0.019791666666666666,
+      "capFrequency": 0.0,
+      "remainingFsRtp": 0.26522242938584484,
+      "impliedBonus": 34.63757390445117,
+      "score": -4.771119413953062,
+      "inFeatureBand": false,
+      "candidate": {
+        "id": "S0001_A_m0_paying_mild_g3",
+        "coachModelId": "A",
+        "notes": "search coach=A mystery=0 tokens=paying thermal=mild gateMax=3",
+        "maxWinX": 50000,
+        "gateMaxFloor": 3,
+        "mysteryResultWeights": {
+          "FLIGHT_TOKEN": 920,
+          "THERMAL_LIFT": 40,
+          "GATE_UPGRADE": 3,
+          "JUDGE": 30,
+          "HEAD_JUDGE": 7
+        },
+        "tokenTierWeights": {
+          "1": 997200,
+          "2": 2200,
+          "3": 450,
+          "4": 100,
+          "5": 42,
+          "6": 8
+        },
+        "tokenValueWeights": {
+          "1": {
+            "1": 90,
+            "2": 3,
+            "3": 1,
+            "4": 1
+          },
+          "2": {
+            "5": 22,
+            "10": 2,
+            "15": 1
+          },
+          "3": {
+            "25": 20,
+            "50": 2,
+            "100": 1
+          },
+          "4": {
+            "150": 14,
+            "200": 3,
+            "250": 2,
+            "500": 1
+          },
+          "5": {
+            "750": 14,
+            "1000": 3,
+            "2500": 2,
+            "5000": 1
+          },
+          "6": {
+            "10000": 8,
+            "25000": 2,
+            "50000": 1
+          }
+        },
+        "thermalWeights": {
+          "2": 55,
+          "3": 28,
+          "4": 12,
+          "5": 4,
+          "10": 1,
+          "20": 1
+        }
+      }
+    },
+    {
+      "id": "S0781_C_m8_leaner_mild_g3",
+      "coach": "C",
+      "gateMaxFloor": 3,
+      "featureRtpCapped": 0.08283333333333333,
+      "featureRtpRaw": 0.08283333333333333,
+      "baseRtpBeforeFs": 0.6937447467609527,
+      "pDeadCoach": 0.910927406109712,
+      "pFeatureWinGivenCoach": 0.08907259389028796,
+      "pFeatureWin": 0.013558333333333334,
+      "capFrequency": 0.0,
+      "remainingFsRtp": 0.2712552532390473,
+      "impliedBonus": 44.236464758718505,
+      "score": -4.906701467206833,
+      "inFeatureBand": false,
+      "candidate": {
+        "id": "S0781_C_m8_leaner_mild_g3",
+        "coachModelId": "C",
+        "notes": "search coach=C mystery=8 tokens=leaner thermal=mild gateMax=3",
+        "maxWinX": 50000,
+        "gateMaxFloor": 3,
+        "mysteryResultWeights": {
+          "FLIGHT_TOKEN": 935,
+          "THERMAL_LIFT": 32,
+          "GATE_UPGRADE": 2,
+          "JUDGE": 26,
+          "HEAD_JUDGE": 5
+        },
+        "tokenTierWeights": {
+          "1": 998000,
+          "2": 1500,
+          "3": 300,
+          "4": 100,
+          "5": 92,
+          "6": 8
+        },
+        "tokenValueWeights": {
+          "1": {
+            "1": 90,
+            "2": 3,
+            "3": 1,
+            "4": 1
+          },
+          "2": {
+            "5": 22,
+            "10": 2,
+            "15": 1
+          },
+          "3": {
+            "25": 20,
+            "50": 2,
+            "100": 1
+          },
+          "4": {
+            "150": 14,
+            "200": 3,
+            "250": 2,
+            "500": 1
+          },
+          "5": {
+            "750": 14,
+            "1000": 3,
+            "2500": 2,
+            "5000": 1
+          },
+          "6": {
+            "10000": 8,
+            "25000": 2,
+            "50000": 1
+          }
+        },
+        "thermalWeights": {
+          "2": 55,
+          "3": 28,
+          "4": 12,
+          "5": 4,
+          "10": 1,
+          "20": 1
+        }
+      }
+    },
+    {
+      "id": "S0581_C_m1_richer_default_g3",
+      "coach": "C",
+      "gateMaxFloor": 3,
+      "featureRtpCapped": 0.13520833333333335,
+      "featureRtpRaw": 0.13520833333333335,
+      "baseRtpBeforeFs": 0.7461197467609527,
+      "pDeadCoach": 0.861027355956362,
+      "pFeatureWinGivenCoach": 0.13897264404363796,
+      "pFeatureWin": 0.021125,
+      "capFrequency": 0.0,
+      "remainingFsRtp": 0.21888025323904725,
+      "impliedBonus": 35.69511923979468,
+      "score": -5.079134248853316,
+      "inFeatureBand": false,
+      "candidate": {
+        "id": "S0581_C_m1_richer_default_g3",
+        "coachModelId": "C",
+        "notes": "search coach=C mystery=1 tokens=richer thermal=default gateMax=3",
+        "maxWinX": 50000,
+        "gateMaxFloor": 3,
+        "mysteryResultWeights": {
+          "FLIGHT_TOKEN": 900,
+          "THERMAL_LIFT": 45,
+          "GATE_UPGRADE": 4,
+          "JUDGE": 40,
+          "HEAD_JUDGE": 11
+        },
+        "tokenTierWeights": {
+          "1": 994000,
+          "2": 4500,
+          "3": 1000,
+          "4": 350,
+          "5": 142,
+          "6": 8
+        },
+        "tokenValueWeights": {
+          "1": {
+            "1": 90,
+            "2": 3,
+            "3": 1,
+            "4": 1
+          },
+          "2": {
+            "5": 22,
+            "10": 2,
+            "15": 1
+          },
+          "3": {
+            "25": 20,
+            "50": 2,
+            "100": 1
+          },
+          "4": {
+            "150": 14,
+            "200": 3,
+            "250": 2,
+            "500": 1
+          },
+          "5": {
+            "750": 14,
+            "1000": 3,
+            "2500": 2,
+            "5000": 1
+          },
+          "6": {
+            "10000": 8,
+            "25000": 2,
+            "50000": 1
+          }
+        },
+        "thermalWeights": {
+          "2": 70,
+          "3": 20,
+          "4": 7,
+          "5": 2,
+          "10": 1,
+          "20": 1
+        }
+      }
+    },
+    {
+      "id": "S0181_A_m7_leaner_hot_g3",
+      "coach": "A",
+      "gateMaxFloor": 3,
+      "featureRtpCapped": 0.13083333333333333,
+      "featureRtpRaw": 0.13083333333333333,
+      "baseRtpBeforeFs": 0.7113192372808218,
+      "pDeadCoach": 0.8787002615998899,
+      "pFeatureWinGivenCoach": 0.12129973840011014,
+      "pFeatureWin": 0.022025,
+      "capFrequency": 0.0,
+      "remainingFsRtp": 0.25368076271917817,
+      "impliedBonus": 33.13025292457426,
+      "score": -5.098369544265455,
+      "inFeatureBand": false,
+      "candidate": {
+        "id": "S0181_A_m7_leaner_hot_g3",
+        "coachModelId": "A",
+        "notes": "search coach=A mystery=7 tokens=leaner thermal=hot gateMax=3",
+        "maxWinX": 50000,
+        "gateMaxFloor": 3,
+        "mysteryResultWeights": {
+          "FLIGHT_TOKEN": 915,
+          "THERMAL_LIFT": 40,
+          "GATE_UPGRADE": 3,
+          "JUDGE": 35,
+          "HEAD_JUDGE": 7
+        },
+        "tokenTierWeights": {
+          "1": 998000,
+          "2": 1500,
+          "3": 300,
+          "4": 100,
+          "5": 92,
+          "6": 8
+        },
+        "tokenValueWeights": {
+          "1": {
+            "1": 90,
+            "2": 3,
+            "3": 1,
+            "4": 1
+          },
+          "2": {
+            "5": 22,
+            "10": 2,
+            "15": 1
+          },
+          "3": {
+            "25": 20,
+            "50": 2,
+            "100": 1
+          },
+          "4": {
+            "150": 14,
+            "200": 3,
+            "250": 2,
+            "500": 1
+          },
+          "5": {
+            "750": 14,
+            "1000": 3,
+            "2500": 2,
+            "5000": 1
+          },
+          "6": {
+            "10000": 8,
+            "25000": 2,
+            "50000": 1
+          }
+        },
+        "thermalWeights": {
+          "2": 35,
+          "3": 28,
+          "4": 18,
+          "5": 12,
+          "10": 5,
+          "20": 2
+        }
+      }
+    },
+    {
+      "id": "S0021_A_m0_richer_soft20_g3",
+      "coach": "A",
+      "gateMaxFloor": 3,
+      "featureRtpCapped": 0.14079166666666668,
+      "featureRtpRaw": 0.14079166666666668,
+      "baseRtpBeforeFs": 0.7212775706141551,
+      "pDeadCoach": 0.8909199467230056,
+      "pFeatureWinGivenCoach": 0.10908005327699444,
+      "pFeatureWin": 0.019791666666666666,
+      "capFrequency": 0.0,
+      "remainingFsRtp": 0.24372242938584487,
+      "impliedBonus": 31.829712440131726,
+      "score": -5.631119413953061,
+      "inFeatureBand": false,
+      "candidate": {
+        "id": "S0021_A_m0_richer_soft20_g3",
+        "coachModelId": "A",
+        "notes": "search coach=A mystery=0 tokens=richer thermal=soft20 gateMax=3",
+        "maxWinX": 50000,
+        "gateMaxFloor": 3,
+        "mysteryResultWeights": {
+          "FLIGHT_TOKEN": 920,
+          "THERMAL_LIFT": 40,
+          "GATE_UPGRADE": 3,
+          "JUDGE": 30,
+          "HEAD_JUDGE": 7
+        },
+        "tokenTierWeights": {
+          "1": 994000,
+          "2": 4500,
+          "3": 1000,
+          "4": 350,
+          "5": 142,
+          "6": 8
+        },
+        "tokenValueWeights": {
+          "1": {
+            "1": 90,
+            "2": 3,
+            "3": 1,
+            "4": 1
+          },
+          "2": {
+            "5": 22,
+            "10": 2,
+            "15": 1
+          },
+          "3": {
+            "25": 20,
+            "50": 2,
+            "100": 1
+          },
+          "4": {
+            "150": 14,
+            "200": 3,
+            "250": 2,
+            "500": 1
+          },
+          "5": {
+            "750": 14,
+            "1000": 3,
+            "2500": 2,
+            "5000": 1
+          },
+          "6": {
+            "10000": 8,
+            "25000": 2,
+            "50000": 1
+          }
+        },
+        "thermalWeights": {
+          "2": 90,
+          "3": 55,
+          "4": 30,
+          "5": 16,
+          "10": 7,
+          "20": 1
+        }
+      }
+    },
+    {
+      "id": "S0461_B_m7_richer_default_g3",
+      "coach": "B",
+      "gateMaxFloor": 3,
+      "featureRtpCapped": 0.05608333333333333,
+      "featureRtpRaw": 0.05608333333333333,
+      "baseRtpBeforeFs": 0.640813548924524,
+      "pDeadCoach": 0.884992128738849,
+      "pFeatureWinGivenCoach": 0.11500787126115096,
+      "pFeatureWin": 0.010958333333333334,
+      "capFrequency": 0.0,
+      "remainingFsRtp": 0.32418645107547595,
+      "impliedBonus": 42.33816945252612,
+      "score": -5.691580082794006,
+      "inFeatureBand": false,
+      "candidate": {
+        "id": "S0461_B_m7_richer_default_g3",
+        "coachModelId": "B",
+        "notes": "search coach=B mystery=7 tokens=richer thermal=default gateMax=3",
+        "maxWinX": 50000,
+        "gateMaxFloor": 3,
+        "mysteryResultWeights": {
+          "FLIGHT_TOKEN": 915,
+          "THERMAL_LIFT": 40,
+          "GATE_UPGRADE": 3,
+          "JUDGE": 35,
+          "HEAD_JUDGE": 7
+        },
+        "tokenTierWeights": {
+          "1": 994000,
+          "2": 4500,
+          "3": 1000,
+          "4": 350,
+          "5": 142,
+          "6": 8
+        },
+        "tokenValueWeights": {
+          "1": {
+            "1": 90,
+            "2": 3,
+            "3": 1,
+            "4": 1
+          },
+          "2": {
+            "5": 22,
+            "10": 2,
+            "15": 1
+          },
+          "3": {
+            "25": 20,
+            "50": 2,
+            "100": 1
+          },
+          "4": {
+            "150": 14,
+            "200": 3,
+            "250": 2,
+            "500": 1
+          },
+          "5": {
+            "750": 14,
+            "1000": 3,
+            "2500": 2,
+            "5000": 1
+          },
+          "6": {
+            "10000": 8,
+            "25000": 2,
+            "50000": 1
+          }
+        },
+        "thermalWeights": {
+          "2": 70,
+          "3": 20,
+          "4": 7,
+          "5": 2,
+          "10": 1,
+          "20": 1
+        }
+      }
+    },
+    {
+      "id": "S0241_B_m0_leaner_mild_g3",
+      "coach": "B",
+      "gateMaxFloor": 3,
+      "featureRtpCapped": 0.053283333333333335,
+      "featureRtpRaw": 0.053283333333333335,
+      "baseRtpBeforeFs": 0.638013548924524,
+      "pDeadCoach": 0.89515140906704,
+      "pFeatureWinGivenCoach": 0.10484859093295991,
+      "pFeatureWin": 0.009983333333333334,
+      "capFrequency": 0.0,
+      "remainingFsRtp": 0.32698645107547597,
+      "impliedBonus": 42.703844433925866,
+      "score": -5.914998833070774,
+      "inFeatureBand": false,
+      "candidate": {
+        "id": "S0241_B_m0_leaner_mild_g3",
+        "coachModelId": "B",
+        "notes": "search coach=B mystery=0 tokens=leaner thermal=mild gateMax=3",
+        "maxWinX": 50000,
+        "gateMaxFloor": 3,
+        "mysteryResultWeights": {
+          "FLIGHT_TOKEN": 920,
+          "THERMAL_LIFT": 40,
+          "GATE_UPGRADE": 3,
+          "JUDGE": 30,
+          "HEAD_JUDGE": 7
+        },
+        "tokenTierWeights": {
+          "1": 998000,
+          "2": 1500,
+          "3": 300,
+          "4": 100,
+          "5": 92,
+          "6": 8
+        },
+        "tokenValueWeights": {
+          "1": {
+            "1": 90,
+            "2": 3,
+            "3": 1,
+            "4": 1
+          },
+          "2": {
+            "5": 22,
+            "10": 2,
+            "15": 1
+          },
+          "3": {
+            "25": 20,
+            "50": 2,
+            "100": 1
+          },
+          "4": {
+            "150": 14,
+            "200": 3,
+            "250": 2,
+            "500": 1
+          },
+          "5": {
+            "750": 14,
+            "1000": 3,
+            "2500": 2,
+            "5000": 1
+          },
+          "6": {
+            "10000": 8,
+            "25000": 2,
+            "50000": 1
+          }
+        },
+        "thermalWeights": {
+          "2": 55,
+          "3": 28,
+          "4": 12,
+          "5": 4,
+          "10": 1,
+          "20": 1
+        }
+      }
+    },
+    {
+      "id": "S0721_C_m6_leaner_mild_g3",
+      "coach": "C",
+      "gateMaxFloor": 3,
+      "featureRtpCapped": 0.16095,
+      "featureRtpRaw": 0.16095,
+      "baseRtpBeforeFs": 0.7718614134276194,
+      "pDeadCoach": 0.8438800087584848,
+      "pFeatureWinGivenCoach": 0.1561199912415152,
+      "pFeatureWin": 0.023766666666666665,
+      "capFrequency": 0.0,
+      "remainingFsRtp": 0.1931385865723806,
+      "impliedBonus": 31.49715324011995,
+      "score": -6.022434631090958,
+      "inFeatureBand": false,
+      "candidate": {
+        "id": "S0721_C_m6_leaner_mild_g3",
+        "coachModelId": "C",
+        "notes": "search coach=C mystery=6 tokens=leaner thermal=mild gateMax=3",
+        "maxWinX": 50000,
+        "gateMaxFloor": 3,
+        "mysteryResultWeights": {
+          "FLIGHT_TOKEN": 890,
+          "THERMAL_LIFT": 48,
+          "GATE_UPGRADE": 7,
+          "JUDGE": 50,
+          "HEAD_JUDGE": 9
+        },
+        "tokenTierWeights": {
+          "1": 998000,
+          "2": 1500,
+          "3": 300,
+          "4": 100,
+          "5": 92,
+          "6": 8
+        },
+        "tokenValueWeights": {
+          "1": {
+            "1": 90,
+            "2": 3,
+            "3": 1,
+            "4": 1
+          },
+          "2": {
+            "5": 22,
+            "10": 2,
+            "15": 1
+          },
+          "3": {
+            "25": 20,
+            "50": 2,
+            "100": 1
+          },
+          "4": {
+            "150": 14,
+            "200": 3,
+            "250": 2,
+            "500": 1
+          },
+          "5": {
+            "750": 14,
+            "1000": 3,
+            "2500": 2,
+            "5000": 1
+          },
+          "6": {
+            "10000": 8,
+            "25000": 2,
+            "50000": 1
+          }
+        },
+        "thermalWeights": {
+          "2": 55,
+          "3": 28,
+          "4": 12,
+          "5": 4,
+          "10": 1,
+          "20": 1
+        }
+      }
+    },
+    {
+      "id": "S0041_A_m1_leaner_soft20_g3",
+      "coach": "A",
+      "gateMaxFloor": 3,
+      "featureRtpCapped": 0.16196666666666668,
+      "featureRtpRaw": 0.16196666666666668,
+      "baseRtpBeforeFs": 0.7424525706141551,
+      "pDeadCoach": 0.8539717483030637,
+      "pFeatureWinGivenCoach": 0.14602825169693634,
+      "pFeatureWin": 0.026533333333333332,
+      "capFrequency": 0.0,
+      "remainingFsRtp": 0.22254742938584482,
+      "impliedBonus": 29.064295393296167,
+      "score": -6.071855898000368,
+      "inFeatureBand": false,
+      "candidate": {
+        "id": "S0041_A_m1_leaner_soft20_g3",
+        "coachModelId": "A",
+        "notes": "search coach=A mystery=1 tokens=leaner thermal=soft20 gateMax=3",
+        "maxWinX": 50000,
+        "gateMaxFloor": 3,
+        "mysteryResultWeights": {
+          "FLIGHT_TOKEN": 900,
+          "THERMAL_LIFT": 45,
+          "GATE_UPGRADE": 4,
+          "JUDGE": 40,
+          "HEAD_JUDGE": 11
+        },
+        "tokenTierWeights": {
+          "1": 998000,
+          "2": 1500,
+          "3": 300,
+          "4": 100,
+          "5": 92,
+          "6": 8
+        },
+        "tokenValueWeights": {
+          "1": {
+            "1": 90,
+            "2": 3,
+            "3": 1,
+            "4": 1
+          },
+          "2": {
+            "5": 22,
+            "10": 2,
+            "15": 1
+          },
+          "3": {
+            "25": 20,
+            "50": 2,
+            "100": 1
+          },
+          "4": {
+            "150": 14,
+            "200": 3,
+            "250": 2,
+            "500": 1
+          },
+          "5": {
+            "750": 14,
+            "1000": 3,
+            "2500": 2,
+            "5000": 1
+          },
+          "6": {
+            "10000": 8,
+            "25000": 2,
+            "50000": 1
+          }
+        },
+        "thermalWeights": {
+          "2": 90,
+          "3": 55,
+          "4": 30,
+          "5": 16,
+          "10": 7,
+          "20": 1
+        }
+      }
+    },
+    {
+      "id": "S0481_B_m8_leaner_mild_g3",
+      "coach": "B",
+      "gateMaxFloor": 3,
+      "featureRtpCapped": 0.048516666666666666,
+      "featureRtpRaw": 0.048516666666666666,
+      "baseRtpBeforeFs": 0.6332468822578573,
+      "pDeadCoach": 0.9134015256588072,
+      "pFeatureWinGivenCoach": 0.08659847434119279,
+      "pFeatureWin": 0.008325,
+      "capFrequency": 0.0,
+      "remainingFsRtp": 0.33175311774214267,
+      "impliedBonus": 43.326362557023046,
+      "score": -6.306416782246878,
+      "inFeatureBand": false,
+      "candidate": {
+        "id": "S0481_B_m8_leaner_mild_g3",
+        "coachModelId": "B",
+        "notes": "search coach=B mystery=8 tokens=leaner thermal=mild gateMax=3",
+        "maxWinX": 50000,
+        "gateMaxFloor": 3,
+        "mysteryResultWeights": {
+          "FLIGHT_TOKEN": 935,
+          "THERMAL_LIFT": 32,
+          "GATE_UPGRADE": 2,
+          "JUDGE": 26,
+          "HEAD_JUDGE": 5
+        },
+        "tokenTierWeights": {
+          "1": 998000,
+          "2": 1500,
+          "3": 300,
+          "4": 100,
+          "5": 92,
+          "6": 8
+        },
+        "tokenValueWeights": {
+          "1": {
+            "1": 90,
+            "2": 3,
+            "3": 1,
+            "4": 1
+          },
+          "2": {
+            "5": 22,
+            "10": 2,
+            "15": 1
+          },
+          "3": {
+            "25": 20,
+            "50": 2,
+            "100": 1
+          },
+          "4": {
+            "150": 14,
+            "200": 3,
+            "250": 2,
+            "500": 1
+          },
+          "5": {
+            "750": 14,
+            "1000": 3,
+            "2500": 2,
+            "5000": 1
+          },
+          "6": {
+            "10000": 8,
+            "25000": 2,
+            "50000": 1
+          }
+        },
+        "thermalWeights": {
+          "2": 55,
+          "3": 28,
+          "4": 12,
+          "5": 4,
+          "10": 1,
+          "20": 1
+        }
+      }
+    },
+    {
+      "id": "S0701_C_m5_richer_default_g3",
+      "coach": "C",
+      "gateMaxFloor": 3,
+      "featureRtpCapped": 0.18381666666666666,
+      "featureRtpRaw": 0.18381666666666666,
+      "baseRtpBeforeFs": 0.794728080094286,
+      "pDeadCoach": 0.8274488403819918,
+      "pFeatureWinGivenCoach": 0.17255115961800818,
+      "pFeatureWin": 0.02635,
+      "capFrequency": 0.0,
+      "remainingFsRtp": 0.170271919905714,
+      "impliedBonus": 27.768043915708354,
+      "score": -7.099191778949534,
+      "inFeatureBand": false,
+      "candidate": {
+        "id": "S0701_C_m5_richer_default_g3",
+        "coachModelId": "C",
+        "notes": "search coach=C mystery=5 tokens=richer thermal=default gateMax=3",
+        "maxWinX": 50000,
+        "gateMaxFloor": 3,
+        "mysteryResultWeights": {
+          "FLIGHT_TOKEN": 880,
+          "THERMAL_LIFT": 50,
+          "GATE_UPGRADE": 6,
+          "JUDGE": 55,
+          "HEAD_JUDGE": 10
+        },
+        "tokenTierWeights": {
+          "1": 994000,
+          "2": 4500,
+          "3": 1000,
+          "4": 350,
+          "5": 142,
+          "6": 8
+        },
+        "tokenValueWeights": {
+          "1": {
+            "1": 90,
+            "2": 3,
+            "3": 1,
+            "4": 1
+          },
+          "2": {
+            "5": 22,
+            "10": 2,
+            "15": 1
+          },
+          "3": {
+            "25": 20,
+            "50": 2,
+            "100": 1
+          },
+          "4": {
+            "150": 14,
+            "200": 3,
+            "250": 2,
+            "500": 1
+          },
+          "5": {
+            "750": 14,
+            "1000": 3,
+            "2500": 2,
+            "5000": 1
+          },
+          "6": {
+            "10000": 8,
+            "25000": 2,
+            "50000": 1
+          }
+        },
+        "thermalWeights": {
+          "2": 70,
+          "3": 20,
+          "4": 7,
+          "5": 2,
+          "10": 1,
+          "20": 1
+        }
+      }
+    },
+    {
+      "id": "S0161_A_m6_richer_mild_g3",
+      "coach": "A",
+      "gateMaxFloor": 3,
+      "featureRtpCapped": 0.19799166666666668,
+      "featureRtpRaw": 0.19799166666666668,
+      "baseRtpBeforeFs": 0.7784775706141551,
+      "pDeadCoach": 0.8359114761578827,
+      "pFeatureWinGivenCoach": 0.16408852384211728,
+      "pFeatureWin": 0.029966666666666666,
+      "capFrequency": 0.0,
+      "remainingFsRtp": 0.18652242938584485,
+      "impliedBonus": 24.359494962965556,
+      "score": -7.515689796949038,
+      "inFeatureBand": false,
+      "candidate": {
+        "id": "S0161_A_m6_richer_mild_g3",
+        "coachModelId": "A",
+        "notes": "search coach=A mystery=6 tokens=richer thermal=mild gateMax=3",
+        "maxWinX": 50000,
+        "gateMaxFloor": 3,
+        "mysteryResultWeights": {
+          "FLIGHT_TOKEN": 890,
+          "THERMAL_LIFT": 48,
+          "GATE_UPGRADE": 7,
+          "JUDGE": 50,
+          "HEAD_JUDGE": 9
+        },
+        "tokenTierWeights": {
+          "1": 994000,
+          "2": 4500,
+          "3": 1000,
+          "4": 350,
+          "5": 142,
+          "6": 8
+        },
+        "tokenValueWeights": {
+          "1": {
+            "1": 90,
+            "2": 3,
+            "3": 1,
+            "4": 1
+          },
+          "2": {
+            "5": 22,
+            "10": 2,
+            "15": 1
+          },
+          "3": {
+            "25": 20,
+            "50": 2,
+            "100": 1
+          },
+          "4": {
+            "150": 14,
+            "200": 3,
+            "250": 2,
+            "500": 1
+          },
+          "5": {
+            "750": 14,
+            "1000": 3,
+            "2500": 2,
+            "5000": 1
+          },
+          "6": {
+            "10000": 8,
+            "25000": 2,
+            "50000": 1
+          }
+        },
+        "thermalWeights": {
+          "2": 55,
+          "3": 28,
+          "4": 12,
+          "5": 4,
+          "10": 1,
+          "20": 1
+        }
+      }
+    },
+    {
+      "id": "S0061_A_m2_paying_soft20_g3",
+      "coach": "A",
+      "gateMaxFloor": 3,
+      "featureRtpCapped": 0.206275,
+      "featureRtpRaw": 0.206275,
+      "baseRtpBeforeFs": 0.7867609039474884,
+      "pDeadCoach": 0.8093974470421376,
+      "pFeatureWinGivenCoach": 0.19060255295786246,
+      "pFeatureWin": 0.034716666666666667,
+      "capFrequency": 0.0,
+      "remainingFsRtp": 0.17823909605251154,
+      "impliedBonus": 23.277706476324656,
+      "score": -7.679618810009173,
+      "inFeatureBand": false,
+      "candidate": {
+        "id": "S0061_A_m2_paying_soft20_g3",
+        "coachModelId": "A",
+        "notes": "search coach=A mystery=2 tokens=paying thermal=soft20 gateMax=3",
+        "maxWinX": 50000,
+        "gateMaxFloor": 3,
+        "mysteryResultWeights": {
+          "FLIGHT_TOKEN": 885,
+          "THERMAL_LIFT": 50,
+          "GATE_UPGRADE": 5,
+          "JUDGE": 60,
+          "HEAD_JUDGE": 10
+        },
+        "tokenTierWeights": {
+          "1": 997200,
+          "2": 2200,
+          "3": 450,
+          "4": 100,
+          "5": 42,
+          "6": 8
+        },
+        "tokenValueWeights": {
+          "1": {
+            "1": 90,
+            "2": 3,
+            "3": 1,
+            "4": 1
+          },
+          "2": {
+            "5": 22,
+            "10": 2,
+            "15": 1
+          },
+          "3": {
+            "25": 20,
+            "50": 2,
+            "100": 1
+          },
+          "4": {
+            "150": 14,
+            "200": 3,
+            "250": 2,
+            "500": 1
+          },
+          "5": {
+            "750": 14,
+            "1000": 3,
+            "2500": 2,
+            "5000": 1
+          },
+          "6": {
+            "10000": 8,
+            "25000": 2,
+            "50000": 1
+          }
+        },
+        "thermalWeights": {
+          "2": 90,
+          "3": 55,
+          "4": 30,
+          "5": 16,
+          "10": 7,
+          "20": 1
+        }
+      }
+    },
+    {
+      "id": "S0141_A_m5_richer_default_g3",
+      "coach": "A",
+      "gateMaxFloor": 3,
+      "featureRtpCapped": 0.207525,
+      "featureRtpRaw": 0.207525,
+      "baseRtpBeforeFs": 0.7880109039474884,
+      "pDeadCoach": 0.8195254050580622,
+      "pFeatureWinGivenCoach": 0.18047459494193785,
+      "pFeatureWin": 0.032766666666666666,
+      "capFrequency": 0.0,
+      "remainingFsRtp": 0.17698909605251156,
+      "impliedBonus": 23.114458716771203,
+      "score": -7.859943014851009,
+      "inFeatureBand": false,
+      "candidate": {
+        "id": "S0141_A_m5_richer_default_g3",
+        "coachModelId": "A",
+        "notes": "search coach=A mystery=5 tokens=richer thermal=default gateMax=3",
+        "maxWinX": 50000,
+        "gateMaxFloor": 3,
+        "mysteryResultWeights": {
+          "FLIGHT_TOKEN": 880,
+          "THERMAL_LIFT": 50,
+          "GATE_UPGRADE": 6,
+          "JUDGE": 55,
+          "HEAD_JUDGE": 10
+        },
+        "tokenTierWeights": {
+          "1": 994000,
+          "2": 4500,
+          "3": 1000,
+          "4": 350,
+          "5": 142,
+          "6": 8
+        },
+        "tokenValueWeights": {
+          "1": {
+            "1": 90,
+            "2": 3,
+            "3": 1,
+            "4": 1
+          },
+          "2": {
+            "5": 22,
+            "10": 2,
+            "15": 1
+          },
+          "3": {
+            "25": 20,
+            "50": 2,
+            "100": 1
+          },
+          "4": {
+            "150": 14,
+            "200": 3,
+            "250": 2,
+            "500": 1
+          },
+          "5": {
+            "750": 14,
+            "1000": 3,
+            "2500": 2,
+            "5000": 1
+          },
+          "6": {
+            "10000": 8,
+            "25000": 2,
+            "50000": 1
+          }
+        },
+        "thermalWeights": {
+          "2": 70,
+          "3": 20,
+          "4": 7,
+          "5": 2,
+          "10": 1,
+          "20": 1
+        }
+      }
+    },
+    {
+      "id": "S0601_C_m2_leaner_mild_g3",
+      "coach": "C",
+      "gateMaxFloor": 3,
+      "featureRtpCapped": 0.20025833333333334,
+      "featureRtpRaw": 0.20025833333333334,
+      "baseRtpBeforeFs": 0.8111697467609527,
+      "pDeadCoach": 0.8158038444735692,
+      "pFeatureWinGivenCoach": 0.18419615552643076,
+      "pFeatureWin": 0.028108333333333332,
+      "capFrequency": 0.0,
+      "remainingFsRtp": 0.1538302532390473,
+      "impliedBonus": 25.086727335145632,
+      "score": -7.8753884906235525,
+      "inFeatureBand": false,
+      "candidate": {
+        "id": "S0601_C_m2_leaner_mild_g3",
+        "coachModelId": "C",
+        "notes": "search coach=C mystery=2 tokens=leaner thermal=mild gateMax=3",
+        "maxWinX": 50000,
+        "gateMaxFloor": 3,
+        "mysteryResultWeights": {
+          "FLIGHT_TOKEN": 885,
+          "THERMAL_LIFT": 50,
+          "GATE_UPGRADE": 5,
+          "JUDGE": 60,
+          "HEAD_JUDGE": 10
+        },
+        "tokenTierWeights": {
+          "1": 998000,
+          "2": 1500,
+          "3": 300,
+          "4": 100,
+          "5": 92,
+          "6": 8
+        },
+        "tokenValueWeights": {
+          "1": {
+            "1": 90,
+            "2": 3,
+            "3": 1,
+            "4": 1
+          },
+          "2": {
+            "5": 22,
+            "10": 2,
+            "15": 1
+          },
+          "3": {
+            "25": 20,
+            "50": 2,
+            "100": 1
+          },
+          "4": {
+            "150": 14,
+            "200": 3,
+            "250": 2,
+            "500": 1
+          },
+          "5": {
+            "750": 14,
+            "1000": 3,
+            "2500": 2,
+            "5000": 1
+          },
+          "6": {
+            "10000": 8,
+            "25000": 2,
+            "50000": 1
+          }
+        },
+        "thermalWeights": {
+          "2": 55,
+          "3": 28,
+          "4": 12,
+          "5": 4,
+          "10": 1,
+          "20": 1
+        }
+      }
+    },
+    {
+      "id": "S0081_A_m3_paying_default_g3",
+      "coach": "A",
+      "gateMaxFloor": 3,
+      "featureRtpCapped": 0.2173,
+      "featureRtpRaw": 0.2173,
+      "baseRtpBeforeFs": 0.7977859039474884,
+      "pDeadCoach": 0.7976359554679984,
+      "pFeatureWinGivenCoach": 0.20236404453200166,
+      "pFeatureWin": 0.03680833333333333,
+      "capFrequency": 0.0,
+      "remainingFsRtp": 0.16721409605251158,
+      "impliedBonus": 21.837861237063176,
+      "score": -8.156450736026974,
+      "inFeatureBand": false,
+      "candidate": {
+        "id": "S0081_A_m3_paying_default_g3",
+        "coachModelId": "A",
+        "notes": "search coach=A mystery=3 tokens=paying thermal=default gateMax=3",
+        "maxWinX": 50000,
+        "gateMaxFloor": 3,
+        "mysteryResultWeights": {
+          "FLIGHT_TOKEN": 875,
+          "THERMAL_LIFT": 55,
+          "GATE_UPGRADE": 5,
+          "JUDGE": 65,
+          "HEAD_JUDGE": 10
+        },
+        "tokenTierWeights": {
+          "1": 997200,
+          "2": 2200,
+          "3": 450,
+          "4": 100,
+          "5": 42,
+          "6": 8
+        },
+        "tokenValueWeights": {
+          "1": {
+            "1": 90,
+            "2": 3,
+            "3": 1,
+            "4": 1
+          },
+          "2": {
+            "5": 22,
+            "10": 2,
+            "15": 1
+          },
+          "3": {
+            "25": 20,
+            "50": 2,
+            "100": 1
+          },
+          "4": {
+            "150": 14,
+            "200": 3,
+            "250": 2,
+            "500": 1
+          },
+          "5": {
+            "750": 14,
+            "1000": 3,
+            "2500": 2,
+            "5000": 1
+          },
+          "6": {
+            "10000": 8,
+            "25000": 2,
+            "50000": 1
+          }
+        },
+        "thermalWeights": {
+          "2": 70,
+          "3": 20,
+          "4": 7,
+          "5": 2,
+          "10": 1,
+          "20": 1
+        }
+      }
+    },
+    {
+      "id": "S0501_B_m8_p3legacy_soft20_g3",
+      "coach": "B",
+      "gateMaxFloor": 3,
+      "featureRtpCapped": 0.20403333333333334,
+      "featureRtpRaw": 0.20403333333333334,
+      "baseRtpBeforeFs": 0.7887635489245239,
+      "pDeadCoach": 0.9136796536796536,
+      "pFeatureWinGivenCoach": 0.08632034632034633,
+      "pFeatureWin": 0.008308333333333333,
+      "capFrequency": 0.0,
+      "remainingFsRtp": 0.17623645107547603,
+      "impliedBonus": 23.016164631779034,
+      "score": -8.763262757677385,
+      "inFeatureBand": false,
+      "candidate": {
+        "id": "S0501_B_m8_p3legacy_soft20_g3",
+        "coachModelId": "B",
+        "notes": "search coach=B mystery=8 tokens=p3legacy thermal=soft20 gateMax=3",
+        "maxWinX": 50000,
+        "gateMaxFloor": 3,
+        "mysteryResultWeights": {
+          "FLIGHT_TOKEN": 935,
+          "THERMAL_LIFT": 32,
+          "GATE_UPGRADE": 2,
+          "JUDGE": 26,
+          "HEAD_JUDGE": 5
+        },
+        "tokenTierWeights": {
+          "1": 840000,
+          "2": 130000,
+          "3": 25000,
+          "4": 4500,
+          "5": 492,
+          "6": 8
+        },
+        "tokenValueWeights": {
+          "1": {
+            "1": 5,
+            "2": 4,
+            "3": 3,
+            "4": 2
+          },
+          "2": {
+            "5": 5,
+            "10": 3,
+            "15": 2
+          },
+          "3": {
+            "25": 5,
+            "50": 3,
+            "100": 2
+          },
+          "4": {
+            "150": 4,
+            "200": 3,
+            "250": 2,
+            "500": 1
+          },
+          "5": {
+            "750": 4,
+            "1000": 3,
+            "2500": 2,
+            "5000": 1
+          },
+          "6": {
+            "10000": 5,
+            "25000": 3,
+            "50000": 1
+          }
+        },
+        "thermalWeights": {
+          "2": 90,
+          "3": 55,
+          "4": 30,
+          "5": 16,
+          "10": 7,
+          "20": 1
+        }
+      }
+    },
+    {
+      "id": "S0641_C_m3_richer_default_g3",
+      "coach": "C",
+      "gateMaxFloor": 3,
+      "featureRtpCapped": 0.2144,
+      "featureRtpRaw": 0.2144,
+      "baseRtpBeforeFs": 0.8253114134276194,
+      "pDeadCoach": 0.8053906888102369,
+      "pFeatureWinGivenCoach": 0.19460931118976313,
+      "pFeatureWin": 0.029783333333333332,
+      "capFrequency": 0.0,
+      "remainingFsRtp": 0.1396885865723806,
+      "impliedBonus": 22.780496094793403,
+      "score": -13.538135444993562,
+      "inFeatureBand": false,
+      "candidate": {
+        "id": "S0641_C_m3_richer_default_g3",
+        "coachModelId": "C",
+        "notes": "search coach=C mystery=3 tokens=richer thermal=default gateMax=3",
+        "maxWinX": 50000,
+        "gateMaxFloor": 3,
+        "mysteryResultWeights": {
+          "FLIGHT_TOKEN": 875,
+          "THERMAL_LIFT": 55,
+          "GATE_UPGRADE": 5,
+          "JUDGE": 65,
+          "HEAD_JUDGE": 10
+        },
+        "tokenTierWeights": {
+          "1": 994000,
+          "2": 4500,
+          "3": 1000,
+          "4": 350,
+          "5": 142,
+          "6": 8
+        },
+        "tokenValueWeights": {
+          "1": {
+            "1": 90,
+            "2": 3,
+            "3": 1,
+            "4": 1
+          },
+          "2": {
+            "5": 22,
+            "10": 2,
+            "15": 1
+          },
+          "3": {
+            "25": 20,
+            "50": 2,
+            "100": 1
+          },
+          "4": {
+            "150": 14,
+            "200": 3,
+            "250": 2,
+            "500": 1
+          },
+          "5": {
+            "750": 14,
+            "1000": 3,
+            "2500": 2,
+            "5000": 1
+          },
+          "6": {
+            "10000": 8,
+            "25000": 2,
+            "50000": 1
+          }
+        },
+        "thermalWeights": {
+          "2": 70,
+          "3": 20,
+          "4": 7,
+          "5": 2,
+          "10": 1,
+          "20": 1
+        }
+      }
+    },
+    {
+      "id": "S0661_C_m4_leaner_mild_g3",
+      "coach": "C",
+      "gateMaxFloor": 3,
+      "featureRtpCapped": 0.21978333333333333,
+      "featureRtpRaw": 0.21978333333333333,
+      "baseRtpBeforeFs": 0.8306947467609527,
+      "pDeadCoach": 0.7913770634231103,
+      "pFeatureWinGivenCoach": 0.20862293657688966,
+      "pFeatureWin": 0.032016666666666665,
+      "capFrequency": 0.0,
+      "remainingFsRtp": 0.1343052532390473,
+      "impliedBonus": 21.90257895792391,
+      "score": -13.68023556573517,
+      "inFeatureBand": false,
+      "candidate": {
+        "id": "S0661_C_m4_leaner_mild_g3",
+        "coachModelId": "C",
+        "notes": "search coach=C mystery=4 tokens=leaner thermal=mild gateMax=3",
+        "maxWinX": 50000,
+        "gateMaxFloor": 3,
+        "mysteryResultWeights": {
+          "FLIGHT_TOKEN": 865,
+          "THERMAL_LIFT": 55,
+          "GATE_UPGRADE": 5,
+          "JUDGE": 72,
+          "HEAD_JUDGE": 10
+        },
+        "tokenTierWeights": {
+          "1": 998000,
+          "2": 1500,
+          "3": 300,
+          "4": 100,
+          "5": 92,
+          "6": 8
+        },
+        "tokenValueWeights": {
+          "1": {
+            "1": 90,
+            "2": 3,
+            "3": 1,
+            "4": 1
+          },
+          "2": {
+            "5": 22,
+            "10": 2,
+            "15": 1
+          },
+          "3": {
+            "25": 20,
+            "50": 2,
+            "100": 1
+          },
+          "4": {
+            "150": 14,
+            "200": 3,
+            "250": 2,
+            "500": 1
+          },
+          "5": {
+            "750": 14,
+            "1000": 3,
+            "2500": 2,
+            "5000": 1
+          },
+          "6": {
+            "10000": 8,
+            "25000": 2,
+            "50000": 1
+          }
+        },
+        "thermalWeights": {
+          "2": 55,
+          "3": 28,
+          "4": 12,
+          "5": 4,
+          "10": 1,
+          "20": 1
+        }
+      }
+    },
+    {
+      "id": "S0821_C_m9_richer_default_g3",
+      "coach": "C",
+      "gateMaxFloor": 3,
+      "featureRtpCapped": 0.23478333333333334,
+      "featureRtpRaw": 0.23478333333333334,
+      "baseRtpBeforeFs": 0.8456947467609527,
+      "pDeadCoach": 0.767237163814181,
+      "pFeatureWinGivenCoach": 0.23276283618581908,
+      "pFeatureWin": 0.0357,
+      "capFrequency": 0.0,
+      "remainingFsRtp": 0.11930525323904728,
+      "impliedBonus": 19.45637021742067,
+      "score": -15.240030003370283,
+      "inFeatureBand": false,
+      "candidate": {
+        "id": "S0821_C_m9_richer_default_g3",
+        "coachModelId": "C",
+        "notes": "search coach=C mystery=9 tokens=richer thermal=default gateMax=3",
+        "maxWinX": 50000,
+        "gateMaxFloor": 3,
+        "mysteryResultWeights": {
+          "FLIGHT_TOKEN": 850,
+          "THERMAL_LIFT": 60,
+          "GATE_UPGRADE": 5,
+          "JUDGE": 80,
+          "HEAD_JUDGE": 12
+        },
+        "tokenTierWeights": {
+          "1": 994000,
+          "2": 4500,
+          "3": 1000,
+          "4": 350,
+          "5": 142,
+          "6": 8
+        },
+        "tokenValueWeights": {
+          "1": {
+            "1": 90,
+            "2": 3,
+            "3": 1,
+            "4": 1
+          },
+          "2": {
+            "5": 22,
+            "10": 2,
+            "15": 1
+          },
+          "3": {
+            "25": 20,
+            "50": 2,
+            "100": 1
+          },
+          "4": {
+            "150": 14,
+            "200": 3,
+            "250": 2,
+            "500": 1
+          },
+          "5": {
+            "750": 14,
+            "1000": 3,
+            "2500": 2,
+            "5000": 1
+          },
+          "6": {
+            "10000": 8,
+            "25000": 2,
+            "50000": 1
+          }
+        },
+        "thermalWeights": {
+          "2": 70,
+          "3": 20,
+          "4": 7,
+          "5": 2,
+          "10": 1,
+          "20": 1
+        }
+      }
+    },
+    {
+      "id": "S0101_A_m4_paying_mild_g3",
+      "coach": "A",
+      "gateMaxFloor": 3,
+      "featureRtpCapped": 0.24200833333333333,
+      "featureRtpRaw": 0.24200833333333333,
+      "baseRtpBeforeFs": 0.8224942372808217,
+      "pDeadCoach": 0.7838429940666363,
+      "pFeatureWinGivenCoach": 0.21615700593336376,
+      "pFeatureWin": 0.039466666666666664,
+      "capFrequency": 0.0,
+      "remainingFsRtp": 0.14250576271917825,
+      "impliedBonus": 18.610997189889858,
+      "score": -15.363186493945324,
+      "inFeatureBand": false,
+      "candidate": {
+        "id": "S0101_A_m4_paying_mild_g3",
+        "coachModelId": "A",
+        "notes": "search coach=A mystery=4 tokens=paying thermal=mild gateMax=3",
+        "maxWinX": 50000,
+        "gateMaxFloor": 3,
+        "mysteryResultWeights": {
+          "FLIGHT_TOKEN": 865,
+          "THERMAL_LIFT": 55,
+          "GATE_UPGRADE": 5,
+          "JUDGE": 72,
+          "HEAD_JUDGE": 10
+        },
+        "tokenTierWeights": {
+          "1": 997200,
+          "2": 2200,
+          "3": 450,
+          "4": 100,
+          "5": 42,
+          "6": 8
+        },
+        "tokenValueWeights": {
+          "1": {
+            "1": 90,
+            "2": 3,
+            "3": 1,
+            "4": 1
+          },
+          "2": {
+            "5": 22,
+            "10": 2,
+            "15": 1
+          },
+          "3": {
+            "25": 20,
+            "50": 2,
+            "100": 1
+          },
+          "4": {
+            "150": 14,
+            "200": 3,
+            "250": 2,
+            "500": 1
+          },
+          "5": {
+            "750": 14,
+            "1000": 3,
+            "2500": 2,
+            "5000": 1
+          },
+          "6": {
+            "10000": 8,
+            "25000": 2,
+            "50000": 1
+          }
+        },
+        "thermalWeights": {
+          "2": 55,
+          "3": 28,
+          "4": 12,
+          "5": 4,
+          "10": 1,
+          "20": 1
+        }
+      }
+    },
+    {
+      "id": "S0261_B_m0_p3legacy_soft20_g3",
+      "coach": "B",
+      "gateMaxFloor": 3,
+      "featureRtpCapped": 0.23385833333333333,
+      "featureRtpRaw": 0.23385833333333333,
+      "baseRtpBeforeFs": 0.8185885489245239,
+      "pDeadCoach": 0.8955837341495408,
+      "pFeatureWinGivenCoach": 0.10441626585045911,
+      "pFeatureWin": 0.00995,
+      "capFrequency": 0.0,
+      "remainingFsRtp": 0.14641145107547604,
+      "impliedBonus": 19.121073088833565,
+      "score": -16.202415976179477,
+      "inFeatureBand": false,
+      "candidate": {
+        "id": "S0261_B_m0_p3legacy_soft20_g3",
+        "coachModelId": "B",
+        "notes": "search coach=B mystery=0 tokens=p3legacy thermal=soft20 gateMax=3",
+        "maxWinX": 50000,
+        "gateMaxFloor": 3,
+        "mysteryResultWeights": {
+          "FLIGHT_TOKEN": 920,
+          "THERMAL_LIFT": 40,
+          "GATE_UPGRADE": 3,
+          "JUDGE": 30,
+          "HEAD_JUDGE": 7
+        },
+        "tokenTierWeights": {
+          "1": 840000,
+          "2": 130000,
+          "3": 25000,
+          "4": 4500,
+          "5": 492,
+          "6": 8
+        },
+        "tokenValueWeights": {
+          "1": {
+            "1": 5,
+            "2": 4,
+            "3": 3,
+            "4": 2
+          },
+          "2": {
+            "5": 5,
+            "10": 3,
+            "15": 2
+          },
+          "3": {
+            "25": 5,
+            "50": 3,
+            "100": 2
+          },
+          "4": {
+            "150": 4,
+            "200": 3,
+            "250": 2,
+            "500": 1
+          },
+          "5": {
+            "750": 4,
+            "1000": 3,
+            "2500": 2,
+            "5000": 1
+          },
+          "6": {
+            "10000": 5,
+            "25000": 3,
+            "50000": 1
+          }
+        },
+        "thermalWeights": {
+          "2": 90,
+          "3": 55,
+          "4": 30,
+          "5": 16,
+          "10": 7,
+          "20": 1
+        }
+      }
+    },
+    {
+      "id": "S0221_A_m9_leaner_default_g3",
+      "coach": "A",
+      "gateMaxFloor": 3,
+      "featureRtpCapped": 0.2715916666666667,
+      "featureRtpRaw": 0.2715916666666667,
+      "baseRtpBeforeFs": 0.8520775706141551,
+      "pDeadCoach": 0.758052024964694,
+      "pFeatureWinGivenCoach": 0.2419479750353059,
+      "pFeatureWin": 0.04425833333333333,
+      "capFrequency": 0.0,
+      "remainingFsRtp": 0.11292242938584485,
+      "impliedBonus": 14.747466880458045,
+      "score": -16.70773583382396,
+      "inFeatureBand": false,
+      "candidate": {
+        "id": "S0221_A_m9_leaner_default_g3",
+        "coachModelId": "A",
+        "notes": "search coach=A mystery=9 tokens=leaner thermal=default gateMax=3",
+        "maxWinX": 50000,
+        "gateMaxFloor": 3,
+        "mysteryResultWeights": {
+          "FLIGHT_TOKEN": 850,
+          "THERMAL_LIFT": 60,
+          "GATE_UPGRADE": 5,
+          "JUDGE": 80,
+          "HEAD_JUDGE": 12
+        },
+        "tokenTierWeights": {
+          "1": 998000,
+          "2": 1500,
+          "3": 300,
+          "4": 100,
+          "5": 92,
+          "6": 8
+        },
+        "tokenValueWeights": {
+          "1": {
+            "1": 90,
+            "2": 3,
+            "3": 1,
+            "4": 1
+          },
+          "2": {
+            "5": 22,
+            "10": 2,
+            "15": 1
+          },
+          "3": {
+            "25": 20,
+            "50": 2,
+            "100": 1
+          },
+          "4": {
+            "150": 14,
+            "200": 3,
+            "250": 2,
+            "500": 1
+          },
+          "5": {
+            "750": 14,
+            "1000": 3,
+            "2500": 2,
+            "5000": 1
+          },
+          "6": {
+            "10000": 8,
+            "25000": 2,
+            "50000": 1
+          }
+        },
+        "thermalWeights": {
+          "2": 70,
+          "3": 20,
+          "4": 7,
+          "5": 2,
+          "10": 1,
+          "20": 1
+        }
+      }
+    },
+    {
+      "id": "S0121_A_m4_richer_soft20_g3",
+      "coach": "A",
+      "gateMaxFloor": 3,
+      "featureRtpCapped": 0.26945,
+      "featureRtpRaw": 0.26945,
+      "baseRtpBeforeFs": 0.8499359039474885,
+      "pDeadCoach": 0.783791183718171,
+      "pFeatureWinGivenCoach": 0.21620881628182897,
+      "pFeatureWin": 0.039483333333333336,
+      "capFrequency": 0.0,
+      "remainingFsRtp": 0.11506409605251144,
+      "impliedBonus": 15.02716470849296,
+      "score": -16.87174158011221,
+      "inFeatureBand": false,
+      "candidate": {
+        "id": "S0121_A_m4_richer_soft20_g3",
+        "coachModelId": "A",
+        "notes": "search coach=A mystery=4 tokens=richer thermal=soft20 gateMax=3",
+        "maxWinX": 50000,
+        "gateMaxFloor": 3,
+        "mysteryResultWeights": {
+          "FLIGHT_TOKEN": 865,
+          "THERMAL_LIFT": 55,
+          "GATE_UPGRADE": 5,
+          "JUDGE": 72,
+          "HEAD_JUDGE": 10
+        },
+        "tokenTierWeights": {
+          "1": 994000,
+          "2": 4500,
+          "3": 1000,
+          "4": 350,
+          "5": 142,
+          "6": 8
+        },
+        "tokenValueWeights": {
+          "1": {
+            "1": 90,
+            "2": 3,
+            "3": 1,
+            "4": 1
+          },
+          "2": {
+            "5": 22,
+            "10": 2,
+            "15": 1
+          },
+          "3": {
+            "25": 20,
+            "50": 2,
+            "100": 1
+          },
+          "4": {
+            "150": 14,
+            "200": 3,
+            "250": 2,
+            "500": 1
+          },
+          "5": {
+            "750": 14,
+            "1000": 3,
+            "2500": 2,
+            "5000": 1
+          },
+          "6": {
+            "10000": 8,
+            "25000": 2,
+            "50000": 1
+          }
+        },
+        "thermalWeights": {
+          "2": 90,
+          "3": 55,
+          "4": 30,
+          "5": 16,
+          "10": 7,
+          "20": 1
+        }
+      }
+    },
+    {
+      "id": "S0441_B_m6_p3legacy_soft20_g3",
+      "coach": "B",
+      "gateMaxFloor": 3,
+      "featureRtpCapped": 0.3519583333333333,
+      "featureRtpRaw": 0.3519583333333333,
+      "baseRtpBeforeFs": 0.936688548924524,
+      "pDeadCoach": 0.8416964831137097,
+      "pFeatureWinGivenCoach": 0.15830351688629024,
+      "pFeatureWin": 0.015116666666666667,
+      "capFrequency": 0.0,
+      "remainingFsRtp": 0.028311451075475946,
+      "impliedBonus": 3.6974247662229933,
+      "score": -22.10198954811867,
+      "inFeatureBand": false,
+      "candidate": {
+        "id": "S0441_B_m6_p3legacy_soft20_g3",
+        "coachModelId": "B",
+        "notes": "search coach=B mystery=6 tokens=p3legacy thermal=soft20 gateMax=3",
+        "maxWinX": 50000,
+        "gateMaxFloor": 3,
+        "mysteryResultWeights": {
+          "FLIGHT_TOKEN": 890,
+          "THERMAL_LIFT": 48,
+          "GATE_UPGRADE": 7,
+          "JUDGE": 50,
+          "HEAD_JUDGE": 9
+        },
+        "tokenTierWeights": {
+          "1": 840000,
+          "2": 130000,
+          "3": 25000,
+          "4": 4500,
+          "5": 492,
+          "6": 8
+        },
+        "tokenValueWeights": {
+          "1": {
+            "1": 5,
+            "2": 4,
+            "3": 3,
+            "4": 2
+          },
+          "2": {
+            "5": 5,
+            "10": 3,
+            "15": 2
+          },
+          "3": {
+            "25": 5,
+            "50": 3,
+            "100": 2
+          },
+          "4": {
+            "150": 4,
+            "200": 3,
+            "250": 2,
+            "500": 1
+          },
+          "5": {
+            "750": 4,
+            "1000": 3,
+            "2500": 2,
+            "5000": 1
+          },
+          "6": {
+            "10000": 5,
+            "25000": 3,
+            "50000": 1
+          }
+        },
+        "thermalWeights": {
+          "2": 90,
+          "3": 55,
+          "4": 30,
+          "5": 16,
+          "10": 7,
+          "20": 1
+        }
+      }
+    },
+    {
+      "id": "S0801_C_m8_p3legacy_soft20_g3",
+      "coach": "C",
+      "gateMaxFloor": 3,
+      "featureRtpCapped": 0.37638333333333335,
+      "featureRtpRaw": 0.37638333333333335,
+      "baseRtpBeforeFs": 0.9872947467609527,
+      "pDeadCoach": 0.9110649236996117,
+      "pFeatureWinGivenCoach": 0.08893507630038834,
+      "pFeatureWin": 0.01355,
+      "capFrequency": 0.0,
+      "remainingFsRtp": -0.022294746760952777,
+      "impliedBonus": -3.635840292929933,
+      "score": -24.597468695443354,
+      "inFeatureBand": false,
+      "candidate": {
+        "id": "S0801_C_m8_p3legacy_soft20_g3",
+        "coachModelId": "C",
+        "notes": "search coach=C mystery=8 tokens=p3legacy thermal=soft20 gateMax=3",
+        "maxWinX": 50000,
+        "gateMaxFloor": 3,
+        "mysteryResultWeights": {
+          "FLIGHT_TOKEN": 935,
+          "THERMAL_LIFT": 32,
+          "GATE_UPGRADE": 2,
+          "JUDGE": 26,
+          "HEAD_JUDGE": 5
+        },
+        "tokenTierWeights": {
+          "1": 840000,
+          "2": 130000,
+          "3": 25000,
+          "4": 4500,
+          "5": 492,
+          "6": 8
+        },
+        "tokenValueWeights": {
+          "1": {
+            "1": 5,
+            "2": 4,
+            "3": 3,
+            "4": 2
+          },
+          "2": {
+            "5": 5,
+            "10": 3,
+            "15": 2
+          },
+          "3": {
+            "25": 5,
+            "50": 3,
+            "100": 2
+          },
+          "4": {
+            "150": 4,
+            "200": 3,
+            "250": 2,
+            "500": 1
+          },
+          "5": {
+            "750": 4,
+            "1000": 3,
+            "2500": 2,
+            "5000": 1
+          },
+          "6": {
+            "10000": 5,
+            "25000": 3,
+            "50000": 1
+          }
+        },
+        "thermalWeights": {
+          "2": 90,
+          "3": 55,
+          "4": 30,
+          "5": 16,
+          "10": 7,
+          "20": 1
+        }
+      }
+    },
+    {
+      "id": "S0381_B_m4_p3legacy_soft20_g3",
+      "coach": "B",
+      "gateMaxFloor": 3,
+      "featureRtpCapped": 0.43259166666666665,
+      "featureRtpRaw": 0.43259166666666665,
+      "baseRtpBeforeFs": 1.0173218822578574,
+      "pDeadCoach": 0.7955594253373967,
+      "pFeatureWinGivenCoach": 0.2044405746626034,
+      "pFeatureWin": 0.019566666666666666,
+      "capFrequency": 0.0,
+      "remainingFsRtp": -0.05232188225785739,
+      "impliedBonus": -6.833144043371967,
+      "score": -26.02514857924589,
+      "inFeatureBand": false,
+      "candidate": {
+        "id": "S0381_B_m4_p3legacy_soft20_g3",
+        "coachModelId": "B",
+        "notes": "search coach=B mystery=4 tokens=p3legacy thermal=soft20 gateMax=3",
+        "maxWinX": 50000,
+        "gateMaxFloor": 3,
+        "mysteryResultWeights": {
+          "FLIGHT_TOKEN": 865,
+          "THERMAL_LIFT": 55,
+          "GATE_UPGRADE": 5,
+          "JUDGE": 72,
+          "HEAD_JUDGE": 10
+        },
+        "tokenTierWeights": {
+          "1": 840000,
+          "2": 130000,
+          "3": 25000,
+          "4": 4500,
+          "5": 492,
+          "6": 8
+        },
+        "tokenValueWeights": {
+          "1": {
+            "1": 5,
+            "2": 4,
+            "3": 3,
+            "4": 2
+          },
+          "2": {
+            "5": 5,
+            "10": 3,
+            "15": 2
+          },
+          "3": {
+            "25": 5,
+            "50": 3,
+            "100": 2
+          },
+          "4": {
+            "150": 4,
+            "200": 3,
+            "250": 2,
+            "500": 1
+          },
+          "5": {
+            "750": 4,
+            "1000": 3,
+            "2500": 2,
+            "5000": 1
+          },
+          "6": {
+            "10000": 5,
+            "25000": 3,
+            "50000": 1
+          }
+        },
+        "thermalWeights": {
+          "2": 90,
+          "3": 55,
+          "4": 30,
+          "5": 16,
+          "10": 7,
+          "20": 1
+        }
+      }
+    },
+    {
+      "id": "S0561_C_m0_p3legacy_soft20_g3",
+      "coach": "C",
+      "gateMaxFloor": 3,
+      "featureRtpCapped": 0.41749166666666665,
+      "featureRtpRaw": 0.41749166666666665,
+      "baseRtpBeforeFs": 1.028403080094286,
+      "pDeadCoach": 0.8961003395771716,
+      "pFeatureWinGivenCoach": 0.10389966042282835,
+      "pFeatureWin": 0.015808333333333334,
+      "capFrequency": 0.0,
+      "remainingFsRtp": -0.06340308009428608,
+      "impliedBonus": -10.339811246764643,
+      "score": -26.691316603429847,
+      "inFeatureBand": false,
+      "candidate": {
+        "id": "S0561_C_m0_p3legacy_soft20_g3",
+        "coachModelId": "C",
+        "notes": "search coach=C mystery=0 tokens=p3legacy thermal=soft20 gateMax=3",
+        "maxWinX": 50000,
+        "gateMaxFloor": 3,
+        "mysteryResultWeights": {
+          "FLIGHT_TOKEN": 920,
+          "THERMAL_LIFT": 40,
+          "GATE_UPGRADE": 3,
+          "JUDGE": 30,
+          "HEAD_JUDGE": 7
+        },
+        "tokenTierWeights": {
+          "1": 840000,
+          "2": 130000,
+          "3": 25000,
+          "4": 4500,
+          "5": 492,
+          "6": 8
+        },
+        "tokenValueWeights": {
+          "1": {
+            "1": 5,
+            "2": 4,
+            "3": 3,
+            "4": 2
+          },
+          "2": {
+            "5": 5,
+            "10": 3,
+            "15": 2
+          },
+          "3": {
+            "25": 5,
+            "50": 3,
+            "100": 2
+          },
+          "4": {
+            "150": 4,
+            "200": 3,
+            "250": 2,
+            "500": 1
+          },
+          "5": {
+            "750": 4,
+            "1000": 3,
+            "2500": 2,
+            "5000": 1
+          },
+          "6": {
+            "10000": 5,
+            "25000": 3,
+            "50000": 1
+          }
+        },
+        "thermalWeights": {
+          "2": 90,
+          "3": 55,
+          "4": 30,
+          "5": 16,
+          "10": 7,
+          "20": 1
+        }
+      }
+    },
+    {
+      "id": "S0321_B_m2_p3legacy_soft20_g3",
+      "coach": "B",
+      "gateMaxFloor": 3,
+      "featureRtpCapped": 0.45941666666666664,
+      "featureRtpRaw": 0.45941666666666664,
+      "baseRtpBeforeFs": 1.0441468822578572,
+      "pDeadCoach": 0.8198590201026891,
+      "pFeatureWinGivenCoach": 0.18014097989731093,
+      "pFeatureWin": 0.01725,
+      "capFrequency": 0.0,
+      "remainingFsRtp": -0.07914688225785727,
+      "impliedBonus": -10.336440963389125,
+      "score": -27.769652454997434,
+      "inFeatureBand": false,
+      "candidate": {
+        "id": "S0321_B_m2_p3legacy_soft20_g3",
+        "coachModelId": "B",
+        "notes": "search coach=B mystery=2 tokens=p3legacy thermal=soft20 gateMax=3",
+        "maxWinX": 50000,
+        "gateMaxFloor": 3,
+        "mysteryResultWeights": {
+          "FLIGHT_TOKEN": 885,
+          "THERMAL_LIFT": 50,
+          "GATE_UPGRADE": 5,
+          "JUDGE": 60,
+          "HEAD_JUDGE": 10
+        },
+        "tokenTierWeights": {
+          "1": 840000,
+          "2": 130000,
+          "3": 25000,
+          "4": 4500,
+          "5": 492,
+          "6": 8
+        },
+        "tokenValueWeights": {
+          "1": {
+            "1": 5,
+            "2": 4,
+            "3": 3,
+            "4": 2
+          },
+          "2": {
+            "5": 5,
+            "10": 3,
+            "15": 2
+          },
+          "3": {
+            "25": 5,
+            "50": 3,
+            "100": 2
+          },
+          "4": {
+            "150": 4,
+            "200": 3,
+            "250": 2,
+            "500": 1
+          },
+          "5": {
+            "750": 4,
+            "1000": 3,
+            "2500": 2,
+            "5000": 1
+          },
+          "6": {
+            "10000": 5,
+            "25000": 3,
+            "50000": 1
+          }
+        },
+        "thermalWeights": {
+          "2": 90,
+          "3": 55,
+          "4": 30,
+          "5": 16,
+          "10": 7,
+          "20": 1
+        }
+      }
+    },
+    {
+      "id": "S0741_C_m6_p3legacy_soft20_g3",
+      "coach": "C",
+      "gateMaxFloor": 3,
+      "featureRtpCapped": 0.64695,
+      "featureRtpRaw": 0.64695,
+      "baseRtpBeforeFs": 1.2578614134276194,
+      "pDeadCoach": 0.844401861483712,
+      "pFeatureWinGivenCoach": 0.15559813851628798,
+      "pFeatureWin": 0.023683333333333334,
+      "capFrequency": 0.0,
+      "remainingFsRtp": -0.2928614134276194,
+      "impliedBonus": -47.76000995218505,
+      "score": -38.733175011068454,
+      "inFeatureBand": false,
+      "candidate": {
+        "id": "S0741_C_m6_p3legacy_soft20_g3",
+        "coachModelId": "C",
+        "notes": "search coach=C mystery=6 tokens=p3legacy thermal=soft20 gateMax=3",
+        "maxWinX": 50000,
+        "gateMaxFloor": 3,
+        "mysteryResultWeights": {
+          "FLIGHT_TOKEN": 890,
+          "THERMAL_LIFT": 48,
+          "GATE_UPGRADE": 7,
+          "JUDGE": 50,
+          "HEAD_JUDGE": 9
+        },
+        "tokenTierWeights": {
+          "1": 840000,
+          "2": 130000,
+          "3": 25000,
+          "4": 4500,
+          "5": 492,
+          "6": 8
+        },
+        "tokenValueWeights": {
+          "1": {
+            "1": 5,
+            "2": 4,
+            "3": 3,
+            "4": 2
+          },
+          "2": {
+            "5": 5,
+            "10": 3,
+            "15": 2
+          },
+          "3": {
+            "25": 5,
+            "50": 3,
+            "100": 2
+          },
+          "4": {
+            "150": 4,
+            "200": 3,
+            "250": 2,
+            "500": 1
+          },
+          "5": {
+            "750": 4,
+            "1000": 3,
+            "2500": 2,
+            "5000": 1
+          },
+          "6": {
+            "10000": 5,
+            "25000": 3,
+            "50000": 1
+          }
+        },
+        "thermalWeights": {
+          "2": 90,
+          "3": 55,
+          "4": 30,
+          "5": 16,
+          "10": 7,
+          "20": 1
+        }
+      }
+    },
+    {
+      "id": "S0621_C_m2_p3legacy_soft20_g3",
+      "coach": "C",
+      "gateMaxFloor": 3,
+      "featureRtpCapped": 0.84185,
+      "featureRtpRaw": 0.84185,
+      "baseRtpBeforeFs": 1.4527614134276194,
+      "pDeadCoach": 0.8153644696639022,
+      "pFeatureWinGivenCoach": 0.18463553033609778,
+      "pFeatureWin": 0.0282,
+      "capFrequency": 0.0,
+      "remainingFsRtp": -0.4877614134276195,
+      "impliedBonus": -79.54441552045716,
+      "score": -49.12793036771722,
+      "inFeatureBand": false,
+      "candidate": {
+        "id": "S0621_C_m2_p3legacy_soft20_g3",
+        "coachModelId": "C",
+        "notes": "search coach=C mystery=2 tokens=p3legacy thermal=soft20 gateMax=3",
+        "maxWinX": 50000,
+        "gateMaxFloor": 3,
+        "mysteryResultWeights": {
+          "FLIGHT_TOKEN": 885,
+          "THERMAL_LIFT": 50,
+          "GATE_UPGRADE": 5,
+          "JUDGE": 60,
+          "HEAD_JUDGE": 10
+        },
+        "tokenTierWeights": {
+          "1": 840000,
+          "2": 130000,
+          "3": 25000,
+          "4": 4500,
+          "5": 492,
+          "6": 8
+        },
+        "tokenValueWeights": {
+          "1": {
+            "1": 5,
+            "2": 4,
+            "3": 3,
+            "4": 2
+          },
+          "2": {
+            "5": 5,
+            "10": 3,
+            "15": 2
+          },
+          "3": {
+            "25": 5,
+            "50": 3,
+            "100": 2
+          },
+          "4": {
+            "150": 4,
+            "200": 3,
+            "250": 2,
+            "500": 1
+          },
+          "5": {
+            "750": 4,
+            "1000": 3,
+            "2500": 2,
+            "5000": 1
+          },
+          "6": {
+            "10000": 5,
+            "25000": 3,
+            "50000": 1
+          }
+        },
+        "thermalWeights": {
+          "2": 90,
+          "3": 55,
+          "4": 30,
+          "5": 16,
+          "10": 7,
+          "20": 1
+        }
+      }
+    },
+    {
+      "id": "S0681_C_m4_p3legacy_soft20_g3",
+      "coach": "C",
+      "gateMaxFloor": 3,
+      "featureRtpCapped": 0.9406166666666667,
+      "featureRtpRaw": 0.9406166666666667,
+      "baseRtpBeforeFs": 1.551528080094286,
+      "pDeadCoach": 0.7912415888864771,
+      "pFeatureWinGivenCoach": 0.2087584111135229,
+      "pFeatureWin": 0.032058333333333335,
+      "capFrequency": 0.0,
+      "remainingFsRtp": -0.5865280800942861,
+      "impliedBonus": -95.65134107181518,
+      "score": -54.29124534583221,
+      "inFeatureBand": false,
+      "candidate": {
+        "id": "S0681_C_m4_p3legacy_soft20_g3",
+        "coachModelId": "C",
+        "notes": "search coach=C mystery=4 tokens=p3legacy thermal=soft20 gateMax=3",
+        "maxWinX": 50000,
+        "gateMaxFloor": 3,
+        "mysteryResultWeights": {
+          "FLIGHT_TOKEN": 865,
+          "THERMAL_LIFT": 55,
+          "GATE_UPGRADE": 5,
+          "JUDGE": 72,
+          "HEAD_JUDGE": 10
+        },
+        "tokenTierWeights": {
+          "1": 840000,
+          "2": 130000,
+          "3": 25000,
+          "4": 4500,
+          "5": 492,
+          "6": 8
+        },
+        "tokenValueWeights": {
+          "1": {
+            "1": 5,
+            "2": 4,
+            "3": 3,
+            "4": 2
+          },
+          "2": {
+            "5": 5,
+            "10": 3,
+            "15": 2
+          },
+          "3": {
+            "25": 5,
+            "50": 3,
+            "100": 2
+          },
+          "4": {
+            "150": 4,
+            "200": 3,
+            "250": 2,
+            "500": 1
+          },
+          "5": {
+            "750": 4,
+            "1000": 3,
+            "2500": 2,
+            "5000": 1
+          },
+          "6": {
+            "10000": 5,
+            "25000": 3,
+            "50000": 1
+          }
+        },
+        "thermalWeights": {
+          "2": 90,
+          "3": 55,
+          "4": 30,
+          "5": 16,
+          "10": 7,
+          "20": 1
+        }
+      }
+    }
+  ]
+}

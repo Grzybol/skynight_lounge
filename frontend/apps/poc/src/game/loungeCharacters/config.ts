@@ -1,0 +1,202 @@
+/**
+ * Midnight Lounge character animation V2: ids, mapping and tuning.
+ *
+ * Source packages are the 14 spritesheet ZIPs (kept outside the repo). They are
+ * converted by `tools/midnight-lounge/build-character-anims.py` into one
+ * `<id>.pack` per animation plus `manifest.json`. Nothing here is derived from
+ * game math: win categories come from the existing celebration tiers.
+ */
+import { resolveGameAsset } from '../resolveGameAsset';
+
+export type CharacterId = 'woman' | 'bartender';
+export type WinCategory = 'mini' | 'big' | 'mega';
+
+/** Higher wins pre-empt lower ones. Equal or lower while a win plays is ignored. */
+export const WIN_PRIORITY: Record<WinCategory, number> = { mini: 1, big: 2, mega: 3 };
+
+export type CharacterAnimationSet = {
+	idle: string;
+	variations: string[];
+	wins: Record<WinCategory, string>;
+};
+
+export const CHARACTER_ANIMATIONS: Record<CharacterId, CharacterAnimationSet> = {
+	woman: {
+		idle: 'woman_idle',
+		variations: ['woman_idle_1', 'woman_idle_2', 'woman_idle_3', 'woman_idle_4'],
+		wins: { mini: 'woman_mini_win', big: 'woman_big_win', mega: 'woman_mega_win' },
+	},
+	bartender: {
+		idle: 'bartender_idle',
+		// Secondary idle + three interruptions, all one-shots that return to the main idle.
+		variations: ['bartender_idle_alt', 'bartender_idle_1', 'bartender_idle_2', 'bartender_idle_3'],
+		wins: { mini: 'bartender_mini_win', big: 'bartender_big_win', mega: 'bartender_mega_win' },
+	},
+};
+
+/** Every id this character can ever play. */
+export const animationIdsFor = (id: CharacterId): string[] => {
+	const set = CHARACTER_ANIMATIONS[id];
+	return [...new Set([set.idle, ...set.variations, ...Object.values(set.wins)])];
+};
+
+export type CharacterTuning = {
+	/** Random gap between idle variations (ms). Timing is data, not code. */
+	idleVariationMinMs: number;
+	idleVariationMaxMs: number;
+	/**
+	 * When set, the default idle loops this many whole times (random in range)
+	 * before a variation, instead of using the time window above.
+	 */
+	idleLoopsMin?: number;
+	idleLoopsMax?: number;
+	/** Frames dropped from the start / end of every clip (30 fps: 3 frames = 0.1 s). */
+	trimHeadFrames: number;
+	trimTailFrames: number;
+	/** Win clips (`*_win`) drop at least this many leading frames (3 = 0.1 s at 30 fps). */
+	winTrimHeadFrames?: number;
+	/** Relative pick weight per variation id (default 1). Lets one variation be rarer. */
+	variationWeights?: Record<string, number>;
+	/** The next variation's pack is fetched this long before it plays. */
+	variationPrefetchLeadMs: number;
+	/**
+	 * Max compressed packs kept in memory per character (idle + next variation +
+	 * the win clips that were used). Each is 5-12 MB; decoded frames are separate.
+	 */
+	maxPacks: number;
+	/** Decoded ImageBitmaps kept ahead of the playhead. */
+	decodeAhead: number;
+	/** Frames decoded before a clip may start (first-frame guarantee). */
+	startBuffer: number;
+};
+
+export const CHARACTER_TUNING: Record<CharacterId, CharacterTuning> = {
+	woman: {
+		idleVariationMinMs: 15_000,
+		idleVariationMaxMs: 30_000,
+		variationPrefetchLeadMs: 10_000,
+		idleLoopsMin: 1,
+		idleLoopsMax: 4,
+		trimHeadFrames: 3,
+		trimTailFrames: 3,
+		winTrimHeadFrames: 3,
+		maxPacks: 5,
+		decodeAhead: 18,
+		startBuffer: 6,
+	},
+	bartender: {
+		// Main idle plays 1-2 whole loops (5-10 s), then a variation: interruptions are frequent.
+		// The time window below is only the fallback when no loop counts are set.
+		idleLoopsMin: 1,
+		idleLoopsMax: 2,
+		idleVariationMinMs: 15_000,
+		idleVariationMaxMs: 30_000,
+		variationPrefetchLeadMs: 10_000,
+		trimHeadFrames: 0,
+		trimTailFrames: 0,
+		winTrimHeadFrames: 3,
+		maxPacks: 4,
+		decodeAhead: 18,
+		startBuffer: 6,
+	},
+};
+
+/**
+ * Where each character stands on the 1280x720 scene. Values are fractions of
+ * the play area so the existing responsive scaling is kept.
+ * - `heightFrac`: character frame height / play height.
+ * - `centerXFrac`: frame center X / play width.
+ * - `bottomFrac`: frame bottom Y / play height (may exceed 1 to bleed off-screen;
+ *   the frames carry transparent padding under the feet).
+ */
+export type CharacterPlacement = {
+	heightFrac: number;
+	centerXFrac: number;
+	bottomFrac: number;
+	/** Hide this fraction of the frame at the bottom (legs behind furniture). */
+	clipBottomFrac?: number;
+};
+
+export const CHARACTER_PLACEMENT: Record<CharacterId, CharacterPlacement> = {
+	// 15% smaller than the old figure's footprint (0.822), nudged right.
+	woman: { heightFrac: 0.699, centerXFrac: 0.865, bottomFrac: 0.962 },
+	// V3 bartender: ~15% larger than the old 0.84, ankles at the bottom edge (shoes
+	// bleed off-screen), left gutter (reels start at x ~408). Frame bbox y 77-707 of 748.
+	// Background figure on the left, 25% smaller than before, feet on the floor in front of the shelves.
+	bartender: { heightFrac: 0.614, centerXFrac: 0.085, bottomFrac: 0.869, clipBottomFrac: 0.15 },
+};
+
+/** Source frame size per character (bartender V3 is 562x748, woman 554x740). */
+export const CHARACTER_FRAME: Record<CharacterId, { w: number; h: number }> = {
+	woman: { w: 554, h: 740 },
+	bartender: { w: 562, h: 748 },
+};
+
+/**
+ * Bar overlay in front of the bartender so the counter hides him from the belt down.
+ * The image shares the plate's 1672x941 canvas; it is drawn at `scale` times that size
+ * and shifted by (offsetX, offsetY) in fractions of the play area. Counter front edge lands
+ * at the bartender's belt. The whole image is used; it runs off the left edge of the screen so
+ * its right end stops before the carpet.
+ */
+export const LOUNGE_BAR_PLACEMENT = {
+	scale: 0.64,
+	offsetX: -561 / 1672,
+	offsetY: 282 / 941,
+} as const;
+
+export const CHARACTER_BASE_URL = 'assets/midnight-lounge/characters';
+export const manifestUrl = () => resolveGameAsset(`${CHARACTER_BASE_URL}/manifest.json`);
+export const packUrl = (file: string) => resolveGameAsset(`${CHARACTER_BASE_URL}/${file}`);
+
+export type PackManifestEntry = {
+	file: string;
+	frames: number;
+	fps: number;
+	durationMs: number;
+	loop: boolean;
+	offsets: number[];
+	sizes: number[];
+	bytes: number;
+};
+
+export type PackManifest = {
+	version: number;
+	frame: { w: number; h: number };
+	/** Per character frame size (bartender V3 differs from the woman). */
+	frames?: Record<string, { w: number; h: number }>;
+	animations: Record<string, PackManifestEntry>;
+};
+
+/**
+ * Looping scene props that reuse the character player (animated plants, the bodyguard).
+ * `bodyguard`: 0.1 s trimmed from the start and the end of the loop.
+ */
+export type PropId = 'plant' | 'guard';
+export const PROP_ANIMATION: Record<PropId, string> = { plant: 'plant_loop', guard: 'guard_loop' };
+export const PROP_FRAME: Record<PropId, { w: number; h: number }> = {
+	plant: { w: 562, h: 748 },
+	guard: { w: 488, h: 862 },
+};
+export const PROP_TUNING: Record<PropId, CharacterTuning> = {
+	plant: {
+		idleVariationMinMs: 0,
+		idleVariationMaxMs: 0,
+		variationPrefetchLeadMs: 0,
+		trimHeadFrames: 0,
+		trimTailFrames: 0,
+		maxPacks: 2,
+		decodeAhead: 14,
+		startBuffer: 4,
+	},
+	guard: {
+		idleVariationMinMs: 0,
+		idleVariationMaxMs: 0,
+		variationPrefetchLeadMs: 0,
+		trimHeadFrames: 3,
+		trimTailFrames: 3,
+		maxPacks: 2,
+		decodeAhead: 14,
+		startBuffer: 4,
+	},
+};

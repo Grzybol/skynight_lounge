@@ -1,0 +1,93 @@
+{
+  "configSha256": "1a737f24ff3b75ceebb80b276e4fa23dde076699d2cfc7ac8e9a6f7fbcc7b8fe",
+  "paytableP1": {
+    "3": 4.0,
+    "4": 11.0,
+    "5": 36.0
+  },
+  "tierWeights": {
+    "1": 999400,
+    "2": 400,
+    "3": 120,
+    "4": 40,
+    "5": 32,
+    "6": 8
+  },
+  "vw1": {
+    "1": 99,
+    "2": 1,
+    "3": 1,
+    "4": 1
+  },
+  "vw2": {
+    "5": 26,
+    "10": 1,
+    "15": 1
+  },
+  "vw5": {
+    "750": 18,
+    "1000": 2,
+    "2500": 1,
+    "5000": 1
+  },
+  "vw6": {
+    "10000": 8,
+    "25000": 2,
+    "50000": 1
+  },
+  "phase6": {
+    "enabled": true,
+    "candidateOrigin": "P6A1_E_E1",
+    "rejumpArch": "R-BATCH",
+    "windArch": "W-CHARGE",
+    "ladder": "K1",
+    "stageRule": "W2_PURE",
+    "saturation": "B",
+    "perfectV": "PV1",
+    "maxRejumpsPerSpin": 2,
+    "maxFeatureChainDepth": 8,
+    "packs": {
+      "LARGE_HILL": {
+        "REJUMP": 22,
+        "WIND_KEY": 6
+      },
+      "SKI_FLYING": {
+        "REJUMP": 36,
+        "WIND_KEY": 14
+      },
+      "WORLD_CUP": {
+        "REJUMP": 48,
+        "WIND_KEY": 22
+      },
+      "PERFECT_V": {
+        "REJUMP": 60,
+        "WIND_KEY": 30
+      }
+    },
+    "stageRuleNote": "Phase 6C.1: aligned to approved E1 pure W2 (no charged-stage priority)"
+  },
+  "featureEconomy": {
+    "featureEconomyVersion": 1,
+    "candidateOrigin": "F01_E_feel",
+    "maxWinX": 50000,
+    "gateMaxFloor": 3
+  },
+  "meta": {
+    "lineage": "skyjump-v2",
+    "mathVersion": 1,
+    "workingTitle": "SkyJump",
+    "gameID": "0_0_poc",
+    "note": "Phase 3 provisional BASE + Coach/Mystery/Token exposure. Tokens do not auto-pay. Not production RTP.",
+    "mathStatus": "PHASE 4B PROVISIONAL BASE FEATURE ECONOMY",
+    "featureEconomyVersion": 1,
+    "candidateOrigin": "F01_E_feel",
+    "notes": "Phase 4B promotes F01_E_feel paying BASE features. mathVersion remains 1 (no production books yet). Phase 3 latent token tables archived under flightTokens.phase3LatentResearch."
+  },
+  "eventSchemaVersion": 2,
+  "certifiedStack": {
+    "BASE": 71.212,
+    "Phase5B": 17.92705,
+    "Phase6": 4.689,
+    "total": 93.828
+  }
+}

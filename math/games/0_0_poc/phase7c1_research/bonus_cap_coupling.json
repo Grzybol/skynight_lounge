@@ -1,0 +1,43 @@
+{
+  "nPerTier": 5000,
+  "byTier": {
+    "LARGE_HILL": {
+      "tier": "LARGE_HILL",
+      "n": 5000,
+      "buyMeanX": 28.5258,
+      "forcedNaturalMeanX": 29.80126,
+      "meanTriggerPriorX": 1.367,
+      "deltaNaturalMinusBuyX": 1.275459999999999
+    },
+    "SKI_FLYING": {
+      "tier": "SKI_FLYING",
+      "n": 5000,
+      "buyMeanX": 173.27542,
+      "forcedNaturalMeanX": 210.71456,
+      "meanTriggerPriorX": 0.0,
+      "deltaNaturalMinusBuyX": 37.43914000000001
+    },
+    "WORLD_CUP": {
+      "tier": "WORLD_CUP",
+      "n": 5000,
+      "buyMeanX": 405.57388,
+      "forcedNaturalMeanX": 404.42874,
+      "meanTriggerPriorX": 0.0,
+      "deltaNaturalMinusBuyX": -1.1451399999999694
+    },
+    "PERFECT_V": {
+      "tier": "PERFECT_V",
+      "n": 5000,
+      "buyMeanX": 1326.6778800000002,
+      "forcedNaturalMeanX": 1404.11706,
+      "meanTriggerPriorX": 0.0,
+      "deltaNaturalMinusBuyX": 77.43917999999985
+    }
+  },
+  "weightedBuyBonusContrib": 0.2334537892610425,
+  "weightedForcedNaturalRoundContrib": 0.2529749751788661,
+  "weightedBonusOnlyNaturalContrib": 0.24448099674631282,
+  "buyVsBonusOnlyDeltaPp": -1.1027207485270334,
+  "sharedCapPriorEffectPp": 1.1027207485270334,
+  "note": "forcedNatural uses fixed trigger stops (not random natural boards); delta isolates prior-win/cap coupling + trigger-board FS seed differences."
+}

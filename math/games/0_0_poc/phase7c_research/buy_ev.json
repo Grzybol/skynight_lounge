@@ -1,0 +1,536 @@
+{
+  "nPerTier": 200000,
+  "nFill": 5000,
+  "targetRtp": 0.965,
+  "preferredBand": [
+    0.964,
+    0.966
+  ],
+  "ceiling": 0.967,
+  "tiers": {
+    "LARGE_HILL": {
+      "n": 200000,
+      "meanNaturalX": 30.060255,
+      "wrP": 1.0970422268719027e-05,
+      "eFill": 50000.0,
+      "meanX": 30.60877611343595,
+      "se": 0.796912936942722,
+      "ci95": [
+        29.046826757028217,
+        32.17072546984369
+      ],
+      "median": 9.3,
+      "p75": 19.1,
+      "p90": 39.499999999999986,
+      "p95": 73.3,
+      "p99": 349.7,
+      "p99_9": 1735.1,
+      "pCap": 3.5e-05,
+      "pWrNatural": 3.5e-05,
+      "meanSpins": 10.433295,
+      "costCandidates": [
+        {
+          "cost": 31.7,
+          "rtp": 0.9655765335468754,
+          "rtpPct": 96.55765335468755,
+          "inPreferred": true,
+          "underCeiling": true,
+          "distFromTargetPp": 0.05765335468754795
+        },
+        {
+          "cost": 31.8,
+          "rtp": 0.9625401293533318,
+          "rtpPct": 96.25401293533318,
+          "inPreferred": false,
+          "underCeiling": true,
+          "distFromTargetPp": 0.2459870646668194
+        },
+        {
+          "cost": 31.9,
+          "rtp": 0.9595227621766756,
+          "rtpPct": 95.95227621766756,
+          "inPreferred": false,
+          "underCeiling": true,
+          "distFromTargetPp": 0.5477237823324321
+        },
+        {
+          "cost": 32,
+          "rtp": 0.9565242535448735,
+          "rtpPct": 95.65242535448735,
+          "inPreferred": false,
+          "underCeiling": true,
+          "distFromTargetPp": 0.8475746455126498
+        },
+        {
+          "cost": 32.1,
+          "rtp": 0.9535444272098427,
+          "rtpPct": 95.35444272098427,
+          "inPreferred": false,
+          "underCeiling": true,
+          "distFromTargetPp": 1.1455572790157298
+        },
+        {
+          "cost": 32.2,
+          "rtp": 0.9505831091129177,
+          "rtpPct": 95.05831091129177,
+          "inPreferred": false,
+          "underCeiling": true,
+          "distFromTargetPp": 1.4416890887082312
+        },
+        {
+          "cost": 32.3,
+          "rtp": 0.9476401273509584,
+          "rtpPct": 94.76401273509583,
+          "inPreferred": false,
+          "underCeiling": true,
+          "distFromTargetPp": 1.7359872649041597
+        },
+        {
+          "cost": 32.4,
+          "rtp": 0.9447153121430849,
+          "rtpPct": 94.47153121430848,
+          "inPreferred": false,
+          "underCeiling": true,
+          "distFromTargetPp": 2.0284687856915062
+        },
+        {
+          "cost": 32.5,
+          "rtp": 0.9418084957980293,
+          "rtpPct": 94.18084957980292,
+          "inPreferred": false,
+          "underCeiling": true,
+          "distFromTargetPp": 2.319150420197069
+        },
+        {
+          "cost": 32.6,
+          "rtp": 0.9389195126820844,
+          "rtpPct": 93.89195126820844,
+          "inPreferred": false,
+          "underCeiling": true,
+          "distFromTargetPp": 2.608048731791557
+        },
+        {
+          "cost": 32.7,
+          "rtp": 0.9360481991876437,
+          "rtpPct": 93.60481991876438,
+          "inPreferred": false,
+          "underCeiling": true,
+          "distFromTargetPp": 2.8951800812356265
+        },
+        {
+          "cost": 32.8,
+          "rtp": 0.9331943937023157,
+          "rtpPct": 93.31943937023158,
+          "inPreferred": false,
+          "underCeiling": true,
+          "distFromTargetPp": 3.1805606297684252
+        }
+      ],
+      "proposed": {
+        "cost": 31.7,
+        "rtp": 0.9655765335468754,
+        "rtpPct": 96.55765335468755,
+        "inPreferred": true,
+        "underCeiling": true,
+        "distFromTargetPp": 0.05765335468754795
+      }
+    },
+    "SKI_FLYING": {
+      "n": 200000,
+      "meanNaturalX": 187.61263100000002,
+      "wrP": 3.290191888516425e-05,
+      "eFill": 50000.0,
+      "meanX": 189.25772694425822,
+      "se": 1.6510231066006584,
+      "ci95": [
+        186.02172165532093,
+        192.49373223319552
+      ],
+      "median": 72.89999999999999,
+      "p75": 184.9,
+      "p90": 378.3,
+      "p95": 619.3,
+      "p99": 1832.4,
+      "p99_9": 6799.900000000001,
+      "pCap": 8.5e-05,
+      "pWrNatural": 3.5e-05,
+      "meanSpins": 10.430435,
+      "costCandidates": [
+        {
+          "cost": 196.1,
+          "rtp": 0.965108245508711,
+          "rtpPct": 96.51082455087109,
+          "inPreferred": true,
+          "underCeiling": true,
+          "distFromTargetPp": 0.010824550871102456
+        },
+        {
+          "cost": 196.2,
+          "rtp": 0.9646163452816424,
+          "rtpPct": 96.46163452816424,
+          "inPreferred": true,
+          "underCeiling": true,
+          "distFromTargetPp": 0.038365471835755116
+        },
+        {
+          "cost": 196,
+          "rtp": 0.9656006476747868,
+          "rtpPct": 96.56006476747868,
+          "inPreferred": true,
+          "underCeiling": true,
+          "distFromTargetPp": 0.06006476747868472
+        },
+        {
+          "cost": 196.3,
+          "rtp": 0.9641249462264809,
+          "rtpPct": 96.4124946226481,
+          "inPreferred": true,
+          "underCeiling": true,
+          "distFromTargetPp": 0.08750537735190411
+        },
+        {
+          "cost": 195.9,
+          "rtp": 0.9660935525485361,
+          "rtpPct": 96.60935525485361,
+          "inPreferred": false,
+          "underCeiling": true,
+          "distFromTargetPp": 0.10935525485361586
+        },
+        {
+          "cost": 196.4,
+          "rtp": 0.9636340475776896,
+          "rtpPct": 96.36340475776896,
+          "inPreferred": false,
+          "underCeiling": true,
+          "distFromTargetPp": 0.13659524223104125
+        },
+        {
+          "cost": 195.8,
+          "rtp": 0.9665869609001951,
+          "rtpPct": 96.65869609001952,
+          "inPreferred": false,
+          "underCeiling": true,
+          "distFromTargetPp": 0.15869609001951668
+        },
+        {
+          "cost": 196.5,
+          "rtp": 0.9631436485712886,
+          "rtpPct": 96.31436485712887,
+          "inPreferred": false,
+          "underCeiling": true,
+          "distFromTargetPp": 0.18563514287113225
+        },
+        {
+          "cost": 196.6,
+          "rtp": 0.9626537484448536,
+          "rtpPct": 96.26537484448536,
+          "inPreferred": false,
+          "underCeiling": true,
+          "distFromTargetPp": 0.23462515551463392
+        },
+        {
+          "cost": 196.7,
+          "rtp": 0.9621643464375101,
+          "rtpPct": 96.21643464375101,
+          "inPreferred": false,
+          "underCeiling": true,
+          "distFromTargetPp": 0.2835653562489826
+        },
+        {
+          "cost": 196.8,
+          "rtp": 0.9616754417899299,
+          "rtpPct": 96.167544178993,
+          "inPreferred": false,
+          "underCeiling": true,
+          "distFromTargetPp": 0.332455821007005
+        },
+        {
+          "cost": 196.9,
+          "rtp": 0.9611870337443281,
+          "rtpPct": 96.11870337443281,
+          "inPreferred": false,
+          "underCeiling": true,
+          "distFromTargetPp": 0.3812966255671846
+        }
+      ],
+      "proposed": {
+        "cost": 196.1,
+        "rtp": 0.965108245508711,
+        "rtpPct": 96.51082455087109,
+        "inPreferred": true,
+        "underCeiling": true,
+        "distFromTargetPp": 0.010824550871102456
+      }
+    },
+    "WORLD_CUP": {
+      "n": 200000,
+      "meanNaturalX": 398.6141805,
+      "wrP": 6.58302695709656e-05,
+      "eFill": 50000.0,
+      "meanX": 401.90569397854824,
+      "se": 2.850792645385984,
+      "ci95": [
+        396.3181403935917,
+        407.4932475635048
+      ],
+      "median": 127.19999999999999,
+      "p75": 338.70000000000005,
+      "p90": 900.8999999999999,
+      "p95": 1560.8,
+      "p99": 4058.2,
+      "p99_9": 15226.199999999999,
+      "pCap": 0.00016,
+      "pWrNatural": 6.5e-05,
+      "meanSpins": 10.43478,
+      "costCandidates": [
+        {
+          "cost": 416.5,
+          "rtp": 0.964959649408279,
+          "rtpPct": 96.4959649408279,
+          "inPreferred": true,
+          "underCeiling": true,
+          "distFromTargetPp": 0.004035059172091682
+        },
+        {
+          "cost": 416.4,
+          "rtp": 0.9651913880368594,
+          "rtpPct": 96.51913880368595,
+          "inPreferred": true,
+          "underCeiling": true,
+          "distFromTargetPp": 0.019138803685947448
+        },
+        {
+          "cost": 416.6,
+          "rtp": 0.9647280220320409,
+          "rtpPct": 96.47280220320408,
+          "inPreferred": true,
+          "underCeiling": true,
+          "distFromTargetPp": 0.027197796795908058
+        },
+        {
+          "cost": 416.3,
+          "rtp": 0.9654232379979539,
+          "rtpPct": 96.5423237997954,
+          "inPreferred": true,
+          "underCeiling": true,
+          "distFromTargetPp": 0.042323799795396244
+        },
+        {
+          "cost": 416.7,
+          "rtp": 0.9644965058280496,
+          "rtpPct": 96.44965058280496,
+          "inPreferred": true,
+          "underCeiling": true,
+          "distFromTargetPp": 0.05034941719503916
+        },
+        {
+          "cost": 416.2,
+          "rtp": 0.9656551993718122,
+          "rtpPct": 96.56551993718122,
+          "inPreferred": true,
+          "underCeiling": true,
+          "distFromTargetPp": 0.06551993718122429
+        },
+        {
+          "cost": 416.8,
+          "rtp": 0.9642651007162866,
+          "rtpPct": 96.42651007162866,
+          "inPreferred": true,
+          "underCeiling": true,
+          "distFromTargetPp": 0.07348992837133972
+        },
+        {
+          "cost": 416.1,
+          "rtp": 0.9658872722387605,
+          "rtpPct": 96.58872722387605,
+          "inPreferred": true,
+          "underCeiling": true,
+          "distFromTargetPp": 0.08872722387605059
+        },
+        {
+          "cost": 416.9,
+          "rtp": 0.9640338066168104,
+          "rtpPct": 96.40338066168104,
+          "inPreferred": true,
+          "underCeiling": true,
+          "distFromTargetPp": 0.09661933831895952
+        },
+        {
+          "cost": 416,
+          "rtp": 0.9661194566792025,
+          "rtpPct": 96.61194566792025,
+          "inPreferred": false,
+          "underCeiling": true,
+          "distFromTargetPp": 0.11194566792025462
+        },
+        {
+          "cost": 417.0,
+          "rtp": 0.963802623449756,
+          "rtpPct": 96.38026234497559,
+          "inPreferred": false,
+          "underCeiling": true,
+          "distFromTargetPp": 0.11973765502439893
+        },
+        {
+          "cost": 415.9,
+          "rtp": 0.9663517527736193,
+          "rtpPct": 96.63517527736192,
+          "inPreferred": false,
+          "underCeiling": true,
+          "distFromTargetPp": 0.1351752773619319
+        }
+      ],
+      "proposed": {
+        "cost": 416.5,
+        "rtp": 0.964959649408279,
+        "rtpPct": 96.4959649408279,
+        "inPreferred": true,
+        "underCeiling": true,
+        "distFromTargetPp": 0.004035059172091682
+      }
+    },
+    "PERFECT_V": {
+      "n": 200000,
+      "meanNaturalX": 1304.7186425,
+      "wrP": 0.00013158609587382575,
+      "eFill": 50000.0,
+      "meanX": 1311.2979472936913,
+      "se": 5.289895887674495,
+      "ci95": [
+        1300.9297513538493,
+        1321.6661432335334
+      ],
+      "median": 661.8,
+      "p75": 1424.6,
+      "p90": 2771.2,
+      "p95": 4226.7,
+      "p99": 10313.800000000001,
+      "p99_9": 30573.0,
+      "pCap": 0.00043,
+      "pWrNatural": 9.5e-05,
+      "meanSpins": 10.42919,
+      "costCandidates": [
+        {
+          "cost": 1358.9,
+          "rtp": 0.9649701576964392,
+          "rtpPct": 96.49701576964392,
+          "inPreferred": true,
+          "underCeiling": true,
+          "distFromTargetPp": 0.002984230356073425
+        },
+        {
+          "cost": 1358.8,
+          "rtp": 0.9650411740459901,
+          "rtpPct": 96.50411740459901,
+          "inPreferred": true,
+          "underCeiling": true,
+          "distFromTargetPp": 0.00411740459901333
+        },
+        {
+          "cost": 1359,
+          "rtp": 0.964899151798154,
+          "rtpPct": 96.4899151798154,
+          "inPreferred": true,
+          "underCeiling": true,
+          "distFromTargetPp": 0.01008482018459711
+        },
+        {
+          "cost": 1358.7,
+          "rtp": 0.9651122008491141,
+          "rtpPct": 96.51122008491141,
+          "inPreferred": true,
+          "underCeiling": true,
+          "distFromTargetPp": 0.01122008491141191
+        },
+        {
+          "cost": 1359.1,
+          "rtp": 0.9648281563488275,
+          "rtpPct": 96.48281563488274,
+          "inPreferred": true,
+          "underCeiling": true,
+          "distFromTargetPp": 0.017184365117250966
+        },
+        {
+          "cost": 1358.6,
+          "rtp": 0.9651832381081197,
+          "rtpPct": 96.51832381081196,
+          "inPreferred": true,
+          "underCeiling": true,
+          "distFromTargetPp": 0.018323810811970986
+        },
+        {
+          "cost": 1359.2,
+          "rtp": 0.9647571713461531,
+          "rtpPct": 96.47571713461531,
+          "inPreferred": true,
+          "underCeiling": true,
+          "distFromTargetPp": 0.024282865384683827
+        },
+        {
+          "cost": 1358.5,
+          "rtp": 0.9652542858253157,
+          "rtpPct": 96.52542858253157,
+          "inPreferred": true,
+          "underCeiling": true,
+          "distFromTargetPp": 0.02542858253157254
+        },
+        {
+          "cost": 1359.3,
+          "rtp": 0.9646861967878256,
+          "rtpPct": 96.46861967878256,
+          "inPreferred": true,
+          "underCeiling": true,
+          "distFromTargetPp": 0.031380321217433504
+        },
+        {
+          "cost": 1358.4,
+          "rtp": 0.9653253440030118,
+          "rtpPct": 96.53253440030119,
+          "inPreferred": true,
+          "underCeiling": true,
+          "distFromTargetPp": 0.03253440030118737
+        },
+        {
+          "cost": 1359.4,
+          "rtp": 0.9646152326715398,
+          "rtpPct": 96.46152326715398,
+          "inPreferred": true,
+          "underCeiling": true,
+          "distFromTargetPp": 0.038476732846015604
+        },
+        {
+          "cost": 1358.3,
+          "rtp": 0.9653964126435186,
+          "rtpPct": 96.53964126435186,
+          "inPreferred": true,
+          "underCeiling": true,
+          "distFromTargetPp": 0.03964126435186399
+        }
+      ],
+      "proposed": {
+        "cost": 1358.9,
+        "rtp": 0.9649701576964392,
+        "rtpPct": 96.49701576964392,
+        "inPreferred": true,
+        "underCeiling": true,
+        "distFromTargetPp": 0.002984230356073425
+      }
+    }
+  },
+  "chosenCosts": {
+    "LARGE_HILL": 32.5,
+    "SKI_FLYING": 197.7,
+    "WORLD_CUP": 416.7,
+    "PERFECT_V": 1381.2
+  },
+  "chosenRtps": {
+    "LARGE_HILL": 96.49747070533364,
+    "SKI_FLYING": 96.48959157876969,
+    "WORLD_CUP": 96.49699287518985,
+    "PERFECT_V": 96.49789386830318
+  },
+  "crossModeSpreadPp": 0.008302289533489216,
+  "crossModePass": true,
+  "costNote": "Player-facing preference: SF 196, PV 1359; LH 31.7 and WC 416.5 required for preferred band.",
+  "pricedFrom": "LUT_mean"
+}

@@ -1,0 +1,61 @@
+{
+  "prompt": {
+    "1": {
+      "class_type": "LoadBackgroundRemovalModel",
+      "inputs": {
+        "bg_removal_name": "birefnet.safetensors"
+      }
+    },
+    "10": {
+      "class_type": "LoadImage",
+      "inputs": {
+        "image": "slot_garden/static_drafts/H1_hatfix_00002_.png"
+      }
+    },
+    "11": {
+      "class_type": "RemoveBackground",
+      "inputs": {
+        "bg_removal_model": [
+          "1",
+          0
+        ],
+        "image": [
+          "10",
+          0
+        ]
+      }
+    },
+    "12": {
+      "class_type": "InvertMask",
+      "inputs": {
+        "mask": [
+          "11",
+          0
+        ]
+      }
+    },
+    "13": {
+      "class_type": "JoinImageWithAlpha",
+      "inputs": {
+        "image": [
+          "10",
+          0
+        ],
+        "alpha": [
+          "12",
+          0
+        ]
+      }
+    },
+    "14": {
+      "class_type": "SaveImage",
+      "inputs": {
+        "images": [
+          "13",
+          0
+        ],
+        "filename_prefix": "slot_garden/alpha_final/H1_alpha"
+      }
+    }
+  }
+}

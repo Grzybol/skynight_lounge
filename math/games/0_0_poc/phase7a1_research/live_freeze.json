@@ -1,0 +1,49 @@
+{
+  "configSha256": "1a737f24ff3b75ceebb80b276e4fa23dde076699d2cfc7ac8e9a6f7fbcc7b8fe",
+  "certifiedStack": {
+    "BASE": 71.212,
+    "Phase5B": 17.92705,
+    "Phase6": 4.689,
+    "Phase6SE": 0.078,
+    "total": 93.828
+  },
+  "artAuthority": "docs/skyjump-v2/23_SYMBOL_ASSET_MANIFEST.md",
+  "artLock": "PASS",
+  "wait": "NONE",
+  "phase6": {
+    "enabled": true,
+    "candidateOrigin": "P6A1_E_E1",
+    "rejumpArch": "R-BATCH",
+    "windArch": "W-CHARGE",
+    "ladder": "K1",
+    "stageRule": "W2_PURE",
+    "saturation": "B",
+    "perfectV": "PV1",
+    "maxRejumpsPerSpin": 2,
+    "maxFeatureChainDepth": 8,
+    "packs": {
+      "LARGE_HILL": {
+        "REJUMP": 22,
+        "WIND_KEY": 6
+      },
+      "SKI_FLYING": {
+        "REJUMP": 36,
+        "WIND_KEY": 14
+      },
+      "WORLD_CUP": {
+        "REJUMP": 48,
+        "WIND_KEY": 22
+      },
+      "PERFECT_V": {
+        "REJUMP": 60,
+        "WIND_KEY": 30
+      }
+    },
+    "stageRuleNote": "Phase 6C.1: aligned to approved E1 pure W2 (no charged-stage priority)"
+  },
+  "livePaytable": {
+    "PT0": 59.6961766439716,
+    "PT2": 60.28839016193175,
+    "deltaPp": 0.592213517960154
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "LARGE_HILL": {
+    "lutMeanX": 31.361677979233434,
+    "buyEvNaturalX": 30.060255,
+    "buyEvWithWrX": 30.60877611343595,
+    "deltaLutMinusNaturalX": 1.3014229792334326,
+    "deltaLutMinusWithWrX": 0.7529018657974831,
+    "deltaPctVsNatural": 4.329381035634704,
+    "cost": 32.5,
+    "lutRtp": 0.9649747070533364
+  },
+  "SKI_FLYING": {
+    "lutMeanX": 190.75992255122887,
+    "buyEvNaturalX": 187.61263100000002,
+    "buyEvWithWrX": 189.25772694425822,
+    "deltaLutMinusNaturalX": 3.1472915512288466,
+    "deltaLutMinusWithWrX": 1.5021956069706448,
+    "deltaPctVsNatural": 1.6775477932660334,
+    "cost": 197.7,
+    "lutRtp": 0.964895915787703
+  },
+  "WORLD_CUP": {
+    "lutMeanX": 402.10296931091455,
+    "buyEvNaturalX": 398.6141805,
+    "buyEvWithWrX": 401.90569397854824,
+    "deltaLutMinusNaturalX": 3.4887888109145706,
+    "deltaLutMinusWithWrX": 0.1972753323663028,
+    "deltaPctVsNatural": 0.8752294779223417,
+    "cost": 416.7,
+    "lutRtp": 0.9649699287518948
+  },
+  "PERFECT_V": {
+    "lutMeanX": 1332.8289101089713,
+    "buyEvNaturalX": 1304.7186425,
+    "buyEvWithWrX": 1311.2979472936913,
+    "deltaLutMinusNaturalX": 28.1102676089713,
+    "deltaLutMinusWithWrX": 21.530962815279963,
+    "deltaPctVsNatural": 2.15450800604095,
+    "cost": 1381.2,
+    "lutRtp": 0.9649789386830084
+  }
+}

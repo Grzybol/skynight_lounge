@@ -1,0 +1,52 @@
+# Stake Engine upload staging (built frontend + generated books/LUTs).
+# Local packaging only — never commit.
+/stake-upload/
+
+# Editable math-sdk clone created by `pip install -r requirements.txt`.
+/src/stakeengine/
+
+# deps / builds
+node_modules/
+.pnpm-store/
+**/build/
+**/dist/
+**/.svelte-kit/
+**/.turbo/
+**/storybook-static/
+
+# math outputs (generowane przez run.py)
+math/games/*/library/
+math/**/__pycache__/
+math/.venv/
+*.pyc
+
+# math audit output
+tools/skyjump/math-audit.json
+
+# lokalne zrzuty QA (generowane przez tools/qa)
+tools/qa/output/
+docs/dev-report/skyjump-comfy-raw/
+
+# logi / tmp
+*.log
+.DS_Store
+Thumbs.db
+
+# Claude Code — launch.json jest wspoldzielony, reszta lokalna
+.claude/settings.local.json
+.claude/worktrees/
+
+# V2 production book library (Phase 7C+); stage via stake-upload locally
+math/games/*/library_v2/
+
+# Phase 7C.2 candidate libraries (local; hashed in phase7c2_research)
+math/games/*/library_v2_phase7c2/
+/stake-upload-phase7c2/
+# Phase 7C.3 candidate libraries (local; hashed in phase7c3_research)
+math/games/*/library_v2_phase7c3/
+/stake-upload-phase7c3/
+# Unpacked lounge reaction GIFs. Repo backup is asset-backup/lounge-gifs/*.zip.
+frontend/apps/poc/src/assets/skyjump/backgrounds/smile_plus.gif
+frontend/apps/poc/src/assets/skyjump/backgrounds/stopa_plus.gif
+frontend/apps/poc/src/assets/skyjump/backgrounds/wow_plus.gif
+

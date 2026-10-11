@@ -1,0 +1,31 @@
+{
+  "configSha256": "d6879d5c9ef3d08386486cd03712d6042e366543597a5c453ca8b1da6f2edbd0",
+  "worldRecord": {
+    "enabled": true,
+    "architecture": "WR-C",
+    "candidateOrigin": "H2",
+    "availability": "FREE_SPINS_ONLY",
+    "symbolId": "SPECIAL_WORLD_RECORD",
+    "playerLabel": "WORLD RECORD",
+    "maxWinX": 50000,
+    "tierRelativeIntensity": {
+      "LARGE_HILL": 1,
+      "SKI_FLYING": 3,
+      "WORLD_CUP": 6,
+      "PERFECT_V": 12
+    },
+    "c": 1.0514872508491765e-06,
+    "byTierPSpin": {
+      "LARGE_HILL": 1.0514872508491765e-06,
+      "SKI_FLYING": 3.1544617525475295e-06,
+      "WORLD_CUP": 6.308923505095059e-06,
+      "PERFECT_V": 1.2617847010190118e-05
+    },
+    "targetWrPp": 0.45694445979944476,
+    "eFillUsed": 49964.0828933614,
+    "timing": "AFTER_BOARD_BEFORE_LINES",
+    "positionRule": "CENTER_OR_FIRST_NON_SCATTER_REEL_MAJOR"
+  },
+  "paytableCandidate": "PT2H_LADDER",
+  "body": "BODY1"
+}

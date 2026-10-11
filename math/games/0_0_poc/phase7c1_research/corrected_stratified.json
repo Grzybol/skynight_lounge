@@ -1,0 +1,34 @@
+{
+  "exactLinesPct": 60.29945972727959,
+  "featureCappedPct": 11.4325,
+  "featureSePp": 0.41430737296948383,
+  "naturalBonusFsPct": 24.738857111299083,
+  "triggerBasePct": 0.2763686321190828,
+  "eTrigGivenTrigger": 0.42325,
+  "nTrigSample": 2000,
+  "wrPct": 0.45694445979944487,
+  "exclusiveSumLinesFeatFsWrPct": 96.92776129837812,
+  "correctedHybridPct": 97.64093413281266,
+  "oldHybridPct": 97.36456550069357,
+  "oldHybridMissingTriggerBasePp": 0.2763686321190828,
+  "lutPct": 98.11961749988727,
+  "lutMinusCorrectedHybridPp": 0.4786833670746091,
+  "acceptancePass_0_10": false,
+  "acceptancePass_0_20": false,
+  "pvWeightExcessRtpPp": 0.0017147770890046155,
+  "decompExclusive": {
+    "lines": 60.29945972727959,
+    "baseFeatures": 11.4325,
+    "naturalBonusFs": 24.738857111299083,
+    "worldRecord": 0.45694445979944487,
+    "TOTAL_excl_missing_trig_in_lines": 96.92776129837812,
+    "note": "lines exact already include trigger boards; features estimated on non-trigger only (slight undercount on trigger features)"
+  },
+  "decompCorrectedHybrid": {
+    "nonBonusMass": 72.16876392959504,
+    "triggerBase": 0.2763686321190828,
+    "naturalBonusFs": 24.738857111299083,
+    "worldRecord": 0.45694445979944487,
+    "TOTAL": 97.64093413281266
+  }
+}

@@ -1,0 +1,5 @@
+# Frozen / canonical math JSON must hash identically on Windows and Linux.
+math/games/**/skyjump_config.json text eol=lf
+math/games/**/skyjump_v2_config.json text eol=lf
+math/games/**/skyjump_v2_dev_paytable.json text eol=lf
+math/games/**/skyjump_v2_phase1_fixtures.json text eol=lf

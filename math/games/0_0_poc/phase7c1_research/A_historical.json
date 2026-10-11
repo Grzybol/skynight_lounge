@@ -1,0 +1,18 @@
+{
+  "formula": "pre7B(BASE+Phase5B+Phase6=93.828) + PT2H_fullGameDelta(+0.66634) + BODY1_standalone(+1.33872) [= coreWithoutWr 95.833] + WR_H2(+0.45694) \u2192 ~96.29",
+  "pre7BStack": {
+    "BASE": 71.212,
+    "Phase5B": 17.92705,
+    "Phase6": 4.689,
+    "total": 93.828
+  },
+  "pt2hFullGameDeltaPp": 0.666338945572231,
+  "body1StandalonePp": 1.338721230699889,
+  "pt2hBody1ComboPp": 1.4017724568925667,
+  "coreRtpWithoutWr": 95.83305554020056,
+  "wrPp": 0.45694445979944476,
+  "projectedRtp": 96.29,
+  "componentsExclusive": {
+    "note": "Historical stack treats BASE/5B/6 as exclusive buckets on pre-PT2H/BODY0; 7A.2 then adds paytable/body/WR deltas. Absolute live bonus EV may differ from stacked Phase5B+6 if those were measured under different conditioning (e.g. LH-centric)."
+  }
+}

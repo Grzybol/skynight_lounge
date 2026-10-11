@@ -1,0 +1,383 @@
+{
+  "sfx_bad_miss.mp3": {
+    "totalSec": 0.68,
+    "audibleSec": 0.68,
+    "audibleEndSec": 0.68,
+    "trailSec": 0.0,
+    "problematicTail": false,
+    "peakDbfs": -1.3,
+    "dir": "v2"
+  },
+  "sfx_bonus_end.mp3": {
+    "totalSec": 2.0,
+    "audibleSec": 2.0,
+    "audibleEndSec": 2.0,
+    "trailSec": 0.0,
+    "problematicTail": false,
+    "peakDbfs": -5.7,
+    "dir": "v2"
+  },
+  "sfx_free_spins_retrigger.mp3": {
+    "totalSec": 2.0,
+    "audibleSec": 1.541,
+    "audibleEndSec": 1.541,
+    "trailSec": 0.459,
+    "problematicTail": false,
+    "peakDbfs": -4.4,
+    "dir": "v2"
+  },
+  "sfx_free_spins_start.mp3": {
+    "totalSec": 1.0,
+    "audibleSec": 0.803,
+    "audibleEndSec": 0.803,
+    "trailSec": 0.197,
+    "problematicTail": false,
+    "peakDbfs": -7.8,
+    "dir": "v2"
+  },
+  "sfx_gate_upgrade.mp3": {
+    "totalSec": 1.0,
+    "audibleSec": 1.0,
+    "audibleEndSec": 1.0,
+    "trailSec": 0.0,
+    "problematicTail": false,
+    "peakDbfs": -0.6,
+    "dir": "v2"
+  },
+  "sfx_head_judge_collect.mp3": {
+    "totalSec": 2.0,
+    "audibleSec": 2.0,
+    "audibleEndSec": 2.0,
+    "trailSec": 0.0,
+    "problematicTail": false,
+    "peakDbfs": -3.1,
+    "dir": "v2"
+  },
+  "sfx_judge_collect.mp3": {
+    "totalSec": 2.0,
+    "audibleSec": 2.0,
+    "audibleEndSec": 2.0,
+    "trailSec": 0.0,
+    "problematicTail": false,
+    "peakDbfs": -4.7,
+    "dir": "v2"
+  },
+  "sfx_max_win.mp3": {
+    "totalSec": 2.76,
+    "audibleSec": 2.76,
+    "audibleEndSec": 2.76,
+    "trailSec": 0.0,
+    "problematicTail": false,
+    "peakDbfs": 0.0,
+    "dir": "v2"
+  },
+  "sfx_mystery_open.mp3": {
+    "totalSec": 0.48,
+    "audibleSec": 0.48,
+    "audibleEndSec": 0.48,
+    "trailSec": 0.0,
+    "problematicTail": false,
+    "peakDbfs": -20.6,
+    "dir": "v2"
+  },
+  "sfx_payline_complete.mp3": {
+    "totalSec": 2.0,
+    "audibleSec": 2.0,
+    "audibleEndSec": 2.0,
+    "trailSec": 0.0,
+    "problematicTail": false,
+    "peakDbfs": -3.0,
+    "dir": "v2"
+  },
+  "sfx_payline_draw.mp3": {
+    "totalSec": 2.0,
+    "audibleSec": 2.0,
+    "audibleEndSec": 2.0,
+    "trailSec": 0.0,
+    "problematicTail": false,
+    "peakDbfs": -5.9,
+    "dir": "v2"
+  },
+  "sfx_rejump.mp3": {
+    "totalSec": 2.0,
+    "audibleSec": 2.0,
+    "audibleEndSec": 2.0,
+    "trailSec": 0.0,
+    "problematicTail": false,
+    "peakDbfs": 0.0,
+    "dir": "v2"
+  },
+  "sfx_scatter_land.mp3": {
+    "totalSec": 0.48,
+    "audibleSec": 0.241,
+    "audibleEndSec": 0.241,
+    "trailSec": 0.239,
+    "problematicTail": false,
+    "peakDbfs": -5.3,
+    "dir": "v2"
+  },
+  "sfx_scatter_trigger.mp3": {
+    "totalSec": 1.0,
+    "audibleSec": 1.0,
+    "audibleEndSec": 1.0,
+    "trailSec": 0.0,
+    "problematicTail": false,
+    "peakDbfs": -12.4,
+    "dir": "v2"
+  },
+  "sfx_thermal_lift.mp3": {
+    "totalSec": 1.0,
+    "audibleSec": 1.0,
+    "audibleEndSec": 1.0,
+    "trailSec": 0.0,
+    "problematicTail": false,
+    "peakDbfs": -8.2,
+    "dir": "v2"
+  },
+  "sfx_tier_upgrade.mp3": {
+    "totalSec": 1.0,
+    "audibleSec": 1.0,
+    "audibleEndSec": 1.0,
+    "trailSec": 0.0,
+    "problematicTail": false,
+    "peakDbfs": -0.7,
+    "dir": "v2"
+  },
+  "sfx_token_reveal.mp3": {
+    "totalSec": 2.0,
+    "audibleSec": 0.8,
+    "audibleEndSec": 0.8,
+    "trailSec": 1.2,
+    "problematicTail": true,
+    "peakDbfs": -0.3,
+    "dir": "v2",
+    "trimmedWav": "sfx_token_reveal.wav",
+    "trimmedSec": 0.88,
+    "trimmedDir": "v2_trimmed"
+  },
+  "sfx_wind_charge.mp3": {
+    "totalSec": 2.0,
+    "audibleSec": 1.766,
+    "audibleEndSec": 1.766,
+    "trailSec": 0.234,
+    "problematicTail": false,
+    "peakDbfs": -5.5,
+    "dir": "v2"
+  },
+  "sfx_wind_transition.mp3": {
+    "totalSec": 2.0,
+    "audibleSec": 1.645,
+    "audibleEndSec": 1.745,
+    "trailSec": 0.255,
+    "problematicTail": false,
+    "peakDbfs": -4.1,
+    "dir": "v2"
+  },
+  "sfx_wind_upgrade.mp3": {
+    "totalSec": 2.0,
+    "audibleSec": 1.456,
+    "audibleEndSec": 1.722,
+    "trailSec": 0.278,
+    "problematicTail": false,
+    "peakDbfs": -0.0,
+    "dir": "v2"
+  },
+  "sfx_world_record.mp3": {
+    "totalSec": 2.0,
+    "audibleSec": 2.0,
+    "audibleEndSec": 2.0,
+    "trailSec": 0.0,
+    "problematicTail": false,
+    "peakDbfs": -0.1,
+    "dir": "v2"
+  },
+  "bet_button_sound.mp3": {
+    "totalSec": 1.0,
+    "audibleSec": 0.121,
+    "audibleEndSec": 0.121,
+    "trailSec": 0.879,
+    "problematicTail": true,
+    "peakDbfs": -0.5,
+    "dir": "legacy_v1",
+    "trimmedWav": "bet_button_sound.wav",
+    "trimmedSec": 0.201,
+    "trimmedDir": "legacy_trimmed"
+  },
+  "bet_decrease_sound.mp3": {
+    "totalSec": 1.0,
+    "audibleSec": 1.0,
+    "audibleEndSec": 1.0,
+    "trailSec": 0.0,
+    "problematicTail": false,
+    "peakDbfs": -8.5,
+    "dir": "legacy_v1"
+  },
+  "bet_increase_sound.mp3": {
+    "totalSec": 2.0,
+    "audibleSec": 1.489,
+    "audibleEndSec": 1.58,
+    "trailSec": 0.42,
+    "problematicTail": false,
+    "peakDbfs": -1.6,
+    "dir": "legacy_v1"
+  },
+  "button_hover_sound.mp3": {
+    "totalSec": 1.0,
+    "audibleSec": 1.0,
+    "audibleEndSec": 1.0,
+    "trailSec": 0.0,
+    "problematicTail": false,
+    "peakDbfs": -16.9,
+    "dir": "legacy_v1"
+  },
+  "generic_panel_open_close.mp3": {
+    "totalSec": 2.0,
+    "audibleSec": 0.726,
+    "audibleEndSec": 0.726,
+    "trailSec": 1.274,
+    "problematicTail": true,
+    "peakDbfs": -18.0,
+    "dir": "legacy_v1",
+    "trimmedWav": "generic_panel_open_close.wav",
+    "trimmedSec": 0.806,
+    "trimmedDir": "legacy_trimmed"
+  },
+  "landing_bad.mp3": {
+    "totalSec": 1.0,
+    "audibleSec": 1.0,
+    "audibleEndSec": 1.0,
+    "trailSec": 0.0,
+    "problematicTail": false,
+    "peakDbfs": -0.0,
+    "dir": "legacy_v1"
+  },
+  "landing_big.mp3": {
+    "totalSec": 0.48,
+    "audibleSec": 0.284,
+    "audibleEndSec": 0.284,
+    "trailSec": 0.196,
+    "problematicTail": false,
+    "peakDbfs": -4.2,
+    "dir": "legacy_v1"
+  },
+  "landing_good.mp3": {
+    "totalSec": 0.48,
+    "audibleSec": 0.48,
+    "audibleEndSec": 0.48,
+    "trailSec": 0.0,
+    "problematicTail": false,
+    "peakDbfs": -15.7,
+    "dir": "legacy_v1"
+  },
+  "landing_small.mp3": {
+    "totalSec": 1.0,
+    "audibleSec": 1.0,
+    "audibleEndSec": 1.0,
+    "trailSec": 0.0,
+    "problematicTail": false,
+    "peakDbfs": -13.7,
+    "dir": "legacy_v1"
+  },
+  "slot1-5reveal_sound.mp3": {
+    "totalSec": 1.0,
+    "audibleSec": 1.0,
+    "audibleEndSec": 1.0,
+    "trailSec": 0.0,
+    "problematicTail": false,
+    "peakDbfs": -5.3,
+    "dir": "legacy_v1"
+  },
+  "slot1-5start_sound.mp3": {
+    "totalSec": 2.0,
+    "audibleSec": 1.439,
+    "audibleEndSec": 1.439,
+    "trailSec": 0.561,
+    "problematicTail": false,
+    "peakDbfs": -0.0,
+    "dir": "legacy_v1"
+  },
+  "slot6_big_multiplier_sound.mp3": {
+    "totalSec": 3.0,
+    "audibleSec": 1.558,
+    "audibleEndSec": 1.558,
+    "trailSec": 1.442,
+    "problematicTail": true,
+    "peakDbfs": -1.9,
+    "dir": "legacy_v1"
+  },
+  "slot6_good_multiplier_sound.mp3": {
+    "totalSec": 1.0,
+    "audibleSec": 1.0,
+    "audibleEndSec": 1.0,
+    "trailSec": 0.0,
+    "problematicTail": false,
+    "peakDbfs": -5.8,
+    "dir": "legacy_v1"
+  },
+  "slot6_normal_multiplier_sound.mp3": {
+    "totalSec": 2.0,
+    "audibleSec": 2.0,
+    "audibleEndSec": 2.0,
+    "trailSec": 0.0,
+    "problematicTail": false,
+    "peakDbfs": -0.0,
+    "dir": "legacy_v1"
+  },
+  "ui_click.mp3": {
+    "totalSec": 3.0,
+    "audibleSec": 0.218,
+    "audibleEndSec": 0.231,
+    "trailSec": 2.769,
+    "problematicTail": true,
+    "peakDbfs": -10.9,
+    "dir": "legacy_v1",
+    "trimmedWav": "ui_click.wav",
+    "trimmedSec": 0.311,
+    "trimmedDir": "legacy_trimmed"
+  },
+  "weather_reveal_sound.mp3": {
+    "totalSec": 2.0,
+    "audibleSec": 0.919,
+    "audibleEndSec": 0.92,
+    "trailSec": 1.08,
+    "problematicTail": true,
+    "peakDbfs": -6.1,
+    "dir": "legacy_v1"
+  },
+  "weather_roll_sound.mp3": {
+    "totalSec": 2.0,
+    "audibleSec": 1.517,
+    "audibleEndSec": 1.517,
+    "trailSec": 0.483,
+    "problematicTail": false,
+    "peakDbfs": -2.3,
+    "dir": "legacy_v1"
+  },
+  "sfx_win_mini.mp3": {
+    "totalSec": 5.0,
+    "audibleSec": 5.0,
+    "audibleEndSec": 5.0,
+    "trailSec": 0.0,
+    "problematicTail": false,
+    "peakDbfs": -3.0,
+    "dir": "v2"
+  },
+  "sfx_win_big.mp3": {
+    "totalSec": 5.0,
+    "audibleSec": 5.0,
+    "audibleEndSec": 5.0,
+    "trailSec": 0.0,
+    "problematicTail": false,
+    "peakDbfs": -3.0,
+    "dir": "v2"
+  },
+  "sfx_win_mega.mp3": {
+    "totalSec": 5.0,
+    "audibleSec": 5.0,
+    "audibleEndSec": 5.0,
+    "trailSec": 0.0,
+    "problematicTail": false,
+    "peakDbfs": -3.0,
+    "dir": "v2"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "tier": "PERFECT_V",
+  "authMeanFinal": 1321.6561584489311,
+  "targetNatMean": 1315.2456857942782,
+  "pWr": 0.00013167310269823762,
+  "lutMean": 1321.6561584482376,
+  "lutMeanPathB": 1321.6561584482326,
+  "meanDelta": 6.934897101018578e-10,
+  "nNat": 60000,
+  "nWr": 24,
+  "bookCount": 60024,
+  "rawNatMean": 1325.2505666666666,
+  "weightedNatMean": 1315.2456857935963,
+  "shaBook": "9d011d507acc703e41d194a0a6c00990b5601c2d4489ec99ab9fe5225b884274",
+  "shaLut": "dc6ad4451d769131bfe32f854f8806bb09242d4b545fd4632cc494a35604d008",
+  "paths": {
+    "books": "C:\\Users\\grzyb\\OneDrive\\Dokumenty\\skifly-casino-v2\\math\\games\\0_0_poc\\library_v2_phase7c4\\publish_files\\books_PERFECT_V.jsonl.zst",
+    "lut": "C:\\Users\\grzyb\\OneDrive\\Dokumenty\\skifly-casino-v2\\math\\games\\0_0_poc\\library_v2_phase7c4\\publish_files\\lookUpTable_PERFECT_V_0.csv"
+  },
+  "wallSeconds": 266.1701662540436,
+  "dualPathMatch": false
+}

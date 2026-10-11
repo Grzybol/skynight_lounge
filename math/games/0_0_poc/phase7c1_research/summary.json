@@ -1,0 +1,103 @@
+{
+  "configSha256": "d6879d5c9ef3d08386486cd03712d6042e366543597a5c453ca8b1da6f2edbd0",
+  "mathVersion": 1,
+  "liveEconomyModified": false,
+  "estimators": {
+    "historicalProjection": 96.29,
+    "directNaturalMc": 98.42715,
+    "directNaturalMcCi95": [
+      91.44372293801987,
+      105.41057706198012
+    ],
+    "stratifiedMethodA": 95.57808233137267,
+    "stratifiedMethodB": 95.28732489470487,
+    "currentLut": 98.11961749988727,
+    "stratifiedCorrectedHybrid": 97.64093413281266,
+    "exclusiveLinesFeatFsWr": 96.92776129837812
+  },
+  "lutVsStratifiedGapPp": 0.4786833670746091,
+  "acceptanceGate": {
+    "thresholdPp": 0.1,
+    "pass": false,
+    "preferredPass": false,
+    "engineeringPass_0_20": false
+  },
+  "wrDoubleCount": {
+    "answer": "B",
+    "detail": "independent hybrid used meanNaturalX (WR-off MC) \u00d7 absolute start-tier probs + separate analytical WR fill contribution. It did NOT use meanX (w/ WR).",
+    "reconstructedPct": 97.36456550069357,
+    "reportedPct": 97.36456550069357,
+    "ifUsedMeanXWithoutExtraWrPct": 97.30146612907104,
+    "ifUsedMeanXPlusExtraWrPct": 97.75841058887049,
+    "doubleCountImpactPpIfA": 0.393845088176914,
+    "wrContributionPp": 0.45694445979944487,
+    "expectedH2Pp": 0.45694
+  },
+  "phase56DoubleCount": {
+    "answer": "NO",
+    "detail": "7C independent hybrid = eNone + sum(p_tier * buy_meanNaturalX) + WR. buy_meanNaturalX is a FINAL live-resolver bonus EV (PT2H+BODY1+Phase6). It does not additionally add Phase5B 17.927 or Phase6 4.689 deltas. Historical 96.29 projection DOES use staged 5B+6 buckets then deltas \u2014 that is a different estimator, not mixed into the hybrid total.",
+    "impactPp": 0.0,
+    "historicalUsesStagedBuckets": true
+  },
+  "wrLutWeight": {
+    "targetP": 9.145458764342853e-08,
+    "lutEffectiveP": 9.14599994091684e-08,
+    "relError": 5.9174349579643403e-05,
+    "pass": true,
+    "oneInN": 10933741.596982287,
+    "rtpContribution": 0.45729999704584207
+  },
+  "partitionPass": true,
+  "normalizationPass": true,
+  "classification": "MULTIPLE CAUSES",
+  "rootCause": "1) Phase 7C independent hybrid omitted trigger-spin BASE win (~+0.28pp when restored). 2) BASE LUT freegame_* books are finite buy-book slices whose meanX exceeds 200k buy_ev (LARGE_HILL alone ~0.67 pp) \u2014 explains ~0.75pp LUT vs old hybrid. 3) Perfect V LUT weight floor (max weight 1) overweights p by ~7.6x (RTP ~0.002pp). 4) After correction, authoritative ~97.6\u201398.1% still >96.70 \u2014 economy likely hot, but acceptance gate fails until BASE freegame means are reconciled to long-run EV.",
+  "buyCostsProvisional": true,
+  "tuneCandidates": {
+    "authoritativePct": 97.64093413281266,
+    "targetPct": 96.5,
+    "requiredReductionPp": 1.14093413281266,
+    "TUNE_A": {
+      "desc": "WR-only max reduction to 0",
+      "projectedPct": 97.18399413281266,
+      "wrFrequency": "p->0",
+      "sufficient": false,
+      "safeMarginVsCeiling": -0.48399413281265424,
+      "premiumFeel": "removes WR fantasy; core bonus unchanged"
+    },
+    "TUNE_B": {
+      "desc": "WR ~0.10pp + BODY1 partial rollback",
+      "projectedPct": 96.5,
+      "sufficient": true,
+      "safeMarginVsCeiling": 0.2,
+      "premiumFeel": "keeps rare WR; leaner FS tokens"
+    },
+    "TUNE_C": {
+      "desc": "WR ~0.30pp + small PT2H mid/low oak trim + tiny BODY soften",
+      "projectedPct": 96.5,
+      "sufficient": true,
+      "safeMarginVsCeiling": 0.2,
+      "premiumFeel": "preserves WR + Phase6 visibility; mild line nerf"
+    }
+  },
+  "readyForHumanRetuneDecision": false,
+  "blockers": [
+    "LUT vs corrected stratified gap 0.48pp > 0.10pp acceptance gate",
+    "Regenerate BASE freegame strata with long-run-matched means before retune sizing",
+    "Do not treat historical 96.29%% as live absolute (projection undercount vs corrected ~97.64%%)"
+  ],
+  "correctedDecomposition": {
+    "nonBonusMass": 72.16876392959504,
+    "triggerBase": 0.2763686321190828,
+    "naturalBonusFs": 24.738857111299083,
+    "worldRecord": 0.45694445979944487,
+    "TOTAL": 97.64093413281266
+  },
+  "exclusiveDecomposition": {
+    "lines": 60.29945972727959,
+    "baseFeatures": 11.4325,
+    "naturalBonusFs": 24.738857111299083,
+    "worldRecord": 0.45694445979944487,
+    "TOTAL_excl_missing_trig_in_lines": 96.92776129837812,
+    "note": "lines exact already include trigger boards; features estimated on non-trigger only (slight undercount on trigger features)"
+  }
+}

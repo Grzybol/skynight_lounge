@@ -1,0 +1,172 @@
+{
+  "title": "Phase 6A.1 E1 research vs Phase 6B live semantic comparison",
+  "branch": "feat/skyjump-v2-5x5",
+  "researchCandidate": "P6A1_E_E1",
+  "liveOrigin": "P6A1_E_E1",
+  "sources": {
+    "researchEngine": "math/games/0_0_poc/skyjump_v2_phase6a1_engine.py",
+    "researchSearch": "math/games/0_0_poc/skyjump_v2_phase6a1_search.py",
+    "researchPhase6A": "math/games/0_0_poc/skyjump_v2_phase6a_engine.py",
+    "liveResolver": "math/games/0_0_poc/skyjump_v2_phase6b.py",
+    "liveFsPath": "math/games/0_0_poc/skyjump_v2_phase5a_engine.py::resolve_fs_spin",
+    "liveBooks": "math/games/0_0_poc/skyjump_v2_freespins.py",
+    "docs": [
+      "docs/skyjump-v2/18_PHASE6A1_VISIBILITY_ECONOMY_AUDIT.md",
+      "docs/skyjump-v2/19_PHASE6B_REJUMP_WIND_IMPLEMENTATION.md"
+    ]
+  },
+  "headlineAnswer": {
+    "question": "What did Phase 6A.1 E1 research use for stage selection when charge=1 exists on an eligible stage?",
+    "answer": "Pure W2 lowest-value among ALL eligible (non-max) stages. Charge is ignored during selection. choose_stage_a1 does not prefer charged stages; apply_wind_key then charges or upgrades whichever stage W2 returned.",
+    "researchFn": "choose_stage_a1 + apply_wind_key (wind_arch==W-CHARGE)",
+    "liveFn": "choose_stage_charge_priority + apply_wind_key",
+    "liveBehaviour": "If any eligible stage has charge==1, restrict pool to those charged stages, then W2 lowest-value among that subset (UPGRADE). Else W2 among all eligible (CHARGE)."
+  },
+  "rtpGapNote": "Doc 19 attributes live ~+0.66 pp vs E1 research partly to charged-stage priority EV (plus stream noise).",
+  "rows": [
+    {
+      "field": "Mystery weights by tier (E1)",
+      "status": "EQUIVALENT",
+      "research": "PACKS['E1'] via table_for: LH 22/6 FT724; SF 36/14 FT702; WC 48/22 FT682; PV 60/30 FT662; fixed Thermal42 Gate6 Judge170 Head30 (BASE_TOKEN 752)",
+      "live": "skyjump_v2_config.json freeSpins.tiers[*].mysteryResultWeights + phase6.packs same RJ/WK; candidateOrigin P6A1_E_E1"
+    },
+    {
+      "field": "R-BATCH order",
+      "status": "EQUIVALENT",
+      "research": "consume_batch: apply_new_gates → apply_new_winds_a1 → _settle_unpaid_collectors → _take_rejumps",
+      "live": "consume_batch: _apply_gates → apply_wind_key loop → _settle_unpaid → _take_rejumps"
+    },
+    {
+      "field": "Gate / Thermal / collector timing",
+      "status": "EQUIVALENT",
+      "research": "Gates before winds; thermals recomputed inside _apply_thermals at each settle; collectors settle once per batch (R-BATCH)",
+      "live": "Same Gate→Wind→thermal-recompute-at-settle→collectors; thermals only affect later batches after recomputation"
+    },
+    {
+      "field": "Spent collectors",
+      "status": "EQUIVALENT",
+      "research": "paid=True + payoutSpent=True; visual cell remains; unpaid filter skips paid",
+      "live": "paid=True + payoutSpent=True; collections record payoutSpentAfter"
+    },
+    {
+      "field": "Preservation / lock set",
+      "status": "EQUIVALENT",
+      "research": "_locked_positions = all specials + initial scatters + resolved coaches (spent collectors stay in specials)",
+      "live": "Same helper from phase6a_engine; RejumpStart lists preservedPositions"
+    },
+    {
+      "field": "Rejump refill",
+      "status": "EQUIVALENT",
+      "research": "_redrop + refill_catalogs: non-scatter catalog; no S on redrop",
+      "live": "Same _redrop / refill_catalogs via resolve_fs_spin catalogs"
+    },
+    {
+      "field": "Persistent targets — when list updates mid-spin",
+      "status": "DIFFERENCE",
+      "research": "resolve_phase6a1_spin appends coach selections to state.persistentMysteryTargets immediately (initial + after each rejump coach). Subsequent redrops in same spin persist those new targets.",
+      "live": "resolve_phase6b_features only accumulates selectedSymbolIds; resolve_fs_spin appends to state.persistentMysteryTargets AFTER the spin's feature resolve. Mid-chain persist uses pre-spin targets only."
+    },
+    {
+      "field": "Coach-after-Rejump",
+      "status": "MOSTLY_EQUIVALENT_WITH_PERSIST_DIFF",
+      "research": "_run_coaches(..., force_if_none=False, only_positions=coach_cells on fresh); prefer_b=True; exclude=updated targets",
+      "live": "Same force_if_none=False / only_positions=coach_cells; prefer_b from candidate; exclude=pre-spin persistentMysteryTargets (not mid-spin appends)"
+    },
+    {
+      "field": "Perfect V guaranteed Coach",
+      "status": "EQUIVALENT",
+      "research": "force_coach only on initial batch (tier==PERFECT_V); never on rejump batch",
+      "live": "force_coach_if_none only on initial coaches in resolve_phase6b_features; rejump coaches force_if_none=False"
+    },
+    {
+      "field": "Max Rejumps / spin",
+      "status": "EQUIVALENT",
+      "research": "max_rejumps_per_spin=2 (make_spec default)",
+      "live": "MAX_REJUMPS=2 / config freeSpins.phase6.maxRejumpsPerSpin=2"
+    },
+    {
+      "field": "Chain depth",
+      "status": "EQUIVALENT",
+      "research": "max_chain_depth=8",
+      "live": "MAX_CHAIN=8 / maxFeatureChainDepth=8"
+    },
+    {
+      "field": "Wind stage selection (charge=1 present)",
+      "status": "DIFFERENCE_CRITICAL",
+      "research": "choose_stage_a1: pure W2 among all eligible; charge ignored. Doc 18 §3.2: 'W2 lowest-stage selection.'",
+      "live": "choose_stage_charge_priority: charged-stage completion priority then W2. Config stageRule=W2_CHARGE_PRIORITY. Doc 19 §3."
+    },
+    {
+      "field": "W-CHARGE mechanics (two keys per step)",
+      "status": "EQUIVALENT_WHEN_SAME_STAGE_CHOSEN",
+      "research": "charge 0→1 no value change; charge 1→0 + ladder step; immediate active product",
+      "live": "CHARGE / UPGRADE actions; same integer ladder effect; global = product of values only"
+    },
+    {
+      "field": "K1 ladder",
+      "status": "EQUIVALENT",
+      "research": "LADDERS['K1']=(1,2,3); make_spec ladder='K1'",
+      "live": "LADDER='K1'; LADDERS from phase6a_engine"
+    },
+    {
+      "field": "Saturation B",
+      "status": "EQUIVALENT",
+      "research": "allow_wind = not (saturation=='B' and stages_maxed_a1); draw_mystery drops WIND_KEY when allow_wind False",
+      "live": "allow_wind = not stages_maxed(state); same draw_mystery path"
+    },
+    {
+      "field": "Multiplier application on collectors",
+      "status": "EQUIVALENT_FOR_E1",
+      "research": "W-CHARGE uses live active_multiplier(state) at each settle (settle_multiplier)",
+      "live": "global_flight_multiplier(state) at each _settle_unpaid"
+    },
+    {
+      "field": "Head Judge",
+      "status": "EQUIVALENT",
+      "research": "raw_sum * 2.0 per unpaid HEAD; settle order reel,row, judge before head",
+      "live": "two passes of raw_sum * mult per HEAD_JUDGE; same sort key judge-before-head"
+    },
+    {
+      "field": "Judge",
+      "status": "EQUIVALENT",
+      "research": "raw_sum * 1 * multiplier once",
+      "live": "one pass raw_sum * mult"
+    },
+    {
+      "field": "Tier persistence (next-spin upgrades)",
+      "status": "EQUIVALENT",
+      "research": "pendingTier activates when freeSpinsRemaining>0 after spin decrement",
+      "live": "resolve_fs_spin same pendingTier → bonusTier next spin"
+    },
+    {
+      "field": "Flight multiplier persistence across spins/tiers",
+      "status": "EQUIVALENT",
+      "research": "Phase6A1State run_up/takeoff/flight + charges carry for bonus life",
+      "live": "FreeSpinState flightMultiplier + charges carry; ensure_phase6_state"
+    },
+    {
+      "field": "Round cap",
+      "status": "EQUIVALENT",
+      "research": "max_win_x room vs round_prior + bonusWinXCapped (typically 50000)",
+      "live": "candidate.maxWinX 50000; freespins min(50000, trigger+bonus)"
+    },
+    {
+      "field": "W-NEXT-SPIN / W-IMMEDIATE / R-DELAYED",
+      "status": "RESEARCH_ONLY",
+      "research": "Supported in phase6a1_engine for screens; E1 uses R-BATCH+W-CHARGE only",
+      "live": "Not implemented; live fixed R-BATCH+W-CHARGE"
+    },
+    {
+      "field": "PV2 / PV3 forced wind",
+      "status": "EQUIVALENT_DEFAULT_OFF",
+      "research": "Code paths exist; E1 make_spec perfect_v='PV1'",
+      "live": "perfectV PV1; no forced key"
+    },
+    {
+      "field": "Architecture label in config",
+      "status": "DIFFERENCE_DOCUMENTED",
+      "research": "stage_rule='W2' + wind_arch='W-CHARGE'",
+      "live": "stageRule='W2_CHARGE_PRIORITY' (explicit rename of live selection)"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "tier": "LARGE_HILL",
+  "authMeanFinal": 29.10682575656284,
+  "targetNatMean": 28.498384043526407,
+  "pWr": 1.2175774058431621e-05,
+  "lutMean": 29.106825756549476,
+  "lutMeanPathB": 29.106825756547806,
+  "meanDelta": 1.3365308859647484e-11,
+  "nNat": 120000,
+  "nWr": 24,
+  "bookCount": 120024,
+  "rawNatMean": 28.213605833333336,
+  "weightedNatMean": 28.498384043534607,
+  "shaBook": "cd4baa67c58329434e9075a96cdf69b0e11146ae86d067b30dc8432c41e4b8bd",
+  "shaLut": "e62d6551b550ffd31cd1962930064c64942cc31e9fb7189d99e78eb4957b34d2",
+  "paths": {
+    "books": "C:\\Users\\grzyb\\OneDrive\\Dokumenty\\skifly-casino-v2\\math\\games\\0_0_poc\\library_v2_phase7c4\\publish_files\\books_LARGE_HILL.jsonl.zst",
+    "lut": "C:\\Users\\grzyb\\OneDrive\\Dokumenty\\skifly-casino-v2\\math\\games\\0_0_poc\\library_v2_phase7c4\\publish_files\\lookUpTable_LARGE_HILL_0.csv"
+  },
+  "wallSeconds": 161.95258331298828,
+  "dualPathMatch": false
+}

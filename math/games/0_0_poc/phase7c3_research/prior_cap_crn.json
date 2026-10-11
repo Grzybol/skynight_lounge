@@ -1,0 +1,32 @@
+{
+  "paired": {
+    "BASE_TRIGGER_LH_WR_OFF": {
+      "n": 5000,
+      "meanActual": 28.78586,
+      "meanPrior0": 28.32656,
+      "meanDiff": 0.45930000000000004,
+      "seDiff": 0.025996866530677936,
+      "absMeanDiff": 0.45930000000000004,
+      "negligible": false
+    },
+    "BASE_TRIGGER_SF_WR_OFF": {
+      "n": 5000,
+      "meanActual": 183.1122,
+      "meanPrior0": 182.80044,
+      "meanDiff": 0.31176,
+      "seDiff": 0.016401748197944932,
+      "absMeanDiff": 0.31176,
+      "negligible": false
+    },
+    "BASE_TRIGGER_WC_WR_OFF": {
+      "n": 5000,
+      "meanActual": 396.79646,
+      "meanPrior0": 396.59994,
+      "meanDiff": 0.19652000000000028,
+      "seDiff": 0.01186942941303072,
+      "absMeanDiff": 0.19652000000000028,
+      "negligible": false
+    }
+  },
+  "conclusion": "small_or_uncertain"
+}

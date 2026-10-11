@@ -1,0 +1,145 @@
+{
+  "generatedAt": "2026-09-16",
+  "note": "ComfyUI at http://127.0.0.1:8188 was not reachable. These SVG plates are authored placeholders with a winter stadium look, ready to swap for local Comfy outputs.",
+  "comfyStatus": "unreachable",
+  "comfyEndpointChecked": "http://127.0.0.1:8188/system_stats",
+  "negativePrompt": "photorealism, neon bloom, baked-in UI, logos, watermarks, glossy 3D casino clutter",
+  "assets": [
+    {
+      "assetName": "menu-background",
+      "path": "assets/skyjump/backgrounds/menu.svg",
+      "prompt": "Snow-covered ski jumping stadium at night, floodlights, mountains, premium casino-game look, space for logo and menu",
+      "model": "authored-svg-placeholder",
+      "workflow": "none",
+      "seed": null,
+      "resolution": "1920x1080",
+      "generationDate": "2026-09-16"
+    },
+    {
+      "assetName": "gameplay-background",
+      "path": "assets/skyjump/backgrounds/gameplay.webp",
+      "prompt": "User-supplied cinematic ski-jump in-run photograph: jumper from behind, night stadium, lake and mountains. Used as the runtime gameplay background.",
+      "model": "user-supplied-raster",
+      "workflow": "converted locally to WebP q82",
+      "seed": null,
+      "resolution": "1024x576",
+      "generationDate": "2026-09-16"
+    },
+    {
+      "assetName": "jumper-menu-foreground",
+      "path": "assets/skyjump/jumper/menu-foreground.svg",
+      "prompt": "Ski jumper in helmet and skis, foreground for the main menu, easy to composite over stadium",
+      "model": "authored-svg-placeholder",
+      "workflow": "none",
+      "seed": null,
+      "resolution": "720x1080",
+      "generationDate": "2026-09-16"
+    },
+    {
+      "assetName": "jumper-flight",
+      "path": "assets/skyjump/jumper/flight.svg",
+      "prompt": "Ski jumper in flight, isolated foreground for a result overlay card, transparent background",
+      "model": "authored-svg-placeholder",
+      "workflow": "none",
+      "seed": null,
+      "resolution": "640x420",
+      "generationDate": "2026-09-16"
+    },
+    {
+      "assetName": "weather-sunny",
+      "path": "assets/skyjump/weather/sunny.svg",
+      "prompt": "Sunny hill-condition icon, winter sports broadcast panel style",
+      "model": "authored-svg-placeholder",
+      "iconKey": "sunny",
+      "generationDate": "2026-09-16"
+    },
+    {
+      "assetName": "weather-light-favorable-wind",
+      "path": "assets/skyjump/weather/lightFavorableWind.svg",
+      "prompt": "Light favorable wind icon",
+      "model": "authored-svg-placeholder",
+      "iconKey": "lightFavorableWind",
+      "generationDate": "2026-09-16"
+    },
+    {
+      "assetName": "weather-snow",
+      "path": "assets/skyjump/weather/snow.svg",
+      "prompt": "Snowfall hill-condition icon",
+      "model": "authored-svg-placeholder",
+      "iconKey": "snow",
+      "generationDate": "2026-09-16"
+    },
+    {
+      "assetName": "weather-headwind-lift",
+      "path": "assets/skyjump/weather/headwindLift.svg",
+      "prompt": "Headwind / lift wind icon",
+      "model": "authored-svg-placeholder",
+      "iconKey": "headwindLift",
+      "generationDate": "2026-09-16"
+    },
+    {
+      "assetName": "weather-crosswind",
+      "path": "assets/skyjump/weather/crosswind.svg",
+      "prompt": "Crosswind icon",
+      "model": "authored-svg-placeholder",
+      "iconKey": "crosswind",
+      "generationDate": "2026-09-16"
+    },
+    {
+      "assetName": "weather-storm",
+      "path": "assets/skyjump/weather/storm.svg",
+      "prompt": "Storm / very difficult conditions icon",
+      "model": "authored-svg-placeholder",
+      "iconKey": "storm",
+      "generationDate": "2026-09-16"
+    },
+    {
+      "assetName": "role-speed",
+      "path": "assets/skyjump/reel-icons/speed.svg",
+      "prompt": "Run-up / speed slot role icon",
+      "model": "authored-svg-placeholder",
+      "iconKey": "speed",
+      "generationDate": "2026-09-16"
+    },
+    {
+      "assetName": "role-takeoff",
+      "path": "assets/skyjump/reel-icons/takeoff.svg",
+      "prompt": "Takeoff slot role icon",
+      "model": "authored-svg-placeholder",
+      "iconKey": "takeoff",
+      "generationDate": "2026-09-16"
+    },
+    {
+      "assetName": "role-flight",
+      "path": "assets/skyjump/reel-icons/flight.svg",
+      "prompt": "Flight slot role icon",
+      "model": "authored-svg-placeholder",
+      "iconKey": "flight",
+      "generationDate": "2026-09-16"
+    },
+    {
+      "assetName": "role-wind",
+      "path": "assets/skyjump/reel-icons/wind.svg",
+      "prompt": "Wind / conditions slot role icon",
+      "model": "authored-svg-placeholder",
+      "iconKey": "wind",
+      "generationDate": "2026-09-16"
+    },
+    {
+      "assetName": "role-landing",
+      "path": "assets/skyjump/reel-icons/landing.svg",
+      "prompt": "Landing / style slot role icon",
+      "model": "authored-svg-placeholder",
+      "iconKey": "landing",
+      "generationDate": "2026-09-16"
+    },
+    {
+      "assetName": "role-multiplier",
+      "path": "assets/skyjump/reel-icons/multiplier.svg",
+      "prompt": "Final multiplier slot role icon",
+      "model": "authored-svg-placeholder",
+      "iconKey": "multiplier",
+      "generationDate": "2026-09-16"
+    }
+  ]
+}

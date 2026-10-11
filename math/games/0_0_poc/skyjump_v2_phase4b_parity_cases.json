@@ -1,0 +1,5032 @@
+{
+  "nonProduction": true,
+  "cases": [
+    {
+      "events": [
+        {
+          "index": 0,
+          "type": "skyjumpSpinStart",
+          "schemaVersion": 2,
+          "mode": "BASE",
+          "isFreeSpin": false,
+          "source": "math",
+          "stops": [
+            20,
+            19,
+            25,
+            83,
+            3
+          ]
+        },
+        {
+          "index": 1,
+          "type": "skyjumpBoardReveal",
+          "schemaVersion": 2,
+          "board": [
+            [
+              "M3",
+              "L3",
+              "L3",
+              "P3",
+              "L2"
+            ],
+            [
+              "L3",
+              "P2",
+              "P3",
+              "P2",
+              "L1"
+            ],
+            [
+              "L3",
+              "L3",
+              "M2",
+              "M2",
+              "L3"
+            ],
+            [
+              "L2",
+              "P1",
+              "L2",
+              "L1",
+              "M2"
+            ],
+            [
+              "L2",
+              "M3",
+              "M3",
+              "L2",
+              "L1"
+            ]
+          ]
+        },
+        {
+          "index": 2,
+          "type": "skyjumpLineWins",
+          "schemaVersion": 2,
+          "wins": [
+            {
+              "paylineId": 10,
+              "symbolId": "L3",
+              "matchCount": 3,
+              "positions": [
+                {
+                  "reel": 0,
+                  "row": 1
+                },
+                {
+                  "reel": 1,
+                  "row": 0
+                },
+                {
+                  "reel": 2,
+                  "row": 0
+                }
+              ],
+              "payoutX": 0.5
+            }
+          ],
+          "lineWinX": 0.5
+        },
+        {
+          "index": 3,
+          "type": "skyjumpScatterResult",
+          "schemaVersion": 2,
+          "positions": [],
+          "count": 0,
+          "perfectV": false,
+          "trigger": null,
+          "fromBoard": "initialReveal"
+        },
+        {
+          "index": 4,
+          "type": "skyjumpResult",
+          "schemaVersion": 2,
+          "totalLineWinX": 0.5,
+          "totalFeatureWinX": 0.0,
+          "totalFeatureWinXRaw": 0.0,
+          "totalWinX": 0.5,
+          "totalWinXRaw": 0.5,
+          "amount": 50,
+          "latentTokenValueX": 0.0,
+          "tokenFloorTier": 1,
+          "capHit": false
+        },
+        {
+          "index": 5,
+          "type": "setTotalWin",
+          "amount": 50
+        },
+        {
+          "index": 6,
+          "type": "finalWin",
+          "amount": 50
+        }
+      ],
+      "featureWinX": 0.0,
+      "totalWinX": 0.5,
+      "board": [
+        [
+          "M3",
+          "L3",
+          "L3",
+          "P3",
+          "L2"
+        ],
+        [
+          "L3",
+          "P2",
+          "P3",
+          "P2",
+          "L1"
+        ],
+        [
+          "L3",
+          "L3",
+          "M2",
+          "M2",
+          "L3"
+        ],
+        [
+          "L2",
+          "P1",
+          "L2",
+          "L1",
+          "M2"
+        ],
+        [
+          "L2",
+          "M3",
+          "M3",
+          "L2",
+          "L1"
+        ]
+      ],
+      "tokenFloorTier": 1,
+      "capReached": false
+    },
+    {
+      "events": [
+        {
+          "index": 0,
+          "type": "skyjumpSpinStart",
+          "schemaVersion": 2,
+          "mode": "BASE",
+          "isFreeSpin": false,
+          "source": "math",
+          "stops": [
+            4,
+            105,
+            34,
+            12,
+            23
+          ]
+        },
+        {
+          "index": 1,
+          "type": "skyjumpBoardReveal",
+          "schemaVersion": 2,
+          "board": [
+            [
+              "L1",
+              "M3",
+              "L3",
+              "L1",
+              "M3"
+            ],
+            [
+              "L1",
+              "M2",
+              "L1",
+              "L3",
+              "L3"
+            ],
+            [
+              "L1",
+              "L3",
+              "M1",
+              "L3",
+              "L1"
+            ],
+            [
+              "P3",
+              "L1",
+              "M1",
+              "P2",
+              "L3"
+            ],
+            [
+              "P1",
+              "M1",
+              "L2",
+              "L3",
+              "M2"
+            ]
+          ]
+        },
+        {
+          "index": 2,
+          "type": "skyjumpLineWins",
+          "schemaVersion": 2,
+          "wins": [
+            {
+              "paylineId": 1,
+              "symbolId": "L1",
+              "matchCount": 3,
+              "positions": [
+                {
+                  "reel": 0,
+                  "row": 0
+                },
+                {
+                  "reel": 1,
+                  "row": 0
+                },
+                {
+                  "reel": 2,
+                  "row": 0
+                }
+              ],
+              "payoutX": 0.8
+            },
+            {
+              "paylineId": 28,
+              "symbolId": "L1",
+              "matchCount": 3,
+              "positions": [
+                {
+                  "reel": 0,
+                  "row": 0
+                },
+                {
+                  "reel": 1,
+                  "row": 2
+                },
+                {
+                  "reel": 2,
+                  "row": 4
+                }
+              ],
+              "payoutX": 0.8
+            }
+          ],
+          "lineWinX": 1.6
+        },
+        {
+          "index": 3,
+          "type": "skyjumpScatterResult",
+          "schemaVersion": 2,
+          "positions": [],
+          "count": 0,
+          "perfectV": false,
+          "trigger": null,
+          "fromBoard": "initialReveal"
+        },
+        {
+          "index": 4,
+          "type": "skyjumpResult",
+          "schemaVersion": 2,
+          "totalLineWinX": 1.6,
+          "totalFeatureWinX": 0.0,
+          "totalFeatureWinXRaw": 0.0,
+          "totalWinX": 1.6,
+          "totalWinXRaw": 1.6,
+          "amount": 160,
+          "latentTokenValueX": 0.0,
+          "tokenFloorTier": 1,
+          "capHit": false
+        },
+        {
+          "index": 5,
+          "type": "setTotalWin",
+          "amount": 160
+        },
+        {
+          "index": 6,
+          "type": "finalWin",
+          "amount": 160
+        }
+      ],
+      "featureWinX": 0.0,
+      "totalWinX": 1.6,
+      "board": [
+        [
+          "L1",
+          "M3",
+          "L3",
+          "L1",
+          "M3"
+        ],
+        [
+          "L1",
+          "M2",
+          "L1",
+          "L3",
+          "L3"
+        ],
+        [
+          "L1",
+          "L3",
+          "M1",
+          "L3",
+          "L1"
+        ],
+        [
+          "P3",
+          "L1",
+          "M1",
+          "P2",
+          "L3"
+        ],
+        [
+          "P1",
+          "M1",
+          "L2",
+          "L3",
+          "M2"
+        ]
+      ],
+      "tokenFloorTier": 1,
+      "capReached": false
+    },
+    {
+      "events": [
+        {
+          "index": 0,
+          "type": "skyjumpSpinStart",
+          "schemaVersion": 2,
+          "mode": "BASE",
+          "isFreeSpin": false,
+          "source": "math",
+          "stops": [
+            37,
+            7,
+            32,
+            27,
+            2
+          ]
+        },
+        {
+          "index": 1,
+          "type": "skyjumpBoardReveal",
+          "schemaVersion": 2,
+          "board": [
+            [
+              "P3",
+              "L1",
+              "L2",
+              "M2",
+              "L1"
+            ],
+            [
+              "M2",
+              "M3",
+              "L3",
+              "L1",
+              "L2"
+            ],
+            [
+              "L3",
+              "M3",
+              "L1",
+              "L3",
+              "M1"
+            ],
+            [
+              "L1",
+              "S",
+              "L2",
+              "L1",
+              "L2"
+            ],
+            [
+              "L1",
+              "L2",
+              "M3",
+              "M3",
+              "L2"
+            ]
+          ]
+        },
+        {
+          "index": 2,
+          "type": "skyjumpLineWins",
+          "schemaVersion": 2,
+          "wins": [
+            {
+              "paylineId": 7,
+              "symbolId": "L1",
+              "matchCount": 4,
+              "positions": [
+                {
+                  "reel": 0,
+                  "row": 4
+                },
+                {
+                  "reel": 1,
+                  "row": 3
+                },
+                {
+                  "reel": 2,
+                  "row": 2
+                },
+                {
+                  "reel": 3,
+                  "row": 3
+                }
+              ],
+              "payoutX": 1.7
+            },
+            {
+              "paylineId": 19,
+              "symbolId": "L1",
+              "matchCount": 3,
+              "positions": [
+                {
+                  "reel": 0,
+                  "row": 4
+                },
+                {
+                  "reel": 1,
+                  "row": 3
+                },
+                {
+                  "reel": 2,
+                  "row": 2
+                }
+              ],
+              "payoutX": 0.8
+            }
+          ],
+          "lineWinX": 2.5
+        },
+        {
+          "index": 3,
+          "type": "skyjumpScatterResult",
+          "schemaVersion": 2,
+          "positions": [
+            {
+              "reel": 3,
+              "row": 1
+            }
+          ],
+          "count": 1,
+          "perfectV": false,
+          "trigger": null,
+          "fromBoard": "initialReveal"
+        },
+        {
+          "index": 4,
+          "type": "skyjumpResult",
+          "schemaVersion": 2,
+          "totalLineWinX": 2.5,
+          "totalFeatureWinX": 0.0,
+          "totalFeatureWinXRaw": 0.0,
+          "totalWinX": 2.5,
+          "totalWinXRaw": 2.5,
+          "amount": 250,
+          "latentTokenValueX": 0.0,
+          "tokenFloorTier": 1,
+          "capHit": false
+        },
+        {
+          "index": 5,
+          "type": "setTotalWin",
+          "amount": 250
+        },
+        {
+          "index": 6,
+          "type": "finalWin",
+          "amount": 250
+        }
+      ],
+      "featureWinX": 0.0,
+      "totalWinX": 2.5,
+      "board": [
+        [
+          "P3",
+          "L1",
+          "L2",
+          "M2",
+          "L1"
+        ],
+        [
+          "M2",
+          "M3",
+          "L3",
+          "L1",
+          "L2"
+        ],
+        [
+          "L3",
+          "M3",
+          "L1",
+          "L3",
+          "M1"
+        ],
+        [
+          "L1",
+          "S",
+          "L2",
+          "L1",
+          "L2"
+        ],
+        [
+          "L1",
+          "L2",
+          "M3",
+          "M3",
+          "L2"
+        ]
+      ],
+      "tokenFloorTier": 1,
+      "capReached": false
+    },
+    {
+      "events": [
+        {
+          "index": 0,
+          "type": "skyjumpSpinStart",
+          "schemaVersion": 2,
+          "mode": "BASE",
+          "isFreeSpin": false,
+          "source": "math",
+          "stops": [
+            5,
+            55,
+            26,
+            8,
+            15
+          ]
+        },
+        {
+          "index": 1,
+          "type": "skyjumpBoardReveal",
+          "schemaVersion": 2,
+          "board": [
+            [
+              "M3",
+              "L3",
+              "L1",
+              "M3",
+              "L2"
+            ],
+            [
+              "L1",
+              "L3",
+              "L3",
+              "L2",
+              "M2"
+            ],
+            [
+              "L3",
+              "M2",
+              "M2",
+              "L3",
+              "M3"
+            ],
+            [
+              "M2",
+              "L3",
+              "L2",
+              "L2",
+              "P3"
+            ],
+            [
+              "M1",
+              "L3",
+              "L3",
+              "L1",
+              "L3"
+            ]
+          ]
+        },
+        {
+          "index": 2,
+          "type": "skyjumpLineWins",
+          "schemaVersion": 2,
+          "wins": [
+            {
+              "paylineId": 12,
+              "symbolId": "L3",
+              "matchCount": 3,
+              "positions": [
+                {
+                  "reel": 0,
+                  "row": 1
+                },
+                {
+                  "reel": 1,
+                  "row": 2
+                },
+                {
+                  "reel": 2,
+                  "row": 3
+                }
+              ],
+              "payoutX": 0.5
+            }
+          ],
+          "lineWinX": 0.5
+        },
+        {
+          "index": 3,
+          "type": "skyjumpScatterResult",
+          "schemaVersion": 2,
+          "positions": [],
+          "count": 0,
+          "perfectV": false,
+          "trigger": null,
+          "fromBoard": "initialReveal"
+        },
+        {
+          "index": 4,
+          "type": "skyjumpResult",
+          "schemaVersion": 2,
+          "totalLineWinX": 0.5,
+          "totalFeatureWinX": 0.0,
+          "totalFeatureWinXRaw": 0.0,
+          "totalWinX": 0.5,
+          "totalWinXRaw": 0.5,
+          "amount": 50,
+          "latentTokenValueX": 0.0,
+          "tokenFloorTier": 1,
+          "capHit": false
+        },
+        {
+          "index": 5,
+          "type": "setTotalWin",
+          "amount": 50
+        },
+        {
+          "index": 6,
+          "type": "finalWin",
+          "amount": 50
+        }
+      ],
+      "featureWinX": 0.0,
+      "totalWinX": 0.5,
+      "board": [
+        [
+          "M3",
+          "L3",
+          "L1",
+          "M3",
+          "L2"
+        ],
+        [
+          "L1",
+          "L3",
+          "L3",
+          "L2",
+          "M2"
+        ],
+        [
+          "L3",
+          "M2",
+          "M2",
+          "L3",
+          "M3"
+        ],
+        [
+          "M2",
+          "L3",
+          "L2",
+          "L2",
+          "P3"
+        ],
+        [
+          "M1",
+          "L3",
+          "L3",
+          "L1",
+          "L3"
+        ]
+      ],
+      "tokenFloorTier": 1,
+      "capReached": false
+    },
+    {
+      "events": [
+        {
+          "index": 0,
+          "type": "skyjumpSpinStart",
+          "schemaVersion": 2,
+          "mode": "BASE",
+          "isFreeSpin": false,
+          "source": "math",
+          "stops": [
+            5,
+            70,
+            27,
+            7,
+            36
+          ]
+        },
+        {
+          "index": 1,
+          "type": "skyjumpBoardReveal",
+          "schemaVersion": 2,
+          "board": [
+            [
+              "M3",
+              "L3",
+              "L1",
+              "M3",
+              "L2"
+            ],
+            [
+              "M2",
+              "L3",
+              "P2",
+              "P3",
+              "P2"
+            ],
+            [
+              "M2",
+              "M2",
+              "L3",
+              "M3",
+              "L1"
+            ],
+            [
+              "P3",
+              "M2",
+              "L3",
+              "L2",
+              "L2"
+            ],
+            [
+              "L3",
+              "L1",
+              "P2",
+              "M3",
+              "P3"
+            ]
+          ]
+        },
+        {
+          "index": 2,
+          "type": "skyjumpLineWins",
+          "schemaVersion": 2,
+          "wins": [
+            {
+              "paylineId": 24,
+              "symbolId": "L3",
+              "matchCount": 3,
+              "positions": [
+                {
+                  "reel": 0,
+                  "row": 1
+                },
+                {
+                  "reel": 1,
+                  "row": 1
+                },
+                {
+                  "reel": 2,
+                  "row": 2
+                }
+              ],
+              "payoutX": 0.5
+            }
+          ],
+          "lineWinX": 0.5
+        },
+        {
+          "index": 3,
+          "type": "skyjumpScatterResult",
+          "schemaVersion": 2,
+          "positions": [],
+          "count": 0,
+          "perfectV": false,
+          "trigger": null,
+          "fromBoard": "initialReveal"
+        },
+        {
+          "index": 4,
+          "type": "skyjumpResult",
+          "schemaVersion": 2,
+          "totalLineWinX": 0.5,
+          "totalFeatureWinX": 0.0,
+          "totalFeatureWinXRaw": 0.0,
+          "totalWinX": 0.5,
+          "totalWinXRaw": 0.5,
+          "amount": 50,
+          "latentTokenValueX": 0.0,
+          "tokenFloorTier": 1,
+          "capHit": false
+        },
+        {
+          "index": 5,
+          "type": "setTotalWin",
+          "amount": 50
+        },
+        {
+          "index": 6,
+          "type": "finalWin",
+          "amount": 50
+        }
+      ],
+      "featureWinX": 0.0,
+      "totalWinX": 0.5,
+      "board": [
+        [
+          "M3",
+          "L3",
+          "L1",
+          "M3",
+          "L2"
+        ],
+        [
+          "M2",
+          "L3",
+          "P2",
+          "P3",
+          "P2"
+        ],
+        [
+          "M2",
+          "M2",
+          "L3",
+          "M3",
+          "L1"
+        ],
+        [
+          "P3",
+          "M2",
+          "L3",
+          "L2",
+          "L2"
+        ],
+        [
+          "L3",
+          "L1",
+          "P2",
+          "M3",
+          "P3"
+        ]
+      ],
+      "tokenFloorTier": 1,
+      "capReached": false
+    },
+    {
+      "events": [
+        {
+          "index": 0,
+          "type": "skyjumpSpinStart",
+          "schemaVersion": 2,
+          "mode": "BASE",
+          "isFreeSpin": false,
+          "source": "math",
+          "stops": [
+            7,
+            28,
+            40,
+            80,
+            37
+          ]
+        },
+        {
+          "index": 1,
+          "type": "skyjumpBoardReveal",
+          "schemaVersion": 2,
+          "board": [
+            [
+              "L1",
+              "M3",
+              "L2",
+              "L2",
+              "L3"
+            ],
+            [
+              "L3",
+              "L2",
+              "M1",
+              "M3",
+              "M1"
+            ],
+            [
+              "L2",
+              "M1",
+              "L1",
+              "L3",
+              "L3"
+            ],
+            [
+              "S",
+              "L2",
+              "L1",
+              "L2",
+              "P1"
+            ],
+            [
+              "L1",
+              "P2",
+              "M3",
+              "P3",
+              "L1"
+            ]
+          ]
+        },
+        {
+          "index": 2,
+          "type": "skyjumpLineWins",
+          "schemaVersion": 2,
+          "wins": [
+            {
+              "paylineId": 16,
+              "symbolId": "L2",
+              "matchCount": 4,
+              "positions": [
+                {
+                  "reel": 0,
+                  "row": 2
+                },
+                {
+                  "reel": 1,
+                  "row": 1
+                },
+                {
+                  "reel": 2,
+                  "row": 0
+                },
+                {
+                  "reel": 3,
+                  "row": 1
+                }
+              ],
+              "payoutX": 1.3
+            }
+          ],
+          "lineWinX": 1.3
+        },
+        {
+          "index": 3,
+          "type": "skyjumpScatterResult",
+          "schemaVersion": 2,
+          "positions": [
+            {
+              "reel": 3,
+              "row": 0
+            }
+          ],
+          "count": 1,
+          "perfectV": false,
+          "trigger": null,
+          "fromBoard": "initialReveal"
+        },
+        {
+          "index": 4,
+          "type": "skyjumpResult",
+          "schemaVersion": 2,
+          "totalLineWinX": 1.3,
+          "totalFeatureWinX": 0.0,
+          "totalFeatureWinXRaw": 0.0,
+          "totalWinX": 1.3,
+          "totalWinXRaw": 1.3,
+          "amount": 130,
+          "latentTokenValueX": 0.0,
+          "tokenFloorTier": 1,
+          "capHit": false
+        },
+        {
+          "index": 5,
+          "type": "setTotalWin",
+          "amount": 130
+        },
+        {
+          "index": 6,
+          "type": "finalWin",
+          "amount": 130
+        }
+      ],
+      "featureWinX": 0.0,
+      "totalWinX": 1.3,
+      "board": [
+        [
+          "L1",
+          "M3",
+          "L2",
+          "L2",
+          "L3"
+        ],
+        [
+          "L3",
+          "L2",
+          "M1",
+          "M3",
+          "M1"
+        ],
+        [
+          "L2",
+          "M1",
+          "L1",
+          "L3",
+          "L3"
+        ],
+        [
+          "S",
+          "L2",
+          "L1",
+          "L2",
+          "P1"
+        ],
+        [
+          "L1",
+          "P2",
+          "M3",
+          "P3",
+          "L1"
+        ]
+      ],
+      "tokenFloorTier": 1,
+      "capReached": false
+    },
+    {
+      "events": [
+        {
+          "index": 0,
+          "type": "skyjumpSpinStart",
+          "schemaVersion": 2,
+          "mode": "BASE",
+          "isFreeSpin": false,
+          "source": "math",
+          "stops": [
+            3,
+            73,
+            37,
+            50,
+            3
+          ]
+        },
+        {
+          "index": 1,
+          "type": "skyjumpBoardReveal",
+          "schemaVersion": 2,
+          "board": [
+            [
+              "S",
+              "L1",
+              "M3",
+              "L3",
+              "L1"
+            ],
+            [
+              "P3",
+              "P2",
+              "L1",
+              "L3",
+              "L1"
+            ],
+            [
+              "L3",
+              "L1",
+              "L1",
+              "L2",
+              "M1"
+            ],
+            [
+              "M3",
+              "P2",
+              "L1",
+              "L1",
+              "L2"
+            ],
+            [
+              "L2",
+              "M3",
+              "M3",
+              "L2",
+              "L1"
+            ]
+          ]
+        },
+        {
+          "index": 2,
+          "type": "skyjumpLineWins",
+          "schemaVersion": 2,
+          "wins": [
+            {
+              "paylineId": 22,
+              "symbolId": "L1",
+              "matchCount": 4,
+              "positions": [
+                {
+                  "reel": 0,
+                  "row": 1
+                },
+                {
+                  "reel": 1,
+                  "row": 2
+                },
+                {
+                  "reel": 2,
+                  "row": 1
+                },
+                {
+                  "reel": 3,
+                  "row": 2
+                }
+              ],
+              "payoutX": 1.7
+            }
+          ],
+          "lineWinX": 1.7
+        },
+        {
+          "index": 3,
+          "type": "skyjumpScatterResult",
+          "schemaVersion": 2,
+          "positions": [
+            {
+              "reel": 0,
+              "row": 0
+            }
+          ],
+          "count": 1,
+          "perfectV": false,
+          "trigger": null,
+          "fromBoard": "initialReveal"
+        },
+        {
+          "index": 4,
+          "type": "skyjumpResult",
+          "schemaVersion": 2,
+          "totalLineWinX": 1.7,
+          "totalFeatureWinX": 0.0,
+          "totalFeatureWinXRaw": 0.0,
+          "totalWinX": 1.7,
+          "totalWinXRaw": 1.7,
+          "amount": 170,
+          "latentTokenValueX": 0.0,
+          "tokenFloorTier": 1,
+          "capHit": false
+        },
+        {
+          "index": 5,
+          "type": "setTotalWin",
+          "amount": 170
+        },
+        {
+          "index": 6,
+          "type": "finalWin",
+          "amount": 170
+        }
+      ],
+      "featureWinX": 0.0,
+      "totalWinX": 1.7,
+      "board": [
+        [
+          "S",
+          "L1",
+          "M3",
+          "L3",
+          "L1"
+        ],
+        [
+          "P3",
+          "P2",
+          "L1",
+          "L3",
+          "L1"
+        ],
+        [
+          "L3",
+          "L1",
+          "L1",
+          "L2",
+          "M1"
+        ],
+        [
+          "M3",
+          "P2",
+          "L1",
+          "L1",
+          "L2"
+        ],
+        [
+          "L2",
+          "M3",
+          "M3",
+          "L2",
+          "L1"
+        ]
+      ],
+      "tokenFloorTier": 1,
+      "capReached": false
+    },
+    {
+      "events": [
+        {
+          "index": 0,
+          "type": "skyjumpSpinStart",
+          "schemaVersion": 2,
+          "mode": "BASE",
+          "isFreeSpin": false,
+          "source": "math",
+          "stops": [
+            14,
+            5,
+            35,
+            109,
+            8
+          ]
+        },
+        {
+          "index": 1,
+          "type": "skyjumpBoardReveal",
+          "schemaVersion": 2,
+          "board": [
+            [
+              "M2",
+              "P2",
+              "M1",
+              "L2",
+              "L1"
+            ],
+            [
+              "L3",
+              "L2",
+              "M2",
+              "M3",
+              "L3"
+            ],
+            [
+              "L3",
+              "M1",
+              "L3",
+              "L1",
+              "L1"
+            ],
+            [
+              "L1",
+              "L3",
+              "P3",
+              "M2",
+              "L3"
+            ],
+            [
+              "M2",
+              "M2",
+              "L1",
+              "L3",
+              "L2"
+            ]
+          ]
+        },
+        {
+          "index": 2,
+          "type": "skyjumpLineWins",
+          "schemaVersion": 2,
+          "wins": [],
+          "lineWinX": 0.0
+        },
+        {
+          "index": 3,
+          "type": "skyjumpScatterResult",
+          "schemaVersion": 2,
+          "positions": [],
+          "count": 0,
+          "perfectV": false,
+          "trigger": null,
+          "fromBoard": "initialReveal"
+        },
+        {
+          "index": 4,
+          "type": "skyjumpResult",
+          "schemaVersion": 2,
+          "totalLineWinX": 0.0,
+          "totalFeatureWinX": 0.0,
+          "totalFeatureWinXRaw": 0.0,
+          "totalWinX": 0.0,
+          "totalWinXRaw": 0.0,
+          "amount": 0,
+          "latentTokenValueX": 0.0,
+          "tokenFloorTier": 1,
+          "capHit": false
+        },
+        {
+          "index": 5,
+          "type": "setTotalWin",
+          "amount": 0
+        },
+        {
+          "index": 6,
+          "type": "finalWin",
+          "amount": 0
+        }
+      ],
+      "featureWinX": 0.0,
+      "totalWinX": 0.0,
+      "board": [
+        [
+          "M2",
+          "P2",
+          "M1",
+          "L2",
+          "L1"
+        ],
+        [
+          "L3",
+          "L2",
+          "M2",
+          "M3",
+          "L3"
+        ],
+        [
+          "L3",
+          "M1",
+          "L3",
+          "L1",
+          "L1"
+        ],
+        [
+          "L1",
+          "L3",
+          "P3",
+          "M2",
+          "L3"
+        ],
+        [
+          "M2",
+          "M2",
+          "L1",
+          "L3",
+          "L2"
+        ]
+      ],
+      "tokenFloorTier": 1,
+      "capReached": false
+    },
+    {
+      "events": [
+        {
+          "index": 0,
+          "type": "skyjumpSpinStart",
+          "schemaVersion": 2,
+          "mode": "BASE",
+          "isFreeSpin": false,
+          "source": "math",
+          "stops": [
+            18,
+            53,
+            9,
+            69,
+            7
+          ]
+        },
+        {
+          "index": 1,
+          "type": "skyjumpBoardReveal",
+          "schemaVersion": 2,
+          "board": [
+            [
+              "L1",
+              "M2",
+              "M3",
+              "L3",
+              "L3"
+            ],
+            [
+              "L1",
+              "M2",
+              "L1",
+              "L3",
+              "L3"
+            ],
+            [
+              "L1",
+              "L2",
+              "L3",
+              "L2",
+              "P3"
+            ],
+            [
+              "L2",
+              "M3",
+              "L1",
+              "L3",
+              "M1"
+            ],
+            [
+              "L1",
+              "M2",
+              "M2",
+              "L1",
+              "L3"
+            ]
+          ]
+        },
+        {
+          "index": 2,
+          "type": "skyjumpLineWins",
+          "schemaVersion": 2,
+          "wins": [
+            {
+              "paylineId": 1,
+              "symbolId": "L1",
+              "matchCount": 3,
+              "positions": [
+                {
+                  "reel": 0,
+                  "row": 0
+                },
+                {
+                  "reel": 1,
+                  "row": 0
+                },
+                {
+                  "reel": 2,
+                  "row": 0
+                }
+              ],
+              "payoutX": 0.8
+            },
+            {
+              "paylineId": 7,
+              "symbolId": "L3",
+              "matchCount": 5,
+              "positions": [
+                {
+                  "reel": 0,
+                  "row": 4
+                },
+                {
+                  "reel": 1,
+                  "row": 3
+                },
+                {
+                  "reel": 2,
+                  "row": 2
+                },
+                {
+                  "reel": 3,
+                  "row": 3
+                },
+                {
+                  "reel": 4,
+                  "row": 4
+                }
+              ],
+              "payoutX": 2.2
+            },
+            {
+              "paylineId": 19,
+              "symbolId": "L3",
+              "matchCount": 3,
+              "positions": [
+                {
+                  "reel": 0,
+                  "row": 4
+                },
+                {
+                  "reel": 1,
+                  "row": 3
+                },
+                {
+                  "reel": 2,
+                  "row": 2
+                }
+              ],
+              "payoutX": 0.5
+            },
+            {
+              "paylineId": 25,
+              "symbolId": "L3",
+              "matchCount": 4,
+              "positions": [
+                {
+                  "reel": 0,
+                  "row": 3
+                },
+                {
+                  "reel": 1,
+                  "row": 3
+                },
+                {
+                  "reel": 2,
+                  "row": 2
+                },
+                {
+                  "reel": 3,
+                  "row": 3
+                }
+              ],
+              "payoutX": 1.1
+            }
+          ],
+          "lineWinX": 4.6
+        },
+        {
+          "index": 3,
+          "type": "skyjumpScatterResult",
+          "schemaVersion": 2,
+          "positions": [],
+          "count": 0,
+          "perfectV": false,
+          "trigger": null,
+          "fromBoard": "initialReveal"
+        },
+        {
+          "index": 4,
+          "type": "skyjumpResult",
+          "schemaVersion": 2,
+          "totalLineWinX": 4.6,
+          "totalFeatureWinX": 0.0,
+          "totalFeatureWinXRaw": 0.0,
+          "totalWinX": 4.6,
+          "totalWinXRaw": 4.6,
+          "amount": 460,
+          "latentTokenValueX": 0.0,
+          "tokenFloorTier": 1,
+          "capHit": false
+        },
+        {
+          "index": 5,
+          "type": "setTotalWin",
+          "amount": 460
+        },
+        {
+          "index": 6,
+          "type": "finalWin",
+          "amount": 460
+        }
+      ],
+      "featureWinX": 0.0,
+      "totalWinX": 4.6,
+      "board": [
+        [
+          "L1",
+          "M2",
+          "M3",
+          "L3",
+          "L3"
+        ],
+        [
+          "L1",
+          "M2",
+          "L1",
+          "L3",
+          "L3"
+        ],
+        [
+          "L1",
+          "L2",
+          "L3",
+          "L2",
+          "P3"
+        ],
+        [
+          "L2",
+          "M3",
+          "L1",
+          "L3",
+          "M1"
+        ],
+        [
+          "L1",
+          "M2",
+          "M2",
+          "L1",
+          "L3"
+        ]
+      ],
+      "tokenFloorTier": 1,
+      "capReached": false
+    },
+    {
+      "events": [
+        {
+          "index": 0,
+          "type": "skyjumpSpinStart",
+          "schemaVersion": 2,
+          "mode": "BASE",
+          "isFreeSpin": false,
+          "source": "math",
+          "stops": [
+            36,
+            39,
+            35,
+            104,
+            43
+          ]
+        },
+        {
+          "index": 1,
+          "type": "skyjumpBoardReveal",
+          "schemaVersion": 2,
+          "board": [
+            [
+              "M2",
+              "P3",
+              "L1",
+              "L2",
+              "M2"
+            ],
+            [
+              "M3",
+              "L3",
+              "L1",
+              "P1",
+              "L1"
+            ],
+            [
+              "L3",
+              "M1",
+              "L3",
+              "L1",
+              "L1"
+            ],
+            [
+              "L1",
+              "L1",
+              "L2",
+              "M1",
+              "L3"
+            ],
+            [
+              "L3",
+              "L1",
+              "L3",
+              "P2",
+              "L1"
+            ]
+          ]
+        },
+        {
+          "index": 2,
+          "type": "skyjumpLineWins",
+          "schemaVersion": 2,
+          "wins": [],
+          "lineWinX": 0.0
+        },
+        {
+          "index": 3,
+          "type": "skyjumpScatterResult",
+          "schemaVersion": 2,
+          "positions": [],
+          "count": 0,
+          "perfectV": false,
+          "trigger": null,
+          "fromBoard": "initialReveal"
+        },
+        {
+          "index": 4,
+          "type": "skyjumpResult",
+          "schemaVersion": 2,
+          "totalLineWinX": 0.0,
+          "totalFeatureWinX": 0.0,
+          "totalFeatureWinXRaw": 0.0,
+          "totalWinX": 0.0,
+          "totalWinXRaw": 0.0,
+          "amount": 0,
+          "latentTokenValueX": 0.0,
+          "tokenFloorTier": 1,
+          "capHit": false
+        },
+        {
+          "index": 5,
+          "type": "setTotalWin",
+          "amount": 0
+        },
+        {
+          "index": 6,
+          "type": "finalWin",
+          "amount": 0
+        }
+      ],
+      "featureWinX": 0.0,
+      "totalWinX": 0.0,
+      "board": [
+        [
+          "M2",
+          "P3",
+          "L1",
+          "L2",
+          "M2"
+        ],
+        [
+          "M3",
+          "L3",
+          "L1",
+          "P1",
+          "L1"
+        ],
+        [
+          "L3",
+          "M1",
+          "L3",
+          "L1",
+          "L1"
+        ],
+        [
+          "L1",
+          "L1",
+          "L2",
+          "M1",
+          "L3"
+        ],
+        [
+          "L3",
+          "L1",
+          "L3",
+          "P2",
+          "L1"
+        ]
+      ],
+      "tokenFloorTier": 1,
+      "capReached": false
+    },
+    {
+      "events": [
+        {
+          "index": 0,
+          "type": "skyjumpSpinStart",
+          "schemaVersion": 2,
+          "mode": "BASE",
+          "isFreeSpin": false,
+          "source": "math",
+          "stops": [
+            11,
+            13,
+            37,
+            73,
+            40
+          ]
+        },
+        {
+          "index": 1,
+          "type": "skyjumpBoardReveal",
+          "schemaVersion": 2,
+          "board": [
+            [
+              "L3",
+              "L3",
+              "M3",
+              "M2",
+              "P2"
+            ],
+            [
+              "L1",
+              "M2",
+              "M1",
+              "L2",
+              "L2"
+            ],
+            [
+              "L3",
+              "L1",
+              "L1",
+              "L2",
+              "M1"
+            ],
+            [
+              "M1",
+              "M2",
+              "L3",
+              "L3",
+              "M2"
+            ],
+            [
+              "P3",
+              "L1",
+              "L3",
+              "L3",
+              "L1"
+            ]
+          ]
+        },
+        {
+          "index": 2,
+          "type": "skyjumpLineWins",
+          "schemaVersion": 2,
+          "wins": [],
+          "lineWinX": 0.0
+        },
+        {
+          "index": 3,
+          "type": "skyjumpScatterResult",
+          "schemaVersion": 2,
+          "positions": [],
+          "count": 0,
+          "perfectV": false,
+          "trigger": null,
+          "fromBoard": "initialReveal"
+        },
+        {
+          "index": 4,
+          "type": "skyjumpResult",
+          "schemaVersion": 2,
+          "totalLineWinX": 0.0,
+          "totalFeatureWinX": 0.0,
+          "totalFeatureWinXRaw": 0.0,
+          "totalWinX": 0.0,
+          "totalWinXRaw": 0.0,
+          "amount": 0,
+          "latentTokenValueX": 0.0,
+          "tokenFloorTier": 1,
+          "capHit": false
+        },
+        {
+          "index": 5,
+          "type": "setTotalWin",
+          "amount": 0
+        },
+        {
+          "index": 6,
+          "type": "finalWin",
+          "amount": 0
+        }
+      ],
+      "featureWinX": 0.0,
+      "totalWinX": 0.0,
+      "board": [
+        [
+          "L3",
+          "L3",
+          "M3",
+          "M2",
+          "P2"
+        ],
+        [
+          "L1",
+          "M2",
+          "M1",
+          "L2",
+          "L2"
+        ],
+        [
+          "L3",
+          "L1",
+          "L1",
+          "L2",
+          "M1"
+        ],
+        [
+          "M1",
+          "M2",
+          "L3",
+          "L3",
+          "M2"
+        ],
+        [
+          "P3",
+          "L1",
+          "L3",
+          "L3",
+          "L1"
+        ]
+      ],
+      "tokenFloorTier": 1,
+      "capReached": false
+    },
+    {
+      "events": [
+        {
+          "index": 0,
+          "type": "skyjumpSpinStart",
+          "schemaVersion": 2,
+          "mode": "BASE",
+          "isFreeSpin": false,
+          "source": "math",
+          "stops": [
+            12,
+            47,
+            6,
+            70,
+            45
+          ]
+        },
+        {
+          "index": 1,
+          "type": "skyjumpBoardReveal",
+          "schemaVersion": 2,
+          "board": [
+            [
+              "L3",
+              "M3",
+              "M2",
+              "P2",
+              "M1"
+            ],
+            [
+              "M1",
+              "L2",
+              "S",
+              "L3",
+              "M1"
+            ],
+            [
+              "M3",
+              "M2",
+              "M2",
+              "L1",
+              "L2"
+            ],
+            [
+              "M3",
+              "L1",
+              "L3",
+              "M1",
+              "M2"
+            ],
+            [
+              "L3",
+              "P2",
+              "L1",
+              "L2",
+              "P3"
+            ]
+          ]
+        },
+        {
+          "index": 2,
+          "type": "skyjumpLineWins",
+          "schemaVersion": 2,
+          "wins": [],
+          "lineWinX": 0.0
+        },
+        {
+          "index": 3,
+          "type": "skyjumpScatterResult",
+          "schemaVersion": 2,
+          "positions": [
+            {
+              "reel": 1,
+              "row": 2
+            }
+          ],
+          "count": 1,
+          "perfectV": false,
+          "trigger": null,
+          "fromBoard": "initialReveal"
+        },
+        {
+          "index": 4,
+          "type": "skyjumpResult",
+          "schemaVersion": 2,
+          "totalLineWinX": 0.0,
+          "totalFeatureWinX": 0.0,
+          "totalFeatureWinXRaw": 0.0,
+          "totalWinX": 0.0,
+          "totalWinXRaw": 0.0,
+          "amount": 0,
+          "latentTokenValueX": 0.0,
+          "tokenFloorTier": 1,
+          "capHit": false
+        },
+        {
+          "index": 5,
+          "type": "setTotalWin",
+          "amount": 0
+        },
+        {
+          "index": 6,
+          "type": "finalWin",
+          "amount": 0
+        }
+      ],
+      "featureWinX": 0.0,
+      "totalWinX": 0.0,
+      "board": [
+        [
+          "L3",
+          "M3",
+          "M2",
+          "P2",
+          "M1"
+        ],
+        [
+          "M1",
+          "L2",
+          "S",
+          "L3",
+          "M1"
+        ],
+        [
+          "M3",
+          "M2",
+          "M2",
+          "L1",
+          "L2"
+        ],
+        [
+          "M3",
+          "L1",
+          "L3",
+          "M1",
+          "M2"
+        ],
+        [
+          "L3",
+          "P2",
+          "L1",
+          "L2",
+          "P3"
+        ]
+      ],
+      "tokenFloorTier": 1,
+      "capReached": false
+    },
+    {
+      "events": [
+        {
+          "index": 0,
+          "type": "skyjumpSpinStart",
+          "schemaVersion": 2,
+          "mode": "BASE",
+          "isFreeSpin": false,
+          "source": "math",
+          "stops": [
+            4,
+            72,
+            3,
+            79,
+            13
+          ]
+        },
+        {
+          "index": 1,
+          "type": "skyjumpBoardReveal",
+          "schemaVersion": 2,
+          "board": [
+            [
+              "L1",
+              "M3",
+              "L3",
+              "L1",
+              "M3"
+            ],
+            [
+              "P2",
+              "P3",
+              "P2",
+              "L1",
+              "L3"
+            ],
+            [
+              "S",
+              "L2",
+              "L2",
+              "M3",
+              "M2"
+            ],
+            [
+              "L1",
+              "S",
+              "L2",
+              "L1",
+              "L2"
+            ],
+            [
+              "L2",
+              "M2",
+              "M1",
+              "L3",
+              "L3"
+            ]
+          ]
+        },
+        {
+          "index": 2,
+          "type": "skyjumpLineWins",
+          "schemaVersion": 2,
+          "wins": [],
+          "lineWinX": 0.0
+        },
+        {
+          "index": 3,
+          "type": "skyjumpScatterResult",
+          "schemaVersion": 2,
+          "positions": [
+            {
+              "reel": 2,
+              "row": 0
+            },
+            {
+              "reel": 3,
+              "row": 1
+            }
+          ],
+          "count": 2,
+          "perfectV": false,
+          "trigger": null,
+          "fromBoard": "initialReveal"
+        },
+        {
+          "index": 4,
+          "type": "skyjumpResult",
+          "schemaVersion": 2,
+          "totalLineWinX": 0.0,
+          "totalFeatureWinX": 0.0,
+          "totalFeatureWinXRaw": 0.0,
+          "totalWinX": 0.0,
+          "totalWinXRaw": 0.0,
+          "amount": 0,
+          "latentTokenValueX": 0.0,
+          "tokenFloorTier": 1,
+          "capHit": false
+        },
+        {
+          "index": 5,
+          "type": "setTotalWin",
+          "amount": 0
+        },
+        {
+          "index": 6,
+          "type": "finalWin",
+          "amount": 0
+        }
+      ],
+      "featureWinX": 0.0,
+      "totalWinX": 0.0,
+      "board": [
+        [
+          "L1",
+          "M3",
+          "L3",
+          "L1",
+          "M3"
+        ],
+        [
+          "P2",
+          "P3",
+          "P2",
+          "L1",
+          "L3"
+        ],
+        [
+          "S",
+          "L2",
+          "L2",
+          "M3",
+          "M2"
+        ],
+        [
+          "L1",
+          "S",
+          "L2",
+          "L1",
+          "L2"
+        ],
+        [
+          "L2",
+          "M2",
+          "M1",
+          "L3",
+          "L3"
+        ]
+      ],
+      "tokenFloorTier": 1,
+      "capReached": false
+    },
+    {
+      "events": [
+        {
+          "index": 0,
+          "type": "skyjumpSpinStart",
+          "schemaVersion": 2,
+          "mode": "BASE",
+          "isFreeSpin": false,
+          "source": "math",
+          "stops": [
+            31,
+            87,
+            34,
+            54,
+            49
+          ]
+        },
+        {
+          "index": 1,
+          "type": "skyjumpBoardReveal",
+          "schemaVersion": 2,
+          "board": [
+            [
+              "M1",
+              "L3",
+              "L2",
+              "L2",
+              "L3"
+            ],
+            [
+              "L3",
+              "L2",
+              "L3",
+              "L2",
+              "M3"
+            ],
+            [
+              "L1",
+              "L3",
+              "M1",
+              "L3",
+              "L1"
+            ],
+            [
+              "L2",
+              "M1",
+              "L3",
+              "L1",
+              "L3"
+            ],
+            [
+              "P3",
+              "M2",
+              "L2",
+              "L1",
+              "M3"
+            ]
+          ]
+        },
+        {
+          "index": 2,
+          "type": "skyjumpLineWins",
+          "schemaVersion": 2,
+          "wins": [
+            {
+              "paylineId": 12,
+              "symbolId": "L3",
+              "matchCount": 4,
+              "positions": [
+                {
+                  "reel": 0,
+                  "row": 1
+                },
+                {
+                  "reel": 1,
+                  "row": 2
+                },
+                {
+                  "reel": 2,
+                  "row": 3
+                },
+                {
+                  "reel": 3,
+                  "row": 2
+                }
+              ],
+              "payoutX": 1.1
+            },
+            {
+              "paylineId": 22,
+              "symbolId": "L3",
+              "matchCount": 4,
+              "positions": [
+                {
+                  "reel": 0,
+                  "row": 1
+                },
+                {
+                  "reel": 1,
+                  "row": 2
+                },
+                {
+                  "reel": 2,
+                  "row": 1
+                },
+                {
+                  "reel": 3,
+                  "row": 2
+                }
+              ],
+              "payoutX": 1.1
+            }
+          ],
+          "lineWinX": 2.2
+        },
+        {
+          "index": 3,
+          "type": "skyjumpScatterResult",
+          "schemaVersion": 2,
+          "positions": [],
+          "count": 0,
+          "perfectV": false,
+          "trigger": null,
+          "fromBoard": "initialReveal"
+        },
+        {
+          "index": 4,
+          "type": "skyjumpResult",
+          "schemaVersion": 2,
+          "totalLineWinX": 2.2,
+          "totalFeatureWinX": 0.0,
+          "totalFeatureWinXRaw": 0.0,
+          "totalWinX": 2.2,
+          "totalWinXRaw": 2.2,
+          "amount": 220,
+          "latentTokenValueX": 0.0,
+          "tokenFloorTier": 1,
+          "capHit": false
+        },
+        {
+          "index": 5,
+          "type": "setTotalWin",
+          "amount": 220
+        },
+        {
+          "index": 6,
+          "type": "finalWin",
+          "amount": 220
+        }
+      ],
+      "featureWinX": 0.0,
+      "totalWinX": 2.2,
+      "board": [
+        [
+          "M1",
+          "L3",
+          "L2",
+          "L2",
+          "L3"
+        ],
+        [
+          "L3",
+          "L2",
+          "L3",
+          "L2",
+          "M3"
+        ],
+        [
+          "L1",
+          "L3",
+          "M1",
+          "L3",
+          "L1"
+        ],
+        [
+          "L2",
+          "M1",
+          "L3",
+          "L1",
+          "L3"
+        ],
+        [
+          "P3",
+          "M2",
+          "L2",
+          "L1",
+          "M3"
+        ]
+      ],
+      "tokenFloorTier": 1,
+      "capReached": false
+    },
+    {
+      "events": [
+        {
+          "index": 0,
+          "type": "skyjumpSpinStart",
+          "schemaVersion": 2,
+          "mode": "BASE",
+          "isFreeSpin": false,
+          "source": "math",
+          "stops": [
+            20,
+            59,
+            37,
+            118,
+            29
+          ]
+        },
+        {
+          "index": 1,
+          "type": "skyjumpBoardReveal",
+          "schemaVersion": 2,
+          "board": [
+            [
+              "M3",
+              "L3",
+              "L3",
+              "P3",
+              "L2"
+            ],
+            [
+              "M2",
+              "M3",
+              "L3",
+              "L1",
+              "L2"
+            ],
+            [
+              "L3",
+              "L1",
+              "L1",
+              "L2",
+              "M1"
+            ],
+            [
+              "M1",
+              "P2",
+              "L1",
+              "L1",
+              "L2"
+            ],
+            [
+              "L2",
+              "L3",
+              "M3",
+              "M1",
+              "L2"
+            ]
+          ]
+        },
+        {
+          "index": 2,
+          "type": "skyjumpLineWins",
+          "schemaVersion": 2,
+          "wins": [
+            {
+              "paylineId": 9,
+              "symbolId": "L2",
+              "matchCount": 5,
+              "positions": [
+                {
+                  "reel": 0,
+                  "row": 4
+                },
+                {
+                  "reel": 1,
+                  "row": 4
+                },
+                {
+                  "reel": 2,
+                  "row": 3
+                },
+                {
+                  "reel": 3,
+                  "row": 4
+                },
+                {
+                  "reel": 4,
+                  "row": 4
+                }
+              ],
+              "payoutX": 2.7
+            }
+          ],
+          "lineWinX": 2.7
+        },
+        {
+          "index": 3,
+          "type": "skyjumpScatterResult",
+          "schemaVersion": 2,
+          "positions": [],
+          "count": 0,
+          "perfectV": false,
+          "trigger": null,
+          "fromBoard": "initialReveal"
+        },
+        {
+          "index": 4,
+          "type": "skyjumpResult",
+          "schemaVersion": 2,
+          "totalLineWinX": 2.7,
+          "totalFeatureWinX": 0.0,
+          "totalFeatureWinXRaw": 0.0,
+          "totalWinX": 2.7,
+          "totalWinXRaw": 2.7,
+          "amount": 270,
+          "latentTokenValueX": 0.0,
+          "tokenFloorTier": 1,
+          "capHit": false
+        },
+        {
+          "index": 5,
+          "type": "setTotalWin",
+          "amount": 270
+        },
+        {
+          "index": 6,
+          "type": "finalWin",
+          "amount": 270
+        }
+      ],
+      "featureWinX": 0.0,
+      "totalWinX": 2.7,
+      "board": [
+        [
+          "M3",
+          "L3",
+          "L3",
+          "P3",
+          "L2"
+        ],
+        [
+          "M2",
+          "M3",
+          "L3",
+          "L1",
+          "L2"
+        ],
+        [
+          "L3",
+          "L1",
+          "L1",
+          "L2",
+          "M1"
+        ],
+        [
+          "M1",
+          "P2",
+          "L1",
+          "L1",
+          "L2"
+        ],
+        [
+          "L2",
+          "L3",
+          "M3",
+          "M1",
+          "L2"
+        ]
+      ],
+      "tokenFloorTier": 1,
+      "capReached": false
+    },
+    {
+      "events": [
+        {
+          "index": 0,
+          "type": "skyjumpSpinStart",
+          "schemaVersion": 2,
+          "mode": "BASE",
+          "isFreeSpin": false,
+          "source": "math",
+          "stops": [
+            23,
+            38,
+            15,
+            101,
+            11
+          ]
+        },
+        {
+          "index": 1,
+          "type": "skyjumpBoardReveal",
+          "schemaVersion": 2,
+          "board": [
+            [
+              "P3",
+              "L2",
+              "L3",
+              "L1",
+              "M2"
+            ],
+            [
+              "L2",
+              "M3",
+              "L3",
+              "L1",
+              "P1"
+            ],
+            [
+              "P1",
+              "M3",
+              "P2",
+              "L1",
+              "M3"
+            ],
+            [
+              "L3",
+              "M3",
+              "P2",
+              "L1",
+              "L1"
+            ],
+            [
+              "L3",
+              "L2",
+              "L2",
+              "M2",
+              "M1"
+            ]
+          ]
+        },
+        {
+          "index": 2,
+          "type": "skyjumpLineWins",
+          "schemaVersion": 2,
+          "wins": [
+            {
+              "paylineId": 4,
+              "symbolId": "L1",
+              "matchCount": 4,
+              "positions": [
+                {
+                  "reel": 0,
+                  "row": 3
+                },
+                {
+                  "reel": 1,
+                  "row": 3
+                },
+                {
+                  "reel": 2,
+                  "row": 3
+                },
+                {
+                  "reel": 3,
+                  "row": 3
+                }
+              ],
+              "payoutX": 1.7
+            }
+          ],
+          "lineWinX": 1.7
+        },
+        {
+          "index": 3,
+          "type": "skyjumpScatterResult",
+          "schemaVersion": 2,
+          "positions": [],
+          "count": 0,
+          "perfectV": false,
+          "trigger": null,
+          "fromBoard": "initialReveal"
+        },
+        {
+          "index": 4,
+          "type": "skyjumpResult",
+          "schemaVersion": 2,
+          "totalLineWinX": 1.7,
+          "totalFeatureWinX": 0.0,
+          "totalFeatureWinXRaw": 0.0,
+          "totalWinX": 1.7,
+          "totalWinXRaw": 1.7,
+          "amount": 170,
+          "latentTokenValueX": 0.0,
+          "tokenFloorTier": 1,
+          "capHit": false
+        },
+        {
+          "index": 5,
+          "type": "setTotalWin",
+          "amount": 170
+        },
+        {
+          "index": 6,
+          "type": "finalWin",
+          "amount": 170
+        }
+      ],
+      "featureWinX": 0.0,
+      "totalWinX": 1.7,
+      "board": [
+        [
+          "P3",
+          "L2",
+          "L3",
+          "L1",
+          "M2"
+        ],
+        [
+          "L2",
+          "M3",
+          "L3",
+          "L1",
+          "P1"
+        ],
+        [
+          "P1",
+          "M3",
+          "P2",
+          "L1",
+          "M3"
+        ],
+        [
+          "L3",
+          "M3",
+          "P2",
+          "L1",
+          "L1"
+        ],
+        [
+          "L3",
+          "L2",
+          "L2",
+          "M2",
+          "M1"
+        ]
+      ],
+      "tokenFloorTier": 1,
+      "capReached": false
+    },
+    {
+      "events": [
+        {
+          "index": 0,
+          "type": "skyjumpSpinStart",
+          "schemaVersion": 2,
+          "mode": "BASE",
+          "isFreeSpin": false,
+          "source": "math",
+          "stops": [
+            44,
+            99,
+            15,
+            10,
+            36
+          ]
+        },
+        {
+          "index": 1,
+          "type": "skyjumpBoardReveal",
+          "schemaVersion": 2,
+          "board": [
+            [
+              "L2",
+              "L1",
+              "L2",
+              "L3",
+              "M1"
+            ],
+            [
+              "M1",
+              "L2",
+              "S",
+              "L3",
+              "M1"
+            ],
+            [
+              "P1",
+              "M3",
+              "P2",
+              "L1",
+              "M3"
+            ],
+            [
+              "L2",
+              "L2",
+              "P3",
+              "L1",
+              "M1"
+            ],
+            [
+              "L3",
+              "L1",
+              "P2",
+              "M3",
+              "P3"
+            ]
+          ]
+        },
+        {
+          "index": 2,
+          "type": "skyjumpLineWins",
+          "schemaVersion": 2,
+          "wins": [],
+          "lineWinX": 0.0
+        },
+        {
+          "index": 3,
+          "type": "skyjumpScatterResult",
+          "schemaVersion": 2,
+          "positions": [
+            {
+              "reel": 1,
+              "row": 2
+            }
+          ],
+          "count": 1,
+          "perfectV": false,
+          "trigger": null,
+          "fromBoard": "initialReveal"
+        },
+        {
+          "index": 4,
+          "type": "skyjumpResult",
+          "schemaVersion": 2,
+          "totalLineWinX": 0.0,
+          "totalFeatureWinX": 0.0,
+          "totalFeatureWinXRaw": 0.0,
+          "totalWinX": 0.0,
+          "totalWinXRaw": 0.0,
+          "amount": 0,
+          "latentTokenValueX": 0.0,
+          "tokenFloorTier": 1,
+          "capHit": false
+        },
+        {
+          "index": 5,
+          "type": "setTotalWin",
+          "amount": 0
+        },
+        {
+          "index": 6,
+          "type": "finalWin",
+          "amount": 0
+        }
+      ],
+      "featureWinX": 0.0,
+      "totalWinX": 0.0,
+      "board": [
+        [
+          "L2",
+          "L1",
+          "L2",
+          "L3",
+          "M1"
+        ],
+        [
+          "M1",
+          "L2",
+          "S",
+          "L3",
+          "M1"
+        ],
+        [
+          "P1",
+          "M3",
+          "P2",
+          "L1",
+          "M3"
+        ],
+        [
+          "L2",
+          "L2",
+          "P3",
+          "L1",
+          "M1"
+        ],
+        [
+          "L3",
+          "L1",
+          "P2",
+          "M3",
+          "P3"
+        ]
+      ],
+      "tokenFloorTier": 1,
+      "capReached": false
+    },
+    {
+      "events": [
+        {
+          "index": 0,
+          "type": "skyjumpSpinStart",
+          "schemaVersion": 2,
+          "mode": "BASE",
+          "isFreeSpin": false,
+          "source": "math",
+          "stops": [
+            19,
+            67,
+            31,
+            112,
+            21
+          ]
+        },
+        {
+          "index": 1,
+          "type": "skyjumpBoardReveal",
+          "schemaVersion": 2,
+          "board": [
+            [
+              "M2",
+              "M3",
+              "L3",
+              "L3",
+              "P3"
+            ],
+            [
+              "M1",
+              "L2",
+              "L2",
+              "M2",
+              "L3"
+            ],
+            [
+              "L1",
+              "L3",
+              "M3",
+              "L1",
+              "L3"
+            ],
+            [
+              "M2",
+              "L3",
+              "L2",
+              "L2",
+              "P3"
+            ],
+            [
+              "L2",
+              "M3",
+              "P1",
+              "M1",
+              "L2"
+            ]
+          ]
+        },
+        {
+          "index": 2,
+          "type": "skyjumpLineWins",
+          "schemaVersion": 2,
+          "wins": [
+            {
+              "paylineId": 11,
+              "symbolId": "L3",
+              "matchCount": 3,
+              "positions": [
+                {
+                  "reel": 0,
+                  "row": 3
+                },
+                {
+                  "reel": 1,
+                  "row": 4
+                },
+                {
+                  "reel": 2,
+                  "row": 4
+                }
+              ],
+              "payoutX": 0.5
+            }
+          ],
+          "lineWinX": 0.5
+        },
+        {
+          "index": 3,
+          "type": "skyjumpScatterResult",
+          "schemaVersion": 2,
+          "positions": [],
+          "count": 0,
+          "perfectV": false,
+          "trigger": null,
+          "fromBoard": "initialReveal"
+        },
+        {
+          "index": 4,
+          "type": "skyjumpResult",
+          "schemaVersion": 2,
+          "totalLineWinX": 0.5,
+          "totalFeatureWinX": 0.0,
+          "totalFeatureWinXRaw": 0.0,
+          "totalWinX": 0.5,
+          "totalWinXRaw": 0.5,
+          "amount": 50,
+          "latentTokenValueX": 0.0,
+          "tokenFloorTier": 1,
+          "capHit": false
+        },
+        {
+          "index": 5,
+          "type": "setTotalWin",
+          "amount": 50
+        },
+        {
+          "index": 6,
+          "type": "finalWin",
+          "amount": 50
+        }
+      ],
+      "featureWinX": 0.0,
+      "totalWinX": 0.5,
+      "board": [
+        [
+          "M2",
+          "M3",
+          "L3",
+          "L3",
+          "P3"
+        ],
+        [
+          "M1",
+          "L2",
+          "L2",
+          "M2",
+          "L3"
+        ],
+        [
+          "L1",
+          "L3",
+          "M3",
+          "L1",
+          "L3"
+        ],
+        [
+          "M2",
+          "L3",
+          "L2",
+          "L2",
+          "P3"
+        ],
+        [
+          "L2",
+          "M3",
+          "P1",
+          "M1",
+          "L2"
+        ]
+      ],
+      "tokenFloorTier": 1,
+      "capReached": false
+    },
+    {
+      "events": [
+        {
+          "index": 0,
+          "type": "skyjumpSpinStart",
+          "schemaVersion": 2,
+          "mode": "BASE",
+          "isFreeSpin": false,
+          "source": "math",
+          "stops": [
+            46,
+            57,
+            18,
+            77,
+            4
+          ]
+        },
+        {
+          "index": 1,
+          "type": "skyjumpBoardReveal",
+          "schemaVersion": 2,
+          "board": [
+            [
+              "L2",
+              "L3",
+              "M1",
+              "L3",
+              "M1"
+            ],
+            [
+              "L3",
+              "L2",
+              "M2",
+              "M3",
+              "L3"
+            ],
+            [
+              "L1",
+              "M3",
+              "M1",
+              "L2",
+              "L3"
+            ],
+            [
+              "M2",
+              "L2",
+              "L1",
+              "S",
+              "L2"
+            ],
+            [
+              "M3",
+              "M3",
+              "L2",
+              "L1",
+              "M2"
+            ]
+          ]
+        },
+        {
+          "index": 2,
+          "type": "skyjumpLineWins",
+          "schemaVersion": 2,
+          "wins": [
+            {
+              "paylineId": 11,
+              "symbolId": "L3",
+              "matchCount": 3,
+              "positions": [
+                {
+                  "reel": 0,
+                  "row": 3
+                },
+                {
+                  "reel": 1,
+                  "row": 4
+                },
+                {
+                  "reel": 2,
+                  "row": 4
+                }
+              ],
+              "payoutX": 0.5
+            }
+          ],
+          "lineWinX": 0.5
+        },
+        {
+          "index": 3,
+          "type": "skyjumpScatterResult",
+          "schemaVersion": 2,
+          "positions": [
+            {
+              "reel": 3,
+              "row": 3
+            }
+          ],
+          "count": 1,
+          "perfectV": false,
+          "trigger": null,
+          "fromBoard": "initialReveal"
+        },
+        {
+          "index": 4,
+          "type": "skyjumpResult",
+          "schemaVersion": 2,
+          "totalLineWinX": 0.5,
+          "totalFeatureWinX": 0.0,
+          "totalFeatureWinXRaw": 0.0,
+          "totalWinX": 0.5,
+          "totalWinXRaw": 0.5,
+          "amount": 50,
+          "latentTokenValueX": 0.0,
+          "tokenFloorTier": 1,
+          "capHit": false
+        },
+        {
+          "index": 5,
+          "type": "setTotalWin",
+          "amount": 50
+        },
+        {
+          "index": 6,
+          "type": "finalWin",
+          "amount": 50
+        }
+      ],
+      "featureWinX": 0.0,
+      "totalWinX": 0.5,
+      "board": [
+        [
+          "L2",
+          "L3",
+          "M1",
+          "L3",
+          "M1"
+        ],
+        [
+          "L3",
+          "L2",
+          "M2",
+          "M3",
+          "L3"
+        ],
+        [
+          "L1",
+          "M3",
+          "M1",
+          "L2",
+          "L3"
+        ],
+        [
+          "M2",
+          "L2",
+          "L1",
+          "S",
+          "L2"
+        ],
+        [
+          "M3",
+          "M3",
+          "L2",
+          "L1",
+          "M2"
+        ]
+      ],
+      "tokenFloorTier": 1,
+      "capReached": false
+    },
+    {
+      "events": [
+        {
+          "index": 0,
+          "type": "skyjumpSpinStart",
+          "schemaVersion": 2,
+          "mode": "BASE",
+          "isFreeSpin": false,
+          "source": "math",
+          "stops": [
+            7,
+            65,
+            26,
+            21,
+            48
+          ]
+        },
+        {
+          "index": 1,
+          "type": "skyjumpBoardReveal",
+          "schemaVersion": 2,
+          "board": [
+            [
+              "L1",
+              "M3",
+              "L2",
+              "L2",
+              "L3"
+            ],
+            [
+              "L1",
+              "M2",
+              "M1",
+              "L2",
+              "L2"
+            ],
+            [
+              "L3",
+              "M2",
+              "M2",
+              "L3",
+              "M3"
+            ],
+            [
+              "M1",
+              "M2",
+              "L3",
+              "L3",
+              "M2"
+            ],
+            [
+              "L2",
+              "P3",
+              "M2",
+              "L2",
+              "L1"
+            ]
+          ]
+        },
+        {
+          "index": 2,
+          "type": "skyjumpLineWins",
+          "schemaVersion": 2,
+          "wins": [],
+          "lineWinX": 0.0
+        },
+        {
+          "index": 3,
+          "type": "skyjumpScatterResult",
+          "schemaVersion": 2,
+          "positions": [],
+          "count": 0,
+          "perfectV": false,
+          "trigger": null,
+          "fromBoard": "initialReveal"
+        },
+        {
+          "index": 4,
+          "type": "skyjumpResult",
+          "schemaVersion": 2,
+          "totalLineWinX": 0.0,
+          "totalFeatureWinX": 0.0,
+          "totalFeatureWinXRaw": 0.0,
+          "totalWinX": 0.0,
+          "totalWinXRaw": 0.0,
+          "amount": 0,
+          "latentTokenValueX": 0.0,
+          "tokenFloorTier": 1,
+          "capHit": false
+        },
+        {
+          "index": 5,
+          "type": "setTotalWin",
+          "amount": 0
+        },
+        {
+          "index": 6,
+          "type": "finalWin",
+          "amount": 0
+        }
+      ],
+      "featureWinX": 0.0,
+      "totalWinX": 0.0,
+      "board": [
+        [
+          "L1",
+          "M3",
+          "L2",
+          "L2",
+          "L3"
+        ],
+        [
+          "L1",
+          "M2",
+          "M1",
+          "L2",
+          "L2"
+        ],
+        [
+          "L3",
+          "M2",
+          "M2",
+          "L3",
+          "M3"
+        ],
+        [
+          "M1",
+          "M2",
+          "L3",
+          "L3",
+          "M2"
+        ],
+        [
+          "L2",
+          "P3",
+          "M2",
+          "L2",
+          "L1"
+        ]
+      ],
+      "tokenFloorTier": 1,
+      "capReached": false
+    },
+    {
+      "events": [
+        {
+          "index": 0,
+          "type": "skyjumpSpinStart",
+          "schemaVersion": 2,
+          "mode": "BASE",
+          "isFreeSpin": false,
+          "source": "math",
+          "stops": [
+            21,
+            19,
+            31,
+            53,
+            2
+          ]
+        },
+        {
+          "index": 1,
+          "type": "skyjumpBoardReveal",
+          "schemaVersion": 2,
+          "board": [
+            [
+              "L3",
+              "L3",
+              "P3",
+              "L2",
+              "L3"
+            ],
+            [
+              "L3",
+              "P2",
+              "P3",
+              "P2",
+              "L1"
+            ],
+            [
+              "L1",
+              "L3",
+              "M3",
+              "L1",
+              "L3"
+            ],
+            [
+              "L1",
+              "L2",
+              "M1",
+              "L3",
+              "L1"
+            ],
+            [
+              "L1",
+              "L2",
+              "M3",
+              "M3",
+              "L2"
+            ]
+          ]
+        },
+        {
+          "index": 2,
+          "type": "skyjumpLineWins",
+          "schemaVersion": 2,
+          "wins": [
+            {
+              "paylineId": 8,
+              "symbolId": "L3",
+              "matchCount": 3,
+              "positions": [
+                {
+                  "reel": 0,
+                  "row": 0
+                },
+                {
+                  "reel": 1,
+                  "row": 0
+                },
+                {
+                  "reel": 2,
+                  "row": 1
+                }
+              ],
+              "payoutX": 0.5
+            }
+          ],
+          "lineWinX": 0.5
+        },
+        {
+          "index": 3,
+          "type": "skyjumpScatterResult",
+          "schemaVersion": 2,
+          "positions": [],
+          "count": 0,
+          "perfectV": false,
+          "trigger": null,
+          "fromBoard": "initialReveal"
+        },
+        {
+          "index": 4,
+          "type": "skyjumpResult",
+          "schemaVersion": 2,
+          "totalLineWinX": 0.5,
+          "totalFeatureWinX": 0.0,
+          "totalFeatureWinXRaw": 0.0,
+          "totalWinX": 0.5,
+          "totalWinXRaw": 0.5,
+          "amount": 50,
+          "latentTokenValueX": 0.0,
+          "tokenFloorTier": 1,
+          "capHit": false
+        },
+        {
+          "index": 5,
+          "type": "setTotalWin",
+          "amount": 50
+        },
+        {
+          "index": 6,
+          "type": "finalWin",
+          "amount": 50
+        }
+      ],
+      "featureWinX": 0.0,
+      "totalWinX": 0.5,
+      "board": [
+        [
+          "L3",
+          "L3",
+          "P3",
+          "L2",
+          "L3"
+        ],
+        [
+          "L3",
+          "P2",
+          "P3",
+          "P2",
+          "L1"
+        ],
+        [
+          "L1",
+          "L3",
+          "M3",
+          "L1",
+          "L3"
+        ],
+        [
+          "L1",
+          "L2",
+          "M1",
+          "L3",
+          "L1"
+        ],
+        [
+          "L1",
+          "L2",
+          "M3",
+          "M3",
+          "L2"
+        ]
+      ],
+      "tokenFloorTier": 1,
+      "capReached": false
+    },
+    {
+      "events": [
+        {
+          "index": 0,
+          "type": "skyjumpSpinStart",
+          "schemaVersion": 2,
+          "mode": "BASE",
+          "isFreeSpin": false,
+          "source": "math",
+          "stops": [
+            42,
+            9,
+            48,
+            71,
+            36
+          ]
+        },
+        {
+          "index": 1,
+          "type": "skyjumpBoardReveal",
+          "schemaVersion": 2,
+          "board": [
+            [
+              "L3",
+              "L1",
+              "L2",
+              "L1",
+              "L2"
+            ],
+            [
+              "L3",
+              "L1",
+              "L2",
+              "L2",
+              "L1"
+            ],
+            [
+              "P3",
+              "P2",
+              "M3",
+              "L3",
+              "M2"
+            ],
+            [
+              "L1",
+              "L3",
+              "M1",
+              "M2",
+              "L3"
+            ],
+            [
+              "L3",
+              "L1",
+              "P2",
+              "M3",
+              "P3"
+            ]
+          ]
+        },
+        {
+          "index": 2,
+          "type": "skyjumpLineWins",
+          "schemaVersion": 2,
+          "wins": [],
+          "lineWinX": 0.0
+        },
+        {
+          "index": 3,
+          "type": "skyjumpScatterResult",
+          "schemaVersion": 2,
+          "positions": [],
+          "count": 0,
+          "perfectV": false,
+          "trigger": null,
+          "fromBoard": "initialReveal"
+        },
+        {
+          "index": 4,
+          "type": "skyjumpResult",
+          "schemaVersion": 2,
+          "totalLineWinX": 0.0,
+          "totalFeatureWinX": 0.0,
+          "totalFeatureWinXRaw": 0.0,
+          "totalWinX": 0.0,
+          "totalWinXRaw": 0.0,
+          "amount": 0,
+          "latentTokenValueX": 0.0,
+          "tokenFloorTier": 1,
+          "capHit": false
+        },
+        {
+          "index": 5,
+          "type": "setTotalWin",
+          "amount": 0
+        },
+        {
+          "index": 6,
+          "type": "finalWin",
+          "amount": 0
+        }
+      ],
+      "featureWinX": 0.0,
+      "totalWinX": 0.0,
+      "board": [
+        [
+          "L3",
+          "L1",
+          "L2",
+          "L1",
+          "L2"
+        ],
+        [
+          "L3",
+          "L1",
+          "L2",
+          "L2",
+          "L1"
+        ],
+        [
+          "P3",
+          "P2",
+          "M3",
+          "L3",
+          "M2"
+        ],
+        [
+          "L1",
+          "L3",
+          "M1",
+          "M2",
+          "L3"
+        ],
+        [
+          "L3",
+          "L1",
+          "P2",
+          "M3",
+          "P3"
+        ]
+      ],
+      "tokenFloorTier": 1,
+      "capReached": false
+    },
+    {
+      "events": [
+        {
+          "index": 0,
+          "type": "skyjumpSpinStart",
+          "schemaVersion": 2,
+          "mode": "BASE",
+          "isFreeSpin": false,
+          "source": "math",
+          "stops": [
+            50,
+            112,
+            20,
+            43,
+            44
+          ]
+        },
+        {
+          "index": 1,
+          "type": "skyjumpBoardReveal",
+          "schemaVersion": 2,
+          "board": [
+            [
+              "M1",
+              "L2",
+              "L1",
+              "P3",
+              "M3"
+            ],
+            [
+              "M3",
+              "L3",
+              "L1",
+              "L2",
+              "L2"
+            ],
+            [
+              "M1",
+              "L2",
+              "L3",
+              "L2",
+              "L1"
+            ],
+            [
+              "L2",
+              "L3",
+              "L3",
+              "M3",
+              "M3"
+            ],
+            [
+              "L1",
+              "L3",
+              "P2",
+              "L1",
+              "L2"
+            ]
+          ]
+        },
+        {
+          "index": 2,
+          "type": "skyjumpLineWins",
+          "schemaVersion": 2,
+          "wins": [],
+          "lineWinX": 0.0
+        },
+        {
+          "index": 3,
+          "type": "skyjumpScatterResult",
+          "schemaVersion": 2,
+          "positions": [],
+          "count": 0,
+          "perfectV": false,
+          "trigger": null,
+          "fromBoard": "initialReveal"
+        },
+        {
+          "index": 4,
+          "type": "skyjumpResult",
+          "schemaVersion": 2,
+          "totalLineWinX": 0.0,
+          "totalFeatureWinX": 0.0,
+          "totalFeatureWinXRaw": 0.0,
+          "totalWinX": 0.0,
+          "totalWinXRaw": 0.0,
+          "amount": 0,
+          "latentTokenValueX": 0.0,
+          "tokenFloorTier": 1,
+          "capHit": false
+        },
+        {
+          "index": 5,
+          "type": "setTotalWin",
+          "amount": 0
+        },
+        {
+          "index": 6,
+          "type": "finalWin",
+          "amount": 0
+        }
+      ],
+      "featureWinX": 0.0,
+      "totalWinX": 0.0,
+      "board": [
+        [
+          "M1",
+          "L2",
+          "L1",
+          "P3",
+          "M3"
+        ],
+        [
+          "M3",
+          "L3",
+          "L1",
+          "L2",
+          "L2"
+        ],
+        [
+          "M1",
+          "L2",
+          "L3",
+          "L2",
+          "L1"
+        ],
+        [
+          "L2",
+          "L3",
+          "L3",
+          "M3",
+          "M3"
+        ],
+        [
+          "L1",
+          "L3",
+          "P2",
+          "L1",
+          "L2"
+        ]
+      ],
+      "tokenFloorTier": 1,
+      "capReached": false
+    },
+    {
+      "events": [
+        {
+          "index": 0,
+          "type": "skyjumpSpinStart",
+          "schemaVersion": 2,
+          "mode": "BASE",
+          "isFreeSpin": false,
+          "source": "math",
+          "stops": [
+            22,
+            76,
+            31,
+            74,
+            51
+          ]
+        },
+        {
+          "index": 1,
+          "type": "skyjumpBoardReveal",
+          "schemaVersion": 2,
+          "board": [
+            [
+              "L3",
+              "P3",
+              "L2",
+              "L3",
+              "L1"
+            ],
+            [
+              "L3",
+              "L1",
+              "M3",
+              "M3",
+              "L3"
+            ],
+            [
+              "L1",
+              "L3",
+              "M3",
+              "L1",
+              "L3"
+            ],
+            [
+              "M2",
+              "L3",
+              "L3",
+              "M2",
+              "L2"
+            ],
+            [
+              "L2",
+              "L1",
+              "M3",
+              "L1",
+              "L2"
+            ]
+          ]
+        },
+        {
+          "index": 2,
+          "type": "skyjumpLineWins",
+          "schemaVersion": 2,
+          "wins": [
+            {
+              "paylineId": 8,
+              "symbolId": "L3",
+              "matchCount": 3,
+              "positions": [
+                {
+                  "reel": 0,
+                  "row": 0
+                },
+                {
+                  "reel": 1,
+                  "row": 0
+                },
+                {
+                  "reel": 2,
+                  "row": 1
+                }
+              ],
+              "payoutX": 0.5
+            },
+            {
+              "paylineId": 11,
+              "symbolId": "L3",
+              "matchCount": 3,
+              "positions": [
+                {
+                  "reel": 0,
+                  "row": 3
+                },
+                {
+                  "reel": 1,
+                  "row": 4
+                },
+                {
+                  "reel": 2,
+                  "row": 4
+                }
+              ],
+              "payoutX": 0.5
+            }
+          ],
+          "lineWinX": 1.0
+        },
+        {
+          "index": 3,
+          "type": "skyjumpScatterResult",
+          "schemaVersion": 2,
+          "positions": [],
+          "count": 0,
+          "perfectV": false,
+          "trigger": null,
+          "fromBoard": "initialReveal"
+        },
+        {
+          "index": 4,
+          "type": "skyjumpResult",
+          "schemaVersion": 2,
+          "totalLineWinX": 1.0,
+          "totalFeatureWinX": 0.0,
+          "totalFeatureWinXRaw": 0.0,
+          "totalWinX": 1.0,
+          "totalWinXRaw": 1.0,
+          "amount": 100,
+          "latentTokenValueX": 0.0,
+          "tokenFloorTier": 1,
+          "capHit": false
+        },
+        {
+          "index": 5,
+          "type": "setTotalWin",
+          "amount": 100
+        },
+        {
+          "index": 6,
+          "type": "finalWin",
+          "amount": 100
+        }
+      ],
+      "featureWinX": 0.0,
+      "totalWinX": 1.0,
+      "board": [
+        [
+          "L3",
+          "P3",
+          "L2",
+          "L3",
+          "L1"
+        ],
+        [
+          "L3",
+          "L1",
+          "M3",
+          "M3",
+          "L3"
+        ],
+        [
+          "L1",
+          "L3",
+          "M3",
+          "L1",
+          "L3"
+        ],
+        [
+          "M2",
+          "L3",
+          "L3",
+          "M2",
+          "L2"
+        ],
+        [
+          "L2",
+          "L1",
+          "M3",
+          "L1",
+          "L2"
+        ]
+      ],
+      "tokenFloorTier": 1,
+      "capReached": false
+    },
+    {
+      "events": [
+        {
+          "index": 0,
+          "type": "skyjumpSpinStart",
+          "schemaVersion": 2,
+          "mode": "BASE",
+          "isFreeSpin": false,
+          "source": "math",
+          "stops": [
+            29,
+            8,
+            5,
+            34,
+            30
+          ]
+        },
+        {
+          "index": 1,
+          "type": "skyjumpBoardReveal",
+          "schemaVersion": 2,
+          "board": [
+            [
+              "M3",
+              "P2",
+              "M1",
+              "L3",
+              "L2"
+            ],
+            [
+              "M3",
+              "L3",
+              "L1",
+              "L2",
+              "L2"
+            ],
+            [
+              "L2",
+              "M3",
+              "M2",
+              "M2",
+              "L1"
+            ],
+            [
+              "L1",
+              "M2",
+              "P3",
+              "L3",
+              "L2"
+            ],
+            [
+              "L3",
+              "M3",
+              "M1",
+              "L2",
+              "M1"
+            ]
+          ]
+        },
+        {
+          "index": 2,
+          "type": "skyjumpLineWins",
+          "schemaVersion": 2,
+          "wins": [
+            {
+              "paylineId": 8,
+              "symbolId": "M3",
+              "matchCount": 3,
+              "positions": [
+                {
+                  "reel": 0,
+                  "row": 0
+                },
+                {
+                  "reel": 1,
+                  "row": 0
+                },
+                {
+                  "reel": 2,
+                  "row": 1
+                }
+              ],
+              "payoutX": 1.0
+            }
+          ],
+          "lineWinX": 1.0
+        },
+        {
+          "index": 3,
+          "type": "skyjumpScatterResult",
+          "schemaVersion": 2,
+          "positions": [],
+          "count": 0,
+          "perfectV": false,
+          "trigger": null,
+          "fromBoard": "initialReveal"
+        },
+        {
+          "index": 4,
+          "type": "skyjumpResult",
+          "schemaVersion": 2,
+          "totalLineWinX": 1.0,
+          "totalFeatureWinX": 0.0,
+          "totalFeatureWinXRaw": 0.0,
+          "totalWinX": 1.0,
+          "totalWinXRaw": 1.0,
+          "amount": 100,
+          "latentTokenValueX": 0.0,
+          "tokenFloorTier": 1,
+          "capHit": false
+        },
+        {
+          "index": 5,
+          "type": "setTotalWin",
+          "amount": 100
+        },
+        {
+          "index": 6,
+          "type": "finalWin",
+          "amount": 100
+        }
+      ],
+      "featureWinX": 0.0,
+      "totalWinX": 1.0,
+      "board": [
+        [
+          "M3",
+          "P2",
+          "M1",
+          "L3",
+          "L2"
+        ],
+        [
+          "M3",
+          "L3",
+          "L1",
+          "L2",
+          "L2"
+        ],
+        [
+          "L2",
+          "M3",
+          "M2",
+          "M2",
+          "L1"
+        ],
+        [
+          "L1",
+          "M2",
+          "P3",
+          "L3",
+          "L2"
+        ],
+        [
+          "L3",
+          "M3",
+          "M1",
+          "L2",
+          "M1"
+        ]
+      ],
+      "tokenFloorTier": 1,
+      "capReached": false
+    },
+    {
+      "events": [
+        {
+          "index": 0,
+          "type": "skyjumpSpinStart",
+          "schemaVersion": 2,
+          "mode": "BASE",
+          "isFreeSpin": false,
+          "source": "math",
+          "stops": [
+            44,
+            85,
+            4,
+            7,
+            46
+          ]
+        },
+        {
+          "index": 1,
+          "type": "skyjumpBoardReveal",
+          "schemaVersion": 2,
+          "board": [
+            [
+              "L2",
+              "L1",
+              "L2",
+              "L3",
+              "M1"
+            ],
+            [
+              "P3",
+              "L3",
+              "L3",
+              "L2",
+              "L3"
+            ],
+            [
+              "L2",
+              "L2",
+              "M3",
+              "M2",
+              "M2"
+            ],
+            [
+              "P3",
+              "M2",
+              "L3",
+              "L2",
+              "L2"
+            ],
+            [
+              "P2",
+              "L1",
+              "L2",
+              "P3",
+              "M2"
+            ]
+          ]
+        },
+        {
+          "index": 2,
+          "type": "skyjumpLineWins",
+          "schemaVersion": 2,
+          "wins": [],
+          "lineWinX": 0.0
+        },
+        {
+          "index": 3,
+          "type": "skyjumpScatterResult",
+          "schemaVersion": 2,
+          "positions": [],
+          "count": 0,
+          "perfectV": false,
+          "trigger": null,
+          "fromBoard": "initialReveal"
+        },
+        {
+          "index": 4,
+          "type": "skyjumpResult",
+          "schemaVersion": 2,
+          "totalLineWinX": 0.0,
+          "totalFeatureWinX": 0.0,
+          "totalFeatureWinXRaw": 0.0,
+          "totalWinX": 0.0,
+          "totalWinXRaw": 0.0,
+          "amount": 0,
+          "latentTokenValueX": 0.0,
+          "tokenFloorTier": 1,
+          "capHit": false
+        },
+        {
+          "index": 5,
+          "type": "setTotalWin",
+          "amount": 0
+        },
+        {
+          "index": 6,
+          "type": "finalWin",
+          "amount": 0
+        }
+      ],
+      "featureWinX": 0.0,
+      "totalWinX": 0.0,
+      "board": [
+        [
+          "L2",
+          "L1",
+          "L2",
+          "L3",
+          "M1"
+        ],
+        [
+          "P3",
+          "L3",
+          "L3",
+          "L2",
+          "L3"
+        ],
+        [
+          "L2",
+          "L2",
+          "M3",
+          "M2",
+          "M2"
+        ],
+        [
+          "P3",
+          "M2",
+          "L3",
+          "L2",
+          "L2"
+        ],
+        [
+          "P2",
+          "L1",
+          "L2",
+          "P3",
+          "M2"
+        ]
+      ],
+      "tokenFloorTier": 1,
+      "capReached": false
+    },
+    {
+      "events": [
+        {
+          "index": 0,
+          "type": "skyjumpSpinStart",
+          "schemaVersion": 2,
+          "mode": "BASE",
+          "isFreeSpin": false,
+          "source": "math",
+          "stops": [
+            44,
+            39,
+            41,
+            73,
+            43
+          ]
+        },
+        {
+          "index": 1,
+          "type": "skyjumpBoardReveal",
+          "schemaVersion": 2,
+          "board": [
+            [
+              "L2",
+              "L1",
+              "L2",
+              "L3",
+              "M1"
+            ],
+            [
+              "M3",
+              "L3",
+              "L1",
+              "P1",
+              "L1"
+            ],
+            [
+              "M1",
+              "L1",
+              "L3",
+              "L3",
+              "L2"
+            ],
+            [
+              "M1",
+              "M2",
+              "L3",
+              "L3",
+              "M2"
+            ],
+            [
+              "L3",
+              "L1",
+              "L3",
+              "P2",
+              "L1"
+            ]
+          ]
+        },
+        {
+          "index": 2,
+          "type": "skyjumpLineWins",
+          "schemaVersion": 2,
+          "wins": [
+            {
+              "paylineId": 22,
+              "symbolId": "L1",
+              "matchCount": 3,
+              "positions": [
+                {
+                  "reel": 0,
+                  "row": 1
+                },
+                {
+                  "reel": 1,
+                  "row": 2
+                },
+                {
+                  "reel": 2,
+                  "row": 1
+                }
+              ],
+              "payoutX": 0.8
+            }
+          ],
+          "lineWinX": 0.8
+        },
+        {
+          "index": 3,
+          "type": "skyjumpScatterResult",
+          "schemaVersion": 2,
+          "positions": [],
+          "count": 0,
+          "perfectV": false,
+          "trigger": null,
+          "fromBoard": "initialReveal"
+        },
+        {
+          "index": 4,
+          "type": "skyjumpResult",
+          "schemaVersion": 2,
+          "totalLineWinX": 0.8,
+          "totalFeatureWinX": 0.0,
+          "totalFeatureWinXRaw": 0.0,
+          "totalWinX": 0.8,
+          "totalWinXRaw": 0.8,
+          "amount": 80,
+          "latentTokenValueX": 0.0,
+          "tokenFloorTier": 1,
+          "capHit": false
+        },
+        {
+          "index": 5,
+          "type": "setTotalWin",
+          "amount": 80
+        },
+        {
+          "index": 6,
+          "type": "finalWin",
+          "amount": 80
+        }
+      ],
+      "featureWinX": 0.0,
+      "totalWinX": 0.8,
+      "board": [
+        [
+          "L2",
+          "L1",
+          "L2",
+          "L3",
+          "M1"
+        ],
+        [
+          "M3",
+          "L3",
+          "L1",
+          "P1",
+          "L1"
+        ],
+        [
+          "M1",
+          "L1",
+          "L3",
+          "L3",
+          "L2"
+        ],
+        [
+          "M1",
+          "M2",
+          "L3",
+          "L3",
+          "M2"
+        ],
+        [
+          "L3",
+          "L1",
+          "L3",
+          "P2",
+          "L1"
+        ]
+      ],
+      "tokenFloorTier": 1,
+      "capReached": false
+    },
+    {
+      "events": [
+        {
+          "index": 0,
+          "type": "skyjumpSpinStart",
+          "schemaVersion": 2,
+          "mode": "BASE",
+          "isFreeSpin": false,
+          "source": "math",
+          "stops": [
+            28,
+            36,
+            45,
+            49,
+            42
+          ]
+        },
+        {
+          "index": 1,
+          "type": "skyjumpBoardReveal",
+          "schemaVersion": 2,
+          "board": [
+            [
+              "P1",
+              "M3",
+              "P2",
+              "M1",
+              "L3"
+            ],
+            [
+              "L2",
+              "L3",
+              "L2",
+              "M3",
+              "L3"
+            ],
+            [
+              "L2",
+              "L2",
+              "M1",
+              "P3",
+              "P2"
+            ],
+            [
+              "L3",
+              "M3",
+              "P2",
+              "L1",
+              "L1"
+            ],
+            [
+              "L3",
+              "L3",
+              "L1",
+              "L3",
+              "P2"
+            ]
+          ]
+        },
+        {
+          "index": 2,
+          "type": "skyjumpLineWins",
+          "schemaVersion": 2,
+          "wins": [],
+          "lineWinX": 0.0
+        },
+        {
+          "index": 3,
+          "type": "skyjumpScatterResult",
+          "schemaVersion": 2,
+          "positions": [],
+          "count": 0,
+          "perfectV": false,
+          "trigger": null,
+          "fromBoard": "initialReveal"
+        },
+        {
+          "index": 4,
+          "type": "skyjumpResult",
+          "schemaVersion": 2,
+          "totalLineWinX": 0.0,
+          "totalFeatureWinX": 0.0,
+          "totalFeatureWinXRaw": 0.0,
+          "totalWinX": 0.0,
+          "totalWinXRaw": 0.0,
+          "amount": 0,
+          "latentTokenValueX": 0.0,
+          "tokenFloorTier": 1,
+          "capHit": false
+        },
+        {
+          "index": 5,
+          "type": "setTotalWin",
+          "amount": 0
+        },
+        {
+          "index": 6,
+          "type": "finalWin",
+          "amount": 0
+        }
+      ],
+      "featureWinX": 0.0,
+      "totalWinX": 0.0,
+      "board": [
+        [
+          "P1",
+          "M3",
+          "P2",
+          "M1",
+          "L3"
+        ],
+        [
+          "L2",
+          "L3",
+          "L2",
+          "M3",
+          "L3"
+        ],
+        [
+          "L2",
+          "L2",
+          "M1",
+          "P3",
+          "P2"
+        ],
+        [
+          "L3",
+          "M3",
+          "P2",
+          "L1",
+          "L1"
+        ],
+        [
+          "L3",
+          "L3",
+          "L1",
+          "L3",
+          "P2"
+        ]
+      ],
+      "tokenFloorTier": 1,
+      "capReached": false
+    },
+    {
+      "events": [
+        {
+          "index": 0,
+          "type": "skyjumpSpinStart",
+          "schemaVersion": 2,
+          "mode": "BASE",
+          "isFreeSpin": false,
+          "source": "math",
+          "stops": [
+            22,
+            2,
+            29,
+            45,
+            10
+          ]
+        },
+        {
+          "index": 1,
+          "type": "skyjumpBoardReveal",
+          "schemaVersion": 2,
+          "board": [
+            [
+              "L3",
+              "P3",
+              "L2",
+              "L3",
+              "L1"
+            ],
+            [
+              "M2",
+              "L1",
+              "C",
+              "L3",
+              "L2"
+            ],
+            [
+              "L3",
+              "M3",
+              "L1",
+              "L3",
+              "M3"
+            ],
+            [
+              "L3",
+              "M3",
+              "M3",
+              "M1",
+              "L3"
+            ],
+            [
+              "L1",
+              "L3",
+              "L2",
+              "L2",
+              "M2"
+            ]
+          ]
+        },
+        {
+          "index": 2,
+          "type": "skyjumpLineWins",
+          "schemaVersion": 2,
+          "wins": [
+            {
+              "paylineId": 4,
+              "symbolId": "L3",
+              "matchCount": 3,
+              "positions": [
+                {
+                  "reel": 0,
+                  "row": 3
+                },
+                {
+                  "reel": 1,
+                  "row": 3
+                },
+                {
+                  "reel": 2,
+                  "row": 3
+                }
+              ],
+              "payoutX": 0.5
+            }
+          ],
+          "lineWinX": 0.5
+        },
+        {
+          "index": 3,
+          "type": "skyjumpScatterResult",
+          "schemaVersion": 2,
+          "positions": [],
+          "count": 0,
+          "perfectV": false,
+          "trigger": null,
+          "fromBoard": "initialReveal"
+        },
+        {
+          "index": 4,
+          "type": "skyjumpCoachSignal",
+          "schemaVersion": 2,
+          "coachPosition": {
+            "reel": 1,
+            "row": 2
+          },
+          "selectedSymbolId": "L1",
+          "selectedPositions": [
+            {
+              "reel": 0,
+              "row": 4
+            },
+            {
+              "reel": 1,
+              "row": 1
+            },
+            {
+              "reel": 2,
+              "row": 2
+            },
+            {
+              "reel": 4,
+              "row": 0
+            }
+          ],
+          "sequenceIndex": 0,
+          "noOp": false,
+          "reason": null
+        },
+        {
+          "index": 5,
+          "type": "skyjumpMysteryTransform",
+          "schemaVersion": 2,
+          "sourceSymbolId": "L1",
+          "positions": [
+            {
+              "reel": 0,
+              "row": 4
+            },
+            {
+              "reel": 1,
+              "row": 1
+            },
+            {
+              "reel": 2,
+              "row": 2
+            },
+            {
+              "reel": 4,
+              "row": 0
+            }
+          ],
+          "sequenceIndex": 0
+        },
+        {
+          "index": 6,
+          "type": "skyjumpMysteryResolve",
+          "schemaVersion": 2,
+          "position": {
+            "reel": 0,
+            "row": 4
+          },
+          "resultType": "FLIGHT_TOKEN",
+          "tokenTier": 1,
+          "tokenId": "T1",
+          "tokenName": "ROOKIE_TOKEN",
+          "tokenValueX": 1.0,
+          "faceValueX": 1.0,
+          "effectiveValueX": 1.0
+        },
+        {
+          "index": 7,
+          "type": "skyjumpMysteryResolve",
+          "schemaVersion": 2,
+          "position": {
+            "reel": 1,
+            "row": 1
+          },
+          "resultType": "FLIGHT_TOKEN",
+          "tokenTier": 1,
+          "tokenId": "T1",
+          "tokenName": "ROOKIE_TOKEN",
+          "tokenValueX": 1.0,
+          "faceValueX": 1.0,
+          "effectiveValueX": 1.0
+        },
+        {
+          "index": 8,
+          "type": "skyjumpMysteryResolve",
+          "schemaVersion": 2,
+          "position": {
+            "reel": 2,
+            "row": 2
+          },
+          "resultType": "THERMAL_LIFT",
+          "thermalMult": 2
+        },
+        {
+          "index": 9,
+          "type": "skyjumpMysteryResolve",
+          "schemaVersion": 2,
+          "position": {
+            "reel": 4,
+            "row": 0
+          },
+          "resultType": "FLIGHT_TOKEN",
+          "tokenTier": 1,
+          "tokenId": "T1",
+          "tokenName": "ROOKIE_TOKEN",
+          "tokenValueX": 1.0,
+          "faceValueX": 1.0,
+          "effectiveValueX": 1.0
+        },
+        {
+          "index": 10,
+          "type": "skyjumpThermalLift",
+          "schemaVersion": 2,
+          "position": {
+            "reel": 2,
+            "row": 2
+          },
+          "thermalMult": 2,
+          "affectedTokens": [
+            {
+              "reel": 1,
+              "row": 1,
+              "faceValueX": 1.0,
+              "effectiveValueX": 2.0,
+              "appliedThermals": [
+                2
+              ]
+            }
+          ]
+        },
+        {
+          "index": 11,
+          "type": "skyjumpResult",
+          "schemaVersion": 2,
+          "totalLineWinX": 0.5,
+          "totalFeatureWinX": 0.0,
+          "totalFeatureWinXRaw": 0.0,
+          "totalWinX": 0.5,
+          "totalWinXRaw": 0.5,
+          "amount": 50,
+          "latentTokenValueX": 3.0,
+          "tokenFloorTier": 1,
+          "capHit": false
+        },
+        {
+          "index": 12,
+          "type": "setTotalWin",
+          "amount": 50
+        },
+        {
+          "index": 13,
+          "type": "finalWin",
+          "amount": 50
+        }
+      ],
+      "featureWinX": 0.0,
+      "totalWinX": 0.5,
+      "board": [
+        [
+          "L3",
+          "P3",
+          "L2",
+          "L3",
+          "T1"
+        ],
+        [
+          "M2",
+          "T1",
+          "C",
+          "L3",
+          "L2"
+        ],
+        [
+          "L3",
+          "M3",
+          "THERMAL",
+          "L3",
+          "M3"
+        ],
+        [
+          "L3",
+          "M3",
+          "M3",
+          "M1",
+          "L3"
+        ],
+        [
+          "T1",
+          "L3",
+          "L2",
+          "L2",
+          "M2"
+        ]
+      ],
+      "tokenFloorTier": 1,
+      "capReached": false
+    },
+    {
+      "events": [
+        {
+          "index": 0,
+          "type": "skyjumpSpinStart",
+          "schemaVersion": 2,
+          "mode": "BASE",
+          "isFreeSpin": false,
+          "source": "math",
+          "stops": [
+            27,
+            110,
+            35,
+            35,
+            45
+          ]
+        },
+        {
+          "index": 1,
+          "type": "skyjumpBoardReveal",
+          "schemaVersion": 2,
+          "board": [
+            [
+              "M2",
+              "P1",
+              "M3",
+              "P2",
+              "M1"
+            ],
+            [
+              "L2",
+              "M2",
+              "M3",
+              "L3",
+              "L1"
+            ],
+            [
+              "L3",
+              "M1",
+              "L3",
+              "L1",
+              "L1"
+            ],
+            [
+              "M2",
+              "P3",
+              "L3",
+              "L2",
+              "M3"
+            ],
+            [
+              "L3",
+              "P2",
+              "L1",
+              "L2",
+              "P3"
+            ]
+          ]
+        },
+        {
+          "index": 2,
+          "type": "skyjumpLineWins",
+          "schemaVersion": 2,
+          "wins": [],
+          "lineWinX": 0.0
+        },
+        {
+          "index": 3,
+          "type": "skyjumpScatterResult",
+          "schemaVersion": 2,
+          "positions": [],
+          "count": 0,
+          "perfectV": false,
+          "trigger": null,
+          "fromBoard": "initialReveal"
+        },
+        {
+          "index": 4,
+          "type": "skyjumpResult",
+          "schemaVersion": 2,
+          "totalLineWinX": 0.0,
+          "totalFeatureWinX": 0.0,
+          "totalFeatureWinXRaw": 0.0,
+          "totalWinX": 0.0,
+          "totalWinXRaw": 0.0,
+          "amount": 0,
+          "latentTokenValueX": 0.0,
+          "tokenFloorTier": 1,
+          "capHit": false
+        },
+        {
+          "index": 5,
+          "type": "setTotalWin",
+          "amount": 0
+        },
+        {
+          "index": 6,
+          "type": "finalWin",
+          "amount": 0
+        }
+      ],
+      "featureWinX": 0.0,
+      "totalWinX": 0.0,
+      "board": [
+        [
+          "M2",
+          "P1",
+          "M3",
+          "P2",
+          "M1"
+        ],
+        [
+          "L2",
+          "M2",
+          "M3",
+          "L3",
+          "L1"
+        ],
+        [
+          "L3",
+          "M1",
+          "L3",
+          "L1",
+          "L1"
+        ],
+        [
+          "M2",
+          "P3",
+          "L3",
+          "L2",
+          "M3"
+        ],
+        [
+          "L3",
+          "P2",
+          "L1",
+          "L2",
+          "P3"
+        ]
+      ],
+      "tokenFloorTier": 1,
+      "capReached": false
+    }
+  ]
+}

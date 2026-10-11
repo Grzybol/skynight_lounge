@@ -1,0 +1,46 @@
+{
+  "n": 1000000,
+  "seed": 20260925,
+  "phase6": {
+    "n": 1000000,
+    "meanX": 36.420338,
+    "medianX": 9.5,
+    "p90X": 45.5,
+    "p99X": 471.1,
+    "pCap": 1.3e-05,
+    "meanCapDrag": 1.5507546,
+    "p_trigger": 0.00652967825443787
+  },
+  "paired": {
+    "n": 200000,
+    "featureOffMeanX": 27.7275885,
+    "phase6MeanX": 36.696974,
+    "pairedDeltaX": 8.969385500000001,
+    "pairedIncrementalPp": 5.856720145502035,
+    "p_trigger": 0.00652967825443787
+  },
+  "visibilityMix": {
+    "n": 100000,
+    "tier": "MIX",
+    "pRejump": 0.16627,
+    "pWind": 0.07601,
+    "pAnyPhase6": 0.19744,
+    "pBoth": 0.04484
+  },
+  "visibilityLargeHill": {
+    "n": 80000,
+    "tier": "LARGE_HILL",
+    "pRejump": 0.1443625,
+    "pWind": 0.0594625,
+    "pAnyPhase6": 0.1729875,
+    "pBoth": 0.0308375
+  },
+  "incrementVsCertifiedPp": 5.854260089219676,
+  "newGameRtp": 94.99330890578773,
+  "reservePp": 1.5066910942122718,
+  "expectedE1": {
+    "inc": 5.195,
+    "game": 94.334,
+    "reserve": 2.166
+  }
+}

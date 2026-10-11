@@ -1,0 +1,19 @@
+{
+  "researchSemantic": "append persistentMysteryTargets immediately after each Coach (incl. Rejump)",
+  "liveSemantic": "append after full spin feature resolve; mid-chain Rejump uses pre-spin targets only",
+  "canonical": "Phase 5B/6 design: persist AFTER lines on a board; list growth timing mid-chain not required to match research",
+  "action": "KEEP_LIVE",
+  "pCoachAfterRejump": 0.0315,
+  "evImpactPp": 0.41525358265532486,
+  "note": "Research mid-spin persist append is ~+0.42 pp hotter on 100k paired. Live end-of-spin append matches Phase 5B/6 design; do not change.",
+  "evCounterfactual": {
+    "n": 100000,
+    "seed": 6200000000,
+    "liveMeanX": 33.700666,
+    "midSpinAppendMeanX": 34.336614,
+    "deltaX": 0.6359479999999991,
+    "deltaPp": 0.41525358265532486,
+    "action": "KEEP_LIVE",
+    "note": "Positive delta means research mid-spin append is hotter than live."
+  }
+}

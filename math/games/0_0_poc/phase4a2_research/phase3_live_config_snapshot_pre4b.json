@@ -1,0 +1,725 @@
+{
+  "meta": {
+    "lineage": "skyjump-v2",
+    "mathVersion": 1,
+    "workingTitle": "SkyJump",
+    "gameID": "0_0_poc",
+    "note": "Phase 3 provisional BASE + Coach/Mystery/Token exposure. Tokens do not auto-pay. Not production RTP.",
+    "mathStatus": "PHASE 3 PROVISIONAL FEATURE MATH"
+  },
+  "eventSchemaVersion": 2,
+  "bookAmountMultiplier": 100,
+  "board": {
+    "reels": 5,
+    "rows": 5
+  },
+  "layout": {
+    "desktopLogical": {
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "maxFeatureChainDepth": 8,
+  "symbols": {
+    "regular": [
+      {
+        "id": "P1",
+        "name": "FLYING_JUMPER",
+        "class": "premium"
+      },
+      {
+        "id": "P2",
+        "name": "CRYSTAL_TROPHY",
+        "class": "premium"
+      },
+      {
+        "id": "P3",
+        "name": "GOLDEN_HELMET",
+        "class": "premium"
+      },
+      {
+        "id": "M1",
+        "name": "JUMPING_SKIS",
+        "class": "mid"
+      },
+      {
+        "id": "M2",
+        "name": "FLIGHT_GOGGLES",
+        "class": "mid"
+      },
+      {
+        "id": "M3",
+        "name": "SKI_BOOTS",
+        "class": "mid"
+      },
+      {
+        "id": "L1",
+        "name": "WIND_SOCK",
+        "class": "low"
+      },
+      {
+        "id": "L2",
+        "name": "SNOW_BADGE",
+        "class": "low"
+      },
+      {
+        "id": "L3",
+        "name": "START_FLAG",
+        "class": "low"
+      }
+    ],
+    "scatter": {
+      "id": "S",
+      "name": "COMPETITION_BIB"
+    },
+    "coach": {
+      "id": "C",
+      "name": "COACH_SIGNAL"
+    },
+    "mystery": {
+      "id": "Y",
+      "name": "SNOWBURST_MYSTERY",
+      "initialReelSymbol": false
+    }
+  },
+  "paylines": {
+    "1": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "2": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "3": [
+      2,
+      2,
+      2,
+      2,
+      2
+    ],
+    "4": [
+      3,
+      3,
+      3,
+      3,
+      3
+    ],
+    "5": [
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "6": [
+      0,
+      1,
+      2,
+      1,
+      0
+    ],
+    "7": [
+      4,
+      3,
+      2,
+      3,
+      4
+    ],
+    "8": [
+      0,
+      0,
+      1,
+      0,
+      0
+    ],
+    "9": [
+      4,
+      4,
+      3,
+      4,
+      4
+    ],
+    "10": [
+      1,
+      0,
+      0,
+      0,
+      1
+    ],
+    "11": [
+      3,
+      4,
+      4,
+      4,
+      3
+    ],
+    "12": [
+      1,
+      2,
+      3,
+      2,
+      1
+    ],
+    "13": [
+      3,
+      2,
+      1,
+      2,
+      3
+    ],
+    "14": [
+      0,
+      1,
+      1,
+      1,
+      0
+    ],
+    "15": [
+      4,
+      3,
+      3,
+      3,
+      4
+    ],
+    "16": [
+      2,
+      1,
+      0,
+      1,
+      2
+    ],
+    "17": [
+      2,
+      3,
+      4,
+      3,
+      2
+    ],
+    "18": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "19": [
+      4,
+      3,
+      2,
+      1,
+      0
+    ],
+    "20": [
+      0,
+      1,
+      0,
+      1,
+      0
+    ],
+    "21": [
+      4,
+      3,
+      4,
+      3,
+      4
+    ],
+    "22": [
+      1,
+      2,
+      1,
+      2,
+      1
+    ],
+    "23": [
+      3,
+      2,
+      3,
+      2,
+      3
+    ],
+    "24": [
+      1,
+      1,
+      2,
+      1,
+      1
+    ],
+    "25": [
+      3,
+      3,
+      2,
+      3,
+      3
+    ],
+    "26": [
+      2,
+      1,
+      2,
+      1,
+      2
+    ],
+    "27": [
+      2,
+      3,
+      2,
+      3,
+      2
+    ],
+    "28": [
+      0,
+      2,
+      4,
+      2,
+      0
+    ]
+  },
+  "payoutGrainX": 0.1,
+  "wager": {
+    "unitX": 1,
+    "bookAmountMultiplier": 100
+  },
+  "paytable": {
+    "status": "PHASE 2 PROVISIONAL BASE MATH",
+    "nonFinal": true,
+    "usage": "BASE line awards only. Future features may require retune.",
+    "awards": {
+      "P1": {
+        "3": 4.0,
+        "4": 11.0,
+        "5": 36.0
+      },
+      "P2": {
+        "3": 3.2,
+        "4": 6.6,
+        "5": 18.0
+      },
+      "P3": {
+        "3": 2.4,
+        "4": 5.5,
+        "5": 13.5
+      },
+      "M1": {
+        "3": 1.6,
+        "4": 3.3,
+        "5": 7.2
+      },
+      "M2": {
+        "3": 1.3,
+        "4": 2.8,
+        "5": 5.4
+      },
+      "M3": {
+        "3": 1.0,
+        "4": 2.2,
+        "5": 4.5
+      },
+      "L1": {
+        "3": 0.8,
+        "4": 1.7,
+        "5": 3.6
+      },
+      "L2": {
+        "3": 0.6,
+        "4": 1.3,
+        "5": 2.7
+      },
+      "L3": {
+        "3": 0.5,
+        "4": 1.1,
+        "5": 2.2
+      }
+    }
+  },
+  "reelModel": {
+    "type": "independentVirtualStrips",
+    "visibleRows": 5,
+    "stripLength": 52,
+    "strips": [
+      [
+        "L1",
+        "P3",
+        "M3",
+        "S",
+        "L1",
+        "M3",
+        "L3",
+        "L1",
+        "M3",
+        "L2",
+        "L2",
+        "L3",
+        "L3",
+        "M3",
+        "M2",
+        "P2",
+        "M1",
+        "L2",
+        "L1",
+        "M2",
+        "M3",
+        "L3",
+        "L3",
+        "P3",
+        "L2",
+        "L3",
+        "L1",
+        "M2",
+        "P1",
+        "M3",
+        "P2",
+        "M1",
+        "L3",
+        "L2",
+        "L2",
+        "L3",
+        "M2",
+        "P3",
+        "L1",
+        "L2",
+        "M2",
+        "L1",
+        "L3",
+        "L1",
+        "L2",
+        "L1",
+        "L2",
+        "L3",
+        "M1",
+        "L3",
+        "M1",
+        "L2"
+      ],
+      [
+        "P3",
+        "L1",
+        "M2",
+        "L1",
+        "C",
+        "L3",
+        "L2",
+        "M2",
+        "M3",
+        "L3",
+        "L1",
+        "L2",
+        "L2",
+        "L1",
+        "M2",
+        "M1",
+        "L2",
+        "L2",
+        "M2",
+        "L3",
+        "P2",
+        "P3",
+        "P2",
+        "L1",
+        "L3",
+        "L1",
+        "M3",
+        "M3",
+        "L3",
+        "L2",
+        "M1",
+        "M3",
+        "M1",
+        "P3",
+        "L3",
+        "L3",
+        "L2",
+        "L3",
+        "L2",
+        "M3",
+        "L3",
+        "L1",
+        "P1",
+        "L1",
+        "L3",
+        "M2",
+        "L2",
+        "M1",
+        "L2",
+        "S",
+        "L3",
+        "M1"
+      ],
+      [
+        "M2",
+        "P3",
+        "P3",
+        "S",
+        "L2",
+        "L2",
+        "M3",
+        "M2",
+        "M2",
+        "L1",
+        "L2",
+        "L3",
+        "L2",
+        "P3",
+        "L2",
+        "P1",
+        "M3",
+        "P2",
+        "L1",
+        "M3",
+        "M1",
+        "L2",
+        "L3",
+        "L2",
+        "L1",
+        "L3",
+        "L3",
+        "M2",
+        "M2",
+        "L3",
+        "M3",
+        "L1",
+        "L3",
+        "M3",
+        "L1",
+        "L3",
+        "M1",
+        "L3",
+        "L1",
+        "L1",
+        "L2",
+        "M1",
+        "L1",
+        "L3",
+        "L3",
+        "L2",
+        "L2",
+        "M1",
+        "P3",
+        "P2",
+        "M3",
+        "L3"
+      ],
+      [
+        "L1",
+        "L1",
+        "L2",
+        "M1",
+        "C",
+        "L1",
+        "L3",
+        "P3",
+        "M2",
+        "L3",
+        "L2",
+        "L2",
+        "P3",
+        "L1",
+        "M1",
+        "P2",
+        "L3",
+        "L2",
+        "M3",
+        "L1",
+        "L3",
+        "M1",
+        "M2",
+        "L3",
+        "L3",
+        "M2",
+        "L2",
+        "L1",
+        "S",
+        "L2",
+        "L1",
+        "L2",
+        "P1",
+        "L2",
+        "L1",
+        "M2",
+        "P3",
+        "L3",
+        "L2",
+        "M3",
+        "M3",
+        "M2",
+        "L3",
+        "L2",
+        "L3",
+        "L3",
+        "M3",
+        "M3",
+        "M1",
+        "L3",
+        "M3",
+        "P2"
+      ],
+      [
+        "L1",
+        "M3",
+        "L1",
+        "L2",
+        "M3",
+        "M3",
+        "L2",
+        "L1",
+        "M2",
+        "M2",
+        "L1",
+        "L3",
+        "L2",
+        "L2",
+        "M2",
+        "M1",
+        "L3",
+        "L3",
+        "L1",
+        "L3",
+        "P3",
+        "L2",
+        "M3",
+        "P1",
+        "M1",
+        "L2",
+        "L3",
+        "M2",
+        "S",
+        "L2",
+        "L3",
+        "M3",
+        "M1",
+        "L2",
+        "M1",
+        "L3",
+        "L3",
+        "L1",
+        "P2",
+        "M3",
+        "P3",
+        "L1",
+        "L3",
+        "L3",
+        "L1",
+        "L3",
+        "P2",
+        "L1",
+        "L2",
+        "P3",
+        "M2",
+        "L2"
+      ]
+    ]
+  },
+  "scatterModel": {
+    "id": "S",
+    "paysOnLines": false,
+    "phase2PayoutX": 0,
+    "countFrom": "initialReveal",
+    "perfectVRows": [
+      0,
+      1,
+      2,
+      1,
+      0
+    ]
+  },
+  "simulation": {
+    "defaultSpins": 1000000,
+    "preferredSpins": 5000000,
+    "seed": 20260921
+  },
+  "coachModel": {
+    "id": "C",
+    "name": "COACH_SIGNAL",
+    "paysOnLines": false,
+    "reels": [
+      2,
+      4
+    ],
+    "stopsPerReel": 1,
+    "selection": "uniformDistinctVisibleRegularTypes",
+    "order": "leftToRightThenTopToBottom"
+  },
+  "mysteryModel": {
+    "id": "Y",
+    "name": "SNOWBURST_MYSTERY",
+    "phase3Result": "FLIGHT_TOKEN",
+    "createdBy": "COACH_SIGNAL"
+  },
+  "flightTokens": {
+    "doNotAutoPay": true,
+    "t6Id": "TOKEN_WORLD_RECORD",
+    "specialWorldRecordId": "SPECIAL_WORLD_RECORD",
+    "tiers": {
+      "1": {
+        "id": "T1",
+        "name": "ROOKIE_TOKEN",
+        "weight": 840000
+      },
+      "2": {
+        "id": "T2",
+        "name": "K_POINT_TOKEN",
+        "weight": 130000
+      },
+      "3": {
+        "id": "T3",
+        "name": "LARGE_HILL_TOKEN",
+        "weight": 25000
+      },
+      "4": {
+        "id": "T4",
+        "name": "SKI_FLYING_TOKEN",
+        "weight": 4500
+      },
+      "5": {
+        "id": "T5",
+        "name": "WORLD_CUP_TOKEN",
+        "weight": 492
+      },
+      "6": {
+        "id": "T6",
+        "name": "TOKEN_WORLD_RECORD",
+        "weight": 8
+      }
+    },
+    "valueWeights": {
+      "1": {
+        "1": 5,
+        "2": 4,
+        "3": 3,
+        "4": 2
+      },
+      "2": {
+        "5": 5,
+        "10": 3,
+        "15": 2
+      },
+      "3": {
+        "25": 5,
+        "50": 3,
+        "100": 2
+      },
+      "4": {
+        "150": 4,
+        "200": 3,
+        "250": 2,
+        "500": 1
+      },
+      "5": {
+        "750": 4,
+        "1000": 3,
+        "2500": 2,
+        "5000": 1
+      },
+      "6": {
+        "10000": 5,
+        "25000": 3,
+        "50000": 1
+      }
+    }
+  }
+}

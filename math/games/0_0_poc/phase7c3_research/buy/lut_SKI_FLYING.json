@@ -1,0 +1,12 @@
+{
+  "tier": "SKI_FLYING",
+  "lutMeanX": 187.20096230408947,
+  "authMeanX": 190.0141150209348,
+  "authWrOffMeanX": 188.35928817789687,
+  "pWr": 3.322168913511003e-05,
+  "meanDelta": 2.8131527168453374,
+  "nNat": 50000,
+  "nWr": 20,
+  "shaBook": "093a4093118455f0f7e31fa058d589b757a6d0768ddd006cbe8cdd4fec842caf",
+  "shaLut": "9983226d99a4d6c51d2d8dc929073911973d9aa93d5a8cf49a18526be8769907"
+}

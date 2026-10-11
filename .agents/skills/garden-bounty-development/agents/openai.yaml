@@ -1,0 +1,4 @@
+interface:
+  display_name: "Garden Bounty Development"
+  short_description: "Continue the Garden Bounty slot conversion"
+  default_prompt: "Use $garden-bounty-development to continue the Garden Bounty slot game from the first unchecked handoff task."

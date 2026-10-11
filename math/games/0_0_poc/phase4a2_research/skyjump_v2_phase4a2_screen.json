@@ -1,0 +1,3071 @@
+{
+  "seed": 20260922,
+  "screenSpins": 120000,
+  "rows": [
+    {
+      "id": "F01_E_feel",
+      "coach": "E",
+      "conditional": false,
+      "pAny": 0.0815972222222221,
+      "pGe2": 0.001736111111111111,
+      "lineRtp": 0.596961766439716,
+      "featureRtpCapped": 0.10631666666666667,
+      "baseRtpBeforeFs": 0.7032784331063826,
+      "pDeadCoach": 0.7467935457178321,
+      "pFeatureWinGivenCoach": 0.253206454282168,
+      "median": 4.0,
+      "avgWin": 5.211601307189542,
+      "remainingFsRtp": 0.26172156689361736,
+      "impliedBonus": 40.08184732773615,
+      "capFrequency": 0.0,
+      "score": 17.62675490277203,
+      "inFeatureBand": true,
+      "deadReasons": {
+        "tokens_no_collector": 0.7089366983864295,
+        "collector_no_tokens": 0.02596193628465039,
+        "modifier_only": 0.011894911046752173,
+        "other": 0.0
+      },
+      "candidate": {
+        "id": "F01_E_feel",
+        "coachModelId": "E",
+        "notes": "Primary feel: lower two-reel Coach E + denser Judges + ultra-lean faces",
+        "maxWinX": 50000,
+        "gateMaxFloor": 3,
+        "mysteryResultWeights": {
+          "FLIGHT_TOKEN": 855,
+          "THERMAL_LIFT": 42,
+          "GATE_UPGRADE": 3,
+          "JUDGE": 85,
+          "HEAD_JUDGE": 15
+        },
+        "tokenTierWeights": {
+          "1": 999400,
+          "2": 400,
+          "3": 120,
+          "4": 40,
+          "5": 32,
+          "6": 8
+        },
+        "tokenValueWeights": {
+          "1": {
+            "1": 99,
+            "2": 1,
+            "3": 1,
+            "4": 1
+          },
+          "2": {
+            "5": 26,
+            "10": 1,
+            "15": 1
+          },
+          "3": {
+            "25": 24,
+            "50": 1,
+            "100": 1
+          },
+          "4": {
+            "150": 18,
+            "200": 2,
+            "250": 1,
+            "500": 1
+          },
+          "5": {
+            "750": 18,
+            "1000": 2,
+            "2500": 1,
+            "5000": 1
+          },
+          "6": {
+            "10000": 8,
+            "25000": 2,
+            "50000": 1
+          }
+        },
+        "thermalWeights": {
+          "2": 70,
+          "3": 20,
+          "4": 7,
+          "5": 2,
+          "10": 1,
+          "20": 1
+        },
+        "phase": "4A.2",
+        "conditionalCollectors": false
+      }
+    },
+    {
+      "id": "G017_E_m2_feel",
+      "coach": "E",
+      "conditional": false,
+      "pAny": 0.0815972222222221,
+      "pGe2": 0.001736111111111111,
+      "lineRtp": 0.596961766439716,
+      "featureRtpCapped": 0.10631666666666667,
+      "baseRtpBeforeFs": 0.7032784331063826,
+      "pDeadCoach": 0.7467935457178321,
+      "pFeatureWinGivenCoach": 0.253206454282168,
+      "median": 4.0,
+      "avgWin": 5.211601307189542,
+      "remainingFsRtp": 0.26172156689361736,
+      "impliedBonus": 40.08184732773615,
+      "capFrequency": 0.0,
+      "score": 17.62675490277203,
+      "inFeatureBand": true,
+      "deadReasons": {
+        "tokens_no_collector": 0.7089366983864295,
+        "collector_no_tokens": 0.02596193628465039,
+        "modifier_only": 0.011894911046752173,
+        "other": 0.0
+      },
+      "candidate": {
+        "id": "G017_E_m2_feel",
+        "coachModelId": "E",
+        "notes": "feel-search coach=E m=2 tokens=feel",
+        "maxWinX": 50000,
+        "gateMaxFloor": 3,
+        "mysteryResultWeights": {
+          "FLIGHT_TOKEN": 855,
+          "THERMAL_LIFT": 42,
+          "GATE_UPGRADE": 3,
+          "JUDGE": 85,
+          "HEAD_JUDGE": 15
+        },
+        "tokenTierWeights": {
+          "1": 999400,
+          "2": 400,
+          "3": 120,
+          "4": 40,
+          "5": 32,
+          "6": 8
+        },
+        "tokenValueWeights": {
+          "1": {
+            "1": 99,
+            "2": 1,
+            "3": 1,
+            "4": 1
+          },
+          "2": {
+            "5": 26,
+            "10": 1,
+            "15": 1
+          },
+          "3": {
+            "25": 24,
+            "50": 1,
+            "100": 1
+          },
+          "4": {
+            "150": 18,
+            "200": 2,
+            "250": 1,
+            "500": 1
+          },
+          "5": {
+            "750": 18,
+            "1000": 2,
+            "2500": 1,
+            "5000": 1
+          },
+          "6": {
+            "10000": 8,
+            "25000": 2,
+            "50000": 1
+          }
+        },
+        "thermalWeights": {
+          "2": 70,
+          "3": 20,
+          "4": 7,
+          "5": 2,
+          "10": 1,
+          "20": 1
+        },
+        "phase": "4A.2",
+        "conditionalCollectors": false
+      }
+    },
+    {
+      "id": "G015_E_m1_feel",
+      "coach": "E",
+      "conditional": false,
+      "pAny": 0.0815972222222221,
+      "pGe2": 0.001736111111111111,
+      "lineRtp": 0.596961766439716,
+      "featureRtpCapped": 0.1043,
+      "baseRtpBeforeFs": 0.701261766439716,
+      "pDeadCoach": 0.7537761224912063,
+      "pFeatureWinGivenCoach": 0.2462238775087937,
+      "median": 4.0,
+      "avgWin": 5.258823529411765,
+      "remainingFsRtp": 0.2637382335602839,
+      "impliedBonus": 40.39069358142345,
+      "capFrequency": 0.0,
+      "score": 15.956840678667495,
+      "inFeatureBand": true,
+      "deadReasons": {
+        "tokens_no_collector": 0.7178770949720671,
+        "collector_no_tokens": 0.02472584316159735,
+        "modifier_only": 0.0111731843575419,
+        "other": 0.0
+      },
+      "candidate": {
+        "id": "G015_E_m1_feel",
+        "coachModelId": "E",
+        "notes": "feel-search coach=E m=1 tokens=feel",
+        "maxWinX": 50000,
+        "gateMaxFloor": 3,
+        "mysteryResultWeights": {
+          "FLIGHT_TOKEN": 858,
+          "THERMAL_LIFT": 42,
+          "GATE_UPGRADE": 3,
+          "JUDGE": 82,
+          "HEAD_JUDGE": 15
+        },
+        "tokenTierWeights": {
+          "1": 999400,
+          "2": 400,
+          "3": 120,
+          "4": 40,
+          "5": 32,
+          "6": 8
+        },
+        "tokenValueWeights": {
+          "1": {
+            "1": 99,
+            "2": 1,
+            "3": 1,
+            "4": 1
+          },
+          "2": {
+            "5": 26,
+            "10": 1,
+            "15": 1
+          },
+          "3": {
+            "25": 24,
+            "50": 1,
+            "100": 1
+          },
+          "4": {
+            "150": 18,
+            "200": 2,
+            "250": 1,
+            "500": 1
+          },
+          "5": {
+            "750": 18,
+            "1000": 2,
+            "2500": 1,
+            "5000": 1
+          },
+          "6": {
+            "10000": 8,
+            "25000": 2,
+            "50000": 1
+          }
+        },
+        "thermalWeights": {
+          "2": 70,
+          "3": 20,
+          "4": 7,
+          "5": 2,
+          "10": 1,
+          "20": 1
+        },
+        "phase": "4A.2",
+        "conditionalCollectors": false
+      }
+    },
+    {
+      "id": "F07_E_safe",
+      "coach": "E",
+      "conditional": false,
+      "pAny": 0.0815972222222221,
+      "pGe2": 0.001736111111111111,
+      "lineRtp": 0.596961766439716,
+      "featureRtpCapped": 0.10295,
+      "baseRtpBeforeFs": 0.699911766439716,
+      "pDeadCoach": 0.773811994189666,
+      "pFeatureWinGivenCoach": 0.2261880058103341,
+      "median": 4.0,
+      "avgWin": 5.6669724770642205,
+      "remainingFsRtp": 0.265088233560284,
+      "impliedBonus": 40.59744190000753,
+      "capFrequency": 0.0,
+      "score": 15.195810887459363,
+      "inFeatureBand": true,
+      "deadReasons": {
+        "tokens_no_collector": 0.7408175970118281,
+        "collector_no_tokens": 0.02168499688732102,
+        "modifier_only": 0.011309400290516705,
+        "other": 0.0
+      },
+      "candidate": {
+        "id": "F07_E_safe",
+        "coachModelId": "E",
+        "notes": "Safer RTP E with moderate collectors",
+        "maxWinX": 50000,
+        "gateMaxFloor": 3,
+        "mysteryResultWeights": {
+          "FLIGHT_TOKEN": 870,
+          "THERMAL_LIFT": 40,
+          "GATE_UPGRADE": 3,
+          "JUDGE": 75,
+          "HEAD_JUDGE": 12
+        },
+        "tokenTierWeights": {
+          "1": 999400,
+          "2": 400,
+          "3": 120,
+          "4": 40,
+          "5": 32,
+          "6": 8
+        },
+        "tokenValueWeights": {
+          "1": {
+            "1": 99,
+            "2": 1,
+            "3": 1,
+            "4": 1
+          },
+          "2": {
+            "5": 26,
+            "10": 1,
+            "15": 1
+          },
+          "3": {
+            "25": 24,
+            "50": 1,
+            "100": 1
+          },
+          "4": {
+            "150": 18,
+            "200": 2,
+            "250": 1,
+            "500": 1
+          },
+          "5": {
+            "750": 18,
+            "1000": 2,
+            "2500": 1,
+            "5000": 1
+          },
+          "6": {
+            "10000": 8,
+            "25000": 2,
+            "50000": 1
+          }
+        },
+        "thermalWeights": {
+          "2": 70,
+          "3": 20,
+          "4": 7,
+          "5": 2,
+          "10": 1,
+          "20": 1
+        },
+        "phase": "4A.2",
+        "conditionalCollectors": false
+      }
+    },
+    {
+      "id": "G013_E_m0_feel",
+      "coach": "E",
+      "conditional": false,
+      "pAny": 0.0815972222222221,
+      "pGe2": 0.001736111111111111,
+      "lineRtp": 0.596961766439716,
+      "featureRtpCapped": 0.10295,
+      "baseRtpBeforeFs": 0.699911766439716,
+      "pDeadCoach": 0.773811994189666,
+      "pFeatureWinGivenCoach": 0.2261880058103341,
+      "median": 4.0,
+      "avgWin": 5.6669724770642205,
+      "remainingFsRtp": 0.265088233560284,
+      "impliedBonus": 40.59744190000753,
+      "capFrequency": 0.0,
+      "score": 15.195810887459363,
+      "inFeatureBand": true,
+      "deadReasons": {
+        "tokens_no_collector": 0.7408175970118281,
+        "collector_no_tokens": 0.02168499688732102,
+        "modifier_only": 0.011309400290516705,
+        "other": 0.0
+      },
+      "candidate": {
+        "id": "G013_E_m0_feel",
+        "coachModelId": "E",
+        "notes": "feel-search coach=E m=0 tokens=feel",
+        "maxWinX": 50000,
+        "gateMaxFloor": 3,
+        "mysteryResultWeights": {
+          "FLIGHT_TOKEN": 870,
+          "THERMAL_LIFT": 40,
+          "GATE_UPGRADE": 3,
+          "JUDGE": 75,
+          "HEAD_JUDGE": 12
+        },
+        "tokenTierWeights": {
+          "1": 999400,
+          "2": 400,
+          "3": 120,
+          "4": 40,
+          "5": 32,
+          "6": 8
+        },
+        "tokenValueWeights": {
+          "1": {
+            "1": 99,
+            "2": 1,
+            "3": 1,
+            "4": 1
+          },
+          "2": {
+            "5": 26,
+            "10": 1,
+            "15": 1
+          },
+          "3": {
+            "25": 24,
+            "50": 1,
+            "100": 1
+          },
+          "4": {
+            "150": 18,
+            "200": 2,
+            "250": 1,
+            "500": 1
+          },
+          "5": {
+            "750": 18,
+            "1000": 2,
+            "2500": 1,
+            "5000": 1
+          },
+          "6": {
+            "10000": 8,
+            "25000": 2,
+            "50000": 1
+          }
+        },
+        "thermalWeights": {
+          "2": 70,
+          "3": 20,
+          "4": 7,
+          "5": 2,
+          "10": 1,
+          "20": 1
+        },
+        "phase": "4A.2",
+        "conditionalCollectors": false
+      }
+    },
+    {
+      "id": "G021_E_m4_feel",
+      "coach": "E",
+      "conditional": false,
+      "pAny": 0.0815972222222221,
+      "pGe2": 0.001736111111111111,
+      "lineRtp": 0.596961766439716,
+      "featureRtpCapped": 0.09684166666666667,
+      "baseRtpBeforeFs": 0.6938034331063827,
+      "pDeadCoach": 0.7817711030554118,
+      "pFeatureWinGivenCoach": 0.2182288969445883,
+      "median": 4.0,
+      "avgWin": 5.515424774560987,
+      "remainingFsRtp": 0.27119656689361726,
+      "impliedBonus": 41.532914230391,
+      "capFrequency": 0.0,
+      "score": 14.89303141722769,
+      "inFeatureBand": true,
+      "deadReasons": {
+        "tokens_no_collector": 0.7499741066804765,
+        "collector_no_tokens": 0.021232522009321596,
+        "modifier_only": 0.010564474365613672,
+        "other": 0.0
+      },
+      "candidate": {
+        "id": "G021_E_m4_feel",
+        "coachModelId": "E",
+        "notes": "feel-search coach=E m=4 tokens=feel",
+        "maxWinX": 50000,
+        "gateMaxFloor": 3,
+        "mysteryResultWeights": {
+          "FLIGHT_TOKEN": 875,
+          "THERMAL_LIFT": 38,
+          "GATE_UPGRADE": 3,
+          "JUDGE": 72,
+          "HEAD_JUDGE": 12
+        },
+        "tokenTierWeights": {
+          "1": 999400,
+          "2": 400,
+          "3": 120,
+          "4": 40,
+          "5": 32,
+          "6": 8
+        },
+        "tokenValueWeights": {
+          "1": {
+            "1": 99,
+            "2": 1,
+            "3": 1,
+            "4": 1
+          },
+          "2": {
+            "5": 26,
+            "10": 1,
+            "15": 1
+          },
+          "3": {
+            "25": 24,
+            "50": 1,
+            "100": 1
+          },
+          "4": {
+            "150": 18,
+            "200": 2,
+            "250": 1,
+            "500": 1
+          },
+          "5": {
+            "750": 18,
+            "1000": 2,
+            "2500": 1,
+            "5000": 1
+          },
+          "6": {
+            "10000": 8,
+            "25000": 2,
+            "50000": 1
+          }
+        },
+        "thermalWeights": {
+          "2": 70,
+          "3": 20,
+          "4": 7,
+          "5": 2,
+          "10": 1,
+          "20": 1
+        },
+        "phase": "4A.2",
+        "conditionalCollectors": false
+      }
+    },
+    {
+      "id": "F02_E_collect",
+      "coach": "E",
+      "conditional": false,
+      "pAny": 0.0815972222222221,
+      "pGe2": 0.001736111111111111,
+      "lineRtp": 0.596961766439716,
+      "featureRtpCapped": 0.11015,
+      "baseRtpBeforeFs": 0.707111766439716,
+      "pDeadCoach": 0.7300556586270872,
+      "pFeatureWinGivenCoach": 0.2699443413729128,
+      "median": 4.0,
+      "avgWin": 5.046964490263459,
+      "remainingFsRtp": 0.257888233560284,
+      "impliedBonus": 39.49478420089249,
+      "capFrequency": 0.0,
+      "score": 14.642214192949908,
+      "inFeatureBand": false,
+      "deadReasons": {
+        "tokens_no_collector": 0.6893424036281179,
+        "collector_no_tokens": 0.0297876726448155,
+        "modifier_only": 0.010925582354153782,
+        "other": 0.0
+      },
+      "candidate": {
+        "id": "F02_E_collect",
+        "coachModelId": "E",
+        "notes": "Higher-collector E variant (feel push)",
+        "maxWinX": 50000,
+        "gateMaxFloor": 3,
+        "mysteryResultWeights": {
+          "FLIGHT_TOKEN": 845,
+          "THERMAL_LIFT": 42,
+          "GATE_UPGRADE": 4,
+          "JUDGE": 95,
+          "HEAD_JUDGE": 14
+        },
+        "tokenTierWeights": {
+          "1": 999400,
+          "2": 400,
+          "3": 120,
+          "4": 40,
+          "5": 32,
+          "6": 8
+        },
+        "tokenValueWeights": {
+          "1": {
+            "1": 99,
+            "2": 1,
+            "3": 1,
+            "4": 1
+          },
+          "2": {
+            "5": 26,
+            "10": 1,
+            "15": 1
+          },
+          "3": {
+            "25": 24,
+            "50": 1,
+            "100": 1
+          },
+          "4": {
+            "150": 18,
+            "200": 2,
+            "250": 1,
+            "500": 1
+          },
+          "5": {
+            "750": 18,
+            "1000": 2,
+            "2500": 1,
+            "5000": 1
+          },
+          "6": {
+            "10000": 8,
+            "25000": 2,
+            "50000": 1
+          }
+        },
+        "thermalWeights": {
+          "2": 70,
+          "3": 20,
+          "4": 7,
+          "5": 2,
+          "10": 1,
+          "20": 1
+        },
+        "phase": "4A.2",
+        "conditionalCollectors": false
+      }
+    },
+    {
+      "id": "G019_E_m3_feel",
+      "coach": "E",
+      "conditional": false,
+      "pAny": 0.0815972222222221,
+      "pGe2": 0.001736111111111111,
+      "lineRtp": 0.596961766439716,
+      "featureRtpCapped": 0.11015,
+      "baseRtpBeforeFs": 0.707111766439716,
+      "pDeadCoach": 0.7300556586270872,
+      "pFeatureWinGivenCoach": 0.2699443413729128,
+      "median": 4.0,
+      "avgWin": 5.046964490263459,
+      "remainingFsRtp": 0.257888233560284,
+      "impliedBonus": 39.49478420089249,
+      "capFrequency": 0.0,
+      "score": 14.642214192949908,
+      "inFeatureBand": false,
+      "deadReasons": {
+        "tokens_no_collector": 0.6893424036281179,
+        "collector_no_tokens": 0.0297876726448155,
+        "modifier_only": 0.010925582354153782,
+        "other": 0.0
+      },
+      "candidate": {
+        "id": "G019_E_m3_feel",
+        "coachModelId": "E",
+        "notes": "feel-search coach=E m=3 tokens=feel",
+        "maxWinX": 50000,
+        "gateMaxFloor": 3,
+        "mysteryResultWeights": {
+          "FLIGHT_TOKEN": 845,
+          "THERMAL_LIFT": 42,
+          "GATE_UPGRADE": 4,
+          "JUDGE": 95,
+          "HEAD_JUDGE": 14
+        },
+        "tokenTierWeights": {
+          "1": 999400,
+          "2": 400,
+          "3": 120,
+          "4": 40,
+          "5": 32,
+          "6": 8
+        },
+        "tokenValueWeights": {
+          "1": {
+            "1": 99,
+            "2": 1,
+            "3": 1,
+            "4": 1
+          },
+          "2": {
+            "5": 26,
+            "10": 1,
+            "15": 1
+          },
+          "3": {
+            "25": 24,
+            "50": 1,
+            "100": 1
+          },
+          "4": {
+            "150": 18,
+            "200": 2,
+            "250": 1,
+            "500": 1
+          },
+          "5": {
+            "750": 18,
+            "1000": 2,
+            "2500": 1,
+            "5000": 1
+          },
+          "6": {
+            "10000": 8,
+            "25000": 2,
+            "50000": 1
+          }
+        },
+        "thermalWeights": {
+          "2": 70,
+          "3": 20,
+          "4": 7,
+          "5": 2,
+          "10": 1,
+          "20": 1
+        },
+        "phase": "4A.2",
+        "conditionalCollectors": false
+      }
+    },
+    {
+      "id": "G023_E_m5_feel",
+      "coach": "E",
+      "conditional": false,
+      "pAny": 0.0815972222222221,
+      "pGe2": 0.001736111111111111,
+      "lineRtp": 0.596961766439716,
+      "featureRtpCapped": 0.0911,
+      "baseRtpBeforeFs": 0.688061766439716,
+      "pDeadCoach": 0.7971897923339188,
+      "pFeatureWinGivenCoach": 0.2028102076660812,
+      "median": 4.0,
+      "avgWin": 5.569026999490576,
+      "remainingFsRtp": 0.276938233560284,
+      "impliedBonus": 42.41223269646771,
+      "capFrequency": 0.0,
+      "score": 13.23592122464442,
+      "inFeatureBand": true,
+      "deadReasons": {
+        "tokens_no_collector": 0.7696042979646658,
+        "collector_no_tokens": 0.019423494162620104,
+        "modifier_only": 0.008162000206632916,
+        "other": 0.0
+      },
+      "candidate": {
+        "id": "G023_E_m5_feel",
+        "coachModelId": "E",
+        "notes": "feel-search coach=E m=5 tokens=feel",
+        "maxWinX": 50000,
+        "gateMaxFloor": 3,
+        "mysteryResultWeights": {
+          "FLIGHT_TOKEN": 885,
+          "THERMAL_LIFT": 35,
+          "GATE_UPGRADE": 3,
+          "JUDGE": 65,
+          "HEAD_JUDGE": 12
+        },
+        "tokenTierWeights": {
+          "1": 999400,
+          "2": 400,
+          "3": 120,
+          "4": 40,
+          "5": 32,
+          "6": 8
+        },
+        "tokenValueWeights": {
+          "1": {
+            "1": 99,
+            "2": 1,
+            "3": 1,
+            "4": 1
+          },
+          "2": {
+            "5": 26,
+            "10": 1,
+            "15": 1
+          },
+          "3": {
+            "25": 24,
+            "50": 1,
+            "100": 1
+          },
+          "4": {
+            "150": 18,
+            "200": 2,
+            "250": 1,
+            "500": 1
+          },
+          "5": {
+            "750": 18,
+            "1000": 2,
+            "2500": 1,
+            "5000": 1
+          },
+          "6": {
+            "10000": 8,
+            "25000": 2,
+            "50000": 1
+          }
+        },
+        "thermalWeights": {
+          "2": 70,
+          "3": 20,
+          "4": 7,
+          "5": 2,
+          "10": 1,
+          "20": 1
+        },
+        "phase": "4A.2",
+        "conditionalCollectors": false
+      }
+    },
+    {
+      "id": "G029_F_m2_feel",
+      "coach": "F",
+      "conditional": false,
+      "pAny": 0.10802469135802473,
+      "pGe2": 0.0030864197530864196,
+      "lineRtp": 0.595573386407953,
+      "featureRtpCapped": 0.14300833333333332,
+      "baseRtpBeforeFs": 0.7385817197412863,
+      "pDeadCoach": 0.7465876296700725,
+      "pFeatureWinGivenCoach": 0.25341237032992747,
+      "median": 4.0,
+      "avgWin": 5.281932902431517,
+      "remainingFsRtp": 0.2264182802587137,
+      "impliedBonus": 35.56016059020229,
+      "capFrequency": 0.0,
+      "score": 12.833205221251596,
+      "inFeatureBand": false,
+      "deadReasons": {
+        "tokens_no_collector": 0.71148896341939,
+        "collector_no_tokens": 0.026129007097730285,
+        "modifier_only": 0.008969659152952187,
+        "other": 0.0
+      },
+      "candidate": {
+        "id": "G029_F_m2_feel",
+        "coachModelId": "F",
+        "notes": "feel-search coach=F m=2 tokens=feel",
+        "maxWinX": 50000,
+        "gateMaxFloor": 3,
+        "mysteryResultWeights": {
+          "FLIGHT_TOKEN": 855,
+          "THERMAL_LIFT": 42,
+          "GATE_UPGRADE": 3,
+          "JUDGE": 85,
+          "HEAD_JUDGE": 15
+        },
+        "tokenTierWeights": {
+          "1": 999400,
+          "2": 400,
+          "3": 120,
+          "4": 40,
+          "5": 32,
+          "6": 8
+        },
+        "tokenValueWeights": {
+          "1": {
+            "1": 99,
+            "2": 1,
+            "3": 1,
+            "4": 1
+          },
+          "2": {
+            "5": 26,
+            "10": 1,
+            "15": 1
+          },
+          "3": {
+            "25": 24,
+            "50": 1,
+            "100": 1
+          },
+          "4": {
+            "150": 18,
+            "200": 2,
+            "250": 1,
+            "500": 1
+          },
+          "5": {
+            "750": 18,
+            "1000": 2,
+            "2500": 1,
+            "5000": 1
+          },
+          "6": {
+            "10000": 8,
+            "25000": 2,
+            "50000": 1
+          }
+        },
+        "thermalWeights": {
+          "2": 70,
+          "3": 20,
+          "4": 7,
+          "5": 2,
+          "10": 1,
+          "20": 1
+        },
+        "phase": "4A.2",
+        "conditionalCollectors": false
+      }
+    },
+    {
+      "id": "G005_D_m2_feel",
+      "coach": "D",
+      "conditional": false,
+      "pAny": 0.09750000000000003,
+      "pGe2": 0.0025000000000000005,
+      "lineRtp": 0.5966498987255355,
+      "featureRtpCapped": 0.14314166666666667,
+      "baseRtpBeforeFs": 0.7397915653922023,
+      "pDeadCoach": 0.7467011642949547,
+      "pFeatureWinGivenCoach": 0.2532988357050453,
+      "median": 4.0,
+      "avgWin": 5.848484848484849,
+      "remainingFsRtp": 0.22520843460779771,
+      "impliedBonus": 39.493773476344735,
+      "capFrequency": 0.0,
+      "score": 12.82474705692109,
+      "inFeatureBand": false,
+      "deadReasons": {
+        "tokens_no_collector": 0.7115135834411385,
+        "collector_no_tokens": 0.024924536438119878,
+        "modifier_only": 0.01026304441569642,
+        "other": 0.0
+      },
+      "candidate": {
+        "id": "G005_D_m2_feel",
+        "coachModelId": "D",
+        "notes": "feel-search coach=D m=2 tokens=feel",
+        "maxWinX": 50000,
+        "gateMaxFloor": 3,
+        "mysteryResultWeights": {
+          "FLIGHT_TOKEN": 855,
+          "THERMAL_LIFT": 42,
+          "GATE_UPGRADE": 3,
+          "JUDGE": 85,
+          "HEAD_JUDGE": 15
+        },
+        "tokenTierWeights": {
+          "1": 999400,
+          "2": 400,
+          "3": 120,
+          "4": 40,
+          "5": 32,
+          "6": 8
+        },
+        "tokenValueWeights": {
+          "1": {
+            "1": 99,
+            "2": 1,
+            "3": 1,
+            "4": 1
+          },
+          "2": {
+            "5": 26,
+            "10": 1,
+            "15": 1
+          },
+          "3": {
+            "25": 24,
+            "50": 1,
+            "100": 1
+          },
+          "4": {
+            "150": 18,
+            "200": 2,
+            "250": 1,
+            "500": 1
+          },
+          "5": {
+            "750": 18,
+            "1000": 2,
+            "2500": 1,
+            "5000": 1
+          },
+          "6": {
+            "10000": 8,
+            "25000": 2,
+            "50000": 1
+          }
+        },
+        "thermalWeights": {
+          "2": 70,
+          "3": 20,
+          "4": 7,
+          "5": 2,
+          "10": 1,
+          "20": 1
+        },
+        "phase": "4A.2",
+        "conditionalCollectors": false
+      }
+    },
+    {
+      "id": "G037_B_m0_feel",
+      "coach": "B",
+      "conditional": false,
+      "pAny": 0.09615384615384615,
+      "pGe2": 0.0,
+      "lineRtp": 0.5847302155911906,
+      "featureRtpCapped": 0.10291666666666667,
+      "baseRtpBeforeFs": 0.6876468822578573,
+      "pDeadCoach": 0.777079514707166,
+      "pFeatureWinGivenCoach": 0.22292048529283406,
+      "median": 4.0,
+      "avgWin": 4.835552075176194,
+      "remainingFsRtp": 0.27735311774214266,
+      "impliedBonus": 36.22182006125663,
+      "capFrequency": 0.0,
+      "score": 12.370978441127697,
+      "inFeatureBand": true,
+      "deadReasons": {
+        "tokens_no_collector": 0.7442611503884088,
+        "collector_no_tokens": 0.022169852491926333,
+        "modifier_only": 0.010648511826830758,
+        "other": 0.0
+      },
+      "candidate": {
+        "id": "G037_B_m0_feel",
+        "coachModelId": "B",
+        "notes": "feel-search coach=B m=0 tokens=feel",
+        "maxWinX": 50000,
+        "gateMaxFloor": 3,
+        "mysteryResultWeights": {
+          "FLIGHT_TOKEN": 870,
+          "THERMAL_LIFT": 40,
+          "GATE_UPGRADE": 3,
+          "JUDGE": 75,
+          "HEAD_JUDGE": 12
+        },
+        "tokenTierWeights": {
+          "1": 999400,
+          "2": 400,
+          "3": 120,
+          "4": 40,
+          "5": 32,
+          "6": 8
+        },
+        "tokenValueWeights": {
+          "1": {
+            "1": 99,
+            "2": 1,
+            "3": 1,
+            "4": 1
+          },
+          "2": {
+            "5": 26,
+            "10": 1,
+            "15": 1
+          },
+          "3": {
+            "25": 24,
+            "50": 1,
+            "100": 1
+          },
+          "4": {
+            "150": 18,
+            "200": 2,
+            "250": 1,
+            "500": 1
+          },
+          "5": {
+            "750": 18,
+            "1000": 2,
+            "2500": 1,
+            "5000": 1
+          },
+          "6": {
+            "10000": 8,
+            "25000": 2,
+            "50000": 1
+          }
+        },
+        "thermalWeights": {
+          "2": 70,
+          "3": 20,
+          "4": 7,
+          "5": 2,
+          "10": 1,
+          "20": 1
+        },
+        "phase": "4A.2",
+        "conditionalCollectors": false
+      }
+    },
+    {
+      "id": "G011_D_m5_feel",
+      "coach": "D",
+      "conditional": false,
+      "pAny": 0.09750000000000003,
+      "pGe2": 0.0025000000000000005,
+      "lineRtp": 0.5966498987255355,
+      "featureRtpCapped": 0.10819166666666667,
+      "baseRtpBeforeFs": 0.7048415653922022,
+      "pDeadCoach": 0.7995702621400945,
+      "pFeatureWinGivenCoach": 0.20042973785990545,
+      "median": 4.0,
+      "avgWin": 5.567324185248713,
+      "remainingFsRtp": 0.26015843460779775,
+      "impliedBonus": 45.622795177517105,
+      "capFrequency": 0.0,
+      "score": 12.151796705343076,
+      "inFeatureBand": true,
+      "deadReasons": {
+        "tokens_no_collector": 0.7725827245380318,
+        "collector_no_tokens": 0.01899441340782123,
+        "modifier_only": 0.007993124194241513,
+        "other": 0.0
+      },
+      "candidate": {
+        "id": "G011_D_m5_feel",
+        "coachModelId": "D",
+        "notes": "feel-search coach=D m=5 tokens=feel",
+        "maxWinX": 50000,
+        "gateMaxFloor": 3,
+        "mysteryResultWeights": {
+          "FLIGHT_TOKEN": 885,
+          "THERMAL_LIFT": 35,
+          "GATE_UPGRADE": 3,
+          "JUDGE": 65,
+          "HEAD_JUDGE": 12
+        },
+        "tokenTierWeights": {
+          "1": 999400,
+          "2": 400,
+          "3": 120,
+          "4": 40,
+          "5": 32,
+          "6": 8
+        },
+        "tokenValueWeights": {
+          "1": {
+            "1": 99,
+            "2": 1,
+            "3": 1,
+            "4": 1
+          },
+          "2": {
+            "5": 26,
+            "10": 1,
+            "15": 1
+          },
+          "3": {
+            "25": 24,
+            "50": 1,
+            "100": 1
+          },
+          "4": {
+            "150": 18,
+            "200": 2,
+            "250": 1,
+            "500": 1
+          },
+          "5": {
+            "750": 18,
+            "1000": 2,
+            "2500": 1,
+            "5000": 1
+          },
+          "6": {
+            "10000": 8,
+            "25000": 2,
+            "50000": 1
+          }
+        },
+        "thermalWeights": {
+          "2": 70,
+          "3": 20,
+          "4": 7,
+          "5": 2,
+          "10": 1,
+          "20": 1
+        },
+        "phase": "4A.2",
+        "conditionalCollectors": false
+      }
+    },
+    {
+      "id": "G045_B_m4_feel",
+      "coach": "B",
+      "conditional": false,
+      "pAny": 0.09615384615384615,
+      "pGe2": 0.0,
+      "lineRtp": 0.5847302155911906,
+      "featureRtpCapped": 0.09873333333333334,
+      "baseRtpBeforeFs": 0.683463548924524,
+      "pDeadCoach": 0.7844646606018194,
+      "pFeatureWinGivenCoach": 0.21553533939818054,
+      "median": 4.0,
+      "avgWin": 4.808441558441558,
+      "remainingFsRtp": 0.281536451075476,
+      "impliedBonus": 36.76815589656219,
+      "capFrequency": 0.0,
+      "score": 12.090342897130864,
+      "inFeatureBand": true,
+      "deadReasons": {
+        "tokens_no_collector": 0.7534114765570329,
+        "collector_no_tokens": 0.021081175647305807,
+        "modifier_only": 0.009972008397480756,
+        "other": 0.0
+      },
+      "candidate": {
+        "id": "G045_B_m4_feel",
+        "coachModelId": "B",
+        "notes": "feel-search coach=B m=4 tokens=feel",
+        "maxWinX": 50000,
+        "gateMaxFloor": 3,
+        "mysteryResultWeights": {
+          "FLIGHT_TOKEN": 875,
+          "THERMAL_LIFT": 38,
+          "GATE_UPGRADE": 3,
+          "JUDGE": 72,
+          "HEAD_JUDGE": 12
+        },
+        "tokenTierWeights": {
+          "1": 999400,
+          "2": 400,
+          "3": 120,
+          "4": 40,
+          "5": 32,
+          "6": 8
+        },
+        "tokenValueWeights": {
+          "1": {
+            "1": 99,
+            "2": 1,
+            "3": 1,
+            "4": 1
+          },
+          "2": {
+            "5": 26,
+            "10": 1,
+            "15": 1
+          },
+          "3": {
+            "25": 24,
+            "50": 1,
+            "100": 1
+          },
+          "4": {
+            "150": 18,
+            "200": 2,
+            "250": 1,
+            "500": 1
+          },
+          "5": {
+            "750": 18,
+            "1000": 2,
+            "2500": 1,
+            "5000": 1
+          },
+          "6": {
+            "10000": 8,
+            "25000": 2,
+            "50000": 1
+          }
+        },
+        "thermalWeights": {
+          "2": 70,
+          "3": 20,
+          "4": 7,
+          "5": 2,
+          "10": 1,
+          "20": 1
+        },
+        "phase": "4A.2",
+        "conditionalCollectors": false
+      }
+    },
+    {
+      "id": "F08_D_cond",
+      "coach": "D",
+      "conditional": true,
+      "pAny": 0.09750000000000003,
+      "pGe2": 0.0025000000000000005,
+      "lineRtp": 0.5966498987255355,
+      "featureRtpCapped": 0.16811666666666666,
+      "baseRtpBeforeFs": 0.7647665653922022,
+      "pDeadCoach": 0.7247302546396202,
+      "pFeatureWinGivenCoach": 0.2752697453603798,
+      "median": 4.0,
+      "avgWin": 6.326121041078708,
+      "remainingFsRtp": 0.20023343460779774,
+      "impliedBonus": 35.114021917352474,
+      "capFrequency": 0.0,
+      "score": 11.529123888649119,
+      "inFeatureBand": false,
+      "deadReasons": {
+        "tokens_no_collector": 0.7088476478204575,
+        "collector_no_tokens": 0.009840310746655158,
+        "modifier_only": 0.006042296072507553,
+        "other": 0.0
+      },
+      "candidate": {
+        "id": "F08_D_cond",
+        "coachModelId": "D",
+        "notes": "Conditional collectors on mid Coach D",
+        "maxWinX": 50000,
+        "gateMaxFloor": 3,
+        "mysteryResultWeights": {
+          "FLIGHT_TOKEN": 860,
+          "THERMAL_LIFT": 40,
+          "GATE_UPGRADE": 3,
+          "JUDGE": 78,
+          "HEAD_JUDGE": 19
+        },
+        "tokenTierWeights": {
+          "1": 999700,
+          "2": 220,
+          "3": 60,
+          "4": 20,
+          "5": 32,
+          "6": 8
+        },
+        "tokenValueWeights": {
+          "1": {
+            "1": 99,
+            "2": 1,
+            "3": 1,
+            "4": 1
+          },
+          "2": {
+            "5": 26,
+            "10": 1,
+            "15": 1
+          },
+          "3": {
+            "25": 24,
+            "50": 1,
+            "100": 1
+          },
+          "4": {
+            "150": 18,
+            "200": 2,
+            "250": 1,
+            "500": 1
+          },
+          "5": {
+            "750": 18,
+            "1000": 2,
+            "2500": 1,
+            "5000": 1
+          },
+          "6": {
+            "10000": 8,
+            "25000": 2,
+            "50000": 1
+          }
+        },
+        "thermalWeights": {
+          "2": 70,
+          "3": 20,
+          "4": 7,
+          "5": 2,
+          "10": 1,
+          "20": 1
+        },
+        "phase": "4A.2",
+        "conditionalCollectors": true,
+        "mysteryResultWeightsNoToken": {
+          "FLIGHT_TOKEN": 930,
+          "THERMAL_LIFT": 28,
+          "GATE_UPGRADE": 3,
+          "JUDGE": 28,
+          "HEAD_JUDGE": 11
+        },
+        "mysteryResultWeightsWhenToken": {
+          "FLIGHT_TOKEN": 820,
+          "THERMAL_LIFT": 40,
+          "GATE_UPGRADE": 3,
+          "JUDGE": 110,
+          "HEAD_JUDGE": 27
+        }
+      }
+    },
+    {
+      "id": "F06_E_cond",
+      "coach": "E",
+      "conditional": true,
+      "pAny": 0.0815972222222221,
+      "pGe2": 0.001736111111111111,
+      "lineRtp": 0.596961766439716,
+      "featureRtpCapped": 0.11314166666666667,
+      "baseRtpBeforeFs": 0.7101034331063827,
+      "pDeadCoach": 0.7547599337748344,
+      "pFeatureWinGivenCoach": 0.24524006622516556,
+      "median": 4.0,
+      "avgWin": 5.728691983122363,
+      "remainingFsRtp": 0.2548965668936173,
+      "impliedBonus": 39.036619717116665,
+      "capFrequency": 0.0,
+      "score": 11.104697516556293,
+      "inFeatureBand": false,
+      "deadReasons": {
+        "tokens_no_collector": 0.7411009933774835,
+        "collector_no_tokens": 0.007139900662251656,
+        "modifier_only": 0.006519039735099338,
+        "other": 0.0
+      },
+      "candidate": {
+        "id": "F06_E_cond",
+        "coachModelId": "E",
+        "notes": "Conditional Judge weighting research on Coach E",
+        "maxWinX": 50000,
+        "gateMaxFloor": 3,
+        "mysteryResultWeights": {
+          "FLIGHT_TOKEN": 855,
+          "THERMAL_LIFT": 42,
+          "GATE_UPGRADE": 3,
+          "JUDGE": 85,
+          "HEAD_JUDGE": 15
+        },
+        "tokenTierWeights": {
+          "1": 999400,
+          "2": 400,
+          "3": 120,
+          "4": 40,
+          "5": 32,
+          "6": 8
+        },
+        "tokenValueWeights": {
+          "1": {
+            "1": 99,
+            "2": 1,
+            "3": 1,
+            "4": 1
+          },
+          "2": {
+            "5": 26,
+            "10": 1,
+            "15": 1
+          },
+          "3": {
+            "25": 24,
+            "50": 1,
+            "100": 1
+          },
+          "4": {
+            "150": 18,
+            "200": 2,
+            "250": 1,
+            "500": 1
+          },
+          "5": {
+            "750": 18,
+            "1000": 2,
+            "2500": 1,
+            "5000": 1
+          },
+          "6": {
+            "10000": 8,
+            "25000": 2,
+            "50000": 1
+          }
+        },
+        "thermalWeights": {
+          "2": 70,
+          "3": 20,
+          "4": 7,
+          "5": 2,
+          "10": 1,
+          "20": 1
+        },
+        "phase": "4A.2",
+        "conditionalCollectors": true,
+        "mysteryResultWeightsNoToken": {
+          "FLIGHT_TOKEN": 935,
+          "THERMAL_LIFT": 28,
+          "GATE_UPGRADE": 3,
+          "JUDGE": 26,
+          "HEAD_JUDGE": 8
+        },
+        "mysteryResultWeightsWhenToken": {
+          "FLIGHT_TOKEN": 840,
+          "THERMAL_LIFT": 38,
+          "GATE_UPGRADE": 3,
+          "JUDGE": 100,
+          "HEAD_JUDGE": 19
+        }
+      }
+    },
+    {
+      "id": "G047_B_m5_feel",
+      "coach": "B",
+      "conditional": false,
+      "pAny": 0.09615384615384615,
+      "pGe2": 0.0,
+      "lineRtp": 0.5847302155911906,
+      "featureRtpCapped": 0.094925,
+      "baseRtpBeforeFs": 0.6796552155911907,
+      "pDeadCoach": 0.7994976615278019,
+      "pFeatureWinGivenCoach": 0.20050233847219817,
+      "median": 4.0,
+      "avgWin": 4.920518358531318,
+      "remainingFsRtp": 0.2853447844088093,
+      "impliedBonus": 37.26551740400172,
+      "capFrequency": 0.0,
+      "score": 10.47848886194353,
+      "inFeatureBand": true,
+      "deadReasons": {
+        "tokens_no_collector": 0.7701368439286332,
+        "collector_no_tokens": 0.019314048155205266,
+        "modifier_only": 0.010046769443963278,
+        "other": 0.0
+      },
+      "candidate": {
+        "id": "G047_B_m5_feel",
+        "coachModelId": "B",
+        "notes": "feel-search coach=B m=5 tokens=feel",
+        "maxWinX": 50000,
+        "gateMaxFloor": 3,
+        "mysteryResultWeights": {
+          "FLIGHT_TOKEN": 885,
+          "THERMAL_LIFT": 35,
+          "GATE_UPGRADE": 3,
+          "JUDGE": 65,
+          "HEAD_JUDGE": 12
+        },
+        "tokenTierWeights": {
+          "1": 999400,
+          "2": 400,
+          "3": 120,
+          "4": 40,
+          "5": 32,
+          "6": 8
+        },
+        "tokenValueWeights": {
+          "1": {
+            "1": 99,
+            "2": 1,
+            "3": 1,
+            "4": 1
+          },
+          "2": {
+            "5": 26,
+            "10": 1,
+            "15": 1
+          },
+          "3": {
+            "25": 24,
+            "50": 1,
+            "100": 1
+          },
+          "4": {
+            "150": 18,
+            "200": 2,
+            "250": 1,
+            "500": 1
+          },
+          "5": {
+            "750": 18,
+            "1000": 2,
+            "2500": 1,
+            "5000": 1
+          },
+          "6": {
+            "10000": 8,
+            "25000": 2,
+            "50000": 1
+          }
+        },
+        "thermalWeights": {
+          "2": 70,
+          "3": 20,
+          "4": 7,
+          "5": 2,
+          "10": 1,
+          "20": 1
+        },
+        "phase": "4A.2",
+        "conditionalCollectors": false
+      }
+    },
+    {
+      "id": "G027_F_m1_feel",
+      "coach": "F",
+      "conditional": false,
+      "pAny": 0.10802469135802473,
+      "pGe2": 0.0030864197530864196,
+      "lineRtp": 0.595573386407953,
+      "featureRtpCapped": 0.138425,
+      "baseRtpBeforeFs": 0.733998386407953,
+      "pDeadCoach": 0.754368174726989,
+      "pFeatureWinGivenCoach": 0.24563182527301092,
+      "median": 4.0,
+      "avgWin": 5.275007939028263,
+      "remainingFsRtp": 0.23100161359204696,
+      "impliedBonus": 36.27999676767668,
+      "capFrequency": 0.0,
+      "score": 10.282401027041082,
+      "inFeatureBand": false,
+      "deadReasons": {
+        "tokens_no_collector": 0.7205148205928237,
+        "collector_no_tokens": 0.025507020280811234,
+        "modifier_only": 0.008346333853354135,
+        "other": 0.0
+      },
+      "candidate": {
+        "id": "G027_F_m1_feel",
+        "coachModelId": "F",
+        "notes": "feel-search coach=F m=1 tokens=feel",
+        "maxWinX": 50000,
+        "gateMaxFloor": 3,
+        "mysteryResultWeights": {
+          "FLIGHT_TOKEN": 858,
+          "THERMAL_LIFT": 42,
+          "GATE_UPGRADE": 3,
+          "JUDGE": 82,
+          "HEAD_JUDGE": 15
+        },
+        "tokenTierWeights": {
+          "1": 999400,
+          "2": 400,
+          "3": 120,
+          "4": 40,
+          "5": 32,
+          "6": 8
+        },
+        "tokenValueWeights": {
+          "1": {
+            "1": 99,
+            "2": 1,
+            "3": 1,
+            "4": 1
+          },
+          "2": {
+            "5": 26,
+            "10": 1,
+            "15": 1
+          },
+          "3": {
+            "25": 24,
+            "50": 1,
+            "100": 1
+          },
+          "4": {
+            "150": 18,
+            "200": 2,
+            "250": 1,
+            "500": 1
+          },
+          "5": {
+            "750": 18,
+            "1000": 2,
+            "2500": 1,
+            "5000": 1
+          },
+          "6": {
+            "10000": 8,
+            "25000": 2,
+            "50000": 1
+          }
+        },
+        "thermalWeights": {
+          "2": 70,
+          "3": 20,
+          "4": 7,
+          "5": 2,
+          "10": 1,
+          "20": 1
+        },
+        "phase": "4A.2",
+        "conditionalCollectors": false
+      }
+    },
+    {
+      "id": "G003_D_m1_feel",
+      "coach": "D",
+      "conditional": false,
+      "pAny": 0.09750000000000003,
+      "pGe2": 0.0025000000000000005,
+      "lineRtp": 0.5966498987255355,
+      "featureRtpCapped": 0.138975,
+      "baseRtpBeforeFs": 0.7356248987255355,
+      "pDeadCoach": 0.7554521161968796,
+      "pFeatureWinGivenCoach": 0.24454788380312042,
+      "median": 4.0,
+      "avgWin": 5.878392668311597,
+      "remainingFsRtp": 0.22937510127446448,
+      "impliedBonus": 40.22446275879258,
+      "capFrequency": 0.0,
+      "score": 10.218561251185243,
+      "inFeatureBand": false,
+      "deadReasons": {
+        "tokens_no_collector": 0.7210585294371175,
+        "collector_no_tokens": 0.023963451426601154,
+        "modifier_only": 0.010430135333160935,
+        "other": 0.0
+      },
+      "candidate": {
+        "id": "G003_D_m1_feel",
+        "coachModelId": "D",
+        "notes": "feel-search coach=D m=1 tokens=feel",
+        "maxWinX": 50000,
+        "gateMaxFloor": 3,
+        "mysteryResultWeights": {
+          "FLIGHT_TOKEN": 858,
+          "THERMAL_LIFT": 42,
+          "GATE_UPGRADE": 3,
+          "JUDGE": 82,
+          "HEAD_JUDGE": 15
+        },
+        "tokenTierWeights": {
+          "1": 999400,
+          "2": 400,
+          "3": 120,
+          "4": 40,
+          "5": 32,
+          "6": 8
+        },
+        "tokenValueWeights": {
+          "1": {
+            "1": 99,
+            "2": 1,
+            "3": 1,
+            "4": 1
+          },
+          "2": {
+            "5": 26,
+            "10": 1,
+            "15": 1
+          },
+          "3": {
+            "25": 24,
+            "50": 1,
+            "100": 1
+          },
+          "4": {
+            "150": 18,
+            "200": 2,
+            "250": 1,
+            "500": 1
+          },
+          "5": {
+            "750": 18,
+            "1000": 2,
+            "2500": 1,
+            "5000": 1
+          },
+          "6": {
+            "10000": 8,
+            "25000": 2,
+            "50000": 1
+          }
+        },
+        "thermalWeights": {
+          "2": 70,
+          "3": 20,
+          "4": 7,
+          "5": 2,
+          "10": 1,
+          "20": 1
+        },
+        "phase": "4A.2",
+        "conditionalCollectors": false
+      }
+    },
+    {
+      "id": "G025_F_m0_feel",
+      "coach": "F",
+      "conditional": false,
+      "pAny": 0.10802469135802473,
+      "pGe2": 0.0030864197530864196,
+      "lineRtp": 0.595573386407953,
+      "featureRtpCapped": 0.12454166666666666,
+      "baseRtpBeforeFs": 0.7201150530746196,
+      "pDeadCoach": 0.774349761774584,
+      "pFeatureWinGivenCoach": 0.2256502382254159,
+      "median": 4.0,
+      "avgWin": 5.17307026652821,
+      "remainingFsRtp": 0.24488494692538032,
+      "impliedBonus": 38.460445988899146,
+      "capFrequency": 0.0,
+      "score": 10.119750719232474,
+      "inFeatureBand": false,
+      "deadReasons": {
+        "tokens_no_collector": 0.7431070842771226,
+        "collector_no_tokens": 0.022572834491915956,
+        "modifier_only": 0.008669843005545574,
+        "other": 0.0
+      },
+      "candidate": {
+        "id": "G025_F_m0_feel",
+        "coachModelId": "F",
+        "notes": "feel-search coach=F m=0 tokens=feel",
+        "maxWinX": 50000,
+        "gateMaxFloor": 3,
+        "mysteryResultWeights": {
+          "FLIGHT_TOKEN": 870,
+          "THERMAL_LIFT": 40,
+          "GATE_UPGRADE": 3,
+          "JUDGE": 75,
+          "HEAD_JUDGE": 12
+        },
+        "tokenTierWeights": {
+          "1": 999400,
+          "2": 400,
+          "3": 120,
+          "4": 40,
+          "5": 32,
+          "6": 8
+        },
+        "tokenValueWeights": {
+          "1": {
+            "1": 99,
+            "2": 1,
+            "3": 1,
+            "4": 1
+          },
+          "2": {
+            "5": 26,
+            "10": 1,
+            "15": 1
+          },
+          "3": {
+            "25": 24,
+            "50": 1,
+            "100": 1
+          },
+          "4": {
+            "150": 18,
+            "200": 2,
+            "250": 1,
+            "500": 1
+          },
+          "5": {
+            "750": 18,
+            "1000": 2,
+            "2500": 1,
+            "5000": 1
+          },
+          "6": {
+            "10000": 8,
+            "25000": 2,
+            "50000": 1
+          }
+        },
+        "thermalWeights": {
+          "2": 70,
+          "3": 20,
+          "4": 7,
+          "5": 2,
+          "10": 1,
+          "20": 1
+        },
+        "phase": "4A.2",
+        "conditionalCollectors": false
+      }
+    },
+    {
+      "id": "G033_F_m4_feel",
+      "coach": "F",
+      "conditional": false,
+      "pAny": 0.10802469135802473,
+      "pGe2": 0.0030864197530864196,
+      "lineRtp": 0.595573386407953,
+      "featureRtpCapped": 0.121675,
+      "baseRtpBeforeFs": 0.717248386407953,
+      "pDeadCoach": 0.7804004050790683,
+      "pFeatureWinGivenCoach": 0.21959959492093167,
+      "median": 4.0,
+      "avgWin": 5.1794962752749205,
+      "remainingFsRtp": 0.247751613592047,
+      "impliedBonus": 38.91067079808314,
+      "capFrequency": 0.0,
+      "score": 10.013426273662072,
+      "inFeatureBand": false,
+      "deadReasons": {
+        "tokens_no_collector": 0.750097374776038,
+        "collector_no_tokens": 0.02196774947417621,
+        "modifier_only": 0.008335280828854093,
+        "other": 0.0
+      },
+      "candidate": {
+        "id": "G033_F_m4_feel",
+        "coachModelId": "F",
+        "notes": "feel-search coach=F m=4 tokens=feel",
+        "maxWinX": 50000,
+        "gateMaxFloor": 3,
+        "mysteryResultWeights": {
+          "FLIGHT_TOKEN": 875,
+          "THERMAL_LIFT": 38,
+          "GATE_UPGRADE": 3,
+          "JUDGE": 72,
+          "HEAD_JUDGE": 12
+        },
+        "tokenTierWeights": {
+          "1": 999400,
+          "2": 400,
+          "3": 120,
+          "4": 40,
+          "5": 32,
+          "6": 8
+        },
+        "tokenValueWeights": {
+          "1": {
+            "1": 99,
+            "2": 1,
+            "3": 1,
+            "4": 1
+          },
+          "2": {
+            "5": 26,
+            "10": 1,
+            "15": 1
+          },
+          "3": {
+            "25": 24,
+            "50": 1,
+            "100": 1
+          },
+          "4": {
+            "150": 18,
+            "200": 2,
+            "250": 1,
+            "500": 1
+          },
+          "5": {
+            "750": 18,
+            "1000": 2,
+            "2500": 1,
+            "5000": 1
+          },
+          "6": {
+            "10000": 8,
+            "25000": 2,
+            "50000": 1
+          }
+        },
+        "thermalWeights": {
+          "2": 70,
+          "3": 20,
+          "4": 7,
+          "5": 2,
+          "10": 1,
+          "20": 1
+        },
+        "phase": "4A.2",
+        "conditionalCollectors": false
+      }
+    },
+    {
+      "id": "F05_B_collect",
+      "coach": "B",
+      "conditional": false,
+      "pAny": 0.09615384615384615,
+      "pGe2": 0.0,
+      "lineRtp": 0.5847302155911906,
+      "featureRtpCapped": 0.12853333333333333,
+      "baseRtpBeforeFs": 0.713263548924524,
+      "pDeadCoach": 0.7497165780064533,
+      "pFeatureWinGivenCoach": 0.2502834219935467,
+      "median": 4.0,
+      "avgWin": 5.3742160278745645,
+      "remainingFsRtp": 0.25173645107547593,
+      "impliedBonus": 32.87632930880778,
+      "capFrequency": 0.0,
+      "score": 9.680535461178454,
+      "inFeatureBand": false,
+      "deadReasons": {
+        "tokens_no_collector": 0.7132641492979855,
+        "collector_no_tokens": 0.0255515828028255,
+        "modifier_only": 0.010900845905642277,
+        "other": 0.0
+      },
+      "candidate": {
+        "id": "F05_B_collect",
+        "coachModelId": "B",
+        "notes": "Single-reel B denser collectors (no multi-Coach)",
+        "maxWinX": 50000,
+        "gateMaxFloor": 3,
+        "mysteryResultWeights": {
+          "FLIGHT_TOKEN": 855,
+          "THERMAL_LIFT": 42,
+          "GATE_UPGRADE": 3,
+          "JUDGE": 85,
+          "HEAD_JUDGE": 15
+        },
+        "tokenTierWeights": {
+          "1": 999400,
+          "2": 400,
+          "3": 120,
+          "4": 40,
+          "5": 32,
+          "6": 8
+        },
+        "tokenValueWeights": {
+          "1": {
+            "1": 99,
+            "2": 1,
+            "3": 1,
+            "4": 1
+          },
+          "2": {
+            "5": 26,
+            "10": 1,
+            "15": 1
+          },
+          "3": {
+            "25": 24,
+            "50": 1,
+            "100": 1
+          },
+          "4": {
+            "150": 18,
+            "200": 2,
+            "250": 1,
+            "500": 1
+          },
+          "5": {
+            "750": 18,
+            "1000": 2,
+            "2500": 1,
+            "5000": 1
+          },
+          "6": {
+            "10000": 8,
+            "25000": 2,
+            "50000": 1
+          }
+        },
+        "thermalWeights": {
+          "2": 70,
+          "3": 20,
+          "4": 7,
+          "5": 2,
+          "10": 1,
+          "20": 1
+        },
+        "phase": "4A.2",
+        "conditionalCollectors": false
+      }
+    },
+    {
+      "id": "G041_B_m2_feel",
+      "coach": "B",
+      "conditional": false,
+      "pAny": 0.09615384615384615,
+      "pGe2": 0.0,
+      "lineRtp": 0.5847302155911906,
+      "featureRtpCapped": 0.12853333333333333,
+      "baseRtpBeforeFs": 0.713263548924524,
+      "pDeadCoach": 0.7497165780064533,
+      "pFeatureWinGivenCoach": 0.2502834219935467,
+      "median": 4.0,
+      "avgWin": 5.3742160278745645,
+      "remainingFsRtp": 0.25173645107547593,
+      "impliedBonus": 32.87632930880778,
+      "capFrequency": 0.0,
+      "score": 9.680535461178454,
+      "inFeatureBand": false,
+      "deadReasons": {
+        "tokens_no_collector": 0.7132641492979855,
+        "collector_no_tokens": 0.0255515828028255,
+        "modifier_only": 0.010900845905642277,
+        "other": 0.0
+      },
+      "candidate": {
+        "id": "G041_B_m2_feel",
+        "coachModelId": "B",
+        "notes": "feel-search coach=B m=2 tokens=feel",
+        "maxWinX": 50000,
+        "gateMaxFloor": 3,
+        "mysteryResultWeights": {
+          "FLIGHT_TOKEN": 855,
+          "THERMAL_LIFT": 42,
+          "GATE_UPGRADE": 3,
+          "JUDGE": 85,
+          "HEAD_JUDGE": 15
+        },
+        "tokenTierWeights": {
+          "1": 999400,
+          "2": 400,
+          "3": 120,
+          "4": 40,
+          "5": 32,
+          "6": 8
+        },
+        "tokenValueWeights": {
+          "1": {
+            "1": 99,
+            "2": 1,
+            "3": 1,
+            "4": 1
+          },
+          "2": {
+            "5": 26,
+            "10": 1,
+            "15": 1
+          },
+          "3": {
+            "25": 24,
+            "50": 1,
+            "100": 1
+          },
+          "4": {
+            "150": 18,
+            "200": 2,
+            "250": 1,
+            "500": 1
+          },
+          "5": {
+            "750": 18,
+            "1000": 2,
+            "2500": 1,
+            "5000": 1
+          },
+          "6": {
+            "10000": 8,
+            "25000": 2,
+            "50000": 1
+          }
+        },
+        "thermalWeights": {
+          "2": 70,
+          "3": 20,
+          "4": 7,
+          "5": 2,
+          "10": 1,
+          "20": 1
+        },
+        "phase": "4A.2",
+        "conditionalCollectors": false
+      }
+    },
+    {
+      "id": "F04_F_higher",
+      "coach": "F",
+      "conditional": false,
+      "pAny": 0.10802469135802473,
+      "pGe2": 0.0030864197530864196,
+      "lineRtp": 0.595573386407953,
+      "featureRtpCapped": 0.112725,
+      "baseRtpBeforeFs": 0.708298386407953,
+      "pDeadCoach": 0.7995649471721566,
+      "pFeatureWinGivenCoach": 0.20043505282784338,
+      "median": 4.0,
+      "avgWin": 5.243023255813953,
+      "remainingFsRtp": 0.256701613592047,
+      "impliedBonus": 40.316314533733156,
+      "capFrequency": 0.0,
+      "score": 9.669690340791382,
+      "inFeatureBand": false,
+      "deadReasons": {
+        "tokens_no_collector": 0.7712088253573648,
+        "collector_no_tokens": 0.020665009322560598,
+        "modifier_only": 0.007691112492231199,
+        "other": 0.0
+      },
+      "candidate": {
+        "id": "F04_F_higher",
+        "coachModelId": "F",
+        "notes": "Higher two-reel Coach F; collectors moderated for RTP",
+        "maxWinX": 50000,
+        "gateMaxFloor": 3,
+        "mysteryResultWeights": {
+          "FLIGHT_TOKEN": 885,
+          "THERMAL_LIFT": 35,
+          "GATE_UPGRADE": 3,
+          "JUDGE": 65,
+          "HEAD_JUDGE": 12
+        },
+        "tokenTierWeights": {
+          "1": 999700,
+          "2": 220,
+          "3": 60,
+          "4": 20,
+          "5": 32,
+          "6": 8
+        },
+        "tokenValueWeights": {
+          "1": {
+            "1": 99,
+            "2": 1,
+            "3": 1,
+            "4": 1
+          },
+          "2": {
+            "5": 26,
+            "10": 1,
+            "15": 1
+          },
+          "3": {
+            "25": 24,
+            "50": 1,
+            "100": 1
+          },
+          "4": {
+            "150": 18,
+            "200": 2,
+            "250": 1,
+            "500": 1
+          },
+          "5": {
+            "750": 18,
+            "1000": 2,
+            "2500": 1,
+            "5000": 1
+          },
+          "6": {
+            "10000": 8,
+            "25000": 2,
+            "50000": 1
+          }
+        },
+        "thermalWeights": {
+          "2": 70,
+          "3": 20,
+          "4": 7,
+          "5": 2,
+          "10": 1,
+          "20": 1
+        },
+        "phase": "4A.2",
+        "conditionalCollectors": false
+      }
+    },
+    {
+      "id": "G035_F_m5_feel",
+      "coach": "F",
+      "conditional": false,
+      "pAny": 0.10802469135802473,
+      "pGe2": 0.0030864197530864196,
+      "lineRtp": 0.595573386407953,
+      "featureRtpCapped": 0.11299166666666667,
+      "baseRtpBeforeFs": 0.7085650530746197,
+      "pDeadCoach": 0.7995649471721566,
+      "pFeatureWinGivenCoach": 0.20043505282784338,
+      "median": 4.0,
+      "avgWin": 5.2554263565891475,
+      "remainingFsRtp": 0.25643494692538027,
+      "impliedBonus": 40.274433156134634,
+      "capFrequency": 0.0,
+      "score": 9.658223674124716,
+      "inFeatureBand": false,
+      "deadReasons": {
+        "tokens_no_collector": 0.7712088253573648,
+        "collector_no_tokens": 0.020665009322560598,
+        "modifier_only": 0.007691112492231199,
+        "other": 0.0
+      },
+      "candidate": {
+        "id": "G035_F_m5_feel",
+        "coachModelId": "F",
+        "notes": "feel-search coach=F m=5 tokens=feel",
+        "maxWinX": 50000,
+        "gateMaxFloor": 3,
+        "mysteryResultWeights": {
+          "FLIGHT_TOKEN": 885,
+          "THERMAL_LIFT": 35,
+          "GATE_UPGRADE": 3,
+          "JUDGE": 65,
+          "HEAD_JUDGE": 12
+        },
+        "tokenTierWeights": {
+          "1": 999400,
+          "2": 400,
+          "3": 120,
+          "4": 40,
+          "5": 32,
+          "6": 8
+        },
+        "tokenValueWeights": {
+          "1": {
+            "1": 99,
+            "2": 1,
+            "3": 1,
+            "4": 1
+          },
+          "2": {
+            "5": 26,
+            "10": 1,
+            "15": 1
+          },
+          "3": {
+            "25": 24,
+            "50": 1,
+            "100": 1
+          },
+          "4": {
+            "150": 18,
+            "200": 2,
+            "250": 1,
+            "500": 1
+          },
+          "5": {
+            "750": 18,
+            "1000": 2,
+            "2500": 1,
+            "5000": 1
+          },
+          "6": {
+            "10000": 8,
+            "25000": 2,
+            "50000": 1
+          }
+        },
+        "thermalWeights": {
+          "2": 70,
+          "3": 20,
+          "4": 7,
+          "5": 2,
+          "10": 1,
+          "20": 1
+        },
+        "phase": "4A.2",
+        "conditionalCollectors": false
+      }
+    },
+    {
+      "id": "G043_B_m3_feel",
+      "coach": "B",
+      "conditional": false,
+      "pAny": 0.09615384615384615,
+      "pGe2": 0.0,
+      "lineRtp": 0.5847302155911906,
+      "featureRtpCapped": 0.1397,
+      "baseRtpBeforeFs": 0.7244302155911906,
+      "pDeadCoach": 0.7320045260684133,
+      "pFeatureWinGivenCoach": 0.26799547393158674,
+      "median": 4.0,
+      "avgWin": 5.44462487820721,
+      "remainingFsRtp": 0.24056978440880938,
+      "impliedBonus": 31.417982656796923,
+      "capFrequency": 0.0,
+      "score": 9.625791374358084,
+      "inFeatureBand": false,
+      "deadReasons": {
+        "tokens_no_collector": 0.6903124728000696,
+        "collector_no_tokens": 0.029593524240577943,
+        "modifier_only": 0.01209852902776569,
+        "other": 0.0
+      },
+      "candidate": {
+        "id": "G043_B_m3_feel",
+        "coachModelId": "B",
+        "notes": "feel-search coach=B m=3 tokens=feel",
+        "maxWinX": 50000,
+        "gateMaxFloor": 3,
+        "mysteryResultWeights": {
+          "FLIGHT_TOKEN": 845,
+          "THERMAL_LIFT": 42,
+          "GATE_UPGRADE": 4,
+          "JUDGE": 95,
+          "HEAD_JUDGE": 14
+        },
+        "tokenTierWeights": {
+          "1": 999400,
+          "2": 400,
+          "3": 120,
+          "4": 40,
+          "5": 32,
+          "6": 8
+        },
+        "tokenValueWeights": {
+          "1": {
+            "1": 99,
+            "2": 1,
+            "3": 1,
+            "4": 1
+          },
+          "2": {
+            "5": 26,
+            "10": 1,
+            "15": 1
+          },
+          "3": {
+            "25": 24,
+            "50": 1,
+            "100": 1
+          },
+          "4": {
+            "150": 18,
+            "200": 2,
+            "250": 1,
+            "500": 1
+          },
+          "5": {
+            "750": 18,
+            "1000": 2,
+            "2500": 1,
+            "5000": 1
+          },
+          "6": {
+            "10000": 8,
+            "25000": 2,
+            "50000": 1
+          }
+        },
+        "thermalWeights": {
+          "2": 70,
+          "3": 20,
+          "4": 7,
+          "5": 2,
+          "10": 1,
+          "20": 1
+        },
+        "phase": "4A.2",
+        "conditionalCollectors": false
+      }
+    },
+    {
+      "id": "F03_D_tworeel",
+      "coach": "D",
+      "conditional": false,
+      "pAny": 0.09750000000000003,
+      "pGe2": 0.0025000000000000005,
+      "lineRtp": 0.5966498987255355,
+      "featureRtpCapped": 0.128075,
+      "baseRtpBeforeFs": 0.7247248987255355,
+      "pDeadCoach": 0.7844218507668448,
+      "pFeatureWinGivenCoach": 0.21557814923315527,
+      "median": 4.0,
+      "avgWin": 6.142685851318944,
+      "remainingFsRtp": 0.2402751012744645,
+      "impliedBonus": 42.1359459216761,
+      "capFrequency": 0.0,
+      "score": 9.5857446708599,
+      "inFeatureBand": false,
+      "deadReasons": {
+        "tokens_no_collector": 0.7541788729967258,
+        "collector_no_tokens": 0.02136825779769085,
+        "modifier_only": 0.008874719972428054,
+        "other": 0.0
+      },
+      "candidate": {
+        "id": "F03_D_tworeel",
+        "coachModelId": "D",
+        "notes": "Best mid two-reel D with leaner faces to hold RTP",
+        "maxWinX": 50000,
+        "gateMaxFloor": 3,
+        "mysteryResultWeights": {
+          "FLIGHT_TOKEN": 875,
+          "THERMAL_LIFT": 38,
+          "GATE_UPGRADE": 3,
+          "JUDGE": 72,
+          "HEAD_JUDGE": 12
+        },
+        "tokenTierWeights": {
+          "1": 999700,
+          "2": 220,
+          "3": 60,
+          "4": 20,
+          "5": 32,
+          "6": 8
+        },
+        "tokenValueWeights": {
+          "1": {
+            "1": 99,
+            "2": 1,
+            "3": 1,
+            "4": 1
+          },
+          "2": {
+            "5": 26,
+            "10": 1,
+            "15": 1
+          },
+          "3": {
+            "25": 24,
+            "50": 1,
+            "100": 1
+          },
+          "4": {
+            "150": 18,
+            "200": 2,
+            "250": 1,
+            "500": 1
+          },
+          "5": {
+            "750": 18,
+            "1000": 2,
+            "2500": 1,
+            "5000": 1
+          },
+          "6": {
+            "10000": 8,
+            "25000": 2,
+            "50000": 1
+          }
+        },
+        "thermalWeights": {
+          "2": 70,
+          "3": 20,
+          "4": 7,
+          "5": 2,
+          "10": 1,
+          "20": 1
+        },
+        "phase": "4A.2",
+        "conditionalCollectors": false
+      }
+    },
+    {
+      "id": "G009_D_m4_feel",
+      "coach": "D",
+      "conditional": false,
+      "pAny": 0.09750000000000003,
+      "pGe2": 0.0025000000000000005,
+      "lineRtp": 0.5966498987255355,
+      "featureRtpCapped": 0.12810833333333332,
+      "baseRtpBeforeFs": 0.7247582320588688,
+      "pDeadCoach": 0.7844218507668448,
+      "pFeatureWinGivenCoach": 0.21557814923315527,
+      "median": 4.0,
+      "avgWin": 6.144284572342126,
+      "remainingFsRtp": 0.24024176794113117,
+      "impliedBonus": 42.13010040741651,
+      "capFrequency": 0.0,
+      "score": 9.584311337526568,
+      "inFeatureBand": false,
+      "deadReasons": {
+        "tokens_no_collector": 0.7541788729967258,
+        "collector_no_tokens": 0.02136825779769085,
+        "modifier_only": 0.008874719972428054,
+        "other": 0.0
+      },
+      "candidate": {
+        "id": "G009_D_m4_feel",
+        "coachModelId": "D",
+        "notes": "feel-search coach=D m=4 tokens=feel",
+        "maxWinX": 50000,
+        "gateMaxFloor": 3,
+        "mysteryResultWeights": {
+          "FLIGHT_TOKEN": 875,
+          "THERMAL_LIFT": 38,
+          "GATE_UPGRADE": 3,
+          "JUDGE": 72,
+          "HEAD_JUDGE": 12
+        },
+        "tokenTierWeights": {
+          "1": 999400,
+          "2": 400,
+          "3": 120,
+          "4": 40,
+          "5": 32,
+          "6": 8
+        },
+        "tokenValueWeights": {
+          "1": {
+            "1": 99,
+            "2": 1,
+            "3": 1,
+            "4": 1
+          },
+          "2": {
+            "5": 26,
+            "10": 1,
+            "15": 1
+          },
+          "3": {
+            "25": 24,
+            "50": 1,
+            "100": 1
+          },
+          "4": {
+            "150": 18,
+            "200": 2,
+            "250": 1,
+            "500": 1
+          },
+          "5": {
+            "750": 18,
+            "1000": 2,
+            "2500": 1,
+            "5000": 1
+          },
+          "6": {
+            "10000": 8,
+            "25000": 2,
+            "50000": 1
+          }
+        },
+        "thermalWeights": {
+          "2": 70,
+          "3": 20,
+          "4": 7,
+          "5": 2,
+          "10": 1,
+          "20": 1
+        },
+        "phase": "4A.2",
+        "conditionalCollectors": false
+      }
+    },
+    {
+      "id": "G001_D_m0_feel",
+      "coach": "D",
+      "conditional": false,
+      "pAny": 0.09750000000000003,
+      "pGe2": 0.0025000000000000005,
+      "lineRtp": 0.5966498987255355,
+      "featureRtpCapped": 0.13695833333333332,
+      "baseRtpBeforeFs": 0.7336082320588688,
+      "pDeadCoach": 0.7786174323744096,
+      "pFeatureWinGivenCoach": 0.2213825676255904,
+      "median": 4.0,
+      "avgWin": 6.375096974398759,
+      "remainingFsRtp": 0.23139176794113114,
+      "impliedBonus": 40.57811637149733,
+      "capFrequency": 0.0,
+      "score": 9.42499590310577,
+      "inFeatureBand": false,
+      "deadReasons": {
+        "tokens_no_collector": 0.7479604980678403,
+        "collector_no_tokens": 0.021726062687848862,
+        "modifier_only": 0.008930871618720481,
+        "other": 0.0
+      },
+      "candidate": {
+        "id": "G001_D_m0_feel",
+        "coachModelId": "D",
+        "notes": "feel-search coach=D m=0 tokens=feel",
+        "maxWinX": 50000,
+        "gateMaxFloor": 3,
+        "mysteryResultWeights": {
+          "FLIGHT_TOKEN": 870,
+          "THERMAL_LIFT": 40,
+          "GATE_UPGRADE": 3,
+          "JUDGE": 75,
+          "HEAD_JUDGE": 12
+        },
+        "tokenTierWeights": {
+          "1": 999400,
+          "2": 400,
+          "3": 120,
+          "4": 40,
+          "5": 32,
+          "6": 8
+        },
+        "tokenValueWeights": {
+          "1": {
+            "1": 99,
+            "2": 1,
+            "3": 1,
+            "4": 1
+          },
+          "2": {
+            "5": 26,
+            "10": 1,
+            "15": 1
+          },
+          "3": {
+            "25": 24,
+            "50": 1,
+            "100": 1
+          },
+          "4": {
+            "150": 18,
+            "200": 2,
+            "250": 1,
+            "500": 1
+          },
+          "5": {
+            "750": 18,
+            "1000": 2,
+            "2500": 1,
+            "5000": 1
+          },
+          "6": {
+            "10000": 8,
+            "25000": 2,
+            "50000": 1
+          }
+        },
+        "thermalWeights": {
+          "2": 70,
+          "3": 20,
+          "4": 7,
+          "5": 2,
+          "10": 1,
+          "20": 1
+        },
+        "phase": "4A.2",
+        "conditionalCollectors": false
+      }
+    },
+    {
+      "id": "G039_B_m1_feel",
+      "coach": "B",
+      "conditional": false,
+      "pAny": 0.09615384615384615,
+      "pGe2": 0.0,
+      "lineRtp": 0.5847302155911906,
+      "featureRtpCapped": 0.11970833333333333,
+      "baseRtpBeforeFs": 0.704438548924524,
+      "pDeadCoach": 0.7552069716775599,
+      "pFeatureWinGivenCoach": 0.2447930283224401,
+      "median": 4.0,
+      "avgWin": 5.113919544321822,
+      "remainingFsRtp": 0.260561451075476,
+      "impliedBonus": 34.0288584912552,
+      "capFrequency": 0.0,
+      "score": 7.35467674291939,
+      "inFeatureBand": false,
+      "deadReasons": {
+        "tokens_no_collector": 0.7201742919389978,
+        "collector_no_tokens": 0.0244880174291939,
+        "modifier_only": 0.010544662309368192,
+        "other": 0.0
+      },
+      "candidate": {
+        "id": "G039_B_m1_feel",
+        "coachModelId": "B",
+        "notes": "feel-search coach=B m=1 tokens=feel",
+        "maxWinX": 50000,
+        "gateMaxFloor": 3,
+        "mysteryResultWeights": {
+          "FLIGHT_TOKEN": 858,
+          "THERMAL_LIFT": 42,
+          "GATE_UPGRADE": 3,
+          "JUDGE": 82,
+          "HEAD_JUDGE": 15
+        },
+        "tokenTierWeights": {
+          "1": 999400,
+          "2": 400,
+          "3": 120,
+          "4": 40,
+          "5": 32,
+          "6": 8
+        },
+        "tokenValueWeights": {
+          "1": {
+            "1": 99,
+            "2": 1,
+            "3": 1,
+            "4": 1
+          },
+          "2": {
+            "5": 26,
+            "10": 1,
+            "15": 1
+          },
+          "3": {
+            "25": 24,
+            "50": 1,
+            "100": 1
+          },
+          "4": {
+            "150": 18,
+            "200": 2,
+            "250": 1,
+            "500": 1
+          },
+          "5": {
+            "750": 18,
+            "1000": 2,
+            "2500": 1,
+            "5000": 1
+          },
+          "6": {
+            "10000": 8,
+            "25000": 2,
+            "50000": 1
+          }
+        },
+        "thermalWeights": {
+          "2": 70,
+          "3": 20,
+          "4": 7,
+          "5": 2,
+          "10": 1,
+          "20": 1
+        },
+        "phase": "4A.2",
+        "conditionalCollectors": false
+      }
+    },
+    {
+      "id": "G007_D_m3_feel",
+      "coach": "D",
+      "conditional": false,
+      "pAny": 0.09750000000000003,
+      "pGe2": 0.0025000000000000005,
+      "lineRtp": 0.5966498987255355,
+      "featureRtpCapped": 0.19774166666666668,
+      "baseRtpBeforeFs": 0.7943915653922022,
+      "pDeadCoach": 0.7295944779982744,
+      "pFeatureWinGivenCoach": 0.27040552200172563,
+      "median": 4.0,
+      "avgWin": 7.571474154435227,
+      "remainingFsRtp": 0.17060843460779773,
+      "impliedBonus": 29.918821119148436,
+      "capFrequency": 0.0,
+      "score": 6.388174194708081,
+      "inFeatureBand": false,
+      "deadReasons": {
+        "tokens_no_collector": 0.6910267471958585,
+        "collector_no_tokens": 0.027610008628127698,
+        "modifier_only": 0.010957722174288179,
+        "other": 0.0
+      },
+      "candidate": {
+        "id": "G007_D_m3_feel",
+        "coachModelId": "D",
+        "notes": "feel-search coach=D m=3 tokens=feel",
+        "maxWinX": 50000,
+        "gateMaxFloor": 3,
+        "mysteryResultWeights": {
+          "FLIGHT_TOKEN": 845,
+          "THERMAL_LIFT": 42,
+          "GATE_UPGRADE": 4,
+          "JUDGE": 95,
+          "HEAD_JUDGE": 14
+        },
+        "tokenTierWeights": {
+          "1": 999400,
+          "2": 400,
+          "3": 120,
+          "4": 40,
+          "5": 32,
+          "6": 8
+        },
+        "tokenValueWeights": {
+          "1": {
+            "1": 99,
+            "2": 1,
+            "3": 1,
+            "4": 1
+          },
+          "2": {
+            "5": 26,
+            "10": 1,
+            "15": 1
+          },
+          "3": {
+            "25": 24,
+            "50": 1,
+            "100": 1
+          },
+          "4": {
+            "150": 18,
+            "200": 2,
+            "250": 1,
+            "500": 1
+          },
+          "5": {
+            "750": 18,
+            "1000": 2,
+            "2500": 1,
+            "5000": 1
+          },
+          "6": {
+            "10000": 8,
+            "25000": 2,
+            "50000": 1
+          }
+        },
+        "thermalWeights": {
+          "2": 70,
+          "3": 20,
+          "4": 7,
+          "5": 2,
+          "10": 1,
+          "20": 1
+        },
+        "phase": "4A.2",
+        "conditionalCollectors": false
+      }
+    },
+    {
+      "id": "G031_F_m3_feel",
+      "coach": "F",
+      "conditional": false,
+      "pAny": 0.10802469135802473,
+      "pGe2": 0.0030864197530864196,
+      "lineRtp": 0.595573386407953,
+      "featureRtpCapped": 0.20604166666666668,
+      "baseRtpBeforeFs": 0.8016150530746197,
+      "pDeadCoach": 0.7266007935890454,
+      "pFeatureWinGivenCoach": 0.27339920641095466,
+      "median": 4.0,
+      "avgWin": 7.036141149686967,
+      "remainingFsRtp": 0.1633849469253803,
+      "impliedBonus": 25.66044996035431,
+      "capFrequency": 0.0,
+      "score": 6.103455953862911,
+      "inFeatureBand": false,
+      "deadReasons": {
+        "tokens_no_collector": 0.6883995954251926,
+        "collector_no_tokens": 0.028709250758577765,
+        "modifier_only": 0.009491947405275033,
+        "other": 0.0
+      },
+      "candidate": {
+        "id": "G031_F_m3_feel",
+        "coachModelId": "F",
+        "notes": "feel-search coach=F m=3 tokens=feel",
+        "maxWinX": 50000,
+        "gateMaxFloor": 3,
+        "mysteryResultWeights": {
+          "FLIGHT_TOKEN": 845,
+          "THERMAL_LIFT": 42,
+          "GATE_UPGRADE": 4,
+          "JUDGE": 95,
+          "HEAD_JUDGE": 14
+        },
+        "tokenTierWeights": {
+          "1": 999400,
+          "2": 400,
+          "3": 120,
+          "4": 40,
+          "5": 32,
+          "6": 8
+        },
+        "tokenValueWeights": {
+          "1": {
+            "1": 99,
+            "2": 1,
+            "3": 1,
+            "4": 1
+          },
+          "2": {
+            "5": 26,
+            "10": 1,
+            "15": 1
+          },
+          "3": {
+            "25": 24,
+            "50": 1,
+            "100": 1
+          },
+          "4": {
+            "150": 18,
+            "200": 2,
+            "250": 1,
+            "500": 1
+          },
+          "5": {
+            "750": 18,
+            "1000": 2,
+            "2500": 1,
+            "5000": 1
+          },
+          "6": {
+            "10000": 8,
+            "25000": 2,
+            "50000": 1
+          }
+        },
+        "thermalWeights": {
+          "2": 70,
+          "3": 20,
+          "4": 7,
+          "5": 2,
+          "10": 1,
+          "20": 1
+        },
+        "phase": "4A.2",
+        "conditionalCollectors": false
+      }
+    },
+    {
+      "id": "H02_B_R1",
+      "coach": "B",
+      "conditional": false,
+      "pAny": 0.09615384615384615,
+      "pGe2": 0.0,
+      "lineRtp": 0.5847302155911906,
+      "featureRtpCapped": 0.088625,
+      "baseRtpBeforeFs": 0.6733552155911906,
+      "pDeadCoach": 0.8199143281755398,
+      "pFeatureWinGivenCoach": 0.18008567182446017,
+      "median": 4.0,
+      "avgWin": 5.162621359223301,
+      "remainingFsRtp": 0.29164478440880937,
+      "impliedBonus": 38.08828611215115,
+      "capFrequency": 0.0,
+      "score": 5.855843965818693,
+      "inFeatureBand": false,
+      "deadReasons": {
+        "tokens_no_collector": 0.7888801468659848,
+        "collector_no_tokens": 0.017921146953405017,
+        "modifier_only": 0.013113034356150013,
+        "other": 0.0
+      },
+      "candidate": {
+        "id": "H02_B_R1",
+        "coachModelId": "B",
+        "notes": "Phase 4A benchmark \u2014 do not promote; feel baseline",
+        "maxWinX": 50000,
+        "gateMaxFloor": 3,
+        "mysteryResultWeights": {
+          "FLIGHT_TOKEN": 885,
+          "THERMAL_LIFT": 50,
+          "GATE_UPGRADE": 5,
+          "JUDGE": 60,
+          "HEAD_JUDGE": 10
+        },
+        "tokenTierWeights": {
+          "1": 997200,
+          "2": 2200,
+          "3": 450,
+          "4": 100,
+          "5": 42,
+          "6": 8
+        },
+        "tokenValueWeights": {
+          "1": {
+            "1": 90,
+            "2": 3,
+            "3": 1,
+            "4": 1
+          },
+          "2": {
+            "5": 22,
+            "10": 2,
+            "15": 1
+          },
+          "3": {
+            "25": 20,
+            "50": 2,
+            "100": 1
+          },
+          "4": {
+            "150": 14,
+            "200": 3,
+            "250": 2,
+            "500": 1
+          },
+          "5": {
+            "750": 14,
+            "1000": 3,
+            "2500": 2,
+            "5000": 1
+          },
+          "6": {
+            "10000": 8,
+            "25000": 2,
+            "50000": 1
+          }
+        },
+        "thermalWeights": {
+          "2": 70,
+          "3": 20,
+          "4": 7,
+          "5": 2,
+          "10": 1,
+          "20": 1
+        },
+        "phase": "4A",
+        "benchmark": true,
+        "conditionalCollectors": false
+      }
+    }
+  ]
+}

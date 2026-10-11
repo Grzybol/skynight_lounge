@@ -1,0 +1,6 @@
+{
+  "answer": "NO",
+  "detail": "7C independent hybrid = eNone + sum(p_tier * buy_meanNaturalX) + WR. buy_meanNaturalX is a FINAL live-resolver bonus EV (PT2H+BODY1+Phase6). It does not additionally add Phase5B 17.927 or Phase6 4.689 deltas. Historical 96.29 projection DOES use staged 5B+6 buckets then deltas \u2014 that is a different estimator, not mixed into the hybrid total.",
+  "impactPp": 0.0,
+  "historicalUsesStagedBuckets": true
+}

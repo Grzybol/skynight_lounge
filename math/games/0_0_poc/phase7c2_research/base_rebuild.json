@@ -1,0 +1,199 @@
+{
+  "probs": {
+    "BASE_NO_TRIGGER": 0.9934703217455622,
+    "BASE_TRIGGER_LH_WR_OFF": 0.006213503632774804,
+    "BASE_TRIGGER_SF_WR_OFF": 0.00030990966771847944,
+    "BASE_TRIGGER_WC_WR_OFF": 6.1715238371476e-06,
+    "BASE_TRIGGER_PV_WR_OFF": 1.9755197942213834e-09,
+    "WORLD_RECORD": 9.145458764342853e-08
+  },
+  "leafMeta": {
+    "BASE_NO_TRIGGER": {
+      "n": 80000,
+      "meanX": 0.7130962500000001,
+      "se": 0.006579863090555093,
+      "meanTrig": 0.7130962500000001,
+      "meanBonusOnly": 0.0
+    },
+    "BASE_TRIGGER_LH_WR_OFF": {
+      "n": 60000,
+      "meanX": 29.846688333333333,
+      "se": 1.2211937801346011,
+      "meanTrig": 0.4533933333333333,
+      "meanBonusOnly": 29.393295
+    },
+    "BASE_TRIGGER_SF_WR_OFF": {
+      "n": 30000,
+      "meanX": 185.73771666666667,
+      "se": 3.9171402263518713,
+      "meanTrig": 0.33105666666666667,
+      "meanBonusOnly": 185.40666
+    },
+    "BASE_TRIGGER_WC_WR_OFF": {
+      "n": 15000,
+      "meanX": 417.81006666666667,
+      "se": 12.34899575415659,
+      "meanTrig": 0.16808,
+      "meanBonusOnly": 417.64198666666664
+    },
+    "BASE_TRIGGER_PV_WR_OFF": {
+      "n": 8,
+      "meanX": 683.6625,
+      "se": 194.7109002289516,
+      "meanTrig": 0.0,
+      "meanBonusOnly": 683.6625
+    },
+    "WORLD_RECORD": {
+      "n": 20,
+      "meanX": 50000.0,
+      "se": 0.0,
+      "meanTrig": 0.21000000000000002,
+      "meanBonusOnly": 49999.79
+    }
+  },
+  "lut": {
+    "rtp": 0.958606986138366,
+    "sumP": 1.0,
+    "leaves": {
+      "BASE_NO_TRIGGER": {
+        "n": 80000,
+        "sumWeight": 993470321745562,
+        "normalizedP": 0.9934703217455649,
+        "theoreticalP": 0.9934703217455622,
+        "meanPayoutX": 0.7130962499998784,
+        "rtpContribution": 0.708439960922935,
+        "pDelta": 2.7755575615628914e-15
+      },
+      "BASE_TRIGGER_LH_WR_OFF": {
+        "n": 60000,
+        "sumWeight": 6213503632774,
+        "normalizedP": 0.0062135036327740185,
+        "theoreticalP": 0.006213503632774804,
+        "meanPayoutX": 29.846688336559865,
+        "rtpContribution": 0.18545250640548866,
+        "pDelta": -7.858297346174936e-16
+      },
+      "BASE_TRIGGER_SF_WR_OFF": {
+        "n": 30000,
+        "sumWeight": 309909667718,
+        "normalizedP": 0.00030990966771800093,
+        "theoreticalP": 0.00030990966771847944,
+        "meanPayoutX": 185.73771665899733,
+        "rtpContribution": 0.057561914052490074,
+        "pDelta": -4.785126288264774e-16
+      },
+      "BASE_TRIGGER_WC_WR_OFF": {
+        "n": 15000,
+        "sumWeight": 6171523837,
+        "normalizedP": 6.171523837000019e-06,
+        "theoreticalP": 6.1715238371476e-06,
+        "meanPayoutX": 417.8100720579134,
+        "rtpContribution": 0.0025785248190441077,
+        "pDelta": -1.475810914989585e-16
+      },
+      "BASE_TRIGGER_PV_WR_OFF": {
+        "n": 8,
+        "sumWeight": 1975519,
+        "normalizedP": 1.975519000000006e-09,
+        "theoreticalP": 1.9755197942213834e-09,
+        "meanPayoutX": 683.6625758091924,
+        "rtpContribution": 1.350588408100004e-06,
+        "pDelta": -7.942213772934966e-16
+      },
+      "WORLD_RECORD": {
+        "n": 20,
+        "sumWeight": 91454587,
+        "normalizedP": 9.145458700000027e-08,
+        "theoreticalP": 9.145458764342853e-08,
+        "meanPayoutX": 50000.0,
+        "rtpContribution": 0.0045727293500000135,
+        "pDelta": -6.4342826282588495e-16
+      }
+    }
+  },
+  "authoritativeRtp": 0.9586069861202801,
+  "authoritativeSe": 0.010088937301999097,
+  "authoritativeRtpPct": 95.860698612028,
+  "authoritativeSePp": 1.0088937301999097,
+  "lutRtpPct": 95.8606986138366,
+  "gapPp": 1.808597716035365e-09,
+  "acceptance": {
+    "gapPp": 1.808597716035365e-09,
+    "pass_0_10": true,
+    "pass_0_05": true
+  },
+  "shaBook": "56dc356fc171b3ddec4e66aefee2336257d588ceea31d9ce540d5a926a0d3116",
+  "shaLut": "b77d6bd48ff66f020f059ac5064e6460f2763b423b2843c059258f36c4091157",
+  "bookCount": 185028,
+  "mix": {
+    "LARGE_HILL": 0.0062135906602437665,
+    "SKI_FLYING": 0.00030991400836999946,
+    "WORLD_CUP": 6.171610276639861e-06,
+    "PERFECT_V": 1.9755474637131444e-09,
+    "P_scatterGe3": 0.00652967825443787,
+    "conditional": {
+      "LARGE_HILL": 0.9515921639815444,
+      "SKI_FLYING": 0.047462370471220025,
+      "WORLD_CUP": 0.0009451629982603432,
+      "PERFECT_V": 3.0254897511534684e-07
+    },
+    "P_no_trigger": 0.9934703217455622
+  },
+  "pWr": 9.145458764342853e-08,
+  "pvWeight": {
+    "target": 1.9755197942213834e-09,
+    "effective": 1.975519000000006e-09
+  },
+  "wrWeight": {
+    "target": 9.145458764342853e-08,
+    "effective": 9.145458700000027e-08
+  },
+  "componentAgreement": {
+    "BASE_NO_TRIGGER": {
+      "authPp": 70.84399609230539,
+      "lutPp": 70.84399609229351,
+      "deltaPp": -1.1880274541908875e-11,
+      "tolPp": 0.05,
+      "pass": true
+    },
+    "BASE_TRIGGER_LH_WR_OFF": {
+      "authPp": 18.545250638546403,
+      "lutPp": 18.545250640548865,
+      "deltaPp": 2.0024621960601507e-09,
+      "tolPp": 0.03,
+      "pass": true
+    },
+    "BASE_TRIGGER_SF_WR_OFF": {
+      "authPp": 5.756191405495574,
+      "lutPp": 5.756191405249007,
+      "deltaPp": -2.4656721109295177e-10,
+      "tolPp": 0.02,
+      "pass": true
+    },
+    "BASE_TRIGGER_WC_WR_OFF": {
+      "authPp": 0.2578524785833561,
+      "lutPp": 0.2578524819044108,
+      "deltaPp": 3.3210547090156695e-09,
+      "tolPp": 0.01,
+      "pass": true
+    },
+    "BASE_TRIGGER_PV_WR_OFF": {
+      "authPp": 0.00013505888013168766,
+      "lutPp": 0.0001350588408100004,
+      "deltaPp": -3.932168726370443e-11,
+      "tolPp": 0.002,
+      "pass": true
+    },
+    "WORLD_RECORD": {
+      "authPp": 0.45727293821714265,
+      "lutPp": 0.4572729350000014,
+      "deltaPp": -3.217141275602131e-09,
+      "tolPp": 0.002,
+      "pass": true
+    }
+  },
+  "componentPass": true,
+  "staging": {
+    "path": "C:\\Users\\grzyb\\OneDrive\\Dokumenty\\skifly-casino-v2\\stake-upload-phase7c2\\math"
+  }
+}

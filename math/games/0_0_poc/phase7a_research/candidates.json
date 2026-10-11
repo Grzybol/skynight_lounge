@@ -1,0 +1,98 @@
+[
+  {
+    "id": "C1",
+    "wrPp": 0.4,
+    "paytable": "PT1",
+    "body": "BODY1",
+    "paytableDeltaPp": -0.008022520450765569,
+    "bodyDeltaPp": 1.358794441105773,
+    "bodySource": "body_1m.json",
+    "projectedRtp": 95.57877192065502,
+    "calibrationReservePp": 0.921228079344985,
+    "inPreferredBand": false
+  },
+  {
+    "id": "C2",
+    "wrPp": 0.45,
+    "paytable": "PT2",
+    "body": "BODY1",
+    "paytableDeltaPp": 0.592213517960154,
+    "bodyDeltaPp": 1.358794441105773,
+    "bodySource": "body_1m.json",
+    "projectedRtp": 96.22900795906594,
+    "calibrationReservePp": 0.27099204093406115,
+    "inPreferredBand": false
+  },
+  {
+    "id": "C3",
+    "wrPp": 0.5,
+    "paytable": "PT2",
+    "body": "BODY1",
+    "paytableDeltaPp": 0.592213517960154,
+    "bodyDeltaPp": 1.358794441105773,
+    "bodySource": "body_1m.json",
+    "projectedRtp": 96.27900795906592,
+    "calibrationReservePp": 0.2209920409340782,
+    "inPreferredBand": false
+  },
+  {
+    "id": "C4",
+    "wrPp": 0.4,
+    "paytable": "PT3",
+    "body": "BODY0",
+    "paytableDeltaPp": 0.9914472030989714,
+    "bodyDeltaPp": 0.0,
+    "bodySource": "none",
+    "projectedRtp": 95.21944720309898,
+    "calibrationReservePp": 1.28055279690102,
+    "inPreferredBand": false
+  },
+  {
+    "id": "C5",
+    "wrPp": 0.35,
+    "paytable": "PT2",
+    "body": "BODY0",
+    "paytableDeltaPp": 0.592213517960154,
+    "bodyDeltaPp": 0.0,
+    "bodySource": "none",
+    "projectedRtp": 94.77021351796014,
+    "calibrationReservePp": 1.7297864820398559,
+    "inPreferredBand": false
+  },
+  {
+    "id": "C6",
+    "wrPp": 0.4,
+    "paytable": "PT1",
+    "body": "BODY0",
+    "paytableDeltaPp": -0.008022520450765569,
+    "bodyDeltaPp": 0.0,
+    "bodySource": "none",
+    "projectedRtp": 94.21997747954924,
+    "calibrationReservePp": 2.280022520450757,
+    "inPreferredBand": false
+  },
+  {
+    "id": "C7",
+    "wrPp": 0.5,
+    "paytable": "PT3",
+    "body": "BODY1",
+    "paytableDeltaPp": 0.9914472030989714,
+    "bodyDeltaPp": 1.358794441105773,
+    "bodySource": "body_1m.json",
+    "projectedRtp": 96.67824164420475,
+    "calibrationReservePp": -0.1782416442047463,
+    "inPreferredBand": false
+  },
+  {
+    "id": "C8",
+    "wrPp": 0.55,
+    "paytable": "PT2",
+    "body": "BODY1",
+    "paytableDeltaPp": 0.592213517960154,
+    "bodyDeltaPp": 1.358794441105773,
+    "bodySource": "body_1m.json",
+    "projectedRtp": 96.32900795906593,
+    "calibrationReservePp": 0.17099204093406684,
+    "inPreferredBand": true
+  }
+]

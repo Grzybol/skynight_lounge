@@ -1,0 +1,234 @@
+{
+  "nonProduction": true,
+  "phase": "4A.2",
+  "candidateId": "F03_D_tworeel",
+  "notes": "Best mid two-reel D with leaner faces to hold RTP",
+  "spins": 5000000,
+  "seed": 20260922,
+  "coachModelId": "D",
+  "coachLabel": "reels 2+4 sparse 100/100 (feel mid)",
+  "coachExact": {
+    "pAny": 0.09750000000000003,
+    "pGe2": 0.0025000000000000005,
+    "lineRtp": 0.5966498987255355
+  },
+  "theoreticalLineRtp": 0.5966498987255355,
+  "simulatedLineRtp": 0.5972064000033889,
+  "featureRtpRaw": 0.1309476,
+  "featureRtpCapped": 0.1309465,
+  "baseRtpBeforeFs": 0.7275963987255355,
+  "remainingFsRtp": 0.23740360127446447,
+  "scatterGe3": 0.005702378243058718,
+  "impliedAvgBonusPerScatterTrigger": 41.632384095784346,
+  "pFeatureWin": 0.0212838,
+  "pFeatureWinGivenCoach": 0.2182089962332861,
+  "pDeadCoach": 0.7817910037667138,
+  "pCoachSpin": 0.0975386,
+  "pTokensWithoutCollector": 0.0731988,
+  "avgFeatureWinGivenWin": 6.152453979082683,
+  "medianFeatureWinGivenWin": 4.0,
+  "p90FeatureWinGivenWin": 10.0,
+  "p95FeatureWinGivenWin": 12.0,
+  "p99FeatureWinGivenWin": 24.0,
+  "p999FeatureWinGivenWin": 60.0,
+  "maxFeatureWinObserved": 50005.0,
+  "pAnyJudge": 0.0204712,
+  "pAnyHeadJudge": 0.0037718,
+  "pAnyThermal": 0.0114416,
+  "pAnyGate": 0.0009544,
+  "avgCollectorPasses": 0.030813,
+  "avgRawFaceSum": 0.363371,
+  "avgEffectiveTokenSum": 0.3856516,
+  "judgeContributionRtp": 0.102814,
+  "headJudgeContributionRtp": 0.0281336,
+  "gateFaceUpliftRtp": 0.013174,
+  "thermalUpliftRtp": 0.0222806,
+  "avgUpgradedTokens": 0.0028962,
+  "avgThermalHitsOnTokens": 0.0083244,
+  "avgTokensHitByGe2Thermals": 0.000119,
+  "capFrequency": 2e-07,
+  "capDragRtp": 1.1e-06,
+  "tailFeatureRaw": {
+    "10": 0.002384,
+    "50": 4.14e-05,
+    "100": 8.6e-06,
+    "500": 3e-06,
+    "1000": 2.2e-06,
+    "5000": 4e-07,
+    "10000": 4e-07,
+    "50000": 2e-07
+  },
+  "mysteryResultMix": {
+    "FLIGHT_TOKEN": 0.8748211722114725,
+    "THERMAL_LIFT": 0.038050059297172464,
+    "GATE_UPGRADE": 0.002989201672804444,
+    "JUDGE": 0.07211472442419324,
+    "HEAD_JUDGE": 0.012024842394357405
+  },
+  "deadCoachReasons": {
+    "tokens_no_collector": 0.750459817959249,
+    "collector_no_tokens": 0.02191132536247188,
+    "modifier_only": 0.009419860444993058,
+    "other": 0.0
+  },
+  "deadCoachReasonCounts": {
+    "tokens_no_collector": 365994,
+    "collector_no_tokens": 10686,
+    "modifier_only": 4594,
+    "other": 0
+  },
+  "featureWinDistGivenCoach": {
+    "0": 0.7817910037667138,
+    "0_1": 0.026629457466069845,
+    "1_2": 0.036637802880090546,
+    "2_5": 0.08469467472364788,
+    "5_10": 0.05327326822406719,
+    "10_25": 0.015302659664994167,
+    "25_50": 0.0013533103817360511,
+    "50_100": 0.00023785455194148778,
+    "100_500": 4.921128660858368e-05,
+    "500_1000": 8.201881101430613e-06,
+    "1000_5000": 1.845423247821888e-05,
+    "5000_plus": 4.1009405507153065e-06
+  },
+  "featureWinDistPerSpin": {
+    "0": 0.9787162,
+    "0_1": 0.0025974,
+    "1_2": 0.0035736,
+    "2_5": 0.008261,
+    "5_10": 0.0051962,
+    "10_25": 0.0014926,
+    "25_50": 0.000132,
+    "50_100": 2.32e-05,
+    "100_500": 4.8e-06,
+    "500_1000": 8e-07,
+    "1000_5000": 1.8e-06,
+    "5000_plus": 4e-07
+  },
+  "candidate": {
+    "id": "F03_D_tworeel",
+    "coachModelId": "D",
+    "notes": "Best mid two-reel D with leaner faces to hold RTP",
+    "maxWinX": 50000,
+    "gateMaxFloor": 3,
+    "mysteryResultWeights": {
+      "FLIGHT_TOKEN": 875,
+      "THERMAL_LIFT": 38,
+      "GATE_UPGRADE": 3,
+      "JUDGE": 72,
+      "HEAD_JUDGE": 12
+    },
+    "tokenTierWeights": {
+      "1": 999700,
+      "2": 220,
+      "3": 60,
+      "4": 20,
+      "5": 32,
+      "6": 8
+    },
+    "tokenValueWeights": {
+      "1": {
+        "1": 99,
+        "2": 1,
+        "3": 1,
+        "4": 1
+      },
+      "2": {
+        "5": 26,
+        "10": 1,
+        "15": 1
+      },
+      "3": {
+        "25": 24,
+        "50": 1,
+        "100": 1
+      },
+      "4": {
+        "150": 18,
+        "200": 2,
+        "250": 1,
+        "500": 1
+      },
+      "5": {
+        "750": 18,
+        "1000": 2,
+        "2500": 1,
+        "5000": 1
+      },
+      "6": {
+        "10000": 8,
+        "25000": 2,
+        "50000": 1
+      }
+    },
+    "thermalWeights": {
+      "2": 70,
+      "3": 20,
+      "4": 7,
+      "5": 2,
+      "10": 1,
+      "20": 1
+    },
+    "phase": "4A.2",
+    "conditionalCollectors": false
+  },
+  "flags": {
+    "enableThermal": true,
+    "enableGate": true,
+    "enableHeadJudge": true,
+    "enableJudge": true
+  },
+  "conditional": {
+    "t5plus": {
+      "n": 52,
+      "rate": 1.04e-05,
+      "avgFeatureRaw": 2087.923076923077,
+      "capRate": 0.019230769230769232
+    },
+    "t6": {
+      "n": 11,
+      "rate": 2.2e-06,
+      "avgFeatureRaw": 8182.363636363636,
+      "capRate": 0.09090909090909091
+    },
+    "thermal2plus": {
+      "n": 3587,
+      "rate": 0.0007174,
+      "avgFeatureRaw": 2.3462503484806243,
+      "capRate": 0.0
+    },
+    "multiCollector": {
+      "n": 30431,
+      "rate": 0.0060862,
+      "avgFeatureRaw": 8.507114455653774,
+      "capRate": 0.0
+    },
+    "multiCoach": {
+      "n": 12526,
+      "rate": 0.0025052,
+      "avgFeatureRaw": 8.1243812869232,
+      "capRate": 7.983394539358135e-05
+    },
+    "gateAndCollector": {
+      "n": 1200,
+      "rate": 0.00024,
+      "avgFeatureRaw": 25.445833333333333,
+      "capRate": 0.0
+    },
+    "raw50kplus": {
+      "n": 1,
+      "rate": 2e-07,
+      "avgFeatureRaw": 50005.0,
+      "capRate": 1.0
+    }
+  },
+  "feelScore": {
+    "score": 9.961481356864876,
+    "inFeatureBand": false,
+    "preferBand": false,
+    "deadCoach": 0.7817910037667138,
+    "feel": 0.2182089962332861,
+    "multiCoach": true,
+    "median": 4.0
+  }
+}

@@ -1,0 +1,321 @@
+{
+ "animations": {
+  "woman_idle": {
+   "zip": "podstawowa_v1_spritesheet.zip",
+   "sheets": 5,
+   "frames": 150,
+   "frameDurationsMs": [
+    33,
+    34
+   ],
+   "emptyFrames": [],
+   "packBytes": 11504996
+  },
+  "woman_idle_1": {
+   "zip": "przerywnik1_v1_spritesheet.zip",
+   "sheets": 5,
+   "frames": 150,
+   "frameDurationsMs": [
+    33,
+    34
+   ],
+   "emptyFrames": [],
+   "packBytes": 11572018
+  },
+  "woman_idle_2": {
+   "zip": "przerywnik2_v1_spritesheet.zip",
+   "sheets": 5,
+   "frames": 150,
+   "frameDurationsMs": [
+    33,
+    34
+   ],
+   "emptyFrames": [],
+   "packBytes": 11465472
+  },
+  "woman_idle_3": {
+   "zip": "przerywnik_3_v1_spritesheet.zip",
+   "sheets": 5,
+   "frames": 150,
+   "frameDurationsMs": [
+    33,
+    34
+   ],
+   "emptyFrames": [],
+   "packBytes": 11531938
+  },
+  "woman_idle_4": {
+   "zip": "przerywnik4_v1_spritesheet.zip",
+   "sheets": 5,
+   "frames": 150,
+   "frameDurationsMs": [
+    33,
+    34
+   ],
+   "emptyFrames": [],
+   "packBytes": 11585948
+  },
+  "woman_mini_win": {
+   "zip": "mini_wow_v1_spritesheet.zip",
+   "sheets": 5,
+   "frames": 150,
+   "frameDurationsMs": [
+    33,
+    34
+   ],
+   "emptyFrames": [],
+   "packBytes": 11508508
+  },
+  "woman_big_win": {
+   "zip": "wow_v2_spritesheet.zip",
+   "sheets": 5,
+   "frames": 150,
+   "frameDurationsMs": [
+    33,
+    34
+   ],
+   "emptyFrames": [],
+   "packBytes": 11551404
+  },
+  "woman_mega_win": {
+   "zip": "mega_win_spritesheet.zip",
+   "sheets": 5,
+   "frames": 150,
+   "frameDurationsMs": [
+    33,
+    34
+   ],
+   "emptyFrames": [],
+   "packBytes": 11607218
+  },
+  "bartender_idle": {
+   "zip": "barman_idle_1_v1_spritesheet.zip",
+   "sheets": 30,
+   "frameSize": [
+    562,
+    748
+   ],
+   "frames": 150,
+   "frameDurationsMs": [
+    33
+   ],
+   "emptyFrames": [],
+   "packBytes": 5716564
+  },
+  "bartender_idle_alt": {
+   "zip": "barman_idle_2_spritesheet.zip",
+   "sheets": 30,
+   "frameSize": [
+    562,
+    748
+   ],
+   "frames": 150,
+   "frameDurationsMs": [
+    33
+   ],
+   "emptyFrames": [],
+   "packBytes": 5622334
+  },
+  "bartender_idle_1": {
+   "zip": "barman_przerywnik_1_spritesheet.zip",
+   "sheets": 30,
+   "frameSize": [
+    562,
+    748
+   ],
+   "frames": 150,
+   "frameDurationsMs": [
+    33
+   ],
+   "emptyFrames": [],
+   "packBytes": 5625522
+  },
+  "bartender_idle_2": {
+   "zip": "barman_przerywnik_2_spritesheet.zip",
+   "sheets": 30,
+   "frameSize": [
+    562,
+    748
+   ],
+   "frames": 150,
+   "frameDurationsMs": [
+    33
+   ],
+   "emptyFrames": [],
+   "packBytes": 5531562
+  },
+  "bartender_idle_3": {
+   "zip": "barman_przerywnik_3_spritesheet.zip",
+   "sheets": 30,
+   "frameSize": [
+    562,
+    748
+   ],
+   "frames": 150,
+   "frameDurationsMs": [
+    33
+   ],
+   "emptyFrames": [],
+   "packBytes": 5611156
+  },
+  "bartender_mini_win": {
+   "zip": "barman_przerywnik_mini_win_spritesheet.zip",
+   "sheets": 30,
+   "frameSize": [
+    562,
+    748
+   ],
+   "frames": 150,
+   "frameDurationsMs": [
+    33
+   ],
+   "emptyFrames": [],
+   "packBytes": 5615946
+  },
+  "bartender_big_win": {
+   "zip": "barman_przerywnik_win_spritesheet.zip",
+   "sheets": 30,
+   "frameSize": [
+    562,
+    748
+   ],
+   "frames": 150,
+   "frameDurationsMs": [
+    33
+   ],
+   "emptyFrames": [],
+   "packBytes": 5591990
+  },
+  "bartender_mega_win": {
+   "zip": "barman_przerywnik_mega_win_spritesheet.zip",
+   "sheets": 30,
+   "frameSize": [
+    562,
+    748
+   ],
+   "frames": 150,
+   "frameDurationsMs": [
+    33
+   ],
+   "emptyFrames": [],
+   "packBytes": 5853236
+  },
+  "plant_loop": {
+   "zip": "background_plant5.zip",
+   "sheets": 30,
+   "frameSize": [
+    562,
+    748
+   ],
+   "frames": 150,
+   "frameDurationsMs": [
+    33
+   ],
+   "emptyFrames": [],
+   "packBytes": 8297764
+  },
+  "guard_loop": {
+   "zip": "bodyguard3.zip",
+   "sheets": 38,
+   "frameSize": [
+    488,
+    862
+   ],
+   "frames": 150,
+   "frameDurationsMs": [
+    33
+   ],
+   "emptyFrames": [],
+   "packBytes": 3772516
+  }
+ },
+ "seams": {
+  "woman_idle": {
+   "lastToOwnFirst": 0.9865663723290077,
+   "lastToIdleFirst": 0.9865663723290077,
+   "idleLastToFirst": 0.9865663723290077
+  },
+  "woman_idle_1": {
+   "lastToOwnFirst": 0.9598546199629232,
+   "lastToIdleFirst": 0.9909106986047419,
+   "idleLastToFirst": 0.971070348326666
+  },
+  "woman_idle_2": {
+   "lastToOwnFirst": 0.9737632939799005,
+   "lastToIdleFirst": 1.0085483949653624,
+   "idleLastToFirst": 0.9715136842618792
+  },
+  "woman_idle_3": {
+   "lastToOwnFirst": 1.0341216216216216,
+   "lastToIdleFirst": 1.0437225582983705,
+   "idleLastToFirst": 0.9590307590984486
+  },
+  "woman_idle_4": {
+   "lastToOwnFirst": 1.025524441408918,
+   "lastToIdleFirst": 1.033473997463167,
+   "idleLastToFirst": 0.9995212947604645
+  },
+  "woman_mini_win": {
+   "lastToOwnFirst": 0.9288162259732656,
+   "lastToIdleFirst": 0.9546833837447556,
+   "idleLastToFirst": 0.9821342326080593
+  },
+  "woman_big_win": {
+   "lastToOwnFirst": 0.9692299248707191,
+   "lastToIdleFirst": 0.9905594448238852,
+   "idleLastToFirst": 0.9694128695482486
+  },
+  "woman_mega_win": {
+   "lastToOwnFirst": 0.9802151429407747,
+   "lastToIdleFirst": 1.0018885988876964,
+   "idleLastToFirst": 0.9858876475753732
+  },
+  "bartender_idle": {
+   "lastToOwnFirst": 0.24559679905608311,
+   "lastToIdleFirst": 0.24559679905608311,
+   "idleLastToFirst": 0.24559679905608311
+  },
+  "bartender_idle_alt": {
+   "lastToOwnFirst": 0.24558193141378196,
+   "lastToIdleFirst": 0.24746001198926676,
+   "idleLastToFirst": 0.24342136563457475
+  },
+  "bartender_idle_1": {
+   "lastToOwnFirst": 0.24533572325727443,
+   "lastToIdleFirst": 0.24658638932764954,
+   "idleLastToFirst": 0.24406781072182998
+  },
+  "bartender_idle_2": {
+   "lastToOwnFirst": 0.2443532694540126,
+   "lastToIdleFirst": 0.24462683407235428,
+   "idleLastToFirst": 0.24477253696690582
+  },
+  "bartender_idle_3": {
+   "lastToOwnFirst": 0.24605174891049916,
+   "lastToIdleFirst": 0.24563010257483778,
+   "idleLastToFirst": 0.24530598797267208
+  },
+  "bartender_mini_win": {
+   "lastToOwnFirst": 0.24398276780786723,
+   "lastToIdleFirst": 0.24668154223837707,
+   "idleLastToFirst": 0.24337735741336328
+  },
+  "bartender_big_win": {
+   "lastToOwnFirst": 0.24786560127124288,
+   "lastToIdleFirst": 0.24628368413039756,
+   "idleLastToFirst": 0.2454112508801644
+  },
+  "bartender_mega_win": {
+   "lastToOwnFirst": 0.24336070565398596,
+   "lastToIdleFirst": 0.2430948722096409,
+   "idleLastToFirst": 0.24341482387196225
+  },
+  "plant_loop": {
+   "lastToOwnFirst": 0.7607165965706891
+  },
+  "guard_loop": {
+   "lastToOwnFirst": 0.3023509708645544
+  }
+ },
+ "totalFrames": 2700
+}

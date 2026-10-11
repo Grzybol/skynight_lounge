@@ -1,0 +1,287 @@
+{
+  "phase": "7C.4",
+  "classification": "PRODUCTION MATH FROZEN",
+  "mathVersion": {
+    "old": 1,
+    "new": 2
+  },
+  "configSha": {
+    "before": "d6879d5c9ef3d08386486cd03712d6042e366543597a5c453ca8b1da6f2edbd0",
+    "final": "d3f5b13b38018f4757a3c6fd816dfa0cbfe314f33ca6f79f6c078ffc00677956"
+  },
+  "economyShaPrePromote": "d6879d5c9ef3d08386486cd03712d6042e366543597a5c453ca8b1da6f2edbd0",
+  "freezeSnapshot": {
+    "phase": "7C.4",
+    "prePromotionConfigSha256": "d6879d5c9ef3d08386486cd03712d6042e366543597a5c453ca8b1da6f2edbd0",
+    "expected": "d6879d5c9ef3d08386486cd03712d6042e366543597a5c453ca8b1da6f2edbd0",
+    "match": true,
+    "mathVersionBefore": 1,
+    "economy": "PT2H_LADDER+BODY1+WR-C H2+Phase6 PURE W2",
+    "authBaseRtpPct": 96.39073610676338,
+    "priceADesign": {
+      "LARGE_HILL": 30.2,
+      "SKI_FLYING": 196.9,
+      "WORLD_CUP": 412.8,
+      "PERFECT_V": 1369.1
+    },
+    "note": "Final production freeze; no economy retune"
+  },
+  "finalRtpPct": {
+    "BASE": 96.39073608885526,
+    "LARGE_HILL": 96.3802177369188,
+    "SKI_FLYING": 96.50285171195816,
+    "WORLD_CUP": 96.5357883009393,
+    "PERFECT_V": 96.53466937756467
+  },
+  "crossMode": {
+    "rtpPct": {
+      "BASE": 96.39073608885526,
+      "LARGE_HILL": 96.3802177369188,
+      "SKI_FLYING": 96.50285171195816,
+      "WORLD_CUP": 96.5357883009393,
+      "PERFECT_V": 96.53466937756467
+    },
+    "min": 96.3802177369188,
+    "max": 96.5357883009393,
+    "spreadPp": 0.15557056402051295,
+    "spreadPass": true,
+    "preferredSpreadPass": true,
+    "ceilingPass": true
+  },
+  "finalBuyCosts": {
+    "LARGE_HILL": 30.2,
+    "SKI_FLYING": 196.9,
+    "WORLD_CUP": 412.8,
+    "PERFECT_V": 1369.1
+  },
+  "lutVsAuthority": {
+    "BASE": {
+      "gapPp": 1.7908108329578454e-08,
+      "pass": true,
+      "actualPct": 96.39073608885526,
+      "authPct": 96.39073610676337
+    },
+    "LARGE_HILL": {
+      "gapPp": 4.426459199180499e-11,
+      "pass": true,
+      "actualPct": 96.3802177369188,
+      "authPct": 96.38021773696306
+    },
+    "SKI_FLYING": {
+      "gapPp": 4.529709940470639e-11,
+      "pass": true,
+      "actualPct": 96.50285171195816,
+      "authPct": 96.50285171200346
+    },
+    "WORLD_CUP": {
+      "gapPp": 3.299582829185965e-11,
+      "pass": true,
+      "actualPct": 96.5357883009393,
+      "authPct": 96.5357883009063
+    },
+    "PERFECT_V": {
+      "gapPp": 5.064837438339964e-11,
+      "pass": true,
+      "actualPct": 96.53466937756467,
+      "authPct": 96.53466937761532
+    }
+  },
+  "bookCounts": {
+    "BASE": 350040,
+    "LARGE_HILL": 120024,
+    "SKI_FLYING": 80024,
+    "WORLD_CUP": 60024,
+    "PERFECT_V": 60024
+  },
+  "pvWeight": {
+    "target": 1.9755197942213834e-09,
+    "effective": 1.97552e-09,
+    "pass": true
+  },
+  "wrWeight": {
+    "target": 9.145458764342853e-08,
+    "effective": 9.1454588e-08,
+    "pass": true
+  },
+  "validation": {
+    "pass": true,
+    "replayPass": true,
+    "grainPass": true,
+    "capPass": true,
+    "maxObservedX": 50000.0
+  },
+  "staging": {
+    "path": "C:/Users/grzyb/OneDrive/Dokumenty/skifly-casino-v2/stake-upload-final/math",
+    "leaked": [],
+    "files": [
+      "index.json",
+      "books_BASE.jsonl.zst",
+      "books_LARGE_HILL.jsonl.zst",
+      "books_SKI_FLYING.jsonl.zst",
+      "books_WORLD_CUP.jsonl.zst",
+      "books_PERFECT_V.jsonl.zst",
+      "lookUpTable_BASE_0.csv",
+      "lookUpTable_LARGE_HILL_0.csv",
+      "lookUpTable_SKI_FLYING_0.csv",
+      "lookUpTable_WORLD_CUP_0.csv",
+      "lookUpTable_PERFECT_V_0.csv"
+    ]
+  },
+  "index": {
+    "modes": [
+      {
+        "name": "BASE",
+        "cost": 1.0,
+        "events": "books_BASE.jsonl.zst",
+        "weights": "lookUpTable_BASE_0.csv"
+      },
+      {
+        "name": "LARGE_HILL",
+        "cost": 30.2,
+        "events": "books_LARGE_HILL.jsonl.zst",
+        "weights": "lookUpTable_LARGE_HILL_0.csv"
+      },
+      {
+        "name": "SKI_FLYING",
+        "cost": 196.9,
+        "events": "books_SKI_FLYING.jsonl.zst",
+        "weights": "lookUpTable_SKI_FLYING_0.csv"
+      },
+      {
+        "name": "WORLD_CUP",
+        "cost": 412.8,
+        "events": "books_WORLD_CUP.jsonl.zst",
+        "weights": "lookUpTable_WORLD_CUP_0.csv"
+      },
+      {
+        "name": "PERFECT_V",
+        "cost": 1369.1,
+        "events": "books_PERFECT_V.jsonl.zst",
+        "weights": "lookUpTable_PERFECT_V_0.csv"
+      }
+    ]
+  },
+  "artifacts": [
+    {
+      "relativePath": "stake-upload-final/math/books_BASE.jsonl.zst",
+      "byteSize": 458909105,
+      "sha256": "a32fec36917a477de26b4d7eb1427972ceab40ec7f53ca252480dc8d6c473e36",
+      "mode": "BASE",
+      "bookCount": 350040,
+      "mathVersion": 2,
+      "configSha": "d3f5b13b38018f4757a3c6fd816dfa0cbfe314f33ca6f79f6c078ffc00677956",
+      "lutRtp": 96.39073608885526,
+      "buyCost": 1.0
+    },
+    {
+      "relativePath": "stake-upload-final/math/lookUpTable_BASE_0.csv",
+      "byteSize": 7393182,
+      "sha256": "0aba75388d47b954a1952734c575de11b98db5c0069d26e7a230056dd56dab76",
+      "mode": "BASE",
+      "mathVersion": 2,
+      "configSha": "d3f5b13b38018f4757a3c6fd816dfa0cbfe314f33ca6f79f6c078ffc00677956",
+      "lutRtp": 96.39073608885526,
+      "buyCost": 1.0
+    },
+    {
+      "relativePath": "stake-upload-final/math/books_LARGE_HILL.jsonl.zst",
+      "byteSize": 152480457,
+      "sha256": "cd4baa67c58329434e9075a96cdf69b0e11146ae86d067b30dc8432c41e4b8bd",
+      "mode": "LARGE_HILL",
+      "bookCount": 120024,
+      "mathVersion": 2,
+      "configSha": "d3f5b13b38018f4757a3c6fd816dfa0cbfe314f33ca6f79f6c078ffc00677956",
+      "lutRtp": 96.3802177369188,
+      "buyCost": 30.2
+    },
+    {
+      "relativePath": "stake-upload-final/math/lookUpTable_LARGE_HILL_0.csv",
+      "byteSize": 2709193,
+      "sha256": "e62d6551b550ffd31cd1962930064c64942cc31e9fb7189d99e78eb4957b34d2",
+      "mode": "LARGE_HILL",
+      "mathVersion": 2,
+      "configSha": "d3f5b13b38018f4757a3c6fd816dfa0cbfe314f33ca6f79f6c078ffc00677956",
+      "lutRtp": 96.3802177369188,
+      "buyCost": 30.2
+    },
+    {
+      "relativePath": "stake-upload-final/math/books_SKI_FLYING.jsonl.zst",
+      "byteSize": 195272236,
+      "sha256": "1de81d6700a15f47070f61af973ff52004d7af002f27c87d31cfa68809aa3778",
+      "mode": "SKI_FLYING",
+      "bookCount": 80024,
+      "mathVersion": 2,
+      "configSha": "d3f5b13b38018f4757a3c6fd816dfa0cbfe314f33ca6f79f6c078ffc00677956",
+      "lutRtp": 96.50285171195816,
+      "buyCost": 196.9
+    },
+    {
+      "relativePath": "stake-upload-final/math/lookUpTable_SKI_FLYING_0.csv",
+      "byteSize": 1931336,
+      "sha256": "531fafe4cbed839d5f773bae760840896b51c16d145f7bdb6dcfbb33f4820cbb",
+      "mode": "SKI_FLYING",
+      "mathVersion": 2,
+      "configSha": "d3f5b13b38018f4757a3c6fd816dfa0cbfe314f33ca6f79f6c078ffc00677956",
+      "lutRtp": 96.50285171195816,
+      "buyCost": 196.9
+    },
+    {
+      "relativePath": "stake-upload-final/math/books_WORLD_CUP.jsonl.zst",
+      "byteSize": 173666974,
+      "sha256": "0e92c3a708a19ece1ae7a403d9e1bf6f08346c6b626aa9bfe805166b162e6699",
+      "mode": "WORLD_CUP",
+      "bookCount": 60024,
+      "mathVersion": 2,
+      "configSha": "d3f5b13b38018f4757a3c6fd816dfa0cbfe314f33ca6f79f6c078ffc00677956",
+      "lutRtp": 96.5357883009393,
+      "buyCost": 412.8
+    },
+    {
+      "relativePath": "stake-upload-final/math/lookUpTable_WORLD_CUP_0.csv",
+      "byteSize": 1461238,
+      "sha256": "4bb984f7a87ee69c9c6d004e39471186d0e1779d395036842a4b78c54e934e29",
+      "mode": "WORLD_CUP",
+      "mathVersion": 2,
+      "configSha": "d3f5b13b38018f4757a3c6fd816dfa0cbfe314f33ca6f79f6c078ffc00677956",
+      "lutRtp": 96.5357883009393,
+      "buyCost": 412.8
+    },
+    {
+      "relativePath": "stake-upload-final/math/books_PERFECT_V.jsonl.zst",
+      "byteSize": 292925476,
+      "sha256": "9d011d507acc703e41d194a0a6c00990b5601c2d4489ec99ab9fe5225b884274",
+      "mode": "PERFECT_V",
+      "bookCount": 60024,
+      "mathVersion": 2,
+      "configSha": "d3f5b13b38018f4757a3c6fd816dfa0cbfe314f33ca6f79f6c078ffc00677956",
+      "lutRtp": 96.53466937756467,
+      "buyCost": 1369.1
+    },
+    {
+      "relativePath": "stake-upload-final/math/lookUpTable_PERFECT_V_0.csv",
+      "byteSize": 1510517,
+      "sha256": "dc6ad4451d769131bfe32f854f8806bb09242d4b545fd4632cc494a35604d008",
+      "mode": "PERFECT_V",
+      "mathVersion": 2,
+      "configSha": "d3f5b13b38018f4757a3c6fd816dfa0cbfe314f33ca6f79f6c078ffc00677956",
+      "lutRtp": 96.53466937756467,
+      "buyCost": 1369.1
+    },
+    {
+      "relativePath": "stake-upload-final/math/index.json",
+      "byteSize": 808,
+      "sha256": "9654686213a628c210aaa1a4264c93e13658139d971b99ba10c62c45554fbe65",
+      "mathVersion": 2,
+      "configSha": "d3f5b13b38018f4757a3c6fd816dfa0cbfe314f33ca6f79f6c078ffc00677956"
+    },
+    {
+      "relativePath": "math/games/0_0_poc/skyjump_v2_config.json",
+      "byteSize": 56718,
+      "sha256": "d3f5b13b38018f4757a3c6fd816dfa0cbfe314f33ca6f79f6c078ffc00677956",
+      "mathVersion": 2,
+      "configSha": "d3f5b13b38018f4757a3c6fd816dfa0cbfe314f33ca6f79f6c078ffc00677956"
+    }
+  ],
+  "devResearchLeak": "NONE",
+  "v1MathVersionUnchanged": 3
+}

@@ -1,0 +1,39 @@
+{
+  "note": "Phase 7B implementation smoke \u2014 NOT final book/RTP certification",
+  "n": 25000,
+  "pTriggerUsed": 0.006529678254437869,
+  "liveConfig": {
+    "paytable": "PT2H_LADDER",
+    "body": "BODY1",
+    "worldRecord": "H2",
+    "c": 1.0514872508491765e-06,
+    "byTierPSpin": {
+      "LARGE_HILL": 1.0514872508491765e-06,
+      "SKI_FLYING": 3.1544617525475295e-06,
+      "WORLD_CUP": 6.308923505095059e-06,
+      "PERFECT_V": 1.2617847010190118e-05
+    },
+    "liveBaseLinePct": 60.29945972727959,
+    "artifactPt2hBaseLinePct": 60.29945972727959,
+    "baseLineMatch": true
+  },
+  "artifact": {
+    "pt2hFullDeltaPp": 0.666338945572231,
+    "body1Pp": 1.338721230699889,
+    "wrPp": 0.45694445979944476,
+    "projectedRtp": 96.29,
+    "pPaidRound": 9.145458764342853e-08,
+    "oneInPaidRounds": 10934388.59402976,
+    "pWrGivenBonus": 1.4005986831169175e-05
+  },
+  "smokeBody1": {
+    "mean0": 34.049436000000156,
+    "mean1": 36.07287600000016,
+    "deltaX": 2.023440000000001,
+    "pp": 1.3212412167159766,
+    "artifactPp": 1.338721230699889,
+    "absDeviationPp": 0.017480013983912412,
+    "passLt0_10": true
+  },
+  "wrLiveMatchesArtifact": true
+}

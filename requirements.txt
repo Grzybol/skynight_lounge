@@ -1,0 +1,6 @@
+# Install the SkyJump / Stake math-sdk environment from the repository root:
+#   python -m pip install -r requirements.txt
+#
+# Equivalent:
+#   pip install -r math/requirements.txt
+-r math/requirements.txt
