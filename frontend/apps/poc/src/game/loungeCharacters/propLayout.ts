@@ -17,7 +17,7 @@ export type PropAnchor = { x: number; y: number; h: number; flip?: boolean };
 export const PROP_GROUND: Record<PropId | 'stanchion', { ax: number; ay: number; w: number; h: number; hScale: number }> = {
 	plant: { ax: 0.516, ay: 0.866, ...PROP_FRAME.plant, hScale: 1 },
 	guard: { ax: 0.543, ay: 0.907, ...PROP_FRAME.guard, hScale: 1 },
-	stanchion: { ax: 0.242, ay: 0.968, w: 1158, h: 1359, hScale: 1 },
+	stanchion: { ax: 0.215, ay: 0.976, w: 1122, h: 1402, hScale: 1 },
 };
 
 export const propBox = (kind: PropId | 'stanchion', a: PropAnchor) => {
@@ -41,28 +41,26 @@ export const propBox = (kind: PropId | 'stanchion', a: PropAnchor) => {
 export const STAGE_TOP_SHARE = 0.1;
 
 /** Bodyguard: stands on the floor left of the carpet. */
-export const INTRO_GUARD: PropAnchor = { x: 0.235, y: 0.77, h: 0.598 };
+export const INTRO_GUARD: PropAnchor = { x: 0.235, y: 0.809, h: 0.688 };
 
 /**
  * The two animated plants stand in the foreground: the left one right behind the bodyguard, the right
  * one at the foot of the right column (the painted plants in the doorway stay as they are).
  */
 export const INTRO_PLANTS: PropAnchor[] = [
-	{ x: 0.205, y: 0.775, h: 0.36 },
-	{ x: 0.925, y: 0.775, h: 0.36, flip: true },
+	{ x: 0.205, y: 0.775, h: 0.414 },
+	{ x: 0.925, y: 0.775, h: 0.414, flip: true },
 ];
 
 /**
  * Velvet-rope stanchion over the right plant. Its pole passes through the pot, left of the pot's centre
- * (x = the pot's highlight); the rope runs towards the middle of the screen (mirrored artwork).
+ * (x = the pot's highlight); the rope runs off the right edge. The base sits below the window's bottom
+ * edge (0.775), so it is cut slightly.
  */
-export const INTRO_STANCHION: PropAnchor = { x: 0.9175, y: 0.766, h: 0.34, flip: true };
-
-/** Darker and a little warmer than the drawn plant, to sit in the dim, red-lit foyer. */
-export const INTRO_PLANT_TONE = 'brightness(0.58) saturate(0.88) contrast(1.06) sepia(0.12)';
+export const INTRO_STANCHION: PropAnchor = { x: 0.9175, y: 0.8, h: 0.4 };
 
 /** Plants in the slot scene, fractions of the play area (just in front of the balustrade, behind the characters and the board). */
 export const SCENE_PLANTS: PropAnchor[] = [
-	{ x: 0.125, y: 0.67, h: 0.477 },
-	{ x: 0.975, y: 0.67, h: 0.477, flip: true },
+	{ x: 0.1, y: 0.67, h: 0.477 },
+	{ x: 0.955, y: 0.67, h: 0.477, flip: true },
 ];

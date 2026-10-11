@@ -214,22 +214,22 @@
 	 * y = 0) and the summary tile hangs under the grid. The board is as large as that allows.
 	 */
 	/**
-	 * Slot size: 25 % larger than the previous 435 px grid (the summary tile under it is gone, so the
+	 * Slot size: 490 px grid height (10 % less than the 544 px pass, itself 25 % over the original 435 px) and cells 10 % wider (aspect 1.247) (the summary tile under it is gone, so the
 	 * whole height down to the BetUI is free).
 	 */
-	const BOARD_GRID_H = 544;
+	const BOARD_GRID_H = 490;
 	const maxBoardH = $derived(px(BOARD_GRID_H));
 	/**
 	 * The larger frame is raised by this many px @1280x720 (its crest runs over the top edge) so the
 	 * last row ends at the BetUI instead of behind it.
 	 */
-	const BOARD_RISE = 45;
+	const BOARD_RISE = -15;
 	const availH = $derived(Math.max(120, maxBoardH + framePadEstimate * 2 + 4));
 	const FRAME_BORDER = 2;
 	const framePadEstimate = $derived(Math.max(12, Math.min(15, Math.round(availW * 0.013))));
 	const gap = $derived(Math.max(5, Math.min(10, Math.round(availW * 0.0095))));
 	const framePad = $derived(Math.max(12, Math.min(15, Math.round(availW * 0.013))));
-	const BOARD_ASPECT = 1.02;
+	const BOARD_ASPECT = 1.247;
 	const maxInnerW = $derived(Math.max(100, availW - framePad * 2 - FRAME_BORDER * 2));
 	const maxInnerH = $derived(Math.max(80, availH - framePad * 2 - FRAME_BORDER * 2));
 	const fitCellW = $derived(Math.max(22, Math.floor((maxInnerW - gap * 4) / 5)));

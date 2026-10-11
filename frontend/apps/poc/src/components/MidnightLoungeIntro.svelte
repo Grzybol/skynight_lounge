@@ -7,8 +7,7 @@
 	import {
 		INTRO_GUARD,
 		INTRO_PLANTS,
-		INTRO_PLANT_TONE,
-		INTRO_STANCHION,
+			INTRO_STANCHION,
 		propBox,
 	} from '../game/loungeCharacters/propLayout';
 	import LoopingProp from './skyjump/LoopingProp.svelte';
@@ -116,7 +115,6 @@
 				rate={0.5}
 				z={1}
 				sharp
-				tone={INTRO_PLANT_TONE}
 			/>
 		{/each}
 		<LoopingProp prop="guard" {...propBox('guard', INTRO_GUARD)} z={2} sharp />
