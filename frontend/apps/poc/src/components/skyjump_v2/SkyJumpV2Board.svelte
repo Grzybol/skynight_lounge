@@ -1029,7 +1029,7 @@
 </script>
 
 {#if context.stateGame.screen === 'play'}
-	<!-- Stage: slot frame + grid (under full-viewport light sweep). -->
+	<!-- Stage: slot frame + grid . -->
 	<div
 		class="v2-board v2-board-stage"
 		style:left={`${left + px(BOARD_NUDGE_X)}px`}
@@ -1350,16 +1350,6 @@
 			</div>
 		</div>
 	</div>
-	<!-- Full-viewport icy sweep: over bg + slot frame; under summary + BetUI. -->
-	<div
-		class="viewport-light-sweep"
-		aria-hidden="true"
-		data-test="skyjump-v2-viewport-sweep"
-		style:left="0px"
-		style:top="0px"
-		style:width={`${canvas.width}px`}
-		style:height={`${canvas.height}px`}
-	></div>
 	<!-- Overlay chrome: READY summary + titles above sweep and BetUI crest. -->
 	<div
 		class="v2-board v2-board-overlay"
@@ -1656,25 +1646,6 @@
 		animation: board-grid-breathe 5.2s ease-in-out infinite;
 	}
 
-	/* Full 1280×720 icy light sweep — over stage/bg, under BetUI + READY. */
-	.viewport-light-sweep {
-		position: absolute;
-		z-index: 17;
-		pointer-events: none;
-		background: linear-gradient(
-			118deg,
-			transparent 34%,
-			rgba(170, 220, 255, 0.08) 42%,
-			rgba(230, 245, 255, 0.28) 50%,
-			rgba(170, 220, 255, 0.08) 58%,
-			transparent 66%
-		);
-		background-size: 220% 100%;
-		animation: viewport-light-sweep 5.2s linear infinite;
-		mix-blend-mode: soft-light;
-		opacity: 1;
-	}
-
 	/* Travelling icy highlight locked to the outer frame ring only. */
 	.board-edge-ring {
 		position: absolute;
@@ -1771,26 +1742,6 @@
 		}
 	}
 
-	@keyframes viewport-light-sweep {
-		0% {
-			background-position: 120% 0;
-			opacity: 0.4;
-		}
-		15% {
-			opacity: 0.85;
-		}
-		50% {
-			opacity: 1;
-		}
-		85% {
-			opacity: 0.85;
-		}
-		100% {
-			background-position: -120% 0;
-			opacity: 0.4;
-		}
-	}
-
 	@keyframes board-edge-spin {
 		to {
 			transform: rotate(360deg);
@@ -1842,7 +1793,6 @@
 
 		.board-surface,
 		.board-glass,
-		.viewport-light-sweep,
 		.board-edge-ring::before,
 		.board-glint,
 		.symbol {
@@ -1857,7 +1807,6 @@
 			transform: none;
 		}
 
-		.viewport-light-sweep,
 		.board-edge-ring {
 			opacity: 0;
 		}

@@ -40,9 +40,8 @@ const required = [
 	'assets/midnight-lounge/ui/start_screen.png',
 	'assets/midnight-lounge/scene/background_1.png',
 	'assets/midnight-lounge/scene/background_2_static.png',
-	...[1, 2].flatMap((clip) =>
-		[1, 2, 3, 4, 5, 6].map((n) => `assets/midnight-lounge/scene/background_3_animation_${clip}_frame_${n}.png`),
-	),
+	'assets/midnight-lounge/scene/background_3_static.png',
+	'assets/midnight-lounge/ui/intro_stanchion.png',
 	'assets/midnight-lounge/ui/betui2/spin.png',
 	'assets/midnight-lounge/ui/betui2/stop.png',
 	'assets/fonts/skyjump/marcellus-400.woff2',

@@ -3,14 +3,6 @@
 	import { resolveGameAsset } from '../../game/resolveGameAsset';
 	import { propBox } from '../../game/loungeCharacters/propLayout';
 	import { SCENE_PLANTS } from '../../game/loungeCharacters/propLayout';
-	import {
-		acquireSky,
-		skyFrameUrl,
-		skyState,
-		SKY_CROSSFADE_MS,
-		SKY_FRAME_COUNT,
-		type SkyClip,
-	} from '../../game/loungeScene/skyAnimation.svelte';
 	import LoungeCharacter from './LoungeCharacter.svelte';
 	import LoopingProp from './LoopingProp.svelte';
 
@@ -21,13 +13,10 @@
 
 	let plateFrame = $state({ left: '0px', top: '0px', width: '100%', height: '100%' });
 
-	// Planes, back to front: 3 = animated sky, 2 = buildings, 1 = balustrade and floor; plants come on top.
+	// Planes, back to front: 3 = static sky, 2 = buildings, 1 = balustrade and floor; plants come on top.
+	const planeThree = resolveGameAsset('assets/midnight-lounge/scene/background_3_static.png');
 	const planeOne = resolveGameAsset('assets/midnight-lounge/scene/background_1.png');
 	const planeTwo = resolveGameAsset('assets/midnight-lounge/scene/background_2_static.png');
-	const clips: SkyClip[] = [1, 2];
-	const frames = Array.from({ length: SKY_FRAME_COUNT }, (_, i) => i);
-
-	$effect(() => acquireSky());
 
 	$effect(() => {
 		const el = plate;
@@ -81,22 +70,7 @@
 </script>
 
 {#snippet scene(withPlants: boolean)}
-	<div class="sky" style:--sky-fade="{SKY_CROSSFADE_MS}ms">
-		{#each clips as clip}
-			{#each frames as frame}
-				<img
-					class:on={frame === 0
-						? skyState.clip === clip || skyState.fading === clip
-						: skyState.clip === clip && skyState.frame === frame}
-					class:first={frame === 0}
-					class:align={clip === 1}
-					src={skyFrameUrl(clip, frame)}
-					alt=""
-					draggable="false"
-				/>
-			{/each}
-		{/each}
-	</div>
+	<img class="plane" src={planeThree} alt="" draggable="false" />
 	<img class="plane buildings" src={planeTwo} alt="" draggable="false" />
 	<img class="plane" src={planeOne} alt="" draggable="false" />
 	{#if withPlants}
@@ -158,9 +132,7 @@
 		pointer-events: none;
 	}
 
-	.sky,
-	.plane,
-	.sky img {
+	.plane {
 		position: absolute;
 		inset: 0;
 		width: 100%;
@@ -170,31 +142,9 @@
 		user-select: none;
 	}
 
-	.sky img {
-		opacity: 0;
-	}
-
-	.sky img.on {
-		opacity: 1;
-	}
-
 	/* Buildings: raised so their lower line sits about two thirds up the 1280x720 window. */
 	.plane.buildings {
 		transform: translateY(-13%);
-	}
-
-	/*
-	 * Clip 2 is the same sky framed 1.155x closer (registered against clip 1: scale 1.1555, anchored at
-	 * the top-left corner). Clip 1 gets the same framing so switching clips never pops a zoom.
-	 */
-	.sky img.align {
-		transform: scale(1.1555);
-		transform-origin: 0 0;
-	}
-
-	/* A clip's first frame fades in (the two clips differ slightly); later frames cut instantly. */
-	.sky img.first {
-		transition: opacity var(--sky-fade) linear;
 	}
 
 	/*

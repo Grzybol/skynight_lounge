@@ -4,7 +4,13 @@
 	import { getContext } from '../game/context';
 	import { resolveGameAsset } from '../game/resolveGameAsset';
 	import { startSkyJumpBgm } from '../game/skyjump/skyjumpAudio';
-	import { INTRO_GUARD, INTRO_PLANTS, INTRO_PLANT_TONE, propBox } from '../game/loungeCharacters/propLayout';
+	import {
+		INTRO_GUARD,
+		INTRO_PLANTS,
+		INTRO_PLANT_TONE,
+		INTRO_STANCHION,
+		propBox,
+	} from '../game/loungeCharacters/propLayout';
 	import LoopingProp from './skyjump/LoopingProp.svelte';
 
 	type Props = {
@@ -16,6 +22,8 @@
 	const context = getContext();
 
 	const startSrc = resolveGameAsset('assets/midnight-lounge/ui/start_screen.png');
+	const stanchionSrc = resolveGameAsset('assets/midnight-lounge/ui/intro_stanchion.png');
+	const stanchionBox = propBox('stanchion', INTRO_STANCHION);
 	const ctaSrc = resolveGameAsset(
 		'assets/midnight-lounge/ui/ui_click_anywhere_to_continue_midnight_lounge.png',
 	);
@@ -35,8 +43,8 @@
 		ctaIdle = false;
 		props.onunlock();
 		startSkyJumpBgm();
-		// 0.9 s in total: 0.45 s of growing blur over the start screen, 0.45 s of the blur
-		// clearing over the slot.
+		// 0.9 s in total: 0.45 s of growing blur over the start screen's background (the figures
+		// fade out instead of blurring), 0.45 s of the blur clearing over the whole slot screen.
 		veil = 'in';
 		window.setTimeout(() => {
 			// Fully blurred: drop the entrance so the blur clears over the slot.
@@ -93,10 +101,12 @@
 		<img
 			class="entrance"
 			class:in={bgIn}
+			class:blur={veil !== 'off'}
 			src={startSrc}
 			alt=""
 			draggable="false"
 		/>
+		<div class="props" class:gone={veil !== 'off'}>
 		{#each INTRO_PLANTS as anchor, i}
 			<LoopingProp
 				prop="plant"
@@ -110,6 +120,14 @@
 			/>
 		{/each}
 		<LoopingProp prop="guard" {...propBox('guard', INTRO_GUARD)} z={2} sharp />
+		<img
+			class="stanchion"
+			src={stanchionSrc}
+			alt=""
+			draggable="false"
+			style={`left:${stanchionBox.left};top:${stanchionBox.top};height:${stanchionBox.height};${INTRO_STANCHION.flip ? 'transform:scaleX(-1);' : ''}`}
+		/>
+		</div>
 	</div>
 	{#if ready}
 		<button class="hit" type="button" aria-label="Click anywhere to continue" onclick={continueIn}>
@@ -117,6 +135,7 @@
 				class="cta"
 				class:in={ctaIn}
 				class:idle={ctaIdle && !reduceMotion}
+				class:gone={veil !== 'off'}
 				src={ctaSrc}
 				alt=""
 				draggable="false"
@@ -182,6 +201,42 @@
 	.entrance.in {
 		opacity: 1;
 		transform: scale(1);
+	}
+
+	.props {
+		position: absolute;
+		inset: 0;
+		transition: opacity 450ms linear;
+		pointer-events: none;
+	}
+
+	.props.gone {
+		opacity: 0;
+	}
+
+	.stanchion {
+		position: absolute;
+		z-index: 3;
+		width: auto;
+		pointer-events: none;
+		user-select: none;
+	}
+
+	/* Scaled so the blurred border never shows the black behind the artwork. */
+	.entrance.in.blur,
+	.entrance.blur {
+		filter: blur(36px);
+		opacity: 1;
+		transform: scale(1.12);
+		transition:
+			filter 450ms linear,
+			transform 450ms linear;
+	}
+
+	.lounge-intro .cta.gone {
+		animation: none;
+		opacity: 0;
+		transition: opacity 300ms linear;
 	}
 
 	.hit {
