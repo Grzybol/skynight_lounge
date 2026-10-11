@@ -42,7 +42,6 @@
 	import type { SkyJumpMysteryResultType } from '../../game/typesBookEvent';
 	import type { V2LineWin } from '../../game/skyjump_v2/types';
 	import SkyJumpV2WinCelebration from './SkyJumpV2WinCelebration.svelte';
-	import SkyJumpV2StatusPlate from './SkyJumpV2StatusPlate.svelte';
 	import SkyJumpV2ModeBadge from './SkyJumpV2ModeBadge.svelte';
 	import SkyJumpV2TitleBanner from './SkyJumpV2TitleBanner.svelte';
 
@@ -205,7 +204,7 @@
 	 */
 	const SUMMARY_BETUI_OVERLAP = 48;
 	/** Controlled +7% slot enlarge vs prior 1.05 pass (still capped by avail box). */
-	const BOARD_SCALE = 1.12;
+	const BOARD_SCALE = 1.5;
 	const statusSlot = GRID_SUMMARY_GAP + SUMMARY_H;
 	/** Sizing pin — do not include BOARD_NUDGE_DOWN so scale stays unchanged. */
 	const topPinned = $derived(originY + px(GRID_TOP_Y));
@@ -214,12 +213,17 @@
 	 * Height budget: the frame art starts at the top edge of the screen (its visible crest at
 	 * y = 0) and the summary tile hangs under the grid. The board is as large as that allows.
 	 */
-	const FRAME_GRID_BOTTOM_RATIO =
-		(V2_SLOT_BOARD_FRAME.holeBottom - FRAME_ART_VISIBLE_TOP) /
-		(V2_SLOT_BOARD_FRAME.holeBottom - V2_SLOT_BOARD_FRAME.holeTop);
-	const maxBoardH = $derived(
-		(px(SUMMARY_BOTTOM_LIMIT) - px(SUMMARY_PLATE_H) - px(SUMMARY_GRID_GAP)) / FRAME_GRID_BOTTOM_RATIO,
-	);
+	/**
+	 * Slot size: 25 % larger than the previous 435 px grid (the summary tile under it is gone, so the
+	 * whole height down to the BetUI is free).
+	 */
+	const BOARD_GRID_H = 544;
+	const maxBoardH = $derived(px(BOARD_GRID_H));
+	/**
+	 * The larger frame is raised by this many px @1280x720 (its crest runs over the top edge) so the
+	 * last row ends at the BetUI instead of behind it.
+	 */
+	const BOARD_RISE = 45;
 	const availH = $derived(Math.max(120, maxBoardH + framePadEstimate * 2 + 4));
 	const FRAME_BORDER = 2;
 	const framePadEstimate = $derived(Math.max(12, Math.min(15, Math.round(availW * 0.013))));
@@ -279,7 +283,7 @@
 		root.style.setProperty('--slot-right', `${left + px(BOARD_NUDGE_X) + surfaceW}px`);
 	});
 	/** Frame art's visible crest sits exactly on the top edge of the play area. */
-	const top = $derived(originY - slotFrameTop - FRAME_ART_VISIBLE_TOP * slotFrameH);
+	const top = $derived(originY - slotFrameTop - FRAME_ART_VISIBLE_TOP * slotFrameH - px(BOARD_RISE));
 	const statusLabel = $derived(winLabel || (showWin ? '—' : 'READY'));
 	/** Effective gap under grid (negative = intentional frame/READY meet). */
 	const summaryGapPx = $derived(-(framePad + FRAME_BORDER) + px(SUMMARY_GRID_GAP));
@@ -1365,22 +1369,6 @@
 		style:--summary-gap={`${summaryGapPx}px`}
 	>
 		<div class="board-overlay-spacer" style:height={`${surfaceH}px`} aria-hidden="true"></div>
-		<div
-			class="win-banner"
-			class:miss={showWin && wins.length === 0}
-			class:idle={!showWin && !winLabel}
-			data-test="skyjump-v2-status-bar"
-		>
-			<SkyJumpV2StatusPlate label={playerLabel(statusLabel)} sub={showWin ? playerSub(winSub) : ''}>
-				{#if showWin && featureWinX > 0}
-					<em>feature {featureWinX.toFixed(1)}x</em>
-				{/if}
-				{#if showWin && scatterCount > 0}
-					<em>{scatterCount} {scatterCount === 1 ? 'INVITATION' : 'INVITATIONS'}{scatterPerfect ? ' · V' : ''}</em>
-				{/if}
-			</SkyJumpV2StatusPlate>
-		</div>
-
 		{#if titleBannerShow && titleBannerSrc}
 			<SkyJumpV2TitleBanner src={titleBannerSrc} show={titleBannerShow} kind={titleBannerKind} />
 		{/if}

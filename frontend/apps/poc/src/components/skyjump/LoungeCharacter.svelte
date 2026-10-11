@@ -96,8 +96,8 @@
 	/* Beats Game.svelte's `.skyjump-viewport canvas` (z-index 19, position relative). */
 	:global(.skyjump-viewport canvas.lounge-character.figure) {
 		position: absolute;
-		/* Above the plate, below the board and every overlay. */
-		z-index: 1;
+		/* Above the slot (board z 16, Pixi canvas z 19), below the BetUI (z 21) and every overlay. */
+		z-index: 20;
 		pointer-events: none;
 		opacity: 0;
 		transition: opacity 350ms ease-out;

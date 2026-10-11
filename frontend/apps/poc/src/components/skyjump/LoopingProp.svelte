@@ -19,9 +19,11 @@
 		rate?: number;
 		/** Opt out of the celebration blur (scene plants stay crisp under the lifted plate). */
 		sharp?: boolean;
+		/** CSS filter (e.g. brightness) to blend the prop into its surroundings. */
+		tone?: string;
 	};
 
-	let { prop, left, top, height, flip = false, delayMs = 0, z = 1, blur = 0, rate = 1, sharp = false }: Props = $props();
+	let { prop, left, top, height, flip = false, delayMs = 0, z = 1, blur = 0, rate = 1, sharp = false, tone = '' }: Props = $props();
 
 	let canvas = $state<HTMLCanvasElement | null>(null);
 	const frame = $derived(PROP_FRAME[prop]);
@@ -51,7 +53,7 @@
 	style:aspect-ratio={`${frame.w} / ${frame.h}`}
 	style:transform={flip ? 'scaleX(-1)' : undefined}
 	style:z-index={z}
-	style:filter={blur > 0 ? `blur(${blur}px)` : undefined}
+	style:filter={[tone, blur > 0 ? `blur(${blur}px)` : ''].filter(Boolean).join(' ') || undefined}
 ></canvas>
 
 <style>

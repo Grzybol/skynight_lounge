@@ -43,16 +43,19 @@ export const STAGE_TOP_SHARE = 0.1;
 export const INTRO_GUARD: PropAnchor = { x: 0.2, y: 0.77, h: 0.52 };
 
 /**
- * The two plants in the doorway are painted into the artwork; the animated plants are drawn over
- * them (slightly larger, so the painted leaves stay hidden). Pot bases at the painted pots.
+ * The two animated plants stand in the foreground at the feet of the thick marble columns, one on
+ * each side (the plants painted into the doorway stay as they are).
  */
 export const INTRO_PLANTS: PropAnchor[] = [
-	{ x: 0.381, y: 0.505, h: 0.165 },
-	{ x: 0.662, y: 0.505, h: 0.165, flip: true },
+	{ x: 0.075, y: 0.775, h: 0.3 },
+	{ x: 0.925, y: 0.775, h: 0.3, flip: true },
 ];
 
-/** Plants in the slot scene, fractions of the play area (behind the characters and the board). */
+/** Darker and a little warmer than the drawn plant, to sit in the dim, red-lit foyer. */
+export const INTRO_PLANT_TONE = 'brightness(0.58) saturate(0.88) contrast(1.06) sepia(0.12)';
+
+/** Plants in the slot scene, fractions of the play area (just in front of the balustrade, behind the characters and the board). */
 export const SCENE_PLANTS: PropAnchor[] = [
-	{ x: 0.035, y: 0.86, h: 0.36 },
-	{ x: 0.97, y: 0.72, h: 0.3, flip: true },
+	{ x: 0.035, y: 0.67, h: 0.415 },
+	{ x: 0.965, y: 0.67, h: 0.415, flip: true },
 ];

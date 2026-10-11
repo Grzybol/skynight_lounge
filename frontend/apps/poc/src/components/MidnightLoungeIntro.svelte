@@ -4,7 +4,7 @@
 	import { getContext } from '../game/context';
 	import { resolveGameAsset } from '../game/resolveGameAsset';
 	import { startSkyJumpBgm } from '../game/skyjump/skyjumpAudio';
-	import { INTRO_GUARD, INTRO_PLANTS, propBox } from '../game/loungeCharacters/propLayout';
+	import { INTRO_GUARD, INTRO_PLANTS, INTRO_PLANT_TONE, propBox } from '../game/loungeCharacters/propLayout';
 	import LoopingProp from './skyjump/LoopingProp.svelte';
 
 	type Props = {
@@ -106,6 +106,7 @@
 				rate={0.5}
 				z={1}
 				sharp
+				tone={INTRO_PLANT_TONE}
 			/>
 		{/each}
 		<LoopingProp prop="guard" {...propBox('guard', INTRO_GUARD)} z={2} sharp />

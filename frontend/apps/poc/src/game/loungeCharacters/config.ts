@@ -119,9 +119,9 @@ export type CharacterPlacement = {
 };
 
 export const CHARACTER_PLACEMENT: Record<CharacterId, CharacterPlacement> = {
-	woman: { heightFrac: 0.699, centerXFrac: 0.865, bottomFrac: 0.962 },
+	woman: { heightFrac: 0.804, centerXFrac: 0.8, bottomFrac: 0.98 },
 	// Hand-drawn bartender: standing on the terrace floor left of the board, no bar in front of him.
-	bartender: { heightFrac: 0.68, centerXFrac: 0.095, bottomFrac: 0.905 },
+	bartender: { heightFrac: 0.782, centerXFrac: 0.2, bottomFrac: 0.93 },
 };
 
 /** Source frame size per character (bartender V3 is 562x748, woman 554x740). */

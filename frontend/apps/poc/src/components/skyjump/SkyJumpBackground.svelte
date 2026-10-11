@@ -89,6 +89,7 @@
 						? skyState.clip === clip || skyState.fading === clip
 						: skyState.clip === clip && skyState.frame === frame}
 					class:first={frame === 0}
+					class:align={clip === 1}
 					src={skyFrameUrl(clip, frame)}
 					alt=""
 					draggable="false"
@@ -96,7 +97,7 @@
 			{/each}
 		{/each}
 	</div>
-	<img class="plane" src={planeTwo} alt="" draggable="false" />
+	<img class="plane buildings" src={planeTwo} alt="" draggable="false" />
 	<img class="plane" src={planeOne} alt="" draggable="false" />
 	{#if withPlants}
 		{#each SCENE_PLANTS as anchor, i}
@@ -175,6 +176,20 @@
 
 	.sky img.on {
 		opacity: 1;
+	}
+
+	/* Buildings: raised so their lower line sits about two thirds up the 1280x720 window. */
+	.plane.buildings {
+		transform: translateY(-13%);
+	}
+
+	/*
+	 * Clip 2 is the same sky framed 1.155x closer (registered against clip 1: scale 1.1555, anchored at
+	 * the top-left corner). Clip 1 gets the same framing so switching clips never pops a zoom.
+	 */
+	.sky img.align {
+		transform: scale(1.1555);
+		transform-origin: 0 0;
 	}
 
 	/* A clip's first frame fades in (the two clips differ slightly); later frames cut instantly. */
