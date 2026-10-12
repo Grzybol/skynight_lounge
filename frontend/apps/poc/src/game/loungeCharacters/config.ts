@@ -24,7 +24,8 @@ export const CHARACTER_ANIMATIONS: Record<CharacterId, CharacterAnimationSet> = 
 	woman: {
 		idle: 'woman_idle',
 		variations: ['woman_idle_alt', 'woman_idle_1', 'woman_idle_2', 'woman_idle_3', 'woman_idle_4'],
-		wins: { mini: 'woman_mini_win', big: 'woman_big_win', mega: 'woman_mega_win' },
+		// One big-win clip serves big and everything above (like the bartender).
+			wins: { mini: 'woman_mini_win', big: 'woman_big_win', mega: 'woman_big_win' },
 	},
 	bartender: {
 		idle: 'bartender_idle',
@@ -41,12 +42,7 @@ export const CHARACTER_ANIMATIONS: Record<CharacterId, CharacterAnimationSet> = 
  * drop or replace later (swap the zip in tools/midnight-lounge/build-character-anims.py `MAP`, then
  * delete the id here). Nothing reads this at runtime except the dev warning in `createCharacter`.
  */
-export const OLD_VERSION_CLIPS: readonly string[] = [
-	'woman_idle_2', // feet2_przerywnik2_v1
-	'woman_idle_3', // feet2_przerywnik3_v1
-	'woman_big_win', // feet2_bigwin_v1
-	'woman_mega_win', // feet2_bigwin_v2
-];
+export const OLD_VERSION_CLIPS: readonly string[] = [];
 
 /** Playback speed per clip (default 1): the woman's extra interruption runs 33 % faster. */
 export const CLIP_RATE: Record<string, number> = { woman_idle_4: 1.33 };

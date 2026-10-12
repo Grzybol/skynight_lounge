@@ -98,7 +98,6 @@ const required = [
 		'woman_idle_4',
 		'woman_mini_win',
 		'woman_big_win',
-		'woman_mega_win',
 		'bartender_idle',
 		'bartender_idle_1',
 		'bartender_mini_win',

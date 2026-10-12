@@ -37,7 +37,7 @@ export const createCharacter = (
 /** Dev-only registry used by the QA inspector. */
 export const devRegistry = new Map<CharacterId, CharacterHandle>();
 
-if (import.meta.env.DEV) {
+if (import.meta.env.DEV && OLD_VERSION_CLIPS.length) {
 	console.info(
 		'[lounge-characters] woman clips still on the ORIGINAL (old, 562x748) export:',
 		OLD_VERSION_CLIPS.join(', '),

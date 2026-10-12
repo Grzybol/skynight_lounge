@@ -236,3 +236,9 @@ from production builds.
   `woman_mega_win`. They are listed in `OLD_VERSION_CLIPS` (`loungeCharacters/config.ts`), flagged `[OLD]` in the dev
   CHARACTERS inspector and logged once in the dev console, and marked in the build script's `MAP`.
 - Memory: a 1108x1480 frame decodes to ~6.5 MB; the player keeps ~25 per character.
+
+## Woman clips: video_converter_batch_v2 (current)
+
+All eight woman clips come from `video_converter_batch_v2.zip` (554x740, lossless, ~30 MB each). `feet2_bigwin_v3` is the only
+big-win clip, so it serves big and mega (`woman_mega_win` is gone). This supersedes the upscaled pass above: those packs and the
+`OLD_VERSION_CLIPS` list are now empty/unused (the multi-part pack support stays in the loader and build script).

@@ -33,17 +33,15 @@ import numpy as np
 # plant = background_asset_plant, bodyguard = bodyguard_drawn. The bartender's mega win reuses
 # `bartender_big_win` (see CHARACTER_ANIMATIONS), so it has no pack of its own.
 MAP = {
-    # Woman: the *_upscaled sources (1108x1480, ~2x) replace the originals clip by clip. Clips below are still the
-    # ORIGINAL 562x748 versions: no upscaled source yet (see OLD_VERSION_CLIPS in config.ts).
-    'woman_idle': 'feet2_podstawowa_v1_spritesheet_upscaled',
-    'woman_idle_alt': 'feet2_podstawowa2_v1_v1_spritesheet_upscaled',
-    'woman_idle_1': 'feet2_przerywnik1_v1_upscaled',
-    'woman_idle_2': 'feet2_przerywnik2_v1_spritesheet',  # OLD VERSION (no upscaled source yet)
-    'woman_idle_3': 'feet2_przerywnik3_v1_spritesheet',  # OLD VERSION (no upscaled source yet)
-    'woman_idle_4': 'feet2_przerywnik_extra_v1_v2_spritesheet_upscaled',
-    'woman_mini_win': 'feet2_win_v1_v1_spritesheet_upscaled',
-    'woman_big_win': 'feet2_bigwin_v1_spritesheet',  # OLD VERSION (no upscaled source yet)
-    'woman_mega_win': 'feet2_bigwin_v2_spritesheet',  # OLD VERSION (no upscaled source yet)
+    # Woman: video_converter_batch_v2 (554x740). One big-win clip serves big and mega (`woman_mega_win` has no pack).
+    'woman_idle': 'feet2_podstawowa1_v2_spritesheet',
+    'woman_idle_alt': 'feet2_podstawowa2_v2_spritesheet',
+    'woman_idle_1': 'feet2_przerywnik1_v3_spritesheet',
+    'woman_idle_2': 'feet2_przerywnik2_v2_spritesheet',
+    'woman_idle_3': 'feet2_przerywnik3_v2_spritesheet',
+    'woman_idle_4': 'feet2_extra_przerywnik_v11_spritesheet',
+    'woman_mini_win': 'feet2_win_v2_spritesheet',
+    'woman_big_win': 'feet2_bigwin_v3_spritesheet',
     'bartender_idle': 'barman2_idle_v1_spritesheet',
     'bartender_idle_1': 'barman2_przerywnik1_v1_spritesheet',
     'bartender_mini_win': 'barman2_win_v1_spritesheet',

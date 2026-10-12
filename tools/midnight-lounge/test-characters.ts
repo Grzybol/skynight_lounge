@@ -122,13 +122,13 @@ await test("tier -> category mapping reuses existing celebration tiers", () => {
   }
 });
 
-await test("animation table: 9 woman + 4 bartender clips, bartender big and mega share one clip", () => {
-  assert.equal(animationIdsFor("woman").length, 9);
+await test("animation table: 8 woman + 4 bartender clips, big and mega share one clip per character", () => {
+  assert.equal(animationIdsFor("woman").length, 8);
   assert.equal(animationIdsFor("bartender").length, 4);
   assert.equal(CHARACTER_ANIMATIONS.bartender.wins.mega, CHARACTER_ANIMATIONS.bartender.wins.big);
   assert.deepEqual(CHARACTER_ANIMATIONS.bartender.variations, ["bartender_idle_1"]);
   assert.ok(CHARACTER_ANIMATIONS.woman.variations.includes("woman_idle_alt"));
-  assert.equal(CHARACTER_ANIMATIONS.woman.wins.mega, "woman_mega_win");
+  assert.equal(CHARACTER_ANIMATIONS.woman.wins.mega, CHARACTER_ANIMATIONS.woman.wins.big);
 });
 
 await test("weighted variation pick respects weights and still avoids repeats", () => {
@@ -215,7 +215,7 @@ await test("controller: wins queue behind the playing clip, nothing is cut", asy
   mini.opts.onComplete();
   await tick();
   const mega = f.calls[2];
-  assert.equal(mega.id, "woman_mega_win");
+  assert.equal(mega.id, "woman_big_win");
   assert.equal(mega.opts.pingPong, true, "normal speed plays big/mega forward then reverse");
   assert.equal(c.getState().winCategory, "mega");
   mega.resolve(true);
