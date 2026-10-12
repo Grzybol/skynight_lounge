@@ -250,3 +250,12 @@ big-win clip, so it serves big and mega (`woman_mega_win` is gone). This superse
   scene, 240 s per tile, CSS only) -> buildings (14-image pool, `buildingsPool.svelte.ts`: a random other image cross-fades in every
   10-20 s, identical placement) + 3 chimney smokes (left, middle, right; opacity 0.15) -> balustrade/floor -> plants.
 - SPIN / STOP buttons: `spin_cartoon` / `stop_cartoon` (as `ui/betui2/spin.png`, `stop.png`).
+
+## Headers, buy-bonus plate, modal size, BetUI
+
+- The 15 section headers (`ui/headers/hdr_*.png`) are the byte-exact PNGs from `new_assets.zip` (2172x724). The buy-bonus screen's
+  header is `ui/ui_buy_bonus_badge.png`: it was a 1024x341 leftover and is now the zip's "BUY BONUS" plate (2172x724, byte copy).
+- Info / Paytable: the visible window is 57 px from every edge of the 1280x720 stage (`global.scss`).
+- BetUI: panels are `border-box`, the WIN counter is centred on the bar, the turbo / auto / buy group is pushed against SPIN.
+- Still low-res / lossy and not part of the lounge UI: `src/assets/skyjump/**/*.webp` (ski-era leftovers) and the skyjump_v2
+  `ui_header_*` (info, how-to-play, ~950 px wide) used above the Info/Paytable cards.

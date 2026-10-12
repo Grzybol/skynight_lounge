@@ -159,7 +159,7 @@
 		display: flex;
 		flex-direction: column;
 		width: 100%;
-		max-width: 760px;
+		max-width: none;
 		height: 100%;
 		max-height: 100%;
 		min-height: 0;

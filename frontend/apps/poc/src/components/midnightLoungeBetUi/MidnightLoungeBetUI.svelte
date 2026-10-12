@@ -190,7 +190,6 @@
 				</button>
 			</div>
 
-			<span class="win-gap" aria-hidden="true"></span>
 			<div class="panel win" aria-label={i18nDerived.win()}>
 				{#if stateUi.freeSpinCounterShow}
 					<span class="free-spins">
@@ -204,7 +203,7 @@
 
 			<button
 				type="button"
-				class="tile action"
+				class="tile action push"
 				class:active={stateBet.isTurbo}
 				aria-label={i18nDerived.turbo()}
 				aria-pressed={stateBet.isTurbo}
@@ -414,6 +413,11 @@
 		height: 30px;
 	}
 
+	/* The right-hand buttons sit against the SPIN button; the WIN counter is centred on the bar on its own. */
+	.push {
+		margin-left: auto;
+	}
+
 	.tile.wide {
 		width: 108px;
 	}
@@ -512,6 +516,7 @@
 	}
 
 	.panel {
+		box-sizing: border-box;
 		display: flex;
 		align-items: center;
 		gap: 10px;
@@ -614,13 +619,6 @@
 		height: 22px;
 	}
 
-	/* Keeps the buttons to the right of the WIN counter where they were; the counter itself is centred on the bar. */
-	.win-gap {
-		flex: 0 0 auto;
-		width: 189px;
-		height: 1px;
-	}
-
 	.win {
 		position: absolute;
 		left: 50%;
@@ -631,7 +629,8 @@
 		flex-direction: column;
 		justify-content: center;
 		gap: 6px;
-		width: 168px;
+		width: 190px;
+		padding: 0;
 		background: transparent;
 		border-color: transparent;
 		box-shadow: none;
