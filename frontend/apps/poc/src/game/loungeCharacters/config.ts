@@ -90,6 +90,8 @@ export const CHARACTER_TUNING: Record<CharacterId, CharacterTuning> = {
 		variationPrefetchLeadMs: 10_000,
 		idleLoopsMin: 1,
 		idleLoopsMax: 4,
+		// The extra interruption plays less often (weight 0.3 against 1 for the others).
+		variationWeights: { woman_idle_4: 0.3 },
 		// 0.2 s off each end (30 fps): 0.1 s from the earlier pass plus 0.1 s more.
 		trimHeadFrames: 6,
 		trimTailFrames: 6,

@@ -86,7 +86,11 @@
 {#snippet scene(withPlants: boolean)}
 	<img class="plane" src={planeThree} alt="" draggable="false" />
 	<!-- Drifting clouds between the farthest sky and the houses, upper half only. -->
-	<div class="clouds" style:background-image={`url(${clouds})`}></div>
+	<div class="clouds">
+		{#each [0, 1, 2, 3, 4, 5] as n}
+			<span class="tile" class:mirror={n % 2 === 1} style:background-image={`url(${clouds})`}></span>
+		{/each}
+	</div>
 	<!-- Second plane: buildings and the smoke over their chimneys share one raised layer. -->
 	<div class="buildings-layer">
 		<img
@@ -190,24 +194,36 @@
 	}
 
 	/*
-	 * Clouds: a band over the top of the scene (the lower half is hidden by the planes above anyway).
-	 * One tile is 348 cqh wide (band 42 cqh tall, 6000x724 art), so the loop is seamless.
+	 * Clouds: a band whose lower edge sits 3/5 down the scene (the planes above hide the rest). One tile
+	 * is 348 cqh wide (band 42 cqh tall, 6000x724 art). Tiles alternate normal / mirrored, so every seam
+	 * joins an image to its own mirror image and the loop never jumps; the strip drifts two tiles
+	 * (696 cqh) per cycle, at half the earlier speed (480 s per tile).
 	 */
 	.clouds {
 		position: absolute;
 		left: 0;
-		right: 0;
-		top: 4cqh;
+		top: 18cqh;
 		height: 42cqh;
-		background-repeat: repeat-x;
-		background-size: auto 100%;
-		animation: clouds-drift 240s linear infinite;
+		width: 2088cqh;
+		display: flex;
+		animation: clouds-drift 960s linear infinite;
 		pointer-events: none;
+	}
+
+	.clouds .tile {
+		flex: 0 0 348cqh;
+		height: 100%;
+		background-size: 100% 100%;
+		background-repeat: no-repeat;
+	}
+
+	.clouds .tile.mirror {
+		transform: scaleX(-1);
 	}
 
 	@keyframes clouds-drift {
 		to {
-			background-position-x: -348cqh;
+			transform: translateX(-696cqh);
 		}
 	}
 
