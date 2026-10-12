@@ -33,15 +33,15 @@ import numpy as np
 # plant = background_asset_plant, bodyguard = bodyguard_drawn. The bartender's mega win reuses
 # `bartender_big_win` (see CHARACTER_ANIMATIONS), so it has no pack of its own.
 MAP = {
-    # Woman: video_converter_batch_v2 (554x740). One big-win clip serves big and mega (`woman_mega_win` has no pack).
-    'woman_idle': 'feet2_podstawowa1_v2_spritesheet',
-    'woman_idle_alt': 'feet2_podstawowa2_v2_spritesheet',
-    'woman_idle_1': 'feet2_przerywnik1_v3_spritesheet',
-    'woman_idle_2': 'feet2_przerywnik2_v2_spritesheet',
-    'woman_idle_3': 'feet2_przerywnik3_v2_spritesheet',
-    'woman_idle_4': 'feet2_extra_przerywnik_v11_spritesheet',
-    'woman_mini_win': 'feet2_win_v2_spritesheet',
-    'woman_big_win': 'feet2_bigwin_v3_spritesheet',
+    # Woman: video_converter_batch_v3 (562x748). One big-win clip serves big and mega (`woman_mega_win` has no pack).
+    'woman_idle': 'feet2_podstawowa1_v3_spritesheet',
+    'woman_idle_alt': 'feet2_podstawowa2_v3_spritesheet',
+    'woman_idle_1': 'feet2_przerywnik1_v4_spritesheet',
+    'woman_idle_2': 'feet2_przerywnik2_v3_spritesheet',
+    'woman_idle_3': 'feet2_przerywnik3_v3_spritesheet',
+    'woman_idle_4': 'feet2_extra_przerywnik_v12_spritesheet',
+    'woman_mini_win': 'feet2_win_v3_spritesheet',
+    'woman_big_win': 'feet2_bigwin_v4_spritesheet',
     'bartender_idle': 'barman2_idle_v1_spritesheet',
     'bartender_idle_1': 'barman2_przerywnik1_v1_spritesheet',
     'bartender_mini_win': 'barman2_win_v1_spritesheet',

@@ -39,7 +39,7 @@
 		aspect-ratio: 256 / 342;
 		/* Plume sits above its anchor: bottom centre on (x, y). */
 		transform: translate(-50%, -99%);
-		opacity: 0.4;
+		opacity: 0.15;
 		pointer-events: none;
 	}
 </style>

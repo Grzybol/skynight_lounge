@@ -3,6 +3,11 @@
 	import { resolveGameAsset } from '../../game/resolveGameAsset';
 	import { propBox } from '../../game/loungeCharacters/propLayout';
 	import { SCENE_PLANTS } from '../../game/loungeCharacters/propLayout';
+	import {
+		acquireBuildings,
+		BUILDINGS_FADE_MS,
+		buildingsState,
+	} from '../../game/loungeScene/buildingsPool.svelte';
 	import LoungeCharacter from './LoungeCharacter.svelte';
 	import LoopingProp from './LoopingProp.svelte';
 	import ChimneySmoke from './ChimneySmoke.svelte';
@@ -18,16 +23,14 @@
 	const planeThree = resolveGameAsset('assets/midnight-lounge/scene/background_3_static.png');
 	/** Smoke over some chimneys of the buildings: tops measured on background_2 (1672x941). */
 	const CHIMNEYS = [
-		{ x: 103, y: 300, h: 150 },
-		{ x: 362, y: 355, h: 130 },
-		{ x: 665, y: 330, h: 140 },
-		{ x: 1030, y: 355, h: 125 },
-		{ x: 1130, y: 292, h: 155 },
-		{ x: 1262, y: 308, h: 135 },
-		{ x: 1525, y: 312, h: 145 },
-	].map((c, i) => ({ x: c.x / 1672, y: c.y / 941, h: c.h / 941, phaseMs: i * 530 }));
+		{ x: 103, y: 300, h: 150 }, // left
+		{ x: 665, y: 330, h: 140 }, // middle
+		{ x: 1525, y: 312, h: 145 }, // right
+	].map((c, i) => ({ x: c.x / 1672, y: c.y / 941, h: c.h / 941, phaseMs: i * 700 }));
 	const planeOne = resolveGameAsset('assets/midnight-lounge/scene/background_1.png');
-	const planeTwo = resolveGameAsset('assets/midnight-lounge/scene/background_2_static.png');
+	const clouds = resolveGameAsset('assets/midnight-lounge/scene/clouds_prop.png');
+
+	$effect(() => acquireBuildings());
 
 	$effect(() => {
 		const el = plate;
@@ -82,9 +85,26 @@
 
 {#snippet scene(withPlants: boolean)}
 	<img class="plane" src={planeThree} alt="" draggable="false" />
+	<!-- Drifting clouds between the farthest sky and the houses, upper half only. -->
+	<div class="clouds" style:background-image={`url(${clouds})`}></div>
 	<!-- Second plane: buildings and the smoke over their chimneys share one raised layer. -->
 	<div class="buildings-layer">
-		<img class="plane" src={planeTwo} alt="" draggable="false" />
+		<img
+			class="plane fade"
+			class:front={buildingsState.front === 'a'}
+			style:--fade={`${BUILDINGS_FADE_MS}ms`}
+			src={buildingsState.a}
+			alt=""
+			draggable="false"
+		/>
+		<img
+			class="plane fade"
+			class:front={buildingsState.front === 'b'}
+			style:--fade={`${BUILDINGS_FADE_MS}ms`}
+			src={buildingsState.b}
+			alt=""
+			draggable="false"
+		/>
 		{#each CHIMNEYS as chimney}
 			<ChimneySmoke {...chimney} />
 		{/each}
@@ -160,6 +180,37 @@
 	}
 
 	/* Buildings: raised so their lower line sits about two thirds up the 1280x720 window. */
+	.plane.fade {
+		opacity: 0;
+		transition: opacity var(--fade) ease;
+	}
+
+	.plane.fade.front {
+		opacity: 1;
+	}
+
+	/*
+	 * Clouds: a band over the top of the scene (the lower half is hidden by the planes above anyway).
+	 * One tile is 348 cqh wide (band 42 cqh tall, 6000x724 art), so the loop is seamless.
+	 */
+	.clouds {
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 4cqh;
+		height: 42cqh;
+		background-repeat: repeat-x;
+		background-size: auto 100%;
+		animation: clouds-drift 240s linear infinite;
+		pointer-events: none;
+	}
+
+	@keyframes clouds-drift {
+		to {
+			background-position-x: -348cqh;
+		}
+	}
+
 	.buildings-layer {
 		position: absolute;
 		inset: 0;

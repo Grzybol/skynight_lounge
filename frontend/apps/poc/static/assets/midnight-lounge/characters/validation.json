@@ -85,11 +85,11 @@
    "packBytes": 29454774
   },
   "woman_idle": {
-   "zip": "feet2_podstawowa1_v2_spritesheet.zip",
+   "zip": "feet2_podstawowa1_v3_spritesheet.zip",
    "sheets": 5,
    "frameSize": [
-    554,
-    740
+    562,
+    748
    ],
    "frames": 150,
    "frameDurationsMs": [
@@ -97,14 +97,14 @@
     34
    ],
    "emptyFrames": [],
-   "packBytes": 29903908
+   "packBytes": 32699044
   },
   "woman_idle_alt": {
-   "zip": "feet2_podstawowa2_v2_spritesheet.zip",
+   "zip": "feet2_podstawowa2_v3_spritesheet.zip",
    "sheets": 5,
    "frameSize": [
-    554,
-    740
+    562,
+    748
    ],
    "frames": 150,
    "frameDurationsMs": [
@@ -112,14 +112,14 @@
     34
    ],
    "emptyFrames": [],
-   "packBytes": 29996552
+   "packBytes": 32813580
   },
   "woman_idle_1": {
-   "zip": "feet2_przerywnik1_v3_spritesheet.zip",
+   "zip": "feet2_przerywnik1_v4_spritesheet.zip",
    "sheets": 5,
    "frameSize": [
-    554,
-    740
+    562,
+    748
    ],
    "frames": 150,
    "frameDurationsMs": [
@@ -127,14 +127,14 @@
     34
    ],
    "emptyFrames": [],
-   "packBytes": 29855542
+   "packBytes": 32754066
   },
   "woman_idle_2": {
-   "zip": "feet2_przerywnik2_v2_spritesheet.zip",
+   "zip": "feet2_przerywnik2_v3_spritesheet.zip",
    "sheets": 5,
    "frameSize": [
-    554,
-    740
+    562,
+    748
    ],
    "frames": 150,
    "frameDurationsMs": [
@@ -142,14 +142,14 @@
     34
    ],
    "emptyFrames": [],
-   "packBytes": 29623418
+   "packBytes": 32405142
   },
   "woman_idle_3": {
-   "zip": "feet2_przerywnik3_v2_spritesheet.zip",
+   "zip": "feet2_przerywnik3_v3_spritesheet.zip",
    "sheets": 5,
    "frameSize": [
-    554,
-    740
+    562,
+    748
    ],
    "frames": 150,
    "frameDurationsMs": [
@@ -157,14 +157,14 @@
     34
    ],
    "emptyFrames": [],
-   "packBytes": 29898296
+   "packBytes": 32685542
   },
   "woman_idle_4": {
-   "zip": "feet2_extra_przerywnik_v11_spritesheet.zip",
+   "zip": "feet2_extra_przerywnik_v12_spritesheet.zip",
    "sheets": 5,
    "frameSize": [
-    554,
-    740
+    562,
+    748
    ],
    "frames": 150,
    "frameDurationsMs": [
@@ -172,14 +172,14 @@
     34
    ],
    "emptyFrames": [],
-   "packBytes": 29934808
+   "packBytes": 32800898
   },
   "woman_mini_win": {
-   "zip": "feet2_win_v2_spritesheet.zip",
+   "zip": "feet2_win_v3_spritesheet.zip",
    "sheets": 5,
    "frameSize": [
-    554,
-    740
+    562,
+    748
    ],
    "frames": 150,
    "frameDurationsMs": [
@@ -187,14 +187,14 @@
     34
    ],
    "emptyFrames": [],
-   "packBytes": 29634222
+   "packBytes": 32428182
   },
   "woman_big_win": {
-   "zip": "feet2_bigwin_v3_spritesheet.zip",
+   "zip": "feet2_bigwin_v4_spritesheet.zip",
    "sheets": 5,
    "frameSize": [
-    554,
-    740
+    562,
+    748
    ],
    "frames": 150,
    "frameDurationsMs": [
@@ -202,7 +202,7 @@
     34
    ],
    "emptyFrames": [],
-   "packBytes": 29649362
+   "packBytes": 32471120
   }
  },
  "seams": {
@@ -233,44 +233,44 @@
    "lastToOwnFirst": 0.5464054798561288
   },
   "woman_idle": {
-   "lastToOwnFirst": 0.6048858425212216,
-   "lastToIdleFirst": 0.6048858425212216,
-   "idleLastToFirst": 0.6048858425212216
+   "lastToOwnFirst": 0.5830982263497441,
+   "lastToIdleFirst": 0.5830982263497441,
+   "idleLastToFirst": 0.5830982263497441
   },
   "woman_idle_alt": {
-   "lastToOwnFirst": 0.596537467069958,
-   "lastToIdleFirst": 0.5995511757244609,
-   "idleLastToFirst": 0.6064445311737731
+   "lastToOwnFirst": 0.5771386806097398,
+   "lastToIdleFirst": 0.5779897044550593,
+   "idleLastToFirst": 0.5842644442118484
   },
   "woman_idle_1": {
-   "lastToOwnFirst": 0.6049303590594204,
-   "lastToIdleFirst": 0.6018032247048493,
-   "idleLastToFirst": 0.6095399551175724
+   "lastToOwnFirst": 0.5828270405541706,
+   "lastToIdleFirst": 0.580068795554456,
+   "idleLastToFirst": 0.5872159685614783
   },
   "woman_idle_2": {
-   "lastToOwnFirst": 0.5967527319738511,
-   "lastToIdleFirst": 0.5946854571177675,
-   "idleLastToFirst": 0.6090228314957556
+   "lastToOwnFirst": 0.5816887738595924,
+   "lastToIdleFirst": 0.5787378442156546,
+   "idleLastToFirst": 0.5863655394218509
   },
   "woman_idle_3": {
-   "lastToOwnFirst": 0.6029112596350864,
-   "lastToIdleFirst": 0.5998554737047517,
-   "idleLastToFirst": 0.6080574934139916
+   "lastToOwnFirst": 0.5821312348944754,
+   "lastToIdleFirst": 0.5797476544807506,
+   "idleLastToFirst": 0.5865118370220945
   },
   "woman_idle_4": {
-   "lastToOwnFirst": 0.6055999365791784,
-   "lastToIdleFirst": 0.6029332129963899,
-   "idleLastToFirst": 0.6049779246755781
+   "lastToOwnFirst": 0.5838659913981769,
+   "lastToIdleFirst": 0.5821883266409119,
+   "idleLastToFirst": 0.5846747911393609
   },
   "woman_mini_win": {
-   "lastToOwnFirst": 0.5999268221289882,
-   "lastToIdleFirst": 0.599553614986828,
-   "idleLastToFirst": 0.6093582300712265
+   "lastToOwnFirst": 0.5819462814242488,
+   "lastToIdleFirst": 0.5805403971682493,
+   "idleLastToFirst": 0.5882923858640836
   },
   "woman_big_win": {
-   "lastToOwnFirst": 0.5986986535271733,
-   "lastToIdleFirst": 0.5990249048687677,
-   "idleLastToFirst": 0.608072128988194
+   "lastToOwnFirst": 0.5792534540506594,
+   "lastToIdleFirst": 0.5790375758844463,
+   "idleLastToFirst": 0.5869239680666831
   }
  },
  "totalFrames": 2100

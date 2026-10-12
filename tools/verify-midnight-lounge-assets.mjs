@@ -41,6 +41,8 @@ const required = [
 	'assets/midnight-lounge/scene/background_1.png',
 	'assets/midnight-lounge/scene/background_2_static.png',
 	'assets/midnight-lounge/scene/background_3_static.png',
+	'assets/midnight-lounge/scene/clouds_prop.png',
+	...Array.from({ length: 13 }, (_, i) => `assets/midnight-lounge/scene/background_2_static_frame_${i + 2}.png`),
 	'assets/midnight-lounge/ui/intro_stanchion.png',
 	'assets/midnight-lounge/ui/start_loading.png',
 	'assets/midnight-lounge/ui/betui2/spin.png',

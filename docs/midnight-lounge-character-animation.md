@@ -242,3 +242,11 @@ from production builds.
 All eight woman clips come from `video_converter_batch_v2.zip` (554x740, lossless, ~30 MB each). `feet2_bigwin_v3` is the only
 big-win clip, so it serves big and mega (`woman_mega_win` is gone). This supersedes the upscaled pass above: those packs and the
 `OLD_VERSION_CLIPS` list are now empty/unused (the multi-part pack support stays in the loader and build script).
+
+## Scene update (video_converter_batch_v3 and background pack)
+
+- Woman clips: `video_converter_batch_v3` (562x748, `bigwin_v4` serves big and mega).
+- Slot scene back to front: `background_3_static.png` (= background_farthest) -> `clouds_prop.png` drifting band (top 46 % of the
+  scene, 240 s per tile, CSS only) -> buildings (14-image pool, `buildingsPool.svelte.ts`: a random other image cross-fades in every
+  10-20 s, identical placement) + 3 chimney smokes (left, middle, right; opacity 0.15) -> balustrade/floor -> plants.
+- SPIN / STOP buttons: `spin_cartoon` / `stop_cartoon` (as `ui/betui2/spin.png`, `stop.png`).
