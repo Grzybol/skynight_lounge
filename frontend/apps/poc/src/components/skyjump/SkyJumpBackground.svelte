@@ -6,6 +6,7 @@
 	import {
 		acquireBuildings,
 		BUILDINGS_FADE_MS,
+		BUILDINGS_POOL,
 		buildingsState,
 	} from '../../game/loungeScene/buildingsPool.svelte';
 	import LoungeCharacter from './LoungeCharacter.svelte';
@@ -28,6 +29,7 @@
 		{ x: 1525, y: 312, h: 145 }, // right
 	].map((c, i) => ({ x: c.x / 1672, y: c.y / 941, h: c.h / 941, phaseMs: i * 700 }));
 	const planeOne = resolveGameAsset('assets/midnight-lounge/scene/background_1.png');
+	const planeTwoBase = BUILDINGS_POOL[0];
 	const clouds = resolveGameAsset('assets/midnight-lounge/scene/clouds_prop.png');
 
 	$effect(() => acquireBuildings());
@@ -93,6 +95,8 @@
 	</div>
 	<!-- Second plane: buildings and the smoke over their chimneys share one raised layer. -->
 	<div class="buildings-layer">
+		<!-- Always-visible base: whatever happens in the cross-fade, the houses never let the sky through. -->
+		<img class="plane" src={planeTwoBase} alt="" draggable="false" />
 		<img
 			class="plane fade"
 			class:front={buildingsState.front === 'a'}
@@ -184,17 +188,24 @@
 	}
 
 	/* Buildings: raised so their lower line sits about two thirds up the 1280x720 window. */
+	/*
+	 * Cross-fade without a see-through moment: the incoming image fades in on top (z 2) while the outgoing
+	 * one stays opaque underneath and only switches off after the fade (delayed, instant).
+	 */
 	.plane.fade {
+		z-index: 1;
 		opacity: 0;
-		transition: opacity var(--fade) ease;
+		transition: opacity 0s linear var(--fade);
 	}
 
 	.plane.fade.front {
+		z-index: 2;
 		opacity: 1;
+		transition: opacity var(--fade) ease;
 	}
 
 	/*
-	 * Clouds: a band whose lower edge sits 3/5 down the scene (the planes above hide the rest). One tile
+	 * Clouds: a band whose lower edge sits 3/5 up the scene (40 % from the top) (the planes above hide the rest). One tile
 	 * is 348 cqh wide (band 42 cqh tall, 6000x724 art). Tiles alternate normal / mirrored, so every seam
 	 * joins an image to its own mirror image and the loop never jumps; the strip drifts two tiles
 	 * (696 cqh) per cycle, at half the earlier speed (480 s per tile).
@@ -202,7 +213,7 @@
 	.clouds {
 		position: absolute;
 		left: 0;
-		top: 18cqh;
+		top: -2cqh;
 		height: 42cqh;
 		width: 2088cqh;
 		display: flex;
