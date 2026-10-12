@@ -139,9 +139,20 @@ const manifestPath = join(upload, 'assets/midnight-lounge/characters/manifest.js
 if (existsSync(manifestPath)) {
 	const manifest = JSON.parse(readFileSync(manifestPath, 'utf8'));
 	for (const [id, entry] of Object.entries(manifest.animations)) {
-		const packPath = join(upload, 'assets/midnight-lounge/characters', entry.file);
-		if (!existsSync(packPath)) failures.push(`MISSING pack for ${id}`);
-		else if (statSync(packPath).size !== entry.bytes) failures.push(`SIZE pack ${id} != manifest`);
+		// Big packs are stored in parts that concatenate into the pack (manifest `parts`).
+		const files = entry.parts ?? [{ file: entry.file, bytes: entry.bytes }];
+		let total = 0;
+		for (const part of files) {
+			const partPath = join(upload, 'assets/midnight-lounge/characters', part.file);
+			if (!existsSync(partPath)) {
+				failures.push(`MISSING pack file ${part.file} for ${id}`);
+				continue;
+			}
+			const size = statSync(partPath).size;
+			total += size;
+			if (size !== part.bytes) failures.push(`SIZE pack file ${part.file} != manifest`);
+		}
+		if (total !== entry.bytes) failures.push(`SIZE pack ${id} parts != manifest`);
 	}
 }
 
