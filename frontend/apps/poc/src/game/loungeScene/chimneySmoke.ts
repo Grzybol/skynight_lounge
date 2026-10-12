@@ -8,7 +8,7 @@ import { resolveGameAsset } from '../resolveGameAsset';
 
 export const SMOKE_FRAME_COUNT = 4;
 /** Time one frame takes to dissolve into the next (the loop is 4 x this). */
-export const SMOKE_STEP_MS = 800;
+export const SMOKE_STEP_MS = 400;
 export const SMOKE_FPS = 30;
 export const SMOKE_CANVAS = { w: 256, h: 342 } as const;
 

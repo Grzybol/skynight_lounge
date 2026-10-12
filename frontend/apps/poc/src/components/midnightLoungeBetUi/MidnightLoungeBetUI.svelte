@@ -626,6 +626,8 @@
 		left: 50%;
 		top: 50%;
 		transform: translate(-50%, -50%);
+		/* Display only: its box reaches over the "+" bet button and must never swallow clicks. */
+		pointer-events: none;
 		flex-direction: column;
 		justify-content: center;
 		gap: 6px;
