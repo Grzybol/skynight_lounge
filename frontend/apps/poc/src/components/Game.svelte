@@ -177,6 +177,21 @@
 	}
 
 	/*
+	 * Info, paytable, settings, bet menu and buy bonus: Marcellus bold (the family ships one weight, so
+	 * the bold is the browser's). The white bold captions under the section headers (h2/h3) keep theirs.
+	 */
+	.skyjump-viewport :global(.pop-up-wrap) {
+		--skyjump-font-display: 'Marcellus', 'Cinzel', Georgia, 'Times New Roman', serif;
+		--skyjump-font-ui: 'Marcellus', 'Cinzel', Georgia, 'Times New Roman', serif;
+		--skyjump-font-sans: 'Marcellus', 'Cinzel', Georgia, 'Times New Roman', serif;
+	}
+
+	.skyjump-viewport :global(.pop-up-wrap *:not(h2):not(h3)) {
+		font-family: 'Marcellus', 'Cinzel', Georgia, 'Times New Roman', serif;
+		font-weight: 700;
+	}
+
+	/*
 	 * Win focus: the HUD blurs in while a celebration opens and blurs back out when it closes
 	 * (700 ms, V2_WIN_BLUR_FADE_MS). `data-win-plate` is set for the whole celebration.
 	 */

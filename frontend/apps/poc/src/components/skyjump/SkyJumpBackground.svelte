@@ -5,6 +5,7 @@
 	import { SCENE_PLANTS } from '../../game/loungeCharacters/propLayout';
 	import LoungeCharacter from './LoungeCharacter.svelte';
 	import LoopingProp from './LoopingProp.svelte';
+	import ChimneySmoke from './ChimneySmoke.svelte';
 
 	const context = getContext();
 	let plate = $state<HTMLDivElement | null>(null);
@@ -15,6 +16,16 @@
 
 	// Planes, back to front: 3 = static sky, 2 = buildings, 1 = balustrade and floor; plants come on top.
 	const planeThree = resolveGameAsset('assets/midnight-lounge/scene/background_3_static.png');
+	/** Smoke over some chimneys of the buildings: tops measured on background_2 (1672x941). */
+	const CHIMNEYS = [
+		{ x: 103, y: 300, h: 150 },
+		{ x: 362, y: 355, h: 130 },
+		{ x: 665, y: 330, h: 140 },
+		{ x: 1030, y: 355, h: 125 },
+		{ x: 1130, y: 292, h: 155 },
+		{ x: 1262, y: 308, h: 135 },
+		{ x: 1525, y: 312, h: 145 },
+	].map((c, i) => ({ x: c.x / 1672, y: c.y / 941, h: c.h / 941, phaseMs: i * 530 }));
 	const planeOne = resolveGameAsset('assets/midnight-lounge/scene/background_1.png');
 	const planeTwo = resolveGameAsset('assets/midnight-lounge/scene/background_2_static.png');
 
@@ -71,7 +82,13 @@
 
 {#snippet scene(withPlants: boolean)}
 	<img class="plane" src={planeThree} alt="" draggable="false" />
-	<img class="plane buildings" src={planeTwo} alt="" draggable="false" />
+	<!-- Second plane: buildings and the smoke over their chimneys share one raised layer. -->
+	<div class="buildings-layer">
+		<img class="plane" src={planeTwo} alt="" draggable="false" />
+		{#each CHIMNEYS as chimney}
+			<ChimneySmoke {...chimney} />
+		{/each}
+	</div>
 	<img class="plane" src={planeOne} alt="" draggable="false" />
 	{#if withPlants}
 		{#each SCENE_PLANTS as anchor, i}
@@ -143,8 +160,11 @@
 	}
 
 	/* Buildings: raised so their lower line sits about two thirds up the 1280x720 window. */
-	.plane.buildings {
+	.buildings-layer {
+		position: absolute;
+		inset: 0;
 		transform: translateY(-13%);
+		pointer-events: none;
 	}
 
 	/*

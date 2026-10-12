@@ -8,6 +8,7 @@
  */
 import {
 	CHARACTER_ANIMATIONS,
+	CLIP_RATE,
 	CHARACTER_TUNING,
 	WIN_PRIORITY,
 	type CharacterId,
@@ -175,6 +176,7 @@ export class CharacterController {
 		const ok = await this.player.play(animationId, {
 			loop: false,
 			pingPong,
+			rate: CLIP_RATE[animationId],
 			// Skip the reverse half when a higher win is already waiting.
 			reverseIf: () => !(epoch === this.epoch && this.pendingWin),
 			onNearEnd: () => {

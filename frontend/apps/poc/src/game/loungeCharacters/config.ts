@@ -35,6 +35,9 @@ export const CHARACTER_ANIMATIONS: Record<CharacterId, CharacterAnimationSet> = 
 	},
 };
 
+/** Playback speed per clip (default 1): the woman's extra interruption runs 33 % faster. */
+export const CLIP_RATE: Record<string, number> = { woman_idle_4: 1.33 };
+
 /** Every id this character can ever play. */
 export const animationIdsFor = (id: CharacterId): string[] => {
 	const set = CHARACTER_ANIMATIONS[id];

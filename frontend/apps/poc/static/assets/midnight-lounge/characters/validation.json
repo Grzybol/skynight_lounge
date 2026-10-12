@@ -1,19 +1,5 @@
 {
  "animations": {
-  "plant_loop": {
-   "zip": "background_asset_plant.zip",
-   "sheets": 30,
-   "frameSize": [
-    562,
-    748
-   ],
-   "frames": 150,
-   "frameDurationsMs": [
-    33
-   ],
-   "emptyFrames": [],
-   "packBytes": 30990720
-  },
   "guard_loop": {
    "zip": "bodyguard_drawn.zip",
    "sheets": 38,
@@ -209,12 +195,23 @@
    ],
    "emptyFrames": [],
    "packBytes": 16790306
+  },
+  "plant_loop": {
+   "zip": "background_prop_plant_v4.zip",
+   "sheets": 30,
+   "frameSize": [
+    562,
+    748
+   ],
+   "frames": 150,
+   "frameDurationsMs": [
+    33
+   ],
+   "emptyFrames": [],
+   "packBytes": 29454774
   }
  },
  "seams": {
-  "plant_loop": {
-   "lastToOwnFirst": 0.7409979399394827
-  },
   "guard_loop": {
    "lastToOwnFirst": 0.3790056483207181
   },
@@ -282,6 +279,9 @@
    "lastToOwnFirst": 0.31668197042647533,
    "lastToIdleFirst": 0.31731830551696577,
    "idleLastToFirst": 0.32233643214645935
+  },
+  "plant_loop": {
+   "lastToOwnFirst": 0.5464054798561288
   }
  },
  "totalFrames": 2250

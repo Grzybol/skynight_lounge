@@ -1527,7 +1527,7 @@
 		/* Shared board glass only. Reel strips sit on top; no per-cell cards. */
 		background-image:
 			radial-gradient(ellipse at 50% 0%, rgba(212, 168, 92, 0.14), transparent 58%),
-			linear-gradient(180deg, rgba(36, 10, 18, 0.34), rgba(6, 3, 6, 0.46));
+			linear-gradient(180deg, rgba(36, 10, 18, 0.51), rgba(6, 3, 6, 0.69));
 		box-shadow:
 			inset 0 0 18px rgba(0, 0, 0, 0.4),
 			inset 0 0 0 1px rgba(212, 168, 92, 0.2);

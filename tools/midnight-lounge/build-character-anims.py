@@ -47,7 +47,7 @@ MAP = {
     'bartender_mini_win': 'barman2_win_v1_spritesheet',
     'bartender_big_win': 'barman2_bigwin_v1_spritesheet',
     # Looping scene props (not characters): plant 562x748, bodyguard 488x862.
-    'plant_loop': 'background_asset_plant',
+    'plant_loop': 'background_prop_plant_v4',
     'guard_loop': 'bodyguard_drawn',
 }
 def encode(args):

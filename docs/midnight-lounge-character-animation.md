@@ -221,3 +221,7 @@ from production builds.
 - BetUI: the WIN counter is centred on the bar (a spacer keeps the right-hand buttons in place), its label is 20 px, and the
   SPIN/STOP button is centred on the bar (its lower edge runs ~20 px past the screen bottom).
 - `bet_increase_sound.mp3` (the "+" click) was cut to half its length (2.0 s -> 1.0 s, 40 ms fade); the duration meta follows.
+- Plants: `background_prop_plant_v4` (same 562x748 frame and ground anchor). `woman_idle_4` plays 33 % faster (`CLIP_RATE`).
+- Chimney smoke: `scene/smoke_frame_1..4.png` cross-faded at 30 fps by `game/loungeScene/chimneySmoke.ts` (one shared timer,
+  per-chimney phase), 30 % opacity, drawn in the raised buildings layer; chimney tops are listed in `SkyJumpBackground.svelte`.
+- Panels (`.pop-up-wrap`) use Marcellus at weight 700 (synthetic bold: the family ships one weight), except h2/h3 captions.
