@@ -1,4 +1,4 @@
-import { CHARACTER_TUNING, type CharacterId } from './config';
+import { CHARACTER_TUNING, OLD_VERSION_CLIPS, type CharacterId } from './config';
 import { CharacterAnimationPlayer } from './CharacterAnimationPlayer';
 import { CharacterController, type ControllerOptions } from './CharacterController';
 import { FramePackStore } from './framePackStore';
@@ -36,3 +36,10 @@ export const createCharacter = (
 
 /** Dev-only registry used by the QA inspector. */
 export const devRegistry = new Map<CharacterId, CharacterHandle>();
+
+if (import.meta.env.DEV) {
+	console.info(
+		'[lounge-characters] woman clips still on the ORIGINAL (old, 562x748) export:',
+		OLD_VERSION_CLIPS.join(', '),
+	);
+}

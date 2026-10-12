@@ -225,3 +225,14 @@ from production builds.
 - Chimney smoke: `scene/smoke_frame_1..4.png` cross-faded at 30 fps by `game/loungeScene/chimneySmoke.ts` (one shared timer,
   per-chimney phase), 30 % opacity, drawn in the raised buildings layer; chimney tops are listed in `SkyJumpBackground.svelte`.
 - Panels (`.pop-up-wrap`) use Marcellus at weight 700 (synthetic bold: the family ships one weight), except h2/h3 captions.
+
+## Upscaled woman clips
+
+- `woman_idle`, `woman_idle_alt`, `woman_idle_1`, `woman_idle_4`, `woman_mini_win` now come from the `*_upscaled` zips
+  (1108x1480, lossless, ~128 MB each). They are stored in parts (`.pack`, `.pack.1`, `.pack.2`, <= 60 MB each, manifest `parts`)
+  because GitHub rejects files above 100 MiB; the loader streams the parts back to back. `build-character-anims.py` splits
+  automatically (`--split-only` re-splits an existing build).
+- **OLD VERSION clips** (no upscaled source yet, still 562x748): `woman_idle_2`, `woman_idle_3`, `woman_big_win`,
+  `woman_mega_win`. They are listed in `OLD_VERSION_CLIPS` (`loungeCharacters/config.ts`), flagged `[OLD]` in the dev
+  CHARACTERS inspector and logged once in the dev console, and marked in the build script's `MAP`.
+- Memory: a 1108x1480 frame decodes to ~6.5 MB; the player keeps ~25 per character.

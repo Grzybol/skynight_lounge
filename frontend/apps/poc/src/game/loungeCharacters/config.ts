@@ -35,6 +35,19 @@ export const CHARACTER_ANIMATIONS: Record<CharacterId, CharacterAnimationSet> = 
 	},
 };
 
+/**
+ * OLD VERSION clips: the woman's clips that still come from the original 562x748 export because no
+ * upscaled (1108x1480) source exists yet. Listed so they are easy to find during manual tests and to
+ * drop or replace later (swap the zip in tools/midnight-lounge/build-character-anims.py `MAP`, then
+ * delete the id here). Nothing reads this at runtime except the dev warning in `createCharacter`.
+ */
+export const OLD_VERSION_CLIPS: readonly string[] = [
+	'woman_idle_2', // feet2_przerywnik2_v1
+	'woman_idle_3', // feet2_przerywnik3_v1
+	'woman_big_win', // feet2_bigwin_v1
+	'woman_mega_win', // feet2_bigwin_v2
+];
+
 /** Playback speed per clip (default 1): the woman's extra interruption runs 33 % faster. */
 export const CLIP_RATE: Record<string, number> = { woman_idle_4: 1.33 };
 
@@ -152,6 +165,8 @@ export type PackManifestEntry = {
 	offsets: number[];
 	sizes: number[];
 	bytes: number;
+	/** Packs above ~90 MB are stored as several files (GitHub's 100 MiB limit); concatenated they are `file`. */
+	parts?: { file: string; bytes: number }[];
 };
 
 export type PackManifest = {

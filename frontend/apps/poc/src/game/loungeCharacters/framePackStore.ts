@@ -81,18 +81,22 @@ export class FramePack {
 
 	private async pump(signal: AbortSignal) {
 		try {
-			const res = await fetch(packUrl(this.entry.file), { signal });
-			if (!res.ok || !res.body) throw new Error(`pack ${this.id}: HTTP ${res.status}`);
-			const reader = res.body.getReader();
-			for (;;) {
-				const { done, value } = await reader.read();
-				if (done) break;
-				if (this.received + value.length > this.data.length) throw new Error('pack overrun');
-				this.data.set(value, this.received);
-				this.received += value.length;
-				const dt = performance.now() - this.startedAt;
-				if (dt > 0) this.rate = this.received / dt;
-				this.notify();
+			// A pack is one file, or several parts that concatenate into it (see PackManifestEntry.parts).
+			const files = this.entry.parts?.map((part) => part.file) ?? [this.entry.file];
+			for (const file of files) {
+				const res = await fetch(packUrl(file), { signal });
+				if (!res.ok || !res.body) throw new Error(`pack ${this.id}: HTTP ${res.status}`);
+				const reader = res.body.getReader();
+				for (;;) {
+					const { done, value } = await reader.read();
+					if (done) break;
+					if (this.received + value.length > this.data.length) throw new Error('pack overrun');
+					this.data.set(value, this.received);
+					this.received += value.length;
+					const dt = performance.now() - this.startedAt;
+					if (dt > 0) this.rate = this.received / dt;
+					this.notify();
+				}
 			}
 			if (this.received !== this.entry.bytes) {
 				throw new Error(`pack ${this.id}: got ${this.received}/${this.entry.bytes} bytes`);

@@ -7,6 +7,7 @@
 	import {
 		animationIdsFor,
 		CHARACTER_ANIMATIONS,
+		OLD_VERSION_CLIPS,
 		type CharacterId,
 		type WinCategory,
 	} from '../../game/loungeCharacters/config';
@@ -100,6 +101,8 @@
 		};
 		return onLoungeWin((e) => events.push({ ...e, at: performance.now() }));
 	});
+	/** Marks clips that are still the original (not upscaled) export. */
+	const oldTag = (id: string) => (OLD_VERSION_CLIPS.includes(id) ? ' [OLD]' : '');
 </script>
 
 <div class="char-qa" data-test="lounge-character-qa">
@@ -115,7 +118,7 @@
 		<div class="row">
 			<button onclick={() => ctl()?.playManual(CHARACTER_ANIMATIONS[who].idle)}>idle</button>
 			{#each CHARACTER_ANIMATIONS[who].variations as v, i}
-				<button onclick={() => ctl()?.playManual(v)}>idle {i + 1}</button>
+				<button onclick={() => ctl()?.playManual(v)}>idle {i + 1}{oldTag(v)}</button>
 			{/each}
 		</div>
 		<div class="row">
@@ -128,7 +131,7 @@
 		<div class="row">
 			{#each animationIdsFor(who) as id}
 				<button class="tiny" onclick={() => ctl()?.playManual(id)}
-					>{id.replace(`${who}_`, '')}</button
+					>{id.replace(`${who}_`, '')}{oldTag(id)}</button
 				>
 			{/each}
 		</div>
