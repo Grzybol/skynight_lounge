@@ -267,6 +267,9 @@
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
+		/* The still is framed ~5 % wider than the live start screen: zoom in from the top-left corner to match. */
+		transform: scale(1.05);
+		transform-origin: 0 0;
 		pointer-events: none;
 		user-select: none;
 		transition: opacity 350ms ease;
