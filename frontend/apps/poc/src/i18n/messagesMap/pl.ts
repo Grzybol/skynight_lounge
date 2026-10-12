@@ -77,7 +77,7 @@ export default {
 	'HOW A ROUND PAYS': 'JAK PŁACI RUNDA',
 	HILLS: 'SKOCZNIE',
 	WEATHER: 'POGODA',
-	'SKYJUMP RULES': 'ZASADY MIDNIGHT LOUNGE',
+	'SKYJUMP RULES': 'ZASADY SKYNIGHT LOUNGE',
 	'WINTER SPORTS MINI-GAME': 'DOŚWIADCZENIE KASYNA VIP',
 	'Ski jumping · night stadium · sequential reels':
 		'Luksusowy lounge · pięć bębnów · funkcje premium',

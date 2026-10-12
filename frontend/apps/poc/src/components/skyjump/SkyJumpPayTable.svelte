@@ -12,7 +12,7 @@
 
 <section class="paytable">
 	<header>
-		<span class="kicker">MIDNIGHT LOUNGE</span>
+		<span class="kicker">SKYNIGHT LOUNGE</span>
 		<h2>{t('HOW A ROUND PAYS')}</h2>
 		<p>{t('PAYTABLE INTRO')}</p>
 	</header>

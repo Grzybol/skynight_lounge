@@ -217,7 +217,7 @@
 	 * Slot size: 490 px grid height (10 % less than the 544 px pass, itself 25 % over the original 435 px) and cells 10 % wider (aspect 1.247) (the summary tile under it is gone, so the
 	 * whole height down to the BetUI is free).
 	 */
-	const BOARD_GRID_H = 490;
+	const BOARD_GRID_H = 515;
 	const maxBoardH = $derived(px(BOARD_GRID_H));
 	/**
 	 * The larger frame is raised by this many px @1280x720 (its crest runs over the top edge) so the

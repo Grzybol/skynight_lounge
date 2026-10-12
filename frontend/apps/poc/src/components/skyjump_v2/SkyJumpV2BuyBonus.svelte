@@ -41,7 +41,7 @@
 			<div class="header-slot header-art" data-art-slot="buy-header">
 				<img class="section-header" src={headerSrc} alt="Buy Bonus" draggable="false" />
 			</div>
-			<span class="kicker">Midnight Lounge</span>
+			<span class="kicker">SKYNIGHT LOUNGE</span>
 			<p>Choose a free-spin room. The price follows your bet.</p>
 		</header>
 

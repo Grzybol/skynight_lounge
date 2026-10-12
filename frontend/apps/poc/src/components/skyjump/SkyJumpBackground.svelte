@@ -79,7 +79,7 @@
 				prop="plant"
 				{...propBox('plant', anchor)}
 				flip={anchor.flip}
-				delayMs={i * 2100}
+				offsetMs={i * 2100}
 				z={1}
 				sharp
 			/>

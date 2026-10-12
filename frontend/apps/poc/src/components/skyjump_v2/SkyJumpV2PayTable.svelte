@@ -161,9 +161,9 @@
 			<div class="header-art" data-art-slot="paytable-header">
 				<img class="section-header" src={paytableHeaderSrc} alt="Paytable" draggable="false" />
 			</div>
-			<span class="kicker">Midnight Lounge</span>
+			<span class="kicker">SKYNIGHT LOUNGE</span>
 			<h2>Paytable</h2>
-			<p>5×5 Midnight Lounge slot · 28 fixed paylines · awards in bet multiples</p>
+			<p>5×5 SKYNIGHT LOUNGE slot · 28 fixed paylines · awards in bet multiples</p>
 		</header>
 
 		<div class="scroll-body" data-test="skyjump-v2-paytable-scroll">
@@ -480,7 +480,7 @@
 		color: var(--gold);
 		letter-spacing: 0.18em;
 		font-family: var(--skyjump-font-display, 'SkyjumpDisplay', system-ui, sans-serif);
-		font-size: 0.62rem;
+		font-size: 0.806rem;
 		font-weight: 800;
 		line-height: 1;
 		text-transform: uppercase;
@@ -497,12 +497,12 @@
 	}
 
 	h2 {
-		font-size: 1.05rem;
+		font-size: 1.365rem;
 		line-height: 1.05;
 	}
 
 	h3 {
-		font-size: 0.84rem;
+		font-size: 1.092rem;
 		color: #f6ead0;
 	}
 
@@ -511,7 +511,7 @@
 	.path-note {
 		margin: 0;
 		color: var(--muted);
-		font-size: 0.74rem;
+		font-size: 0.962rem;
 		line-height: 1.35;
 	}
 
@@ -566,12 +566,12 @@
 	}
 
 	.symbol-copy strong {
-		font-size: 0.78rem;
+		font-size: 1.014rem;
 		color: var(--gold);
 	}
 
 	.name {
-		font-size: 0.68rem;
+		font-size: 0.884rem;
 		color: var(--muted);
 		line-height: 1.25;
 	}
@@ -583,7 +583,7 @@
 		margin: 0.15rem 0 0;
 		padding: 0;
 		list-style: none;
-		font-size: 0.72rem;
+		font-size: 0.936rem;
 		font-weight: 700;
 	}
 
@@ -603,13 +603,13 @@
 	.feature-card strong {
 		display: block;
 		margin-bottom: 0.15rem;
-		font-size: 0.8rem;
+		font-size: 1.04rem;
 	}
 
 	.feature-card p {
 		margin: 0;
 		color: var(--muted);
-		font-size: 0.72rem;
+		font-size: 0.936rem;
 		line-height: 1.35;
 	}
 
@@ -627,7 +627,7 @@
 		border-radius: 999px;
 		background: rgba(18, 8, 12, 0.65);
 		border: 1px solid rgba(212, 168, 92, 0.22);
-		font-size: 0.68rem;
+		font-size: 0.884rem;
 		font-weight: 700;
 		color: #f6ead0;
 	}
@@ -638,7 +638,7 @@
 		display: grid;
 		gap: 0.28rem;
 		color: #f3e2b8;
-		font-size: 0.78rem;
+		font-size: 1.014rem;
 		line-height: 1.35;
 		text-align: left;
 	}
@@ -651,7 +651,7 @@
 		flex: 0 0 auto;
 		place-items: center;
 		border-radius: 9px;
-		font-size: 9px;
+		font-size: 11.7px;
 		font-weight: 900;
 		overflow: hidden;
 		box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.12);
@@ -666,7 +666,7 @@
 		width: 22px;
 		height: 22px;
 		border-radius: 6px;
-		font-size: 7px;
+		font-size: 9.1px;
 	}
 
 	.swatch img {
@@ -699,7 +699,7 @@
 		border-radius: 10px;
 		padding: 0.4rem 0.65rem;
 		font: inherit;
-		font-size: 0.76rem;
+		font-size: 0.988rem;
 		font-weight: 700;
 		cursor: pointer;
 	}
@@ -717,7 +717,7 @@
 		display: inline-flex;
 		align-items: center;
 		gap: 0.35rem;
-		font-size: 0.76rem;
+		font-size: 0.988rem;
 		color: var(--muted);
 	}
 
@@ -759,6 +759,6 @@
 
 	.path-note {
 		text-align: center;
-		font-size: 0.7rem;
+		font-size: 0.91rem;
 	}
 </style>

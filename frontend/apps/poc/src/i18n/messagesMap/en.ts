@@ -77,7 +77,7 @@ export default {
 	'HOW A ROUND PAYS': 'HOW A ROUND PAYS',
 	HILLS: 'HILLS',
 	WEATHER: 'WEATHER',
-	'SKYJUMP RULES': 'MIDNIGHT LOUNGE RULES',
+	'SKYJUMP RULES': 'SKYNIGHT LOUNGE RULES',
 	'WINTER SPORTS MINI-GAME': 'VIP CASINO EXPERIENCE',
 	'Ski jumping · night stadium · sequential reels':
 		'Luxury lounge · five reels · premium features',

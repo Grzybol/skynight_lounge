@@ -49,7 +49,7 @@
 	for (const mode of ENABLED_MODES) {
 		const label = ('label' in mode && mode.label) || ('title' in mode && mode.title) || mode.rgsKey;
 		const rawTitle = ('title' in mode && mode.title) || label;
-		const present = (value: string) => loungePhrase(value).replaceAll('SkyJump', 'Midnight Lounge');
+		const present = (value: string) => loungePhrase(value).replaceAll('SkyJump', 'SKYNIGHT LOUNGE');
 		const title = present(String(rawTitle));
 		nextMeta[mode.rgsKey] = {
 			mode: mode.rgsKey,
@@ -142,7 +142,7 @@
 
 	<Modals>
 		{#snippet version()}
-			<GameVersion version={PLACEHOLDER_IDENTITY.version.replace('skyjump', 'midnight-lounge')} />
+			<GameVersion version={`SKYNIGHT LOUNGE ${PLACEHOLDER_IDENTITY.version.replace('-skyjump', '')}`} />
 		{/snippet}
 		{#snippet payTable()}
 			<SkyJumpV2PayTable />

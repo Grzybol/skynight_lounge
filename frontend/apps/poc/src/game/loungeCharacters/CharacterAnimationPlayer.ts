@@ -29,6 +29,8 @@ export type PlayOptions = {
 	pingPong?: boolean;
 	/** Playback speed multiplier (0.5 = half speed, twice as long). Default 1. */
 	rate?: number;
+	/** Start this far into the loop (ms of clip time), so copies of one prop never sway in sync. */
+	startOffsetMs?: number;
 	/** Asked once at the turning point; false ends the clip there instead of reversing. */
 	reverseIf?: () => boolean;
 };
@@ -210,7 +212,7 @@ export class CharacterAnimationPlayer {
 			id,
 			pack,
 			token: this.clipToken,
-			startTime: now,
+			startTime: now - (opts.startOffsetMs ?? 0),
 			loop: opts.loop,
 			frames,
 			fps: pack.entry.fps * (opts.rate && opts.rate > 0 ? opts.rate : 1),

@@ -8,10 +8,18 @@ import { FramePackStore } from './framePackStore';
  */
 const store = new FramePackStore(3, () => new Set(Object.values(PROP_ANIMATION)));
 
-export const createPropPlayer = (id: PropId, canvas: HTMLCanvasElement, rate = 1) => {
+/** Playback speed per prop: the plants sway at half speed (5 s clip -> 10 s). */
+export const PROP_RATE: Record<PropId, number> = { plant: 0.5, guard: 1 };
+
+export const createPropPlayer = (
+	id: PropId,
+	canvas: HTMLCanvasElement,
+	rate = PROP_RATE[id],
+	startOffsetMs = 0,
+) => {
 	const player = new CharacterAnimationPlayer(canvas, store, PROP_TUNING[id]);
 	return {
 		player,
-		start: () => player.play(PROP_ANIMATION[id], { loop: true, rate }),
+		start: () => player.play(PROP_ANIMATION[id], { loop: true, rate, startOffsetMs }),
 	};
 };

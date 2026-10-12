@@ -204,3 +204,14 @@ from production builds.
   ~101 MB each as lossless WebP). Manifest entries carry their own `w`/`h`; the player's canvas only grows and every frame is
   drawn scaled to it, so placement and on-screen size match the 562x748 clips.
 - Slot frame: `ui_slot_board_frame_midnight_lounge.png` is the Art Deco frame; hole fractions live in `V2_SLOT_BOARD_FRAME`.
+
+## Latest pass
+
+- Woman packs come from `video_converter_batch.zip` (`*_v1` / `_v2` / `_v9`, all 562x748); `woman_big_win` keeps the earlier
+  `bigwin_v1` clip (no v2 supplied), `woman_mega_win` is `bigwin_v2`. The two 1124x1496 packs are gone (the player still
+  supports per-clip sizes via `w`/`h` in the manifest).
+- Trims: bartender 0.1 s per end (3 frames), woman 0.2 s per end (6 frames).
+- Plants sway at half speed (`PROP_RATE`, 5 s -> 10 s) on every screen; copies are offset into the loop (`offsetMs`).
+- The start screen shows `start_loading.png` (a still of the finished scene) until the background, stanchion, bodyguard, both
+  plants (first frame drawn) and the game are ready.
+- Buy bonus button = the SKYNIGHT LOUNGE emblem (`ui_logo_midnight_lounge.png`), same 108x66 box as the old tile.

@@ -10,8 +10,8 @@
 		height: string;
 		/** Mirror horizontally (the two plants and the stanchions are mirrored pairs). */
 		flip?: boolean;
-		/** Start the loop after this delay so two copies never move in sync. */
-		delayMs?: number;
+		/** Start this far into the loop (ms) so two copies never move in sync. */
+		offsetMs?: number;
 		z?: number;
 		/** CSS blur in px, to match the softness of the background artwork. */
 		blur?: number;
@@ -21,9 +21,11 @@
 		sharp?: boolean;
 		/** CSS filter (e.g. brightness) to blend the prop into its surroundings. */
 		tone?: string;
+		/** Fires once, when the first frame is on the canvas. */
+		onready?: () => void;
 	};
 
-	let { prop, left, top, height, flip = false, delayMs = 0, z = 1, blur = 0, rate = 1, sharp = false, tone = '' }: Props = $props();
+	let { prop, left, top, height, flip = false, offsetMs = 0, z = 1, blur = 0, rate, sharp = false, tone = '', onready }: Props = $props();
 
 	let canvas = $state<HTMLCanvasElement | null>(null);
 	const frame = $derived(PROP_FRAME[prop]);
@@ -31,10 +33,18 @@
 	$effect(() => {
 		const el = canvas;
 		if (!el) return;
-		const { player, start } = createPropPlayer(prop, el, rate);
-		const timer = setTimeout(() => void start(), delayMs);
+		const { player, start } = createPropPlayer(prop, el, rate, offsetMs);
+		let fired = false;
+		const fire = () => {
+			if (fired || el.dataset.ready !== '1') return;
+			fired = true;
+			onready?.();
+		};
+		const observer = new MutationObserver(fire);
+		observer.observe(el, { attributes: true, attributeFilter: ['data-ready'] });
+		void start();
 		return () => {
-			clearTimeout(timer);
+			observer.disconnect();
 			player.destroy();
 		};
 	});

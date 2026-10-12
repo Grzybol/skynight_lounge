@@ -63,7 +63,7 @@ export const DEFAULT_BET_MODE =
 	ENABLED_MODES.find((mode) => mode.type === 'default') ?? BUY_MODES.base;
 
 /** Player-facing title. Frozen JSON `meta.altTitle` is metadata debt — do not read it at runtime. */
-export const PUBLIC_GAME_TITLE = 'Midnight Lounge';
+export const PUBLIC_GAME_TITLE = 'SKYNIGHT LOUNGE';
 
 export const PLACEHOLDER_IDENTITY = {
 	gameID: String((rawConfig.meta as { gameID?: string }).gameID ?? '0_0_poc'),

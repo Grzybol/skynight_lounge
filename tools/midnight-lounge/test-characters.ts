@@ -390,10 +390,10 @@ await test("controller: a win during a variation wins and cancels the pending va
   }
 });
 
-await test("woman: idle loops 1-4 whole times then a variation; clips trimmed 0.1 s per end", async () => {
+await test("woman: idle loops 1-4 whole times then a variation; clips trimmed 0.2 s per end", async () => {
   const t = CHARACTER_TUNING.woman;
-  assert.equal(t.trimHeadFrames, 3);
-  assert.equal(t.trimTailFrames, 3);
+  assert.equal(t.trimHeadFrames, 6);
+  assert.equal(t.trimTailFrames, 6);
   assert.ok(t.idleLoopsMin === 1 && t.idleLoopsMax === 4);
   for (const rngValue of [0, 0.999]) {
     const f = fakePlayer();
@@ -438,9 +438,10 @@ await test("bartender: main idle loops only 1-2 times before a variation", async
 });
 
 await test("win clips drop their first 0.1 s (3 frames) for both characters; props configured", () => {
-  for (const ch of ["woman", "bartender"] as const) {
-    assert.equal(CHARACTER_TUNING[ch].winTrimHeadFrames, 3);
-  }
+  assert.equal(CHARACTER_TUNING.woman.winTrimHeadFrames, 6);
+  assert.equal(CHARACTER_TUNING.bartender.winTrimHeadFrames, 3);
+  assert.equal(CHARACTER_TUNING.bartender.trimHeadFrames, 3);
+  assert.equal(CHARACTER_TUNING.bartender.trimTailFrames, 3);
   assert.equal(PROP_TUNING.guard.trimHeadFrames, 3, "bodyguard: 0.1 s off the start");
   assert.equal(PROP_TUNING.guard.trimTailFrames, 3, "bodyguard: 0.1 s off the end");
   assert.equal(PROP_ANIMATION.plant, "plant_loop");

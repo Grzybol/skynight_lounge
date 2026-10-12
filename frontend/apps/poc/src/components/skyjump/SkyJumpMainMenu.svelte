@@ -26,8 +26,8 @@
 		<img class="jumper" src={loungeMenuFigureSrc} alt="" />
 		<div class="panel">
 			<p class="kicker">{t('WINTER SPORTS MINI-GAME')}</p>
-			<img class="menu-logo" src={logoSrc} alt="Midnight Lounge" draggable="false" />
-			<h1 class="visually-hidden">Midnight Lounge</h1>
+			<img class="menu-logo" src={logoSrc} alt="SKYNIGHT LOUNGE" draggable="false" />
+			<h1 class="visually-hidden">SKYNIGHT LOUNGE</h1>
 			<p class="sub">{t('Ski jumping · night stadium · sequential reels')}</p>
 			<button class="primary" type="button" onclick={play}>{t('PLAY')}</button>
 			<div class="row">

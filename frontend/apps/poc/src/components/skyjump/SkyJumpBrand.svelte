@@ -12,8 +12,8 @@
 
 {#if context.stateGame.screen === 'play'}
 	<div class="brand">
-		<img class="logo" src={logoSrc} alt="Midnight Lounge" draggable="false" />
-		<p class="mark visually-hidden">MIDNIGHT LOUNGE</p>
+		<img class="logo" src={logoSrc} alt="SKYNIGHT LOUNGE" draggable="false" />
+		<p class="mark visually-hidden">SKYNIGHT LOUNGE</p>
 		<p class="tag">{t('Reach higher')}</p>
 		<div class="hill">{roomLabel}</div>
 	</div>
@@ -25,7 +25,7 @@
 		z-index: 20;
 		top: 0.85rem;
 		right: 1rem;
-		max-width: min(168px, 15%);
+		max-width: min(193px, 16.5%);
 		text-align: right;
 		pointer-events: none;
 		color: #f4faff;
@@ -34,7 +34,7 @@
 	.logo {
 		display: block;
 		margin-left: auto;
-		width: min(152px, 100%);
+		width: min(169px, 100%);
 		height: auto;
 		object-fit: contain;
 		filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.42));

@@ -10,6 +10,7 @@
 			INTRO_STANCHION,
 		propBox,
 	} from '../game/loungeCharacters/propLayout';
+	import { loungeLogoSrc } from '../game/midnightLoungeTheme';
 	import LoopingProp from './skyjump/LoopingProp.svelte';
 
 	type Props = {
@@ -27,7 +28,21 @@
 		'assets/midnight-lounge/ui/ui_click_anywhere_to_continue_midnight_lounge.png',
 	);
 
-	const ready = $derived(context.stateApp.loaded);
+	const loadingSrc = resolveGameAsset('assets/midnight-lounge/ui/start_loading.png');
+	const logoSrc = loungeLogoSrc;
+
+	// The start screen is shown only when every piece of it is ready: background, stanchion, the
+	// bodyguard and both plants (first frame on canvas) and the game itself. Until then a still of the
+	// finished scene is shown, so the pieces never pop in one after another.
+	const INTRO_PROPS = INTRO_PLANTS.length + 1;
+	let bgLoaded = $state(false);
+	let stanchionLoaded = $state(false);
+	let propsReady = $state(0);
+	const markReady = () => {
+		propsReady += 1;
+	};
+	const gameLoaded = $derived(context.stateApp.loaded);
+	const ready = $derived(gameLoaded && bgLoaded && stanchionLoaded && propsReady >= INTRO_PROPS);
 	let reduceMotion = $state(false);
 	let bgIn = $state(false);
 	let ctaIn = $state(false);
@@ -104,6 +119,7 @@
 			src={startSrc}
 			alt=""
 			draggable="false"
+			onload={() => (bgLoaded = true)}
 		/>
 		<div class="props" class:gone={veil !== 'off'}>
 		{#each INTRO_PLANTS as anchor, i}
@@ -111,22 +127,25 @@
 				prop="plant"
 				{...propBox('plant', anchor)}
 				flip={anchor.flip}
-				delayMs={i * 2100}
-				rate={0.5}
+				offsetMs={i * 2100}
+				onready={markReady}
 				z={1}
 				sharp
 			/>
 		{/each}
-		<LoopingProp prop="guard" {...propBox('guard', INTRO_GUARD)} z={2} sharp />
+		<LoopingProp prop="guard" {...propBox('guard', INTRO_GUARD)} z={2} sharp onready={markReady} />
 		<img
 			class="stanchion"
 			src={stanchionSrc}
 			alt=""
 			draggable="false"
+			onload={() => (stanchionLoaded = true)}
 			style={`left:${stanchionBox.left};top:${stanchionBox.top};height:${stanchionBox.height};${INTRO_STANCHION.flip ? 'transform:scaleX(-1);' : ''}`}
 		/>
 		</div>
 	</div>
+	<img class="logo" class:gone={veil !== 'off'} src={logoSrc} alt="SKYNIGHT LOUNGE" draggable="false" />
+	<img class="placeholder" class:hide={ready} src={loadingSrc} alt="" draggable="false" />
 	{#if ready}
 		<button class="hit" type="button" aria-label="Click anywhere to continue" onclick={continueIn}>
 			<img
@@ -240,6 +259,41 @@
 		transition: opacity 300ms linear;
 	}
 
+	/* Still of the finished scene, covering the screen until every piece is ready. */
+	.placeholder {
+		position: absolute;
+		inset: 0;
+		z-index: 4;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		pointer-events: none;
+		user-select: none;
+		transition: opacity 350ms ease;
+	}
+
+	.placeholder.hide {
+		opacity: 0;
+	}
+
+	/* Same place and size as the brand logo in the slot screen (169 px at 1280 wide). */
+	.logo {
+		position: absolute;
+		z-index: 6;
+		top: 0.85rem;
+		right: 1rem;
+		width: 13.2cqw;
+		height: auto;
+		filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.42));
+		pointer-events: none;
+		user-select: none;
+		transition: opacity 300ms linear;
+	}
+
+	.logo.gone {
+		opacity: 0;
+	}
+
 	.hit {
 		position: absolute;
 		z-index: 5;
@@ -271,6 +325,7 @@
 	}
 
 	.loading {
+		z-index: 7;
 		position: absolute;
 		left: 50%;
 		bottom: 11%;

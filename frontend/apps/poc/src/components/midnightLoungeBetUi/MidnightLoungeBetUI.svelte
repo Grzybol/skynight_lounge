@@ -103,6 +103,8 @@
 	const spinSrc = $derived(
 		resolveGameAsset(`assets/midnight-lounge/ui/betui2/${stopMode ? 'stop' : 'spin'}.png`),
 	);
+	/** The SKYNIGHT LOUNGE emblem is the buy-bonus button (same 108x66 box as the old tile). */
+	const buyEmblemSrc = resolveGameAsset('assets/midnight-lounge/ui/ui_logo_midnight_lounge.png');
 	const spinLabel = $derived(stopMode ? i18nDerived.stop() : 'SPIN');
 </script>
 
@@ -235,7 +237,7 @@
 
 			<button
 				type="button"
-				class="tile action wide"
+				class="buy-emblem"
 				class:active={buyActive}
 				aria-label={buyActive ? i18nDerived.disable() : i18nDerived.buyBonus()}
 				aria-pressed={buyActive}
@@ -243,12 +245,7 @@
 				onpointerenter={hover}
 				onclick={() => pressBuy(context.eventEmitter)}
 			>
-				<svg viewBox="0 0 24 24" aria-hidden="true">
-					<path d="M3.5 5h2.6l2 9.5h8.6l1.8-7H7" />
-					<circle cx="9.5" cy="18.5" r="1.1" />
-					<circle cx="16" cy="18.5" r="1.1" />
-				</svg>
-				<span class="cap">{buyActive ? i18nDerived.disable() : i18nDerived.buyBonus()}</span>
+				<img src={buyEmblemSrc} alt="" draggable="false" />
 			</button>
 		</div>
 
@@ -418,6 +415,51 @@
 
 	.tile.wide {
 		width: 108px;
+	}
+
+	/* Image button: the emblem's art spans the full width of its canvas, centred vertically. */
+	.buy-emblem {
+		position: relative;
+		flex: 0 0 auto;
+		width: 108px;
+		height: 66px;
+		padding: 0;
+		background: none;
+		border: 0;
+		cursor: pointer;
+		filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.45));
+		transition:
+			transform 120ms ease,
+			filter 120ms ease;
+	}
+
+	.buy-emblem img {
+		position: absolute;
+		left: 0;
+		top: 50%;
+		width: 108px;
+		height: auto;
+		transform: translateY(-50%);
+		pointer-events: none;
+		user-select: none;
+	}
+
+	.buy-emblem:hover:not(:disabled) {
+		transform: translateY(-1px);
+		filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.45)) brightness(1.12);
+	}
+
+	.buy-emblem:active:not(:disabled) {
+		transform: scale(0.96);
+	}
+
+	.buy-emblem.active {
+		filter: drop-shadow(0 0 10px rgba(255, 205, 90, 0.85)) brightness(1.1);
+	}
+
+	.buy-emblem:disabled {
+		cursor: default;
+		opacity: 0.45;
 	}
 
 	.cap {

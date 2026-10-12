@@ -42,6 +42,7 @@ const required = [
 	'assets/midnight-lounge/scene/background_2_static.png',
 	'assets/midnight-lounge/scene/background_3_static.png',
 	'assets/midnight-lounge/ui/intro_stanchion.png',
+	'assets/midnight-lounge/ui/start_loading.png',
 	'assets/midnight-lounge/ui/betui2/spin.png',
 	'assets/midnight-lounge/ui/betui2/stop.png',
 	'assets/fonts/skyjump/marcellus-400.woff2',

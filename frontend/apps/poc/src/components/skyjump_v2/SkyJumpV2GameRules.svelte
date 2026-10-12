@@ -24,7 +24,7 @@
 	const sections = [
 		{
 			title: 'How to Play',
-			body: 'Spin a 5×5 Midnight Lounge board. Regular symbols pay on fixed lines. VIP Invitations trigger Free Spins. The Concierge, Mystery Gifts, tokens, and collectors can chain after the lines settle.',
+			body: 'Spin a 5×5 SKYNIGHT LOUNGE board. Regular symbols pay on fixed lines. VIP Invitations trigger Free Spins. The Concierge, Mystery Gifts, tokens, and collectors can chain after the lines settle.',
 		},
 		{
 			title: 'Paylines',
@@ -115,9 +115,9 @@
 			<div class="header-art" data-art-slot="info-header">
 				<img class="section-header" src={headerInfo} alt="Game Info" draggable="false" />
 			</div>
-			<span class="kicker">Midnight Lounge</span>
+			<span class="kicker">SKYNIGHT LOUNGE</span>
 			<h2>Game Info</h2>
-			<p>Player guide for Midnight Lounge</p>
+			<p>Player guide for SKYNIGHT LOUNGE</p>
 		</header>
 
 		<div class="scroll-body" data-test="skyjump-v2-rules-scroll">
@@ -225,7 +225,7 @@
 		color: var(--gold);
 		letter-spacing: 0.18em;
 		font-family: var(--skyjump-font-display, 'SkyjumpDisplay', system-ui, sans-serif);
-		font-size: 0.62rem;
+		font-size: 0.806rem;
 		font-weight: 800;
 		line-height: 1;
 		text-transform: uppercase;
@@ -242,19 +242,19 @@
 	}
 
 	h2 {
-		font-size: 1.05rem;
+		font-size: 1.365rem;
 		line-height: 1.05;
 	}
 
 	h3 {
-		font-size: 0.82rem;
+		font-size: 1.066rem;
 		color: #f6ead0;
 	}
 
 	.hero p {
 		margin: -2px 0 0;
 		color: var(--muted);
-		font-size: 0.74rem;
+		font-size: 0.962rem;
 		line-height: 1.2;
 	}
 
@@ -323,7 +323,7 @@
 	.card li {
 		margin: 0;
 		color: #f3e2b8;
-		font-size: 0.74rem;
+		font-size: 0.962rem;
 		line-height: 1.4;
 	}
 

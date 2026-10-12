@@ -113,7 +113,7 @@
 		<Text
 			y={16}
 			anchor={0.5}
-			text="MIDNIGHT LOUNGE"
+			text="SKYNIGHT LOUNGE"
 			style={{
 				fontFamily: SKYJUMP_DISPLAY_FONT,
 				fontSize: 62,

@@ -78,9 +78,10 @@ export const CHARACTER_TUNING: Record<CharacterId, CharacterTuning> = {
 		variationPrefetchLeadMs: 10_000,
 		idleLoopsMin: 1,
 		idleLoopsMax: 4,
-		trimHeadFrames: 3,
-		trimTailFrames: 3,
-		winTrimHeadFrames: 3,
+		// 0.2 s off each end (30 fps): 0.1 s from the earlier pass plus 0.1 s more.
+		trimHeadFrames: 6,
+		trimTailFrames: 6,
+		winTrimHeadFrames: 6,
 		maxPacks: 5,
 		decodeAhead: 18,
 		startBuffer: 6,
@@ -93,8 +94,9 @@ export const CHARACTER_TUNING: Record<CharacterId, CharacterTuning> = {
 		idleVariationMinMs: 15_000,
 		idleVariationMaxMs: 30_000,
 		variationPrefetchLeadMs: 10_000,
-		trimHeadFrames: 0,
-		trimTailFrames: 0,
+		// 0.1 s off each end of every bartender clip.
+		trimHeadFrames: 3,
+		trimTailFrames: 3,
 		winTrimHeadFrames: 3,
 		maxPacks: 4,
 		decodeAhead: 18,
@@ -119,10 +121,10 @@ export type CharacterPlacement = {
 };
 
 export const CHARACTER_PLACEMENT: Record<CharacterId, CharacterPlacement> = {
-	woman: { heightFrac: 0.751, centerXFrac: 0.858, bottomFrac: 0.98 },
+	woman: { heightFrac: 0.751, centerXFrac: 0.867, bottomFrac: 0.98 },
 	// Placed from the first animation frame: the bartender's drink stops at the slot's left edge (his
 	// tray may reach over it); the woman's foot may reach over the slot's right edge, her face never.
-	bartender: { heightFrac: 0.86, centerXFrac: 0.1305, bottomFrac: 0.93 },
+	bartender: { heightFrac: 0.86, centerXFrac: 0.127, bottomFrac: 0.93 },
 };
 
 /** Source frame size per character (bartender V3 is 562x748, woman 554x740). */
