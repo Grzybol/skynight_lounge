@@ -213,10 +213,10 @@
     "dir": "legacy_v1"
   },
   "bet_increase_sound.mp3": {
-    "totalSec": 2.0,
-    "audibleSec": 1.489,
-    "audibleEndSec": 1.58,
-    "trailSec": 0.42,
+    "totalSec": 1.0,
+    "audibleSec": 1.0,
+    "audibleEndSec": 1.0,
+    "trailSec": 0.0,
     "problematicTail": false,
     "peakDbfs": -1.6,
     "dir": "legacy_v1"

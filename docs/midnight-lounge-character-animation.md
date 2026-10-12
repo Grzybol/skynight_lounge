@@ -215,3 +215,9 @@ from production builds.
 - The start screen shows `start_loading.png` (a still of the finished scene) until the background, stanchion, bodyguard, both
   plants (first frame drawn) and the game are ready.
 - Buy bonus button = the SKYNIGHT LOUNGE emblem (`ui_logo_midnight_lounge.png`), same 108x66 box as the old tile.
+- Bartender clips come from `barman_nowe_animacje.zip` (`barman2_*_v1`, 562x748, lossless).
+- The room / free-spins HUD tile left of the slot is gone. `SkyJumpBrand` stacks logo -> mode banner (special rooms only) ->
+  free-spins banner with a generated `xN` count (spins remaining) in the top-right corner.
+- BetUI: the WIN counter is centred on the bar (a spacer keeps the right-hand buttons in place), its label is 20 px, and the
+  SPIN/STOP button is centred on the bar (its lower edge runs ~20 px past the screen bottom).
+- `bet_increase_sound.mp3` (the "+" click) was cut to half its length (2.0 s -> 1.0 s, 40 ms fade); the duration meta follows.

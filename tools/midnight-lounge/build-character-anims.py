@@ -42,10 +42,10 @@ MAP = {
     'woman_mini_win': 'feet2_win_v1_spritesheet',
     'woman_big_win': 'feet2_bigwin_v1_spritesheet',  # no v2 supplied: the original clip stays
     'woman_mega_win': 'feet2_bigwin_v2_spritesheet',
-    'bartender_idle': 'barman2_idle_spritesheet',
-    'bartender_idle_1': 'barman2_przerywnik1_spritesheet',
-    'bartender_mini_win': 'barman2_win_spritesheet',
-    'bartender_big_win': 'barman2_bigwin_spritesheet',
+    'bartender_idle': 'barman2_idle_v1_spritesheet',
+    'bartender_idle_1': 'barman2_przerywnik1_v1_spritesheet',
+    'bartender_mini_win': 'barman2_win_v1_spritesheet',
+    'bartender_big_win': 'barman2_bigwin_v1_spritesheet',
     # Looping scene props (not characters): plant 562x748, bodyguard 488x862.
     'plant_loop': 'background_asset_plant',
     'guard_loop': 'bodyguard_drawn',

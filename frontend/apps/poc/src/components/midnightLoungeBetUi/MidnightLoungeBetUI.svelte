@@ -190,6 +190,7 @@
 				</button>
 			</div>
 
+			<span class="win-gap" aria-hidden="true"></span>
 			<div class="panel win" aria-label={i18nDerived.win()}>
 				{#if stateUi.freeSpinCounterShow}
 					<span class="free-spins">
@@ -613,8 +614,18 @@
 		height: 22px;
 	}
 
+	/* Keeps the buttons to the right of the WIN counter where they were; the counter itself is centred on the bar. */
+	.win-gap {
+		flex: 0 0 auto;
+		width: 189px;
+		height: 1px;
+	}
+
 	.win {
-		position: relative;
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
 		flex-direction: column;
 		justify-content: center;
 		gap: 6px;
@@ -622,6 +633,10 @@
 		background: transparent;
 		border-color: transparent;
 		box-shadow: none;
+	}
+
+	.win .kicker {
+		font-size: 20px;
 	}
 
 	.free-spins {
@@ -637,7 +652,8 @@
 	.spin {
 		position: absolute;
 		right: 16px;
-		bottom: 4px;
+		/* Centred on the bar (bar: bottom 14px, height 100px). */
+		bottom: -24px;
 		width: 176px;
 		height: 176px;
 		padding: 0;

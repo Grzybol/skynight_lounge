@@ -1,61 +1,5 @@
 {
  "animations": {
-  "bartender_idle": {
-   "zip": "barman2_idle_spritesheet.zip",
-   "sheets": 30,
-   "frameSize": [
-    562,
-    748
-   ],
-   "frames": 150,
-   "frameDurationsMs": [
-    33
-   ],
-   "emptyFrames": [],
-   "packBytes": 17724238
-  },
-  "bartender_idle_1": {
-   "zip": "barman2_przerywnik1_spritesheet.zip",
-   "sheets": 30,
-   "frameSize": [
-    562,
-    748
-   ],
-   "frames": 150,
-   "frameDurationsMs": [
-    33
-   ],
-   "emptyFrames": [],
-   "packBytes": 17452988
-  },
-  "bartender_mini_win": {
-   "zip": "barman2_win_spritesheet.zip",
-   "sheets": 30,
-   "frameSize": [
-    562,
-    748
-   ],
-   "frames": 150,
-   "frameDurationsMs": [
-    33
-   ],
-   "emptyFrames": [],
-   "packBytes": 17217016
-  },
-  "bartender_big_win": {
-   "zip": "barman2_bigwin_spritesheet.zip",
-   "sheets": 30,
-   "frameSize": [
-    562,
-    748
-   ],
-   "frames": 150,
-   "frameDurationsMs": [
-    33
-   ],
-   "emptyFrames": [],
-   "packBytes": 17926372
-  },
   "plant_loop": {
    "zip": "background_asset_plant.zip",
    "sheets": 30,
@@ -209,29 +153,65 @@
    ],
    "emptyFrames": [],
    "packBytes": 29827874
+  },
+  "bartender_idle": {
+   "zip": "barman2_idle_v1_spritesheet.zip",
+   "sheets": 30,
+   "frameSize": [
+    562,
+    748
+   ],
+   "frames": 150,
+   "frameDurationsMs": [
+    33
+   ],
+   "emptyFrames": [],
+   "packBytes": 16582036
+  },
+  "bartender_idle_1": {
+   "zip": "barman2_przerywnik1_v1_spritesheet.zip",
+   "sheets": 30,
+   "frameSize": [
+    562,
+    748
+   ],
+   "frames": 150,
+   "frameDurationsMs": [
+    33
+   ],
+   "emptyFrames": [],
+   "packBytes": 16390072
+  },
+  "bartender_mini_win": {
+   "zip": "barman2_win_v1_spritesheet.zip",
+   "sheets": 30,
+   "frameSize": [
+    562,
+    748
+   ],
+   "frames": 150,
+   "frameDurationsMs": [
+    33
+   ],
+   "emptyFrames": [],
+   "packBytes": 16206032
+  },
+  "bartender_big_win": {
+   "zip": "barman2_bigwin_v1_spritesheet.zip",
+   "sheets": 30,
+   "frameSize": [
+    562,
+    748
+   ],
+   "frames": 150,
+   "frameDurationsMs": [
+    33
+   ],
+   "emptyFrames": [],
+   "packBytes": 16790306
   }
  },
  "seams": {
-  "bartender_idle": {
-   "lastToOwnFirst": 0.44933940091727403,
-   "lastToIdleFirst": 0.44933940091727403,
-   "idleLastToFirst": 0.44933940091727403
-  },
-  "bartender_idle_1": {
-   "lastToOwnFirst": 0.438371243838849,
-   "lastToIdleFirst": 0.44218509144194723,
-   "idleLastToFirst": 0.4435761080556454
-  },
-  "bartender_mini_win": {
-   "lastToOwnFirst": 0.43720026833120823,
-   "lastToIdleFirst": 0.4390057948122633,
-   "idleLastToFirst": 0.4467881134983919
-  },
-  "bartender_big_win": {
-   "lastToOwnFirst": 0.432539559822635,
-   "lastToIdleFirst": 0.4367619702361695,
-   "idleLastToFirst": 0.4431830075932023
-  },
   "plant_loop": {
    "lastToOwnFirst": 0.7409979399394827
   },
@@ -282,6 +262,26 @@
    "lastToOwnFirst": 0.5768068348335775,
    "lastToIdleFirst": 0.5750738624469522,
    "idleLastToFirst": 0.584460697090224
+  },
+  "bartender_idle": {
+   "lastToOwnFirst": 0.3270940776828363,
+   "lastToIdleFirst": 0.3270940776828363,
+   "idleLastToFirst": 0.3270940776828363
+  },
+  "bartender_idle_1": {
+   "lastToOwnFirst": 0.3215555835728015,
+   "lastToIdleFirst": 0.3239712780938969,
+   "idleLastToFirst": 0.3234497212019716
+  },
+  "bartender_mini_win": {
+   "lastToOwnFirst": 0.32036379336593906,
+   "lastToIdleFirst": 0.3211630778160504,
+   "idleLastToFirst": 0.3229061601994405
+  },
+  "bartender_big_win": {
+   "lastToOwnFirst": 0.31668197042647533,
+   "lastToIdleFirst": 0.31731830551696577,
+   "idleLastToFirst": 0.32233643214645935
   }
  },
  "totalFrames": 2250
