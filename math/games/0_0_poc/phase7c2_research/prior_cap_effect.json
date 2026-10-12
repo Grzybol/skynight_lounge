@@ -1,0 +1,37 @@
+{
+  "byTier": {
+    "LARGE_HILL": {
+      "n": 6000,
+      "eTrig": 0.43005000000000004,
+      "eFull": 31.434783333333336,
+      "eBonusActual": 31.00473333333333,
+      "eBonusZeroPrior": 31.00473333333333,
+      "deltaBonusX": 2.4794980883295163e-18
+    },
+    "SKI_FLYING": {
+      "n": 6000,
+      "eTrig": 0.3482166666666667,
+      "eFull": 175.6504833333333,
+      "eBonusActual": 175.30226666666667,
+      "eBonusZeroPrior": 175.30226666666667,
+      "deltaBonusX": 7.47550169914272e-18
+    },
+    "WORLD_CUP": {
+      "n": 6000,
+      "eTrig": 0.18905,
+      "eFull": 394.60521666666665,
+      "eBonusActual": 394.41616666666664,
+      "eBonusZeroPrior": 394.41616666666664,
+      "deltaBonusX": -7.586524001605237e-19
+    },
+    "PERFECT_V": {
+      "n": 6000,
+      "eTrig": 0.0,
+      "eFull": 1334.19795,
+      "eBonusActual": 1334.19795,
+      "eBonusZeroPrior": 1334.19795,
+      "deltaBonusX": 0.0
+    }
+  },
+  "paidRoundPriorCapEffectPp": 1.7718666752945393e-18
+}

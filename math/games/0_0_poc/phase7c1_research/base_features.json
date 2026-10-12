@@ -1,0 +1,11 @@
+{
+  "n": 80000,
+  "method": "rejection_non_trigger_BASE_resolve_v2_base",
+  "lineRtpPct": 59.412375000000004,
+  "featureRtpRawPct": 11.4325,
+  "featureRtpCappedPct": 11.4325,
+  "totalNonBonusPct": 70.844875,
+  "pCap": 0.0,
+  "note": "This is the authoritative non-bonus BASE bucket under live PT2H+BODY1. Full NO_T4PLUS/T4/T5/T6 importance sampling is deferred to optional long run; P(cap) on BASE non-trigger is near-zero so raw\u2248capped for features here.",
+  "seFeaturePp": 0.41430737296948383
+}

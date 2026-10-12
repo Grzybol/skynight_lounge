@@ -1,0 +1,184 @@
+{
+  "buyAuthMeans": {
+    "LARGE_HILL": {
+      "evWrOff": 28.498384043526404,
+      "pWr": 1.2175774058431621e-05,
+      "wrContributionX": 0.6084417130364379,
+      "authMeanFinal": 29.10682575656284
+    },
+    "SKI_FLYING": {
+      "evWrOff": 188.35928817789687,
+      "pWr": 3.322168913511003e-05,
+      "wrContributionX": 1.654826843037938,
+      "authMeanFinal": 190.0141150209348
+    },
+    "WORLD_CUP": {
+      "evWrOff": 395.2119578987115,
+      "pWr": 6.627941247605573e-05,
+      "wrContributionX": 3.287776207429772,
+      "authMeanFinal": 398.49973410614126
+    },
+    "PERFECT_V": {
+      "evWrOff": 1315.2456857942782,
+      "pWr": 0.00013167310269823762,
+      "wrContributionX": 6.410472654652949,
+      "authMeanFinal": 1321.6561584489311
+    }
+  },
+  "lutReports": {
+    "LARGE_HILL": {
+      "tier": "LARGE_HILL",
+      "authMeanFinal": 29.10682575656284,
+      "targetNatMean": 28.498384043526407,
+      "pWr": 1.2175774058431621e-05,
+      "lutMean": 29.106825756549476,
+      "lutMeanPathB": 29.106825756547806,
+      "meanDelta": 1.3365308859647484e-11,
+      "nNat": 120000,
+      "nWr": 24,
+      "bookCount": 120024,
+      "rawNatMean": 28.213605833333336,
+      "weightedNatMean": 28.498384043534607,
+      "shaBook": "cd4baa67c58329434e9075a96cdf69b0e11146ae86d067b30dc8432c41e4b8bd",
+      "shaLut": "e62d6551b550ffd31cd1962930064c64942cc31e9fb7189d99e78eb4957b34d2",
+      "wallSeconds": 161.95258331298828,
+      "dualPathMatch": false
+    },
+    "SKI_FLYING": {
+      "tier": "SKI_FLYING",
+      "authMeanFinal": 190.0141150209348,
+      "targetNatMean": 188.35928817789687,
+      "pWr": 3.322168913511003e-05,
+      "lutMean": 190.01411502084562,
+      "lutMeanPathB": 190.01411502084053,
+      "meanDelta": 8.918732419260778e-11,
+      "nNat": 80000,
+      "nWr": 24,
+      "bookCount": 80024,
+      "rawNatMean": 188.34813,
+      "weightedNatMean": 188.35928817781317,
+      "shaBook": "1de81d6700a15f47070f61af973ff52004d7af002f27c87d31cfa68809aa3778",
+      "shaLut": "531fafe4cbed839d5f773bae760840896b51c16d145f7bdb6dcfbb33f4820cbb",
+      "wallSeconds": 190.1796169281006,
+      "dualPathMatch": false
+    },
+    "WORLD_CUP": {
+      "tier": "WORLD_CUP",
+      "authMeanFinal": 398.49973410614126,
+      "targetNatMean": 395.2119578987115,
+      "pWr": 6.627941247605573e-05,
+      "lutMean": 398.49973410627746,
+      "lutMeanPathB": 398.49973410627894,
+      "meanDelta": 1.36196831590496e-10,
+      "nNat": 60000,
+      "nWr": 24,
+      "bookCount": 60024,
+      "rawNatMean": 391.49265,
+      "weightedNatMean": 395.21195789885047,
+      "shaBook": "0e92c3a708a19ece1ae7a403d9e1bf6f08346c6b626aa9bfe805166b162e6699",
+      "shaLut": "4bb984f7a87ee69c9c6d004e39471186d0e1779d395036842a4b78c54e934e29",
+      "wallSeconds": 173.8494164943695,
+      "dualPathMatch": false
+    },
+    "PERFECT_V": {
+      "tier": "PERFECT_V",
+      "authMeanFinal": 1321.6561584489311,
+      "targetNatMean": 1315.2456857942782,
+      "pWr": 0.00013167310269823762,
+      "lutMean": 1321.6561584482376,
+      "lutMeanPathB": 1321.6561584482326,
+      "meanDelta": 6.934897101018578e-10,
+      "nNat": 60000,
+      "nWr": 24,
+      "bookCount": 60024,
+      "rawNatMean": 1325.2505666666666,
+      "weightedNatMean": 1315.2456857935963,
+      "shaBook": "9d011d507acc703e41d194a0a6c00990b5601c2d4489ec99ab9fe5225b884274",
+      "shaLut": "dc6ad4451d769131bfe32f854f8806bb09242d4b545fd4632cc494a35604d008",
+      "wallSeconds": 266.1701662540436,
+      "dualPathMatch": false
+    }
+  },
+  "pricing": {
+    "costs": {
+      "LARGE_HILL": 30.2,
+      "SKI_FLYING": 196.9,
+      "WORLD_CUP": 412.8,
+      "PERFECT_V": 1369.1
+    },
+    "rtp": {
+      "LARGE_HILL": 0.9638021773691879,
+      "SKI_FLYING": 0.9650285171195816,
+      "WORLD_CUP": 0.9653578830093931,
+      "PERFECT_V": 0.9653466937756466
+    },
+    "rtpPct": {
+      "LARGE_HILL": 96.3802177369188,
+      "SKI_FLYING": 96.50285171195816,
+      "WORLD_CUP": 96.5357883009393,
+      "PERFECT_V": 96.53466937756467
+    },
+    "baseRtp": 0.9639073608885527,
+    "baseRtpPct": 96.39073608885526,
+    "min": 0.9638021773691879,
+    "max": 0.9653578830093931,
+    "spreadPp": 0.15557056402051295,
+    "spreadPass": true,
+    "ceilingPass": true,
+    "preferredSpreadPass": true
+  },
+  "gates": {
+    "LARGE_HILL": {
+      "cost": 30.2,
+      "authRtpPct": 96.38021773696306,
+      "lutRtpPct": 96.3802177369188,
+      "gapPp": 4.426459199180499e-11,
+      "pass_0_05": true,
+      "pass_0_03": true,
+      "ceilingPass": true
+    },
+    "SKI_FLYING": {
+      "cost": 196.9,
+      "authRtpPct": 96.50285171200346,
+      "lutRtpPct": 96.50285171195816,
+      "gapPp": 4.529709940470639e-11,
+      "pass_0_05": true,
+      "pass_0_03": true,
+      "ceilingPass": true
+    },
+    "WORLD_CUP": {
+      "cost": 412.8,
+      "authRtpPct": 96.5357883009063,
+      "lutRtpPct": 96.5357883009393,
+      "gapPp": 3.299582829185965e-11,
+      "pass_0_05": true,
+      "pass_0_03": true,
+      "ceilingPass": true
+    },
+    "PERFECT_V": {
+      "cost": 1369.1,
+      "authRtpPct": 96.53466937761532,
+      "lutRtpPct": 96.53466937756467,
+      "gapPp": 5.064837438339964e-11,
+      "pass_0_05": true,
+      "pass_0_03": true,
+      "ceilingPass": true
+    }
+  },
+  "crossModeActual": {
+    "rtpPct": {
+      "BASE": 96.39073608885526,
+      "LARGE_HILL": 96.3802177369188,
+      "SKI_FLYING": 96.50285171195816,
+      "WORLD_CUP": 96.5357883009393,
+      "PERFECT_V": 96.53466937756467
+    },
+    "min": 96.3802177369188,
+    "max": 96.5357883009393,
+    "spreadPp": 0.15557056402051295,
+    "spreadPass": true,
+    "preferredSpreadPass": true,
+    "ceilingPass": true
+  },
+  "allGatesPass": true
+}

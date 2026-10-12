@@ -1,0 +1,9 @@
+{
+  "baseLineDeltaPp": 0.592213517960154,
+  "fsInitialLineDeltaPp": 0.05561104960244086,
+  "rejumpLineDeltaPp": -0.0006365130362426034,
+  "bonusNonLineResidualPp": 3.983103735192141e-06,
+  "bonusTotalDeltaPp": 0.054978519669933446,
+  "totalFullGameDeltaPp": 0.6471920376300875,
+  "seBonusPp": 0.0017745237395618175
+}

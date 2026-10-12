@@ -1,0 +1,724 @@
+{
+  "prompt": {
+    "1": {
+      "class_type": "LoadBackgroundRemovalModel",
+      "inputs": {
+        "bg_removal_name": "birefnet.safetensors"
+      }
+    },
+    "10": {
+      "class_type": "LoadImage",
+      "inputs": {
+        "image": "slot_garden/static_drafts/H1_drawn_00001_.png"
+      }
+    },
+    "11": {
+      "class_type": "RemoveBackground",
+      "inputs": {
+        "bg_removal_model": [
+          "1",
+          0
+        ],
+        "image": [
+          "10",
+          0
+        ]
+      }
+    },
+    "12": {
+      "class_type": "InvertMask",
+      "inputs": {
+        "mask": [
+          "11",
+          0
+        ]
+      }
+    },
+    "13": {
+      "class_type": "JoinImageWithAlpha",
+      "inputs": {
+        "image": [
+          "10",
+          0
+        ],
+        "alpha": [
+          "12",
+          0
+        ]
+      }
+    },
+    "14": {
+      "class_type": "SaveImage",
+      "inputs": {
+        "images": [
+          "13",
+          0
+        ],
+        "filename_prefix": "slot_garden/alpha_final/H1_alpha"
+      }
+    },
+    "15": {
+      "class_type": "LoadImage",
+      "inputs": {
+        "image": "slot_garden/static_drafts/H2_drawn_00001_.png"
+      }
+    },
+    "16": {
+      "class_type": "RemoveBackground",
+      "inputs": {
+        "bg_removal_model": [
+          "1",
+          0
+        ],
+        "image": [
+          "15",
+          0
+        ]
+      }
+    },
+    "17": {
+      "class_type": "InvertMask",
+      "inputs": {
+        "mask": [
+          "16",
+          0
+        ]
+      }
+    },
+    "18": {
+      "class_type": "JoinImageWithAlpha",
+      "inputs": {
+        "image": [
+          "15",
+          0
+        ],
+        "alpha": [
+          "17",
+          0
+        ]
+      }
+    },
+    "19": {
+      "class_type": "SaveImage",
+      "inputs": {
+        "images": [
+          "18",
+          0
+        ],
+        "filename_prefix": "slot_garden/alpha_final/H2_alpha"
+      }
+    },
+    "20": {
+      "class_type": "LoadImage",
+      "inputs": {
+        "image": "slot_garden/static_drafts/H3_drawn_00001_.png"
+      }
+    },
+    "21": {
+      "class_type": "RemoveBackground",
+      "inputs": {
+        "bg_removal_model": [
+          "1",
+          0
+        ],
+        "image": [
+          "20",
+          0
+        ]
+      }
+    },
+    "22": {
+      "class_type": "InvertMask",
+      "inputs": {
+        "mask": [
+          "21",
+          0
+        ]
+      }
+    },
+    "23": {
+      "class_type": "JoinImageWithAlpha",
+      "inputs": {
+        "image": [
+          "20",
+          0
+        ],
+        "alpha": [
+          "22",
+          0
+        ]
+      }
+    },
+    "24": {
+      "class_type": "SaveImage",
+      "inputs": {
+        "images": [
+          "23",
+          0
+        ],
+        "filename_prefix": "slot_garden/alpha_final/H3_alpha"
+      }
+    },
+    "25": {
+      "class_type": "LoadImage",
+      "inputs": {
+        "image": "slot_garden/static_drafts/L1_drawn_00001_.png"
+      }
+    },
+    "26": {
+      "class_type": "RemoveBackground",
+      "inputs": {
+        "bg_removal_model": [
+          "1",
+          0
+        ],
+        "image": [
+          "25",
+          0
+        ]
+      }
+    },
+    "27": {
+      "class_type": "InvertMask",
+      "inputs": {
+        "mask": [
+          "26",
+          0
+        ]
+      }
+    },
+    "28": {
+      "class_type": "JoinImageWithAlpha",
+      "inputs": {
+        "image": [
+          "25",
+          0
+        ],
+        "alpha": [
+          "27",
+          0
+        ]
+      }
+    },
+    "29": {
+      "class_type": "SaveImage",
+      "inputs": {
+        "images": [
+          "28",
+          0
+        ],
+        "filename_prefix": "slot_garden/alpha_final/L1_alpha"
+      }
+    },
+    "30": {
+      "class_type": "LoadImage",
+      "inputs": {
+        "image": "slot_garden/static_drafts/L2_drawn_00001_.png"
+      }
+    },
+    "31": {
+      "class_type": "RemoveBackground",
+      "inputs": {
+        "bg_removal_model": [
+          "1",
+          0
+        ],
+        "image": [
+          "30",
+          0
+        ]
+      }
+    },
+    "32": {
+      "class_type": "InvertMask",
+      "inputs": {
+        "mask": [
+          "31",
+          0
+        ]
+      }
+    },
+    "33": {
+      "class_type": "JoinImageWithAlpha",
+      "inputs": {
+        "image": [
+          "30",
+          0
+        ],
+        "alpha": [
+          "32",
+          0
+        ]
+      }
+    },
+    "34": {
+      "class_type": "SaveImage",
+      "inputs": {
+        "images": [
+          "33",
+          0
+        ],
+        "filename_prefix": "slot_garden/alpha_final/L2_alpha"
+      }
+    },
+    "35": {
+      "class_type": "LoadImage",
+      "inputs": {
+        "image": "slot_garden/static_drafts/L3_drawn_00001_.png"
+      }
+    },
+    "36": {
+      "class_type": "RemoveBackground",
+      "inputs": {
+        "bg_removal_model": [
+          "1",
+          0
+        ],
+        "image": [
+          "35",
+          0
+        ]
+      }
+    },
+    "37": {
+      "class_type": "InvertMask",
+      "inputs": {
+        "mask": [
+          "36",
+          0
+        ]
+      }
+    },
+    "38": {
+      "class_type": "JoinImageWithAlpha",
+      "inputs": {
+        "image": [
+          "35",
+          0
+        ],
+        "alpha": [
+          "37",
+          0
+        ]
+      }
+    },
+    "39": {
+      "class_type": "SaveImage",
+      "inputs": {
+        "images": [
+          "38",
+          0
+        ],
+        "filename_prefix": "slot_garden/alpha_final/L3_alpha"
+      }
+    },
+    "40": {
+      "class_type": "LoadImage",
+      "inputs": {
+        "image": "slot_garden/static_drafts/L4_drawn_00001_.png"
+      }
+    },
+    "41": {
+      "class_type": "RemoveBackground",
+      "inputs": {
+        "bg_removal_model": [
+          "1",
+          0
+        ],
+        "image": [
+          "40",
+          0
+        ]
+      }
+    },
+    "42": {
+      "class_type": "InvertMask",
+      "inputs": {
+        "mask": [
+          "41",
+          0
+        ]
+      }
+    },
+    "43": {
+      "class_type": "JoinImageWithAlpha",
+      "inputs": {
+        "image": [
+          "40",
+          0
+        ],
+        "alpha": [
+          "42",
+          0
+        ]
+      }
+    },
+    "44": {
+      "class_type": "SaveImage",
+      "inputs": {
+        "images": [
+          "43",
+          0
+        ],
+        "filename_prefix": "slot_garden/alpha_final/L4_alpha"
+      }
+    },
+    "45": {
+      "class_type": "LoadImage",
+      "inputs": {
+        "image": "slot_garden/static_drafts/W_drawn_00001_.png"
+      }
+    },
+    "46": {
+      "class_type": "RemoveBackground",
+      "inputs": {
+        "bg_removal_model": [
+          "1",
+          0
+        ],
+        "image": [
+          "45",
+          0
+        ]
+      }
+    },
+    "47": {
+      "class_type": "InvertMask",
+      "inputs": {
+        "mask": [
+          "46",
+          0
+        ]
+      }
+    },
+    "48": {
+      "class_type": "JoinImageWithAlpha",
+      "inputs": {
+        "image": [
+          "45",
+          0
+        ],
+        "alpha": [
+          "47",
+          0
+        ]
+      }
+    },
+    "49": {
+      "class_type": "SaveImage",
+      "inputs": {
+        "images": [
+          "48",
+          0
+        ],
+        "filename_prefix": "slot_garden/alpha_final/W_alpha"
+      }
+    },
+    "50": {
+      "class_type": "LoadImage",
+      "inputs": {
+        "image": "slot_garden/static_drafts/S_drawn_00001_.png"
+      }
+    },
+    "51": {
+      "class_type": "RemoveBackground",
+      "inputs": {
+        "bg_removal_model": [
+          "1",
+          0
+        ],
+        "image": [
+          "50",
+          0
+        ]
+      }
+    },
+    "52": {
+      "class_type": "InvertMask",
+      "inputs": {
+        "mask": [
+          "51",
+          0
+        ]
+      }
+    },
+    "53": {
+      "class_type": "JoinImageWithAlpha",
+      "inputs": {
+        "image": [
+          "50",
+          0
+        ],
+        "alpha": [
+          "52",
+          0
+        ]
+      }
+    },
+    "54": {
+      "class_type": "SaveImage",
+      "inputs": {
+        "images": [
+          "53",
+          0
+        ],
+        "filename_prefix": "slot_garden/alpha_final/S_alpha"
+      }
+    },
+    "55": {
+      "class_type": "LoadImage",
+      "inputs": {
+        "image": "slot_garden/static_drafts/M2_drawn_00001_.png"
+      }
+    },
+    "56": {
+      "class_type": "RemoveBackground",
+      "inputs": {
+        "bg_removal_model": [
+          "1",
+          0
+        ],
+        "image": [
+          "55",
+          0
+        ]
+      }
+    },
+    "57": {
+      "class_type": "InvertMask",
+      "inputs": {
+        "mask": [
+          "56",
+          0
+        ]
+      }
+    },
+    "58": {
+      "class_type": "JoinImageWithAlpha",
+      "inputs": {
+        "image": [
+          "55",
+          0
+        ],
+        "alpha": [
+          "57",
+          0
+        ]
+      }
+    },
+    "59": {
+      "class_type": "SaveImage",
+      "inputs": {
+        "images": [
+          "58",
+          0
+        ],
+        "filename_prefix": "slot_garden/alpha_final/M2_alpha"
+      }
+    },
+    "60": {
+      "class_type": "LoadImage",
+      "inputs": {
+        "image": "slot_garden/static_drafts/M4_drawn_00001_.png"
+      }
+    },
+    "61": {
+      "class_type": "RemoveBackground",
+      "inputs": {
+        "bg_removal_model": [
+          "1",
+          0
+        ],
+        "image": [
+          "60",
+          0
+        ]
+      }
+    },
+    "62": {
+      "class_type": "InvertMask",
+      "inputs": {
+        "mask": [
+          "61",
+          0
+        ]
+      }
+    },
+    "63": {
+      "class_type": "JoinImageWithAlpha",
+      "inputs": {
+        "image": [
+          "60",
+          0
+        ],
+        "alpha": [
+          "62",
+          0
+        ]
+      }
+    },
+    "64": {
+      "class_type": "SaveImage",
+      "inputs": {
+        "images": [
+          "63",
+          0
+        ],
+        "filename_prefix": "slot_garden/alpha_final/M4_alpha"
+      }
+    },
+    "65": {
+      "class_type": "LoadImage",
+      "inputs": {
+        "image": "slot_garden/static_drafts/M5_drawn_00001_.png"
+      }
+    },
+    "66": {
+      "class_type": "RemoveBackground",
+      "inputs": {
+        "bg_removal_model": [
+          "1",
+          0
+        ],
+        "image": [
+          "65",
+          0
+        ]
+      }
+    },
+    "67": {
+      "class_type": "InvertMask",
+      "inputs": {
+        "mask": [
+          "66",
+          0
+        ]
+      }
+    },
+    "68": {
+      "class_type": "JoinImageWithAlpha",
+      "inputs": {
+        "image": [
+          "65",
+          0
+        ],
+        "alpha": [
+          "67",
+          0
+        ]
+      }
+    },
+    "69": {
+      "class_type": "SaveImage",
+      "inputs": {
+        "images": [
+          "68",
+          0
+        ],
+        "filename_prefix": "slot_garden/alpha_final/M5_alpha"
+      }
+    },
+    "70": {
+      "class_type": "LoadImage",
+      "inputs": {
+        "image": "slot_garden/static_drafts/M7_drawn_00001_.png"
+      }
+    },
+    "71": {
+      "class_type": "RemoveBackground",
+      "inputs": {
+        "bg_removal_model": [
+          "1",
+          0
+        ],
+        "image": [
+          "70",
+          0
+        ]
+      }
+    },
+    "72": {
+      "class_type": "InvertMask",
+      "inputs": {
+        "mask": [
+          "71",
+          0
+        ]
+      }
+    },
+    "73": {
+      "class_type": "JoinImageWithAlpha",
+      "inputs": {
+        "image": [
+          "70",
+          0
+        ],
+        "alpha": [
+          "72",
+          0
+        ]
+      }
+    },
+    "74": {
+      "class_type": "SaveImage",
+      "inputs": {
+        "images": [
+          "73",
+          0
+        ],
+        "filename_prefix": "slot_garden/alpha_final/M7_alpha"
+      }
+    },
+    "75": {
+      "class_type": "LoadImage",
+      "inputs": {
+        "image": "slot_garden/static_drafts/M10_drawn_00001_.png"
+      }
+    },
+    "76": {
+      "class_type": "RemoveBackground",
+      "inputs": {
+        "bg_removal_model": [
+          "1",
+          0
+        ],
+        "image": [
+          "75",
+          0
+        ]
+      }
+    },
+    "77": {
+      "class_type": "InvertMask",
+      "inputs": {
+        "mask": [
+          "76",
+          0
+        ]
+      }
+    },
+    "78": {
+      "class_type": "JoinImageWithAlpha",
+      "inputs": {
+        "image": [
+          "75",
+          0
+        ],
+        "alpha": [
+          "77",
+          0
+        ]
+      }
+    },
+    "79": {
+      "class_type": "SaveImage",
+      "inputs": {
+        "images": [
+          "78",
+          0
+        ],
+        "filename_prefix": "slot_garden/alpha_final/M10_alpha"
+      }
+    }
+  }
+}

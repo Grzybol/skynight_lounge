@@ -1,0 +1,11 @@
+{
+  "answer": "B",
+  "detail": "independent hybrid used meanNaturalX (WR-off MC) \u00d7 absolute start-tier probs + separate analytical WR fill contribution. It did NOT use meanX (w/ WR).",
+  "reconstructedPct": 97.36456550069357,
+  "reportedPct": 97.36456550069357,
+  "ifUsedMeanXWithoutExtraWrPct": 97.30146612907104,
+  "ifUsedMeanXPlusExtraWrPct": 97.75841058887049,
+  "doubleCountImpactPpIfA": 0.393845088176914,
+  "wrContributionPp": 0.45694445979944487,
+  "expectedH2Pp": 0.45694
+}

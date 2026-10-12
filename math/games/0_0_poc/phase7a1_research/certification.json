@@ -1,0 +1,300 @@
+{
+  "elapsedSec": 1087.663362979889,
+  "n": 1000000,
+  "seed": 7701000000,
+  "validation": {
+    "configSha256": "1a737f24ff3b75ceebb80b276e4fa23dde076699d2cfc7ac8e9a6f7fbcc7b8fe",
+    "pt2Monotonic": true,
+    "pt2Grain01": true,
+    "pt2ClassHierarchyPass": false,
+    "pt2HierarchyBreaks": [
+      {
+        "match": 4,
+        "left": "M1",
+        "right": "M2",
+        "vals": [
+          3.3,
+          6.1
+        ]
+      }
+    ],
+    "body1T5T6Unchanged": true,
+    "baseExact": {
+      "PT0": 59.6961766439716,
+      "PT2": 60.28839016193175,
+      "deltaPp": 0.592213517960154
+    },
+    "wrRatio": {
+      "LARGE_HILL": 1.0,
+      "SKI_FLYING": 3.0,
+      "WORLD_CUP": 6.0,
+      "PERFECT_V": 12.0
+    }
+  },
+  "pt2Decomposition": {
+    "baseLineDeltaPp": 0.592213517960154,
+    "fsInitialLineDeltaPp": 0.05561104960244086,
+    "rejumpLineDeltaPp": -0.0006365130362426034,
+    "bonusNonLineResidualPp": 3.983103735192141e-06,
+    "bonusTotalDeltaPp": 0.054978519669933446,
+    "totalFullGameDeltaPp": 0.6471920376300875,
+    "seBonusPp": 0.0017745237395618175
+  },
+  "pairedDeltas": {
+    "BODY1_standalone": {
+      "meanDeltaX": 2.0950588,
+      "pp": 1.3680059888128697,
+      "sePp": 0.011643630120219949,
+      "lineFsDeltaX": -3.4000000000000034e-06,
+      "lineRjDeltaX": 7.7e-06
+    },
+    "PT2_standalone": {
+      "meanDeltaX": 0.08419790000000002,
+      "pp": 0.054978519669933446,
+      "sePp": 0.0017745237395618175,
+      "lineFsDeltaX": 0.08516660000000004,
+      "lineRjDeltaX": -0.0009748
+    },
+    "PT2_BODY1_combo": {
+      "meanDeltaX": 2.1792449,
+      "pp": 1.422976803462463,
+      "sePp": 0.011780636774750955,
+      "lineFsDeltaX": 0.08514890000000003,
+      "lineRjDeltaX": -0.0009645999999999999
+    },
+    "BODY1_on_PT2": {
+      "meanDeltaX": 2.095047,
+      "pp": 1.3679982837925297,
+      "sePp": 0.011643359255370283,
+      "lineFsDeltaX": -1.7700000000000003e-05,
+      "lineRjDeltaX": 1.02e-05
+    },
+    "PT2_on_BODY1": {
+      "meanDeltaX": 0.08418610000000001,
+      "pp": 0.054970814649593205,
+      "sePp": 0.0017744934947655341,
+      "lineFsDeltaX": 0.08515230000000003,
+      "lineRjDeltaX": -0.0009722999999999999
+    },
+    "interactionPp": -7.705020340142976e-06
+  },
+  "summaries": {
+    "PT0_BODY0": {
+      "n": 1000000,
+      "meanX": 34.694231200000004,
+      "median": 9.500000000000002,
+      "p25": 5.5,
+      "p75": 19.2,
+      "p90": 45.099999999999994,
+      "p95": 105.6,
+      "p99": 431.50000000000006,
+      "p99_9": 2180.1,
+      "pLt5": 0.212762,
+      "pLt10": 0.518449,
+      "pCap": 1.1e-05,
+      "meanCapDrag": 1.6716876,
+      "meanLineFsX": 6.041949799999999,
+      "meanLineRejumpX": 0.0645425,
+      "pRejump": 0.166628,
+      "pWind": 0.076475,
+      "pPhase6": 0.197528,
+      "meanT5": 0.0,
+      "meanT6": 0.0,
+      "seMeanX": 0.2940202575578642
+    },
+    "PT0_BODY1": {
+      "n": 1000000,
+      "meanX": 36.78929,
+      "median": 9.7,
+      "p25": 5.5,
+      "p75": 20.1,
+      "p90": 48.8,
+      "p95": 115.3,
+      "p99": 470.50000000000006,
+      "p99_9": 2256.7000000000003,
+      "pLt5": 0.211843,
+      "pLt10": 0.511033,
+      "pCap": 1.1e-05,
+      "meanCapDrag": 1.6717581000000001,
+      "meanLineFsX": 6.0419464000000005,
+      "meanLineRejumpX": 0.0645502,
+      "pRejump": 0.166629,
+      "pWind": 0.076476,
+      "pPhase6": 0.197529,
+      "meanT5": 0.0,
+      "meanT6": 0.0,
+      "seMeanX": 0.2999174139552272
+    },
+    "PT2_BODY0": {
+      "n": 1000000,
+      "meanX": 34.778429100000004,
+      "median": 9.5,
+      "p25": 5.0,
+      "p75": 19.8,
+      "p90": 46.0,
+      "p95": 106.0,
+      "p99": 431.90000000000003,
+      "p99_9": 2181.3,
+      "pLt5": 0.244435,
+      "pLt10": 0.517425,
+      "pCap": 1.1e-05,
+      "meanCapDrag": 1.6716815,
+      "meanLineFsX": 6.1271164,
+      "meanLineRejumpX": 0.0635677,
+      "pRejump": 0.166628,
+      "pWind": 0.076475,
+      "pPhase6": 0.197528,
+      "meanT5": 0.0,
+      "meanT6": 0.0,
+      "seMeanX": 0.2940468875661471
+    },
+    "PT2_BODY1": {
+      "n": 1000000,
+      "meanX": 36.873476100000005,
+      "median": 9.7,
+      "p25": 5.1,
+      "p75": 20.8,
+      "p90": 49.5,
+      "p95": 115.6,
+      "p99": 471.0,
+      "p99_9": 2256.5000000000005,
+      "pLt5": 0.243196,
+      "pLt10": 0.509527,
+      "pCap": 1.1e-05,
+      "meanCapDrag": 1.671752,
+      "meanLineFsX": 6.1270987,
+      "meanLineRejumpX": 0.0635779,
+      "pRejump": 0.166629,
+      "pWind": 0.076476,
+      "pPhase6": 0.197529,
+      "meanT5": 0.0,
+      "meanT6": 0.0,
+      "seMeanX": 0.29994378695686974
+    }
+  },
+  "wrFill": {
+    "nOps": 10432835,
+    "eAccruedBonusWeighted": 36.37892455426362,
+    "eIncrementalFillWeighted": 49963.621075445735,
+    "eAccruedBonusFlat": 14.225871730934113,
+    "eIncrementalFillFlat": 49985.77412826907,
+    "note": "Weights = WR-C tier intensity 1:3:6:12 on opportunity spins; BASE prior not included",
+    "fillMassPerBonus": 666425.2203010999,
+    "meanOpsPerBonus": 10.432835
+  },
+  "coreRtpWithoutWr": 95.84319032142261,
+  "candidates": {
+    "C2": {
+      "id": "C2",
+      "wrPp": 0.45,
+      "projectedRtp": 96.29319032142261,
+      "coreRtpWithoutWr": 95.84319032142261,
+      "pointReservePp": 0.20680967857738608,
+      "safeReservePp": 0.05219582175896248,
+      "seCombinedPp": 0.07888462082572632,
+      "wr": {
+        "targetWrPp": 0.45,
+        "c": 1.034116118287856e-06,
+        "byTierPSpin": {
+          "LARGE_HILL": 1.034116118287856e-06,
+          "SKI_FLYING": 3.1023483548635685e-06,
+          "WORLD_CUP": 6.204696709727137e-06,
+          "PERFECT_V": 1.2409393419454274e-05
+        },
+        "pPerTriggeredBonusApprox": 1.3793256915992148e-05,
+        "oneInBonusesApprox": 72499.19334429146,
+        "pPaidRoundApprox": 9.006552974222868e-08,
+        "oneInPaidRoundsApprox": 11103026.905654604,
+        "eFillUsed": 49963.621075445735,
+        "fillMassPerBonus": 666425.2203010999
+      },
+      "inPreferredBand": true
+    },
+    "C3": {
+      "id": "C3",
+      "wrPp": 0.5,
+      "projectedRtp": 96.34319032142261,
+      "coreRtpWithoutWr": 95.84319032142261,
+      "pointReservePp": 0.15680967857738892,
+      "safeReservePp": 0.0021958217589653217,
+      "seCombinedPp": 0.07888462082572632,
+      "wr": {
+        "targetWrPp": 0.5,
+        "c": 1.1490179092087288e-06,
+        "byTierPSpin": {
+          "LARGE_HILL": 1.1490179092087288e-06,
+          "SKI_FLYING": 3.4470537276261864e-06,
+          "WORLD_CUP": 6.894107455252373e-06,
+          "PERFECT_V": 1.3788214910504746e-05
+        },
+        "pPerTriggeredBonusApprox": 1.532584101776905e-05,
+        "oneInBonusesApprox": 65249.27400986232,
+        "pPaidRoundApprox": 1.0007281082469853e-07,
+        "oneInPaidRoundsApprox": 9992724.215089144,
+        "eFillUsed": 49963.621075445735,
+        "fillMassPerBonus": 666425.2203010999
+      },
+      "inPreferredBand": true
+    },
+    "C8": {
+      "id": "C8",
+      "wrPp": 0.55,
+      "projectedRtp": 96.39319032142261,
+      "coreRtpWithoutWr": 95.84319032142261,
+      "pointReservePp": 0.10680967857739176,
+      "safeReservePp": -0.047804178241031836,
+      "seCombinedPp": 0.07888462082572632,
+      "wr": {
+        "targetWrPp": 0.55,
+        "c": 1.2639197001296017e-06,
+        "byTierPSpin": {
+          "LARGE_HILL": 1.2639197001296017e-06,
+          "SKI_FLYING": 3.791759100388805e-06,
+          "WORLD_CUP": 7.58351820077761e-06,
+          "PERFECT_V": 1.516703640155522e-05
+        },
+        "pPerTriggeredBonusApprox": 1.6858425119545957e-05,
+        "oneInBonusesApprox": 59317.52182714756,
+        "pPaidRoundApprox": 1.1008009190716839e-07,
+        "oneInPaidRoundsApprox": 9084294.74099013,
+        "eFillUsed": 49963.621075445735,
+        "fillMassPerBonus": 666425.2203010999
+      },
+      "inPreferredBand": false
+    },
+    "CFINAL_SOLVED": {
+      "id": "CFINAL_SOLVED",
+      "wrPp": 0.4568096785773861,
+      "projectedRtp": 96.3,
+      "coreRtpWithoutWr": 95.84319032142261,
+      "pointReservePp": 0.20000000000000284,
+      "safeReservePp": 0.04538614318157924,
+      "seCombinedPp": 0.07888462082572632,
+      "wr": {
+        "targetWrPp": 0.4568096785773861,
+        "c": 1.0497650035705992e-06,
+        "byTierPSpin": {
+          "LARGE_HILL": 1.0497650035705992e-06,
+          "SKI_FLYING": 3.1492950107117973e-06,
+          "WORLD_CUP": 6.298590021423595e-06,
+          "PERFECT_V": 1.259718004284719e-05
+        },
+        "pPerTriggeredBonusApprox": 1.4001985018510399e-05,
+        "oneInBonusesApprox": 71418.44521887548,
+        "pPaidRoundApprox": 9.142845709433219e-08,
+        "oneInPaidRoundsApprox": 10937513.677697092,
+        "eFillUsed": 49963.621075445735,
+        "fillMassPerBonus": 666425.2203010999
+      },
+      "inPreferredBand": true,
+      "solveTarget": 96.3,
+      "wrPpSolved": 0.4568096785773861
+    }
+  },
+  "recommended": "C2",
+  "recommendedNote": "Best safe reserve >=0.05 in band; CFINAL_SOLVED alternate at 96.30 with safe 0.045. Phase 7B blocked on PT2 hierarchy FAIL.",
+  "readyFor7B": false,
+  "blockers": [
+    "PT2_CLASS_HIERARCHY_FAIL_M1_4OAK"
+  ]
+}

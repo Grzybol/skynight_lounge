@@ -1,0 +1,71 @@
+{
+  "configSha256": "d6879d5c9ef3d08386486cd03712d6042e366543597a5c453ca8b1da6f2edbd0",
+  "expected": "d6879d5c9ef3d08386486cd03712d6042e366543597a5c453ca8b1da6f2edbd0",
+  "phase7cArtifacts": {
+    "books_report.json": {
+      "sha256": "e126cf14d6c4bccf6e126b402662a997947e430c9c1030a86a102692609a367c",
+      "bytes": 4754
+    },
+    "buy_ev.json": {
+      "sha256": "58bb04a294d9b6b77cf1b1dc1d958d38ff6a0d6d2bd2232206852bdcb9289764",
+      "bytes": 15597
+    },
+    "buy_modes.json": {
+      "sha256": "41bfda4491d090006e2b1c3b7cb09ae6343ef2de81e525c5e650bc6442a5b33a",
+      "bytes": 1255
+    },
+    "base_cert.json": {
+      "sha256": "5f7485e423928e3561d20a2db598ada3987c8ebce796d0e58bee720319b8a53e",
+      "bytes": 784
+    },
+    "pre_cert_freeze.json": {
+      "sha256": "ebcff8b4574363e1824a2e9023f6a308a4ed76407ab9e7b119414d80fb5f3998",
+      "bytes": 2517
+    },
+    "library_v2/books_BASE.jsonl.zst": {
+      "sha256": "830d733a67f5139e2d20091d58a6554e2f354c7753b7d9db01c3630373a3f633",
+      "bytes": 250669779
+    },
+    "library_v2/books_LARGE_HILL.jsonl.zst": {
+      "sha256": "400fe67c5fa06cf9d893d69282b35903a82cd2a0432b8078afd3126ed5d738ae",
+      "bytes": 127208429
+    },
+    "library_v2/books_PERFECT_V.jsonl.zst": {
+      "sha256": "6a4fd4f195db60f137a2409fa58cdc57f786a8c6cd0e50af3a868702039228ac",
+      "bytes": 488906266
+    },
+    "library_v2/books_SKI_FLYING.jsonl.zst": {
+      "sha256": "3f92c4487560647c631eda76df00d8c902f1f04d32e545a0d1517c8afa513492",
+      "bytes": 243507591
+    },
+    "library_v2/books_WORLD_CUP.jsonl.zst": {
+      "sha256": "2db5e46d23522fbd16c2fe3bce31b8a0edb579be1453eaba83195eeeb6dc74cb",
+      "bytes": 289191502
+    },
+    "library_v2/index.json": {
+      "sha256": "35bef94c47b36e408ec8a3669d0a84bff51baef7e9b4016b4bf5da784d7a86d8",
+      "bytes": 808
+    },
+    "library_v2/lookUpTable_BASE_0.csv": {
+      "sha256": "724b2389b4cb1659df7e629c60ef0883432a979ad8b610c1c4689a55da9059b5",
+      "bytes": 3414967
+    },
+    "library_v2/lookUpTable_LARGE_HILL_0.csv": {
+      "sha256": "0ce72a276617afe528bd8cf2014761e23cffd74f51c9b66379bd303c50c39560",
+      "bytes": 1839163
+    },
+    "library_v2/lookUpTable_PERFECT_V_0.csv": {
+      "sha256": "36457c009b1f67226dc242f6b8c45f18dab183f7972cac9db4acd621d2168f41",
+      "bytes": 2024125
+    },
+    "library_v2/lookUpTable_SKI_FLYING_0.csv": {
+      "sha256": "970f0724af5e7e8dc864668f14ac9bdf4f23c4793626150611acd2efa5dcb3fc",
+      "bytes": 1916177
+    },
+    "library_v2/lookUpTable_WORLD_CUP_0.csv": {
+      "sha256": "c18ca04171b2537c8f3c39acf45fc42b5b9826ffc75c19e155fba87f52b3c05a",
+      "bytes": 1942229
+    }
+  },
+  "match": true
+}

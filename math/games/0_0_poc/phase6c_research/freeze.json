@@ -1,0 +1,109 @@
+{
+  "recordedAt": "2026-09-22T13:30:31.958291+00:00",
+  "branch": "feat/skyjump-v2-5x5",
+  "purpose": "Phase 6C certification freeze \u2014 do not mutate",
+  "liveConfigSha256": "617e1056518f2d636ca4ac94456a7956b74664459c92a8ed32e5b965340cc165",
+  "baseMystery": {
+    "FLIGHT_TOKEN": 855,
+    "THERMAL_LIFT": 42,
+    "GATE_UPGRADE": 3,
+    "JUDGE": 85,
+    "HEAD_JUDGE": 15
+  },
+  "phase5bArchive": {
+    "FLIGHT_TOKEN": 752,
+    "THERMAL_LIFT": 42,
+    "GATE_UPGRADE": 6,
+    "JUDGE": 170,
+    "HEAD_JUDGE": 30
+  },
+  "phase5bOrigin": null,
+  "phase6": {
+    "enabled": true,
+    "candidateOrigin": "P6A1_E_E1",
+    "rejumpArch": "R-BATCH",
+    "windArch": "W-CHARGE",
+    "ladder": "K1",
+    "stageRule": "W2_CHARGE_PRIORITY",
+    "saturation": "B",
+    "perfectV": "PV1",
+    "maxRejumpsPerSpin": 2,
+    "maxFeatureChainDepth": 8,
+    "packs": {
+      "LARGE_HILL": {
+        "REJUMP": 22,
+        "WIND_KEY": 6
+      },
+      "SKI_FLYING": {
+        "REJUMP": 36,
+        "WIND_KEY": 14
+      },
+      "WORLD_CUP": {
+        "REJUMP": 48,
+        "WIND_KEY": 22
+      },
+      "PERFECT_V": {
+        "REJUMP": 60,
+        "WIND_KEY": 30
+      }
+    }
+  },
+  "e1TablesByTier": {
+    "LARGE_HILL": {
+      "FLIGHT_TOKEN": 724,
+      "REJUMP": 22,
+      "WIND_KEY": 6,
+      "THERMAL_LIFT": 42,
+      "GATE_UPGRADE": 6,
+      "JUDGE": 170,
+      "HEAD_JUDGE": 30
+    },
+    "SKI_FLYING": {
+      "FLIGHT_TOKEN": 702,
+      "REJUMP": 36,
+      "WIND_KEY": 14,
+      "THERMAL_LIFT": 42,
+      "GATE_UPGRADE": 6,
+      "JUDGE": 170,
+      "HEAD_JUDGE": 30
+    },
+    "WORLD_CUP": {
+      "FLIGHT_TOKEN": 682,
+      "REJUMP": 48,
+      "WIND_KEY": 22,
+      "THERMAL_LIFT": 42,
+      "GATE_UPGRADE": 6,
+      "JUDGE": 170,
+      "HEAD_JUDGE": 30
+    },
+    "PERFECT_V": {
+      "FLIGHT_TOKEN": 662,
+      "REJUMP": 60,
+      "WIND_KEY": 30,
+      "THERMAL_LIFT": 42,
+      "GATE_UPGRADE": 6,
+      "JUDGE": 170,
+      "HEAD_JUDGE": 30
+    }
+  },
+  "tableSums": {
+    "LARGE_HILL": 1000,
+    "SKI_FLYING": 1000,
+    "WORLD_CUP": 1000,
+    "PERFECT_V": 1000
+  },
+  "reducerEventSchemaVersion": 2,
+  "references": {
+    "phase5bWeightedCoreMeanX": 27.45472,
+    "baseRtp": 71.212,
+    "phase5bFsPp": 17.92705,
+    "gameBeforePhase6": 89.13904881656805,
+    "targetRtp": 96.5,
+    "researchE1IncrementalPp": 5.194785765879253,
+    "researchE1MeanX": 35.4103735,
+    "live6b1MIncrementalPp": 5.854260089219676,
+    "live6bPairedIncrementalPp": 5.856720145502035
+  },
+  "phase6bPySha256": "da40845d54e1acf8b771b76b37a90c9a5589d9b9fa56ea922d16f72bcb27c833",
+  "phase5aEnginePySha256": "b85b14fe35c14e760a9dff6e309d1ff1a736dcaa7e52883fa0dc2c6384013b84"
+}

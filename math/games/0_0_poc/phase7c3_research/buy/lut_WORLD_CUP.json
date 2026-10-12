@@ -1,0 +1,12 @@
+{
+  "tier": "WORLD_CUP",
+  "lutMeanX": 391.09477503645286,
+  "authMeanX": 398.49973410614126,
+  "authWrOffMeanX": 395.2119578987115,
+  "pWr": 6.627941247605573e-05,
+  "meanDelta": 7.4049590696884025,
+  "nNat": 50000,
+  "nWr": 20,
+  "shaBook": "ec129a5c22349bb434028e83d8a4174f6509a5f7c55a3569751947af04b058d4",
+  "shaLut": "cbabdc326cbdf993b8747ebaeef0762b60206f3fb1cf1e2b44e6322b888a96a8"
+}

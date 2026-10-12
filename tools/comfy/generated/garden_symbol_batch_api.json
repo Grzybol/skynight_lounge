@@ -1,0 +1,1526 @@
+{
+  "prompt": {
+    "1": {
+      "class_type": "UNETLoader",
+      "inputs": {
+        "unet_name": "qwen_image_edit_fp8_e4m3fn.safetensors",
+        "weight_dtype": "default"
+      }
+    },
+    "2": {
+      "class_type": "LoraLoaderModelOnly",
+      "inputs": {
+        "model": [
+          "1",
+          0
+        ],
+        "lora_name": "Qwen-Image-Lightning-4steps-V1.0.safetensors",
+        "strength_model": 1
+      }
+    },
+    "3": {
+      "class_type": "ModelSamplingAuraFlow",
+      "inputs": {
+        "model": [
+          "2",
+          0
+        ],
+        "shift": 3
+      }
+    },
+    "4": {
+      "class_type": "CFGNorm",
+      "inputs": {
+        "model": [
+          "3",
+          0
+        ],
+        "strength": 1
+      }
+    },
+    "5": {
+      "class_type": "CLIPLoader",
+      "inputs": {
+        "clip_name": "qwen_2.5_vl_7b_fp8_scaled.safetensors",
+        "type": "qwen_image",
+        "device": "default"
+      }
+    },
+    "6": {
+      "class_type": "VAELoader",
+      "inputs": {
+        "vae_name": "qwen_image_vae.safetensors"
+      }
+    },
+    "10": {
+      "class_type": "LoadImage",
+      "inputs": {
+        "image": "garden_H1_source.png"
+      }
+    },
+    "11": {
+      "class_type": "TextEncodeQwenImageEdit",
+      "inputs": {
+        "clip": [
+          "5",
+          0
+        ],
+        "vae": [
+          "6",
+          0
+        ],
+        "image": [
+          "10",
+          0
+        ],
+        "prompt": "Transform the supplied miner into a friendly older gardener with a large white moustache, straw hat and green work shirt. Preserve the centered front-facing head-and-shoulders silhouette. Match the approved hand-drawn slot-game direction: an original 2D cartoon garden icon with bold clean dark ink outlines, simplified appealing shapes, matte gouache texture, controlled cel shading, small hand-painted imperfections, strong silhouette and excellent readability at 200 pixels. Use a warm harvest palette with leafy greens, tomato red, aubergine purple, blueberry blue, sunflower yellow and natural wood. Remove glossy 3D rendering, bloom, neon glow, photorealism and excessive highlights. Keep generous padding around the subject. Isolate it on a perfectly flat neutral light-gray background with no shadow, gradient or texture. No border and no extra objects."
+      }
+    },
+    "12": {
+      "class_type": "TextEncodeQwenImageEdit",
+      "inputs": {
+        "clip": [
+          "5",
+          0
+        ],
+        "vae": [
+          "6",
+          0
+        ],
+        "image": [
+          "10",
+          0
+        ],
+        "prompt": ""
+      }
+    },
+    "13": {
+      "class_type": "VAEEncode",
+      "inputs": {
+        "pixels": [
+          "10",
+          0
+        ],
+        "vae": [
+          "6",
+          0
+        ]
+      }
+    },
+    "14": {
+      "class_type": "KSampler",
+      "inputs": {
+        "model": [
+          "4",
+          0
+        ],
+        "seed": 9302001,
+        "steps": 4,
+        "cfg": 1,
+        "sampler_name": "euler",
+        "scheduler": "simple",
+        "positive": [
+          "11",
+          0
+        ],
+        "negative": [
+          "12",
+          0
+        ],
+        "latent_image": [
+          "13",
+          0
+        ],
+        "denoise": 1
+      }
+    },
+    "15": {
+      "class_type": "VAEDecode",
+      "inputs": {
+        "samples": [
+          "14",
+          0
+        ],
+        "vae": [
+          "6",
+          0
+        ]
+      }
+    },
+    "16": {
+      "class_type": "SaveImage",
+      "inputs": {
+        "images": [
+          "15",
+          0
+        ],
+        "filename_prefix": "slot_garden/static_drafts/H1_drawn"
+      }
+    },
+    "17": {
+      "class_type": "LoadImage",
+      "inputs": {
+        "image": "garden_H2_source.png"
+      }
+    },
+    "18": {
+      "class_type": "TextEncodeQwenImageEdit",
+      "inputs": {
+        "clip": [
+          "5",
+          0
+        ],
+        "vae": [
+          "6",
+          0
+        ],
+        "image": [
+          "17",
+          0
+        ],
+        "prompt": "Transform the supplied mine cart into a wooden garden wheelbarrow filled with tomatoes, carrots and leafy vegetables. Preserve the compact front three-quarter silhouette. Match the approved hand-drawn slot-game direction: an original 2D cartoon garden icon with bold clean dark ink outlines, simplified appealing shapes, matte gouache texture, controlled cel shading, small hand-painted imperfections, strong silhouette and excellent readability at 200 pixels. Use a warm harvest palette with leafy greens, tomato red, aubergine purple, blueberry blue, sunflower yellow and natural wood. Remove glossy 3D rendering, bloom, neon glow, photorealism and excessive highlights. Keep generous padding around the subject. Isolate it on a perfectly flat neutral light-gray background with no shadow, gradient or texture. No border and no extra objects."
+      }
+    },
+    "19": {
+      "class_type": "TextEncodeQwenImageEdit",
+      "inputs": {
+        "clip": [
+          "5",
+          0
+        ],
+        "vae": [
+          "6",
+          0
+        ],
+        "image": [
+          "17",
+          0
+        ],
+        "prompt": ""
+      }
+    },
+    "20": {
+      "class_type": "VAEEncode",
+      "inputs": {
+        "pixels": [
+          "17",
+          0
+        ],
+        "vae": [
+          "6",
+          0
+        ]
+      }
+    },
+    "21": {
+      "class_type": "KSampler",
+      "inputs": {
+        "model": [
+          "4",
+          0
+        ],
+        "seed": 9302002,
+        "steps": 4,
+        "cfg": 1,
+        "sampler_name": "euler",
+        "scheduler": "simple",
+        "positive": [
+          "18",
+          0
+        ],
+        "negative": [
+          "19",
+          0
+        ],
+        "latent_image": [
+          "20",
+          0
+        ],
+        "denoise": 1
+      }
+    },
+    "22": {
+      "class_type": "VAEDecode",
+      "inputs": {
+        "samples": [
+          "21",
+          0
+        ],
+        "vae": [
+          "6",
+          0
+        ]
+      }
+    },
+    "23": {
+      "class_type": "SaveImage",
+      "inputs": {
+        "images": [
+          "22",
+          0
+        ],
+        "filename_prefix": "slot_garden/static_drafts/H2_drawn"
+      }
+    },
+    "24": {
+      "class_type": "LoadImage",
+      "inputs": {
+        "image": "garden_H3_source.png"
+      }
+    },
+    "25": {
+      "class_type": "TextEncodeQwenImageEdit",
+      "inputs": {
+        "clip": [
+          "5",
+          0
+        ],
+        "vae": [
+          "6",
+          0
+        ],
+        "image": [
+          "24",
+          0
+        ],
+        "prompt": "Transform the supplied mining drill into a charming rounded metal watering can with a curved handle and long spout. Preserve the strong diagonal orientation. Match the approved hand-drawn slot-game direction: an original 2D cartoon garden icon with bold clean dark ink outlines, simplified appealing shapes, matte gouache texture, controlled cel shading, small hand-painted imperfections, strong silhouette and excellent readability at 200 pixels. Use a warm harvest palette with leafy greens, tomato red, aubergine purple, blueberry blue, sunflower yellow and natural wood. Remove glossy 3D rendering, bloom, neon glow, photorealism and excessive highlights. Keep generous padding around the subject. Isolate it on a perfectly flat neutral light-gray background with no shadow, gradient or texture. No border and no extra objects."
+      }
+    },
+    "26": {
+      "class_type": "TextEncodeQwenImageEdit",
+      "inputs": {
+        "clip": [
+          "5",
+          0
+        ],
+        "vae": [
+          "6",
+          0
+        ],
+        "image": [
+          "24",
+          0
+        ],
+        "prompt": ""
+      }
+    },
+    "27": {
+      "class_type": "VAEEncode",
+      "inputs": {
+        "pixels": [
+          "24",
+          0
+        ],
+        "vae": [
+          "6",
+          0
+        ]
+      }
+    },
+    "28": {
+      "class_type": "KSampler",
+      "inputs": {
+        "model": [
+          "4",
+          0
+        ],
+        "seed": 9302003,
+        "steps": 4,
+        "cfg": 1,
+        "sampler_name": "euler",
+        "scheduler": "simple",
+        "positive": [
+          "25",
+          0
+        ],
+        "negative": [
+          "26",
+          0
+        ],
+        "latent_image": [
+          "27",
+          0
+        ],
+        "denoise": 1
+      }
+    },
+    "29": {
+      "class_type": "VAEDecode",
+      "inputs": {
+        "samples": [
+          "28",
+          0
+        ],
+        "vae": [
+          "6",
+          0
+        ]
+      }
+    },
+    "30": {
+      "class_type": "SaveImage",
+      "inputs": {
+        "images": [
+          "29",
+          0
+        ],
+        "filename_prefix": "slot_garden/static_drafts/H3_drawn"
+      }
+    },
+    "31": {
+      "class_type": "LoadImage",
+      "inputs": {
+        "image": "garden_L1_source.png"
+      }
+    },
+    "32": {
+      "class_type": "TextEncodeQwenImageEdit",
+      "inputs": {
+        "clip": [
+          "5",
+          0
+        ],
+        "vae": [
+          "6",
+          0
+        ],
+        "image": [
+          "31",
+          0
+        ],
+        "prompt": "Transform the supplied red gemstone into a plump ripe red tomato with one small green leaf crown. Preserve a compact centered silhouette. Match the approved hand-drawn slot-game direction: an original 2D cartoon garden icon with bold clean dark ink outlines, simplified appealing shapes, matte gouache texture, controlled cel shading, small hand-painted imperfections, strong silhouette and excellent readability at 200 pixels. Use a warm harvest palette with leafy greens, tomato red, aubergine purple, blueberry blue, sunflower yellow and natural wood. Remove glossy 3D rendering, bloom, neon glow, photorealism and excessive highlights. Keep generous padding around the subject. Isolate it on a perfectly flat neutral light-gray background with no shadow, gradient or texture. No border and no extra objects."
+      }
+    },
+    "33": {
+      "class_type": "TextEncodeQwenImageEdit",
+      "inputs": {
+        "clip": [
+          "5",
+          0
+        ],
+        "vae": [
+          "6",
+          0
+        ],
+        "image": [
+          "31",
+          0
+        ],
+        "prompt": ""
+      }
+    },
+    "34": {
+      "class_type": "VAEEncode",
+      "inputs": {
+        "pixels": [
+          "31",
+          0
+        ],
+        "vae": [
+          "6",
+          0
+        ]
+      }
+    },
+    "35": {
+      "class_type": "KSampler",
+      "inputs": {
+        "model": [
+          "4",
+          0
+        ],
+        "seed": 9302004,
+        "steps": 4,
+        "cfg": 1,
+        "sampler_name": "euler",
+        "scheduler": "simple",
+        "positive": [
+          "32",
+          0
+        ],
+        "negative": [
+          "33",
+          0
+        ],
+        "latent_image": [
+          "34",
+          0
+        ],
+        "denoise": 1
+      }
+    },
+    "36": {
+      "class_type": "VAEDecode",
+      "inputs": {
+        "samples": [
+          "35",
+          0
+        ],
+        "vae": [
+          "6",
+          0
+        ]
+      }
+    },
+    "37": {
+      "class_type": "SaveImage",
+      "inputs": {
+        "images": [
+          "36",
+          0
+        ],
+        "filename_prefix": "slot_garden/static_drafts/L1_drawn"
+      }
+    },
+    "38": {
+      "class_type": "LoadImage",
+      "inputs": {
+        "image": "garden_L2_source.png"
+      }
+    },
+    "39": {
+      "class_type": "TextEncodeQwenImageEdit",
+      "inputs": {
+        "clip": [
+          "5",
+          0
+        ],
+        "vae": [
+          "6",
+          0
+        ],
+        "image": [
+          "38",
+          0
+        ],
+        "prompt": "Transform the supplied purple gemstone into a painted purple aubergine with a green cap. Preserve a compact centered silhouette. Match the approved hand-drawn slot-game direction: an original 2D cartoon garden icon with bold clean dark ink outlines, simplified appealing shapes, matte gouache texture, controlled cel shading, small hand-painted imperfections, strong silhouette and excellent readability at 200 pixels. Use a warm harvest palette with leafy greens, tomato red, aubergine purple, blueberry blue, sunflower yellow and natural wood. Remove glossy 3D rendering, bloom, neon glow, photorealism and excessive highlights. Keep generous padding around the subject. Isolate it on a perfectly flat neutral light-gray background with no shadow, gradient or texture. No border and no extra objects."
+      }
+    },
+    "40": {
+      "class_type": "TextEncodeQwenImageEdit",
+      "inputs": {
+        "clip": [
+          "5",
+          0
+        ],
+        "vae": [
+          "6",
+          0
+        ],
+        "image": [
+          "38",
+          0
+        ],
+        "prompt": ""
+      }
+    },
+    "41": {
+      "class_type": "VAEEncode",
+      "inputs": {
+        "pixels": [
+          "38",
+          0
+        ],
+        "vae": [
+          "6",
+          0
+        ]
+      }
+    },
+    "42": {
+      "class_type": "KSampler",
+      "inputs": {
+        "model": [
+          "4",
+          0
+        ],
+        "seed": 9302005,
+        "steps": 4,
+        "cfg": 1,
+        "sampler_name": "euler",
+        "scheduler": "simple",
+        "positive": [
+          "39",
+          0
+        ],
+        "negative": [
+          "40",
+          0
+        ],
+        "latent_image": [
+          "41",
+          0
+        ],
+        "denoise": 1
+      }
+    },
+    "43": {
+      "class_type": "VAEDecode",
+      "inputs": {
+        "samples": [
+          "42",
+          0
+        ],
+        "vae": [
+          "6",
+          0
+        ]
+      }
+    },
+    "44": {
+      "class_type": "SaveImage",
+      "inputs": {
+        "images": [
+          "43",
+          0
+        ],
+        "filename_prefix": "slot_garden/static_drafts/L2_drawn"
+      }
+    },
+    "45": {
+      "class_type": "LoadImage",
+      "inputs": {
+        "image": "garden_L3_source.png"
+      }
+    },
+    "46": {
+      "class_type": "TextEncodeQwenImageEdit",
+      "inputs": {
+        "clip": [
+          "5",
+          0
+        ],
+        "vae": [
+          "6",
+          0
+        ],
+        "image": [
+          "45",
+          0
+        ],
+        "prompt": "Transform the supplied green gemstone into a bright green broccoli crown with a short stalk. Preserve a compact centered silhouette. Match the approved hand-drawn slot-game direction: an original 2D cartoon garden icon with bold clean dark ink outlines, simplified appealing shapes, matte gouache texture, controlled cel shading, small hand-painted imperfections, strong silhouette and excellent readability at 200 pixels. Use a warm harvest palette with leafy greens, tomato red, aubergine purple, blueberry blue, sunflower yellow and natural wood. Remove glossy 3D rendering, bloom, neon glow, photorealism and excessive highlights. Keep generous padding around the subject. Isolate it on a perfectly flat neutral light-gray background with no shadow, gradient or texture. No border and no extra objects."
+      }
+    },
+    "47": {
+      "class_type": "TextEncodeQwenImageEdit",
+      "inputs": {
+        "clip": [
+          "5",
+          0
+        ],
+        "vae": [
+          "6",
+          0
+        ],
+        "image": [
+          "45",
+          0
+        ],
+        "prompt": ""
+      }
+    },
+    "48": {
+      "class_type": "VAEEncode",
+      "inputs": {
+        "pixels": [
+          "45",
+          0
+        ],
+        "vae": [
+          "6",
+          0
+        ]
+      }
+    },
+    "49": {
+      "class_type": "KSampler",
+      "inputs": {
+        "model": [
+          "4",
+          0
+        ],
+        "seed": 9302006,
+        "steps": 4,
+        "cfg": 1,
+        "sampler_name": "euler",
+        "scheduler": "simple",
+        "positive": [
+          "46",
+          0
+        ],
+        "negative": [
+          "47",
+          0
+        ],
+        "latent_image": [
+          "48",
+          0
+        ],
+        "denoise": 1
+      }
+    },
+    "50": {
+      "class_type": "VAEDecode",
+      "inputs": {
+        "samples": [
+          "49",
+          0
+        ],
+        "vae": [
+          "6",
+          0
+        ]
+      }
+    },
+    "51": {
+      "class_type": "SaveImage",
+      "inputs": {
+        "images": [
+          "50",
+          0
+        ],
+        "filename_prefix": "slot_garden/static_drafts/L3_drawn"
+      }
+    },
+    "52": {
+      "class_type": "LoadImage",
+      "inputs": {
+        "image": "garden_L4_source.png"
+      }
+    },
+    "53": {
+      "class_type": "TextEncodeQwenImageEdit",
+      "inputs": {
+        "clip": [
+          "5",
+          0
+        ],
+        "vae": [
+          "6",
+          0
+        ],
+        "image": [
+          "52",
+          0
+        ],
+        "prompt": "Transform the supplied blue gemstone into a cluster of three deep-blue blueberries with two green leaves. Preserve a compact centered silhouette. Match the approved hand-drawn slot-game direction: an original 2D cartoon garden icon with bold clean dark ink outlines, simplified appealing shapes, matte gouache texture, controlled cel shading, small hand-painted imperfections, strong silhouette and excellent readability at 200 pixels. Use a warm harvest palette with leafy greens, tomato red, aubergine purple, blueberry blue, sunflower yellow and natural wood. Remove glossy 3D rendering, bloom, neon glow, photorealism and excessive highlights. Keep generous padding around the subject. Isolate it on a perfectly flat neutral light-gray background with no shadow, gradient or texture. No border and no extra objects."
+      }
+    },
+    "54": {
+      "class_type": "TextEncodeQwenImageEdit",
+      "inputs": {
+        "clip": [
+          "5",
+          0
+        ],
+        "vae": [
+          "6",
+          0
+        ],
+        "image": [
+          "52",
+          0
+        ],
+        "prompt": ""
+      }
+    },
+    "55": {
+      "class_type": "VAEEncode",
+      "inputs": {
+        "pixels": [
+          "52",
+          0
+        ],
+        "vae": [
+          "6",
+          0
+        ]
+      }
+    },
+    "56": {
+      "class_type": "KSampler",
+      "inputs": {
+        "model": [
+          "4",
+          0
+        ],
+        "seed": 9302007,
+        "steps": 4,
+        "cfg": 1,
+        "sampler_name": "euler",
+        "scheduler": "simple",
+        "positive": [
+          "53",
+          0
+        ],
+        "negative": [
+          "54",
+          0
+        ],
+        "latent_image": [
+          "55",
+          0
+        ],
+        "denoise": 1
+      }
+    },
+    "57": {
+      "class_type": "VAEDecode",
+      "inputs": {
+        "samples": [
+          "56",
+          0
+        ],
+        "vae": [
+          "6",
+          0
+        ]
+      }
+    },
+    "58": {
+      "class_type": "SaveImage",
+      "inputs": {
+        "images": [
+          "57",
+          0
+        ],
+        "filename_prefix": "slot_garden/static_drafts/L4_drawn"
+      }
+    },
+    "59": {
+      "class_type": "LoadImage",
+      "inputs": {
+        "image": "garden_W_source.png"
+      }
+    },
+    "60": {
+      "class_type": "TextEncodeQwenImageEdit",
+      "inputs": {
+        "clip": [
+          "5",
+          0
+        ],
+        "vae": [
+          "6",
+          0
+        ],
+        "image": [
+          "59",
+          0
+        ],
+        "prompt": "Transform the supplied Wild dynamite into crossed garden shears behind a sunflower and a small wooden badge. Keep exactly one large readable uppercase W on the badge. Match the approved hand-drawn slot-game direction: an original 2D cartoon garden icon with bold clean dark ink outlines, simplified appealing shapes, matte gouache texture, controlled cel shading, small hand-painted imperfections, strong silhouette and excellent readability at 200 pixels. Use a warm harvest palette with leafy greens, tomato red, aubergine purple, blueberry blue, sunflower yellow and natural wood. Remove glossy 3D rendering, bloom, neon glow, photorealism and excessive highlights. Keep generous padding around the subject. Isolate it on a perfectly flat neutral light-gray background with no shadow, gradient or texture. No border and no extra objects."
+      }
+    },
+    "61": {
+      "class_type": "TextEncodeQwenImageEdit",
+      "inputs": {
+        "clip": [
+          "5",
+          0
+        ],
+        "vae": [
+          "6",
+          0
+        ],
+        "image": [
+          "59",
+          0
+        ],
+        "prompt": ""
+      }
+    },
+    "62": {
+      "class_type": "VAEEncode",
+      "inputs": {
+        "pixels": [
+          "59",
+          0
+        ],
+        "vae": [
+          "6",
+          0
+        ]
+      }
+    },
+    "63": {
+      "class_type": "KSampler",
+      "inputs": {
+        "model": [
+          "4",
+          0
+        ],
+        "seed": 9302008,
+        "steps": 4,
+        "cfg": 1,
+        "sampler_name": "euler",
+        "scheduler": "simple",
+        "positive": [
+          "60",
+          0
+        ],
+        "negative": [
+          "61",
+          0
+        ],
+        "latent_image": [
+          "62",
+          0
+        ],
+        "denoise": 1
+      }
+    },
+    "64": {
+      "class_type": "VAEDecode",
+      "inputs": {
+        "samples": [
+          "63",
+          0
+        ],
+        "vae": [
+          "6",
+          0
+        ]
+      }
+    },
+    "65": {
+      "class_type": "SaveImage",
+      "inputs": {
+        "images": [
+          "64",
+          0
+        ],
+        "filename_prefix": "slot_garden/static_drafts/W_drawn"
+      }
+    },
+    "66": {
+      "class_type": "LoadImage",
+      "inputs": {
+        "image": "garden_S_source.png"
+      }
+    },
+    "67": {
+      "class_type": "TextEncodeQwenImageEdit",
+      "inputs": {
+        "clip": [
+          "5",
+          0
+        ],
+        "vae": [
+          "6",
+          0
+        ],
+        "image": [
+          "66",
+          0
+        ],
+        "prompt": "Transform the supplied Scatter crystal into a premium golden pumpkin with curling green vines. Keep the word SCATTER exactly in uppercase and clearly readable. Match the approved hand-drawn slot-game direction: an original 2D cartoon garden icon with bold clean dark ink outlines, simplified appealing shapes, matte gouache texture, controlled cel shading, small hand-painted imperfections, strong silhouette and excellent readability at 200 pixels. Use a warm harvest palette with leafy greens, tomato red, aubergine purple, blueberry blue, sunflower yellow and natural wood. Remove glossy 3D rendering, bloom, neon glow, photorealism and excessive highlights. Keep generous padding around the subject. Isolate it on a perfectly flat neutral light-gray background with no shadow, gradient or texture. No border and no extra objects."
+      }
+    },
+    "68": {
+      "class_type": "TextEncodeQwenImageEdit",
+      "inputs": {
+        "clip": [
+          "5",
+          0
+        ],
+        "vae": [
+          "6",
+          0
+        ],
+        "image": [
+          "66",
+          0
+        ],
+        "prompt": ""
+      }
+    },
+    "69": {
+      "class_type": "VAEEncode",
+      "inputs": {
+        "pixels": [
+          "66",
+          0
+        ],
+        "vae": [
+          "6",
+          0
+        ]
+      }
+    },
+    "70": {
+      "class_type": "KSampler",
+      "inputs": {
+        "model": [
+          "4",
+          0
+        ],
+        "seed": 9302009,
+        "steps": 4,
+        "cfg": 1,
+        "sampler_name": "euler",
+        "scheduler": "simple",
+        "positive": [
+          "67",
+          0
+        ],
+        "negative": [
+          "68",
+          0
+        ],
+        "latent_image": [
+          "69",
+          0
+        ],
+        "denoise": 1
+      }
+    },
+    "71": {
+      "class_type": "VAEDecode",
+      "inputs": {
+        "samples": [
+          "70",
+          0
+        ],
+        "vae": [
+          "6",
+          0
+        ]
+      }
+    },
+    "72": {
+      "class_type": "SaveImage",
+      "inputs": {
+        "images": [
+          "71",
+          0
+        ],
+        "filename_prefix": "slot_garden/static_drafts/S_drawn"
+      }
+    },
+    "73": {
+      "class_type": "LoadImage",
+      "inputs": {
+        "image": "garden_M2_source.png"
+      }
+    },
+    "74": {
+      "class_type": "TextEncodeQwenImageEdit",
+      "inputs": {
+        "clip": [
+          "5",
+          0
+        ],
+        "vae": [
+          "6",
+          0
+        ],
+        "image": [
+          "73",
+          0
+        ],
+        "prompt": "Transform the supplied 2x multiplier into a round painted wooden garden badge framed by small leaves. Keep exactly 2x, large and readable. Match the approved hand-drawn slot-game direction: an original 2D cartoon garden icon with bold clean dark ink outlines, simplified appealing shapes, matte gouache texture, controlled cel shading, small hand-painted imperfections, strong silhouette and excellent readability at 200 pixels. Use a warm harvest palette with leafy greens, tomato red, aubergine purple, blueberry blue, sunflower yellow and natural wood. Remove glossy 3D rendering, bloom, neon glow, photorealism and excessive highlights. Keep generous padding around the subject. Isolate it on a perfectly flat neutral light-gray background with no shadow, gradient or texture. No border and no extra objects."
+      }
+    },
+    "75": {
+      "class_type": "TextEncodeQwenImageEdit",
+      "inputs": {
+        "clip": [
+          "5",
+          0
+        ],
+        "vae": [
+          "6",
+          0
+        ],
+        "image": [
+          "73",
+          0
+        ],
+        "prompt": ""
+      }
+    },
+    "76": {
+      "class_type": "VAEEncode",
+      "inputs": {
+        "pixels": [
+          "73",
+          0
+        ],
+        "vae": [
+          "6",
+          0
+        ]
+      }
+    },
+    "77": {
+      "class_type": "KSampler",
+      "inputs": {
+        "model": [
+          "4",
+          0
+        ],
+        "seed": 9302010,
+        "steps": 4,
+        "cfg": 1,
+        "sampler_name": "euler",
+        "scheduler": "simple",
+        "positive": [
+          "74",
+          0
+        ],
+        "negative": [
+          "75",
+          0
+        ],
+        "latent_image": [
+          "76",
+          0
+        ],
+        "denoise": 1
+      }
+    },
+    "78": {
+      "class_type": "VAEDecode",
+      "inputs": {
+        "samples": [
+          "77",
+          0
+        ],
+        "vae": [
+          "6",
+          0
+        ]
+      }
+    },
+    "79": {
+      "class_type": "SaveImage",
+      "inputs": {
+        "images": [
+          "78",
+          0
+        ],
+        "filename_prefix": "slot_garden/static_drafts/M2_drawn"
+      }
+    },
+    "80": {
+      "class_type": "LoadImage",
+      "inputs": {
+        "image": "garden_M4_source.png"
+      }
+    },
+    "81": {
+      "class_type": "TextEncodeQwenImageEdit",
+      "inputs": {
+        "clip": [
+          "5",
+          0
+        ],
+        "vae": [
+          "6",
+          0
+        ],
+        "image": [
+          "80",
+          0
+        ],
+        "prompt": "Transform the supplied 4x multiplier into a round painted wooden garden badge framed by small leaves. Keep exactly 4x, large and readable. Match the approved hand-drawn slot-game direction: an original 2D cartoon garden icon with bold clean dark ink outlines, simplified appealing shapes, matte gouache texture, controlled cel shading, small hand-painted imperfections, strong silhouette and excellent readability at 200 pixels. Use a warm harvest palette with leafy greens, tomato red, aubergine purple, blueberry blue, sunflower yellow and natural wood. Remove glossy 3D rendering, bloom, neon glow, photorealism and excessive highlights. Keep generous padding around the subject. Isolate it on a perfectly flat neutral light-gray background with no shadow, gradient or texture. No border and no extra objects."
+      }
+    },
+    "82": {
+      "class_type": "TextEncodeQwenImageEdit",
+      "inputs": {
+        "clip": [
+          "5",
+          0
+        ],
+        "vae": [
+          "6",
+          0
+        ],
+        "image": [
+          "80",
+          0
+        ],
+        "prompt": ""
+      }
+    },
+    "83": {
+      "class_type": "VAEEncode",
+      "inputs": {
+        "pixels": [
+          "80",
+          0
+        ],
+        "vae": [
+          "6",
+          0
+        ]
+      }
+    },
+    "84": {
+      "class_type": "KSampler",
+      "inputs": {
+        "model": [
+          "4",
+          0
+        ],
+        "seed": 9302011,
+        "steps": 4,
+        "cfg": 1,
+        "sampler_name": "euler",
+        "scheduler": "simple",
+        "positive": [
+          "81",
+          0
+        ],
+        "negative": [
+          "82",
+          0
+        ],
+        "latent_image": [
+          "83",
+          0
+        ],
+        "denoise": 1
+      }
+    },
+    "85": {
+      "class_type": "VAEDecode",
+      "inputs": {
+        "samples": [
+          "84",
+          0
+        ],
+        "vae": [
+          "6",
+          0
+        ]
+      }
+    },
+    "86": {
+      "class_type": "SaveImage",
+      "inputs": {
+        "images": [
+          "85",
+          0
+        ],
+        "filename_prefix": "slot_garden/static_drafts/M4_drawn"
+      }
+    },
+    "87": {
+      "class_type": "LoadImage",
+      "inputs": {
+        "image": "garden_M5_source.png"
+      }
+    },
+    "88": {
+      "class_type": "TextEncodeQwenImageEdit",
+      "inputs": {
+        "clip": [
+          "5",
+          0
+        ],
+        "vae": [
+          "6",
+          0
+        ],
+        "image": [
+          "87",
+          0
+        ],
+        "prompt": "Transform the supplied 5x multiplier into a premium garden badge framed by tomatoes, leaves and tiny flowers. Keep exactly 5x, large and readable. Match the approved hand-drawn slot-game direction: an original 2D cartoon garden icon with bold clean dark ink outlines, simplified appealing shapes, matte gouache texture, controlled cel shading, small hand-painted imperfections, strong silhouette and excellent readability at 200 pixels. Use a warm harvest palette with leafy greens, tomato red, aubergine purple, blueberry blue, sunflower yellow and natural wood. Remove glossy 3D rendering, bloom, neon glow, photorealism and excessive highlights. Keep generous padding around the subject. Isolate it on a perfectly flat neutral light-gray background with no shadow, gradient or texture. No border and no extra objects."
+      }
+    },
+    "89": {
+      "class_type": "TextEncodeQwenImageEdit",
+      "inputs": {
+        "clip": [
+          "5",
+          0
+        ],
+        "vae": [
+          "6",
+          0
+        ],
+        "image": [
+          "87",
+          0
+        ],
+        "prompt": ""
+      }
+    },
+    "90": {
+      "class_type": "VAEEncode",
+      "inputs": {
+        "pixels": [
+          "87",
+          0
+        ],
+        "vae": [
+          "6",
+          0
+        ]
+      }
+    },
+    "91": {
+      "class_type": "KSampler",
+      "inputs": {
+        "model": [
+          "4",
+          0
+        ],
+        "seed": 9302012,
+        "steps": 4,
+        "cfg": 1,
+        "sampler_name": "euler",
+        "scheduler": "simple",
+        "positive": [
+          "88",
+          0
+        ],
+        "negative": [
+          "89",
+          0
+        ],
+        "latent_image": [
+          "90",
+          0
+        ],
+        "denoise": 1
+      }
+    },
+    "92": {
+      "class_type": "VAEDecode",
+      "inputs": {
+        "samples": [
+          "91",
+          0
+        ],
+        "vae": [
+          "6",
+          0
+        ]
+      }
+    },
+    "93": {
+      "class_type": "SaveImage",
+      "inputs": {
+        "images": [
+          "92",
+          0
+        ],
+        "filename_prefix": "slot_garden/static_drafts/M5_drawn"
+      }
+    },
+    "94": {
+      "class_type": "LoadImage",
+      "inputs": {
+        "image": "garden_M7_source.png"
+      }
+    },
+    "95": {
+      "class_type": "TextEncodeQwenImageEdit",
+      "inputs": {
+        "clip": [
+          "5",
+          0
+        ],
+        "vae": [
+          "6",
+          0
+        ],
+        "image": [
+          "94",
+          0
+        ],
+        "prompt": "Transform the supplied 7x multiplier into a premium garden badge framed by aubergines, leaves and tiny flowers. Keep exactly 7x, large and readable. Match the approved hand-drawn slot-game direction: an original 2D cartoon garden icon with bold clean dark ink outlines, simplified appealing shapes, matte gouache texture, controlled cel shading, small hand-painted imperfections, strong silhouette and excellent readability at 200 pixels. Use a warm harvest palette with leafy greens, tomato red, aubergine purple, blueberry blue, sunflower yellow and natural wood. Remove glossy 3D rendering, bloom, neon glow, photorealism and excessive highlights. Keep generous padding around the subject. Isolate it on a perfectly flat neutral light-gray background with no shadow, gradient or texture. No border and no extra objects."
+      }
+    },
+    "96": {
+      "class_type": "TextEncodeQwenImageEdit",
+      "inputs": {
+        "clip": [
+          "5",
+          0
+        ],
+        "vae": [
+          "6",
+          0
+        ],
+        "image": [
+          "94",
+          0
+        ],
+        "prompt": ""
+      }
+    },
+    "97": {
+      "class_type": "VAEEncode",
+      "inputs": {
+        "pixels": [
+          "94",
+          0
+        ],
+        "vae": [
+          "6",
+          0
+        ]
+      }
+    },
+    "98": {
+      "class_type": "KSampler",
+      "inputs": {
+        "model": [
+          "4",
+          0
+        ],
+        "seed": 9302013,
+        "steps": 4,
+        "cfg": 1,
+        "sampler_name": "euler",
+        "scheduler": "simple",
+        "positive": [
+          "95",
+          0
+        ],
+        "negative": [
+          "96",
+          0
+        ],
+        "latent_image": [
+          "97",
+          0
+        ],
+        "denoise": 1
+      }
+    },
+    "99": {
+      "class_type": "VAEDecode",
+      "inputs": {
+        "samples": [
+          "98",
+          0
+        ],
+        "vae": [
+          "6",
+          0
+        ]
+      }
+    },
+    "100": {
+      "class_type": "SaveImage",
+      "inputs": {
+        "images": [
+          "99",
+          0
+        ],
+        "filename_prefix": "slot_garden/static_drafts/M7_drawn"
+      }
+    },
+    "101": {
+      "class_type": "LoadImage",
+      "inputs": {
+        "image": "garden_M10_source.png"
+      }
+    },
+    "102": {
+      "class_type": "TextEncodeQwenImageEdit",
+      "inputs": {
+        "clip": [
+          "5",
+          0
+        ],
+        "vae": [
+          "6",
+          0
+        ],
+        "image": [
+          "101",
+          0
+        ],
+        "prompt": "Transform the supplied 10x multiplier into a premium harvest badge framed by a rich wreath of vegetables, leaves and sunflowers. Keep exactly 10x, large and readable. Match the approved hand-drawn slot-game direction: an original 2D cartoon garden icon with bold clean dark ink outlines, simplified appealing shapes, matte gouache texture, controlled cel shading, small hand-painted imperfections, strong silhouette and excellent readability at 200 pixels. Use a warm harvest palette with leafy greens, tomato red, aubergine purple, blueberry blue, sunflower yellow and natural wood. Remove glossy 3D rendering, bloom, neon glow, photorealism and excessive highlights. Keep generous padding around the subject. Isolate it on a perfectly flat neutral light-gray background with no shadow, gradient or texture. No border and no extra objects."
+      }
+    },
+    "103": {
+      "class_type": "TextEncodeQwenImageEdit",
+      "inputs": {
+        "clip": [
+          "5",
+          0
+        ],
+        "vae": [
+          "6",
+          0
+        ],
+        "image": [
+          "101",
+          0
+        ],
+        "prompt": ""
+      }
+    },
+    "104": {
+      "class_type": "VAEEncode",
+      "inputs": {
+        "pixels": [
+          "101",
+          0
+        ],
+        "vae": [
+          "6",
+          0
+        ]
+      }
+    },
+    "105": {
+      "class_type": "KSampler",
+      "inputs": {
+        "model": [
+          "4",
+          0
+        ],
+        "seed": 9302014,
+        "steps": 4,
+        "cfg": 1,
+        "sampler_name": "euler",
+        "scheduler": "simple",
+        "positive": [
+          "102",
+          0
+        ],
+        "negative": [
+          "103",
+          0
+        ],
+        "latent_image": [
+          "104",
+          0
+        ],
+        "denoise": 1
+      }
+    },
+    "106": {
+      "class_type": "VAEDecode",
+      "inputs": {
+        "samples": [
+          "105",
+          0
+        ],
+        "vae": [
+          "6",
+          0
+        ]
+      }
+    },
+    "107": {
+      "class_type": "SaveImage",
+      "inputs": {
+        "images": [
+          "106",
+          0
+        ],
+        "filename_prefix": "slot_garden/static_drafts/M10_drawn"
+      }
+    }
+  }
+}

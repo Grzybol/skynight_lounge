@@ -1,0 +1,162 @@
+=== BASE_LH pilot n=400000 ===
+  meanX SE target=0.08047 extras={'NONE': 0, 'HEAD': 0, 'JUDGE_COLD': 0, 'JUDGE_HOT': 11882, 'BOTH_COLD': 0, 'BOTH_WARM': 27538, 'BOTH_RJ2': 25220, 'BOTH_GFM2P': 6473}
+  rej BASE_LH attempts=8000 need={'JUDGE_HOT': 11791, 'BOTH_WARM': 27336, 'BOTH_RJ2': 25041, 'BOTH_GFM2P': 6432} elapsed=3.8s
+  rej BASE_LH attempts=16000 need={'JUDGE_HOT': 11712, 'BOTH_WARM': 27141, 'BOTH_RJ2': 24873, 'BOTH_GFM2P': 6389} elapsed=7.7s
+  rej BASE_LH attempts=24000 need={'JUDGE_HOT': 11627, 'BOTH_WARM': 26972, 'BOTH_RJ2': 24691, 'BOTH_GFM2P': 6346} elapsed=11.4s
+  rej BASE_LH attempts=32000 need={'JUDGE_HOT': 11531, 'BOTH_WARM': 26769, 'BOTH_RJ2': 24513, 'BOTH_GFM2P': 6303} elapsed=15.1s
+  rej BASE_LH attempts=40000 need={'JUDGE_HOT': 11439, 'BOTH_WARM': 26559, 'BOTH_RJ2': 24326, 'BOTH_GFM2P': 6253} elapsed=18.9s
+  rej BASE_LH attempts=48000 need={'JUDGE_HOT': 11351, 'BOTH_WARM': 26368, 'BOTH_RJ2': 24148, 'BOTH_GFM2P': 6204} elapsed=22.7s
+  rej BASE_LH attempts=56000 need={'JUDGE_HOT': 11272, 'BOTH_WARM': 26162, 'BOTH_RJ2': 23941, 'BOTH_GFM2P': 6166} elapsed=26.4s
+  rej BASE_LH attempts=64000 need={'JUDGE_HOT': 11181, 'BOTH_WARM': 25937, 'BOTH_RJ2': 23766, 'BOTH_GFM2P': 6123} elapsed=30.2s
+  rej BASE_LH attempts=72000 need={'JUDGE_HOT': 11094, 'BOTH_WARM': 25742, 'BOTH_RJ2': 23561, 'BOTH_GFM2P': 6083} elapsed=34.0s
+  rej BASE_LH attempts=80000 need={'JUDGE_HOT': 11019, 'BOTH_WARM': 25549, 'BOTH_RJ2': 23360, 'BOTH_GFM2P': 6035} elapsed=37.6s
+  rej BASE_LH attempts=88000 need={'JUDGE_HOT': 10951, 'BOTH_WARM': 25334, 'BOTH_RJ2': 23178, 'BOTH_GFM2P': 5982} elapsed=41.3s
+  rej BASE_LH attempts=96000 need={'JUDGE_HOT': 10852, 'BOTH_WARM': 25137, 'BOTH_RJ2': 22959, 'BOTH_GFM2P': 5935} elapsed=44.9s
+  rej BASE_LH attempts=104000 need={'JUDGE_HOT': 10770, 'BOTH_WARM': 24938, 'BOTH_RJ2': 22781, 'BOTH_GFM2P': 5883} elapsed=48.6s
+  rej BASE_LH attempts=112000 need={'JUDGE_HOT': 10690, 'BOTH_WARM': 24738, 'BOTH_RJ2': 22592, 'BOTH_GFM2P': 5835} elapsed=52.3s
+  rej BASE_LH attempts=120000 need={'JUDGE_HOT': 10589, 'BOTH_WARM': 24544, 'BOTH_RJ2': 22420, 'BOTH_GFM2P': 5798} elapsed=56.0s
+  rej BASE_LH attempts=128000 need={'JUDGE_HOT': 10495, 'BOTH_WARM': 24310, 'BOTH_RJ2': 22250, 'BOTH_GFM2P': 5761} elapsed=59.7s
+  rej BASE_LH attempts=136000 need={'JUDGE_HOT': 10408, 'BOTH_WARM': 24125, 'BOTH_RJ2': 22087, 'BOTH_GFM2P': 5718} elapsed=63.4s
+  rej BASE_LH attempts=144000 need={'JUDGE_HOT': 10328, 'BOTH_WARM': 23929, 'BOTH_RJ2': 21896, 'BOTH_GFM2P': 5681} elapsed=67.2s
+  rej BASE_LH attempts=152000 need={'JUDGE_HOT': 10252, 'BOTH_WARM': 23726, 'BOTH_RJ2': 21702, 'BOTH_GFM2P': 5639} elapsed=71.2s
+  rej BASE_LH attempts=160000 need={'JUDGE_HOT': 10166, 'BOTH_WARM': 23539, 'BOTH_RJ2': 21512, 'BOTH_GFM2P': 5590} elapsed=75.0s
+  rej BASE_LH attempts=168000 need={'JUDGE_HOT': 10078, 'BOTH_WARM': 23337, 'BOTH_RJ2': 21301, 'BOTH_GFM2P': 5543} elapsed=78.6s
+  rej BASE_LH attempts=176000 need={'JUDGE_HOT': 9993, 'BOTH_WARM': 23129, 'BOTH_RJ2': 21119, 'BOTH_GFM2P': 5492} elapsed=82.4s
+  rej BASE_LH attempts=184000 need={'JUDGE_HOT': 9919, 'BOTH_WARM': 22932, 'BOTH_RJ2': 20935, 'BOTH_GFM2P': 5436} elapsed=86.0s
+  rej BASE_LH attempts=192000 need={'JUDGE_HOT': 9838, 'BOTH_WARM': 22707, 'BOTH_RJ2': 20746, 'BOTH_GFM2P': 5383} elapsed=89.7s
+  rej BASE_LH attempts=200000 need={'JUDGE_HOT': 9743, 'BOTH_WARM': 22497, 'BOTH_RJ2': 20607, 'BOTH_GFM2P': 5337} elapsed=93.4s
+  rej BASE_LH attempts=208000 need={'JUDGE_HOT': 9669, 'BOTH_WARM': 22315, 'BOTH_RJ2': 20419, 'BOTH_GFM2P': 5288} elapsed=97.2s
+  rej BASE_LH attempts=216000 need={'JUDGE_HOT': 9585, 'BOTH_WARM': 22107, 'BOTH_RJ2': 20248, 'BOTH_GFM2P': 5241} elapsed=100.9s
+  rej BASE_LH attempts=224000 need={'JUDGE_HOT': 9499, 'BOTH_WARM': 21918, 'BOTH_RJ2': 20068, 'BOTH_GFM2P': 5188} elapsed=104.6s
+  rej BASE_LH attempts=232000 need={'JUDGE_HOT': 9405, 'BOTH_WARM': 21706, 'BOTH_RJ2': 19904, 'BOTH_GFM2P': 5155} elapsed=108.2s
+  rej BASE_LH attempts=240000 need={'JUDGE_HOT': 9329, 'BOTH_WARM': 21520, 'BOTH_RJ2': 19703, 'BOTH_GFM2P': 5117} elapsed=111.9s
+  rej BASE_LH attempts=248000 need={'JUDGE_HOT': 9247, 'BOTH_WARM': 21335, 'BOTH_RJ2': 19524, 'BOTH_GFM2P': 5061} elapsed=115.5s
+  rej BASE_LH attempts=256000 need={'JUDGE_HOT': 9156, 'BOTH_WARM': 21124, 'BOTH_RJ2': 19329, 'BOTH_GFM2P': 5013} elapsed=119.3s
+  rej BASE_LH attempts=264000 need={'JUDGE_HOT': 9087, 'BOTH_WARM': 20932, 'BOTH_RJ2': 19155, 'BOTH_GFM2P': 4960} elapsed=123.1s
+  rej BASE_LH attempts=272000 need={'JUDGE_HOT': 9019, 'BOTH_WARM': 20722, 'BOTH_RJ2': 18967, 'BOTH_GFM2P': 4916} elapsed=126.8s
+  rej BASE_LH attempts=280000 need={'JUDGE_HOT': 8939, 'BOTH_WARM': 20524, 'BOTH_RJ2': 18756, 'BOTH_GFM2P': 4863} elapsed=130.5s
+  rej BASE_LH attempts=288000 need={'JUDGE_HOT': 8856, 'BOTH_WARM': 20319, 'BOTH_RJ2': 18553, 'BOTH_GFM2P': 4816} elapsed=134.2s
+  rej BASE_LH attempts=296000 need={'JUDGE_HOT': 8782, 'BOTH_WARM': 20114, 'BOTH_RJ2': 18376, 'BOTH_GFM2P': 4767} elapsed=137.8s
+  rej BASE_LH attempts=304000 need={'JUDGE_HOT': 8700, 'BOTH_WARM': 19898, 'BOTH_RJ2': 18190, 'BOTH_GFM2P': 4718} elapsed=141.6s
+  rej BASE_LH attempts=312000 need={'JUDGE_HOT': 8623, 'BOTH_WARM': 19689, 'BOTH_RJ2': 17984, 'BOTH_GFM2P': 4679} elapsed=145.3s
+  rej BASE_LH attempts=320000 need={'JUDGE_HOT': 8537, 'BOTH_WARM': 19505, 'BOTH_RJ2': 17812, 'BOTH_GFM2P': 4627} elapsed=149.0s
+  rej BASE_LH attempts=328000 need={'JUDGE_HOT': 8460, 'BOTH_WARM': 19306, 'BOTH_RJ2': 17643, 'BOTH_GFM2P': 4577} elapsed=152.7s
+  rej BASE_LH attempts=336000 need={'JUDGE_HOT': 8365, 'BOTH_WARM': 19132, 'BOTH_RJ2': 17489, 'BOTH_GFM2P': 4540} elapsed=156.5s
+  rej BASE_LH attempts=344000 need={'JUDGE_HOT': 8268, 'BOTH_WARM': 18950, 'BOTH_RJ2': 17337, 'BOTH_GFM2P': 4478} elapsed=160.3s
+  rej BASE_LH attempts=352000 need={'JUDGE_HOT': 8169, 'BOTH_WARM': 18750, 'BOTH_RJ2': 17163, 'BOTH_GFM2P': 4430} elapsed=163.9s
+  rej BASE_LH attempts=360000 need={'JUDGE_HOT': 8096, 'BOTH_WARM': 18530, 'BOTH_RJ2': 16963, 'BOTH_GFM2P': 4380} elapsed=167.5s
+  rej BASE_LH attempts=368000 need={'JUDGE_HOT': 7998, 'BOTH_WARM': 18337, 'BOTH_RJ2': 16763, 'BOTH_GFM2P': 4334} elapsed=171.2s
+  rej BASE_LH attempts=376000 need={'JUDGE_HOT': 7920, 'BOTH_WARM': 18133, 'BOTH_RJ2': 16568, 'BOTH_GFM2P': 4288} elapsed=174.9s
+  rej BASE_LH attempts=384000 need={'JUDGE_HOT': 7841, 'BOTH_WARM': 17903, 'BOTH_RJ2': 16380, 'BOTH_GFM2P': 4236} elapsed=178.6s
+  rej BASE_LH attempts=392000 need={'JUDGE_HOT': 7745, 'BOTH_WARM': 17722, 'BOTH_RJ2': 16216, 'BOTH_GFM2P': 4196} elapsed=182.3s
+  rej BASE_LH attempts=400000 need={'JUDGE_HOT': 7665, 'BOTH_WARM': 17525, 'BOTH_RJ2': 16047, 'BOTH_GFM2P': 4148} elapsed=186.0s
+  rej BASE_LH attempts=408000 need={'JUDGE_HOT': 7586, 'BOTH_WARM': 17322, 'BOTH_RJ2': 15850, 'BOTH_GFM2P': 4095} elapsed=189.8s
+  rej BASE_LH attempts=416000 need={'JUDGE_HOT': 7482, 'BOTH_WARM': 17129, 'BOTH_RJ2': 15672, 'BOTH_GFM2P': 4048} elapsed=193.4s
+  rej BASE_LH attempts=424000 need={'JUDGE_HOT': 7415, 'BOTH_WARM': 16934, 'BOTH_RJ2': 15461, 'BOTH_GFM2P': 4000} elapsed=197.1s
+  rej BASE_LH attempts=432000 need={'JUDGE_HOT': 7331, 'BOTH_WARM': 16732, 'BOTH_RJ2': 15278, 'BOTH_GFM2P': 3942} elapsed=200.8s
+  rej BASE_LH attempts=440000 need={'JUDGE_HOT': 7252, 'BOTH_WARM': 16556, 'BOTH_RJ2': 15072, 'BOTH_GFM2P': 3886} elapsed=204.7s
+  rej BASE_LH attempts=448000 need={'JUDGE_HOT': 7164, 'BOTH_WARM': 16373, 'BOTH_RJ2': 14869, 'BOTH_GFM2P': 3839} elapsed=208.4s
+  rej BASE_LH attempts=456000 need={'JUDGE_HOT': 7076, 'BOTH_WARM': 16188, 'BOTH_RJ2': 14696, 'BOTH_GFM2P': 3802} elapsed=212.2s
+  rej BASE_LH attempts=464000 need={'JUDGE_HOT': 6989, 'BOTH_WARM': 16006, 'BOTH_RJ2': 14479, 'BOTH_GFM2P': 3753} elapsed=215.9s
+  rej BASE_LH attempts=472000 need={'JUDGE_HOT': 6898, 'BOTH_WARM': 15784, 'BOTH_RJ2': 14299, 'BOTH_GFM2P': 3704} elapsed=219.5s
+  rej BASE_LH attempts=480000 need={'JUDGE_HOT': 6825, 'BOTH_WARM': 15593, 'BOTH_RJ2': 14098, 'BOTH_GFM2P': 3651} elapsed=223.4s
+  rej BASE_LH attempts=488000 need={'JUDGE_HOT': 6738, 'BOTH_WARM': 15395, 'BOTH_RJ2': 13906, 'BOTH_GFM2P': 3609} elapsed=227.1s
+  rej BASE_LH attempts=496000 need={'JUDGE_HOT': 6651, 'BOTH_WARM': 15198, 'BOTH_RJ2': 13731, 'BOTH_GFM2P': 3565} elapsed=230.9s
+  rej BASE_LH attempts=504000 need={'JUDGE_HOT': 6574, 'BOTH_WARM': 14978, 'BOTH_RJ2': 13555, 'BOTH_GFM2P': 3528} elapsed=234.6s
+  rej BASE_LH attempts=512000 need={'JUDGE_HOT': 6490, 'BOTH_WARM': 14785, 'BOTH_RJ2': 13385, 'BOTH_GFM2P': 3475} elapsed=238.4s
+  rej BASE_LH attempts=520000 need={'JUDGE_HOT': 6397, 'BOTH_WARM': 14571, 'BOTH_RJ2': 13202, 'BOTH_GFM2P': 3426} elapsed=242.2s
+  rej BASE_LH attempts=528000 need={'JUDGE_HOT': 6329, 'BOTH_WARM': 14375, 'BOTH_RJ2': 13018, 'BOTH_GFM2P': 3365} elapsed=245.8s
+  rej BASE_LH attempts=536000 need={'JUDGE_HOT': 6245, 'BOTH_WARM': 14133, 'BOTH_RJ2': 12827, 'BOTH_GFM2P': 3312} elapsed=249.6s
+  rej BASE_LH attempts=544000 need={'JUDGE_HOT': 6157, 'BOTH_WARM': 13926, 'BOTH_RJ2': 12619, 'BOTH_GFM2P': 3257} elapsed=253.3s
+  rej BASE_LH attempts=552000 need={'JUDGE_HOT': 6071, 'BOTH_WARM': 13736, 'BOTH_RJ2': 12425, 'BOTH_GFM2P': 3209} elapsed=256.9s
+  rej BASE_LH attempts=560000 need={'JUDGE_HOT': 5997, 'BOTH_WARM': 13551, 'BOTH_RJ2': 12237, 'BOTH_GFM2P': 3177} elapsed=260.7s
+  rej BASE_LH attempts=568000 need={'JUDGE_HOT': 5930, 'BOTH_WARM': 13329, 'BOTH_RJ2': 12027, 'BOTH_GFM2P': 3129} elapsed=264.6s
+  rej BASE_LH attempts=576000 need={'JUDGE_HOT': 5833, 'BOTH_WARM': 13103, 'BOTH_RJ2': 11847, 'BOTH_GFM2P': 3077} elapsed=268.3s
+  rej BASE_LH attempts=584000 need={'JUDGE_HOT': 5751, 'BOTH_WARM': 12905, 'BOTH_RJ2': 11660, 'BOTH_GFM2P': 3037} elapsed=272.0s
+  rej BASE_LH attempts=592000 need={'JUDGE_HOT': 5650, 'BOTH_WARM': 12709, 'BOTH_RJ2': 11467, 'BOTH_GFM2P': 2975} elapsed=275.7s
+  rej BASE_LH attempts=600000 need={'JUDGE_HOT': 5562, 'BOTH_WARM': 12504, 'BOTH_RJ2': 11283, 'BOTH_GFM2P': 2911} elapsed=279.4s
+  rej BASE_LH attempts=608000 need={'JUDGE_HOT': 5461, 'BOTH_WARM': 12295, 'BOTH_RJ2': 11110, 'BOTH_GFM2P': 2854} elapsed=283.1s
+  rej BASE_LH attempts=616000 need={'JUDGE_HOT': 5380, 'BOTH_WARM': 12080, 'BOTH_RJ2': 10932, 'BOTH_GFM2P': 2798} elapsed=286.9s
+  rej BASE_LH attempts=624000 need={'JUDGE_HOT': 5285, 'BOTH_WARM': 11865, 'BOTH_RJ2': 10734, 'BOTH_GFM2P': 2747} elapsed=290.7s
+  rej BASE_LH attempts=632000 need={'JUDGE_HOT': 5195, 'BOTH_WARM': 11661, 'BOTH_RJ2': 10532, 'BOTH_GFM2P': 2699} elapsed=294.3s
+  rej BASE_LH attempts=640000 need={'JUDGE_HOT': 5114, 'BOTH_WARM': 11462, 'BOTH_RJ2': 10359, 'BOTH_GFM2P': 2648} elapsed=298.1s
+  rej BASE_LH attempts=648000 need={'JUDGE_HOT': 5030, 'BOTH_WARM': 11258, 'BOTH_RJ2': 10177, 'BOTH_GFM2P': 2607} elapsed=301.8s
+  rej BASE_LH attempts=656000 need={'JUDGE_HOT': 4941, 'BOTH_WARM': 11046, 'BOTH_RJ2': 9974, 'BOTH_GFM2P': 2554} elapsed=305.5s
+  rej BASE_LH attempts=664000 need={'JUDGE_HOT': 4862, 'BOTH_WARM': 10870, 'BOTH_RJ2': 9778, 'BOTH_GFM2P': 2512} elapsed=309.2s
+  rej BASE_LH attempts=672000 need={'JUDGE_HOT': 4771, 'BOTH_WARM': 10691, 'BOTH_RJ2': 9596, 'BOTH_GFM2P': 2476} elapsed=312.9s
+  rej BASE_LH attempts=680000 need={'JUDGE_HOT': 4684, 'BOTH_WARM': 10495, 'BOTH_RJ2': 9403, 'BOTH_GFM2P': 2427} elapsed=316.6s
+  rej BASE_LH attempts=688000 need={'JUDGE_HOT': 4592, 'BOTH_WARM': 10284, 'BOTH_RJ2': 9217, 'BOTH_GFM2P': 2372} elapsed=320.5s
+  rej BASE_LH attempts=696000 need={'JUDGE_HOT': 4493, 'BOTH_WARM': 10072, 'BOTH_RJ2': 9045, 'BOTH_GFM2P': 2313} elapsed=324.1s
+  rej BASE_LH attempts=704000 need={'JUDGE_HOT': 4405, 'BOTH_WARM': 9853, 'BOTH_RJ2': 8870, 'BOTH_GFM2P': 2268} elapsed=327.8s
+  rej BASE_LH attempts=712000 need={'JUDGE_HOT': 4320, 'BOTH_WARM': 9653, 'BOTH_RJ2': 8693, 'BOTH_GFM2P': 2226} elapsed=331.5s
+  rej BASE_LH attempts=720000 need={'JUDGE_HOT': 4227, 'BOTH_WARM': 9437, 'BOTH_RJ2': 8503, 'BOTH_GFM2P': 2177} elapsed=335.2s
+  rej BASE_LH attempts=728000 need={'JUDGE_HOT': 4147, 'BOTH_WARM': 9225, 'BOTH_RJ2': 8315, 'BOTH_GFM2P': 2115} elapsed=339.0s
+  rej BASE_LH attempts=736000 need={'JUDGE_HOT': 4064, 'BOTH_WARM': 9023, 'BOTH_RJ2': 8128, 'BOTH_GFM2P': 2061} elapsed=342.8s
+  rej BASE_LH attempts=744000 need={'JUDGE_HOT': 3982, 'BOTH_WARM': 8826, 'BOTH_RJ2': 7926, 'BOTH_GFM2P': 2018} elapsed=346.5s
+  rej BASE_LH attempts=752000 need={'JUDGE_HOT': 3896, 'BOTH_WARM': 8615, 'BOTH_RJ2': 7729, 'BOTH_GFM2P': 1976} elapsed=350.3s
+  rej BASE_LH attempts=760000 need={'JUDGE_HOT': 3808, 'BOTH_WARM': 8416, 'BOTH_RJ2': 7540, 'BOTH_GFM2P': 1914} elapsed=354.0s
+  rej BASE_LH attempts=768000 need={'JUDGE_HOT': 3732, 'BOTH_WARM': 8205, 'BOTH_RJ2': 7344, 'BOTH_GFM2P': 1875} elapsed=357.6s
+  rej BASE_LH attempts=776000 need={'JUDGE_HOT': 3654, 'BOTH_WARM': 8001, 'BOTH_RJ2': 7156, 'BOTH_GFM2P': 1821} elapsed=361.4s
+  rej BASE_LH attempts=784000 need={'JUDGE_HOT': 3557, 'BOTH_WARM': 7790, 'BOTH_RJ2': 6959, 'BOTH_GFM2P': 1773} elapsed=365.2s
+  rej BASE_LH attempts=792000 need={'JUDGE_HOT': 3473, 'BOTH_WARM': 7596, 'BOTH_RJ2': 6755, 'BOTH_GFM2P': 1731} elapsed=369.0s
+  rej BASE_LH attempts=800000 need={'JUDGE_HOT': 3381, 'BOTH_WARM': 7379, 'BOTH_RJ2': 6580, 'BOTH_GFM2P': 1685} elapsed=372.7s
+  rej BASE_LH attempts=808000 need={'JUDGE_HOT': 3276, 'BOTH_WARM': 7212, 'BOTH_RJ2': 6387, 'BOTH_GFM2P': 1636} elapsed=376.5s
+  rej BASE_LH attempts=816000 need={'JUDGE_HOT': 3195, 'BOTH_WARM': 7004, 'BOTH_RJ2': 6188, 'BOTH_GFM2P': 1594} elapsed=380.2s
+  rej BASE_LH attempts=824000 need={'JUDGE_HOT': 3106, 'BOTH_WARM': 6814, 'BOTH_RJ2': 6006, 'BOTH_GFM2P': 1543} elapsed=384.0s
+  rej BASE_LH attempts=832000 need={'JUDGE_HOT': 3028, 'BOTH_WARM': 6628, 'BOTH_RJ2': 5847, 'BOTH_GFM2P': 1486} elapsed=387.7s
+  rej BASE_LH attempts=840000 need={'JUDGE_HOT': 2943, 'BOTH_WARM': 6424, 'BOTH_RJ2': 5656, 'BOTH_GFM2P': 1432} elapsed=391.4s
+  rej BASE_LH attempts=848000 need={'JUDGE_HOT': 2849, 'BOTH_WARM': 6230, 'BOTH_RJ2': 5450, 'BOTH_GFM2P': 1386} elapsed=395.2s
+  rej BASE_LH attempts=856000 need={'JUDGE_HOT': 2764, 'BOTH_WARM': 6030, 'BOTH_RJ2': 5265, 'BOTH_GFM2P': 1339} elapsed=398.8s
+  rej BASE_LH attempts=864000 need={'JUDGE_HOT': 2687, 'BOTH_WARM': 5818, 'BOTH_RJ2': 5091, 'BOTH_GFM2P': 1294} elapsed=402.5s
+  rej BASE_LH attempts=872000 need={'JUDGE_HOT': 2603, 'BOTH_WARM': 5613, 'BOTH_RJ2': 4907, 'BOTH_GFM2P': 1242} elapsed=406.4s
+  rej BASE_LH attempts=880000 need={'JUDGE_HOT': 2521, 'BOTH_WARM': 5400, 'BOTH_RJ2': 4722, 'BOTH_GFM2P': 1194} elapsed=410.1s
+  rej BASE_LH attempts=888000 need={'JUDGE_HOT': 2441, 'BOTH_WARM': 5180, 'BOTH_RJ2': 4512, 'BOTH_GFM2P': 1142} elapsed=413.8s
+  rej BASE_LH attempts=896000 need={'JUDGE_HOT': 2361, 'BOTH_WARM': 4973, 'BOTH_RJ2': 4344, 'BOTH_GFM2P': 1091} elapsed=417.4s
+  rej BASE_LH attempts=904000 need={'JUDGE_HOT': 2282, 'BOTH_WARM': 4766, 'BOTH_RJ2': 4161, 'BOTH_GFM2P': 1039} elapsed=421.0s
+  rej BASE_LH attempts=912000 need={'JUDGE_HOT': 2197, 'BOTH_WARM': 4570, 'BOTH_RJ2': 3990, 'BOTH_GFM2P': 994} elapsed=424.7s
+  rej BASE_LH attempts=920000 need={'JUDGE_HOT': 2104, 'BOTH_WARM': 4376, 'BOTH_RJ2': 3795, 'BOTH_GFM2P': 947} elapsed=428.4s
+  rej BASE_LH attempts=928000 need={'JUDGE_HOT': 2024, 'BOTH_WARM': 4179, 'BOTH_RJ2': 3632, 'BOTH_GFM2P': 898} elapsed=432.1s
+  rej BASE_LH attempts=936000 need={'JUDGE_HOT': 1927, 'BOTH_WARM': 4001, 'BOTH_RJ2': 3447, 'BOTH_GFM2P': 858} elapsed=435.7s
+  rej BASE_LH attempts=944000 need={'JUDGE_HOT': 1841, 'BOTH_WARM': 3787, 'BOTH_RJ2': 3269, 'BOTH_GFM2P': 801} elapsed=439.7s
+  rej BASE_LH attempts=952000 need={'JUDGE_HOT': 1746, 'BOTH_WARM': 3569, 'BOTH_RJ2': 3083, 'BOTH_GFM2P': 750} elapsed=443.6s
+  rej BASE_LH attempts=960000 need={'JUDGE_HOT': 1664, 'BOTH_WARM': 3397, 'BOTH_RJ2': 2891, 'BOTH_GFM2P': 698} elapsed=447.4s
+  rej BASE_LH attempts=968000 need={'JUDGE_HOT': 1585, 'BOTH_WARM': 3193, 'BOTH_RJ2': 2702, 'BOTH_GFM2P': 639} elapsed=451.2s
+  rej BASE_LH attempts=976000 need={'JUDGE_HOT': 1492, 'BOTH_WARM': 2954, 'BOTH_RJ2': 2509, 'BOTH_GFM2P': 591} elapsed=454.8s
+  rej BASE_LH attempts=984000 need={'JUDGE_HOT': 1397, 'BOTH_WARM': 2759, 'BOTH_RJ2': 2346, 'BOTH_GFM2P': 548} elapsed=458.5s
+  rej BASE_LH attempts=992000 need={'JUDGE_HOT': 1321, 'BOTH_WARM': 2569, 'BOTH_RJ2': 2158, 'BOTH_GFM2P': 490} elapsed=462.2s
+  rej BASE_LH attempts=1000000 need={'JUDGE_HOT': 1229, 'BOTH_WARM': 2375, 'BOTH_RJ2': 1978, 'BOTH_GFM2P': 449} elapsed=465.9s
+  rej BASE_LH attempts=1008000 need={'JUDGE_HOT': 1137, 'BOTH_WARM': 2195, 'BOTH_RJ2': 1825, 'BOTH_GFM2P': 397} elapsed=469.6s
+  rej BASE_LH attempts=1016000 need={'JUDGE_HOT': 1042, 'BOTH_WARM': 1978, 'BOTH_RJ2': 1624, 'BOTH_GFM2P': 351} elapsed=473.4s
+  rej BASE_LH attempts=1024000 need={'JUDGE_HOT': 952, 'BOTH_WARM': 1791, 'BOTH_RJ2': 1439, 'BOTH_GFM2P': 306} elapsed=477.1s
+  rej BASE_LH attempts=1032000 need={'JUDGE_HOT': 868, 'BOTH_WARM': 1597, 'BOTH_RJ2': 1253, 'BOTH_GFM2P': 251} elapsed=480.7s
+  rej BASE_LH attempts=1040000 need={'JUDGE_HOT': 796, 'BOTH_WARM': 1423, 'BOTH_RJ2': 1054, 'BOTH_GFM2P': 193} elapsed=484.5s
+  rej BASE_LH attempts=1048000 need={'JUDGE_HOT': 706, 'BOTH_WARM': 1234, 'BOTH_RJ2': 860, 'BOTH_GFM2P': 147} elapsed=488.1s
+  rej BASE_LH attempts=1056000 need={'JUDGE_HOT': 621, 'BOTH_WARM': 992, 'BOTH_RJ2': 677, 'BOTH_GFM2P': 97} elapsed=491.8s
+  rej BASE_LH attempts=1064000 need={'JUDGE_HOT': 533, 'BOTH_WARM': 792, 'BOTH_RJ2': 495, 'BOTH_GFM2P': 48} elapsed=495.4s
+  rej BASE_LH attempts=1072000 need={'JUDGE_HOT': 450, 'BOTH_WARM': 608, 'BOTH_RJ2': 300} elapsed=499.3s
+  rej BASE_LH attempts=1080000 need={'JUDGE_HOT': 356, 'BOTH_WARM': 398, 'BOTH_RJ2': 110} elapsed=502.9s
+  rej BASE_LH attempts=1088000 need={'JUDGE_HOT': 279, 'BOTH_WARM': 205} elapsed=506.6s
+  rej BASE_LH attempts=1096000 need={'JUDGE_HOT': 198} elapsed=510.3s
+  rej BASE_LH attempts=1104000 need={'JUDGE_HOT': 85} elapsed=514.0s
+  rej BASE_LH attempts=1112000 need={'JUDGE_HOT': 10} elapsed=517.7s
+  rej BASE_LH attempts=1120000 need={} elapsed=521.5s
+  BASE_LH: meanX=28.8277 seX=0.2590 rtp=17.9124% ±0.1609pp pass=False wall=699.3s
+=== BASE_SF pilot n=120000 ===
+  meanX SE target=0.64534 extras={'NONE': 0, 'HEAD': 0, 'JUDGE_COLD': 0, 'JUDGE_HOT': 5750, 'BOTH_COLD': 0, 'BOTH_WARM': 3352, 'BOTH_RJ2': 24236, 'BOTH_GFM2P': 6660}
+  rej BASE_SF attempts=8000 need={'JUDGE_HOT': 5141, 'BOTH_WARM': 2314, 'BOTH_RJ2': 22095, 'BOTH_GFM2P': 6064} elapsed=4.9s
+  rej BASE_SF attempts=16000 need={'JUDGE_HOT': 4558, 'BOTH_WARM': 1300, 'BOTH_RJ2': 19869, 'BOTH_GFM2P': 5506} elapsed=9.7s
+  rej BASE_SF attempts=24000 need={'JUDGE_HOT': 4000, 'BOTH_WARM': 246, 'BOTH_RJ2': 17645, 'BOTH_GFM2P': 4959} elapsed=14.4s
+  rej BASE_SF attempts=32000 need={'JUDGE_HOT': 3457, 'BOTH_RJ2': 15436, 'BOTH_GFM2P': 4405} elapsed=19.1s
+  rej BASE_SF attempts=40000 need={'JUDGE_HOT': 2849, 'BOTH_RJ2': 13298, 'BOTH_GFM2P': 3803} elapsed=23.9s
+  rej BASE_SF attempts=48000 need={'JUDGE_HOT': 2252, 'BOTH_RJ2': 11132, 'BOTH_GFM2P': 3250} elapsed=28.9s
+  rej BASE_SF attempts=56000 need={'JUDGE_HOT': 1681, 'BOTH_RJ2': 8919, 'BOTH_GFM2P': 2680} elapsed=33.8s
+  rej BASE_SF attempts=64000 need={'JUDGE_HOT': 1150, 'BOTH_RJ2': 6771, 'BOTH_GFM2P': 2097} elapsed=38.7s
+  rej BASE_SF attempts=72000 need={'JUDGE_HOT': 607, 'BOTH_RJ2': 4515, 'BOTH_GFM2P': 1580} elapsed=43.5s
+  rej BASE_SF attempts=80000 need={'JUDGE_HOT': 80, 'BOTH_RJ2': 2248, 'BOTH_GFM2P': 1009} elapsed=48.5s
+  rej BASE_SF attempts=88000 need={'BOTH_GFM2P': 430} elapsed=53.5s
+  rej BASE_SF attempts=96000 need={} elapsed=58.3s
+  BASE_SF: meanX=187.3239 seX=1.7032 rtp=5.8054% ±0.0528pp pass=False wall=130.8s
+=== BASE_WC pilot n=60000 ===
+  meanX SE target=16.20323 extras={'NONE': 0, 'HEAD': 0, 'JUDGE_COLD': 0, 'JUDGE_HOT': 0, 'BOTH_COLD': 0, 'BOTH_WARM': 0, 'BOTH_RJ2': 0, 'BOTH_GFM2P': 0}
+  BASE_WC: meanX=395.0213 seX=5.1451 rtp=0.2438% ±0.0032pp pass=True wall=39.5s
+DONE base trigger strata

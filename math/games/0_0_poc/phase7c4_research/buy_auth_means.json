@@ -1,0 +1,26 @@
+{
+  "LARGE_HILL": {
+    "evWrOff": 28.498384043526404,
+    "pWr": 1.2175774058431621e-05,
+    "wrContributionX": 0.6084417130364379,
+    "authMeanFinal": 29.10682575656284
+  },
+  "SKI_FLYING": {
+    "evWrOff": 188.35928817789687,
+    "pWr": 3.322168913511003e-05,
+    "wrContributionX": 1.654826843037938,
+    "authMeanFinal": 190.0141150209348
+  },
+  "WORLD_CUP": {
+    "evWrOff": 395.2119578987115,
+    "pWr": 6.627941247605573e-05,
+    "wrContributionX": 3.287776207429772,
+    "authMeanFinal": 398.49973410614126
+  },
+  "PERFECT_V": {
+    "evWrOff": 1315.2456857942782,
+    "pWr": 0.00013167310269823762,
+    "wrContributionX": 6.410472654652949,
+    "authMeanFinal": 1321.6561584489311
+  }
+}

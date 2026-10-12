@@ -1,0 +1,16 @@
+{
+  "configSha256": "d6879d5c9ef3d08386486cd03712d6042e366543597a5c453ca8b1da6f2edbd0",
+  "expected": "d6879d5c9ef3d08386486cd03712d6042e366543597a5c453ca8b1da6f2edbd0",
+  "mathVersion": 1,
+  "match": true,
+  "pinnedArtifacts": {
+    "7c_books_report": {
+      "sha256": "e126cf14d6c4bccf6e126b402662a997947e430c9c1030a86a102692609a367c",
+      "bytes": 4754
+    },
+    "7c1_summary": {
+      "sha256": "92eeff4d1b04b8b70f1c458cb3441e0e6a05b784ac410b4247dc3da63280aa52",
+      "bytes": 4533
+    }
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "prompt": {
+    "1": {
+      "class_type": "CheckpointLoaderSimple",
+      "inputs": {
+        "ckpt_name": "animagine-xl-3.1.safetensors"
+      }
+    },
+    "2": {
+      "class_type": "CLIPTextEncode",
+      "inputs": {
+        "clip": ["1", 1],
+        "text": "PLACEHOLDER_POSITIVE"
+      }
+    },
+    "3": {
+      "class_type": "CLIPTextEncode",
+      "inputs": {
+        "clip": ["1", 1],
+        "text": "photorealism, photograph, 3d render, cgi, neon bloom, glossy casino clutter, fruit slot, UI, HUD, logo, watermark, text, letters, numbers, childish cartoon, chibi, anime girl, bad anatomy, extra limbs, lowres, blurry, oversaturated, confetti"
+      }
+    },
+    "4": {
+      "class_type": "EmptyLatentImage",
+      "inputs": {
+        "width": 1344,
+        "height": 768,
+        "batch_size": 1
+      }
+    },
+    "5": {
+      "class_type": "KSampler",
+      "inputs": {
+        "model": ["1", 0],
+        "seed": 16092026,
+        "steps": 24,
+        "cfg": 6,
+        "sampler_name": "euler_ancestral",
+        "scheduler": "karras",
+        "positive": ["2", 0],
+        "negative": ["3", 0],
+        "latent_image": ["4", 0],
+        "denoise": 1
+      }
+    },
+    "6": {
+      "class_type": "VAEDecode",
+      "inputs": {
+        "samples": ["5", 0],
+        "vae": ["1", 2]
+      }
+    },
+    "7": {
+      "class_type": "SaveImage",
+      "inputs": {
+        "images": ["6", 0],
+        "filename_prefix": "skyjump/menu_bg"
+      }
+    }
+  }
+}

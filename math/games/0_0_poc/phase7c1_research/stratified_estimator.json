@@ -1,0 +1,31 @@
+{
+  "methodA_buyNaturalFs": {
+    "pNone": 0.9934703217455622,
+    "eNone": 0.7084487500000001,
+    "bonusOnly": 0.24738857111299084,
+    "wr": 0.004569444597994449,
+    "totalPct": 95.57808233137267,
+    "decomp": {
+      "nonBonusMass": 70.38228076027414,
+      "naturalBonusFs": 24.738857111299083,
+      "worldRecord": 0.45694445979944487
+    }
+  },
+  "methodB_forcedNaturalBonusOnly": {
+    "bonusOnly": 0.24448099674631282,
+    "totalPct": 95.28732489470487,
+    "decomp": {
+      "nonBonusMass": 70.38228076027414,
+      "naturalBonusFs": 24.448099674631283,
+      "worldRecord": 0.45694445979944487
+    }
+  },
+  "exclusiveLineFeatureAlt": {
+    "linesExactPct": 60.29945972727959,
+    "featuresCappedPct": 11.4325,
+    "bonusOnlyBuyPct": 24.738857111299083,
+    "wrPct": 0.45694445979944487,
+    "totalPct": 96.92776129837812,
+    "caveat": "Adds unconditional lines+features to buy FS; double-counts nothing in FS, but trigger-spin lines/features are in line/feature buckets (correct) while non-bonus eNone path is alternate not summed with this alt."
+  }
+}

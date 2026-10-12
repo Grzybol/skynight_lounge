@@ -1,0 +1,59 @@
+{
+  "modes": {
+    "BASE": {
+      "bookCount": 350040,
+      "schemaErrors": 0,
+      "schemaErrorSamples": [],
+      "replaySample": 1036,
+      "replaySpecials": 36,
+      "replayMismatches": 0,
+      "mismatchSamples": [],
+      "pass": true
+    },
+    "LARGE_HILL": {
+      "bookCount": 120024,
+      "schemaErrors": 0,
+      "schemaErrorSamples": [],
+      "replaySample": 1025,
+      "replaySpecials": 25,
+      "replayMismatches": 0,
+      "mismatchSamples": [],
+      "pass": true
+    },
+    "SKI_FLYING": {
+      "bookCount": 80024,
+      "schemaErrors": 0,
+      "schemaErrorSamples": [],
+      "replaySample": 1026,
+      "replaySpecials": 26,
+      "replayMismatches": 0,
+      "mismatchSamples": [],
+      "pass": true
+    },
+    "WORLD_CUP": {
+      "bookCount": 60024,
+      "schemaErrors": 0,
+      "schemaErrorSamples": [],
+      "replaySample": 1030,
+      "replaySpecials": 30,
+      "replayMismatches": 0,
+      "mismatchSamples": [],
+      "pass": true
+    },
+    "PERFECT_V": {
+      "bookCount": 60024,
+      "schemaErrors": 0,
+      "schemaErrorSamples": [],
+      "replaySample": 1057,
+      "replaySpecials": 57,
+      "replayMismatches": 0,
+      "mismatchSamples": [],
+      "pass": true
+    }
+  },
+  "pass": true,
+  "replayPass": true,
+  "grainPass": true,
+  "maxObservedX": 50000.0,
+  "capPass": true
+}

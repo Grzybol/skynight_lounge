@@ -1,0 +1,25 @@
+{
+	"version": "0.0.1",
+	"configurations": [
+		{
+			"name": "garden-bounty-dev",
+			"runtimeExecutable": "cmd",
+			"runtimeArgs": [
+				"/c",
+				"cd /d frontend\\apps\\poc && ..\\..\\node_modules\\.bin\\vite.cmd --host --port 3010"
+			],
+			"port": 3010,
+			"url": "http://localhost:3010"
+		},
+		{
+			"name": "garden-bounty-storybook",
+			"runtimeExecutable": "cmd",
+			"runtimeArgs": [
+				"/c",
+				"cd /d frontend\\apps\\poc && set PUBLIC_CHROMATIC=true && ..\\..\\node_modules\\.bin\\storybook.cmd dev -p 6010 --no-open public"
+			],
+			"port": 6010,
+			"url": "http://localhost:6010"
+		}
+	]
+}

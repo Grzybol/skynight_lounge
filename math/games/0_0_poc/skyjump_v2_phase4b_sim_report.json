@@ -1,0 +1,114 @@
+{
+  "nonProduction": true,
+  "candidateOrigin": "F01_E_feel",
+  "featureEconomyVersion": 1,
+  "spins": 10000000,
+  "seed": 42,
+  "exact": {
+    "lineRtp": 0.596961766439716,
+    "pCoachAny": 0.0815972222222221,
+    "pCoachGe2": 0.001736111111111111,
+    "scatter": {
+      "0": 0.6204494745833965,
+      "1": 0.3108247851394578,
+      "2": 0.06219606202270772,
+      "3": 0.0062135906602437665,
+      "4": 0.00030991400836999946,
+      "5": 6.173585824103574e-06
+    },
+    "pScatterGe3": 0.00652967825443787,
+    "scatterGe3OneInN": 153.14690265486726,
+    "perfectV": 1.9755474637131444e-09,
+    "perfectVOneInN": 506188799.99999994
+  },
+  "simulated": {
+    "lineRtp": 0.5975272999895787,
+    "featureRtpRaw": 0.1391059,
+    "featureRtpCapped": 0.12410438,
+    "baseRtpBeforeFs": 0.721066146439716,
+    "fsRtpReservePp": 24.393385356028396,
+    "impliedAvgFsBonusX": 37.357714125423456,
+    "pCoachAny": 0.08153,
+    "pCoachGe2": 0.001724,
+    "pFeatureWin": 0.0204258,
+    "pFeatureWinGivenCoach": 0.25053109284925795,
+    "pDeadCoach": 0.7494689071507421,
+    "deadReasons": {
+      "tokens_no_collector": 581133,
+      "collector_no_tokens": 21624,
+      "modifier_only": 8285
+    },
+    "featureWinBuckets": {
+      "0": 0.9795742,
+      ">0-1": 0.0024614,
+      "1-2": 0.0035237,
+      "2-5": 0.00779,
+      "5-10": 0.0049615,
+      "10-25": 0.0015211,
+      "25-50": 0.0001318,
+      "50-100": 2.55e-05,
+      "100-500": 7.9e-06,
+      "500-1000": 1.7e-06,
+      "1000-5000": 6e-07,
+      "5000+": 6e-07
+    },
+    "featureWinAvg": 6.075863858453524,
+    "featureWinMedian": 4.0,
+    "featureWinP90": 10.0,
+    "featureWinP95": 14.0,
+    "featureWinP99": 24.0,
+    "featureWinP999": 70.0,
+    "capFrequency": 2e-07,
+    "capDragTotalX": 150015.2,
+    "capDragPerSpin": 0.01500152,
+    "maxRawTotalWinX": 200010.2,
+    "maxCappedTotalWinX": 50000.0,
+    "conditionalTails": {
+      "t5_plus": {
+        "n": 106,
+        "maxRaw": 200010.2,
+        "maxCapped": 50000.0
+      },
+      "t6": {
+        "n": 21,
+        "maxRaw": 200010.2,
+        "maxCapped": 50000.0
+      },
+      "thermal_ge2": {
+        "n": 7363,
+        "maxRaw": 755.0,
+        "maxCapped": 755.0
+      },
+      "gate_and_thermal": {
+        "n": 1062,
+        "maxRaw": 300.5,
+        "maxCapped": 300.5
+      },
+      "gate_and_collector": {
+        "n": 2288,
+        "maxRaw": 10040.0,
+        "maxCapped": 10040.0
+      },
+      "multi_collector": {
+        "n": 35780,
+        "maxRaw": 200010.2,
+        "maxCapped": 50000.0
+      },
+      "multi_coach_collectors": {
+        "n": 8034,
+        "maxRaw": 757.0,
+        "maxCapped": 757.0
+      },
+      "t6_and_thermal": {
+        "n": 4,
+        "maxRaw": 0.0,
+        "maxCapped": 0.0
+      },
+      "t6_and_head_judge": {
+        "n": 1,
+        "maxRaw": 200010.2,
+        "maxCapped": 50000.0
+      }
+    }
+  }
+}

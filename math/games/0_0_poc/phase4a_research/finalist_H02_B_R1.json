@@ -1,0 +1,165 @@
+{
+  "nonProduction": true,
+  "phase": "4A",
+  "candidateId": "H02_B_R1",
+  "notes": "Coach B slightly fewer Judges than H01",
+  "spins": 5000000,
+  "seed": 20260921,
+  "coachModelId": "B",
+  "coachLabel": "reel 2 only",
+  "coachExact": {
+    "pAny": 0.09615384615384615,
+    "pGe2": 0.0,
+    "lineRtp": 0.5847302155911906
+  },
+  "theoreticalLineRtp": 0.5847302155911906,
+  "simulatedLineRtp": 0.5851533400036528,
+  "featureRtpRaw": 0.1071338,
+  "featureRtpCapped": 0.1071332,
+  "baseRtpBeforeFs": 0.6918634155911907,
+  "remainingFsRtp": 0.2731365844088093,
+  "scatterGe3": 0.007657072926570123,
+  "impliedAvgBonusPerScatterTrigger": 35.67114836545731,
+  "pFeatureWin": 0.0172498,
+  "pFeatureWinGivenCoach": 0.1796390099224367,
+  "pDeadCoach": 0.8203609900775632,
+  "pCoachSpin": 0.0960248,
+  "pTokensWithoutCollector": 0.0756964,
+  "avgFeatureWinGivenWin": 6.210727080893691,
+  "medianFeatureWinGivenWin": 4.0,
+  "p90FeatureWinGivenWin": 10.0,
+  "p95FeatureWinGivenWin": 14.0,
+  "p99FeatureWinGivenWin": 29.0,
+  "p999FeatureWinGivenWin": 100.0,
+  "maxFeatureWinObserved": 50003.0,
+  "pAnyJudge": 0.0165866,
+  "pAnyHeadJudge": 0.0030124,
+  "pAnyThermal": 0.0140572,
+  "pAnyGate": 0.0015258,
+  "avgCollectorPasses": 0.0243712,
+  "avgRawFaceSum": 0.391011,
+  "avgEffectiveTokenSum": 0.4126886,
+  "judgeContributionRtp": 0.0839426,
+  "headJudgeContributionRtp": 0.0231912,
+  "gateFaceUpliftRtp": 0.0222174,
+  "thermalUpliftRtp": 0.0216776,
+  "avgUpgradedTokens": 0.004533,
+  "avgThermalHitsOnTokens": 0.0101268,
+  "avgTokensHitByGe2Thermals": 0.0001786,
+  "capFrequency": 2e-07,
+  "capDragRtp": 6e-07,
+  "tailFeatureRaw": {
+    "10": 0.001953,
+    "50": 6.12e-05,
+    "100": 1.9e-05,
+    "500": 4e-06,
+    "1000": 1.6e-06,
+    "5000": 6e-07,
+    "10000": 2e-07,
+    "50000": 2e-07
+  },
+  "mysteryResultMix": {
+    "FLIGHT_TOKEN": 0.8765654273288537,
+    "THERMAL_LIFT": 0.04939767702735193,
+    "GATE_UPGRADE": 0.004986037927327234,
+    "JUDGE": 0.05913386546251755,
+    "HEAD_JUDGE": 0.009916992253949656
+  },
+  "candidate": {
+    "id": "H02_B_R1",
+    "coachModelId": "B",
+    "notes": "Coach B slightly fewer Judges than H01",
+    "maxWinX": 50000,
+    "gateMaxFloor": 3,
+    "mysteryResultWeights": {
+      "FLIGHT_TOKEN": 885,
+      "THERMAL_LIFT": 50,
+      "GATE_UPGRADE": 5,
+      "JUDGE": 60,
+      "HEAD_JUDGE": 10
+    },
+    "tokenTierWeights": {
+      "1": 997200,
+      "2": 2200,
+      "3": 450,
+      "4": 100,
+      "5": 42,
+      "6": 8
+    },
+    "tokenValueWeights": {
+      "1": {
+        "1": 90,
+        "2": 3,
+        "3": 1,
+        "4": 1
+      },
+      "2": {
+        "5": 22,
+        "10": 2,
+        "15": 1
+      },
+      "3": {
+        "25": 20,
+        "50": 2,
+        "100": 1
+      },
+      "4": {
+        "150": 14,
+        "200": 3,
+        "250": 2,
+        "500": 1
+      },
+      "5": {
+        "750": 14,
+        "1000": 3,
+        "2500": 2,
+        "5000": 1
+      },
+      "6": {
+        "10000": 8,
+        "25000": 2,
+        "50000": 1
+      }
+    },
+    "thermalWeights": {
+      "2": 70,
+      "3": 20,
+      "4": 7,
+      "5": 2,
+      "10": 1,
+      "20": 1
+    }
+  },
+  "flags": {
+    "enableThermal": true,
+    "enableGate": true,
+    "enableHeadJudge": true,
+    "enableJudge": true
+  },
+  "conditional": {
+    "t5plus": {
+      "n": 83,
+      "rate": 1.66e-05,
+      "avgFeatureRaw": 852.7951807228916,
+      "capRate": 0.012048192771084338
+    },
+    "t6": {
+      "n": 14,
+      "rate": 2.8e-06,
+      "avgFeatureRaw": 3571.6428571428573,
+      "capRate": 0.07142857142857142
+    },
+    "thermal2plus": {
+      "n": 5603,
+      "rate": 0.0011206,
+      "avgFeatureRaw": 1.813135820096377,
+      "capRate": 0.0
+    },
+    "multiCollector": {
+      "n": 22600,
+      "rate": 0.00452,
+      "avgFeatureRaw": 8.479955752212389,
+      "capRate": 0.0
+    }
+  }
+}

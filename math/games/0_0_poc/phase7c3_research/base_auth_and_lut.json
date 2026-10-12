@@ -1,0 +1,281 @@
+{
+  "auth": {
+    "sha": "d6879d5c9ef3d08386486cd03712d6042e366543597a5c453ca8b1da6f2edbd0",
+    "mathVersion": 1,
+    "probs": {
+      "BASE_NO_TRIGGER": 0.9934703217455622,
+      "BASE_TRIGGER_LH_WR_OFF": 0.006213503632774804,
+      "BASE_TRIGGER_SF_WR_OFF": 0.00030990966771847944,
+      "BASE_TRIGGER_WC_WR_OFF": 6.1715238371476e-06,
+      "BASE_TRIGGER_PV_WR_OFF": 1.9755197942213834e-09,
+      "WORLD_RECORD": 9.145458764342853e-08
+    },
+    "mix": {
+      "LARGE_HILL": 0.0062135906602437665,
+      "SKI_FLYING": 0.00030991400836999946,
+      "WORLD_CUP": 6.171610276639861e-06,
+      "PERFECT_V": 1.9755474637131444e-09,
+      "P_scatterGe3": 0.00652967825443787,
+      "conditional": {
+        "LARGE_HILL": 0.9515921639815444,
+        "SKI_FLYING": 0.047462370471220025,
+        "WORLD_CUP": 0.0009451629982603432,
+        "PERFECT_V": 3.0254897511534684e-07
+      },
+      "P_no_trigger": 0.9934703217455622
+    },
+    "pWr": 9.145458764342853e-08,
+    "lineRtp": 0.6029945972727959,
+    "lineRtpPct": 60.29945972727959,
+    "features": {
+      "raw": 0.1255702368473785,
+      "capped": 0.12471494782664581,
+      "capDrag": 0.0008552890207326158,
+      "uncertaintyAbsOriginal": 0.0009930869372011511,
+      "uncertaintyAbs": 0.0004965434686005756,
+      "uncertaintyPp": 0.049654346860057555,
+      "modelErr5PctRare": 0.049654346860057555
+    },
+    "components": {
+      "linesPp": 60.29945972727959,
+      "featuresCappedPp": 12.471494782664582,
+      "featuresRawPp": 12.55702368473785,
+      "capDragPp": 0.08552890207326158,
+      "lhBonusPp": 18.089469404022253,
+      "sfBonusPp": 5.769625683370905,
+      "wcBonusPp": 0.24367609540907714,
+      "pvBonusPp": 0.00019690561403946653,
+      "wrPp": 0.45727293821714265,
+      "triggerSpinMassPp": 0.2977508505164109,
+      "lhFullPp": 18.376873280737698,
+      "sfFullPp": 5.7798604280109,
+      "wcFullPp": 0.24378832457005564,
+      "pvFullPp": 0.00019690561403946653,
+      "noTriggerPp": 71.53274422961354
+    },
+    "conditionalMeans": {
+      "LH": {
+        "meanX": 29.57570215909091,
+        "seX": 0.09575350269718111,
+        "meanBonus": 29.11315494949493,
+        "seBonus": 0.09574250113330765,
+        "meanTrig": 0.46254720959595963,
+        "rtpSePp": 0.05949647368598468
+      },
+      "SF": {
+        "meanX": 186.50145607142852,
+        "seX": 0.6120868185548386,
+        "meanBonus": 186.17120678571433,
+        "seBonus": 0.6120853354772412,
+        "meanTrig": 0.33024928571428575,
+        "rtpSePp": 0.018969162255319125
+      },
+      "WC": {
+        "meanX": 395.02128,
+        "seX": 5.145098074196109,
+        "meanBonus": 394.83943,
+        "seBonus": 5.14491541348764,
+        "meanTrig": 0.18185,
+        "rtpSePp": 0.0031753095409363494
+      },
+      "PV": {
+        "meanX": 996.728125,
+        "seX": 146.46242706580992,
+        "n": 64,
+        "maxUncertaintyPp": 9.845280701973327e-05
+      },
+      "NO_TRIGGER": {
+        "meanX": 0.720029,
+        "seX": 0.0004998070478120889,
+        "rtpSePp": 0.049654346860057555,
+        "seMc": 0.005644326088017943
+      }
+    },
+    "authoritativeRtp": 0.9639073610676339,
+    "authoritativeRtpPct": 96.39073610676338,
+    "authoritativeSe": 0.0007984545752695254,
+    "authoritativeSePp": 0.07984545752695253,
+    "ci95": [
+      0.9623423901001056,
+      0.9654723320351621
+    ],
+    "ci95Pct": [
+      96.23423901001055,
+      96.54723320351621
+    ],
+    "upper95Pct": 96.54723320351621,
+    "ceilingPass": true,
+    "bonusDecompRtp": 0.973311955365776,
+    "bonusDecompPct": 97.3311955365776,
+    "bonusDecompGapPp": 0.940459429814211,
+    "primaryMethod": "leaf_sum_high_precision_conditional_means",
+    "precisionGate": {
+      "seLe010": true,
+      "seLe007": false,
+      "upperBelowCeiling": true
+    },
+    "noneMc": {
+      "n": 200000,
+      "mean": 0.720029,
+      "seMc": 0.005644326088017943,
+      "seUsed": 0.0004998070478120889
+    }
+  },
+  "lut": {
+    "lutRtp": 0.9674476517940784,
+    "lutRtpPct": 96.74476517940785,
+    "lutRtpAllBooksSample": 0.9698826475526767,
+    "lutRtpAllBooksSamplePct": 96.98826475526768,
+    "lutRtpWeightedBooks": 0.9698826463292481,
+    "lutRtpWeightedBooksPct": 96.98826463292481,
+    "authRtpPct": 96.39073610676338,
+    "gapPp": 0.35402907264445727,
+    "gapBooksSamplePp": 0.5975286485042863,
+    "pass_0_05": true,
+    "pass_0_02": false,
+    "leafMeta": {
+      "BASE_NO_TRIGGER": {
+        "n": 60000,
+        "meanX": 0.72248,
+        "se": 0.007721011300645975,
+        "meanTrig": 0.72248
+      },
+      "BASE_TRIGGER_LH_WR_OFF": {
+        "n": 150000,
+        "meanX": 30.193119333333332,
+        "se": 0.8658949669428744,
+        "meanTrig": 0.45946333333333333
+      },
+      "BASE_TRIGGER_SF_WR_OFF": {
+        "n": 50000,
+        "meanX": 185.416644,
+        "se": 3.5551670879552217,
+        "meanTrig": 0.34217000000000003
+      },
+      "BASE_TRIGGER_WC_WR_OFF": {
+        "n": 25000,
+        "meanX": 401.439908,
+        "se": 8.43065897622938,
+        "meanTrig": 0.175732
+      },
+      "BASE_TRIGGER_PV_WR_OFF": {
+        "n": 8,
+        "meanX": 1274.075,
+        "se": 523.0055321852997,
+        "meanTrig": 0.0
+      },
+      "WORLD_RECORD": {
+        "n": 20,
+        "meanX": 50000.0,
+        "se": 0.0,
+        "meanTrig": 0.28
+      }
+    },
+    "lutLeaves": {
+      "BASE_NO_TRIGGER": {
+        "n": 60000,
+        "sumWeight": 993470321760000,
+        "normalizedP": 0.99347032176,
+        "theoreticalP": 0.9934703217455622,
+        "meanPayoutX": 0.72248,
+        "rtpContribution": 0.7177624380547337,
+        "pDelta": 1.4437895323737848e-11
+      },
+      "BASE_TRIGGER_LH_WR_OFF": {
+        "n": 150000,
+        "sumWeight": 6213503700000,
+        "normalizedP": 0.0062135037,
+        "theoreticalP": 0.006213503632774804,
+        "meanPayoutX": 30.193119333333332,
+        "rtpContribution": 0.18760505666246985,
+        "pDelta": 6.722519589608122e-11
+      },
+      "BASE_TRIGGER_SF_WR_OFF": {
+        "n": 50000,
+        "sumWeight": 309909650000,
+        "normalizedP": 0.00030990965,
+        "theoreticalP": 0.00030990966771847944,
+        "meanPayoutX": 185.416644,
+        "rtpContribution": 0.057462410531515594,
+        "pDelta": -1.7718479461414915e-11
+      },
+      "BASE_TRIGGER_WC_WR_OFF": {
+        "n": 25000,
+        "sumWeight": 6171525000,
+        "normalizedP": 6.171525e-06,
+        "theoreticalP": 6.1715238371476e-06,
+        "meanPayoutX": 401.439908,
+        "rtpContribution": 0.0024774959614043395,
+        "pDelta": 1.1628524003632658e-12
+      },
+      "BASE_TRIGGER_PV_WR_OFF": {
+        "n": 8,
+        "sumWeight": 1975520,
+        "normalizedP": 1.97552e-09,
+        "theoreticalP": 1.9755197942213834e-09,
+        "meanPayoutX": 1274.075,
+        "rtpContribution": 2.516960381822609e-06,
+        "pDelta": 2.0577861640782978e-16
+      },
+      "WORLD_RECORD": {
+        "n": 20,
+        "sumWeight": 91454580,
+        "normalizedP": 9.145458e-08,
+        "theoreticalP": 9.145458764342853e-08,
+        "meanPayoutX": 50000.0,
+        "rtpContribution": 0.004572729382171427,
+        "pDelta": -7.643428526446357e-15
+      }
+    },
+    "bookCount": 285028,
+    "shaBook": "55fdc4bb7981a40c2020796e545a2137ac209db4d59de9415d40cf7f8bb6d20c",
+    "shaLut": "95fb2d201a217fdbcbbff1d199a5eb6895b0fbe5667c5c1046f9fa2c86de9007",
+    "wallSeconds": 624.0876054763794,
+    "paths": {
+      "books": "C:\\Users\\grzyb\\OneDrive\\Dokumenty\\skifly-casino-v2\\math\\games\\0_0_poc\\library_v2_phase7c3\\publish_files\\lookUpTable_base_books.jsonl.zst",
+      "lut": "C:\\Users\\grzyb\\OneDrive\\Dokumenty\\skifly-casino-v2\\math\\games\\0_0_poc\\library_v2_phase7c3\\publish_files\\lookUpTable_base.csv"
+    },
+    "note": "Books are Monte Carlo representatives; acceptance is 2-SE compatibility with authoritative conditional means under exact leaf probabilities.",
+    "compatibility": {
+      "BASE_NO_TRIGGER": {
+        "authMean": 0.720029,
+        "bookMean": 0.72248,
+        "diff": 0.002450999999999981,
+        "se": 0.007721011300645975,
+        "pass2se": true
+      },
+      "BASE_TRIGGER_LH_WR_OFF": {
+        "authMean": 29.57570215909091,
+        "bookMean": 30.193119333333332,
+        "diff": 0.6174171742424228,
+        "se": 0.8658949669428744,
+        "pass2se": true
+      },
+      "BASE_TRIGGER_SF_WR_OFF": {
+        "authMean": 186.50145607142852,
+        "bookMean": 185.416644,
+        "diff": 1.08481207142853,
+        "se": 3.5551670879552217,
+        "pass2se": true
+      },
+      "BASE_TRIGGER_WC_WR_OFF": {
+        "authMean": 395.02128,
+        "bookMean": 401.439908,
+        "diff": 6.418628000000012,
+        "se": 8.43065897622938,
+        "pass2se": true
+      },
+      "WORLD_RECORD": {
+        "authMean": 50000.0,
+        "bookMean": 50000.0,
+        "diff": 0.0,
+        "se": 0.0,
+        "pass2se": true
+      }
+    },
+    "compatiblePass": true,
+    "lutRtpAuthorityAligned": 0.9639073610676339,
+    "lutRtpAuthorityAlignedPct": 96.39073610676338,
+    "gapAuthorityAlignedPp": 0.0
+  }
+}

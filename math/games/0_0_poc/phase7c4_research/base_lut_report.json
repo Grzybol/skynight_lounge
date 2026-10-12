@@ -1,0 +1,227 @@
+{
+  "actualLutRtp": 0.9639073608885527,
+  "actualLutRtpPct": 96.39073608885526,
+  "actualLutRtpPathB": 0.9639073608887458,
+  "dualPathMatch": true,
+  "authRtp": 0.9639073610676338,
+  "authRtpPct": 96.39073610676337,
+  "gapPp": 1.7908108329578454e-08,
+  "gapPathBPp": 1.7888790448949976e-08,
+  "pass_0_05": true,
+  "pass_0_03": true,
+  "ceilingPass": true,
+  "leafMeta": {
+    "BASE_NO_TRIGGER": {
+      "n": 100000,
+      "trueP": 0.9934703217455622,
+      "effectiveP": 0.993470321745562,
+      "authMean": 0.720029,
+      "rawMean": 0.7273430000000001,
+      "weightedMean": 0.720028999980255,
+      "sumWeight": 993470321745562
+    },
+    "BASE_TRIGGER_LH_WR_OFF": {
+      "n": 160000,
+      "trueP": 0.006213503632774804,
+      "effectiveP": 0.006213503632775,
+      "authMean": 29.57570215909091,
+      "rawMean": 29.76317375,
+      "weightedMean": 29.575702152766063,
+      "sumWeight": 6213503632775,
+      "subStrata": {
+        "NONE": {
+          "n": 72426,
+          "trueP": 0.002812666689448171,
+          "effectiveP": 0.002812666689448,
+          "pHat": 0.45267,
+          "authMean": 6.686412439759118,
+          "rawMean": 6.529523927871207,
+          "weightedMean": 6.686412441469381,
+          "sumWeight": 2812666689448
+        },
+        "HEAD": {
+          "n": 5976,
+          "trueP": 0.000232058826925057,
+          "effectiveP": 0.000232058826925,
+          "pHat": 0.0373475,
+          "authMean": 21.386531853953677,
+          "rawMean": 19.503463855421685,
+          "weightedMean": 21.38653184820843,
+          "sumWeight": 232058826925
+        },
+        "JUDGE_COLD": {
+          "n": 58202,
+          "trueP": 0.0022602240814581626,
+          "effectiveP": 0.002260224081458,
+          "pHat": 0.36376,
+          "authMean": 20.74729014558723,
+          "rawMean": 20.53435792584447,
+          "weightedMean": 20.74729014585357,
+          "sumWeight": 2260224081458
+        },
+        "JUDGE_HOT": {
+          "n": 1728,
+          "trueP": 6.712137299304983e-05,
+          "effectiveP": 6.7121372993e-05,
+          "pHat": 0.0108025,
+          "authMean": 85.40580232467765,
+          "rawMean": 75.92471064814815,
+          "weightedMean": 85.40580234840013,
+          "sumWeight": 67121372993
+        },
+        "BOTH_COLD": {
+          "n": 13052,
+          "trueP": 0.0005068510250845228,
+          "effectiveP": 0.000506851025085,
+          "pHat": 0.0815725,
+          "authMean": 43.80034143983347,
+          "rawMean": 43.11313208703647,
+          "weightedMean": 43.80034144042082,
+          "sumWeight": 506851025085
+        },
+        "BOTH_WARM": {
+          "n": 4006,
+          "trueP": 0.00015555506344651723,
+          "effectiveP": 0.000155555063447,
+          "pHat": 0.025035,
+          "authMean": 85.27013513726682,
+          "rawMean": 80.0831502745881,
+          "weightedMean": 85.27013511753424,
+          "sumWeight": 155555063447
+        },
+        "BOTH_RJ2": {
+          "n": 3668,
+          "trueP": 0.00014246010454044432,
+          "effectiveP": 0.00014246010454,
+          "pHat": 0.0229275,
+          "authMean": 280.5555756258498,
+          "rawMean": 292.9393402399128,
+          "weightedMean": 280.5555754961655,
+          "sumWeight": 142460104540
+        },
+        "BOTH_GFM2P": {
+          "n": 942,
+          "trueP": 3.656646887887972e-05,
+          "effectiveP": 3.6566468879e-05,
+          "pHat": 0.005885,
+          "authMean": 873.4954550848787,
+          "rawMean": 942.9745222929936,
+          "weightedMean": 873.4954544353503,
+          "sumWeight": 36566468879
+        }
+      }
+    },
+    "BASE_TRIGGER_SF_WR_OFF": {
+      "n": 60000,
+      "trueP": 0.00030990966771847944,
+      "effectiveP": 0.000309909667718,
+      "authMean": 186.50145607142852,
+      "rawMean": 188.57327166666667,
+      "weightedMean": 186.50145575126948,
+      "sumWeight": 309909667718
+    },
+    "BASE_TRIGGER_WC_WR_OFF": {
+      "n": 30000,
+      "trueP": 6.1715238371476e-06,
+      "effectiveP": 6.171523837e-06,
+      "authMean": 395.02128,
+      "rawMean": 399.5187966666667,
+      "weightedMean": 395.0212733650987,
+      "sumWeight": 6171523837
+    },
+    "BASE_TRIGGER_PV_WR_OFF": {
+      "n": 16,
+      "trueP": 1.9755197942213834e-09,
+      "effectiveP": 1.97552e-09,
+      "authMean": 996.728125,
+      "rawMean": 1559.75625,
+      "weightedMean": 996.7291933769336,
+      "sumWeight": 1975520
+    },
+    "WORLD_RECORD": {
+      "n": 24,
+      "trueP": 9.145458764342853e-08,
+      "effectiveP": 9.1454588e-08,
+      "authMean": 50000.0,
+      "rawMean": 50000.0,
+      "weightedMean": 50000.0,
+      "sumWeight": 91454588
+    }
+  },
+  "contributions": {
+    "BASE_NO_TRIGGER": {
+      "effectiveP": 0.993470321745562,
+      "weightedMean": 0.720028999980255,
+      "rtpContribution": 0.7153274422765192,
+      "authMean": 0.720029,
+      "authContribution": 0.7153274422961354,
+      "contribDiffPp": -1.9616197555194503e-09,
+      "pError": -1.1102230246251565e-16
+    },
+    "BASE_TRIGGER_LH_WR_OFF": {
+      "effectiveP": 0.006213503632775,
+      "weightedMean": 29.575702152766063,
+      "rtpContribution": 0.18376873276808334,
+      "authMean": 29.57570215909091,
+      "authContribution": 0.183768732807377,
+      "contribDiffPp": -3.92936516657727e-09,
+      "pError": 1.960237527853792e-16
+    },
+    "BASE_TRIGGER_SF_WR_OFF": {
+      "effectiveP": 0.000309909667718,
+      "weightedMean": 186.50145575126948,
+      "rtpContribution": 0.057798604180799205,
+      "authMean": 186.50145607142852,
+      "authContribution": 0.057798604280109,
+      "contribDiffPp": -9.930979649741545e-09,
+      "pError": -4.794342006730901e-16
+    },
+    "BASE_TRIGGER_WC_WR_OFF": {
+      "effectiveP": 6.171523837e-06,
+      "weightedMean": 395.0212733650987,
+      "rtpContribution": 0.0024378832046948,
+      "authMean": 395.02128,
+      "authContribution": 0.0024378832457005563,
+      "contribDiffPp": -4.1005756516027114e-09,
+      "pError": -1.475997262237981e-16
+    },
+    "BASE_TRIGGER_PV_WR_OFF": {
+      "effectiveP": 1.97552e-09,
+      "weightedMean": 996.7291933769336,
+      "rtpContribution": 1.9690584561e-06,
+      "authMean": 996.728125,
+      "authContribution": 1.9690561403946653e-06,
+      "contribDiffPp": 2.3157053345327716e-10,
+      "pError": 2.0577861640782978e-16
+    },
+    "WORLD_RECORD": {
+      "effectiveP": 9.1454588e-08,
+      "weightedMean": 50000.0,
+      "rtpContribution": 0.0045727293999999995,
+      "authMean": 50000.0,
+      "authContribution": 0.004572729382171427,
+      "contribDiffPp": 1.7828572819456046e-09,
+      "pError": 3.5657146286892296e-16
+    }
+  },
+  "bookCount": 350040,
+  "sumWeight": 1000000000000000,
+  "weightScale": 1000000000000000,
+  "shaBook": "a32fec36917a477de26b4d7eb1427972ceab40ec7f53ca252480dc8d6c473e36",
+  "shaLut": "0aba75388d47b954a1952734c575de11b98db5c0069d26e7a230056dd56dab76",
+  "paths": {
+    "books": "C:\\Users\\grzyb\\OneDrive\\Dokumenty\\skifly-casino-v2\\math\\games\\0_0_poc\\library_v2_phase7c4\\publish_files\\books_BASE.jsonl.zst",
+    "lut": "C:\\Users\\grzyb\\OneDrive\\Dokumenty\\skifly-casino-v2\\math\\games\\0_0_poc\\library_v2_phase7c4\\publish_files\\lookUpTable_BASE_0.csv"
+  },
+  "pv": {
+    "target": 1.9755197942213834e-09,
+    "effective": 1.97552e-09,
+    "pass": true
+  },
+  "wr": {
+    "target": 9.145458764342853e-08,
+    "effective": 9.1454588e-08,
+    "pass": true
+  },
+  "wallSeconds": 690.4034695625305
+}

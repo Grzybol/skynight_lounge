@@ -1,0 +1,12 @@
+{
+  "tier": "PERFECT_V",
+  "lutMeanX": 1330.327090775804,
+  "authMeanX": 1321.6561584489311,
+  "authWrOffMeanX": 1315.2456857942782,
+  "pWr": 0.00013167310269823762,
+  "meanDelta": 8.670932326872844,
+  "nNat": 50000,
+  "nWr": 20,
+  "shaBook": "7f46e5c2e2bd11def903990b026182d352e9058ca61cbf31cf9b9852f2813d0c",
+  "shaLut": "cf72cb52286a635016db33880f3f7cf2282f0a06d69bf5c1a0a462b4e7153173"
+}

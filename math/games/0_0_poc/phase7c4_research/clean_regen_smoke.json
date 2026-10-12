@@ -1,0 +1,23 @@
+{
+  "resolverDeterminism": true,
+  "sample": [
+    {
+      "i": 0,
+      "payoutMultiplier": 0,
+      "eventSha": "2ce8faef147a557cd2fcc61927213ba8ac7051d9e892cf03ccafd04991216cdf"
+    },
+    {
+      "i": 1,
+      "payoutMultiplier": 0,
+      "eventSha": "9c89262af904408058f481d0e74b7b6484f4b951356563316eb6c28d719ef027"
+    },
+    {
+      "i": 2,
+      "payoutMultiplier": 100,
+      "eventSha": "338756f07a50ecb0ce80303e19e45aea0e003bce9f6c485eebc19751ee2be38b"
+    }
+  ],
+  "firstBookId": 1,
+  "firstBookGrainOk": true,
+  "pass": true
+}

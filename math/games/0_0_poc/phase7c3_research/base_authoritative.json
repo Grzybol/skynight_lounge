@@ -1,0 +1,122 @@
+{
+  "sha": "d6879d5c9ef3d08386486cd03712d6042e366543597a5c453ca8b1da6f2edbd0",
+  "mathVersion": 1,
+  "probs": {
+    "BASE_NO_TRIGGER": 0.9934703217455622,
+    "BASE_TRIGGER_LH_WR_OFF": 0.006213503632774804,
+    "BASE_TRIGGER_SF_WR_OFF": 0.00030990966771847944,
+    "BASE_TRIGGER_WC_WR_OFF": 6.1715238371476e-06,
+    "BASE_TRIGGER_PV_WR_OFF": 1.9755197942213834e-09,
+    "WORLD_RECORD": 9.145458764342853e-08
+  },
+  "mix": {
+    "LARGE_HILL": 0.0062135906602437665,
+    "SKI_FLYING": 0.00030991400836999946,
+    "WORLD_CUP": 6.171610276639861e-06,
+    "PERFECT_V": 1.9755474637131444e-09,
+    "P_scatterGe3": 0.00652967825443787,
+    "conditional": {
+      "LARGE_HILL": 0.9515921639815444,
+      "SKI_FLYING": 0.047462370471220025,
+      "WORLD_CUP": 0.0009451629982603432,
+      "PERFECT_V": 3.0254897511534684e-07
+    },
+    "P_no_trigger": 0.9934703217455622
+  },
+  "pWr": 9.145458764342853e-08,
+  "lineRtp": 0.6029945972727959,
+  "lineRtpPct": 60.29945972727959,
+  "features": {
+    "raw": 0.1255702368473785,
+    "capped": 0.12471494782664581,
+    "capDrag": 0.0008552890207326158,
+    "uncertaintyAbsOriginal": 0.0009930869372011511,
+    "uncertaintyAbs": 0.0004965434686005756,
+    "uncertaintyPp": 0.049654346860057555,
+    "modelErr5PctRare": 0.049654346860057555
+  },
+  "components": {
+    "linesPp": 60.29945972727959,
+    "featuresCappedPp": 12.471494782664582,
+    "featuresRawPp": 12.55702368473785,
+    "capDragPp": 0.08552890207326158,
+    "lhBonusPp": 18.089469404022253,
+    "sfBonusPp": 5.769625683370905,
+    "wcBonusPp": 0.24367609540907714,
+    "pvBonusPp": 0.00019690561403946653,
+    "wrPp": 0.45727293821714265,
+    "triggerSpinMassPp": 0.2977508505164109,
+    "lhFullPp": 18.376873280737698,
+    "sfFullPp": 5.7798604280109,
+    "wcFullPp": 0.24378832457005564,
+    "pvFullPp": 0.00019690561403946653,
+    "noTriggerPp": 71.53274422961354
+  },
+  "conditionalMeans": {
+    "LH": {
+      "meanX": 29.57570215909091,
+      "seX": 0.09575350269718111,
+      "meanBonus": 29.11315494949493,
+      "seBonus": 0.09574250113330765,
+      "meanTrig": 0.46254720959595963,
+      "rtpSePp": 0.05949647368598468
+    },
+    "SF": {
+      "meanX": 186.50145607142852,
+      "seX": 0.6120868185548386,
+      "meanBonus": 186.17120678571433,
+      "seBonus": 0.6120853354772412,
+      "meanTrig": 0.33024928571428575,
+      "rtpSePp": 0.018969162255319125
+    },
+    "WC": {
+      "meanX": 395.02128,
+      "seX": 5.145098074196109,
+      "meanBonus": 394.83943,
+      "seBonus": 5.14491541348764,
+      "meanTrig": 0.18185,
+      "rtpSePp": 0.0031753095409363494
+    },
+    "PV": {
+      "meanX": 996.728125,
+      "seX": 146.46242706580992,
+      "n": 64,
+      "maxUncertaintyPp": 9.845280701973327e-05
+    },
+    "NO_TRIGGER": {
+      "meanX": 0.720029,
+      "seX": 0.0004998070478120889,
+      "rtpSePp": 0.049654346860057555,
+      "seMc": 0.005644326088017943
+    }
+  },
+  "authoritativeRtp": 0.9639073610676339,
+  "authoritativeRtpPct": 96.39073610676338,
+  "authoritativeSe": 0.0007984545752695254,
+  "authoritativeSePp": 0.07984545752695253,
+  "ci95": [
+    0.9623423901001056,
+    0.9654723320351621
+  ],
+  "ci95Pct": [
+    96.23423901001055,
+    96.54723320351621
+  ],
+  "upper95Pct": 96.54723320351621,
+  "ceilingPass": true,
+  "bonusDecompRtp": 0.973311955365776,
+  "bonusDecompPct": 97.3311955365776,
+  "bonusDecompGapPp": 0.940459429814211,
+  "primaryMethod": "leaf_sum_high_precision_conditional_means",
+  "precisionGate": {
+    "seLe010": true,
+    "seLe007": false,
+    "upperBelowCeiling": true
+  },
+  "noneMc": {
+    "n": 200000,
+    "mean": 0.720029,
+    "seMc": 0.005644326088017943,
+    "seUsed": 0.0004998070478120889
+  }
+}

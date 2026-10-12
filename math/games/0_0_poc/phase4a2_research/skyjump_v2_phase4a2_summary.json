@@ -1,0 +1,2055 @@
+{
+  "nonProduction": true,
+  "phase": "4A.2",
+  "seed": 20260922,
+  "coachModels": {
+    "A": {
+      "label": "reels 2+4 (Phase 3 live)",
+      "pAny": 0.18306213017751483,
+      "pGe2": 0.009245562130177515,
+      "lineRtp": 0.5804859039474884,
+      "reels0": [
+        1,
+        3
+      ],
+      "stripLengths": null
+    },
+    "B": {
+      "label": "reel 2 only",
+      "pAny": 0.09615384615384615,
+      "pGe2": 0.0,
+      "lineRtp": 0.5847302155911906,
+      "reels0": [
+        1
+      ],
+      "stripLengths": null
+    },
+    "D": {
+      "label": "reels 2+4 sparse 100/100 (feel mid)",
+      "pAny": 0.09750000000000003,
+      "pGe2": 0.0025000000000000005,
+      "lineRtp": 0.5966498987255355,
+      "reels0": [
+        1,
+        3
+      ],
+      "stripLengths": {
+        "2": 100,
+        "4": 100
+      }
+    },
+    "E": {
+      "label": "reels 2+4 sparse 120/120 (feel lower Coach)",
+      "pAny": 0.0815972222222221,
+      "pGe2": 0.001736111111111111,
+      "lineRtp": 0.596961766439716,
+      "reels0": [
+        1,
+        3
+      ],
+      "stripLengths": {
+        "2": 120,
+        "4": 120
+      }
+    },
+    "F": {
+      "label": "reels 2+4 sparse 90/90 (feel higher Coach)",
+      "pAny": 0.10802469135802473,
+      "pGe2": 0.0030864197530864196,
+      "lineRtp": 0.595573386407953,
+      "reels0": [
+        1,
+        3
+      ],
+      "stripLengths": {
+        "2": 90,
+        "4": 90
+      }
+    }
+  },
+  "finalists": [
+    {
+      "role": "benchmark",
+      "id": "H02_B_R1",
+      "coach": "B",
+      "conditional": false,
+      "spins": 10000000,
+      "pAny": 0.09615384615384615,
+      "pGe2": 0.0,
+      "lineRtp": 0.5847302155911906,
+      "featureRtpCapped": 0.096728,
+      "featureRtpRaw": 0.096728,
+      "baseRtpBeforeFs": 0.6814582155911907,
+      "pDeadCoach": 0.8195448354650854,
+      "pFeatureWinGivenCoach": 0.18045516453491456,
+      "median": 4.0,
+      "avgWin": 5.577158144791162,
+      "p90": 10.0,
+      "p95": 14.0,
+      "p99": 28.0,
+      "p999": 88.0,
+      "remainingFsRtp": 0.2835417844088093,
+      "impliedBonus": 37.03004883562181,
+      "capFrequency": 0.0,
+      "capDragRtp": 0.0,
+      "deadReasons": {
+        "tokens_no_collector": 0.78773346873332,
+        "collector_no_tokens": 0.01863796075966884,
+        "modifier_only": 0.013173405972096644,
+        "other": 0.0
+      },
+      "winDistCoach": {
+        "0": 0.8195448354650854,
+        "0_1": 0.02182492407161355,
+        "1_2": 0.029518168188008984,
+        "2_5": 0.07068961391234863,
+        "5_10": 0.04407331992512769,
+        "10_25": 0.01231709816741806,
+        "25_50": 0.001514926079722985,
+        "50_100": 0.00037040775026193863,
+        "100_500": 0.00011653277536330653,
+        "500_1000": 1.3526125711812366e-05,
+        "1000_5000": 1.3526125711812366e-05,
+        "5000_plus": 3.1214136258028535e-06
+      },
+      "score": 10.367015543025047,
+      "inFeatureBand": true,
+      "deltaVsH02": {
+        "pCoachAny": {
+          "h02": 0.09615384615384615,
+          "candidate": 0.09615384615384615,
+          "delta": 0.0
+        },
+        "pCoachGe2": {
+          "h02": 0.0,
+          "candidate": 0.0,
+          "delta": 0.0
+        },
+        "featureRtpCapped": {
+          "h02": 0.096728,
+          "candidate": 0.096728,
+          "delta": 0.0
+        },
+        "pFeatureWinGivenCoach": {
+          "h02": 0.18045516453491456,
+          "candidate": 0.18045516453491456,
+          "delta": 0.0
+        },
+        "pDeadCoach": {
+          "h02": 0.8195448354650854,
+          "candidate": 0.8195448354650854,
+          "delta": 0.0
+        },
+        "avgFeatureWinGivenWin": {
+          "h02": 5.577158144791162,
+          "candidate": 5.577158144791162,
+          "delta": 0.0
+        },
+        "medianFeatureWinGivenWin": {
+          "h02": 4.0,
+          "candidate": 4.0,
+          "delta": 0.0
+        },
+        "p99FeatureWinGivenWin": {
+          "h02": 28.0,
+          "candidate": 28.0,
+          "delta": 0.0
+        },
+        "capFrequency": {
+          "h02": 0.0,
+          "candidate": 0.0,
+          "delta": 0.0
+        },
+        "remainingFsRtp": {
+          "h02": 0.2835417844088093,
+          "candidate": 0.2835417844088093,
+          "delta": 0.0
+        },
+        "baseRtpBeforeFs": {
+          "h02": 0.6814582155911907,
+          "candidate": 0.6814582155911907,
+          "delta": 0.0
+        },
+        "theoreticalLineRtp": {
+          "h02": 0.5847302155911906,
+          "candidate": 0.5847302155911906,
+          "delta": 0.0
+        }
+      },
+      "multiCoachTail": {
+        "n": 0,
+        "rate": 0.0,
+        "avgFeatureRaw": 0.0,
+        "capRate": 0.0
+      }
+    },
+    {
+      "role": "best_two_reel_independent",
+      "id": "F01_E_feel",
+      "coach": "E",
+      "conditional": false,
+      "spins": 10000000,
+      "pAny": 0.0815972222222221,
+      "pGe2": 0.001736111111111111,
+      "lineRtp": 0.596961766439716,
+      "featureRtpCapped": 0.1182158,
+      "featureRtpRaw": 0.1182176,
+      "baseRtpBeforeFs": 0.715177566439716,
+      "pDeadCoach": 0.7497107219204142,
+      "pFeatureWinGivenCoach": 0.2502892780795858,
+      "median": 4.0,
+      "avgWin": 5.789531421407303,
+      "p90": 10.0,
+      "p95": 14.0,
+      "p99": 24.0,
+      "p999": 70.0,
+      "remainingFsRtp": 0.249822433560284,
+      "impliedBonus": 38.25953191345886,
+      "capFrequency": 1e-07,
+      "capDragRtp": 1.8e-06,
+      "deadReasons": {
+        "tokens_no_collector": 0.7129368589303575,
+        "collector_no_tokens": 0.026538812292847477,
+        "modifier_only": 0.010235050697209203,
+        "other": 0.0
+      },
+      "winDistCoach": {
+        "0": 0.7497107219204142,
+        "0_1": 0.03146879719155112,
+        "1_2": 0.04271141814901253,
+        "2_5": 0.09429852517209594,
+        "5_10": 0.060906519053129105,
+        "10_25": 0.018861911392653318,
+        "25_50": 0.0016069642471905705,
+        "50_100": 0.0003027613799054698,
+        "100_500": 8.457706564160897e-05,
+        "500_1000": 2.328933691580537e-05,
+        "1000_5000": 1.9612073192257154e-05,
+        "5000_plus": 4.9030182980642885e-06
+      },
+      "score": 14.22404027391006,
+      "inFeatureBand": false,
+      "deltaVsH02": {
+        "pCoachAny": {
+          "h02": 0.09615384615384615,
+          "candidate": 0.0815972222222221,
+          "delta": -0.014556623931624046
+        },
+        "pCoachGe2": {
+          "h02": 0.0,
+          "candidate": 0.001736111111111111,
+          "delta": 0.001736111111111111
+        },
+        "featureRtpCapped": {
+          "h02": 0.096728,
+          "candidate": 0.1182158,
+          "delta": 0.0214878
+        },
+        "pFeatureWinGivenCoach": {
+          "h02": 0.18045516453491456,
+          "candidate": 0.2502892780795858,
+          "delta": 0.06983411354467123
+        },
+        "pDeadCoach": {
+          "h02": 0.8195448354650854,
+          "candidate": 0.7497107219204142,
+          "delta": -0.06983411354467117
+        },
+        "avgFeatureWinGivenWin": {
+          "h02": 5.577158144791162,
+          "candidate": 5.789531421407303,
+          "delta": 0.21237327661614103
+        },
+        "medianFeatureWinGivenWin": {
+          "h02": 4.0,
+          "candidate": 4.0,
+          "delta": 0.0
+        },
+        "p99FeatureWinGivenWin": {
+          "h02": 28.0,
+          "candidate": 24.0,
+          "delta": -4.0
+        },
+        "capFrequency": {
+          "h02": 0.0,
+          "candidate": 1e-07,
+          "delta": 1e-07
+        },
+        "remainingFsRtp": {
+          "h02": 0.2835417844088093,
+          "candidate": 0.249822433560284,
+          "delta": -0.03371935084852529
+        },
+        "baseRtpBeforeFs": {
+          "h02": 0.6814582155911907,
+          "candidate": 0.715177566439716,
+          "delta": 0.03371935084852529
+        },
+        "theoreticalLineRtp": {
+          "h02": 0.5847302155911906,
+          "candidate": 0.596961766439716,
+          "delta": 0.012231550848525341
+        }
+      },
+      "multiCoachTail": {
+        "n": 17199,
+        "rate": 0.0017199,
+        "avgFeatureRaw": 4.930984359555788,
+        "capRate": 0.0
+      }
+    },
+    {
+      "role": "best_lower_coach",
+      "id": "F07_E_safe",
+      "coach": "E",
+      "conditional": false,
+      "spins": 5000000,
+      "pAny": 0.0815972222222221,
+      "pGe2": 0.001736111111111111,
+      "lineRtp": 0.596961766439716,
+      "featureRtpCapped": 0.1070114,
+      "featureRtpRaw": 0.107015,
+      "baseRtpBeforeFs": 0.703973166439716,
+      "pDeadCoach": 0.7760445545769032,
+      "pFeatureWinGivenCoach": 0.22395544542309673,
+      "median": 4.0,
+      "avgWin": 5.8617799785280775,
+      "p90": 10.0,
+      "p95": 12.0,
+      "p99": 24.0,
+      "p999": 60.0,
+      "remainingFsRtp": 0.261026833560284,
+      "impliedBonus": 39.975451069565054,
+      "capFrequency": 2e-07,
+      "capDragRtp": 3.6e-06,
+      "deadReasons": {
+        "tokens_no_collector": 0.7437081380799333,
+        "collector_no_tokens": 0.02269682769449692,
+        "modifier_only": 0.009639588802473073,
+        "other": 0.0
+      },
+      "winDistCoach": {
+        "0": 0.7760445545769032,
+        "0_1": 0.027893226035967517,
+        "1_2": 0.03820751245123776,
+        "2_5": 0.08689614563654653,
+        "5_10": 0.053916926323020684,
+        "10_25": 0.015338943546210652,
+        "25_50": 0.0013641159007826492,
+        "50_100": 0.00021835668195981255,
+        "100_500": 7.114993007679285e-05,
+        "500_1000": 1.962756691773596e-05,
+        "1000_5000": 2.6987904511886944e-05,
+        "5000_plus": 2.453445864716995e-06
+      },
+      "score": 14.454409726077678,
+      "inFeatureBand": true,
+      "deltaVsH02": {
+        "pCoachAny": {
+          "h02": 0.09615384615384615,
+          "candidate": 0.0815972222222221,
+          "delta": -0.014556623931624046
+        },
+        "pCoachGe2": {
+          "h02": 0.0,
+          "candidate": 0.001736111111111111,
+          "delta": 0.001736111111111111
+        },
+        "featureRtpCapped": {
+          "h02": 0.096728,
+          "candidate": 0.1070114,
+          "delta": 0.010283400000000012
+        },
+        "pFeatureWinGivenCoach": {
+          "h02": 0.18045516453491456,
+          "candidate": 0.22395544542309673,
+          "delta": 0.04350028088818217
+        },
+        "pDeadCoach": {
+          "h02": 0.8195448354650854,
+          "candidate": 0.7760445545769032,
+          "delta": -0.04350028088818214
+        },
+        "avgFeatureWinGivenWin": {
+          "h02": 5.577158144791162,
+          "candidate": 5.8617799785280775,
+          "delta": 0.2846218337369155
+        },
+        "medianFeatureWinGivenWin": {
+          "h02": 4.0,
+          "candidate": 4.0,
+          "delta": 0.0
+        },
+        "p99FeatureWinGivenWin": {
+          "h02": 28.0,
+          "candidate": 24.0,
+          "delta": -4.0
+        },
+        "capFrequency": {
+          "h02": 0.0,
+          "candidate": 2e-07,
+          "delta": 2e-07
+        },
+        "remainingFsRtp": {
+          "h02": 0.2835417844088093,
+          "candidate": 0.261026833560284,
+          "delta": -0.022514950848525284
+        },
+        "baseRtpBeforeFs": {
+          "h02": 0.6814582155911907,
+          "candidate": 0.703973166439716,
+          "delta": 0.022514950848525284
+        },
+        "theoreticalLineRtp": {
+          "h02": 0.5847302155911906,
+          "candidate": 0.596961766439716,
+          "delta": 0.012231550848525341
+        }
+      },
+      "multiCoachTail": {
+        "n": 8698,
+        "rate": 0.0017396,
+        "avgFeatureRaw": 4.286157737410899,
+        "capRate": 0.0
+      }
+    },
+    {
+      "role": "best_higher_collector",
+      "id": "F02_E_collect",
+      "coach": "E",
+      "conditional": false,
+      "spins": 5000000,
+      "pAny": 0.0815972222222221,
+      "pGe2": 0.001736111111111111,
+      "lineRtp": 0.596961766439716,
+      "featureRtpCapped": 0.1323076,
+      "featureRtpRaw": 0.1323112,
+      "baseRtpBeforeFs": 0.729269366439716,
+      "pDeadCoach": 0.7314832531190361,
+      "pFeatureWinGivenCoach": 0.26851674688096394,
+      "median": 4.0,
+      "avgWin": 6.043649452326357,
+      "p90": 10.0,
+      "p95": 14.0,
+      "p99": 25.0,
+      "p999": 80.0,
+      "remainingFsRtp": 0.235730633560284,
+      "impliedBonus": 36.101416390627,
+      "capFrequency": 2e-07,
+      "capDragRtp": 3.6e-06,
+      "deadReasons": {
+        "tokens_no_collector": 0.6916582036903482,
+        "collector_no_tokens": 0.029458516697820233,
+        "modifier_only": 0.010366532730867541,
+        "other": 0.0
+      },
+      "winDistCoach": {
+        "0": 0.7314832531190361,
+        "0_1": 0.034369495999097284,
+        "1_2": 0.046605242629851495,
+        "2_5": 0.10119757247496676,
+        "5_10": 0.06410275279768826,
+        "10_25": 0.01972486741337101,
+        "25_50": 0.0019771475109037475,
+        "50_100": 0.00038022067517379764,
+        "100_500": 9.812146456098003e-05,
+        "500_1000": 2.943643936829401e-05,
+        "1000_5000": 2.453036614024501e-05,
+        "5000_plus": 7.3591098420735024e-06
+      },
+      "score": 14.055505125143137,
+      "inFeatureBand": false,
+      "deltaVsH02": {
+        "pCoachAny": {
+          "h02": 0.09615384615384615,
+          "candidate": 0.0815972222222221,
+          "delta": -0.014556623931624046
+        },
+        "pCoachGe2": {
+          "h02": 0.0,
+          "candidate": 0.001736111111111111,
+          "delta": 0.001736111111111111
+        },
+        "featureRtpCapped": {
+          "h02": 0.096728,
+          "candidate": 0.1323076,
+          "delta": 0.0355796
+        },
+        "pFeatureWinGivenCoach": {
+          "h02": 0.18045516453491456,
+          "candidate": 0.26851674688096394,
+          "delta": 0.08806158234604938
+        },
+        "pDeadCoach": {
+          "h02": 0.8195448354650854,
+          "candidate": 0.7314832531190361,
+          "delta": -0.08806158234604933
+        },
+        "avgFeatureWinGivenWin": {
+          "h02": 5.577158144791162,
+          "candidate": 6.043649452326357,
+          "delta": 0.4664913075351951
+        },
+        "medianFeatureWinGivenWin": {
+          "h02": 4.0,
+          "candidate": 4.0,
+          "delta": 0.0
+        },
+        "p99FeatureWinGivenWin": {
+          "h02": 28.0,
+          "candidate": 25.0,
+          "delta": -3.0
+        },
+        "capFrequency": {
+          "h02": 0.0,
+          "candidate": 2e-07,
+          "delta": 2e-07
+        },
+        "remainingFsRtp": {
+          "h02": 0.2835417844088093,
+          "candidate": 0.235730633560284,
+          "delta": -0.047811150848525275
+        },
+        "baseRtpBeforeFs": {
+          "h02": 0.6814582155911907,
+          "candidate": 0.729269366439716,
+          "delta": 0.047811150848525275
+        },
+        "theoreticalLineRtp": {
+          "h02": 0.5847302155911906,
+          "candidate": 0.596961766439716,
+          "delta": 0.012231550848525341
+        }
+      },
+      "multiCoachTail": {
+        "n": 8714,
+        "rate": 0.0017428,
+        "avgFeatureRaw": 5.4803764057837965,
+        "capRate": 0.0
+      }
+    },
+    {
+      "role": "best_conditioned",
+      "id": "F06_E_cond",
+      "coach": "E",
+      "conditional": true,
+      "spins": 5000000,
+      "pAny": 0.0815972222222221,
+      "pGe2": 0.001736111111111111,
+      "lineRtp": 0.596961766439716,
+      "featureRtpCapped": 0.13179,
+      "featureRtpRaw": 0.1317936,
+      "baseRtpBeforeFs": 0.728751766439716,
+      "pDeadCoach": 0.75637278978389,
+      "pFeatureWinGivenCoach": 0.24362721021611003,
+      "median": 4.0,
+      "avgWin": 6.642487777833779,
+      "p90": 10.0,
+      "p95": 14.0,
+      "p99": 25.0,
+      "p999": 75.0,
+      "remainingFsRtp": 0.23624823356028402,
+      "impliedBonus": 36.18068522744116,
+      "capFrequency": 2e-07,
+      "capDragRtp": 3.6e-06,
+      "deadReasons": {
+        "tokens_no_collector": 0.7411665029469549,
+        "collector_no_tokens": 0.008214636542239686,
+        "modifier_only": 0.006991650294695481,
+        "other": 0.0
+      },
+      "winDistCoach": {
+        "0": 0.75637278978389,
+        "0_1": 0.02481827111984283,
+        "1_2": 0.039204322200392924,
+        "2_5": 0.0936935166994106,
+        "5_10": 0.06305992141453831,
+        "10_25": 0.02069499017681729,
+        "25_50": 0.0016944990176817288,
+        "50_100": 0.00029960707269155207,
+        "100_500": 9.823182711198428e-05,
+        "500_1000": 2.9469548133595284e-05,
+        "1000_5000": 2.455795677799607e-05,
+        "5000_plus": 9.823182711198428e-06
+      },
+      "score": 10.641193988212184,
+      "inFeatureBand": false,
+      "deltaVsH02": {
+        "pCoachAny": {
+          "h02": 0.09615384615384615,
+          "candidate": 0.0815972222222221,
+          "delta": -0.014556623931624046
+        },
+        "pCoachGe2": {
+          "h02": 0.0,
+          "candidate": 0.001736111111111111,
+          "delta": 0.001736111111111111
+        },
+        "featureRtpCapped": {
+          "h02": 0.096728,
+          "candidate": 0.13179,
+          "delta": 0.035061999999999996
+        },
+        "pFeatureWinGivenCoach": {
+          "h02": 0.18045516453491456,
+          "candidate": 0.24362721021611003,
+          "delta": 0.06317204568119547
+        },
+        "pDeadCoach": {
+          "h02": 0.8195448354650854,
+          "candidate": 0.75637278978389,
+          "delta": -0.06317204568119539
+        },
+        "avgFeatureWinGivenWin": {
+          "h02": 5.577158144791162,
+          "candidate": 6.642487777833779,
+          "delta": 1.0653296330426167
+        },
+        "medianFeatureWinGivenWin": {
+          "h02": 4.0,
+          "candidate": 4.0,
+          "delta": 0.0
+        },
+        "p99FeatureWinGivenWin": {
+          "h02": 28.0,
+          "candidate": 25.0,
+          "delta": -3.0
+        },
+        "capFrequency": {
+          "h02": 0.0,
+          "candidate": 2e-07,
+          "delta": 2e-07
+        },
+        "remainingFsRtp": {
+          "h02": 0.2835417844088093,
+          "candidate": 0.23624823356028402,
+          "delta": -0.04729355084852527
+        },
+        "baseRtpBeforeFs": {
+          "h02": 0.6814582155911907,
+          "candidate": 0.728751766439716,
+          "delta": 0.04729355084852527
+        },
+        "theoreticalLineRtp": {
+          "h02": 0.5847302155911906,
+          "candidate": 0.596961766439716,
+          "delta": 0.012231550848525341
+        }
+      },
+      "multiCoachTail": {
+        "n": 8647,
+        "rate": 0.0017294,
+        "avgFeatureRaw": 5.537411819128021,
+        "capRate": 0.0
+      }
+    }
+  ],
+  "recommendedId": "F01_E_feel",
+  "alternateSaferRtpId": "F07_E_safe",
+  "recommendationNote": "Feel-primary recommendation is F01_E_feel (P(win|Coach)~25%, dead~75%, multi-Coach retained, feature RTP soft-band ~11.8%). F07_E_safe is the hard-band RTP alternate (~10.7pp, feel~22.4%).",
+  "recommended": {
+    "nonProduction": true,
+    "phase": "4A.2",
+    "candidateId": "F01_E_feel",
+    "notes": "Primary feel: lower two-reel Coach E + denser Judges + ultra-lean faces",
+    "spins": 10000000,
+    "seed": 20260922,
+    "coachModelId": "E",
+    "coachLabel": "reels 2+4 sparse 120/120 (feel lower Coach)",
+    "coachExact": {
+      "pAny": 0.0815972222222221,
+      "pGe2": 0.001736111111111111,
+      "lineRtp": 0.596961766439716
+    },
+    "theoreticalLineRtp": 0.596961766439716,
+    "simulatedLineRtp": 0.5968932799895578,
+    "featureRtpRaw": 0.1182176,
+    "featureRtpCapped": 0.1182158,
+    "baseRtpBeforeFs": 0.715177566439716,
+    "remainingFsRtp": 0.249822433560284,
+    "scatterGe3": 0.00652967825443787,
+    "impliedAvgBonusPerScatterTrigger": 38.25953191345886,
+    "pFeatureWin": 0.0204192,
+    "pFeatureWinGivenCoach": 0.2502892780795858,
+    "pDeadCoach": 0.7497107219204142,
+    "pCoachSpin": 0.0815824,
+    "pTokensWithoutCollector": 0.0581631,
+    "avgFeatureWinGivenWin": 5.789531421407303,
+    "medianFeatureWinGivenWin": 4.0,
+    "p90FeatureWinGivenWin": 10.0,
+    "p95FeatureWinGivenWin": 14.0,
+    "p99FeatureWinGivenWin": 24.0,
+    "p999FeatureWinGivenWin": 70.0,
+    "maxFeatureWinObserved": 50018.0,
+    "pAnyJudge": 0.0196697,
+    "pAnyHeadJudge": 0.0038893,
+    "pAnyThermal": 0.0104317,
+    "pAnyGate": 0.0007848,
+    "avgCollectorPasses": 0.0306601,
+    "avgRawFaceSum": 0.2849059,
+    "avgEffectiveTokenSum": 0.3006642,
+    "judgeContributionRtp": 0.089798,
+    "headJudgeContributionRtp": 0.0284196,
+    "gateFaceUpliftRtp": 0.0106837,
+    "thermalUpliftRtp": 0.0157583,
+    "avgUpgradedTokens": 0.0023225,
+    "avgThermalHitsOnTokens": 0.0074733,
+    "avgTokensHitByGe2Thermals": 0.0001147,
+    "capFrequency": 1e-07,
+    "capDragRtp": 1.8e-06,
+    "tailFeatureRaw": {
+      "10": 0.0024097,
+      "50": 4.5e-05,
+      "100": 1.23e-05,
+      "500": 4e-06,
+      "1000": 2e-06,
+      "5000": 4e-07,
+      "10000": 4e-07,
+      "50000": 1e-07
+    },
+    "mysteryResultMix": {
+      "FLIGHT_TOKEN": 0.8549479212588794,
+      "THERMAL_LIFT": 0.04202017715889184,
+      "GATE_UPGRADE": 0.0029584011652010983,
+      "JUDGE": 0.08511228229863081,
+      "HEAD_JUDGE": 0.014961218118396827
+    },
+    "deadCoachReasons": {
+      "tokens_no_collector": 0.7129368589303575,
+      "collector_no_tokens": 0.026538812292847477,
+      "modifier_only": 0.010235050697209203,
+      "other": 0.0
+    },
+    "deadCoachReasonCounts": {
+      "tokens_no_collector": 581631,
+      "collector_no_tokens": 21651,
+      "modifier_only": 8350,
+      "other": 0
+    },
+    "featureWinDistGivenCoach": {
+      "0": 0.7497107219204142,
+      "0_1": 0.03146879719155112,
+      "1_2": 0.04271141814901253,
+      "2_5": 0.09429852517209594,
+      "5_10": 0.060906519053129105,
+      "10_25": 0.018861911392653318,
+      "25_50": 0.0016069642471905705,
+      "50_100": 0.0003027613799054698,
+      "100_500": 8.457706564160897e-05,
+      "500_1000": 2.328933691580537e-05,
+      "1000_5000": 1.9612073192257154e-05,
+      "5000_plus": 4.9030182980642885e-06
+    },
+    "featureWinDistPerSpin": {
+      "0": 0.9795808,
+      "0_1": 0.0025673,
+      "1_2": 0.0034845,
+      "2_5": 0.0076931,
+      "5_10": 0.0049689,
+      "10_25": 0.0015388,
+      "25_50": 0.0001311,
+      "50_100": 2.47e-05,
+      "100_500": 6.9e-06,
+      "500_1000": 1.9e-06,
+      "1000_5000": 1.6e-06,
+      "5000_plus": 4e-07
+    },
+    "candidate": {
+      "id": "F01_E_feel",
+      "coachModelId": "E",
+      "notes": "Primary feel: lower two-reel Coach E + denser Judges + ultra-lean faces",
+      "maxWinX": 50000,
+      "gateMaxFloor": 3,
+      "mysteryResultWeights": {
+        "FLIGHT_TOKEN": 855,
+        "THERMAL_LIFT": 42,
+        "GATE_UPGRADE": 3,
+        "JUDGE": 85,
+        "HEAD_JUDGE": 15
+      },
+      "tokenTierWeights": {
+        "1": 999400,
+        "2": 400,
+        "3": 120,
+        "4": 40,
+        "5": 32,
+        "6": 8
+      },
+      "tokenValueWeights": {
+        "1": {
+          "1": 99,
+          "2": 1,
+          "3": 1,
+          "4": 1
+        },
+        "2": {
+          "5": 26,
+          "10": 1,
+          "15": 1
+        },
+        "3": {
+          "25": 24,
+          "50": 1,
+          "100": 1
+        },
+        "4": {
+          "150": 18,
+          "200": 2,
+          "250": 1,
+          "500": 1
+        },
+        "5": {
+          "750": 18,
+          "1000": 2,
+          "2500": 1,
+          "5000": 1
+        },
+        "6": {
+          "10000": 8,
+          "25000": 2,
+          "50000": 1
+        }
+      },
+      "thermalWeights": {
+        "2": 70,
+        "3": 20,
+        "4": 7,
+        "5": 2,
+        "10": 1,
+        "20": 1
+      },
+      "phase": "4A.2",
+      "conditionalCollectors": false
+    },
+    "flags": {
+      "enableThermal": true,
+      "enableGate": true,
+      "enableHeadJudge": true,
+      "enableJudge": true
+    },
+    "conditional": {
+      "t5plus": {
+        "n": 102,
+        "rate": 1.02e-05,
+        "avgFeatureRaw": 1146.2745098039215,
+        "capRate": 0.00980392156862745
+      },
+      "t6": {
+        "n": 12,
+        "rate": 1.2e-06,
+        "avgFeatureRaw": 6668.833333333333,
+        "capRate": 0.08333333333333333
+      },
+      "thermal2plus": {
+        "n": 7317,
+        "rate": 0.0007317,
+        "avgFeatureRaw": 2.7194205275386087,
+        "capRate": 0.0
+      },
+      "multiCollector": {
+        "n": 64636,
+        "rate": 0.0064636,
+        "avgFeatureRaw": 9.051998886069683,
+        "capRate": 1.5471254409307506e-05
+      },
+      "multiCoach": {
+        "n": 17199,
+        "rate": 0.0017199,
+        "avgFeatureRaw": 4.930984359555788,
+        "capRate": 0.0
+      },
+      "gateAndCollector": {
+        "n": 2295,
+        "rate": 0.0002295,
+        "avgFeatureRaw": 25.49673202614379,
+        "capRate": 0.0
+      },
+      "raw50kplus": {
+        "n": 1,
+        "rate": 1e-07,
+        "avgFeatureRaw": 50018.0,
+        "capRate": 1.0
+      }
+    },
+    "feelScore": {
+      "score": 14.22404027391006,
+      "inFeatureBand": false,
+      "preferBand": false,
+      "deadCoach": 0.7497107219204142,
+      "feel": 0.2502892780795858,
+      "multiCoach": true,
+      "median": 4.0
+    },
+    "deltaVsH02": {
+      "pCoachAny": {
+        "h02": 0.09615384615384615,
+        "candidate": 0.0815972222222221,
+        "delta": -0.014556623931624046
+      },
+      "pCoachGe2": {
+        "h02": 0.0,
+        "candidate": 0.001736111111111111,
+        "delta": 0.001736111111111111
+      },
+      "featureRtpCapped": {
+        "h02": 0.096728,
+        "candidate": 0.1182158,
+        "delta": 0.0214878
+      },
+      "pFeatureWinGivenCoach": {
+        "h02": 0.18045516453491456,
+        "candidate": 0.2502892780795858,
+        "delta": 0.06983411354467123
+      },
+      "pDeadCoach": {
+        "h02": 0.8195448354650854,
+        "candidate": 0.7497107219204142,
+        "delta": -0.06983411354467117
+      },
+      "avgFeatureWinGivenWin": {
+        "h02": 5.577158144791162,
+        "candidate": 5.789531421407303,
+        "delta": 0.21237327661614103
+      },
+      "medianFeatureWinGivenWin": {
+        "h02": 4.0,
+        "candidate": 4.0,
+        "delta": 0.0
+      },
+      "p99FeatureWinGivenWin": {
+        "h02": 28.0,
+        "candidate": 24.0,
+        "delta": -4.0
+      },
+      "capFrequency": {
+        "h02": 0.0,
+        "candidate": 1e-07,
+        "delta": 1e-07
+      },
+      "remainingFsRtp": {
+        "h02": 0.2835417844088093,
+        "candidate": 0.249822433560284,
+        "delta": -0.03371935084852529
+      },
+      "baseRtpBeforeFs": {
+        "h02": 0.6814582155911907,
+        "candidate": 0.715177566439716,
+        "delta": 0.03371935084852529
+      },
+      "theoreticalLineRtp": {
+        "h02": 0.5847302155911906,
+        "candidate": 0.596961766439716,
+        "delta": 0.012231550848525341
+      }
+    }
+  },
+  "benchmarkId": "H02_B_R1",
+  "benchmark": {
+    "nonProduction": true,
+    "phase": "4A",
+    "candidateId": "H02_B_R1",
+    "notes": "Phase 4A benchmark \u2014 do not promote; feel baseline",
+    "spins": 10000000,
+    "seed": 20260922,
+    "coachModelId": "B",
+    "coachLabel": "reel 2 only",
+    "coachExact": {
+      "pAny": 0.09615384615384615,
+      "pGe2": 0.0,
+      "lineRtp": 0.5847302155911906
+    },
+    "theoreticalLineRtp": 0.5847302155911906,
+    "simulatedLineRtp": 0.585210909990568,
+    "featureRtpRaw": 0.096728,
+    "featureRtpCapped": 0.096728,
+    "baseRtpBeforeFs": 0.6814582155911907,
+    "remainingFsRtp": 0.2835417844088093,
+    "scatterGe3": 0.007657072926570123,
+    "impliedAvgBonusPerScatterTrigger": 37.03004883562181,
+    "pFeatureWin": 0.0173436,
+    "pFeatureWinGivenCoach": 0.18045516453491456,
+    "pDeadCoach": 0.8195448354650854,
+    "pCoachSpin": 0.0961103,
+    "pTokensWithoutCollector": 0.0757093,
+    "avgFeatureWinGivenWin": 5.577158144791162,
+    "medianFeatureWinGivenWin": 4.0,
+    "p90FeatureWinGivenWin": 10.0,
+    "p95FeatureWinGivenWin": 14.0,
+    "p99FeatureWinGivenWin": 28.0,
+    "p999FeatureWinGivenWin": 88.0,
+    "maxFeatureWinObserved": 5015.0,
+    "pAnyJudge": 0.0166574,
+    "pAnyHeadJudge": 0.0030121,
+    "pAnyThermal": 0.0141486,
+    "pAnyGate": 0.0015299,
+    "avgCollectorPasses": 0.0244758,
+    "avgRawFaceSum": 0.368447,
+    "avgEffectiveTokenSum": 0.3902938,
+    "judgeContributionRtp": 0.0725058,
+    "headJudgeContributionRtp": 0.0242222,
+    "gateFaceUpliftRtp": 0.0218771,
+    "thermalUpliftRtp": 0.0218468,
+    "avgUpgradedTokens": 0.0045043,
+    "avgThermalHitsOnTokens": 0.0102982,
+    "avgTokensHitByGe2Thermals": 0.0001758,
+    "capFrequency": 0.0,
+    "capDragRtp": 0.0,
+    "tailFeatureRaw": {
+      "10": 0.0019712,
+      "50": 6.07e-05,
+      "100": 1.54e-05,
+      "500": 2.9e-06,
+      "1000": 1.6e-06,
+      "5000": 3e-07,
+      "10000": 0.0,
+      "50000": 0.0
+    },
+    "mysteryResultMix": {
+      "FLIGHT_TOKEN": 0.8762327350866068,
+      "THERMAL_LIFT": 0.04962080747317936,
+      "GATE_UPGRADE": 0.0049782647108513635,
+      "JUDGE": 0.059271424450447835,
+      "HEAD_JUDGE": 0.00989676827891462
+    },
+    "deadCoachReasons": {
+      "tokens_no_collector": 0.78773346873332,
+      "collector_no_tokens": 0.01863796075966884,
+      "modifier_only": 0.013173405972096644,
+      "other": 0.0
+    },
+    "deadCoachReasonCounts": {
+      "tokens_no_collector": 757093,
+      "collector_no_tokens": 17913,
+      "modifier_only": 12661,
+      "other": 0
+    },
+    "featureWinDistGivenCoach": {
+      "0": 0.8195448354650854,
+      "0_1": 0.02182492407161355,
+      "1_2": 0.029518168188008984,
+      "2_5": 0.07068961391234863,
+      "5_10": 0.04407331992512769,
+      "10_25": 0.01231709816741806,
+      "25_50": 0.001514926079722985,
+      "50_100": 0.00037040775026193863,
+      "100_500": 0.00011653277536330653,
+      "500_1000": 1.3526125711812366e-05,
+      "1000_5000": 1.3526125711812366e-05,
+      "5000_plus": 3.1214136258028535e-06
+    },
+    "featureWinDistPerSpin": {
+      "0": 0.9826564,
+      "0_1": 0.0020976,
+      "1_2": 0.002837,
+      "2_5": 0.006794,
+      "5_10": 0.0042359,
+      "10_25": 0.0011838,
+      "25_50": 0.0001456,
+      "50_100": 3.56e-05,
+      "100_500": 1.12e-05,
+      "500_1000": 1.3e-06,
+      "1000_5000": 1.3e-06,
+      "5000_plus": 3e-07
+    },
+    "candidate": {
+      "id": "H02_B_R1",
+      "coachModelId": "B",
+      "notes": "Phase 4A benchmark \u2014 do not promote; feel baseline",
+      "maxWinX": 50000,
+      "gateMaxFloor": 3,
+      "mysteryResultWeights": {
+        "FLIGHT_TOKEN": 885,
+        "THERMAL_LIFT": 50,
+        "GATE_UPGRADE": 5,
+        "JUDGE": 60,
+        "HEAD_JUDGE": 10
+      },
+      "tokenTierWeights": {
+        "1": 997200,
+        "2": 2200,
+        "3": 450,
+        "4": 100,
+        "5": 42,
+        "6": 8
+      },
+      "tokenValueWeights": {
+        "1": {
+          "1": 90,
+          "2": 3,
+          "3": 1,
+          "4": 1
+        },
+        "2": {
+          "5": 22,
+          "10": 2,
+          "15": 1
+        },
+        "3": {
+          "25": 20,
+          "50": 2,
+          "100": 1
+        },
+        "4": {
+          "150": 14,
+          "200": 3,
+          "250": 2,
+          "500": 1
+        },
+        "5": {
+          "750": 14,
+          "1000": 3,
+          "2500": 2,
+          "5000": 1
+        },
+        "6": {
+          "10000": 8,
+          "25000": 2,
+          "50000": 1
+        }
+      },
+      "thermalWeights": {
+        "2": 70,
+        "3": 20,
+        "4": 7,
+        "5": 2,
+        "10": 1,
+        "20": 1
+      },
+      "phase": "4A",
+      "benchmark": true,
+      "conditionalCollectors": false
+    },
+    "flags": {
+      "enableThermal": true,
+      "enableGate": true,
+      "enableHeadJudge": true,
+      "enableJudge": true
+    },
+    "conditional": {
+      "t5plus": {
+        "n": 121,
+        "rate": 1.21e-05,
+        "avgFeatureRaw": 317.24793388429754,
+        "capRate": 0.0
+      },
+      "t6": {
+        "n": 15,
+        "rate": 1.5e-06,
+        "avgFeatureRaw": 0.0,
+        "capRate": 0.0
+      },
+      "thermal2plus": {
+        "n": 11399,
+        "rate": 0.0011399,
+        "avgFeatureRaw": 1.8934994297745416,
+        "capRate": 0.0
+      },
+      "multiCollector": {
+        "n": 45409,
+        "rate": 0.0045409,
+        "avgFeatureRaw": 8.643572860005726,
+        "capRate": 0.0
+      },
+      "multiCoach": {
+        "n": 0,
+        "rate": 0.0,
+        "avgFeatureRaw": 0.0,
+        "capRate": 0.0
+      },
+      "gateAndCollector": {
+        "n": 3150,
+        "rate": 0.000315,
+        "avgFeatureRaw": 26.74126984126984,
+        "capRate": 0.0
+      },
+      "raw50kplus": {
+        "n": 0,
+        "rate": 0.0,
+        "avgFeatureRaw": 0.0,
+        "capRate": 0.0
+      }
+    },
+    "feelScore": {
+      "score": 10.367015543025047,
+      "inFeatureBand": true,
+      "preferBand": true,
+      "deadCoach": 0.8195448354650854,
+      "feel": 0.18045516453491456,
+      "multiCoach": false,
+      "median": 4.0
+    },
+    "deltaVsH02": {
+      "pCoachAny": {
+        "h02": 0.09615384615384615,
+        "candidate": 0.09615384615384615,
+        "delta": 0.0
+      },
+      "pCoachGe2": {
+        "h02": 0.0,
+        "candidate": 0.0,
+        "delta": 0.0
+      },
+      "featureRtpCapped": {
+        "h02": 0.096728,
+        "candidate": 0.096728,
+        "delta": 0.0
+      },
+      "pFeatureWinGivenCoach": {
+        "h02": 0.18045516453491456,
+        "candidate": 0.18045516453491456,
+        "delta": 0.0
+      },
+      "pDeadCoach": {
+        "h02": 0.8195448354650854,
+        "candidate": 0.8195448354650854,
+        "delta": 0.0
+      },
+      "avgFeatureWinGivenWin": {
+        "h02": 5.577158144791162,
+        "candidate": 5.577158144791162,
+        "delta": 0.0
+      },
+      "medianFeatureWinGivenWin": {
+        "h02": 4.0,
+        "candidate": 4.0,
+        "delta": 0.0
+      },
+      "p99FeatureWinGivenWin": {
+        "h02": 28.0,
+        "candidate": 28.0,
+        "delta": 0.0
+      },
+      "capFrequency": {
+        "h02": 0.0,
+        "candidate": 0.0,
+        "delta": 0.0
+      },
+      "remainingFsRtp": {
+        "h02": 0.2835417844088093,
+        "candidate": 0.2835417844088093,
+        "delta": 0.0
+      },
+      "baseRtpBeforeFs": {
+        "h02": 0.6814582155911907,
+        "candidate": 0.6814582155911907,
+        "delta": 0.0
+      },
+      "theoreticalLineRtp": {
+        "h02": 0.5847302155911906,
+        "candidate": 0.5847302155911906,
+        "delta": 0.0
+      }
+    }
+  },
+  "allDeep": {
+    "H02_B_R1": {
+      "role": null,
+      "id": "H02_B_R1",
+      "coach": "B",
+      "conditional": false,
+      "spins": 10000000,
+      "pAny": 0.09615384615384615,
+      "pGe2": 0.0,
+      "lineRtp": 0.5847302155911906,
+      "featureRtpCapped": 0.096728,
+      "featureRtpRaw": 0.096728,
+      "baseRtpBeforeFs": 0.6814582155911907,
+      "pDeadCoach": 0.8195448354650854,
+      "pFeatureWinGivenCoach": 0.18045516453491456,
+      "median": 4.0,
+      "avgWin": 5.577158144791162,
+      "p90": 10.0,
+      "p95": 14.0,
+      "p99": 28.0,
+      "p999": 88.0,
+      "remainingFsRtp": 0.2835417844088093,
+      "impliedBonus": 37.03004883562181,
+      "capFrequency": 0.0,
+      "capDragRtp": 0.0,
+      "deadReasons": {
+        "tokens_no_collector": 0.78773346873332,
+        "collector_no_tokens": 0.01863796075966884,
+        "modifier_only": 0.013173405972096644,
+        "other": 0.0
+      },
+      "winDistCoach": {
+        "0": 0.8195448354650854,
+        "0_1": 0.02182492407161355,
+        "1_2": 0.029518168188008984,
+        "2_5": 0.07068961391234863,
+        "5_10": 0.04407331992512769,
+        "10_25": 0.01231709816741806,
+        "25_50": 0.001514926079722985,
+        "50_100": 0.00037040775026193863,
+        "100_500": 0.00011653277536330653,
+        "500_1000": 1.3526125711812366e-05,
+        "1000_5000": 1.3526125711812366e-05,
+        "5000_plus": 3.1214136258028535e-06
+      },
+      "score": 10.367015543025047,
+      "inFeatureBand": true,
+      "deltaVsH02": {
+        "pCoachAny": {
+          "h02": 0.09615384615384615,
+          "candidate": 0.09615384615384615,
+          "delta": 0.0
+        },
+        "pCoachGe2": {
+          "h02": 0.0,
+          "candidate": 0.0,
+          "delta": 0.0
+        },
+        "featureRtpCapped": {
+          "h02": 0.096728,
+          "candidate": 0.096728,
+          "delta": 0.0
+        },
+        "pFeatureWinGivenCoach": {
+          "h02": 0.18045516453491456,
+          "candidate": 0.18045516453491456,
+          "delta": 0.0
+        },
+        "pDeadCoach": {
+          "h02": 0.8195448354650854,
+          "candidate": 0.8195448354650854,
+          "delta": 0.0
+        },
+        "avgFeatureWinGivenWin": {
+          "h02": 5.577158144791162,
+          "candidate": 5.577158144791162,
+          "delta": 0.0
+        },
+        "medianFeatureWinGivenWin": {
+          "h02": 4.0,
+          "candidate": 4.0,
+          "delta": 0.0
+        },
+        "p99FeatureWinGivenWin": {
+          "h02": 28.0,
+          "candidate": 28.0,
+          "delta": 0.0
+        },
+        "capFrequency": {
+          "h02": 0.0,
+          "candidate": 0.0,
+          "delta": 0.0
+        },
+        "remainingFsRtp": {
+          "h02": 0.2835417844088093,
+          "candidate": 0.2835417844088093,
+          "delta": 0.0
+        },
+        "baseRtpBeforeFs": {
+          "h02": 0.6814582155911907,
+          "candidate": 0.6814582155911907,
+          "delta": 0.0
+        },
+        "theoreticalLineRtp": {
+          "h02": 0.5847302155911906,
+          "candidate": 0.5847302155911906,
+          "delta": 0.0
+        }
+      },
+      "multiCoachTail": {
+        "n": 0,
+        "rate": 0.0,
+        "avgFeatureRaw": 0.0,
+        "capRate": 0.0
+      }
+    },
+    "F01_E_feel": {
+      "role": null,
+      "id": "F01_E_feel",
+      "coach": "E",
+      "conditional": false,
+      "spins": 10000000,
+      "pAny": 0.0815972222222221,
+      "pGe2": 0.001736111111111111,
+      "lineRtp": 0.596961766439716,
+      "featureRtpCapped": 0.1182158,
+      "featureRtpRaw": 0.1182176,
+      "baseRtpBeforeFs": 0.715177566439716,
+      "pDeadCoach": 0.7497107219204142,
+      "pFeatureWinGivenCoach": 0.2502892780795858,
+      "median": 4.0,
+      "avgWin": 5.789531421407303,
+      "p90": 10.0,
+      "p95": 14.0,
+      "p99": 24.0,
+      "p999": 70.0,
+      "remainingFsRtp": 0.249822433560284,
+      "impliedBonus": 38.25953191345886,
+      "capFrequency": 1e-07,
+      "capDragRtp": 1.8e-06,
+      "deadReasons": {
+        "tokens_no_collector": 0.7129368589303575,
+        "collector_no_tokens": 0.026538812292847477,
+        "modifier_only": 0.010235050697209203,
+        "other": 0.0
+      },
+      "winDistCoach": {
+        "0": 0.7497107219204142,
+        "0_1": 0.03146879719155112,
+        "1_2": 0.04271141814901253,
+        "2_5": 0.09429852517209594,
+        "5_10": 0.060906519053129105,
+        "10_25": 0.018861911392653318,
+        "25_50": 0.0016069642471905705,
+        "50_100": 0.0003027613799054698,
+        "100_500": 8.457706564160897e-05,
+        "500_1000": 2.328933691580537e-05,
+        "1000_5000": 1.9612073192257154e-05,
+        "5000_plus": 4.9030182980642885e-06
+      },
+      "score": 14.22404027391006,
+      "inFeatureBand": false,
+      "deltaVsH02": {
+        "pCoachAny": {
+          "h02": 0.09615384615384615,
+          "candidate": 0.0815972222222221,
+          "delta": -0.014556623931624046
+        },
+        "pCoachGe2": {
+          "h02": 0.0,
+          "candidate": 0.001736111111111111,
+          "delta": 0.001736111111111111
+        },
+        "featureRtpCapped": {
+          "h02": 0.096728,
+          "candidate": 0.1182158,
+          "delta": 0.0214878
+        },
+        "pFeatureWinGivenCoach": {
+          "h02": 0.18045516453491456,
+          "candidate": 0.2502892780795858,
+          "delta": 0.06983411354467123
+        },
+        "pDeadCoach": {
+          "h02": 0.8195448354650854,
+          "candidate": 0.7497107219204142,
+          "delta": -0.06983411354467117
+        },
+        "avgFeatureWinGivenWin": {
+          "h02": 5.577158144791162,
+          "candidate": 5.789531421407303,
+          "delta": 0.21237327661614103
+        },
+        "medianFeatureWinGivenWin": {
+          "h02": 4.0,
+          "candidate": 4.0,
+          "delta": 0.0
+        },
+        "p99FeatureWinGivenWin": {
+          "h02": 28.0,
+          "candidate": 24.0,
+          "delta": -4.0
+        },
+        "capFrequency": {
+          "h02": 0.0,
+          "candidate": 1e-07,
+          "delta": 1e-07
+        },
+        "remainingFsRtp": {
+          "h02": 0.2835417844088093,
+          "candidate": 0.249822433560284,
+          "delta": -0.03371935084852529
+        },
+        "baseRtpBeforeFs": {
+          "h02": 0.6814582155911907,
+          "candidate": 0.715177566439716,
+          "delta": 0.03371935084852529
+        },
+        "theoreticalLineRtp": {
+          "h02": 0.5847302155911906,
+          "candidate": 0.596961766439716,
+          "delta": 0.012231550848525341
+        }
+      },
+      "multiCoachTail": {
+        "n": 17199,
+        "rate": 0.0017199,
+        "avgFeatureRaw": 4.930984359555788,
+        "capRate": 0.0
+      }
+    },
+    "F07_E_safe": {
+      "role": null,
+      "id": "F07_E_safe",
+      "coach": "E",
+      "conditional": false,
+      "spins": 5000000,
+      "pAny": 0.0815972222222221,
+      "pGe2": 0.001736111111111111,
+      "lineRtp": 0.596961766439716,
+      "featureRtpCapped": 0.1070114,
+      "featureRtpRaw": 0.107015,
+      "baseRtpBeforeFs": 0.703973166439716,
+      "pDeadCoach": 0.7760445545769032,
+      "pFeatureWinGivenCoach": 0.22395544542309673,
+      "median": 4.0,
+      "avgWin": 5.8617799785280775,
+      "p90": 10.0,
+      "p95": 12.0,
+      "p99": 24.0,
+      "p999": 60.0,
+      "remainingFsRtp": 0.261026833560284,
+      "impliedBonus": 39.975451069565054,
+      "capFrequency": 2e-07,
+      "capDragRtp": 3.6e-06,
+      "deadReasons": {
+        "tokens_no_collector": 0.7437081380799333,
+        "collector_no_tokens": 0.02269682769449692,
+        "modifier_only": 0.009639588802473073,
+        "other": 0.0
+      },
+      "winDistCoach": {
+        "0": 0.7760445545769032,
+        "0_1": 0.027893226035967517,
+        "1_2": 0.03820751245123776,
+        "2_5": 0.08689614563654653,
+        "5_10": 0.053916926323020684,
+        "10_25": 0.015338943546210652,
+        "25_50": 0.0013641159007826492,
+        "50_100": 0.00021835668195981255,
+        "100_500": 7.114993007679285e-05,
+        "500_1000": 1.962756691773596e-05,
+        "1000_5000": 2.6987904511886944e-05,
+        "5000_plus": 2.453445864716995e-06
+      },
+      "score": 14.454409726077678,
+      "inFeatureBand": true,
+      "deltaVsH02": {
+        "pCoachAny": {
+          "h02": 0.09615384615384615,
+          "candidate": 0.0815972222222221,
+          "delta": -0.014556623931624046
+        },
+        "pCoachGe2": {
+          "h02": 0.0,
+          "candidate": 0.001736111111111111,
+          "delta": 0.001736111111111111
+        },
+        "featureRtpCapped": {
+          "h02": 0.096728,
+          "candidate": 0.1070114,
+          "delta": 0.010283400000000012
+        },
+        "pFeatureWinGivenCoach": {
+          "h02": 0.18045516453491456,
+          "candidate": 0.22395544542309673,
+          "delta": 0.04350028088818217
+        },
+        "pDeadCoach": {
+          "h02": 0.8195448354650854,
+          "candidate": 0.7760445545769032,
+          "delta": -0.04350028088818214
+        },
+        "avgFeatureWinGivenWin": {
+          "h02": 5.577158144791162,
+          "candidate": 5.8617799785280775,
+          "delta": 0.2846218337369155
+        },
+        "medianFeatureWinGivenWin": {
+          "h02": 4.0,
+          "candidate": 4.0,
+          "delta": 0.0
+        },
+        "p99FeatureWinGivenWin": {
+          "h02": 28.0,
+          "candidate": 24.0,
+          "delta": -4.0
+        },
+        "capFrequency": {
+          "h02": 0.0,
+          "candidate": 2e-07,
+          "delta": 2e-07
+        },
+        "remainingFsRtp": {
+          "h02": 0.2835417844088093,
+          "candidate": 0.261026833560284,
+          "delta": -0.022514950848525284
+        },
+        "baseRtpBeforeFs": {
+          "h02": 0.6814582155911907,
+          "candidate": 0.703973166439716,
+          "delta": 0.022514950848525284
+        },
+        "theoreticalLineRtp": {
+          "h02": 0.5847302155911906,
+          "candidate": 0.596961766439716,
+          "delta": 0.012231550848525341
+        }
+      },
+      "multiCoachTail": {
+        "n": 8698,
+        "rate": 0.0017396,
+        "avgFeatureRaw": 4.286157737410899,
+        "capRate": 0.0
+      }
+    },
+    "F02_E_collect": {
+      "role": null,
+      "id": "F02_E_collect",
+      "coach": "E",
+      "conditional": false,
+      "spins": 5000000,
+      "pAny": 0.0815972222222221,
+      "pGe2": 0.001736111111111111,
+      "lineRtp": 0.596961766439716,
+      "featureRtpCapped": 0.1323076,
+      "featureRtpRaw": 0.1323112,
+      "baseRtpBeforeFs": 0.729269366439716,
+      "pDeadCoach": 0.7314832531190361,
+      "pFeatureWinGivenCoach": 0.26851674688096394,
+      "median": 4.0,
+      "avgWin": 6.043649452326357,
+      "p90": 10.0,
+      "p95": 14.0,
+      "p99": 25.0,
+      "p999": 80.0,
+      "remainingFsRtp": 0.235730633560284,
+      "impliedBonus": 36.101416390627,
+      "capFrequency": 2e-07,
+      "capDragRtp": 3.6e-06,
+      "deadReasons": {
+        "tokens_no_collector": 0.6916582036903482,
+        "collector_no_tokens": 0.029458516697820233,
+        "modifier_only": 0.010366532730867541,
+        "other": 0.0
+      },
+      "winDistCoach": {
+        "0": 0.7314832531190361,
+        "0_1": 0.034369495999097284,
+        "1_2": 0.046605242629851495,
+        "2_5": 0.10119757247496676,
+        "5_10": 0.06410275279768826,
+        "10_25": 0.01972486741337101,
+        "25_50": 0.0019771475109037475,
+        "50_100": 0.00038022067517379764,
+        "100_500": 9.812146456098003e-05,
+        "500_1000": 2.943643936829401e-05,
+        "1000_5000": 2.453036614024501e-05,
+        "5000_plus": 7.3591098420735024e-06
+      },
+      "score": 14.055505125143137,
+      "inFeatureBand": false,
+      "deltaVsH02": {
+        "pCoachAny": {
+          "h02": 0.09615384615384615,
+          "candidate": 0.0815972222222221,
+          "delta": -0.014556623931624046
+        },
+        "pCoachGe2": {
+          "h02": 0.0,
+          "candidate": 0.001736111111111111,
+          "delta": 0.001736111111111111
+        },
+        "featureRtpCapped": {
+          "h02": 0.096728,
+          "candidate": 0.1323076,
+          "delta": 0.0355796
+        },
+        "pFeatureWinGivenCoach": {
+          "h02": 0.18045516453491456,
+          "candidate": 0.26851674688096394,
+          "delta": 0.08806158234604938
+        },
+        "pDeadCoach": {
+          "h02": 0.8195448354650854,
+          "candidate": 0.7314832531190361,
+          "delta": -0.08806158234604933
+        },
+        "avgFeatureWinGivenWin": {
+          "h02": 5.577158144791162,
+          "candidate": 6.043649452326357,
+          "delta": 0.4664913075351951
+        },
+        "medianFeatureWinGivenWin": {
+          "h02": 4.0,
+          "candidate": 4.0,
+          "delta": 0.0
+        },
+        "p99FeatureWinGivenWin": {
+          "h02": 28.0,
+          "candidate": 25.0,
+          "delta": -3.0
+        },
+        "capFrequency": {
+          "h02": 0.0,
+          "candidate": 2e-07,
+          "delta": 2e-07
+        },
+        "remainingFsRtp": {
+          "h02": 0.2835417844088093,
+          "candidate": 0.235730633560284,
+          "delta": -0.047811150848525275
+        },
+        "baseRtpBeforeFs": {
+          "h02": 0.6814582155911907,
+          "candidate": 0.729269366439716,
+          "delta": 0.047811150848525275
+        },
+        "theoreticalLineRtp": {
+          "h02": 0.5847302155911906,
+          "candidate": 0.596961766439716,
+          "delta": 0.012231550848525341
+        }
+      },
+      "multiCoachTail": {
+        "n": 8714,
+        "rate": 0.0017428,
+        "avgFeatureRaw": 5.4803764057837965,
+        "capRate": 0.0
+      }
+    },
+    "F06_E_cond": {
+      "role": null,
+      "id": "F06_E_cond",
+      "coach": "E",
+      "conditional": true,
+      "spins": 5000000,
+      "pAny": 0.0815972222222221,
+      "pGe2": 0.001736111111111111,
+      "lineRtp": 0.596961766439716,
+      "featureRtpCapped": 0.13179,
+      "featureRtpRaw": 0.1317936,
+      "baseRtpBeforeFs": 0.728751766439716,
+      "pDeadCoach": 0.75637278978389,
+      "pFeatureWinGivenCoach": 0.24362721021611003,
+      "median": 4.0,
+      "avgWin": 6.642487777833779,
+      "p90": 10.0,
+      "p95": 14.0,
+      "p99": 25.0,
+      "p999": 75.0,
+      "remainingFsRtp": 0.23624823356028402,
+      "impliedBonus": 36.18068522744116,
+      "capFrequency": 2e-07,
+      "capDragRtp": 3.6e-06,
+      "deadReasons": {
+        "tokens_no_collector": 0.7411665029469549,
+        "collector_no_tokens": 0.008214636542239686,
+        "modifier_only": 0.006991650294695481,
+        "other": 0.0
+      },
+      "winDistCoach": {
+        "0": 0.75637278978389,
+        "0_1": 0.02481827111984283,
+        "1_2": 0.039204322200392924,
+        "2_5": 0.0936935166994106,
+        "5_10": 0.06305992141453831,
+        "10_25": 0.02069499017681729,
+        "25_50": 0.0016944990176817288,
+        "50_100": 0.00029960707269155207,
+        "100_500": 9.823182711198428e-05,
+        "500_1000": 2.9469548133595284e-05,
+        "1000_5000": 2.455795677799607e-05,
+        "5000_plus": 9.823182711198428e-06
+      },
+      "score": 10.641193988212184,
+      "inFeatureBand": false,
+      "deltaVsH02": {
+        "pCoachAny": {
+          "h02": 0.09615384615384615,
+          "candidate": 0.0815972222222221,
+          "delta": -0.014556623931624046
+        },
+        "pCoachGe2": {
+          "h02": 0.0,
+          "candidate": 0.001736111111111111,
+          "delta": 0.001736111111111111
+        },
+        "featureRtpCapped": {
+          "h02": 0.096728,
+          "candidate": 0.13179,
+          "delta": 0.035061999999999996
+        },
+        "pFeatureWinGivenCoach": {
+          "h02": 0.18045516453491456,
+          "candidate": 0.24362721021611003,
+          "delta": 0.06317204568119547
+        },
+        "pDeadCoach": {
+          "h02": 0.8195448354650854,
+          "candidate": 0.75637278978389,
+          "delta": -0.06317204568119539
+        },
+        "avgFeatureWinGivenWin": {
+          "h02": 5.577158144791162,
+          "candidate": 6.642487777833779,
+          "delta": 1.0653296330426167
+        },
+        "medianFeatureWinGivenWin": {
+          "h02": 4.0,
+          "candidate": 4.0,
+          "delta": 0.0
+        },
+        "p99FeatureWinGivenWin": {
+          "h02": 28.0,
+          "candidate": 25.0,
+          "delta": -3.0
+        },
+        "capFrequency": {
+          "h02": 0.0,
+          "candidate": 2e-07,
+          "delta": 2e-07
+        },
+        "remainingFsRtp": {
+          "h02": 0.2835417844088093,
+          "candidate": 0.23624823356028402,
+          "delta": -0.04729355084852527
+        },
+        "baseRtpBeforeFs": {
+          "h02": 0.6814582155911907,
+          "candidate": 0.728751766439716,
+          "delta": 0.04729355084852527
+        },
+        "theoreticalLineRtp": {
+          "h02": 0.5847302155911906,
+          "candidate": 0.596961766439716,
+          "delta": 0.012231550848525341
+        }
+      },
+      "multiCoachTail": {
+        "n": 8647,
+        "rate": 0.0017294,
+        "avgFeatureRaw": 5.537411819128021,
+        "capRate": 0.0
+      }
+    },
+    "F03_D_tworeel": {
+      "role": null,
+      "id": "F03_D_tworeel",
+      "coach": "D",
+      "conditional": false,
+      "spins": 5000000,
+      "pAny": 0.09750000000000003,
+      "pGe2": 0.0025000000000000005,
+      "lineRtp": 0.5966498987255355,
+      "featureRtpCapped": 0.1309465,
+      "featureRtpRaw": 0.1309476,
+      "baseRtpBeforeFs": 0.7275963987255355,
+      "pDeadCoach": 0.7817910037667138,
+      "pFeatureWinGivenCoach": 0.2182089962332861,
+      "median": 4.0,
+      "avgWin": 6.152453979082683,
+      "p90": 10.0,
+      "p95": 12.0,
+      "p99": 24.0,
+      "p999": 60.0,
+      "remainingFsRtp": 0.23740360127446447,
+      "impliedBonus": 41.632384095784346,
+      "capFrequency": 2e-07,
+      "capDragRtp": 1.1e-06,
+      "deadReasons": {
+        "tokens_no_collector": 0.750459817959249,
+        "collector_no_tokens": 0.02191132536247188,
+        "modifier_only": 0.009419860444993058,
+        "other": 0.0
+      },
+      "winDistCoach": {
+        "0": 0.7817910037667138,
+        "0_1": 0.026629457466069845,
+        "1_2": 0.036637802880090546,
+        "2_5": 0.08469467472364788,
+        "5_10": 0.05327326822406719,
+        "10_25": 0.015302659664994167,
+        "25_50": 0.0013533103817360511,
+        "50_100": 0.00023785455194148778,
+        "100_500": 4.921128660858368e-05,
+        "500_1000": 8.201881101430613e-06,
+        "1000_5000": 1.845423247821888e-05,
+        "5000_plus": 4.1009405507153065e-06
+      },
+      "score": 9.961481356864876,
+      "inFeatureBand": false,
+      "deltaVsH02": {
+        "pCoachAny": {
+          "h02": 0.09615384615384615,
+          "candidate": 0.09750000000000003,
+          "delta": 0.0013461538461538858
+        },
+        "pCoachGe2": {
+          "h02": 0.0,
+          "candidate": 0.0025000000000000005,
+          "delta": 0.0025000000000000005
+        },
+        "featureRtpCapped": {
+          "h02": 0.096728,
+          "candidate": 0.1309465,
+          "delta": 0.0342185
+        },
+        "pFeatureWinGivenCoach": {
+          "h02": 0.18045516453491456,
+          "candidate": 0.2182089962332861,
+          "delta": 0.03775383169837154
+        },
+        "pDeadCoach": {
+          "h02": 0.8195448354650854,
+          "candidate": 0.7817910037667138,
+          "delta": -0.03775383169837154
+        },
+        "avgFeatureWinGivenWin": {
+          "h02": 5.577158144791162,
+          "candidate": 6.152453979082683,
+          "delta": 0.5752958342915209
+        },
+        "medianFeatureWinGivenWin": {
+          "h02": 4.0,
+          "candidate": 4.0,
+          "delta": 0.0
+        },
+        "p99FeatureWinGivenWin": {
+          "h02": 28.0,
+          "candidate": 24.0,
+          "delta": -4.0
+        },
+        "capFrequency": {
+          "h02": 0.0,
+          "candidate": 2e-07,
+          "delta": 2e-07
+        },
+        "remainingFsRtp": {
+          "h02": 0.2835417844088093,
+          "candidate": 0.23740360127446447,
+          "delta": -0.04613818313434481
+        },
+        "baseRtpBeforeFs": {
+          "h02": 0.6814582155911907,
+          "candidate": 0.7275963987255355,
+          "delta": 0.04613818313434481
+        },
+        "theoreticalLineRtp": {
+          "h02": 0.5847302155911906,
+          "candidate": 0.5966498987255355,
+          "delta": 0.011919683134344883
+        }
+      },
+      "multiCoachTail": {
+        "n": 12526,
+        "rate": 0.0025052,
+        "avgFeatureRaw": 8.1243812869232,
+        "capRate": 7.983394539358135e-05
+      }
+    },
+    "G015_E_m1_feel": {
+      "role": null,
+      "id": "G015_E_m1_feel",
+      "coach": "E",
+      "conditional": false,
+      "spins": 10000000,
+      "pAny": 0.0815972222222221,
+      "pGe2": 0.001736111111111111,
+      "lineRtp": 0.596961766439716,
+      "featureRtpCapped": 0.1156246,
+      "featureRtpRaw": 0.1156264,
+      "baseRtpBeforeFs": 0.712586366439716,
+      "pDeadCoach": 0.7557388479537681,
+      "pFeatureWinGivenCoach": 0.24426115204623183,
+      "median": 4.0,
+      "avgWin": 5.8006943190255456,
+      "p90": 10.0,
+      "p95": 14.0,
+      "p99": 24.0,
+      "p999": 70.0,
+      "remainingFsRtp": 0.252413633560284,
+      "impliedBonus": 38.65636616761815,
+      "capFrequency": 1e-07,
+      "capDragRtp": 1.8e-06,
+      "deadReasons": {
+        "tokens_no_collector": 0.7199461804938602,
+        "collector_no_tokens": 0.02558019559812318,
+        "modifier_only": 0.010212471861784842,
+        "other": 0.0
+      },
+      "winDistCoach": {
+        "0": 0.7557388479537681,
+        "0_1": 0.03041684383887969,
+        "1_2": 0.041504250295014714,
+        "2_5": 0.09219776462788934,
+        "5_10": 0.05962054307214779,
+        "10_25": 0.018429994816563957,
+        "25_50": 0.001633456322505303,
+        "50_100": 0.00033575921407835935,
+        "100_500": 7.842550985771897e-05,
+        "500_1000": 2.205717464748346e-05,
+        "1000_5000": 1.7155580281376025e-05,
+        "5000_plus": 4.901594366107436e-06
+      },
+      "score": 11.61039497775681,
+      "inFeatureBand": false,
+      "deltaVsH02": {
+        "pCoachAny": {
+          "h02": 0.09615384615384615,
+          "candidate": 0.0815972222222221,
+          "delta": -0.014556623931624046
+        },
+        "pCoachGe2": {
+          "h02": 0.0,
+          "candidate": 0.001736111111111111,
+          "delta": 0.001736111111111111
+        },
+        "featureRtpCapped": {
+          "h02": 0.096728,
+          "candidate": 0.1156246,
+          "delta": 0.0188966
+        },
+        "pFeatureWinGivenCoach": {
+          "h02": 0.18045516453491456,
+          "candidate": 0.24426115204623183,
+          "delta": 0.06380598751131727
+        },
+        "pDeadCoach": {
+          "h02": 0.8195448354650854,
+          "candidate": 0.7557388479537681,
+          "delta": -0.06380598751131727
+        },
+        "avgFeatureWinGivenWin": {
+          "h02": 5.577158144791162,
+          "candidate": 5.8006943190255456,
+          "delta": 0.22353617423438354
+        },
+        "medianFeatureWinGivenWin": {
+          "h02": 4.0,
+          "candidate": 4.0,
+          "delta": 0.0
+        },
+        "p99FeatureWinGivenWin": {
+          "h02": 28.0,
+          "candidate": 24.0,
+          "delta": -4.0
+        },
+        "capFrequency": {
+          "h02": 0.0,
+          "candidate": 1e-07,
+          "delta": 1e-07
+        },
+        "remainingFsRtp": {
+          "h02": 0.2835417844088093,
+          "candidate": 0.252413633560284,
+          "delta": -0.03112815084852527
+        },
+        "baseRtpBeforeFs": {
+          "h02": 0.6814582155911907,
+          "candidate": 0.712586366439716,
+          "delta": 0.03112815084852527
+        },
+        "theoreticalLineRtp": {
+          "h02": 0.5847302155911906,
+          "candidate": 0.596961766439716,
+          "delta": 0.012231550848525341
+        }
+      },
+      "multiCoachTail": {
+        "n": 17189,
+        "rate": 0.0017189,
+        "avgFeatureRaw": 4.849205887486183,
+        "capRate": 0.0
+      }
+    }
+  },
+  "phase3LiveConfigModified": false,
+  "phase4aH02Preserved": true,
+  "readyForHumanApproval": true,
+  "readyForPhase4B": false
+}

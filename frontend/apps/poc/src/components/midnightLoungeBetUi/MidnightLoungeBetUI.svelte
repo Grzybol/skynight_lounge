@@ -1,0 +1,750 @@
+<script lang="ts">
+	import { Tween } from 'svelte/motion';
+	import {
+		stateBet,
+		stateBetDerived,
+		stateConfig,
+		stateSound,
+		stateUi,
+	} from 'state-shared';
+	import { OnHotkey } from 'components-shared';
+	import { bookEventAmountToCurrencyString, numberToCurrencyString } from 'utils-shared/amount';
+
+	import { getContext } from '../../game/context';
+	import { resolveGameAsset } from '../../game/resolveGameAsset';
+	import { i18nDerived } from '../../i18n/i18nDerived';
+	import {
+		betFromIdle,
+		closeMenu,
+		openBetMenu,
+		openMenu,
+		openPaytable,
+		openRules,
+		openSettings,
+		pickLanguage,
+		pressAuto,
+		pressBuy,
+		pressTurbo,
+		stepBet,
+		stopRound,
+		toggleSound,
+	} from './betUiActions';
+
+	const context = getContext();
+	const balanceTween = new Tween(stateBet.balanceAmount);
+	const winTween = new Tween(stateBet.winBookEventAmount);
+
+	let stopDisabled = $state(false);
+
+	const idle = $derived(context.stateXstateDerived.isIdle());
+	const options = $derived([...stateConfig.betAmountOptions].sort((a, b) => a - b));
+	const smallest = $derived(options[0]);
+	const biggest = $derived(options[options.length - 1]);
+	const autoOn = $derived(stateBetDerived.hasAutoBetCounter());
+	const buyActive = $derived(stateBetDerived.activeBetMode()?.type === 'activate');
+	const soundOff = $derived(stateSound.volumeValueMaster === 0);
+	const stopMode = $derived(!idle);
+	const spinKey = $derived.by(() => {
+		if (idle) return stateBetDerived.isBetCostAvailable() ? 'spin_default' : 'spin_disabled';
+		if (stopDisabled) return 'stop_disabled';
+		if (autoOn) return 'stop_default';
+		if (stateBet.isTurbo) return 'stop_disabled';
+		return 'stop_default';
+	});
+	const spinDisabled = $derived(idle && (!stateBetDerived.isBetCostAvailable() || stateBet.overlayOpen));
+	const spaceLocked = $derived(idle && (spinDisabled || stateBet.overlayOpen));
+	const autoDisabled = $derived(
+		stateBet.isSpaceHold || !stateBetDerived.isBetCostAvailable() || (!idle && !autoOn),
+	);
+	const turboDisabled = $derived(stateBet.isSpaceHold || stateBet.overlayOpen);
+	const stepLocked = $derived(!idle);
+	const autoBadge = $derived(
+		!autoOn ? '' : stateBet.autoSpinsCounter === Infinity ? '∞' : String(stateBet.autoSpinsCounter),
+	);
+
+	$effect(() => {
+		balanceTween.set(stateBet.balanceAmount);
+	});
+
+	$effect(() => {
+		winTween.set(stateBet.winBookEventAmount, { duration: stateBet.isTurbo ? 80 : 400 });
+	});
+
+	context.eventEmitter.subscribeOnMount({
+		stopButtonClick: () => {
+			stopDisabled = true;
+			if (stateBet.overlayOpen) return;
+			stateBetDerived.updateIsTurbo(true, { persistent: false });
+		},
+		stopButtonEnable: () => {
+			stopDisabled = false;
+			if (stateBet.overlayOpen) return;
+			stateBetDerived.updateIsTurbo(false, { persistent: false });
+		},
+	});
+
+	const onSpin = () => {
+		context.eventEmitter.broadcast({ type: 'soundPressBet' });
+		if (idle) {
+			if (stateBet.overlayOpen) return;
+			betFromIdle(context.eventEmitter);
+			return;
+		}
+		stopRound(context.eventEmitter, stopDisabled);
+	};
+
+	/** Every BetUI button plays the hover sound on pointer enter (disabled ones stay silent). */
+	const hover = (event: PointerEvent) => {
+		const target = event.currentTarget as HTMLButtonElement | null;
+		if (target?.disabled) return;
+		context.eventEmitter.broadcast({ type: 'soundUiHover' });
+	};
+
+	const spinSrc = $derived(
+		resolveGameAsset(`assets/midnight-lounge/ui/betui2/${stopMode ? 'stop' : 'spin'}.png`),
+	);
+	/** The SKYNIGHT LOUNGE emblem is the buy-bonus button (same 108x66 box as the old tile). */
+	const buyEmblemSrc = resolveGameAsset('assets/midnight-lounge/ui/ui_logo_midnight_lounge.png');
+	const spinLabel = $derived(stopMode ? i18nDerived.stop() : 'SPIN');
+</script>
+
+{#if context.stateGame.screen === 'play'}
+	<div class="ml-betui" data-test="ml-betui">
+		{#if stateUi.menuOpen}
+			<button
+				type="button"
+				class="backdrop"
+				aria-label={i18nDerived.menuExit()}
+				onclick={() => closeMenu(context.eventEmitter, false)}
+			></button>
+		{/if}
+
+		<OnHotkey hotkey="Space" disabled={spaceLocked} onpress={onSpin} />
+
+		<div class="bar">
+			<span class="bar-line top"></span>
+			<span class="bar-line bottom"></span>
+
+			<button
+				type="button"
+				class="tile menu"
+				class:active={stateUi.menuOpen}
+				aria-label={stateUi.menuOpen ? i18nDerived.menuExit() : i18nDerived.menu()}
+				aria-pressed={stateUi.menuOpen}
+				onpointerenter={hover}
+				onclick={() => {
+					if (stateUi.menuOpen) closeMenu(context.eventEmitter, true);
+					else openMenu(context.eventEmitter);
+				}}
+			>
+				<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 7.5h14M5 12h14M5 16.5h14" /></svg>
+			</button>
+
+			<div class="panel balance" aria-label={i18nDerived.balance()}>
+				<svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+					<path d="M4.5 8.5h13a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2h-11a2 2 0 0 1-2-2v-9z" />
+					<path d="M4.5 8.5l10-3.2 1.2 3.2M15.5 14h4" />
+				</svg>
+				<span class="text">
+					<span class="kicker">{i18nDerived.balance()}</span>
+					<span class="value">{numberToCurrencyString(balanceTween.current)}</span>
+				</span>
+			</div>
+
+			<span class="sep"></span>
+
+			<div class="panel bet">
+				<button
+					type="button"
+					class="round"
+					aria-label={`${i18nDerived.decrease()} ${i18nDerived.bet()}`}
+					disabled={stepLocked || stateBet.betAmount === smallest}
+					onpointerenter={hover}
+					onclick={() => stepBet(context.eventEmitter, -1)}
+				>
+					<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 12h11" /></svg>
+				</button>
+				<button
+					type="button"
+					class="text bet-btn"
+					aria-label={i18nDerived.bet()}
+					disabled={stepLocked}
+					onpointerenter={hover}
+					onclick={() => {
+						if (stepLocked) return;
+						openBetMenu(context.eventEmitter);
+					}}
+				>
+					<span class="kicker">{i18nDerived.bet()}</span>
+					<span class="value">{numberToCurrencyString(stateBetDerived.betCost())}</span>
+				</button>
+				<button
+					type="button"
+					class="round"
+					aria-label={`${i18nDerived.increase()} ${i18nDerived.bet()}`}
+					disabled={stepLocked || stateBet.betAmount === biggest}
+					onpointerenter={hover}
+					onclick={() => stepBet(context.eventEmitter, 1)}
+				>
+					<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 6.5v11M6.5 12h11" /></svg>
+				</button>
+			</div>
+
+			<span class="win-gap" aria-hidden="true"></span>
+			<div class="panel win" aria-label={i18nDerived.win()}>
+				{#if stateUi.freeSpinCounterShow}
+					<span class="free-spins">
+						{i18nDerived.freeSpins()}
+						{stateUi.freeSpinCounterCurrent} / {stateUi.freeSpinCounterTotal}
+					</span>
+				{/if}
+				<span class="kicker">{i18nDerived.win()}</span>
+				<span class="value big">{bookEventAmountToCurrencyString(winTween.current)}</span>
+			</div>
+
+			<button
+				type="button"
+				class="tile action"
+				class:active={stateBet.isTurbo}
+				aria-label={i18nDerived.turbo()}
+				aria-pressed={stateBet.isTurbo}
+				disabled={turboDisabled}
+				onpointerenter={hover}
+				onclick={() => pressTurbo(context.eventEmitter)}
+			>
+				<svg viewBox="0 0 24 24" aria-hidden="true">
+					<path d="M13 3.5L6.5 13H12l-1 7.5L17.5 11H12L13 3.5z" />
+				</svg>
+				<span class="cap">{i18nDerived.turbo()}</span>
+			</button>
+
+			<button
+				type="button"
+				class="tile action"
+				class:active={autoOn}
+				aria-label={i18nDerived.autoSpin()}
+				aria-pressed={autoOn}
+				disabled={autoDisabled}
+				onpointerenter={hover}
+				onclick={() => pressAuto(context.eventEmitter)}
+			>
+				<svg viewBox="0 0 24 24" aria-hidden="true">
+					<path d="M16.5 7.5A6 6 0 1 0 18 12" />
+					<path d="M16.2 4.8v3.2H19.4" />
+				</svg>
+				<span class="cap">{i18nDerived.autoSpin()}</span>
+				{#if autoBadge}<span class="badge">{autoBadge}</span>{/if}
+			</button>
+
+			<button
+				type="button"
+				class="buy-emblem"
+				class:active={buyActive}
+				aria-label={buyActive ? i18nDerived.disable() : i18nDerived.buyBonus()}
+				aria-pressed={buyActive}
+				disabled={!idle}
+				onpointerenter={hover}
+				onclick={() => pressBuy(context.eventEmitter)}
+			>
+				<img src={buyEmblemSrc} alt="" draggable="false" />
+			</button>
+		</div>
+
+		<!-- SPIN / STOP: the only image-based control. It overlaps the bar at the right. -->
+		<button
+			type="button"
+			class="spin"
+			class:stop={stopMode}
+			data-test="ml-spin"
+			aria-label={spinLabel}
+			disabled={spinDisabled || spinKey.endsWith('disabled')}
+			onpointerenter={hover}
+			onclick={onSpin}
+		>
+			<img src={spinSrc} alt="" draggable="false" />
+		</button>
+
+		{#if stateUi.menuOpen}
+			<div class="flyout" role="menu">
+				<button type="button" onpointerenter={hover} onclick={() => openRules(context.eventEmitter)}>
+					{i18nDerived.info()}
+				</button>
+				<button type="button" onpointerenter={hover} onclick={() => openPaytable(context.eventEmitter)}>
+					{i18nDerived.payTable()}
+				</button>
+				<button
+					type="button"
+					class:off={soundOff}
+					onpointerenter={hover}
+					onclick={() => toggleSound(context.eventEmitter)}
+				>
+					{soundOff ? i18nDerived.soundOff() : i18nDerived.soundOn()}
+				</button>
+				<button type="button" onpointerenter={hover} onclick={() => openSettings(context.eventEmitter)}>
+					{i18nDerived.settings()}
+				</button>
+				<span class="langs">
+					<button type="button" onpointerenter={hover} onclick={() => pickLanguage(context.eventEmitter, 'en')}>EN</button>
+					<button type="button" onpointerenter={hover} onclick={() => pickLanguage(context.eventEmitter, 'pl')}>PL</button>
+				</span>
+			</div>
+		{/if}
+	</div>
+{/if}
+
+<style>
+	.ml-betui {
+		--gold: #f0c75a;
+		--gold-soft: #fbe9b0;
+		position: absolute;
+		z-index: 21;
+		inset: 0;
+		pointer-events: none;
+		color: var(--gold-soft);
+		font-family: var(--ml-font-gold, 'Marcellus', serif);
+	}
+
+	.backdrop {
+		position: absolute;
+		inset: 0;
+		pointer-events: auto;
+		background: rgba(6, 2, 4, 0.28);
+		border: 0;
+		cursor: pointer;
+	}
+
+	/* Bottom bar: dark burgundy lacquer with gold hairlines. */
+	.bar {
+		position: absolute;
+		left: 0;
+		right: 0;
+		bottom: 14px;
+		height: 100px;
+		display: flex;
+		align-items: center;
+		gap: 12px;
+		/* Right padding leaves room for the SPIN button that overlaps the bar. */
+		padding: 0 196px 0 22px;
+		box-sizing: border-box;
+		pointer-events: auto;
+		background:
+			linear-gradient(180deg, rgba(120, 28, 48, 0.22), transparent 40%),
+			linear-gradient(180deg, #3a0f1c, #1a0910 55%, #12060b);
+		box-shadow:
+			0 -10px 24px rgba(0, 0, 0, 0.35),
+			inset 0 1px 0 rgba(255, 220, 140, 0.18);
+	}
+
+	.bar-line {
+		position: absolute;
+		left: 0;
+		right: 0;
+		height: 2px;
+		background: linear-gradient(
+			90deg,
+			transparent,
+			rgba(228, 190, 100, 0.9) 8%,
+			rgba(228, 190, 100, 0.9) 92%,
+			transparent
+		);
+		pointer-events: none;
+	}
+
+	.bar-line.top {
+		top: 0;
+	}
+
+	.bar-line.bottom {
+		bottom: 0;
+	}
+
+	svg {
+		display: block;
+		fill: none;
+		stroke: currentColor;
+		stroke-width: 1.7;
+		stroke-linecap: round;
+		stroke-linejoin: round;
+		pointer-events: none;
+	}
+
+	.tile,
+	.panel,
+	.round,
+	.bet-btn,
+	.flyout button {
+		font-family: inherit;
+	}
+
+	/* Square gold-framed buttons (menu, turbo, auto, buy bonus). */
+	.tile {
+		position: relative;
+		display: grid;
+		justify-items: center;
+		align-content: center;
+		gap: 4px;
+		flex: 0 0 auto;
+		width: 82px;
+		height: 66px;
+		padding: 0;
+		color: var(--gold);
+		background: linear-gradient(180deg, #4a1424, #1b0a10);
+		border: 1.5px solid rgba(228, 190, 100, 0.85);
+		border-radius: 10px;
+		box-shadow: inset 0 1px 0 rgba(255, 224, 150, 0.2);
+		cursor: pointer;
+		transition:
+			transform 120ms ease,
+			border-color 120ms ease,
+			box-shadow 120ms ease;
+	}
+
+	.tile svg {
+		width: 26px;
+		height: 26px;
+	}
+
+	.tile.menu {
+		width: 62px;
+		height: 62px;
+	}
+
+	.tile.menu svg {
+		width: 30px;
+		height: 30px;
+	}
+
+	.tile.wide {
+		width: 108px;
+	}
+
+	/* Image button: the emblem's art spans the full width of its canvas, centred vertically. */
+	.buy-emblem {
+		position: relative;
+		flex: 0 0 auto;
+		width: 108px;
+		height: 66px;
+		padding: 0;
+		background: none;
+		border: 0;
+		cursor: pointer;
+		filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.45));
+		transition:
+			transform 120ms ease,
+			filter 120ms ease;
+	}
+
+	.buy-emblem img {
+		position: absolute;
+		left: 0;
+		top: 50%;
+		width: 108px;
+		height: auto;
+		transform: translateY(-50%);
+		pointer-events: none;
+		user-select: none;
+	}
+
+	.buy-emblem:hover:not(:disabled) {
+		transform: translateY(-1px);
+		filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.45)) brightness(1.12);
+	}
+
+	.buy-emblem:active:not(:disabled) {
+		transform: scale(0.96);
+	}
+
+	.buy-emblem.active {
+		filter: drop-shadow(0 0 10px rgba(255, 205, 90, 0.85)) brightness(1.1);
+	}
+
+	.buy-emblem:disabled {
+		cursor: default;
+		opacity: 0.45;
+	}
+
+	.cap {
+		font-size: 10px;
+		font-weight: 800;
+		letter-spacing: 0.08em;
+		line-height: 1;
+		text-transform: uppercase;
+		text-align: center;
+	}
+
+	.tile:hover:not(:disabled),
+	.round:hover:not(:disabled) {
+		transform: translateY(-1px);
+		border-color: #fbe9b0;
+	}
+
+	.tile:active:not(:disabled),
+	.round:active:not(:disabled) {
+		transform: scale(0.96);
+	}
+
+	.tile.active {
+		border-color: #fbe9b0;
+		box-shadow:
+			0 0 12px rgba(255, 205, 90, 0.7),
+			inset 0 0 10px rgba(255, 205, 90, 0.25);
+	}
+
+	.tile:disabled,
+	.round:disabled {
+		cursor: default;
+		opacity: 0.45;
+	}
+
+	.badge {
+		position: absolute;
+		right: 4px;
+		top: 3px;
+		min-width: 18px;
+		padding: 1px 4px;
+		border-radius: 999px;
+		background: #1b0a10;
+		border: 1px solid rgba(228, 190, 100, 0.9);
+		color: var(--gold-soft);
+		font-size: 10px;
+		font-weight: 800;
+		text-align: center;
+	}
+
+	.panel {
+		display: flex;
+		align-items: center;
+		gap: 10px;
+		flex: 0 0 auto;
+		height: 66px;
+		padding: 0 14px;
+		background: linear-gradient(180deg, #2a0b14, #14080d);
+		border: 1.5px solid rgba(228, 190, 100, 0.55);
+		border-radius: 12px;
+		box-shadow: inset 0 1px 0 rgba(255, 224, 150, 0.12);
+	}
+
+	.panel .ico {
+		width: 26px;
+		height: 26px;
+		color: var(--gold);
+	}
+
+	.text {
+		display: grid;
+		justify-items: start;
+		gap: 4px;
+	}
+
+	.kicker {
+		color: var(--gold);
+		font-size: 10px;
+		font-weight: 800;
+		letter-spacing: 0.14em;
+		line-height: 1;
+		text-transform: uppercase;
+	}
+
+	.value {
+		color: var(--gold-soft);
+		font-size: 18px;
+		font-weight: 800;
+		line-height: 1;
+		white-space: nowrap;
+		text-shadow: 0 1px 0 rgba(40, 8, 16, 0.8);
+	}
+
+	.value.big {
+		font-size: 24px;
+	}
+
+	.balance {
+		width: 176px;
+	}
+
+	.sep {
+		flex: 0 0 auto;
+		width: 1px;
+		height: 44px;
+		background: linear-gradient(180deg, transparent, rgba(228, 190, 100, 0.7), transparent);
+	}
+
+	.bet {
+		gap: 8px;
+		width: 226px;
+		justify-content: space-between;
+		padding: 0 10px;
+	}
+
+	.bet-btn {
+		display: grid;
+		justify-items: center;
+		gap: 4px;
+		padding: 2px 8px;
+		color: inherit;
+		background: transparent;
+		border: 0;
+		border-radius: 8px;
+		cursor: pointer;
+	}
+
+	.bet-btn:disabled {
+		cursor: default;
+	}
+
+	.round {
+		display: grid;
+		place-items: center;
+		flex: 0 0 auto;
+		width: 40px;
+		height: 40px;
+		padding: 0;
+		color: var(--gold-soft);
+		background: radial-gradient(circle at 50% 30%, #a3243e, #4f0f1f);
+		border: 1.5px solid rgba(228, 190, 100, 0.85);
+		border-radius: 50%;
+		cursor: pointer;
+		transition:
+			transform 120ms ease,
+			border-color 120ms ease;
+	}
+
+	.round svg {
+		width: 22px;
+		height: 22px;
+	}
+
+	/* Keeps the buttons to the right of the WIN counter where they were; the counter itself is centred on the bar. */
+	.win-gap {
+		flex: 0 0 auto;
+		width: 189px;
+		height: 1px;
+	}
+
+	.win {
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+		/* Display only: its box reaches over the "+" bet button and must never swallow clicks. */
+		pointer-events: none;
+		flex-direction: column;
+		justify-content: center;
+		gap: 6px;
+		width: 168px;
+		background: transparent;
+		border-color: transparent;
+		box-shadow: none;
+	}
+
+	.win .kicker {
+		font-size: 20px;
+	}
+
+	.free-spins {
+		position: absolute;
+		top: -2px;
+		color: var(--gold);
+		font-size: 10px;
+		font-weight: 800;
+		letter-spacing: 0.1em;
+	}
+
+	/* SPIN / STOP asset, hanging over the bar at the right. */
+	.spin {
+		position: absolute;
+		right: 16px;
+		/* Centred on the bar (bar: bottom 14px, height 100px). */
+		bottom: -24px;
+		width: 176px;
+		height: 176px;
+		padding: 0;
+		background: transparent;
+		border: 0;
+		border-radius: 50%;
+		cursor: pointer;
+		pointer-events: auto;
+		filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.55));
+		transition:
+			transform 120ms ease,
+			filter 120ms ease;
+	}
+
+	.spin img {
+		display: block;
+		width: 100%;
+		height: 100%;
+		object-fit: contain;
+		pointer-events: none;
+		user-select: none;
+	}
+
+	.spin:hover:not(:disabled) {
+		transform: scale(1.04);
+		filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.55)) brightness(1.1);
+	}
+
+	.spin:active:not(:disabled) {
+		transform: scale(0.97);
+	}
+
+	.spin:disabled {
+		cursor: default;
+		filter: grayscale(0.6) brightness(0.65) drop-shadow(0 6px 12px rgba(0, 0, 0, 0.55));
+	}
+
+	.spin:focus-visible,
+	.tile:focus-visible,
+	.round:focus-visible {
+		outline: 2px solid #fbe9b0;
+		outline-offset: 2px;
+	}
+
+	.flyout {
+		position: absolute;
+		left: 24px;
+		bottom: 128px;
+		display: flex;
+		flex-direction: column;
+		gap: 6px;
+		min-width: 170px;
+		padding: 8px;
+		pointer-events: auto;
+		background: linear-gradient(180deg, #3a1422, #14080d);
+		border: 1px solid rgba(212, 168, 92, 0.72);
+		border-radius: 12px;
+		box-shadow: 0 11px 26px rgba(0, 0, 0, 0.42);
+	}
+
+	.flyout button {
+		min-height: 32px;
+		padding: 0 14px;
+		color: #f3e2b8;
+		background: #1a0c10;
+		border: 1px solid rgba(212, 168, 92, 0.72);
+		border-radius: 8px;
+		cursor: pointer;
+		font-size: 13px;
+		font-weight: 800;
+		letter-spacing: 0.06em;
+		text-align: left;
+	}
+
+	.flyout button:hover {
+		border-color: #f3e2b8;
+	}
+
+	.flyout button.off {
+		opacity: 0.7;
+	}
+
+	.langs {
+		display: flex;
+		gap: 6px;
+	}
+
+	.langs button {
+		flex: 1;
+		text-align: center;
+	}
+</style>

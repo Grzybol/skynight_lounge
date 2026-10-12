@@ -1,0 +1,815 @@
+{
+  "nonProduction": true,
+  "phase": "4C",
+  "liveConfigSha256": "d6879d5c9ef3d08386486cd03712d6042e366543597a5c453ca8b1da6f2edbd0",
+  "liveConfigFingerprint": {
+    "candidateOrigin": "F01_E_feel",
+    "featureEconomyVersion": 2,
+    "mysteryResultWeights": {
+      "FLIGHT_TOKEN": 855,
+      "THERMAL_LIFT": 42,
+      "GATE_UPGRADE": 3,
+      "JUDGE": 85,
+      "HEAD_JUDGE": 15
+    },
+    "thermalWeights": {
+      "2": 70,
+      "3": 20,
+      "4": 7,
+      "5": 2,
+      "10": 1,
+      "20": 1
+    },
+    "gateMaxFloor": 3,
+    "maxWinX": 50000,
+    "tokenTierWeights": {
+      "1": 999360,
+      "2": 440,
+      "3": 120,
+      "4": 40,
+      "5": 32,
+      "6": 8
+    },
+    "tokenValueWeights": {
+      "1": {
+        "1": 90,
+        "2": 6,
+        "3": 3,
+        "4": 1
+      },
+      "2": {
+        "5": 22,
+        "10": 4,
+        "15": 2
+      },
+      "3": {
+        "25": 24,
+        "50": 1,
+        "100": 1
+      },
+      "4": {
+        "150": 18,
+        "200": 2,
+        "250": 1,
+        "500": 1
+      },
+      "5": {
+        "750": 18,
+        "1000": 2,
+        "2500": 1,
+        "5000": 1
+      },
+      "6": {
+        "10000": 8,
+        "25000": 2,
+        "50000": 1
+      }
+    },
+    "coachModelId": "E",
+    "stripLengths": [
+      52,
+      120,
+      52,
+      120,
+      52
+    ],
+    "coachCounts": [
+      0,
+      1,
+      0,
+      1,
+      0
+    ]
+  },
+  "exact": {
+    "lineRtp": 0.6029945972727959,
+    "pCoachAny": 0.0815972222222221,
+    "pScatterGe3": 0.00652967825443787,
+    "scatterGe3OneInN": 153.14690265486726,
+    "mysteryTokenJoint": {
+      "pFlightToken": 0.855,
+      "pTierGivenFlight": {
+        "1": 0.99936,
+        "2": 0.00044,
+        "3": 0.00012,
+        "4": 4e-05,
+        "5": 3.2e-05,
+        "6": 8e-06
+      },
+      "pFlightAndTier": {
+        "1": 0.8544528,
+        "2": 0.0003762,
+        "3": 0.0001026,
+        "4": 3.4200000000000005e-05,
+        "5": 2.736e-05,
+        "6": 6.84e-06
+      },
+      "pFlightAndT6Face": {
+        "10000.0": 4.974545454545455e-06,
+        "25000.0": 1.2436363636363637e-06,
+        "50000.0": 6.218181818181819e-07
+      },
+      "evFaceGivenTier": {
+        "1": 1.15,
+        "2": 6.428571428571428,
+        "3": 28.846153846153847,
+        "4": 175.0,
+        "5": 1045.4545454545455,
+        "6": 16363.636363636364
+      },
+      "pMysteryResults": {
+        "FLIGHT_TOKEN": 0.855,
+        "THERMAL_LIFT": 0.042,
+        "GATE_UPGRADE": 0.003,
+        "JUDGE": 0.085,
+        "HEAD_JUDGE": 0.015
+      }
+    },
+    "stratumPartitionSum": 0.9999999999999999
+  },
+  "mysteryCountProbe": {
+    "spins": 200000,
+    "pCoachAny": 0.082385,
+    "meanMysteries": 0.26887,
+    "pN": {
+      "0": 0.917615,
+      "1": 0.01824,
+      "2": 0.01681,
+      "3": 0.01432,
+      "4": 0.011975,
+      "5": 0.00914,
+      "6": 0.00616,
+      "7": 0.00352,
+      "8": 0.00147,
+      "9": 0.000515,
+      "10": 0.000175,
+      "11": 2.5e-05,
+      "12": 2.5e-05,
+      "13": 1e-05
+    },
+    "counts": {
+      "0": 183523,
+      "1": 3648,
+      "2": 3362,
+      "3": 2864,
+      "4": 2395,
+      "5": 1828,
+      "6": 1232,
+      "7": 704,
+      "8": 294,
+      "9": 103,
+      "10": 35,
+      "11": 5,
+      "12": 5,
+      "13": 2
+    }
+  },
+  "pStratumExactMix": {
+    "NO_T4PLUS": 0.9999816114473271,
+    "T4_NO_T5PLUS": 9.193737526913952e-06,
+    "T5_NO_T6": 7.355765900714481e-06,
+    "T6_PRESENT": 1.8390492451043334e-06,
+    "P_any_T4": 1.8388552672732765e-05,
+    "P_any_T5": 9.194815145818817e-06,
+    "P_any_T6": 1.8390492451043334e-06
+  },
+  "bulkNaturalMc": {
+    "spins": 800000,
+    "seed": 43,
+    "lineRtp": 0.6036212499983188,
+    "featureRtpRaw": 0.1182175,
+    "featureRtpCapped": 0.1182175,
+    "pCap": 0.0,
+    "capDragRtp": 0.0,
+    "E_excess_given_cap": 0.0,
+    "maxRawTotalWinX": 1513.0,
+    "byTierStratum": {
+      "NO_T4PLUS": {
+        "p": 0.99997875,
+        "rawRtp": 0.11478375,
+        "cappedRtp": 0.11478375,
+        "E_raw_given": 0.11478618920652064,
+        "E_capped_given": 0.11478618920652064,
+        "pCapGiven": 0.0,
+        "capDragRtp": 0.0
+      },
+      "T4_NO_T5PLUS": {
+        "p": 1.625e-05,
+        "rawRtp": 0.00154375,
+        "cappedRtp": 0.00154375,
+        "E_raw_given": 95.0,
+        "E_capped_given": 95.0,
+        "pCapGiven": 0.0,
+        "capDragRtp": 0.0
+      },
+      "T6_PRESENT": {
+        "p": 1.25e-06,
+        "rawRtp": 0.0,
+        "cappedRtp": 0.0,
+        "E_raw_given": 0.0,
+        "E_capped_given": 0.0,
+        "pCapGiven": 0.0,
+        "capDragRtp": 0.0
+      },
+      "T5_NO_T6": {
+        "p": 3.75e-06,
+        "rawRtp": 0.00189,
+        "cappedRtp": 0.00189,
+        "E_raw_given": 504.0,
+        "E_capped_given": 504.0,
+        "pCapGiven": 0.0,
+        "capDragRtp": 0.0
+      }
+    },
+    "byCollectorPasses": {
+      "0": {
+        "p": 0.97724,
+        "rawRtp": 0.0,
+        "cappedRtp": 0.0,
+        "E_raw_given": 0.0,
+        "E_capped_given": 0.0
+      },
+      "1": {
+        "p": 0.01625625,
+        "rawRtp": 0.0599475,
+        "cappedRtp": 0.0599475,
+        "E_raw_given": 3.687658592848904,
+        "E_capped_given": 3.687658592848904
+      },
+      "2": {
+        "p": 0.00513125,
+        "rawRtp": 0.039725,
+        "cappedRtp": 0.039725,
+        "E_raw_given": 7.7417783191230205,
+        "E_capped_given": 7.7417783191230205
+      },
+      "3": {
+        "p": 0.0010775,
+        "rawRtp": 0.01359375,
+        "cappedRtp": 0.01359375,
+        "E_raw_given": 12.616009280742459,
+        "E_capped_given": 12.616009280742459
+      },
+      "5+": {
+        "p": 4.25e-05,
+        "rawRtp": 0.00104125,
+        "cappedRtp": 0.00104125,
+        "E_raw_given": 24.5,
+        "E_capped_given": 24.5
+      },
+      "4": {
+        "p": 0.0002525,
+        "rawRtp": 0.00391,
+        "cappedRtp": 0.00391,
+        "E_raw_given": 15.485148514851485,
+        "E_capped_given": 15.485148514851485
+      }
+    },
+    "byMaxTierExclusive": {
+      "T1": {
+        "p": 0.07845625,
+        "rawRtp": 0.1137775,
+        "cappedRtp": 0.1137775,
+        "E_raw_given": 1.450203138691946,
+        "E_capped_given": 1.450203138691946
+      },
+      "T3": {
+        "p": 1.875e-05,
+        "rawRtp": 0.00032375,
+        "cappedRtp": 0.00032375,
+        "E_raw_given": 17.266666666666666,
+        "E_capped_given": 17.266666666666666
+      },
+      "T2": {
+        "p": 0.00011,
+        "rawRtp": 0.0006825,
+        "cappedRtp": 0.0006825,
+        "E_raw_given": 6.204545454545454,
+        "E_capped_given": 6.204545454545454
+      },
+      "T4": {
+        "p": 1.625e-05,
+        "rawRtp": 0.00154375,
+        "cappedRtp": 0.00154375,
+        "E_raw_given": 95.0,
+        "E_capped_given": 95.0
+      },
+      "T6": {
+        "p": 1.25e-06,
+        "rawRtp": 0.0,
+        "cappedRtp": 0.0,
+        "E_raw_given": 0.0,
+        "E_capped_given": 0.0
+      },
+      "T5": {
+        "p": 3.75e-06,
+        "rawRtp": 0.00189,
+        "cappedRtp": 0.00189,
+        "E_raw_given": 504.0,
+        "E_capped_given": 504.0
+      }
+    },
+    "rawThresholds": {
+      "1000": 1.25e-06
+    }
+  },
+  "conditional": {
+    "T4": {
+      "forcedTier": 4,
+      "n": 60000,
+      "attempts": 734249,
+      "E_raw": 49.15266666666667,
+      "E_capped": 49.15266666666667,
+      "pCap": 0.0,
+      "E_excess_given_cap": 0.0,
+      "pCollector": 0.20058333333333334,
+      "pHeadJudge": 0.03376666666666667,
+      "maxRaw": 4021.0,
+      "passesHist": {
+        "0": 0.7994166666666667,
+        "1": 0.1478,
+        "2": 0.04271666666666667,
+        "3": 0.008233333333333334,
+        "4": 0.00155,
+        "5": 0.00025,
+        "6": 3.3333333333333335e-05
+      },
+      "routes": {
+        "high_token_only": {
+          "share": 0.7268333333333333,
+          "E_raw": 0.0
+        },
+        "high+thermal+collector": {
+          "share": 0.021583333333333333,
+          "E_raw": 322.66872586872586
+        },
+        "high+2thermal": {
+          "share": 0.004366666666666666,
+          "E_raw": 0.0
+        },
+        "high+collector": {
+          "share": 0.1776,
+          "E_raw": 235.38325825825825
+        },
+        "high+thermal": {
+          "share": 0.06293333333333333,
+          "E_raw": 0.0
+        },
+        "high+gate+collector": {
+          "share": 0.0014,
+          "E_raw": 274.5238095238095
+        },
+        "high+gate": {
+          "share": 0.0052833333333333335,
+          "E_raw": 0.0
+        }
+      },
+      "byFace": {
+        "150": {
+          "share": 0.81875,
+          "E_raw": 42.28258524173028,
+          "E_capped": 42.28258524173028,
+          "pCap": 0.0
+        },
+        "250": {
+          "share": 0.045316666666666665,
+          "E_raw": 73.55976461934534,
+          "E_capped": 73.55976461934534,
+          "pCap": 0.0
+        },
+        "200": {
+          "share": 0.09025,
+          "E_raw": 56.45263157894737,
+          "E_capped": 56.45263157894737,
+          "pCap": 0.0
+        },
+        "500": {
+          "share": 0.04568333333333333,
+          "E_raw": 133.64757387814666,
+          "E_capped": 133.64757387814666,
+          "pCap": 0.0
+        }
+      },
+      "rawThresholdsGiven": {
+        "1000": 0.00325
+      }
+    },
+    "T5": {
+      "forcedTier": 5,
+      "n": 60000,
+      "attempts": 736523,
+      "E_raw": 289.59838333333335,
+      "E_capped": 289.59838333333335,
+      "pCap": 0.0,
+      "E_excess_given_cap": 0.0,
+      "pCollector": 0.19463333333333332,
+      "pHeadJudge": 0.03345,
+      "maxRaw": 45019.0,
+      "passesHist": {
+        "0": 0.8053666666666667,
+        "1": 0.14181666666666667,
+        "2": 0.043,
+        "3": 0.008066666666666666,
+        "4": 0.0013833333333333334,
+        "5": 0.00028333333333333335,
+        "6": 8.333333333333333e-05
+      },
+      "routes": {
+        "high_token_only": {
+          "share": 0.7339833333333333,
+          "E_raw": 0.0
+        },
+        "high+thermal": {
+          "share": 0.06281666666666667,
+          "E_raw": 0.0
+        },
+        "high+collector": {
+          "share": 0.16996666666666665,
+          "E_raw": 1419.6947440674642
+        },
+        "high+thermal+collector": {
+          "share": 0.022866666666666667,
+          "E_raw": 1982.5809037900874
+        },
+        "high+gate": {
+          "share": 0.0046166666666666665,
+          "E_raw": 0.0
+        },
+        "high+2thermal": {
+          "share": 0.00395,
+          "E_raw": 0.0
+        },
+        "high+gate+collector": {
+          "share": 0.00175,
+          "E_raw": 1489.1904761904761
+        },
+        "high+gate+thermal+multi_collector": {
+          "share": 5e-05,
+          "E_raw": 7130.0
+        }
+      },
+      "byFace": {
+        "750": {
+          "share": 0.81665,
+          "E_raw": 205.8400783689463,
+          "E_capped": 205.8400783689463,
+          "pCap": 0.0
+        },
+        "1000": {
+          "share": 0.09256666666666667,
+          "E_raw": 274.1332373064458,
+          "E_capped": 274.1332373064458,
+          "pCap": 0.0
+        },
+        "2500": {
+          "share": 0.04471666666666667,
+          "E_raw": 633.5177040626165,
+          "E_capped": 633.5177040626165,
+          "pCap": 0.0
+        },
+        "5000": {
+          "share": 0.046066666666666665,
+          "E_raw": 1471.6646164978292,
+          "E_capped": 1471.6646164978292,
+          "pCap": 0.0
+        }
+      },
+      "rawThresholdsGiven": {
+        "1000": 0.08208333333333333,
+        "5000": 0.012233333333333334,
+        "10000": 0.003266666666666667,
+        "25000": 0.00011666666666666667
+      }
+    },
+    "T6": {
+      "forcedTier": 6,
+      "n": 150000,
+      "attempts": 1840867,
+      "E_raw": 4461.024513333334,
+      "E_capped": 3995.953214666635,
+      "pCap": 0.0267,
+      "E_excess_given_cap": 17418.400699125898,
+      "pCollector": 0.19618666666666668,
+      "pHeadJudge": 0.03349333333333333,
+      "maxRaw": 1000043.8,
+      "passesHist": {
+        "0": 0.8038133333333334,
+        "1": 0.14332666666666666,
+        "2": 0.04288,
+        "3": 0.008026666666666666,
+        "4": 0.0016866666666666666,
+        "5": 0.00022,
+        "6": 4e-05,
+        "7": 6.666666666666667e-06
+      },
+      "routes": {
+        "high_token_only": {
+          "share": 0.7325466666666667,
+          "E_raw": 0.0
+        },
+        "high+collector": {
+          "share": 0.1718,
+          "E_raw": 21721.318238261545
+        },
+        "high+thermal": {
+          "share": 0.06343333333333333,
+          "E_raw": 0.0
+        },
+        "high+gate": {
+          "share": 0.004093333333333333,
+          "E_raw": 0.0
+        },
+        "high+2thermal": {
+          "share": 0.00374,
+          "E_raw": 0.0
+        },
+        "high+thermal+collector": {
+          "share": 0.02264,
+          "E_raw": 30431.101590106005
+        },
+        "high+gate+collector": {
+          "share": 0.00174,
+          "E_raw": 22035.402298850575
+        },
+        "high+gate+thermal+multi_collector": {
+          "share": 6.666666666666667e-06,
+          "E_raw": 300045.0
+        }
+      },
+      "byFace": {
+        "10000": {
+          "share": 0.7266466666666667,
+          "E_raw": 2735.80352670257,
+          "E_capped": 2711.3843683771097,
+          "pCap": 0.0010183766525684193
+        },
+        "25000": {
+          "share": 0.1833,
+          "E_raw": 6801.17639570831,
+          "E_capped": 6285.205055464625,
+          "pCap": 0.052082196763047824
+        },
+        "50000": {
+          "share": 0.09005333333333333,
+          "E_raw": 13618.667086171157,
+          "E_capped": 9701.547764287923,
+          "pCap": 0.182262363044122
+        }
+      },
+      "rawThresholdsGiven": {
+        "1000": 0.19618666666666668,
+        "5000": 0.19618666666666668,
+        "10000": 0.19618666666666668,
+        "25000": 0.06256666666666667,
+        "50000": 0.02824,
+        "100000": 0.0059,
+        "200000": 0.00048666666666666666
+      }
+    }
+  },
+  "t6FaceForced": {
+    "10000": {
+      "forcedTier": 6,
+      "forcedFace": 10000.0,
+      "samplesUsed": 6492,
+      "effectiveWeight": 0.10632593454545688,
+      "featureRtpRawContribution": 0.005537512338545432,
+      "featureRtpCappedContribution": 0.0053925788199272505,
+      "capDragRtpContribution": 0.00014493351861818182,
+      "pCapContribution": 2.1141818181818186e-09,
+      "pAnyCollectorGivenForcedApprox": 0.28721811546738524,
+      "pHeadJudgeGivenForcedApprox": 0.04449330962851962,
+      "pMultiPassGivenForcedApprox": 0.08533732572283877,
+      "E_raw_given_forced_event": 4166.443389164297,
+      "E_capped_given_forced_event": 4057.394909703272,
+      "E_excess_given_cap": 68553.00588235294,
+      "byFace": {
+        "10000": {
+          "rtpRawContribution": 0.005537512338545432,
+          "rtpCappedContribution": 0.0053925788199272505,
+          "pCapGiven": 0.0015907176943950245,
+          "E_raw": 4166.443389164297,
+          "E_capped": 4057.394909703272
+        }
+      },
+      "note": "Contributions divide by total attempted spins (including zero-mystery). Estimator forces one mystery identity; weight = N * P(FT\u2227tier\u2227face)."
+    },
+    "25000": {
+      "forcedTier": 6,
+      "forcedFace": 25000.0,
+      "samplesUsed": 6467,
+      "effectiveWeight": 0.02653795636363699,
+      "featureRtpRawContribution": 0.003551482754999991,
+      "featureRtpCappedContribution": 0.003195597938972709,
+      "capDragRtpContribution": 0.000355884816027273,
+      "pCapContribution": 2.9629636363636314e-08,
+      "pAnyCollectorGivenForcedApprox": 0.29359388912319573,
+      "pHeadJudgeGivenForcedApprox": 0.05192370776512361,
+      "pMultiPassGivenForcedApprox": 0.08468063170720068,
+      "E_raw_given_forced_event": 10706.122826748864,
+      "E_capped_given_forced_event": 9633.290205726322,
+      "E_excess_given_cap": 12011.1098111228,
+      "byFace": {
+        "25000": {
+          "rtpRawContribution": 0.003551482754999991,
+          "rtpCappedContribution": 0.003195597938972709,
+          "pCapGiven": 0.08932002436852485,
+          "E_raw": 10706.122826748864,
+          "E_capped": 9633.290205726322
+        }
+      },
+      "note": "Contributions divide by total attempted spins (including zero-mystery). Estimator forces one mystery identity; weight = N * P(FT\u2227tier\u2227face)."
+    },
+    "50000": {
+      "forcedTier": 6,
+      "forcedFace": 50000.0,
+      "samplesUsed": 6555,
+      "effectiveWeight": 0.013545065454545806,
+      "featureRtpRawContribution": 0.003422206661727278,
+      "featureRtpCappedContribution": 0.002386976778163645,
+      "capDragRtpContribution": 0.0010352298835636334,
+      "pCapContribution": 4.665190909090929e-08,
+      "pAnyCollectorGivenForcedApprox": 0.28196299866868063,
+      "pHeadJudgeGivenForcedApprox": 0.046917320846530455,
+      "pMultiPassGivenForcedApprox": 0.07859339852178088,
+      "E_raw_given_forced_event": 20212.270945232027,
+      "E_capped_given_forced_event": 14097.985933984904,
+      "E_excess_given_cap": 22190.51489503483,
+      "byFace": {
+        "50000": {
+          "rtpRawContribution": 0.003422206661727278,
+          "rtpCappedContribution": 0.002386976778163645,
+          "pCapGiven": 0.2755359684157311,
+          "E_raw": 20212.270945232027,
+          "E_capped": 14097.985933984904
+        }
+      },
+      "note": "Contributions divide by total attempted spins (including zero-mystery). Estimator forces one mystery identity; weight = N * P(FT\u2227tier\u2227face)."
+    }
+  },
+  "stratifiedCertified": {
+    "featureRtpRaw": 0.1255702368473785,
+    "featureRtpCapped": 0.12471494782664581,
+    "pCap": 4.9102614844285704e-08,
+    "capDragRtp": 0.0008552890207326158,
+    "uncertaintyAbs": 0.0009930869372011511,
+    "pieces": {
+      "NO_T4PLUS": {
+        "p": 0.9999816114473271,
+        "E_raw": 0.11478618920652064,
+        "E_capped": 0.11478618920652064,
+        "pCap": 0.0,
+        "source": "bulk_mc"
+      },
+      "T4_NO_T5PLUS": {
+        "p": 9.193737526913952e-06,
+        "E_raw": 49.15266666666667,
+        "E_capped": 49.15266666666667,
+        "pCap": 0.0,
+        "source": "forced_conditional"
+      },
+      "T5_NO_T6": {
+        "p": 7.355765900714481e-06,
+        "E_raw": 289.59838333333335,
+        "E_capped": 289.59838333333335,
+        "pCap": 0.0,
+        "source": "forced_conditional"
+      },
+      "T6_PRESENT": {
+        "p": 1.8390492451043334e-06,
+        "E_raw": 4461.024513333334,
+        "E_capped": 3995.953214666635,
+        "pCap": 0.0267,
+        "source": "forced_conditional"
+      }
+    },
+    "pStratum": {
+      "NO_T4PLUS": 0.9999816114473271,
+      "T4_NO_T5PLUS": 9.193737526913952e-06,
+      "T5_NO_T6": 7.355765900714481e-06,
+      "T6_PRESENT": 1.8390492451043334e-06,
+      "P_any_T4": 1.8388552672732765e-05,
+      "P_any_T5": 9.194815145818817e-06,
+      "P_any_T6": 1.8390492451043334e-06
+    }
+  },
+  "naturalMcEstimate": {
+    "featureRtpRaw": 0.1182175,
+    "featureRtpCapped": 0.1182175,
+    "uncertaintyAbs": null,
+    "note": "Bulk natural Monte Carlo only; rare-tier noisy."
+  },
+  "semiExactEstimate": {
+    "featureRtpRaw": 0.1255702368473785,
+    "featureRtpCapped": 0.12471494782664581,
+    "uncertaintyAbs": 0.0009930869372011511,
+    "note": "P(stratum) from exact mix over probed N \u00d7 E[X|forced tier]"
+  },
+  "certifiedBestEstimate": {
+    "lineRtp": 0.6029945972727959,
+    "featureRtpRaw": 0.1255702368473785,
+    "featureRtpCapped": 0.12471494782664581,
+    "baseTotalBeforeFs": 0.7277095450994417,
+    "uncertaintyAbs": 0.0009930869372011511,
+    "uncertaintyPp": 0.09930869372011511,
+    "precisionTargetPp": 0.1,
+    "precisionAchieved": true,
+    "method": "exact stratum probs (mix over mystery-count probe) \u00d7 conditional forced-tier expectations; bulk fills NO_T4PLUS"
+  },
+  "cap": {
+    "probability": 4.9102614844285704e-08,
+    "oneInN": 20365514.202679463,
+    "dragRtp": 0.0008552890207326158,
+    "E_excess_given_cap": 17418.400699125898,
+    "rawThresholds_bulk": {
+      "1000": 1.25e-06
+    },
+    "rawThresholds_given_T6": {
+      "1000": 0.19618666666666668,
+      "5000": 0.19618666666666668,
+      "10000": 0.19618666666666668,
+      "25000": 0.06256666666666667,
+      "50000": 0.02824,
+      "100000": 0.0059,
+      "200000": 0.00048666666666666666
+    }
+  },
+  "rtpContributionByTier": {
+    "T1_T2_T3_bulk_exclusive": {
+      "cappedRtp": 0.11478375,
+      "rawRtp": 0.11478375
+    },
+    "T4": {
+      "p": 9.193737526913952e-06,
+      "cappedRtp": 0.00045189671608122586,
+      "rawRtp": 0.00045189671608122586
+    },
+    "T5": {
+      "p": 7.355765900714481e-06,
+      "cappedRtp": 0.0021302179130253743,
+      "rawRtp": 0.0021302179130253743
+    },
+    "T6": {
+      "p": 1.8390492451043334e-06,
+      "cappedRtp": 0.007348754742904909,
+      "rawRtp": 0.008204043763637594,
+      "capDragRtp": 0.0008552890207326158
+    }
+  },
+  "rtpContributionByCollectorPasses": {
+    "0": {
+      "p": 0.97724,
+      "rawRtp": 0.0,
+      "cappedRtp": 0.0,
+      "E_raw_given": 0.0,
+      "E_capped_given": 0.0
+    },
+    "1": {
+      "p": 0.01625625,
+      "rawRtp": 0.0599475,
+      "cappedRtp": 0.0599475,
+      "E_raw_given": 3.687658592848904,
+      "E_capped_given": 3.687658592848904
+    },
+    "2": {
+      "p": 0.00513125,
+      "rawRtp": 0.039725,
+      "cappedRtp": 0.039725,
+      "E_raw_given": 7.7417783191230205,
+      "E_capped_given": 7.7417783191230205
+    },
+    "3": {
+      "p": 0.0010775,
+      "rawRtp": 0.01359375,
+      "cappedRtp": 0.01359375,
+      "E_raw_given": 12.616009280742459,
+      "E_capped_given": 12.616009280742459
+    },
+    "5+": {
+      "p": 4.25e-05,
+      "rawRtp": 0.00104125,
+      "cappedRtp": 0.00104125,
+      "E_raw_given": 24.5,
+      "E_capped_given": 24.5
+    },
+    "4": {
+      "p": 0.0002525,
+      "rawRtp": 0.00391,
+      "cappedRtp": 0.00391,
+      "E_raw_given": 15.485148514851485,
+      "E_capped_given": 15.485148514851485
+    }
+  },
+  "dominantCapRoute": "high+collector",
+  "freeSpinBudgetPlanningOnly": {
+    "remainingRtp": 0.23729045490055822,
+    "remainingRtpLow": 0.2362973679633571,
+    "remainingRtpHigh": 0.2382835418377594,
+    "impliedAverageBonusX": 36.34029819758496,
+    "impliedAverageBonusLow": 36.1882100090856,
+    "impliedAverageBonusHigh": 36.49238638608433,
+    "pScatterGe3": 0.00652967825443787
+  },
+  "classification": "STABLE",
+  "readyForFreeSpinDesign": true
+}

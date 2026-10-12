@@ -1,0 +1,831 @@
+{
+  "meta": {
+    "workingTitle": "SkyJump",
+    "altTitle": "SkiFly Jackpot",
+    "rtpNote": "Pre-certification developer math. Target RTP 0.97 vs actual wager = nominal bet * costMultiplier.",
+    "targetRtpLabel": 0.97,
+    "targetRtp": 0.97,
+    "mathVersion": 1,
+    "gameID": "0_0_poc",
+    "gameIdRenameTodo": "Before Stake deployment, replace 0_0_poc in this file, frontend config.ts (derived), Python GameConfig, RGS env, and published books. Do not invent an ACP ID."
+  },
+  "eventSchemaVersion": 1,
+  "bookAmountMultiplier": 100,
+  "volatilityModel": {
+    "epicBoost": 2.4,
+    "rareBoost": 1.8,
+    "uncommonBoost": 1.2,
+    "commonNerf": 0.35,
+    "minWeight": 0.05,
+    "biasClamp": 1.8
+  },
+  "weather": [
+    {
+      "id": "sunny",
+      "label": "Sunny",
+      "weight": 22,
+      "distanceDelta": 2,
+      "volatilityBias": 0,
+      "temperatureRange": [
+        -4,
+        2
+      ],
+      "windSpeedRange": [
+        0.4,
+        2.2
+      ],
+      "windDirection": "CALM",
+      "visibilityRange": [
+        88,
+        100
+      ],
+      "iconKey": "sunny"
+    },
+    {
+      "id": "lightFavorableWind",
+      "label": "Light favorable wind",
+      "weight": 24,
+      "distanceDelta": 5,
+      "volatilityBias": 0.08,
+      "temperatureRange": [
+        -8,
+        -1
+      ],
+      "windSpeedRange": [
+        1.6,
+        3.8
+      ],
+      "windDirection": "TAIL",
+      "visibilityRange": [
+        80,
+        96
+      ],
+      "iconKey": "lightFavorableWind"
+    },
+    {
+      "id": "snow",
+      "label": "Snow",
+      "weight": 18,
+      "distanceDelta": -4,
+      "volatilityBias": 0.1,
+      "temperatureRange": [
+        -14,
+        -6
+      ],
+      "windSpeedRange": [
+        1.2,
+        4.4
+      ],
+      "windDirection": "VARIABLE",
+      "visibilityRange": [
+        42,
+        70
+      ],
+      "iconKey": "snow"
+    },
+    {
+      "id": "headwindLift",
+      "label": "Headwind / lift wind",
+      "weight": 16,
+      "distanceDelta": 6,
+      "volatilityBias": 0.16,
+      "temperatureRange": [
+        -12,
+        -3
+      ],
+      "windSpeedRange": [
+        2.8,
+        6.2
+      ],
+      "windDirection": "HEAD / LIFT",
+      "visibilityRange": [
+        70,
+        92
+      ],
+      "iconKey": "headwindLift"
+    },
+    {
+      "id": "crosswind",
+      "label": "Crosswind",
+      "weight": 14,
+      "distanceDelta": -5,
+      "volatilityBias": 0.2,
+      "temperatureRange": [
+        -11,
+        -2
+      ],
+      "windSpeedRange": [
+        3.4,
+        7.5
+      ],
+      "windDirection": "CROSSWIND",
+      "visibilityRange": [
+        55,
+        84
+      ],
+      "iconKey": "crosswind"
+    },
+    {
+      "id": "storm",
+      "label": "Very difficult conditions",
+      "weight": 6,
+      "distanceDelta": -9,
+      "volatilityBias": 0.3,
+      "temperatureRange": [
+        -22,
+        -9
+      ],
+      "windSpeedRange": [
+        7.2,
+        14.8
+      ],
+      "windDirection": "STORM",
+      "visibilityRange": [
+        18,
+        48
+      ],
+      "iconKey": "storm"
+    }
+  ],
+  "hills": {
+    "normal": {
+      "id": "normal",
+      "label": "Normal Hill",
+      "buyCost": 1,
+      "baseDistance": 82,
+      "maxWin": 500,
+      "visualKey": "normal",
+      "payoutCurve": [
+        {
+          "minDistance": 0,
+          "maxDistance": 128,
+          "baseWinX": 0
+        },
+        {
+          "minDistance": 128,
+          "maxDistance": 136,
+          "baseWinX": 0.3692
+        },
+        {
+          "minDistance": 136,
+          "maxDistance": 144,
+          "baseWinX": 0.8861
+        },
+        {
+          "minDistance": 144,
+          "maxDistance": 152,
+          "baseWinX": 1.7722
+        },
+        {
+          "minDistance": 152,
+          "maxDistance": 160,
+          "baseWinX": 3.2491
+        },
+        {
+          "minDistance": 160,
+          "maxDistance": 170,
+          "baseWinX": 5.9074
+        },
+        {
+          "minDistance": 170,
+          "maxDistance": 182,
+          "baseWinX": 11.8149
+        },
+        {
+          "minDistance": 182,
+          "maxDistance": 196,
+          "baseWinX": 23.6297
+        },
+        {
+          "minDistance": 196,
+          "maxDistance": 999,
+          "baseWinX": 44.3057
+        }
+      ],
+      "volatilityProfile": 0
+    },
+    "large": {
+      "id": "large",
+      "label": "Large Hill",
+      "buyCost": 3,
+      "baseDistance": 104,
+      "maxWin": 1500,
+      "visualKey": "large",
+      "payoutCurve": [
+        {
+          "minDistance": 0,
+          "maxDistance": 150,
+          "baseWinX": 0
+        },
+        {
+          "minDistance": 150,
+          "maxDistance": 158,
+          "baseWinX": 0.9554
+        },
+        {
+          "minDistance": 158,
+          "maxDistance": 166,
+          "baseWinX": 2.1839
+        },
+        {
+          "minDistance": 166,
+          "maxDistance": 176,
+          "baseWinX": 4.9137
+        },
+        {
+          "minDistance": 176,
+          "maxDistance": 186,
+          "baseWinX": 9.5544
+        },
+        {
+          "minDistance": 186,
+          "maxDistance": 198,
+          "baseWinX": 19.1088
+        },
+        {
+          "minDistance": 198,
+          "maxDistance": 212,
+          "baseWinX": 38.2176
+        },
+        {
+          "minDistance": 212,
+          "maxDistance": 228,
+          "baseWinX": 76.4353
+        },
+        {
+          "minDistance": 228,
+          "maxDistance": 999,
+          "baseWinX": 150.1407
+        }
+      ],
+      "volatilityProfile": 0.12
+    },
+    "flying": {
+      "id": "flying",
+      "label": "Ski Flying Hill",
+      "buyCost": 8,
+      "baseDistance": 132,
+      "maxWin": 5000,
+      "visualKey": "flying",
+      "payoutCurve": [
+        {
+          "minDistance": 0,
+          "maxDistance": 178,
+          "baseWinX": 0
+        },
+        {
+          "minDistance": 178,
+          "maxDistance": 186,
+          "baseWinX": 1.8302
+        },
+        {
+          "minDistance": 186,
+          "maxDistance": 196,
+          "baseWinX": 4.5755
+        },
+        {
+          "minDistance": 196,
+          "maxDistance": 208,
+          "baseWinX": 10.066
+        },
+        {
+          "minDistance": 208,
+          "maxDistance": 222,
+          "baseWinX": 20.5896
+        },
+        {
+          "minDistance": 222,
+          "maxDistance": 238,
+          "baseWinX": 41.1792
+        },
+        {
+          "minDistance": 238,
+          "maxDistance": 256,
+          "baseWinX": 82.3585
+        },
+        {
+          "minDistance": 256,
+          "maxDistance": 278,
+          "baseWinX": 164.717
+        },
+        {
+          "minDistance": 278,
+          "maxDistance": 999,
+          "baseWinX": 366.0377
+        }
+      ],
+      "volatilityProfile": 0.22
+    }
+  },
+  "slots": [
+    {
+      "id": "speed",
+      "index": 0,
+      "label": "Run-up / Speed",
+      "shortLabel": "SPEED",
+      "iconKey": "speed",
+      "symbols": [
+        {
+          "id": "speed_slow",
+          "label": "Slow in-run",
+          "weight": 36,
+          "distanceValue": 5,
+          "localMultiplier": 1,
+          "rarity": "common",
+          "bonusFlag": false,
+          "artKey": "speed"
+        },
+        {
+          "id": "speed_steady",
+          "label": "Steady speed",
+          "weight": 40,
+          "distanceValue": 11,
+          "localMultiplier": 1,
+          "rarity": "common",
+          "bonusFlag": false,
+          "artKey": "speed"
+        },
+        {
+          "id": "speed_fast",
+          "label": "Fast in-run",
+          "weight": 18,
+          "distanceValue": 15,
+          "localMultiplier": 1,
+          "rarity": "uncommon",
+          "bonusFlag": false,
+          "artKey": "speed"
+        },
+        {
+          "id": "speed_explosive",
+          "label": "Explosive speed",
+          "weight": 5,
+          "distanceValue": 18,
+          "localMultiplier": 2,
+          "rarity": "rare",
+          "bonusFlag": false,
+          "artKey": "speed"
+        },
+        {
+          "id": "speed_record",
+          "label": "Track record",
+          "weight": 1,
+          "distanceValue": 12,
+          "localMultiplier": 2,
+          "rarity": "epic",
+          "bonusFlag": true,
+          "artKey": "speed"
+        }
+      ]
+    },
+    {
+      "id": "takeoff",
+      "index": 1,
+      "label": "Takeoff",
+      "shortLabel": "TAKEOFF",
+      "iconKey": "takeoff",
+      "symbols": [
+        {
+          "id": "takeoff_early",
+          "label": "Early takeoff",
+          "weight": 30,
+          "distanceValue": 1,
+          "localMultiplier": 1,
+          "rarity": "common",
+          "bonusFlag": false,
+          "artKey": "takeoff"
+        },
+        {
+          "id": "takeoff_clean",
+          "label": "Clean takeoff",
+          "weight": 38,
+          "distanceValue": 9,
+          "localMultiplier": 1,
+          "rarity": "common",
+          "bonusFlag": false,
+          "artKey": "takeoff"
+        },
+        {
+          "id": "takeoff_strong",
+          "label": "Strong takeoff",
+          "weight": 16,
+          "distanceValue": 16,
+          "localMultiplier": 1,
+          "rarity": "uncommon",
+          "bonusFlag": false,
+          "artKey": "takeoff"
+        },
+        {
+          "id": "takeoff_perfect",
+          "label": "Perfect takeoff",
+          "weight": 6,
+          "distanceValue": 20,
+          "localMultiplier": 2,
+          "rarity": "rare",
+          "bonusFlag": true,
+          "artKey": "takeoff"
+        },
+        {
+          "id": "takeoff_fault",
+          "label": "Takeoff fault",
+          "weight": 10,
+          "distanceValue": -8,
+          "localMultiplier": 1,
+          "rarity": "common",
+          "bonusFlag": false,
+          "artKey": "takeoff"
+        }
+      ]
+    },
+    {
+      "id": "flight",
+      "index": 2,
+      "label": "Flight",
+      "shortLabel": "FLIGHT",
+      "iconKey": "flight",
+      "symbols": [
+        {
+          "id": "flight_unstable",
+          "label": "Unstable flight",
+          "weight": 20,
+          "distanceValue": 2,
+          "localMultiplier": 1,
+          "rarity": "common",
+          "bonusFlag": false,
+          "artKey": "flight"
+        },
+        {
+          "id": "flight_stable",
+          "label": "Stable flight",
+          "weight": 36,
+          "distanceValue": 12,
+          "localMultiplier": 1,
+          "rarity": "common",
+          "bonusFlag": false,
+          "artKey": "flight"
+        },
+        {
+          "id": "flight_vstyle",
+          "label": "V-style",
+          "weight": 28,
+          "distanceValue": 22,
+          "localMultiplier": 1,
+          "rarity": "uncommon",
+          "bonusFlag": false,
+          "artKey": "flight"
+        },
+        {
+          "id": "flight_telemark",
+          "label": "Flight master",
+          "weight": 8,
+          "distanceValue": 28,
+          "localMultiplier": 2,
+          "rarity": "rare",
+          "bonusFlag": true,
+          "artKey": "flight"
+        },
+        {
+          "id": "flight_stall",
+          "label": "Stall",
+          "weight": 8,
+          "distanceValue": -12,
+          "localMultiplier": 1,
+          "rarity": "common",
+          "bonusFlag": false,
+          "artKey": "flight"
+        }
+      ]
+    },
+    {
+      "id": "wind",
+      "index": 3,
+      "label": "Wind / Conditions",
+      "shortLabel": "WIND",
+      "iconKey": "wind",
+      "symbols": [
+        {
+          "id": "cond_head",
+          "label": "Headwind",
+          "weight": 22,
+          "distanceValue": -6,
+          "localMultiplier": 1,
+          "rarity": "common",
+          "bonusFlag": false,
+          "artKey": "wind"
+        },
+        {
+          "id": "cond_neutral",
+          "label": "Neutral air",
+          "weight": 36,
+          "distanceValue": 6,
+          "localMultiplier": 1,
+          "rarity": "common",
+          "bonusFlag": false,
+          "artKey": "wind"
+        },
+        {
+          "id": "cond_lift",
+          "label": "Lift wind",
+          "weight": 22,
+          "distanceValue": 14,
+          "localMultiplier": 1,
+          "rarity": "uncommon",
+          "bonusFlag": false,
+          "artKey": "wind"
+        },
+        {
+          "id": "cond_sweet",
+          "label": "Sweet-spot wind",
+          "weight": 8,
+          "distanceValue": 12,
+          "localMultiplier": 2,
+          "rarity": "rare",
+          "bonusFlag": true,
+          "artKey": "wind"
+        },
+        {
+          "id": "cond_gust",
+          "label": "Cross gust",
+          "weight": 12,
+          "distanceValue": -14,
+          "localMultiplier": 1,
+          "rarity": "common",
+          "bonusFlag": false,
+          "artKey": "wind"
+        }
+      ]
+    },
+    {
+      "id": "landing",
+      "index": 4,
+      "label": "Landing / Style",
+      "shortLabel": "LANDING",
+      "iconKey": "landing",
+      "symbols": [
+        {
+          "id": "land_fall",
+          "label": "Fall",
+          "weight": 18,
+          "distanceValue": -8,
+          "localMultiplier": 1,
+          "rarity": "common",
+          "bonusFlag": false,
+          "artKey": "landing"
+        },
+        {
+          "id": "land_touch",
+          "label": "Hand touch",
+          "weight": 32,
+          "distanceValue": 1,
+          "localMultiplier": 1,
+          "rarity": "common",
+          "bonusFlag": false,
+          "artKey": "landing"
+        },
+        {
+          "id": "land_telemark",
+          "label": "Telemark",
+          "weight": 40,
+          "distanceValue": 6,
+          "localMultiplier": 1,
+          "rarity": "uncommon",
+          "bonusFlag": false,
+          "artKey": "landing"
+        },
+        {
+          "id": "land_perfect",
+          "label": "Perfect telemark",
+          "weight": 8,
+          "distanceValue": 8,
+          "localMultiplier": 2,
+          "rarity": "rare",
+          "bonusFlag": true,
+          "artKey": "landing"
+        },
+        {
+          "id": "land_style",
+          "label": "Style bonus",
+          "weight": 2,
+          "distanceValue": 2,
+          "localMultiplier": 3,
+          "rarity": "epic",
+          "bonusFlag": true,
+          "artKey": "landing"
+        }
+      ]
+    }
+  ],
+  "finalMultipliers": {
+    "standard": [
+      {
+        "id": "x1",
+        "label": "x1",
+        "weight": 82,
+        "multiplier": 1
+      },
+      {
+        "id": "x2",
+        "label": "x2",
+        "weight": 10.5,
+        "multiplier": 2
+      },
+      {
+        "id": "x3",
+        "label": "x3",
+        "weight": 4.4,
+        "multiplier": 3
+      },
+      {
+        "id": "x5",
+        "label": "x5",
+        "weight": 2,
+        "multiplier": 5
+      },
+      {
+        "id": "x10",
+        "label": "x10",
+        "weight": 0.8,
+        "multiplier": 10
+      },
+      {
+        "id": "x20",
+        "label": "x20",
+        "weight": 0.24,
+        "multiplier": 20
+      },
+      {
+        "id": "x50",
+        "label": "x50",
+        "weight": 0.06,
+        "multiplier": 50
+      }
+    ],
+    "plus": [
+      {
+        "id": "x10",
+        "label": "x10",
+        "weight": 55.5,
+        "multiplier": 10
+      },
+      {
+        "id": "x15",
+        "label": "x15",
+        "weight": 18,
+        "multiplier": 15
+      },
+      {
+        "id": "x20",
+        "label": "x20",
+        "weight": 14.5,
+        "multiplier": 20
+      },
+      {
+        "id": "x25",
+        "label": "x25",
+        "weight": 7,
+        "multiplier": 25
+      },
+      {
+        "id": "x50",
+        "label": "x50",
+        "weight": 3.8,
+        "multiplier": 50
+      },
+      {
+        "id": "x100",
+        "label": "x100",
+        "weight": 1.2,
+        "multiplier": 100
+      }
+    ],
+    "max": [
+      {
+        "id": "x20",
+        "label": "x20",
+        "weight": 54.2,
+        "multiplier": 20
+      },
+      {
+        "id": "x25",
+        "label": "x25",
+        "weight": 18,
+        "multiplier": 25
+      },
+      {
+        "id": "x40",
+        "label": "x40",
+        "weight": 14,
+        "multiplier": 40
+      },
+      {
+        "id": "x50",
+        "label": "x50",
+        "weight": 8,
+        "multiplier": 50
+      },
+      {
+        "id": "x100",
+        "label": "x100",
+        "weight": 4.5,
+        "multiplier": 100
+      },
+      {
+        "id": "x200",
+        "label": "x200",
+        "weight": 1.3,
+        "multiplier": 200
+      }
+    ]
+  },
+  "buyModes": {
+    "base": {
+      "id": "base",
+      "rgsKey": "BASE",
+      "label": "Normal Hill",
+      "costMultiplier": 1,
+      "hillProfile": "normal",
+      "multiplierProfile": "standard",
+      "maxWin": 500,
+      "enabled": true,
+      "type": "default",
+      "title": "NORMAL HILL",
+      "dialog": "",
+      "description": "",
+      "button": "",
+      "betAmountLabel": "NORMAL HILL",
+      "tickerIdle": "READY ON THE IN-RUN",
+      "tickerSpin": "GOOD LUCK"
+    },
+    "large_hill": {
+      "id": "large_hill",
+      "rgsKey": "LARGE_HILL",
+      "label": "Large Hill",
+      "costMultiplier": 3,
+      "hillProfile": "large",
+      "multiplierProfile": "standard",
+      "maxWin": 1500,
+      "enabled": true,
+      "type": "buy",
+      "title": "LARGE HILL",
+      "dialog": "Buy a larger hill with more distance and higher max win.",
+      "description": "Switch this round to the Large Hill profile.",
+      "button": "BUY HILL",
+      "betAmountLabel": "LARGE HILL",
+      "tickerIdle": "PLACE YOUR BET",
+      "tickerSpin": "LARGE HILL READY"
+    },
+    "ski_flying": {
+      "id": "ski_flying",
+      "rgsKey": "SKI_FLYING",
+      "label": "Ski Flying Hill",
+      "costMultiplier": 6,
+      "hillProfile": "flying",
+      "multiplierProfile": "standard",
+      "maxWin": 5000,
+      "enabled": true,
+      "type": "buy",
+      "title": "SKI FLYING HILL",
+      "dialog": "Buy the ski flying hill: longest jumps, highest volatility and max win.",
+      "description": "The most aggressive hill profile.",
+      "button": "BUY HILL",
+      "betAmountLabel": "SKI FLYING",
+      "tickerIdle": "PLACE YOUR BET",
+      "tickerSpin": "SKI FLYING READY"
+    },
+    "mult_10_100": {
+      "id": "mult_10_100",
+      "rgsKey": "MULT_10_100",
+      "label": "Multiplier 10-100",
+      "costMultiplier": 11,
+      "hillProfile": "normal",
+      "multiplierProfile": "plus",
+      "maxWin": 1000,
+      "enabled": true,
+      "type": "buy",
+      "title": "MULTIPLIER 10\u2013100",
+      "dialog": "Replace the standard final multiplier table with 10x to 100x.",
+      "description": "Slot 6 uses the 10\u2013100 multiplier range.",
+      "button": "BUY RANGE",
+      "betAmountLabel": "10\u2013100",
+      "tickerIdle": "PLACE YOUR BET",
+      "tickerSpin": "BOOSTED MULTIPLIERS"
+    },
+    "mult_20_200": {
+      "id": "mult_20_200",
+      "rgsKey": "MULT_20_200",
+      "label": "Multiplier 20-200",
+      "costMultiplier": 22,
+      "hillProfile": "normal",
+      "multiplierProfile": "max",
+      "maxWin": 2000,
+      "enabled": true,
+      "type": "buy",
+      "title": "MULTIPLIER 20\u2013200",
+      "dialog": "Replace the standard final multiplier table with 20x to 200x.",
+      "description": "Slot 6 uses the 20\u2013200 multiplier range.",
+      "button": "BUY RANGE",
+      "betAmountLabel": "20\u2013200",
+      "tickerIdle": "PLACE YOUR BET",
+      "tickerSpin": "MAX MULTIPLIERS"
+    }
+  }
+}

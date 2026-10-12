@@ -1,0 +1,361 @@
+{
+  "configSha256": "1a737f24ff3b75ceebb80b276e4fa23dde076699d2cfc7ac8e9a6f7fbcc7b8fe",
+  "pt2hId": "PT2H_LADDER",
+  "pt2hAwards": {
+    "P1": {
+      "3": 10.0,
+      "4": 50.0,
+      "5": 200.0
+    },
+    "P2": {
+      "3": 6.0,
+      "4": 33.2,
+      "5": 100.0
+    },
+    "P3": {
+      "3": 5.0,
+      "4": 25.2,
+      "5": 65.0
+    },
+    "M1": {
+      "3": 1.6,
+      "4": 6.5,
+      "5": 24.6
+    },
+    "M2": {
+      "3": 1.3,
+      "4": 6.0,
+      "5": 21.6
+    },
+    "M3": {
+      "3": 1.0,
+      "4": 5.5,
+      "5": 19.1
+    },
+    "L1": {
+      "3": 0.8,
+      "4": 1.7,
+      "5": 3.6
+    },
+    "L2": {
+      "3": 0.5,
+      "4": 1.3,
+      "5": 2.7
+    },
+    "L3": {
+      "3": 0.3,
+      "4": 1.1,
+      "5": 2.0
+    }
+  },
+  "elapsedSec": 1229.3366491794586,
+  "n": 1000000,
+  "seed": 7802000000,
+  "baseExact": {
+    "PT0": 59.6961766439716,
+    "PT2H": 60.29945972727959,
+    "deltaPp": 0.6032830833079927
+  },
+  "pt2hDecomposition": {
+    "baseLineDeltaPp": 0.6032830833079927,
+    "fsInitialLineDeltaPp": 0.06341303566475594,
+    "rejumpLineDeltaPp": -0.0003576304779955621,
+    "bonusNonLineResidualPp": 4.570774778158153e-07,
+    "bonusTotalDeltaPp": 0.06305586226423819,
+    "totalFullGameDeltaPp": 0.666338945572231,
+    "seBonusPp": 0.0017987131258352775
+  },
+  "pairedDeltas": {
+    "BODY1_standalone": {
+      "meanDeltaX": 2.0502101,
+      "pp": 1.338721230699889,
+      "sePp": 0.007709633330860032,
+      "lineFsDeltaX": -1.4799999999999999e-05,
+      "lineRjDeltaX": -6e-07
+    },
+    "PT2H_standalone": {
+      "meanDeltaX": 0.09656810000000005,
+      "pp": 0.06305586226423819,
+      "sePp": 0.0017987131258352775,
+      "lineFsDeltaX": 0.09711510000000002,
+      "lineRjDeltaX": -0.0005476999999999999
+    },
+    "PT2H_BODY1_combo": {
+      "meanDeltaX": 2.1467711,
+      "pp": 1.4017724568925667,
+      "sePp": 0.007923281465306535,
+      "lineFsDeltaX": 0.09709310000000002,
+      "lineRjDeltaX": -0.0005481999999999999
+    },
+    "BODY1_on_PT2H": {
+      "meanDeltaX": 2.050203,
+      "pp": 1.3387165946283286,
+      "sePp": 0.007710129820463348,
+      "lineFsDeltaX": -2.2e-05,
+      "lineRjDeltaX": -5e-07
+    },
+    "PT2H_on_BODY1": {
+      "meanDeltaX": 0.09656100000000004,
+      "pp": 0.06305122619267754,
+      "sePp": 0.0017987118862585398,
+      "lineFsDeltaX": 0.09710790000000002,
+      "lineRjDeltaX": -0.0005475999999999999
+    },
+    "interactionPp": -4.636071560523702e-06
+  },
+  "summaries": {
+    "PT0_BODY0": {
+      "n": 1000000,
+      "meanX": 34.4557027,
+      "median": 9.5,
+      "p25": 5.5,
+      "p75": 19.2,
+      "p90": 44.900000000000006,
+      "p95": 105.3,
+      "p99": 428.20000000000005,
+      "p99_9": 2132.5,
+      "pCap": 1.1e-05,
+      "meanCapDrag": 0.74909,
+      "meanLineFsX": 6.0460745,
+      "meanLineRejumpX": 0.0641992,
+      "pRejump": 0.165422,
+      "pWind": 0.076169,
+      "pPhase6": 0.196321,
+      "seMeanX": 0.28897943971624657
+    },
+    "PT0_BODY1": {
+      "n": 1000000,
+      "meanX": 36.5059128,
+      "median": 9.7,
+      "p25": 5.5,
+      "p75": 20.1,
+      "p90": 48.5,
+      "p95": 114.89999999999999,
+      "p99": 467.8,
+      "p99_9": 2215.0,
+      "pCap": 1.1e-05,
+      "meanCapDrag": 0.7492295,
+      "meanLineFsX": 6.0460597,
+      "meanLineRejumpX": 0.0641986,
+      "pRejump": 0.165422,
+      "pWind": 0.076169,
+      "pPhase6": 0.196321,
+      "seMeanX": 0.29354773020411634
+    },
+    "PT2H_BODY0": {
+      "n": 1000000,
+      "meanX": 34.552270799999995,
+      "median": 9.5,
+      "p25": 5.0,
+      "p75": 19.8,
+      "p90": 45.900000000000006,
+      "p95": 105.7,
+      "p99": 429.09999999999997,
+      "p99_9": 2138.6000000000004,
+      "pCap": 1.1e-05,
+      "meanCapDrag": 0.7490893,
+      "meanLineFsX": 6.1431895999999995,
+      "meanLineRejumpX": 0.0636515,
+      "pRejump": 0.165422,
+      "pWind": 0.076169,
+      "pPhase6": 0.196321,
+      "seMeanX": 0.2890065991093937
+    },
+    "PT2H_BODY1": {
+      "n": 1000000,
+      "meanX": 36.6024738,
+      "median": 9.7,
+      "p25": 5.0,
+      "p75": 20.9,
+      "p90": 49.4,
+      "p95": 115.1,
+      "p99": 467.70000000000005,
+      "p99_9": 2215.8,
+      "pCap": 1.1e-05,
+      "meanCapDrag": 0.7492287999999999,
+      "meanLineFsX": 6.1431676,
+      "meanLineRejumpX": 0.063651,
+      "pRejump": 0.165422,
+      "pWind": 0.076169,
+      "pPhase6": 0.196321,
+      "seMeanX": 0.2935748421475319
+    }
+  },
+  "wrFill": {
+    "nOps": 10430976,
+    "eAccruedBonusWeighted": 35.91710663859495,
+    "eIncrementalFillWeighted": 49964.0828933614,
+    "fillMassPerBonus": 665529.9781055,
+    "meanOpsPerBonus": 10.430976,
+    "meanRelSumPerBonus": 13.320168
+  },
+  "coreRtpWithoutWr": 95.83305554020056,
+  "candidates": {
+    "H1": {
+      "id": "H1",
+      "wrPp": 0.45,
+      "projectedRtp": 96.28305554020056,
+      "coreRtpWithoutWr": 95.83305554020056,
+      "pointReservePp": 0.21694445979943566,
+      "safeReservePp": 0.06327772995895259,
+      "seCombinedPp": 0.07840139277575667,
+      "wr": {
+        "targetWrPp": 0.45,
+        "c": 1.0355071666473553e-06,
+        "byTierPSpin": {
+          "LARGE_HILL": 1.0355071666473553e-06,
+          "SKI_FLYING": 3.106521499942066e-06,
+          "WORLD_CUP": 6.213042999884132e-06,
+          "PERFECT_V": 1.2426085999768263e-05
+        },
+        "pPerTriggeredBonusApprox": 1.3793129424946771e-05,
+        "oneInBonusesApprox": 72499.86346038069,
+        "pPaidRoundApprox": 9.006469726672205e-08,
+        "oneInPaidRoundsApprox": 11103129.531858088,
+        "eFillUsed": 49964.0828933614
+      },
+      "inPreferredBand": true,
+      "solveTarget": null
+    },
+    "H2": {
+      "id": "H2",
+      "wrPp": 0.45694445979944476,
+      "projectedRtp": 96.29,
+      "coreRtpWithoutWr": 95.83305554020056,
+      "pointReservePp": 0.20999999999999375,
+      "safeReservePp": 0.05633327015951067,
+      "seCombinedPp": 0.07840139277575667,
+      "wr": {
+        "targetWrPp": 0.45694445979944476,
+        "c": 1.0514872508491765e-06,
+        "byTierPSpin": {
+          "LARGE_HILL": 1.0514872508491765e-06,
+          "SKI_FLYING": 3.1544617525475295e-06,
+          "WORLD_CUP": 6.308923505095059e-06,
+          "PERFECT_V": 1.2617847010190118e-05
+        },
+        "pPerTriggeredBonusApprox": 1.4005986831169175e-05,
+        "oneInBonusesApprox": 71398.03942800961,
+        "pPaidRoundApprox": 9.145458764342853e-08,
+        "oneInPaidRoundsApprox": 10934388.59402976,
+        "eFillUsed": 49964.0828933614
+      },
+      "inPreferredBand": true,
+      "solveTarget": 96.29
+    },
+    "H2_SAFE08": {
+      "id": "H2_SAFE08",
+      "wrPp": 0.43327772995895547,
+      "projectedRtp": 96.26633327015952,
+      "coreRtpWithoutWr": 95.83305554020056,
+      "pointReservePp": 0.2336667298404791,
+      "safeReservePp": 0.07999999999999602,
+      "seCombinedPp": 0.07840139277575667,
+      "wr": {
+        "targetWrPp": 0.43327772995895547,
+        "c": 9.970270989359909e-07,
+        "byTierPSpin": {
+          "LARGE_HILL": 9.970270989359909e-07,
+          "SKI_FLYING": 2.991081296807973e-06,
+          "WORLD_CUP": 5.982162593615946e-06,
+          "PERFECT_V": 1.1964325187231891e-05
+        },
+        "pPerTriggeredBonusApprox": 1.328056845838002e-05,
+        "oneInBonusesApprox": 75297.9816439259,
+        "pPaidRoundApprox": 8.671783906925748e-08,
+        "oneInPaidRoundsApprox": 11531652.6649303,
+        "eFillUsed": 49964.0828933614
+      },
+      "inPreferredBand": false,
+      "solveTarget": "safe>=0.08 near 96.29"
+    },
+    "H3": {
+      "id": "H3",
+      "wrPp": 0.4269444597994436,
+      "projectedRtp": 96.26,
+      "coreRtpWithoutWr": 95.83305554020056,
+      "pointReservePp": 0.23999999999999488,
+      "safeReservePp": 0.08633327015951181,
+      "seCombinedPp": 0.07840139277575667,
+      "wr": {
+        "targetWrPp": 0.4269444597994436,
+        "c": 9.8245343973935e-07,
+        "byTierPSpin": {
+          "LARGE_HILL": 9.8245343973935e-07,
+          "SKI_FLYING": 2.9473603192180497e-06,
+          "WORLD_CUP": 5.894720638436099e-06,
+          "PERFECT_V": 1.1789441276872199e-05
+        },
+        "pPerTriggeredBonusApprox": 1.3086444869506018e-05,
+        "oneInBonusesApprox": 76414.94767843297,
+        "pPaidRoundApprox": 8.545027449231347e-08,
+        "oneInPaidRoundsApprox": 11702712.55348575,
+        "eFillUsed": 49964.0828933614
+      },
+      "inPreferredBand": false,
+      "solveTarget": 96.26
+    }
+  },
+  "historicalComparison": {
+    "C2": {
+      "id": "C2",
+      "wrPp": 0.45,
+      "projectedRtp": 96.29319032142261,
+      "coreRtpWithoutWr": 95.84319032142261,
+      "pointReservePp": 0.20680967857738608,
+      "safeReservePp": 0.05219582175896248,
+      "seCombinedPp": 0.07888462082572632,
+      "wr": {
+        "targetWrPp": 0.45,
+        "c": 1.034116118287856e-06,
+        "byTierPSpin": {
+          "LARGE_HILL": 1.034116118287856e-06,
+          "SKI_FLYING": 3.1023483548635685e-06,
+          "WORLD_CUP": 6.204696709727137e-06,
+          "PERFECT_V": 1.2409393419454274e-05
+        },
+        "pPerTriggeredBonusApprox": 1.3793256915992148e-05,
+        "oneInBonusesApprox": 72499.19334429146,
+        "pPaidRoundApprox": 9.006552974222868e-08,
+        "oneInPaidRoundsApprox": 11103026.905654604,
+        "eFillUsed": 49963.621075445735,
+        "fillMassPerBonus": 666425.2203010999
+      },
+      "inPreferredBand": true
+    },
+    "CFINAL_SOLVED": {
+      "id": "CFINAL_SOLVED",
+      "wrPp": 0.4568096785773861,
+      "projectedRtp": 96.3,
+      "coreRtpWithoutWr": 95.84319032142261,
+      "pointReservePp": 0.20000000000000284,
+      "safeReservePp": 0.04538614318157924,
+      "seCombinedPp": 0.07888462082572632,
+      "wr": {
+        "targetWrPp": 0.4568096785773861,
+        "c": 1.0497650035705992e-06,
+        "byTierPSpin": {
+          "LARGE_HILL": 1.0497650035705992e-06,
+          "SKI_FLYING": 3.1492950107117973e-06,
+          "WORLD_CUP": 6.298590021423595e-06,
+          "PERFECT_V": 1.259718004284719e-05
+        },
+        "pPerTriggeredBonusApprox": 1.4001985018510399e-05,
+        "oneInBonusesApprox": 71418.44521887548,
+        "pPaidRoundApprox": 9.142845709433219e-08,
+        "oneInPaidRoundsApprox": 10937513.677697092,
+        "eFillUsed": 49963.621075445735,
+        "fillMassPerBonus": 666425.2203010999
+      },
+      "inPreferredBand": true,
+      "solveTarget": 96.3,
+      "wrPpSolved": 0.4568096785773861
+    }
+  },
+  "recommended": "H2",
+  "readyFor7B": true,
+  "artLock": "PASS",
+  "wait": "NONE",
+  "recommendedNote": "Preferred center 96.29 with safe 0.056 (>=0.05). H3 if human requires safe>=0.08. H1 is WR0.45 in-band alternate.",
+  "paytableStatus": "APPROVED FOR PHASE 7B"
+}

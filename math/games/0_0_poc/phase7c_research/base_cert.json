@@ -1,0 +1,22 @@
+{
+  "method": "stratified_hybrid",
+  "eNone": 0.726431,
+  "pNone": 0.9934703217455622,
+  "bonusNatContribution": 0.24738857111299087,
+  "wrContribution": 0.004569444597994449,
+  "independentMeanX": 0.9736456550069358,
+  "independentRtpPct": 97.36456550069357,
+  "lutBaseRtpPct": 98.1196174999114,
+  "lutVsIndepPp": 0.7550519992178266,
+  "projectedPreBook": 96.29,
+  "ceiling": 96.7,
+  "preferred": [
+    96.4,
+    96.6
+  ],
+  "wrOnlyDeltaNeededPp": -1.6196174999113992,
+  "wrCurrentPp": 0.45694445979944487,
+  "wrOnlyCanReachBand": false,
+  "classification": "NEEDS HUMAN RTP CALIBRATION",
+  "note": "BASE LUT 98.12% (buy-strata). Independent hybrid 97.36%. Both exceed 96.70 ceiling. WR contributes only 0.457pp \u2014 cannot calibrate. mathVersion stays 1."
+}

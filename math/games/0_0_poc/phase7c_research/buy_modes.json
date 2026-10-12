@@ -1,0 +1,55 @@
+{
+  "mathLineage": "skyjump-v2",
+  "mathVersionPending": true,
+  "modes": [
+    {
+      "rgsKey": "BASE",
+      "playerName": "Base",
+      "type": "default",
+      "costMultiplier": 1.0,
+      "maxWin": 50000,
+      "enabled": true,
+      "rtp": 98.1196
+    },
+    {
+      "rgsKey": "LARGE_HILL",
+      "playerName": "Large Hill",
+      "type": "buy",
+      "costMultiplier": 32.5,
+      "maxWin": 50000,
+      "enabled": true,
+      "startsBonusTier": "LARGE_HILL",
+      "rtp": 96.4975
+    },
+    {
+      "rgsKey": "SKI_FLYING",
+      "playerName": "Ski Flying",
+      "type": "buy",
+      "costMultiplier": 197.7,
+      "maxWin": 50000,
+      "enabled": true,
+      "startsBonusTier": "SKI_FLYING",
+      "rtp": 96.4896
+    },
+    {
+      "rgsKey": "WORLD_CUP",
+      "playerName": "World Cup",
+      "type": "buy",
+      "costMultiplier": 416.7,
+      "maxWin": 50000,
+      "enabled": true,
+      "startsBonusTier": "WORLD_CUP",
+      "rtp": 96.497
+    },
+    {
+      "rgsKey": "PERFECT_V",
+      "playerName": "Perfect V",
+      "type": "buy",
+      "costMultiplier": 1381.2,
+      "maxWin": 50000,
+      "enabled": true,
+      "startsBonusTier": "PERFECT_V",
+      "rtp": 96.4979
+    }
+  ]
+}

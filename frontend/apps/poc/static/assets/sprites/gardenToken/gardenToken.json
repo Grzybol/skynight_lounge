@@ -1,0 +1,271 @@
+﻿{
+    "frames":  {
+                   "1.png":  {
+                                 "frame":  {
+                                               "x":  0,
+                                               "y":  0,
+                                               "w":  256,
+                                               "h":  256
+                                           },
+                                 "rotated":  false,
+                                 "trimmed":  false,
+                                 "spriteSourceSize":  {
+                                                          "x":  0,
+                                                          "y":  0,
+                                                          "w":  256,
+                                                          "h":  256
+                                                      },
+                                 "sourceSize":  {
+                                                    "w":  256,
+                                                    "h":  256
+                                                }
+                             },
+                   "2.png":  {
+                                 "frame":  {
+                                               "x":  256,
+                                               "y":  0,
+                                               "w":  256,
+                                               "h":  256
+                                           },
+                                 "rotated":  false,
+                                 "trimmed":  false,
+                                 "spriteSourceSize":  {
+                                                          "x":  0,
+                                                          "y":  0,
+                                                          "w":  256,
+                                                          "h":  256
+                                                      },
+                                 "sourceSize":  {
+                                                    "w":  256,
+                                                    "h":  256
+                                                }
+                             },
+                   "3.png":  {
+                                 "frame":  {
+                                               "x":  512,
+                                               "y":  0,
+                                               "w":  256,
+                                               "h":  256
+                                           },
+                                 "rotated":  false,
+                                 "trimmed":  false,
+                                 "spriteSourceSize":  {
+                                                          "x":  0,
+                                                          "y":  0,
+                                                          "w":  256,
+                                                          "h":  256
+                                                      },
+                                 "sourceSize":  {
+                                                    "w":  256,
+                                                    "h":  256
+                                                }
+                             },
+                   "4.png":  {
+                                 "frame":  {
+                                               "x":  768,
+                                               "y":  0,
+                                               "w":  256,
+                                               "h":  256
+                                           },
+                                 "rotated":  false,
+                                 "trimmed":  false,
+                                 "spriteSourceSize":  {
+                                                          "x":  0,
+                                                          "y":  0,
+                                                          "w":  256,
+                                                          "h":  256
+                                                      },
+                                 "sourceSize":  {
+                                                    "w":  256,
+                                                    "h":  256
+                                                }
+                             },
+                   "5.png":  {
+                                 "frame":  {
+                                               "x":  1024,
+                                               "y":  0,
+                                               "w":  256,
+                                               "h":  256
+                                           },
+                                 "rotated":  false,
+                                 "trimmed":  false,
+                                 "spriteSourceSize":  {
+                                                          "x":  0,
+                                                          "y":  0,
+                                                          "w":  256,
+                                                          "h":  256
+                                                      },
+                                 "sourceSize":  {
+                                                    "w":  256,
+                                                    "h":  256
+                                                }
+                             },
+                   "6.png":  {
+                                 "frame":  {
+                                               "x":  1280,
+                                               "y":  0,
+                                               "w":  256,
+                                               "h":  256
+                                           },
+                                 "rotated":  false,
+                                 "trimmed":  false,
+                                 "spriteSourceSize":  {
+                                                          "x":  0,
+                                                          "y":  0,
+                                                          "w":  256,
+                                                          "h":  256
+                                                      },
+                                 "sourceSize":  {
+                                                    "w":  256,
+                                                    "h":  256
+                                                }
+                             },
+                   "7.png":  {
+                                 "frame":  {
+                                               "x":  0,
+                                               "y":  256,
+                                               "w":  256,
+                                               "h":  256
+                                           },
+                                 "rotated":  false,
+                                 "trimmed":  false,
+                                 "spriteSourceSize":  {
+                                                          "x":  0,
+                                                          "y":  0,
+                                                          "w":  256,
+                                                          "h":  256
+                                                      },
+                                 "sourceSize":  {
+                                                    "w":  256,
+                                                    "h":  256
+                                                }
+                             },
+                   "8.png":  {
+                                 "frame":  {
+                                               "x":  256,
+                                               "y":  256,
+                                               "w":  256,
+                                               "h":  256
+                                           },
+                                 "rotated":  false,
+                                 "trimmed":  false,
+                                 "spriteSourceSize":  {
+                                                          "x":  0,
+                                                          "y":  0,
+                                                          "w":  256,
+                                                          "h":  256
+                                                      },
+                                 "sourceSize":  {
+                                                    "w":  256,
+                                                    "h":  256
+                                                }
+                             },
+                   "9.png":  {
+                                 "frame":  {
+                                               "x":  512,
+                                               "y":  256,
+                                               "w":  256,
+                                               "h":  256
+                                           },
+                                 "rotated":  false,
+                                 "trimmed":  false,
+                                 "spriteSourceSize":  {
+                                                          "x":  0,
+                                                          "y":  0,
+                                                          "w":  256,
+                                                          "h":  256
+                                                      },
+                                 "sourceSize":  {
+                                                    "w":  256,
+                                                    "h":  256
+                                                }
+                             },
+                   "10.png":  {
+                                  "frame":  {
+                                                "x":  768,
+                                                "y":  256,
+                                                "w":  256,
+                                                "h":  256
+                                            },
+                                  "rotated":  false,
+                                  "trimmed":  false,
+                                  "spriteSourceSize":  {
+                                                           "x":  0,
+                                                           "y":  0,
+                                                           "w":  256,
+                                                           "h":  256
+                                                       },
+                                  "sourceSize":  {
+                                                     "w":  256,
+                                                     "h":  256
+                                                 }
+                              },
+                   "11.png":  {
+                                  "frame":  {
+                                                "x":  1024,
+                                                "y":  256,
+                                                "w":  256,
+                                                "h":  256
+                                            },
+                                  "rotated":  false,
+                                  "trimmed":  false,
+                                  "spriteSourceSize":  {
+                                                           "x":  0,
+                                                           "y":  0,
+                                                           "w":  256,
+                                                           "h":  256
+                                                       },
+                                  "sourceSize":  {
+                                                     "w":  256,
+                                                     "h":  256
+                                                 }
+                              },
+                   "12.png":  {
+                                  "frame":  {
+                                                "x":  1280,
+                                                "y":  256,
+                                                "w":  256,
+                                                "h":  256
+                                            },
+                                  "rotated":  false,
+                                  "trimmed":  false,
+                                  "spriteSourceSize":  {
+                                                           "x":  0,
+                                                           "y":  0,
+                                                           "w":  256,
+                                                           "h":  256
+                                                       },
+                                  "sourceSize":  {
+                                                     "w":  256,
+                                                     "h":  256
+                                                 }
+                              }
+               },
+    "animations":  {
+                       "coin":  [
+                                    "1.png",
+                                    "2.png",
+                                    "3.png",
+                                    "4.png",
+                                    "5.png",
+                                    "6.png",
+                                    "7.png",
+                                    "8.png",
+                                    "9.png",
+                                    "10.png",
+                                    "11.png",
+                                    "12.png"
+                                ]
+                   },
+    "meta":  {
+                 "app":  "Garden Bounty deterministic token atlas generator",
+                 "version":  "1.0",
+                 "image":  "gardenToken.png",
+                 "format":  "RGBA8888",
+                 "size":  {
+                              "w":  1536,
+                              "h":  512
+                          },
+                 "scale":  "1"
+             }
+}

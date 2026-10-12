@@ -1,0 +1,117 @@
+{
+  "configSha256": "d6879d5c9ef3d08386486cd03712d6042e366543597a5c453ca8b1da6f2edbd0",
+  "expectedSha256": "d6879d5c9ef3d08386486cd03712d6042e366543597a5c453ca8b1da6f2edbd0",
+  "match": true,
+  "meta": {
+    "mathVersion": 1,
+    "featureEconomyVersion": 2,
+    "economyCandidate": "H2",
+    "paytableCandidate": "PT2H_LADDER",
+    "bonusBodyCandidate": "BODY1",
+    "worldRecordCandidate": "H2"
+  },
+  "paytable": {
+    "candidateOrigin": "PT2H_LADDER",
+    "awardsP1": {
+      "3": 10.0,
+      "4": 50.0,
+      "5": 200.0
+    }
+  },
+  "body": {
+    "candidateOrigin": "BODY1",
+    "tierWeights": {
+      "1": 999360,
+      "2": 440,
+      "3": 120,
+      "4": 40,
+      "5": 32,
+      "6": 8
+    },
+    "vw1": {
+      "1": 90,
+      "2": 6,
+      "3": 3,
+      "4": 1
+    },
+    "vw2": {
+      "5": 22,
+      "10": 4,
+      "15": 2
+    },
+    "vw5": {
+      "750": 18,
+      "1000": 2,
+      "2500": 1,
+      "5000": 1
+    },
+    "vw6": {
+      "10000": 8,
+      "25000": 2,
+      "50000": 1
+    }
+  },
+  "worldRecord": {
+    "architecture": "WR-C",
+    "candidateOrigin": "H2",
+    "c": 1.0514872508491765e-06,
+    "byTierPSpin": {
+      "LARGE_HILL": 1.0514872508491765e-06,
+      "SKI_FLYING": 3.1544617525475295e-06,
+      "WORLD_CUP": 6.308923505095059e-06,
+      "PERFECT_V": 1.2617847010190118e-05
+    },
+    "tierRelativeIntensity": {
+      "LARGE_HILL": 1,
+      "SKI_FLYING": 3,
+      "WORLD_CUP": 6,
+      "PERFECT_V": 12
+    },
+    "targetWrPp": 0.45694445979944476
+  },
+  "phase6": {
+    "candidateOrigin": "P6A1_E_E1",
+    "rejumpArch": "R-BATCH",
+    "windArch": "W-CHARGE",
+    "stageRule": "W2_PURE",
+    "ladder": "K1",
+    "maxRejumpsPerSpin": 2,
+    "maxFeatureChainDepth": 8,
+    "packs": {
+      "LARGE_HILL": {
+        "REJUMP": 22,
+        "WIND_KEY": 6
+      },
+      "SKI_FLYING": {
+        "REJUMP": 36,
+        "WIND_KEY": 14
+      },
+      "WORLD_CUP": {
+        "REJUMP": 48,
+        "WIND_KEY": 22
+      },
+      "PERFECT_V": {
+        "REJUMP": 60,
+        "WIND_KEY": 30
+      }
+    }
+  },
+  "freeSpins": {
+    "candidateOrigin": "FS5A_U1_P2_M40_mid_E15j2",
+    "initialSpins": 10,
+    "maxSpins": 40,
+    "maxPersistentTargets": 2,
+    "maxWinX": 50000,
+    "upgradeModel": "U1"
+  },
+  "featureEconomy": {
+    "maxWinX": 50000,
+    "gateMaxFloor": 3
+  },
+  "eventSchemaVersion": 2,
+  "board": {
+    "reels": 5,
+    "rows": 5
+  },
+  "projectedPreBookRtp": 96.29
+}

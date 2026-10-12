@@ -1,0 +1,10 @@
+{
+  "phase": "7C.3",
+  "liveConfigSha256": "d6879d5c9ef3d08386486cd03712d6042e366543597a5c453ca8b1da6f2edbd0",
+  "expectedSha": "d6879d5c9ef3d08386486cd03712d6042e366543597a5c453ca8b1da6f2edbd0",
+  "shaMatch": true,
+  "mathVersion": 1,
+  "economy": "PT2H_LADDER + BODY1 + WR-C H2 + Phase6 PURE W2",
+  "frozenFrom": "phase7c2_research",
+  "note": "precision/variance-reduction only; live economy unmodified"
+}

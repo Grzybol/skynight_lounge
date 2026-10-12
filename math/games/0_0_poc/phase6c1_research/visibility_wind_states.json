@@ -1,0 +1,29 @@
+{
+  "n": 100000,
+  "mix": {
+    "pRejump": 0.1657,
+    "pWind": 0.07454,
+    "pAny": 0.19606
+  },
+  "largeHill": {
+    "n": 95112,
+    "pRejump": 0.14261081672133905,
+    "pWind": 0.05777399276642274,
+    "pAny": 0.17054630330557657
+  },
+  "windStates": {
+    "pAnyWind": 0.07454,
+    "pAnyCharge": 0.07388,
+    "pTwoPlusPartialCharges": 0.01354,
+    "pThreePartialCharges": 0.0017,
+    "pCompletedStage": 0.01103,
+    "pGlobalGe2": 0.01103,
+    "pGlobalGe4": 0.00209,
+    "pGlobalGe8": 0.00061,
+    "pGlobalGe12": 0.00014,
+    "pGlobalGe18": 0.0,
+    "pGlobalEq27": 0.0,
+    "meanFinalGlobal": 1.01821,
+    "pAnyUpgrade": 0.01103
+  }
+}

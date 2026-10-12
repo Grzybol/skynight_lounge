@@ -1,0 +1,31 @@
+{
+  "headline": "Live W2_CHARGE_PRIORITY vs research pure W2; mid-spin persist secondary",
+  "critical": [
+    {
+      "field": "Wind stage selection",
+      "research": "pure W2 ignore charge",
+      "live": "charged-stage completion priority",
+      "impact": "primary RTP gap driver"
+    }
+  ],
+  "secondary": [
+    {
+      "field": "mid-spin persistent targets after Coach-on-Rejump",
+      "research": "append immediately",
+      "live": "append after features return"
+    }
+  ],
+  "equivalent": [
+    "E1 mystery weights by tier",
+    "R-BATCH order",
+    "spent collectors",
+    "preservation locks",
+    "refill no Scatter",
+    "max 2 / depth 8",
+    "K1",
+    "saturation B",
+    "collector mult scope",
+    "Head Judge 2 passes",
+    "shared 50k cap"
+  ]
+}

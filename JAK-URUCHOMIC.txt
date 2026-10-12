@@ -1,0 +1,26 @@
+SKYJUMP — jak uruchomic (Windows)
+
+1. Jednorazowo zainstaluj Node.js LTS:
+   https://nodejs.org
+   Klikaj Next (zostaw "Add to PATH"), Finish.
+
+2. Kliknij dwukrotnie plik START.bat w tym folderze.
+
+3. Poczekaj. Pierwszy start moze zajac kilka minut
+   (pobiera pnpm, paczki i buduje silnik gry).
+   Potem samo otworzy sie okno przegladarki.
+
+4. NIE ZAMYKAJ czarnego okna, dopoki grasz.
+   Adres gry: http://localhost:3010/dev-preview
+   (jesli 3010 nie dziala, skrypt uzyje 4010)
+
+5. Kolejny raz: znowu START.bat. Jesli gra juz dziala,
+   otworzy tylko przegladarke.
+
+Jesli START.bat napisze, ze nie widzi Node.js:
+  - zainstaluj Node.js
+  - ZAMKNIJ czarne okno
+  - kliknij START.bat jeszcze raz
+
+Jesli cos nie dziala — NIE ZAMYKAJ czarnego okna.
+Zrob zdjecie i wyslij. Okno zostaje otwarte przez 2 minuty.

@@ -1,0 +1,12 @@
+{
+  "tier": "LARGE_HILL",
+  "lutMeanX": 28.955903550717224,
+  "authMeanX": 29.10682575656284,
+  "authWrOffMeanX": 28.498384043526404,
+  "pWr": 1.2175774058431621e-05,
+  "meanDelta": 0.15092220584561744,
+  "nNat": 50000,
+  "nWr": 20,
+  "shaBook": "9962b78aa99eff9aef60e609b1b07f37ac326d3934f8da58ad216bcb27d12165",
+  "shaLut": "54cf056c1b5b658180377d897fccabc3d8792fd1f19c32962a7effef6f76da56"
+}

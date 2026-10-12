@@ -1,0 +1,1136 @@
+{
+  "n": 40000,
+  "seed": 606,
+  "baselineMeanX": 27.45472,
+  "pTrigger": 0.00652967825443787,
+  "rows": [
+    {
+      "n": 40000,
+      "meanX": 35.1775325,
+      "medianX": 9.6,
+      "p90X": 45.6,
+      "p95X": 109.0,
+      "p99X": 465.4,
+      "p999X": 2502.8,
+      "rtpPp": 22.969796901003143,
+      "meanSpins": 10.436375,
+      "pRejump": 0.094225,
+      "pWind": 0.0194,
+      "pMultGt1": 0.0194,
+      "pBoth": 0.0102,
+      "pMultiRejump": 0.024825,
+      "pRejump3": 0.009725,
+      "pRejump5": 0.001575,
+      "meanRejumps": 0.135575,
+      "meanWind": 0.02205,
+      "meanMult": 1.026,
+      "medianMult": 1,
+      "pMult2": 0.0194,
+      "pMult4": 0.002025,
+      "pMult6": 0.0005,
+      "pMult9": 0.0001,
+      "pMult12": 0.0001,
+      "maxMult": 18,
+      "pCap": 0.0,
+      "meanCapDrag": 0.0,
+      "meanLineRejump": 0.028692500000000003,
+      "meanLineInitial": 6.06444,
+      "meanCollectorRaw": 24.780225,
+      "meanCollectorPaid": 29.0844,
+      "pTrunc": 0.001525,
+      "pBound": 0.001525,
+      "meanChain": 0.105125,
+      "maxChain": 2,
+      "pLock25": 0.06625,
+      "pLock50": 0.03045,
+      "pLock75": 0.006925,
+      "meanEvents": 102.474075,
+      "p95Events": 172,
+      "p99Events": 253,
+      "maxEvents": 562,
+      "winsorMeanX": 32.972865000000006,
+      "tailShare": 0.13551739309742658,
+      "nAboveWinsor": 41,
+      "maxX": 15277.3,
+      "id": "P6A_G1_K1_W2_R2_PV1_B",
+      "weights": {
+        "LARGE_HILL": {
+          "FLIGHT_TOKEN": 741,
+          "REJUMP": 10,
+          "WIND_KEY": 1,
+          "THERMAL_LIFT": 42,
+          "GATE_UPGRADE": 6,
+          "JUDGE": 170,
+          "HEAD_JUDGE": 30
+        },
+        "SKI_FLYING": {
+          "FLIGHT_TOKEN": 731,
+          "REJUMP": 18,
+          "WIND_KEY": 3,
+          "THERMAL_LIFT": 42,
+          "GATE_UPGRADE": 6,
+          "JUDGE": 170,
+          "HEAD_JUDGE": 30
+        },
+        "WORLD_CUP": {
+          "FLIGHT_TOKEN": 722,
+          "REJUMP": 24,
+          "WIND_KEY": 6,
+          "THERMAL_LIFT": 42,
+          "GATE_UPGRADE": 6,
+          "JUDGE": 170,
+          "HEAD_JUDGE": 30
+        },
+        "PERFECT_V": {
+          "FLIGHT_TOKEN": 710,
+          "REJUMP": 32,
+          "WIND_KEY": 10,
+          "THERMAL_LIFT": 42,
+          "GATE_UPGRADE": 6,
+          "JUDGE": 170,
+          "HEAD_JUDGE": 30
+        }
+      },
+      "ladder": "K1",
+      "stageRule": "W2",
+      "saturation": "B",
+      "perfectV": "PV1",
+      "maxRejumps": 2,
+      "availability": "C",
+      "bins": {
+        "1x": {
+          "p": 0.9806,
+          "meanRaw": 20.010261574546195,
+          "meanPaid": 20.010261574546195,
+          "rtpPp": 12.812575481347077
+        },
+        "2x": {
+          "p": 0.017375,
+          "meanRaw": 236.13669064748203,
+          "meanPaid": 359.8769784172662,
+          "rtpPp": 4.082918029424001
+        },
+        "3x": {
+          "p": 0.0,
+          "meanRaw": 0.0,
+          "meanPaid": 0.0,
+          "rtpPp": 0.0
+        },
+        "4-5x": {
+          "p": 0.001525,
+          "meanRaw": 467.40983606557376,
+          "meanPaid": 1153.6475409836066,
+          "rtpPp": 1.1487744574010728
+        },
+        "6-8x": {
+          "p": 0.0004,
+          "meanRaw": 668.0625,
+          "meanPaid": 2755.96875,
+          "rtpPp": 0.7198235686714127
+        },
+        "9-15x": {
+          "p": 7.5e-05,
+          "meanRaw": 834.5,
+          "meanPaid": 3671.5,
+          "rtpPp": 0.17980285283376476
+        },
+        "16x+": {
+          "p": 2.5e-05,
+          "meanRaw": 507.0,
+          "meanPaid": 2896.5,
+          "rtpPp": 0.047283032659948224
+        }
+      },
+      "incrementalPp": 5.042748084435097,
+      "reservePp": 2.318203098996861,
+      "newGameRtp": 94.18179690100314
+    },
+    {
+      "n": 40000,
+      "meanX": 38.7099475,
+      "medianX": 9.6,
+      "p90X": 46.0,
+      "p95X": 112.4,
+      "p99X": 498.3,
+      "p999X": 2838.5,
+      "rtpPp": 25.276350242118156,
+      "meanSpins": 10.432875,
+      "pRejump": 0.109025,
+      "pWind": 0.023525,
+      "pMultGt1": 0.023525,
+      "pBoth": 0.014425,
+      "pMultiRejump": 0.03195,
+      "pRejump3": 0.013375,
+      "pRejump5": 0.002725,
+      "meanRejumps": 0.1661,
+      "meanWind": 0.027575,
+      "meanMult": 1.033275,
+      "medianMult": 1,
+      "pMult2": 0.023525,
+      "pMult4": 0.00325,
+      "pMult6": 0.000575,
+      "pMult9": 0.0002,
+      "pMult12": 0.0002,
+      "maxMult": 18,
+      "pCap": 0.0,
+      "meanCapDrag": 0.0,
+      "meanLineRejump": 0.035082499999999996,
+      "meanLineInitial": 6.0624275,
+      "meanCollectorRaw": 26.1212625,
+      "meanCollectorPaid": 32.6124375,
+      "pTrunc": 0.0028,
+      "pBound": 0.0028,
+      "meanChain": 0.12425,
+      "maxChain": 2,
+      "pLock25": 0.075875,
+      "pLock50": 0.0346,
+      "pLock75": 0.008075,
+      "meanEvents": 102.6496,
+      "p95Events": 174,
+      "p99Events": 257,
+      "maxEvents": 536,
+      "winsorMeanX": 34.73659,
+      "tailShare": 0.18660210014493045,
+      "nAboveWinsor": 52,
+      "maxX": 23234.1,
+      "id": "P6A_G2_K1_W2_R2_PV1_B",
+      "weights": {
+        "LARGE_HILL": {
+          "FLIGHT_TOKEN": 739,
+          "REJUMP": 12,
+          "WIND_KEY": 1,
+          "THERMAL_LIFT": 42,
+          "GATE_UPGRADE": 6,
+          "JUDGE": 170,
+          "HEAD_JUDGE": 30
+        },
+        "SKI_FLYING": {
+          "FLIGHT_TOKEN": 726,
+          "REJUMP": 22,
+          "WIND_KEY": 4,
+          "THERMAL_LIFT": 42,
+          "GATE_UPGRADE": 6,
+          "JUDGE": 170,
+          "HEAD_JUDGE": 30
+        },
+        "WORLD_CUP": {
+          "FLIGHT_TOKEN": 714,
+          "REJUMP": 30,
+          "WIND_KEY": 8,
+          "THERMAL_LIFT": 42,
+          "GATE_UPGRADE": 6,
+          "JUDGE": 170,
+          "HEAD_JUDGE": 30
+        },
+        "PERFECT_V": {
+          "FLIGHT_TOKEN": 700,
+          "REJUMP": 40,
+          "WIND_KEY": 12,
+          "THERMAL_LIFT": 42,
+          "GATE_UPGRADE": 6,
+          "JUDGE": 170,
+          "HEAD_JUDGE": 30
+        }
+      },
+      "ladder": "K1",
+      "stageRule": "W2",
+      "saturation": "B",
+      "perfectV": "PV1",
+      "maxRejumps": 2,
+      "availability": "C",
+      "bins": {
+        "1x": {
+          "p": 0.976475,
+          "meanRaw": 19.918674313218464,
+          "meanPaid": 19.918674313218464,
+          "rtpPp": 12.700281339566382
+        },
+        "2x": {
+          "p": 0.020275,
+          "meanRaw": 240.79531442663378,
+          "meanPaid": 369.05363748458694,
+          "rtpPp": 4.885872564372227
+        },
+        "3x": {
+          "p": 0.0,
+          "meanRaw": 0.0,
+          "meanPaid": 0.0,
+          "rtpPp": 0.0
+        },
+        "4-5x": {
+          "p": 0.002675,
+          "meanRaw": 503.20093457943926,
+          "meanPaid": 1490.4953271028037,
+          "rtpPp": 2.6034316926312866
+        },
+        "6-8x": {
+          "p": 0.000375,
+          "meanRaw": 584.0,
+          "meanPaid": 1964.4,
+          "rtpPp": 0.48100874861316567
+        },
+        "9-15x": {
+          "p": 0.000175,
+          "meanRaw": 1195.5,
+          "meanPaid": 4796.785714285715,
+          "rtpPp": 0.548125678970969
+        },
+        "16x+": {
+          "p": 2.5e-05,
+          "meanRaw": 591.0,
+          "meanPaid": 4665.0,
+          "rtpPp": 0.07615237264238166
+        }
+      },
+      "incrementalPp": 7.3493014255501095,
+      "reservePp": 0.011649757881841083,
+      "newGameRtp": 96.48835024211816
+    },
+    {
+      "n": 40000,
+      "meanX": 38.49372,
+      "medianX": 9.6,
+      "p90X": 46.9,
+      "p95X": 113.4,
+      "p99X": 508.40000000000003,
+      "p999X": 2834.1,
+      "rtpPp": 25.135160641642013,
+      "meanSpins": 10.431125,
+      "pRejump": 0.1197,
+      "pWind": 0.024,
+      "pMultGt1": 0.024,
+      "pBoth": 0.01555,
+      "pMultiRejump": 0.035175,
+      "pRejump3": 0.01565,
+      "pRejump5": 0.003175,
+      "meanRejumps": 0.184775,
+      "meanWind": 0.0281,
+      "meanMult": 1.0338,
+      "medianMult": 1,
+      "pMult2": 0.024,
+      "pMult4": 0.0033,
+      "pMult6": 0.0006,
+      "pMult9": 0.0002,
+      "pMult12": 0.0002,
+      "maxMult": 12,
+      "pCap": 0.0,
+      "meanCapDrag": 0.0,
+      "meanLineRejump": 0.0397225,
+      "meanLineInitial": 6.0652475,
+      "meanCollectorRaw": 26.09055,
+      "meanCollectorPaid": 32.38875,
+      "pTrunc": 0.003325,
+      "pBound": 0.003325,
+      "meanChain": 0.137675,
+      "maxChain": 2,
+      "pLock25": 0.082025,
+      "pLock50": 0.03645,
+      "pLock75": 0.0088,
+      "meanEvents": 102.7388,
+      "p95Events": 174,
+      "p99Events": 258,
+      "maxEvents": 697,
+      "winsorMeanX": 34.924345,
+      "tailShare": 0.1739082374995194,
+      "nAboveWinsor": 50,
+      "maxX": 17517.2,
+      "id": "P6A_G3_K1_W2_R2_PV1_B",
+      "weights": {
+        "LARGE_HILL": {
+          "FLIGHT_TOKEN": 737,
+          "REJUMP": 14,
+          "WIND_KEY": 1,
+          "THERMAL_LIFT": 42,
+          "GATE_UPGRADE": 6,
+          "JUDGE": 170,
+          "HEAD_JUDGE": 30
+        },
+        "SKI_FLYING": {
+          "FLIGHT_TOKEN": 724,
+          "REJUMP": 24,
+          "WIND_KEY": 4,
+          "THERMAL_LIFT": 42,
+          "GATE_UPGRADE": 6,
+          "JUDGE": 170,
+          "HEAD_JUDGE": 30
+        },
+        "WORLD_CUP": {
+          "FLIGHT_TOKEN": 712,
+          "REJUMP": 32,
+          "WIND_KEY": 8,
+          "THERMAL_LIFT": 42,
+          "GATE_UPGRADE": 6,
+          "JUDGE": 170,
+          "HEAD_JUDGE": 30
+        },
+        "PERFECT_V": {
+          "FLIGHT_TOKEN": 698,
+          "REJUMP": 42,
+          "WIND_KEY": 12,
+          "THERMAL_LIFT": 42,
+          "GATE_UPGRADE": 6,
+          "JUDGE": 170,
+          "HEAD_JUDGE": 30
+        }
+      },
+      "ladder": "K1",
+      "stageRule": "W2",
+      "saturation": "B",
+      "perfectV": "PV1",
+      "maxRejumps": 2,
+      "availability": "C",
+      "bins": {
+        "1x": {
+          "p": 0.976,
+          "meanRaw": 19.66425461065574,
+          "meanPaid": 19.66425461065574,
+          "rtpPp": 12.531962558362611
+        },
+        "2x": {
+          "p": 0.0207,
+          "meanRaw": 245.33514492753622,
+          "meanPaid": 376.65036231884056,
+          "rtpPp": 5.090969758344119
+        },
+        "3x": {
+          "p": 0.0,
+          "meanRaw": 0.0,
+          "meanPaid": 0.0,
+          "rtpPp": 0.0
+        },
+        "4-5x": {
+          "p": 0.0027,
+          "meanRaw": 463.05555555555554,
+          "meanPaid": 1273.0694444444443,
+          "rtpPp": 2.244438144300111
+        },
+        "6-8x": {
+          "p": 0.0004,
+          "meanRaw": 965.625,
+          "meanPaid": 2646.375,
+          "rtpPp": 0.6911990916235208
+        },
+        "9-15x": {
+          "p": 0.0002,
+          "meanRaw": 916.5,
+          "meanPaid": 4519.6875,
+          "rtpPp": 0.5902421037120932
+        },
+        "16x+": {
+          "p": 0.0,
+          "meanRaw": 0.0,
+          "meanPaid": 0.0,
+          "rtpPp": 0.0
+        }
+      },
+      "incrementalPp": 7.208111825073967,
+      "reservePp": 0.1528393583579799,
+      "newGameRtp": 96.34716064164202
+    },
+    {
+      "n": 40000,
+      "meanX": 38.393767499999996,
+      "medianX": 9.6,
+      "p90X": 47.2,
+      "p95X": 117.5,
+      "p99X": 534.9,
+      "p999X": 2838.7999999999997,
+      "rtpPp": 25.069894875069338,
+      "meanSpins": 10.4315,
+      "pRejump": 0.13205,
+      "pWind": 0.025075,
+      "pMultGt1": 0.025075,
+      "pBoth": 0.017075,
+      "pMultiRejump": 0.04225,
+      "pRejump3": 0.02025,
+      "pRejump5": 0.005275,
+      "meanRejumps": 0.2161,
+      "meanWind": 0.029525,
+      "meanMult": 1.03625,
+      "medianMult": 1,
+      "pMult2": 0.025075,
+      "pMult4": 0.003425,
+      "pMult6": 0.0007,
+      "pMult9": 0.00025,
+      "pMult12": 0.00025,
+      "maxMult": 27,
+      "pCap": 0.0,
+      "meanCapDrag": 0.0,
+      "meanLineRejump": 0.04688,
+      "meanLineInitial": 6.0663625,
+      "meanCollectorRaw": 25.9909875,
+      "meanCollectorPaid": 32.280525,
+      "pTrunc": 0.004575,
+      "pBound": 0.004575,
+      "meanChain": 0.154475,
+      "maxChain": 2,
+      "pLock25": 0.0895,
+      "pLock50": 0.0408,
+      "pLock75": 0.00985,
+      "meanEvents": 103.001925,
+      "p95Events": 176,
+      "p99Events": 262,
+      "maxEvents": 709,
+      "winsorMeanX": 35.4940525,
+      "tailShare": 0.15203548336328288,
+      "nAboveWinsor": 47,
+      "maxX": 13742.200000000003,
+      "id": "P6A_G4_K1_W2_R2_PV1_B",
+      "weights": {
+        "LARGE_HILL": {
+          "FLIGHT_TOKEN": 735,
+          "REJUMP": 16,
+          "WIND_KEY": 1,
+          "THERMAL_LIFT": 42,
+          "GATE_UPGRADE": 6,
+          "JUDGE": 170,
+          "HEAD_JUDGE": 30
+        },
+        "SKI_FLYING": {
+          "FLIGHT_TOKEN": 720,
+          "REJUMP": 28,
+          "WIND_KEY": 4,
+          "THERMAL_LIFT": 42,
+          "GATE_UPGRADE": 6,
+          "JUDGE": 170,
+          "HEAD_JUDGE": 30
+        },
+        "WORLD_CUP": {
+          "FLIGHT_TOKEN": 708,
+          "REJUMP": 36,
+          "WIND_KEY": 8,
+          "THERMAL_LIFT": 42,
+          "GATE_UPGRADE": 6,
+          "JUDGE": 170,
+          "HEAD_JUDGE": 30
+        },
+        "PERFECT_V": {
+          "FLIGHT_TOKEN": 692,
+          "REJUMP": 48,
+          "WIND_KEY": 12,
+          "THERMAL_LIFT": 42,
+          "GATE_UPGRADE": 6,
+          "JUDGE": 170,
+          "HEAD_JUDGE": 30
+        }
+      },
+      "ladder": "K1",
+      "stageRule": "W2",
+      "saturation": "B",
+      "perfectV": "PV1",
+      "maxRejumps": 2,
+      "availability": "C",
+      "bins": {
+        "1x": {
+          "p": 0.974925,
+          "meanRaw": 19.59739210708516,
+          "meanPaid": 19.59739210708516,
+          "rtpPp": 12.475595110831177
+        },
+        "2x": {
+          "p": 0.02165,
+          "meanRaw": 238.35450346420322,
+          "meanPaid": 365.45438799076214,
+          "rtpPp": 5.166338569595969
+        },
+        "3x": {
+          "p": 0.0,
+          "meanRaw": 0.0,
+          "meanPaid": 0.0,
+          "rtpPp": 0.0
+        },
+        "4-5x": {
+          "p": 0.002725,
+          "meanRaw": 440.54587155963304,
+          "meanPaid": 992.5321100917431,
+          "rtpPp": 1.7660494290865385
+        },
+        "6-8x": {
+          "p": 0.00045,
+          "meanRaw": 565.5833333333334,
+          "meanPaid": 1904.8333333333333,
+          "rtpPp": 0.5597076957747781
+        },
+        "9-15x": {
+          "p": 0.0002,
+          "meanRaw": 922.6875,
+          "meanPaid": 5788.6875,
+          "rtpPp": 0.7559653378097264
+        },
+        "16x+": {
+          "p": 5e-05,
+          "meanRaw": 1701.75,
+          "meanPaid": 10857.75,
+          "rtpPp": 0.35448807033561397
+        }
+      },
+      "incrementalPp": 7.142846058501291,
+      "reservePp": 0.21810512493065914,
+      "newGameRtp": 96.28189487506934
+    },
+    {
+      "n": 40000,
+      "meanX": 40.862095000000004,
+      "medianX": 9.6,
+      "p90X": 46.6,
+      "p95X": 114.9,
+      "p99X": 527.8,
+      "p999X": 3169.2,
+      "rtpPp": 26.681633315227444,
+      "meanSpins": 10.431875,
+      "pRejump": 0.10915,
+      "pWind": 0.03485,
+      "pMultGt1": 0.03485,
+      "pBoth": 0.01985,
+      "pMultiRejump": 0.03145,
+      "pRejump3": 0.01315,
+      "pRejump5": 0.0028,
+      "meanRejumps": 0.166075,
+      "meanWind": 0.0418,
+      "meanMult": 1.0519,
+      "medianMult": 1,
+      "pMult2": 0.03485,
+      "pMult4": 0.005375,
+      "pMult6": 0.001175,
+      "pMult9": 0.0004,
+      "pMult12": 0.0004,
+      "maxMult": 12,
+      "pCap": 0.0,
+      "meanCapDrag": 0.0,
+      "meanLineRejump": 0.03537,
+      "meanLineInitial": 6.0673,
+      "meanCollectorRaw": 25.2706875,
+      "meanCollectorPaid": 34.759425,
+      "pTrunc": 0.002625,
+      "pBound": 0.002625,
+      "meanChain": 0.124775,
+      "maxChain": 2,
+      "pLock25": 0.07575,
+      "pLock50": 0.034275,
+      "pLock75": 0.0079,
+      "meanEvents": 102.622775,
+      "p95Events": 174,
+      "p99Events": 255,
+      "maxEvents": 697,
+      "winsorMeanX": 35.72916,
+      "tailShare": 0.2097404697434138,
+      "nAboveWinsor": 55,
+      "maxX": 46172.4,
+      "id": "P6A_G5_K1_W2_R2_PV1_B",
+      "weights": {
+        "LARGE_HILL": {
+          "FLIGHT_TOKEN": 738,
+          "REJUMP": 12,
+          "WIND_KEY": 2,
+          "THERMAL_LIFT": 42,
+          "GATE_UPGRADE": 6,
+          "JUDGE": 170,
+          "HEAD_JUDGE": 30
+        },
+        "SKI_FLYING": {
+          "FLIGHT_TOKEN": 724,
+          "REJUMP": 22,
+          "WIND_KEY": 6,
+          "THERMAL_LIFT": 42,
+          "GATE_UPGRADE": 6,
+          "JUDGE": 170,
+          "HEAD_JUDGE": 30
+        },
+        "WORLD_CUP": {
+          "FLIGHT_TOKEN": 712,
+          "REJUMP": 30,
+          "WIND_KEY": 10,
+          "THERMAL_LIFT": 42,
+          "GATE_UPGRADE": 6,
+          "JUDGE": 170,
+          "HEAD_JUDGE": 30
+        },
+        "PERFECT_V": {
+          "FLIGHT_TOKEN": 698,
+          "REJUMP": 40,
+          "WIND_KEY": 14,
+          "THERMAL_LIFT": 42,
+          "GATE_UPGRADE": 6,
+          "JUDGE": 170,
+          "HEAD_JUDGE": 30
+        }
+      },
+      "ladder": "K1",
+      "stageRule": "W2",
+      "saturation": "B",
+      "perfectV": "PV1",
+      "maxRejumps": 2,
+      "availability": "C",
+      "bins": {
+        "1x": {
+          "p": 0.96515,
+          "meanRaw": 17.439297000466247,
+          "meanPaid": 17.439297000466247,
+          "rtpPp": 10.990452440250552
+        },
+        "2x": {
+          "p": 0.029475,
+          "meanRaw": 184.58651399491094,
+          "meanPaid": 293.36768447837153,
+          "rtpPp": 5.646220948710245
+        },
+        "3x": {
+          "p": 0.0,
+          "meanRaw": 0.0,
+          "meanPaid": 0.0,
+          "rtpPp": 0.0
+        },
+        "4-5x": {
+          "p": 0.0042,
+          "meanRaw": 485.01785714285717,
+          "meanPaid": 1094.580357142857,
+          "rtpPp": 3.0018481734236313
+        },
+        "6-8x": {
+          "p": 0.000775,
+          "meanRaw": 692.2258064516129,
+          "meanPaid": 2416.548387096774,
+          "rtpPp": 1.2228944676867604
+        },
+        "9-15x": {
+          "p": 0.0004,
+          "meanRaw": 1062.28125,
+          "meanPaid": 7027.03125,
+          "rtpPp": 1.8353701258552144
+        },
+        "16x+": {
+          "p": 0.0,
+          "meanRaw": 0.0,
+          "meanPaid": 0.0,
+          "rtpPp": 0.0
+        }
+      },
+      "incrementalPp": 8.754584498659398,
+      "reservePp": -1.3936333152274472,
+      "newGameRtp": 97.89363331522745
+    },
+    {
+      "n": 40000,
+      "meanX": 36.43277,
+      "medianX": 9.6,
+      "p90X": 46.00000000000001,
+      "p95X": 109.1,
+      "p99X": 498.0,
+      "p999X": 3032.7999999999997,
+      "rtpPp": 23.789426601793636,
+      "meanSpins": 10.436625,
+      "pRejump": 0.08295,
+      "pWind": 0.031,
+      "pMultGt1": 0.031,
+      "pBoth": 0.0145,
+      "pMultiRejump": 0.021525,
+      "pRejump3": 0.0079,
+      "pRejump5": 0.001425,
+      "meanRejumps": 0.11835,
+      "meanWind": 0.03575,
+      "meanMult": 1.04235,
+      "medianMult": 1,
+      "pMult2": 0.031,
+      "pMult4": 0.003825,
+      "pMult6": 0.0008,
+      "pMult9": 0.000125,
+      "pMult12": 0.000125,
+      "maxMult": 12,
+      "pCap": 0.0,
+      "meanCapDrag": 0.0,
+      "meanLineRejump": 0.0245725,
+      "meanLineInitial": 6.0663849999999995,
+      "meanCollectorRaw": 24.4417875,
+      "meanCollectorPaid": 30.3418125,
+      "pTrunc": 0.001375,
+      "pBound": 0.001375,
+      "meanChain": 0.0921,
+      "maxChain": 2,
+      "pLock25": 0.059425,
+      "pLock50": 0.0279,
+      "pLock75": 0.006325,
+      "meanEvents": 102.36835,
+      "p95Events": 172,
+      "p99Events": 253,
+      "maxEvents": 572,
+      "winsorMeanX": 34.1460925,
+      "tailShare": 0.14853873312405289,
+      "nAboveWinsor": 50,
+      "maxX": 15277.3,
+      "id": "P6A_G6_K1_W2_R2_PV1_B",
+      "weights": {
+        "LARGE_HILL": {
+          "FLIGHT_TOKEN": 742,
+          "REJUMP": 8,
+          "WIND_KEY": 2,
+          "THERMAL_LIFT": 42,
+          "GATE_UPGRADE": 6,
+          "JUDGE": 170,
+          "HEAD_JUDGE": 30
+        },
+        "SKI_FLYING": {
+          "FLIGHT_TOKEN": 731,
+          "REJUMP": 16,
+          "WIND_KEY": 5,
+          "THERMAL_LIFT": 42,
+          "GATE_UPGRADE": 6,
+          "JUDGE": 170,
+          "HEAD_JUDGE": 30
+        },
+        "WORLD_CUP": {
+          "FLIGHT_TOKEN": 720,
+          "REJUMP": 24,
+          "WIND_KEY": 8,
+          "THERMAL_LIFT": 42,
+          "GATE_UPGRADE": 6,
+          "JUDGE": 170,
+          "HEAD_JUDGE": 30
+        },
+        "PERFECT_V": {
+          "FLIGHT_TOKEN": 708,
+          "REJUMP": 32,
+          "WIND_KEY": 12,
+          "THERMAL_LIFT": 42,
+          "GATE_UPGRADE": 6,
+          "JUDGE": 170,
+          "HEAD_JUDGE": 30
+        }
+      },
+      "ladder": "K1",
+      "stageRule": "W2",
+      "saturation": "B",
+      "perfectV": "PV1",
+      "maxRejumps": 2,
+      "availability": "C",
+      "bins": {
+        "1x": {
+          "p": 0.969,
+          "meanRaw": 18.373877708978327,
+          "meanPaid": 18.373877708978327,
+          "rtpPp": 11.625626892450997
+        },
+        "2x": {
+          "p": 0.027175,
+          "meanRaw": 181.15777368905245,
+          "meanPaid": 286.20883164673415,
+          "rtpPp": 5.078604180149779
+        },
+        "3x": {
+          "p": 0.0,
+          "meanRaw": 0.0,
+          "meanPaid": 0.0,
+          "rtpPp": 0.0
+        },
+        "4-5x": {
+          "p": 0.003025,
+          "meanRaw": 424.93388429752065,
+          "meanPaid": 1061.3429752066115,
+          "rtpPp": 2.096394014076368
+        },
+        "6-8x": {
+          "p": 0.000675,
+          "meanRaw": 534.2222222222222,
+          "meanPaid": 1709.9444444444443,
+          "rtpPp": 0.753663626225037
+        },
+        "9-15x": {
+          "p": 0.000125,
+          "meanRaw": 548.1,
+          "meanPaid": 3160.2,
+          "rtpPp": 0.2579386152459319
+        },
+        "16x+": {
+          "p": 0.0,
+          "meanRaw": 0.0,
+          "meanPaid": 0.0,
+          "rtpPp": 0.0
+        }
+      },
+      "incrementalPp": 5.86237778522559,
+      "reservePp": 1.4985733982063607,
+      "newGameRtp": 95.00142660179364
+    },
+    {
+      "n": 40000,
+      "meanX": 45.2488975,
+      "medianX": 9.6,
+      "p90X": 47.4,
+      "p95X": 122.19999999999999,
+      "p99X": 635.5,
+      "p999X": 3439.7,
+      "rtpPp": 29.546074204303807,
+      "meanSpins": 10.433175,
+      "pRejump": 0.142425,
+      "pWind": 0.02695,
+      "pMultGt1": 0.02695,
+      "pBoth": 0.0214,
+      "pMultiRejump": 0.046575,
+      "pRejump3": 0.022775,
+      "pRejump5": 0.006075,
+      "meanRejumps": 0.2378,
+      "meanWind": 0.034975,
+      "meanMult": 1.04815,
+      "medianMult": 1,
+      "pMult2": 0.02695,
+      "pMult4": 0.0058,
+      "pMult6": 0.00145,
+      "pMult9": 0.0005,
+      "pMult12": 0.0005,
+      "maxMult": 27,
+      "pCap": 2.5e-05,
+      "meanCapDrag": 1.87752,
+      "meanLineRejump": 0.0546375,
+      "meanLineInitial": 6.0698425,
+      "meanCollectorRaw": 27.45585,
+      "meanCollectorPaid": 41.0019375,
+      "pTrunc": 0.00595,
+      "pBound": 0.00595,
+      "meanChain": 0.1676,
+      "maxChain": 2,
+      "pLock25": 0.095,
+      "pLock50": 0.0426,
+      "pLock75": 0.01115,
+      "meanEvents": 103.19275,
+      "p95Events": 177,
+      "p99Events": 265,
+      "maxEvents": 709,
+      "winsorMeanX": 38.235745,
+      "tailShare": 0.23648427014160953,
+      "nAboveWinsor": 59,
+      "maxX": 50000.0,
+      "id": "P6A_G7_K1_W2_R2_PV1_B",
+      "weights": {
+        "LARGE_HILL": {
+          "FLIGHT_TOKEN": 734,
+          "REJUMP": 18,
+          "WIND_KEY": 0,
+          "THERMAL_LIFT": 42,
+          "GATE_UPGRADE": 6,
+          "JUDGE": 170,
+          "HEAD_JUDGE": 30
+        },
+        "SKI_FLYING": {
+          "FLIGHT_TOKEN": 716,
+          "REJUMP": 30,
+          "WIND_KEY": 6,
+          "THERMAL_LIFT": 42,
+          "GATE_UPGRADE": 6,
+          "JUDGE": 170,
+          "HEAD_JUDGE": 30
+        },
+        "WORLD_CUP": {
+          "FLIGHT_TOKEN": 702,
+          "REJUMP": 40,
+          "WIND_KEY": 10,
+          "THERMAL_LIFT": 42,
+          "GATE_UPGRADE": 6,
+          "JUDGE": 170,
+          "HEAD_JUDGE": 30
+        },
+        "PERFECT_V": {
+          "FLIGHT_TOKEN": 686,
+          "REJUMP": 50,
+          "WIND_KEY": 16,
+          "THERMAL_LIFT": 42,
+          "GATE_UPGRADE": 6,
+          "JUDGE": 170,
+          "HEAD_JUDGE": 30
+        }
+      },
+      "ladder": "K1",
+      "stageRule": "W2",
+      "saturation": "B",
+      "perfectV": "PV1",
+      "maxRejumps": 2,
+      "availability": "B",
+      "bins": {
+        "1x": {
+          "p": 0.97305,
+          "meanRaw": 18.165446277169725,
+          "meanPaid": 18.165446277169725,
+          "rtpPp": 11.541785823664018
+        },
+        "2x": {
+          "p": 0.02115,
+          "meanRaw": 272.52127659574467,
+          "meanPaid": 420.8404255319149,
+          "rtpPp": 5.811919696514423
+        },
+        "3x": {
+          "p": 0.0,
+          "meanRaw": 0.0,
+          "meanPaid": 0.0,
+          "rtpPp": 0.0
+        },
+        "4-5x": {
+          "p": 0.00435,
+          "meanRaw": 634.5258620689655,
+          "meanPaid": 1742.5775862068965,
+          "rtpPp": 4.949634872526811
+        },
+        "6-8x": {
+          "p": 0.00095,
+          "meanRaw": 654.2368421052631,
+          "meanPaid": 2817.0,
+          "rtpPp": 1.7474398460613902
+        },
+        "9-15x": {
+          "p": 0.000275,
+          "meanRaw": 842.0454545454545,
+          "meanPaid": 5868.545454545455,
+          "rtpPp": 1.0537921250924558
+        },
+        "16x+": {
+          "p": 0.000225,
+          "meanRaw": 1790.5,
+          "meanPaid": 11355.833333333334,
+          "rtpPp": 1.668373604497966
+        }
+      },
+      "incrementalPp": 11.61902538773576,
+      "reservePp": -4.25807420430381,
+      "newGameRtp": 100.75807420430381
+    },
+    {
+      "n": 40000,
+      "meanX": 39.1379275,
+      "medianX": 9.6,
+      "p90X": 46.00000000000001,
+      "p95X": 111.7,
+      "p99X": 531.0,
+      "p999X": 3243.3,
+      "rtpPp": 25.55580741205159,
+      "meanSpins": 10.435125,
+      "pRejump": 0.098025,
+      "pWind": 0.025675,
+      "pMultGt1": 0.025675,
+      "pBoth": 0.0176,
+      "pMultiRejump": 0.02815,
+      "pRejump3": 0.011375,
+      "pRejump5": 0.002325,
+      "meanRejumps": 0.147175,
+      "meanWind": 0.03265,
+      "meanMult": 1.043175,
+      "medianMult": 1,
+      "pMult2": 0.025675,
+      "pMult4": 0.005275,
+      "pMult6": 0.0012,
+      "pMult9": 0.000425,
+      "pMult12": 0.000425,
+      "maxMult": 18,
+      "pCap": 0.0,
+      "meanCapDrag": 0.0,
+      "meanLineRejump": 0.0305375,
+      "meanLineInitial": 6.0654275,
+      "meanCollectorRaw": 24.6170625,
+      "meanCollectorPaid": 33.0419625,
+      "pTrunc": 0.002425,
+      "pBound": 0.002425,
+      "meanChain": 0.110925,
+      "maxChain": 2,
+      "pLock25": 0.0696,
+      "pLock50": 0.0326,
+      "pLock75": 0.007325,
+      "meanEvents": 102.5587,
+      "p95Events": 173,
+      "p99Events": 256,
+      "maxEvents": 581,
+      "winsorMeanX": 35.5550625,
+      "tailShare": 0.17937498095677137,
+      "nAboveWinsor": 55,
+      "maxX": 11208.7,
+      "id": "P6A_G8_K1_W2_R2_PV1_B",
+      "weights": {
+        "LARGE_HILL": {
+          "FLIGHT_TOKEN": 742,
+          "REJUMP": 10,
+          "WIND_KEY": 0,
+          "THERMAL_LIFT": 42,
+          "GATE_UPGRADE": 6,
+          "JUDGE": 170,
+          "HEAD_JUDGE": 30
+        },
+        "SKI_FLYING": {
+          "FLIGHT_TOKEN": 726,
+          "REJUMP": 20,
+          "WIND_KEY": 6,
+          "THERMAL_LIFT": 42,
+          "GATE_UPGRADE": 6,
+          "JUDGE": 170,
+          "HEAD_JUDGE": 30
+        },
+        "WORLD_CUP": {
+          "FLIGHT_TOKEN": 714,
+          "REJUMP": 28,
+          "WIND_KEY": 10,
+          "THERMAL_LIFT": 42,
+          "GATE_UPGRADE": 6,
+          "JUDGE": 170,
+          "HEAD_JUDGE": 30
+        },
+        "PERFECT_V": {
+          "FLIGHT_TOKEN": 702,
+          "REJUMP": 36,
+          "WIND_KEY": 14,
+          "THERMAL_LIFT": 42,
+          "GATE_UPGRADE": 6,
+          "JUDGE": 170,
+          "HEAD_JUDGE": 30
+        }
+      },
+      "ladder": "K1",
+      "stageRule": "W2",
+      "saturation": "B",
+      "perfectV": "PV1",
+      "maxRejumps": 2,
+      "availability": "B",
+      "bins": {
+        "1x": {
+          "p": 0.974325,
+          "meanRaw": 17.046378261873606,
+          "meanPaid": 17.046378261873606,
+          "rtpPp": 10.844954884546045
+        },
+        "2x": {
+          "p": 0.0204,
+          "meanRaw": 271.46139705882354,
+          "meanPaid": 429.8658088235294,
+          "rtpPp": 5.726046265370747
+        },
+        "3x": {
+          "p": 0.0,
+          "meanRaw": 0.0,
+          "meanPaid": 0.0,
+          "rtpPp": 0.0
+        },
+        "4-5x": {
+          "p": 0.004075,
+          "meanRaw": 407.8803680981595,
+          "meanPaid": 996.9018404907976,
+          "rtpPp": 2.6526001698872035
+        },
+        "6-8x": {
+          "p": 0.000775,
+          "meanRaw": 400.7903225806452,
+          "meanPaid": 1767.1451612903227,
+          "rtpPp": 0.8942639232387204
+        },
+        "9-15x": {
+          "p": 0.00035,
+          "meanRaw": 1182.3214285714287,
+          "meanPaid": 5111.785714285715,
+          "rtpPp": 1.1682410606971154
+        },
+        "16x+": {
+          "p": 7.5e-05,
+          "meanRaw": 1120.0,
+          "meanPaid": 5906.0,
+          "rtpPp": 0.2892320982803254
+        }
+      },
+      "incrementalPp": 7.628758595483543,
+      "reservePp": -0.26780741205159586,
+      "newGameRtp": 96.7678074120516
+    }
+  ]
+}

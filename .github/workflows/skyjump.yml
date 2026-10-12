@@ -1,0 +1,66 @@
+name: SkyJump verification
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install math SDK environment
+        working-directory: math
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Canonical JSON + writer + Python resolver
+        working-directory: math
+        run: |
+          python games/0_0_poc/test_skyjump_resolve.py
+          pytest tests/test_config_parity_poc.py tests/test_skyjump_v2_phase1.py tests/test_skyjump_v2_phase2.py tests/test_skyjump_v2_phase3.py -v
+          python games/0_0_poc/write_skyjump_smoke.py
+          python games/0_0_poc/skyjump_v2_simulate.py --spins 1000000 --seed 20260921
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      # frontend/package.json packageManager is pnpm@10.5.0. Do not use pnpm 9.
+      - uses: pnpm/action-setup@v4
+        with:
+          version: "10.5.0"
+
+      - name: Install frontend workspace
+        working-directory: frontend
+        run: pnpm install --frozen-lockfile
+
+      - name: TypeScript math freeze + parity
+        run: |
+          node --experimental-strip-types tools/skyjump/test-math.ts
+          node --experimental-strip-types tools/skyjump/test-v2-phase1.ts
+          node --experimental-strip-types tools/skyjump/test-v2-phase2.ts
+          node --experimental-strip-types tools/skyjump/test-v2-phase3.ts
+          node --experimental-strip-types tools/skyjump/check-placeholders.ts
+          SKYJUMP_STRESS_ROUNDS=20 node --experimental-strip-types tools/skyjump/autoplay-stress.ts
+
+      # pixi-svelte exports ./dist (gitignored). Local START.bat builds it first;
+      # pnpm --filter poc build does not. Build the workspace dependency first.
+      - name: Build pixi-svelte then production game
+        working-directory: frontend
+        run: |
+          pnpm --filter pixi-svelte build
+          pnpm --filter poc build
+
+      - name: Production route and bundle audit
+        run: |
+          test ! -e frontend/apps/poc/build/dev-preview
+          test ! -e frontend/apps/poc/build/dev-preview.html
+          node --experimental-strip-types tools/skyjump/audit-production-bundle.ts

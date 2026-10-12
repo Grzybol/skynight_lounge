@@ -1,0 +1,150 @@
+{
+  "basePriorMeanOnGe3": 0.4291121711032467,
+  "basePriorN": 12998,
+  "byStart": {},
+  "candidates": {
+    "C2": {
+      "LARGE_HILL": {
+        "n": 76128,
+        "meanRelSum": 12.28741067675494,
+        "meanOps": 10.438669083648591,
+        "pWrGivenStartApprox": 1.2706609432854577e-05,
+        "oneIn": 78699.20022995048
+      },
+      "SKI_FLYING": {
+        "n": 3788,
+        "meanRelSum": 33.75395987328405,
+        "meanOps": 10.393611404435058,
+        "pWrGivenStartApprox": 3.490551396100456e-05,
+        "oneIn": 28648.76881965329
+      },
+      "WORLD_CUP": {
+        "n": 84,
+        "meanRelSum": 70.5,
+        "meanOps": 10.714285714285714,
+        "pWrGivenStartApprox": 7.290518633929386e-05,
+        "oneIn": 13716.445293015155
+      },
+      "PERFECT_V": {
+        "n": 5000,
+        "meanRelSum": 124.956,
+        "meanOps": 10.413,
+        "pWrGivenStartApprox": 0.00012921901367677735,
+        "oneIn": 7738.799202579856,
+        "forced": true
+      }
+    },
+    "C3": {
+      "LARGE_HILL": {
+        "n": 76128,
+        "meanRelSum": 12.28741067675494,
+        "meanOps": 10.438669083648591,
+        "pWrGivenStartApprox": 1.4118454925393972e-05,
+        "oneIn": 70829.28020695545
+      },
+      "SKI_FLYING": {
+        "n": 3788,
+        "meanRelSum": 33.75395987328405,
+        "meanOps": 10.393611404435058,
+        "pWrGivenStartApprox": 3.878390440111617e-05,
+        "oneIn": 25783.891937687964
+      },
+      "WORLD_CUP": {
+        "n": 84,
+        "meanRelSum": 70.5,
+        "meanOps": 10.714285714285714,
+        "pWrGivenStartApprox": 8.100576259921539e-05,
+        "oneIn": 12344.800763713642
+      },
+      "PERFECT_V": {
+        "n": 5000,
+        "meanRelSum": 124.956,
+        "meanOps": 10.413,
+        "pWrGivenStartApprox": 0.00014357668186308593,
+        "oneIn": 6964.919282321871,
+        "forced": true
+      }
+    },
+    "C8": {
+      "LARGE_HILL": {
+        "n": 76128,
+        "meanRelSum": 12.28741067675494,
+        "meanOps": 10.438669083648591,
+        "pWrGivenStartApprox": 1.553030041793337e-05,
+        "oneIn": 64390.25473359586
+      },
+      "SKI_FLYING": {
+        "n": 3788,
+        "meanRelSum": 33.75395987328405,
+        "meanOps": 10.393611404435058,
+        "pWrGivenStartApprox": 4.2662294841227793e-05,
+        "oneIn": 23439.90176153451
+      },
+      "WORLD_CUP": {
+        "n": 84,
+        "meanRelSum": 70.5,
+        "meanOps": 10.714285714285714,
+        "pWrGivenStartApprox": 8.910633885913693e-05,
+        "oneIn": 11222.546148830583
+      },
+      "PERFECT_V": {
+        "n": 5000,
+        "meanRelSum": 124.956,
+        "meanOps": 10.413,
+        "pWrGivenStartApprox": 0.0001579343500493945,
+        "oneIn": 6331.744802110792,
+        "forced": true
+      }
+    },
+    "CFINAL_SOLVED": {
+      "LARGE_HILL": {
+        "n": 76128,
+        "meanRelSum": 12.28741067675494,
+        "meanOps": 10.438669083648591,
+        "pWrGivenStartApprox": 1.2898893712957068e-05,
+        "oneIn": 77526.02837524663
+      },
+      "SKI_FLYING": {
+        "n": 3788,
+        "meanRelSum": 33.75395987328405,
+        "meanOps": 10.393611404435058,
+        "pWrGivenStartApprox": 3.54337258068999e-05,
+        "oneIn": 28221.700575593244
+      },
+      "WORLD_CUP": {
+        "n": 84,
+        "meanRelSum": 70.5,
+        "meanOps": 10.714285714285714,
+        "pWrGivenStartApprox": 7.400843275172725e-05,
+        "oneIn": 13511.973741622862
+      },
+      "PERFECT_V": {
+        "n": 5000,
+        "meanRelSum": 124.956,
+        "meanOps": 10.413,
+        "pWrGivenStartApprox": 0.0001311744357861678,
+        "oneIn": 7623.436639972565,
+        "forced": true
+      }
+    }
+  },
+  "eIncrementalFillWithBasePriorApprox": 49963.19196327463,
+  "eAccruedWithBasePriorApprox": 36.80803672536687,
+  "allHierarchyBreaks": [
+    {
+      "match": "4",
+      "higherShould": "M1",
+      "val": 3.3,
+      "lowerShould": "M2",
+      "val2": 6.1
+    },
+    {
+      "match": "4",
+      "higherShould": "M1",
+      "val": 3.3,
+      "lowerShould": "M3",
+      "val2": 5.8
+    }
+  ],
+  "pvForcedNote": "PERFECT_V start rarity; 5k forced starts for conditional WR rate"
+}

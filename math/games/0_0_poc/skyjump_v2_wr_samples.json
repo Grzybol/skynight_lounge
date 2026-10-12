@@ -1,0 +1,5433 @@
+{
+  "nonProduction": true,
+  "phase": "7B",
+  "candidateOrigin": "H2",
+  "note": "DEV-only WR samples. Force byTierPSpin=1.0. Excluded from production bundle selectors.",
+  "samples": [
+    {
+      "id": "01",
+      "title": "Large Hill WR",
+      "resumeIndex": null,
+      "flags": {
+        "tier": "LARGE_HILL"
+      },
+      "eventCount": 25,
+      "wrEventIndex": 17,
+      "wrPosition": {
+        "reel": 2,
+        "row": 2
+      },
+      "roundWinXCapped": 50000.0,
+      "maxWinReached": true,
+      "events": [
+        {
+          "index": 0,
+          "type": "skyjumpSpinStart",
+          "schemaVersion": 2,
+          "mode": "BASE",
+          "isFreeSpin": false,
+          "source": "math",
+          "stops": [
+            0,
+            45,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "index": 1,
+          "type": "skyjumpBoardReveal",
+          "schemaVersion": 2,
+          "board": [
+            [
+              "L1",
+              "P3",
+              "M3",
+              "S",
+              "L1"
+            ],
+            [
+              "M2",
+              "L2",
+              "M1",
+              "L2",
+              "S"
+            ],
+            [
+              "M2",
+              "P3",
+              "P3",
+              "S",
+              "L2"
+            ],
+            [
+              "L1",
+              "L1",
+              "L2",
+              "M1",
+              "C"
+            ],
+            [
+              "L1",
+              "M3",
+              "L1",
+              "L2",
+              "M3"
+            ]
+          ]
+        },
+        {
+          "index": 2,
+          "type": "skyjumpLineWins",
+          "schemaVersion": 2,
+          "wins": [],
+          "lineWinX": 0.0
+        },
+        {
+          "index": 3,
+          "type": "skyjumpScatterResult",
+          "schemaVersion": 2,
+          "positions": [
+            {
+              "reel": 0,
+              "row": 3
+            },
+            {
+              "reel": 1,
+              "row": 4
+            },
+            {
+              "reel": 2,
+              "row": 3
+            }
+          ],
+          "count": 3,
+          "perfectV": false,
+          "trigger": {
+            "tier": "LARGE_HILL",
+            "directTriggerType": "SCATTER_3"
+          },
+          "fromBoard": "initialReveal"
+        },
+        {
+          "index": 4,
+          "type": "skyjumpCoachSignal",
+          "schemaVersion": 2,
+          "coachPosition": {
+            "reel": 3,
+            "row": 4
+          },
+          "selectedSymbolId": "L1",
+          "selectedPositions": [
+            {
+              "reel": 0,
+              "row": 0
+            },
+            {
+              "reel": 0,
+              "row": 4
+            },
+            {
+              "reel": 3,
+              "row": 0
+            },
+            {
+              "reel": 3,
+              "row": 1
+            },
+            {
+              "reel": 4,
+              "row": 0
+            },
+            {
+              "reel": 4,
+              "row": 2
+            }
+          ],
+          "sequenceIndex": 0,
+          "noOp": false,
+          "reason": null
+        },
+        {
+          "index": 5,
+          "type": "skyjumpMysteryTransform",
+          "schemaVersion": 2,
+          "sourceSymbolId": "L1",
+          "positions": [
+            {
+              "reel": 0,
+              "row": 0
+            },
+            {
+              "reel": 0,
+              "row": 4
+            },
+            {
+              "reel": 3,
+              "row": 0
+            },
+            {
+              "reel": 3,
+              "row": 1
+            },
+            {
+              "reel": 4,
+              "row": 0
+            },
+            {
+              "reel": 4,
+              "row": 2
+            }
+          ],
+          "sequenceIndex": 0
+        },
+        {
+          "index": 6,
+          "type": "skyjumpMysteryResolve",
+          "schemaVersion": 2,
+          "position": {
+            "reel": 0,
+            "row": 0
+          },
+          "resultType": "FLIGHT_TOKEN",
+          "tokenTier": 1,
+          "tokenId": "T1",
+          "tokenName": "ROOKIE_TOKEN",
+          "tokenValueX": 1.0,
+          "faceValueX": 1.0,
+          "effectiveValueX": 1.0
+        },
+        {
+          "index": 7,
+          "type": "skyjumpMysteryResolve",
+          "schemaVersion": 2,
+          "position": {
+            "reel": 0,
+            "row": 4
+          },
+          "resultType": "FLIGHT_TOKEN",
+          "tokenTier": 1,
+          "tokenId": "T1",
+          "tokenName": "ROOKIE_TOKEN",
+          "tokenValueX": 1.0,
+          "faceValueX": 1.0,
+          "effectiveValueX": 1.0
+        },
+        {
+          "index": 8,
+          "type": "skyjumpMysteryResolve",
+          "schemaVersion": 2,
+          "position": {
+            "reel": 3,
+            "row": 0
+          },
+          "resultType": "FLIGHT_TOKEN",
+          "tokenTier": 1,
+          "tokenId": "T1",
+          "tokenName": "ROOKIE_TOKEN",
+          "tokenValueX": 1.0,
+          "faceValueX": 1.0,
+          "effectiveValueX": 1.0
+        },
+        {
+          "index": 9,
+          "type": "skyjumpMysteryResolve",
+          "schemaVersion": 2,
+          "position": {
+            "reel": 3,
+            "row": 1
+          },
+          "resultType": "FLIGHT_TOKEN",
+          "tokenTier": 1,
+          "tokenId": "T1",
+          "tokenName": "ROOKIE_TOKEN",
+          "tokenValueX": 1.0,
+          "faceValueX": 1.0,
+          "effectiveValueX": 1.0
+        },
+        {
+          "index": 10,
+          "type": "skyjumpMysteryResolve",
+          "schemaVersion": 2,
+          "position": {
+            "reel": 4,
+            "row": 0
+          },
+          "resultType": "FLIGHT_TOKEN",
+          "tokenTier": 1,
+          "tokenId": "T1",
+          "tokenName": "ROOKIE_TOKEN",
+          "tokenValueX": 1.0,
+          "faceValueX": 1.0,
+          "effectiveValueX": 1.0
+        },
+        {
+          "index": 11,
+          "type": "skyjumpMysteryResolve",
+          "schemaVersion": 2,
+          "position": {
+            "reel": 4,
+            "row": 2
+          },
+          "resultType": "FLIGHT_TOKEN",
+          "tokenTier": 1,
+          "tokenId": "T1",
+          "tokenName": "ROOKIE_TOKEN",
+          "tokenValueX": 1.0,
+          "faceValueX": 1.0,
+          "effectiveValueX": 1.0
+        },
+        {
+          "index": 12,
+          "type": "skyjumpResult",
+          "schemaVersion": 2,
+          "totalLineWinX": 0.0,
+          "totalFeatureWinX": 0.0,
+          "totalFeatureWinXRaw": 0.0,
+          "totalWinX": 0.0,
+          "totalWinXRaw": 0.0,
+          "amount": 0,
+          "latentTokenValueX": 6.0,
+          "tokenFloorTier": 1,
+          "capHit": false
+        },
+        {
+          "type": "skyjumpFreeSpinsStart",
+          "schemaVersion": 2,
+          "initialTier": "LARGE_HILL",
+          "spinsAwarded": 10,
+          "directTriggerType": "SCATTER_3",
+          "triggeringScatterPositions": [
+            {
+              "reel": 0,
+              "row": 3
+            },
+            {
+              "reel": 1,
+              "row": 4
+            },
+            {
+              "reel": 2,
+              "row": 3
+            }
+          ],
+          "triggerSpinWinX": 0.0,
+          "wagerCostMultiplier": 0,
+          "index": 13
+        },
+        {
+          "type": "skyjumpFreeSpinStart",
+          "schemaVersion": 2,
+          "spinIndex": 1,
+          "currentTier": "LARGE_HILL",
+          "spinsRemainingBefore": 10,
+          "index": 14
+        },
+        {
+          "type": "skyjumpBoardReveal",
+          "schemaVersion": 2,
+          "board": [
+            [
+              "L1",
+              "M3",
+              "L3",
+              "L1",
+              "M3"
+            ],
+            [
+              "P3",
+              "L1",
+              "M2",
+              "L1",
+              "C"
+            ],
+            [
+              "L2",
+              "L2",
+              "SPECIAL_WORLD_RECORD",
+              "M2",
+              "M2"
+            ],
+            [
+              "L1",
+              "L1",
+              "L2",
+              "M1",
+              "C"
+            ],
+            [
+              "L1",
+              "M3",
+              "L1",
+              "L2",
+              "M3"
+            ]
+          ],
+          "isFreeSpin": true,
+          "index": 15
+        },
+        {
+          "type": "skyjumpScatterResult",
+          "schemaVersion": 2,
+          "positions": [],
+          "count": 0,
+          "perfectV": false,
+          "trigger": null,
+          "fromBoard": "initialReveal",
+          "index": 16
+        },
+        {
+          "type": "skyjumpWorldRecord",
+          "schemaVersion": 2,
+          "position": {
+            "reel": 2,
+            "row": 2
+          },
+          "bonusTier": "LARGE_HILL",
+          "freeSpinIndex": 1,
+          "accruedRoundWinXBefore": 0.0,
+          "worldRecordIncrementX": 50000.0,
+          "maxWinX": 50000.0,
+          "finalRoundWinX": 50000.0,
+          "terminated": true,
+          "remainingFreeSpinsCancelled": 9,
+          "pendingRejumpsCancelled": true,
+          "tierIntensity": 1.0,
+          "symbolId": "SPECIAL_WORLD_RECORD",
+          "candidateOrigin": "H2",
+          "index": 17
+        },
+        {
+          "type": "skyjumpCapReached",
+          "schemaVersion": 2,
+          "rawTotalWinX": 50000.0,
+          "cappedTotalWinX": 50000.0,
+          "capDragX": 0.0,
+          "maxWinX": 50000,
+          "terminated": true,
+          "reason": "WORLD_RECORD",
+          "index": 18
+        },
+        {
+          "type": "skyjumpFreeSpinEnd",
+          "schemaVersion": 2,
+          "spinIndex": 1,
+          "spinWinX": 50000.0,
+          "spinWinXRaw": 50000.0,
+          "bonusWinRunningX": 50000.0,
+          "spinsRemainingAfter": 0,
+          "currentTier": "LARGE_HILL",
+          "index": 19
+        },
+        {
+          "type": "skyjumpFreeSpinState",
+          "schemaVersion": 2,
+          "bonusActive": true,
+          "bonusTier": "LARGE_HILL",
+          "freeSpinsInitial": 10,
+          "freeSpinsRemaining": 0,
+          "freeSpinsPlayed": 1,
+          "totalFreeSpinsAwarded": 10,
+          "upgradeCount": 0,
+          "retriggerCount": 0,
+          "tokenFloorTier": 1,
+          "persistentMysteryTargets": [],
+          "guaranteedGateUsed": false,
+          "coachGuaranteeState": {},
+          "bonusWinXRaw": 50000.0,
+          "bonusWinXCapped": 50000.0,
+          "triggerSpinWinX": 0.0,
+          "roundWinXRaw": 50000.0,
+          "roundWinXCapped": 50000.0,
+          "maxWinReached": true,
+          "pendingTierUpgrade": null,
+          "flightMultiplierRunUp": 1.0,
+          "flightMultiplierTakeoff": 1.0,
+          "flightMultiplierFlight": 1.0,
+          "flightMultiplier": {
+            "runUp": {
+              "value": 1,
+              "charge": 0
+            },
+            "takeoff": {
+              "value": 1,
+              "charge": 0
+            },
+            "flight": {
+              "value": 1,
+              "charge": 0
+            }
+          },
+          "windKeysCollected": 0,
+          "rejumpsThisBonus": 0,
+          "featureBatchIndex": 0,
+          "rejumpState": null,
+          "globalFlightMultiplier": 1,
+          "index": 20
+        },
+        {
+          "type": "setTotalWin",
+          "amount": 5000000,
+          "index": 21
+        },
+        {
+          "type": "skyjumpFreeSpinsEnd",
+          "schemaVersion": 2,
+          "totalSpinsPlayed": 1,
+          "finalTier": "LARGE_HILL",
+          "bonusWinX": 50000.0,
+          "bonusWinXRaw": 50000.0,
+          "triggerSpinWinX": 0.0,
+          "roundWinXRaw": 50000.0,
+          "roundWinXCapped": 50000.0,
+          "upgradeCount": 0,
+          "retriggerCount": 0,
+          "maxWinReached": true,
+          "tokenFloorTier": 1,
+          "persistentMysteryTargets": [],
+          "guaranteedGateUsed": false,
+          "index": 22
+        },
+        {
+          "type": "setTotalWin",
+          "amount": 5000000,
+          "index": 23
+        },
+        {
+          "type": "finalWin",
+          "amount": 5000000,
+          "index": 24
+        }
+      ]
+    },
+    {
+      "id": "02",
+      "title": "Ski Flying WR",
+      "resumeIndex": null,
+      "flags": {
+        "tier": "SKI_FLYING"
+      },
+      "eventCount": 17,
+      "wrEventIndex": 9,
+      "wrPosition": {
+        "reel": 2,
+        "row": 2
+      },
+      "roundWinXCapped": 50000.0,
+      "maxWinReached": true,
+      "events": [
+        {
+          "index": 0,
+          "type": "skyjumpSpinStart",
+          "schemaVersion": 2,
+          "mode": "BASE",
+          "isFreeSpin": false,
+          "source": "math",
+          "stops": [
+            0,
+            45,
+            0,
+            24,
+            0
+          ]
+        },
+        {
+          "index": 1,
+          "type": "skyjumpBoardReveal",
+          "schemaVersion": 2,
+          "board": [
+            [
+              "L1",
+              "P3",
+              "M3",
+              "S",
+              "L1"
+            ],
+            [
+              "M2",
+              "L2",
+              "M1",
+              "L2",
+              "S"
+            ],
+            [
+              "M2",
+              "P3",
+              "P3",
+              "S",
+              "L2"
+            ],
+            [
+              "L3",
+              "M2",
+              "L2",
+              "L1",
+              "S"
+            ],
+            [
+              "L1",
+              "M3",
+              "L1",
+              "L2",
+              "M3"
+            ]
+          ]
+        },
+        {
+          "index": 2,
+          "type": "skyjumpLineWins",
+          "schemaVersion": 2,
+          "wins": [],
+          "lineWinX": 0.0
+        },
+        {
+          "index": 3,
+          "type": "skyjumpScatterResult",
+          "schemaVersion": 2,
+          "positions": [
+            {
+              "reel": 0,
+              "row": 3
+            },
+            {
+              "reel": 1,
+              "row": 4
+            },
+            {
+              "reel": 2,
+              "row": 3
+            },
+            {
+              "reel": 3,
+              "row": 4
+            }
+          ],
+          "count": 4,
+          "perfectV": false,
+          "trigger": {
+            "tier": "SKI_FLYING",
+            "directTriggerType": "SCATTER_4"
+          },
+          "fromBoard": "initialReveal"
+        },
+        {
+          "index": 4,
+          "type": "skyjumpResult",
+          "schemaVersion": 2,
+          "totalLineWinX": 0.0,
+          "totalFeatureWinX": 0.0,
+          "totalFeatureWinXRaw": 0.0,
+          "totalWinX": 0.0,
+          "totalWinXRaw": 0.0,
+          "amount": 0,
+          "latentTokenValueX": 0.0,
+          "tokenFloorTier": 1,
+          "capHit": false
+        },
+        {
+          "type": "skyjumpFreeSpinsStart",
+          "schemaVersion": 2,
+          "initialTier": "SKI_FLYING",
+          "spinsAwarded": 10,
+          "directTriggerType": "SCATTER_4",
+          "triggeringScatterPositions": [
+            {
+              "reel": 0,
+              "row": 3
+            },
+            {
+              "reel": 1,
+              "row": 4
+            },
+            {
+              "reel": 2,
+              "row": 3
+            },
+            {
+              "reel": 3,
+              "row": 4
+            }
+          ],
+          "triggerSpinWinX": 0.0,
+          "wagerCostMultiplier": 0,
+          "index": 5
+        },
+        {
+          "type": "skyjumpFreeSpinStart",
+          "schemaVersion": 2,
+          "spinIndex": 1,
+          "currentTier": "SKI_FLYING",
+          "spinsRemainingBefore": 10,
+          "index": 6
+        },
+        {
+          "type": "skyjumpBoardReveal",
+          "schemaVersion": 2,
+          "board": [
+            [
+              "L1",
+              "M3",
+              "L3",
+              "L1",
+              "M3"
+            ],
+            [
+              "P3",
+              "L1",
+              "M2",
+              "L1",
+              "C"
+            ],
+            [
+              "L2",
+              "L2",
+              "SPECIAL_WORLD_RECORD",
+              "M2",
+              "M2"
+            ],
+            [
+              "L1",
+              "L1",
+              "L2",
+              "M1",
+              "C"
+            ],
+            [
+              "L1",
+              "M3",
+              "L1",
+              "L2",
+              "M3"
+            ]
+          ],
+          "isFreeSpin": true,
+          "index": 7
+        },
+        {
+          "type": "skyjumpScatterResult",
+          "schemaVersion": 2,
+          "positions": [],
+          "count": 0,
+          "perfectV": false,
+          "trigger": null,
+          "fromBoard": "initialReveal",
+          "index": 8
+        },
+        {
+          "type": "skyjumpWorldRecord",
+          "schemaVersion": 2,
+          "position": {
+            "reel": 2,
+            "row": 2
+          },
+          "bonusTier": "SKI_FLYING",
+          "freeSpinIndex": 1,
+          "accruedRoundWinXBefore": 0.0,
+          "worldRecordIncrementX": 50000.0,
+          "maxWinX": 50000.0,
+          "finalRoundWinX": 50000.0,
+          "terminated": true,
+          "remainingFreeSpinsCancelled": 9,
+          "pendingRejumpsCancelled": true,
+          "tierIntensity": 3.0,
+          "symbolId": "SPECIAL_WORLD_RECORD",
+          "candidateOrigin": "H2",
+          "index": 9
+        },
+        {
+          "type": "skyjumpCapReached",
+          "schemaVersion": 2,
+          "rawTotalWinX": 50000.0,
+          "cappedTotalWinX": 50000.0,
+          "capDragX": 0.0,
+          "maxWinX": 50000,
+          "terminated": true,
+          "reason": "WORLD_RECORD",
+          "index": 10
+        },
+        {
+          "type": "skyjumpFreeSpinEnd",
+          "schemaVersion": 2,
+          "spinIndex": 1,
+          "spinWinX": 50000.0,
+          "spinWinXRaw": 50000.0,
+          "bonusWinRunningX": 50000.0,
+          "spinsRemainingAfter": 0,
+          "currentTier": "SKI_FLYING",
+          "index": 11
+        },
+        {
+          "type": "skyjumpFreeSpinState",
+          "schemaVersion": 2,
+          "bonusActive": true,
+          "bonusTier": "SKI_FLYING",
+          "freeSpinsInitial": 10,
+          "freeSpinsRemaining": 0,
+          "freeSpinsPlayed": 1,
+          "totalFreeSpinsAwarded": 10,
+          "upgradeCount": 0,
+          "retriggerCount": 0,
+          "tokenFloorTier": 1,
+          "persistentMysteryTargets": [],
+          "guaranteedGateUsed": false,
+          "coachGuaranteeState": {},
+          "bonusWinXRaw": 50000.0,
+          "bonusWinXCapped": 50000.0,
+          "triggerSpinWinX": 0.0,
+          "roundWinXRaw": 50000.0,
+          "roundWinXCapped": 50000.0,
+          "maxWinReached": true,
+          "pendingTierUpgrade": null,
+          "flightMultiplierRunUp": 1.0,
+          "flightMultiplierTakeoff": 1.0,
+          "flightMultiplierFlight": 1.0,
+          "flightMultiplier": {
+            "runUp": {
+              "value": 1,
+              "charge": 0
+            },
+            "takeoff": {
+              "value": 1,
+              "charge": 0
+            },
+            "flight": {
+              "value": 1,
+              "charge": 0
+            }
+          },
+          "windKeysCollected": 0,
+          "rejumpsThisBonus": 0,
+          "featureBatchIndex": 0,
+          "rejumpState": null,
+          "globalFlightMultiplier": 1,
+          "index": 12
+        },
+        {
+          "type": "setTotalWin",
+          "amount": 5000000,
+          "index": 13
+        },
+        {
+          "type": "skyjumpFreeSpinsEnd",
+          "schemaVersion": 2,
+          "totalSpinsPlayed": 1,
+          "finalTier": "SKI_FLYING",
+          "bonusWinX": 50000.0,
+          "bonusWinXRaw": 50000.0,
+          "triggerSpinWinX": 0.0,
+          "roundWinXRaw": 50000.0,
+          "roundWinXCapped": 50000.0,
+          "upgradeCount": 0,
+          "retriggerCount": 0,
+          "maxWinReached": true,
+          "tokenFloorTier": 1,
+          "persistentMysteryTargets": [],
+          "guaranteedGateUsed": false,
+          "index": 14
+        },
+        {
+          "type": "setTotalWin",
+          "amount": 5000000,
+          "index": 15
+        },
+        {
+          "type": "finalWin",
+          "amount": 5000000,
+          "index": 16
+        }
+      ]
+    },
+    {
+      "id": "03",
+      "title": "World Cup WR",
+      "resumeIndex": null,
+      "flags": {
+        "tier": "WORLD_CUP"
+      },
+      "eventCount": 17,
+      "wrEventIndex": 9,
+      "wrPosition": {
+        "reel": 2,
+        "row": 2
+      },
+      "roundWinXCapped": 50000.0,
+      "maxWinReached": true,
+      "events": [
+        {
+          "index": 0,
+          "type": "skyjumpSpinStart",
+          "schemaVersion": 2,
+          "mode": "BASE",
+          "isFreeSpin": false,
+          "source": "math",
+          "stops": [
+            0,
+            45,
+            0,
+            24,
+            24
+          ]
+        },
+        {
+          "index": 1,
+          "type": "skyjumpBoardReveal",
+          "schemaVersion": 2,
+          "board": [
+            [
+              "L1",
+              "P3",
+              "M3",
+              "S",
+              "L1"
+            ],
+            [
+              "M2",
+              "L2",
+              "M1",
+              "L2",
+              "S"
+            ],
+            [
+              "M2",
+              "P3",
+              "P3",
+              "S",
+              "L2"
+            ],
+            [
+              "L3",
+              "M2",
+              "L2",
+              "L1",
+              "S"
+            ],
+            [
+              "M1",
+              "L2",
+              "L3",
+              "M2",
+              "S"
+            ]
+          ]
+        },
+        {
+          "index": 2,
+          "type": "skyjumpLineWins",
+          "schemaVersion": 2,
+          "wins": [],
+          "lineWinX": 0.0
+        },
+        {
+          "index": 3,
+          "type": "skyjumpScatterResult",
+          "schemaVersion": 2,
+          "positions": [
+            {
+              "reel": 0,
+              "row": 3
+            },
+            {
+              "reel": 1,
+              "row": 4
+            },
+            {
+              "reel": 2,
+              "row": 3
+            },
+            {
+              "reel": 3,
+              "row": 4
+            },
+            {
+              "reel": 4,
+              "row": 4
+            }
+          ],
+          "count": 5,
+          "perfectV": false,
+          "trigger": {
+            "tier": "WORLD_CUP",
+            "directTriggerType": "SCATTER_5_PLUS"
+          },
+          "fromBoard": "initialReveal"
+        },
+        {
+          "index": 4,
+          "type": "skyjumpResult",
+          "schemaVersion": 2,
+          "totalLineWinX": 0.0,
+          "totalFeatureWinX": 0.0,
+          "totalFeatureWinXRaw": 0.0,
+          "totalWinX": 0.0,
+          "totalWinXRaw": 0.0,
+          "amount": 0,
+          "latentTokenValueX": 0.0,
+          "tokenFloorTier": 1,
+          "capHit": false
+        },
+        {
+          "type": "skyjumpFreeSpinsStart",
+          "schemaVersion": 2,
+          "initialTier": "WORLD_CUP",
+          "spinsAwarded": 10,
+          "directTriggerType": "SCATTER_5_PLUS",
+          "triggeringScatterPositions": [
+            {
+              "reel": 0,
+              "row": 3
+            },
+            {
+              "reel": 1,
+              "row": 4
+            },
+            {
+              "reel": 2,
+              "row": 3
+            },
+            {
+              "reel": 3,
+              "row": 4
+            },
+            {
+              "reel": 4,
+              "row": 4
+            }
+          ],
+          "triggerSpinWinX": 0.0,
+          "wagerCostMultiplier": 0,
+          "index": 5
+        },
+        {
+          "type": "skyjumpFreeSpinStart",
+          "schemaVersion": 2,
+          "spinIndex": 1,
+          "currentTier": "WORLD_CUP",
+          "spinsRemainingBefore": 10,
+          "index": 6
+        },
+        {
+          "type": "skyjumpBoardReveal",
+          "schemaVersion": 2,
+          "board": [
+            [
+              "L1",
+              "M3",
+              "L3",
+              "L1",
+              "M3"
+            ],
+            [
+              "P3",
+              "L1",
+              "M2",
+              "L1",
+              "C"
+            ],
+            [
+              "L2",
+              "L2",
+              "SPECIAL_WORLD_RECORD",
+              "M2",
+              "M2"
+            ],
+            [
+              "L1",
+              "L1",
+              "L2",
+              "M1",
+              "C"
+            ],
+            [
+              "L1",
+              "M3",
+              "L1",
+              "L2",
+              "M3"
+            ]
+          ],
+          "isFreeSpin": true,
+          "index": 7
+        },
+        {
+          "type": "skyjumpScatterResult",
+          "schemaVersion": 2,
+          "positions": [],
+          "count": 0,
+          "perfectV": false,
+          "trigger": null,
+          "fromBoard": "initialReveal",
+          "index": 8
+        },
+        {
+          "type": "skyjumpWorldRecord",
+          "schemaVersion": 2,
+          "position": {
+            "reel": 2,
+            "row": 2
+          },
+          "bonusTier": "WORLD_CUP",
+          "freeSpinIndex": 1,
+          "accruedRoundWinXBefore": 0.0,
+          "worldRecordIncrementX": 50000.0,
+          "maxWinX": 50000.0,
+          "finalRoundWinX": 50000.0,
+          "terminated": true,
+          "remainingFreeSpinsCancelled": 9,
+          "pendingRejumpsCancelled": true,
+          "tierIntensity": 6.0,
+          "symbolId": "SPECIAL_WORLD_RECORD",
+          "candidateOrigin": "H2",
+          "index": 9
+        },
+        {
+          "type": "skyjumpCapReached",
+          "schemaVersion": 2,
+          "rawTotalWinX": 50000.0,
+          "cappedTotalWinX": 50000.0,
+          "capDragX": 0.0,
+          "maxWinX": 50000,
+          "terminated": true,
+          "reason": "WORLD_RECORD",
+          "index": 10
+        },
+        {
+          "type": "skyjumpFreeSpinEnd",
+          "schemaVersion": 2,
+          "spinIndex": 1,
+          "spinWinX": 50000.0,
+          "spinWinXRaw": 50000.0,
+          "bonusWinRunningX": 50000.0,
+          "spinsRemainingAfter": 0,
+          "currentTier": "WORLD_CUP",
+          "index": 11
+        },
+        {
+          "type": "skyjumpFreeSpinState",
+          "schemaVersion": 2,
+          "bonusActive": true,
+          "bonusTier": "WORLD_CUP",
+          "freeSpinsInitial": 10,
+          "freeSpinsRemaining": 0,
+          "freeSpinsPlayed": 1,
+          "totalFreeSpinsAwarded": 10,
+          "upgradeCount": 0,
+          "retriggerCount": 0,
+          "tokenFloorTier": 1,
+          "persistentMysteryTargets": [],
+          "guaranteedGateUsed": false,
+          "coachGuaranteeState": {},
+          "bonusWinXRaw": 50000.0,
+          "bonusWinXCapped": 50000.0,
+          "triggerSpinWinX": 0.0,
+          "roundWinXRaw": 50000.0,
+          "roundWinXCapped": 50000.0,
+          "maxWinReached": true,
+          "pendingTierUpgrade": null,
+          "flightMultiplierRunUp": 1.0,
+          "flightMultiplierTakeoff": 1.0,
+          "flightMultiplierFlight": 1.0,
+          "flightMultiplier": {
+            "runUp": {
+              "value": 1,
+              "charge": 0
+            },
+            "takeoff": {
+              "value": 1,
+              "charge": 0
+            },
+            "flight": {
+              "value": 1,
+              "charge": 0
+            }
+          },
+          "windKeysCollected": 0,
+          "rejumpsThisBonus": 0,
+          "featureBatchIndex": 0,
+          "rejumpState": null,
+          "globalFlightMultiplier": 1,
+          "index": 12
+        },
+        {
+          "type": "setTotalWin",
+          "amount": 5000000,
+          "index": 13
+        },
+        {
+          "type": "skyjumpFreeSpinsEnd",
+          "schemaVersion": 2,
+          "totalSpinsPlayed": 1,
+          "finalTier": "WORLD_CUP",
+          "bonusWinX": 50000.0,
+          "bonusWinXRaw": 50000.0,
+          "triggerSpinWinX": 0.0,
+          "roundWinXRaw": 50000.0,
+          "roundWinXCapped": 50000.0,
+          "upgradeCount": 0,
+          "retriggerCount": 0,
+          "maxWinReached": true,
+          "tokenFloorTier": 1,
+          "persistentMysteryTargets": [],
+          "guaranteedGateUsed": false,
+          "index": 14
+        },
+        {
+          "type": "setTotalWin",
+          "amount": 5000000,
+          "index": 15
+        },
+        {
+          "type": "finalWin",
+          "amount": 5000000,
+          "index": 16
+        }
+      ]
+    },
+    {
+      "id": "04",
+      "title": "Perfect V WR",
+      "resumeIndex": null,
+      "flags": {
+        "tier": "PERFECT_V"
+      },
+      "eventCount": 17,
+      "wrEventIndex": 9,
+      "wrPosition": {
+        "reel": 2,
+        "row": 2
+      },
+      "roundWinXCapped": 50000.0,
+      "maxWinReached": true,
+      "events": [
+        {
+          "index": 0,
+          "type": "skyjumpSpinStart",
+          "schemaVersion": 2,
+          "mode": "BASE",
+          "isFreeSpin": false,
+          "source": "math",
+          "stops": [
+            3,
+            48,
+            1,
+            27,
+            28
+          ]
+        },
+        {
+          "index": 1,
+          "type": "skyjumpBoardReveal",
+          "schemaVersion": 2,
+          "board": [
+            [
+              "S",
+              "L1",
+              "M3",
+              "L3",
+              "L1"
+            ],
+            [
+              "L2",
+              "S",
+              "L3",
+              "M1",
+              "P3"
+            ],
+            [
+              "P3",
+              "P3",
+              "S",
+              "L2",
+              "L2"
+            ],
+            [
+              "L1",
+              "S",
+              "L2",
+              "L1",
+              "L2"
+            ],
+            [
+              "S",
+              "L2",
+              "L3",
+              "M3",
+              "M1"
+            ]
+          ]
+        },
+        {
+          "index": 2,
+          "type": "skyjumpLineWins",
+          "schemaVersion": 2,
+          "wins": [],
+          "lineWinX": 0.0
+        },
+        {
+          "index": 3,
+          "type": "skyjumpScatterResult",
+          "schemaVersion": 2,
+          "positions": [
+            {
+              "reel": 0,
+              "row": 0
+            },
+            {
+              "reel": 1,
+              "row": 1
+            },
+            {
+              "reel": 2,
+              "row": 2
+            },
+            {
+              "reel": 3,
+              "row": 1
+            },
+            {
+              "reel": 4,
+              "row": 0
+            }
+          ],
+          "count": 5,
+          "perfectV": true,
+          "trigger": {
+            "tier": "PERFECT_V",
+            "directTriggerType": "PERFECT_V"
+          },
+          "fromBoard": "initialReveal"
+        },
+        {
+          "index": 4,
+          "type": "skyjumpResult",
+          "schemaVersion": 2,
+          "totalLineWinX": 0.0,
+          "totalFeatureWinX": 0.0,
+          "totalFeatureWinXRaw": 0.0,
+          "totalWinX": 0.0,
+          "totalWinXRaw": 0.0,
+          "amount": 0,
+          "latentTokenValueX": 0.0,
+          "tokenFloorTier": 1,
+          "capHit": false
+        },
+        {
+          "type": "skyjumpFreeSpinsStart",
+          "schemaVersion": 2,
+          "initialTier": "PERFECT_V",
+          "spinsAwarded": 10,
+          "directTriggerType": "PERFECT_V",
+          "triggeringScatterPositions": [
+            {
+              "reel": 0,
+              "row": 0
+            },
+            {
+              "reel": 1,
+              "row": 1
+            },
+            {
+              "reel": 2,
+              "row": 2
+            },
+            {
+              "reel": 3,
+              "row": 1
+            },
+            {
+              "reel": 4,
+              "row": 0
+            }
+          ],
+          "triggerSpinWinX": 0.0,
+          "wagerCostMultiplier": 0,
+          "index": 5
+        },
+        {
+          "type": "skyjumpFreeSpinStart",
+          "schemaVersion": 2,
+          "spinIndex": 1,
+          "currentTier": "PERFECT_V",
+          "spinsRemainingBefore": 10,
+          "index": 6
+        },
+        {
+          "type": "skyjumpBoardReveal",
+          "schemaVersion": 2,
+          "board": [
+            [
+              "L1",
+              "M3",
+              "L3",
+              "L1",
+              "M3"
+            ],
+            [
+              "P3",
+              "L1",
+              "M2",
+              "L1",
+              "C"
+            ],
+            [
+              "L2",
+              "L2",
+              "SPECIAL_WORLD_RECORD",
+              "M2",
+              "M2"
+            ],
+            [
+              "L1",
+              "L1",
+              "L2",
+              "M1",
+              "C"
+            ],
+            [
+              "L1",
+              "M3",
+              "L1",
+              "L2",
+              "M3"
+            ]
+          ],
+          "isFreeSpin": true,
+          "index": 7
+        },
+        {
+          "type": "skyjumpScatterResult",
+          "schemaVersion": 2,
+          "positions": [],
+          "count": 0,
+          "perfectV": false,
+          "trigger": null,
+          "fromBoard": "initialReveal",
+          "index": 8
+        },
+        {
+          "type": "skyjumpWorldRecord",
+          "schemaVersion": 2,
+          "position": {
+            "reel": 2,
+            "row": 2
+          },
+          "bonusTier": "PERFECT_V",
+          "freeSpinIndex": 1,
+          "accruedRoundWinXBefore": 0.0,
+          "worldRecordIncrementX": 50000.0,
+          "maxWinX": 50000.0,
+          "finalRoundWinX": 50000.0,
+          "terminated": true,
+          "remainingFreeSpinsCancelled": 9,
+          "pendingRejumpsCancelled": true,
+          "tierIntensity": 12.0,
+          "symbolId": "SPECIAL_WORLD_RECORD",
+          "candidateOrigin": "H2",
+          "index": 9
+        },
+        {
+          "type": "skyjumpCapReached",
+          "schemaVersion": 2,
+          "rawTotalWinX": 50000.0,
+          "cappedTotalWinX": 50000.0,
+          "capDragX": 0.0,
+          "maxWinX": 50000,
+          "terminated": true,
+          "reason": "WORLD_RECORD",
+          "index": 10
+        },
+        {
+          "type": "skyjumpFreeSpinEnd",
+          "schemaVersion": 2,
+          "spinIndex": 1,
+          "spinWinX": 50000.0,
+          "spinWinXRaw": 50000.0,
+          "bonusWinRunningX": 50000.0,
+          "spinsRemainingAfter": 0,
+          "currentTier": "PERFECT_V",
+          "index": 11
+        },
+        {
+          "type": "skyjumpFreeSpinState",
+          "schemaVersion": 2,
+          "bonusActive": true,
+          "bonusTier": "PERFECT_V",
+          "freeSpinsInitial": 10,
+          "freeSpinsRemaining": 0,
+          "freeSpinsPlayed": 1,
+          "totalFreeSpinsAwarded": 10,
+          "upgradeCount": 0,
+          "retriggerCount": 0,
+          "tokenFloorTier": 1,
+          "persistentMysteryTargets": [],
+          "guaranteedGateUsed": false,
+          "coachGuaranteeState": {},
+          "bonusWinXRaw": 50000.0,
+          "bonusWinXCapped": 50000.0,
+          "triggerSpinWinX": 0.0,
+          "roundWinXRaw": 50000.0,
+          "roundWinXCapped": 50000.0,
+          "maxWinReached": true,
+          "pendingTierUpgrade": null,
+          "flightMultiplierRunUp": 1.0,
+          "flightMultiplierTakeoff": 1.0,
+          "flightMultiplierFlight": 1.0,
+          "flightMultiplier": {
+            "runUp": {
+              "value": 1,
+              "charge": 0
+            },
+            "takeoff": {
+              "value": 1,
+              "charge": 0
+            },
+            "flight": {
+              "value": 1,
+              "charge": 0
+            }
+          },
+          "windKeysCollected": 0,
+          "rejumpsThisBonus": 0,
+          "featureBatchIndex": 0,
+          "rejumpState": null,
+          "globalFlightMultiplier": 1,
+          "index": 12
+        },
+        {
+          "type": "setTotalWin",
+          "amount": 5000000,
+          "index": 13
+        },
+        {
+          "type": "skyjumpFreeSpinsEnd",
+          "schemaVersion": 2,
+          "totalSpinsPlayed": 1,
+          "finalTier": "PERFECT_V",
+          "bonusWinX": 50000.0,
+          "bonusWinXRaw": 50000.0,
+          "triggerSpinWinX": 0.0,
+          "roundWinXRaw": 50000.0,
+          "roundWinXCapped": 50000.0,
+          "upgradeCount": 0,
+          "retriggerCount": 0,
+          "maxWinReached": true,
+          "tokenFloorTier": 1,
+          "persistentMysteryTargets": [],
+          "guaranteedGateUsed": false,
+          "index": 14
+        },
+        {
+          "type": "setTotalWin",
+          "amount": 5000000,
+          "index": 15
+        },
+        {
+          "type": "finalWin",
+          "amount": 5000000,
+          "index": 16
+        }
+      ]
+    },
+    {
+      "id": "05",
+      "title": "center cell non-Scatter",
+      "resumeIndex": null,
+      "flags": {
+        "expectCenter": true
+      },
+      "eventCount": 22,
+      "wrEventIndex": 14,
+      "wrPosition": {
+        "reel": 2,
+        "row": 2
+      },
+      "roundWinXCapped": 50000.0,
+      "maxWinReached": true,
+      "events": [
+        {
+          "index": 0,
+          "type": "skyjumpSpinStart",
+          "schemaVersion": 2,
+          "mode": "BASE",
+          "isFreeSpin": false,
+          "source": "math",
+          "stops": [
+            0,
+            45,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "index": 1,
+          "type": "skyjumpBoardReveal",
+          "schemaVersion": 2,
+          "board": [
+            [
+              "L1",
+              "P3",
+              "M3",
+              "S",
+              "L1"
+            ],
+            [
+              "M2",
+              "L2",
+              "M1",
+              "L2",
+              "S"
+            ],
+            [
+              "M2",
+              "P3",
+              "P3",
+              "S",
+              "L2"
+            ],
+            [
+              "L1",
+              "L1",
+              "L2",
+              "M1",
+              "C"
+            ],
+            [
+              "L1",
+              "M3",
+              "L1",
+              "L2",
+              "M3"
+            ]
+          ]
+        },
+        {
+          "index": 2,
+          "type": "skyjumpLineWins",
+          "schemaVersion": 2,
+          "wins": [],
+          "lineWinX": 0.0
+        },
+        {
+          "index": 3,
+          "type": "skyjumpScatterResult",
+          "schemaVersion": 2,
+          "positions": [
+            {
+              "reel": 0,
+              "row": 3
+            },
+            {
+              "reel": 1,
+              "row": 4
+            },
+            {
+              "reel": 2,
+              "row": 3
+            }
+          ],
+          "count": 3,
+          "perfectV": false,
+          "trigger": {
+            "tier": "LARGE_HILL",
+            "directTriggerType": "SCATTER_3"
+          },
+          "fromBoard": "initialReveal"
+        },
+        {
+          "index": 4,
+          "type": "skyjumpCoachSignal",
+          "schemaVersion": 2,
+          "coachPosition": {
+            "reel": 3,
+            "row": 4
+          },
+          "selectedSymbolId": "M3",
+          "selectedPositions": [
+            {
+              "reel": 0,
+              "row": 2
+            },
+            {
+              "reel": 4,
+              "row": 1
+            },
+            {
+              "reel": 4,
+              "row": 4
+            }
+          ],
+          "sequenceIndex": 0,
+          "noOp": false,
+          "reason": null
+        },
+        {
+          "index": 5,
+          "type": "skyjumpMysteryTransform",
+          "schemaVersion": 2,
+          "sourceSymbolId": "M3",
+          "positions": [
+            {
+              "reel": 0,
+              "row": 2
+            },
+            {
+              "reel": 4,
+              "row": 1
+            },
+            {
+              "reel": 4,
+              "row": 4
+            }
+          ],
+          "sequenceIndex": 0
+        },
+        {
+          "index": 6,
+          "type": "skyjumpMysteryResolve",
+          "schemaVersion": 2,
+          "position": {
+            "reel": 0,
+            "row": 2
+          },
+          "resultType": "FLIGHT_TOKEN",
+          "tokenTier": 1,
+          "tokenId": "T1",
+          "tokenName": "ROOKIE_TOKEN",
+          "tokenValueX": 1.0,
+          "faceValueX": 1.0,
+          "effectiveValueX": 1.0
+        },
+        {
+          "index": 7,
+          "type": "skyjumpMysteryResolve",
+          "schemaVersion": 2,
+          "position": {
+            "reel": 4,
+            "row": 1
+          },
+          "resultType": "FLIGHT_TOKEN",
+          "tokenTier": 1,
+          "tokenId": "T1",
+          "tokenName": "ROOKIE_TOKEN",
+          "tokenValueX": 3.0,
+          "faceValueX": 3.0,
+          "effectiveValueX": 3.0
+        },
+        {
+          "index": 8,
+          "type": "skyjumpMysteryResolve",
+          "schemaVersion": 2,
+          "position": {
+            "reel": 4,
+            "row": 4
+          },
+          "resultType": "FLIGHT_TOKEN",
+          "tokenTier": 1,
+          "tokenId": "T1",
+          "tokenName": "ROOKIE_TOKEN",
+          "tokenValueX": 1.0,
+          "faceValueX": 1.0,
+          "effectiveValueX": 1.0
+        },
+        {
+          "index": 9,
+          "type": "skyjumpResult",
+          "schemaVersion": 2,
+          "totalLineWinX": 0.0,
+          "totalFeatureWinX": 0.0,
+          "totalFeatureWinXRaw": 0.0,
+          "totalWinX": 0.0,
+          "totalWinXRaw": 0.0,
+          "amount": 0,
+          "latentTokenValueX": 5.0,
+          "tokenFloorTier": 1,
+          "capHit": false
+        },
+        {
+          "type": "skyjumpFreeSpinsStart",
+          "schemaVersion": 2,
+          "initialTier": "LARGE_HILL",
+          "spinsAwarded": 10,
+          "directTriggerType": "SCATTER_3",
+          "triggeringScatterPositions": [
+            {
+              "reel": 0,
+              "row": 3
+            },
+            {
+              "reel": 1,
+              "row": 4
+            },
+            {
+              "reel": 2,
+              "row": 3
+            }
+          ],
+          "triggerSpinWinX": 0.0,
+          "wagerCostMultiplier": 0,
+          "index": 10
+        },
+        {
+          "type": "skyjumpFreeSpinStart",
+          "schemaVersion": 2,
+          "spinIndex": 1,
+          "currentTier": "LARGE_HILL",
+          "spinsRemainingBefore": 10,
+          "index": 11
+        },
+        {
+          "type": "skyjumpBoardReveal",
+          "schemaVersion": 2,
+          "board": [
+            [
+              "L1",
+              "M3",
+              "L3",
+              "L1",
+              "M3"
+            ],
+            [
+              "P3",
+              "L1",
+              "M2",
+              "L1",
+              "C"
+            ],
+            [
+              "M2",
+              "P3",
+              "SPECIAL_WORLD_RECORD",
+              "S",
+              "L2"
+            ],
+            [
+              "L1",
+              "L1",
+              "L2",
+              "M1",
+              "C"
+            ],
+            [
+              "L1",
+              "M3",
+              "L1",
+              "L2",
+              "M3"
+            ]
+          ],
+          "isFreeSpin": true,
+          "index": 12
+        },
+        {
+          "type": "skyjumpScatterResult",
+          "schemaVersion": 2,
+          "positions": [
+            {
+              "reel": 2,
+              "row": 3
+            }
+          ],
+          "count": 1,
+          "perfectV": false,
+          "trigger": null,
+          "fromBoard": "initialReveal",
+          "index": 13
+        },
+        {
+          "type": "skyjumpWorldRecord",
+          "schemaVersion": 2,
+          "position": {
+            "reel": 2,
+            "row": 2
+          },
+          "bonusTier": "LARGE_HILL",
+          "freeSpinIndex": 1,
+          "accruedRoundWinXBefore": 0.0,
+          "worldRecordIncrementX": 50000.0,
+          "maxWinX": 50000.0,
+          "finalRoundWinX": 50000.0,
+          "terminated": true,
+          "remainingFreeSpinsCancelled": 9,
+          "pendingRejumpsCancelled": true,
+          "tierIntensity": 1.0,
+          "symbolId": "SPECIAL_WORLD_RECORD",
+          "candidateOrigin": "H2",
+          "index": 14
+        },
+        {
+          "type": "skyjumpCapReached",
+          "schemaVersion": 2,
+          "rawTotalWinX": 50000.0,
+          "cappedTotalWinX": 50000.0,
+          "capDragX": 0.0,
+          "maxWinX": 50000,
+          "terminated": true,
+          "reason": "WORLD_RECORD",
+          "index": 15
+        },
+        {
+          "type": "skyjumpFreeSpinEnd",
+          "schemaVersion": 2,
+          "spinIndex": 1,
+          "spinWinX": 50000.0,
+          "spinWinXRaw": 50000.0,
+          "bonusWinRunningX": 50000.0,
+          "spinsRemainingAfter": 0,
+          "currentTier": "LARGE_HILL",
+          "index": 16
+        },
+        {
+          "type": "skyjumpFreeSpinState",
+          "schemaVersion": 2,
+          "bonusActive": true,
+          "bonusTier": "LARGE_HILL",
+          "freeSpinsInitial": 10,
+          "freeSpinsRemaining": 0,
+          "freeSpinsPlayed": 1,
+          "totalFreeSpinsAwarded": 10,
+          "upgradeCount": 0,
+          "retriggerCount": 0,
+          "tokenFloorTier": 1,
+          "persistentMysteryTargets": [],
+          "guaranteedGateUsed": false,
+          "coachGuaranteeState": {},
+          "bonusWinXRaw": 50000.0,
+          "bonusWinXCapped": 50000.0,
+          "triggerSpinWinX": 0.0,
+          "roundWinXRaw": 50000.0,
+          "roundWinXCapped": 50000.0,
+          "maxWinReached": true,
+          "pendingTierUpgrade": null,
+          "flightMultiplierRunUp": 1.0,
+          "flightMultiplierTakeoff": 1.0,
+          "flightMultiplierFlight": 1.0,
+          "flightMultiplier": {
+            "runUp": {
+              "value": 1,
+              "charge": 0
+            },
+            "takeoff": {
+              "value": 1,
+              "charge": 0
+            },
+            "flight": {
+              "value": 1,
+              "charge": 0
+            }
+          },
+          "windKeysCollected": 0,
+          "rejumpsThisBonus": 0,
+          "featureBatchIndex": 0,
+          "rejumpState": null,
+          "globalFlightMultiplier": 1,
+          "index": 17
+        },
+        {
+          "type": "setTotalWin",
+          "amount": 5000000,
+          "index": 18
+        },
+        {
+          "type": "skyjumpFreeSpinsEnd",
+          "schemaVersion": 2,
+          "totalSpinsPlayed": 1,
+          "finalTier": "LARGE_HILL",
+          "bonusWinX": 50000.0,
+          "bonusWinXRaw": 50000.0,
+          "triggerSpinWinX": 0.0,
+          "roundWinXRaw": 50000.0,
+          "roundWinXCapped": 50000.0,
+          "upgradeCount": 0,
+          "retriggerCount": 0,
+          "maxWinReached": true,
+          "tokenFloorTier": 1,
+          "persistentMysteryTargets": [],
+          "guaranteedGateUsed": false,
+          "index": 19
+        },
+        {
+          "type": "setTotalWin",
+          "amount": 5000000,
+          "index": 20
+        },
+        {
+          "type": "finalWin",
+          "amount": 5000000,
+          "index": 21
+        }
+      ]
+    },
+    {
+      "id": "06",
+      "title": "center is Scatter -> fallback position",
+      "resumeIndex": null,
+      "flags": {
+        "expectFallback": true,
+        "position": {
+          "reel": 0,
+          "row": 0
+        },
+        "unitFallbackPos": {
+          "reel": 0,
+          "row": 0
+        }
+      },
+      "eventCount": 22,
+      "wrEventIndex": 14,
+      "wrPosition": {
+        "reel": 0,
+        "row": 0
+      },
+      "roundWinXCapped": 50000.0,
+      "maxWinReached": true,
+      "events": [
+        {
+          "index": 0,
+          "type": "skyjumpSpinStart",
+          "schemaVersion": 2,
+          "mode": "BASE",
+          "isFreeSpin": false,
+          "source": "math",
+          "stops": [
+            0,
+            45,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "index": 1,
+          "type": "skyjumpBoardReveal",
+          "schemaVersion": 2,
+          "board": [
+            [
+              "L1",
+              "P3",
+              "M3",
+              "S",
+              "L1"
+            ],
+            [
+              "M2",
+              "L2",
+              "M1",
+              "L2",
+              "S"
+            ],
+            [
+              "M2",
+              "P3",
+              "P3",
+              "S",
+              "L2"
+            ],
+            [
+              "L1",
+              "L1",
+              "L2",
+              "M1",
+              "C"
+            ],
+            [
+              "L1",
+              "M3",
+              "L1",
+              "L2",
+              "M3"
+            ]
+          ]
+        },
+        {
+          "index": 2,
+          "type": "skyjumpLineWins",
+          "schemaVersion": 2,
+          "wins": [],
+          "lineWinX": 0.0
+        },
+        {
+          "index": 3,
+          "type": "skyjumpScatterResult",
+          "schemaVersion": 2,
+          "positions": [
+            {
+              "reel": 0,
+              "row": 3
+            },
+            {
+              "reel": 1,
+              "row": 4
+            },
+            {
+              "reel": 2,
+              "row": 3
+            }
+          ],
+          "count": 3,
+          "perfectV": false,
+          "trigger": {
+            "tier": "LARGE_HILL",
+            "directTriggerType": "SCATTER_3"
+          },
+          "fromBoard": "initialReveal"
+        },
+        {
+          "index": 4,
+          "type": "skyjumpCoachSignal",
+          "schemaVersion": 2,
+          "coachPosition": {
+            "reel": 3,
+            "row": 4
+          },
+          "selectedSymbolId": "P3",
+          "selectedPositions": [
+            {
+              "reel": 0,
+              "row": 1
+            },
+            {
+              "reel": 2,
+              "row": 1
+            },
+            {
+              "reel": 2,
+              "row": 2
+            }
+          ],
+          "sequenceIndex": 0,
+          "noOp": false,
+          "reason": null
+        },
+        {
+          "index": 5,
+          "type": "skyjumpMysteryTransform",
+          "schemaVersion": 2,
+          "sourceSymbolId": "P3",
+          "positions": [
+            {
+              "reel": 0,
+              "row": 1
+            },
+            {
+              "reel": 2,
+              "row": 1
+            },
+            {
+              "reel": 2,
+              "row": 2
+            }
+          ],
+          "sequenceIndex": 0
+        },
+        {
+          "index": 6,
+          "type": "skyjumpMysteryResolve",
+          "schemaVersion": 2,
+          "position": {
+            "reel": 0,
+            "row": 1
+          },
+          "resultType": "FLIGHT_TOKEN",
+          "tokenTier": 1,
+          "tokenId": "T1",
+          "tokenName": "ROOKIE_TOKEN",
+          "tokenValueX": 1.0,
+          "faceValueX": 1.0,
+          "effectiveValueX": 1.0
+        },
+        {
+          "index": 7,
+          "type": "skyjumpMysteryResolve",
+          "schemaVersion": 2,
+          "position": {
+            "reel": 2,
+            "row": 1
+          },
+          "resultType": "FLIGHT_TOKEN",
+          "tokenTier": 1,
+          "tokenId": "T1",
+          "tokenName": "ROOKIE_TOKEN",
+          "tokenValueX": 1.0,
+          "faceValueX": 1.0,
+          "effectiveValueX": 1.0
+        },
+        {
+          "index": 8,
+          "type": "skyjumpMysteryResolve",
+          "schemaVersion": 2,
+          "position": {
+            "reel": 2,
+            "row": 2
+          },
+          "resultType": "FLIGHT_TOKEN",
+          "tokenTier": 1,
+          "tokenId": "T1",
+          "tokenName": "ROOKIE_TOKEN",
+          "tokenValueX": 1.0,
+          "faceValueX": 1.0,
+          "effectiveValueX": 1.0
+        },
+        {
+          "index": 9,
+          "type": "skyjumpResult",
+          "schemaVersion": 2,
+          "totalLineWinX": 0.0,
+          "totalFeatureWinX": 0.0,
+          "totalFeatureWinXRaw": 0.0,
+          "totalWinX": 0.0,
+          "totalWinXRaw": 0.0,
+          "amount": 0,
+          "latentTokenValueX": 3.0,
+          "tokenFloorTier": 1,
+          "capHit": false
+        },
+        {
+          "type": "skyjumpFreeSpinsStart",
+          "schemaVersion": 2,
+          "initialTier": "LARGE_HILL",
+          "spinsAwarded": 10,
+          "directTriggerType": "SCATTER_3",
+          "triggeringScatterPositions": [
+            {
+              "reel": 0,
+              "row": 3
+            },
+            {
+              "reel": 1,
+              "row": 4
+            },
+            {
+              "reel": 2,
+              "row": 3
+            }
+          ],
+          "triggerSpinWinX": 0.0,
+          "wagerCostMultiplier": 0,
+          "index": 10
+        },
+        {
+          "type": "skyjumpFreeSpinStart",
+          "schemaVersion": 2,
+          "spinIndex": 1,
+          "currentTier": "LARGE_HILL",
+          "spinsRemainingBefore": 10,
+          "index": 11
+        },
+        {
+          "type": "skyjumpBoardReveal",
+          "schemaVersion": 2,
+          "board": [
+            [
+              "SPECIAL_WORLD_RECORD",
+              "M3",
+              "L3",
+              "L1",
+              "M3"
+            ],
+            [
+              "P3",
+              "L1",
+              "M2",
+              "L1",
+              "C"
+            ],
+            [
+              "P3",
+              "P3",
+              "S",
+              "L2",
+              "L2"
+            ],
+            [
+              "L1",
+              "L1",
+              "L2",
+              "M1",
+              "C"
+            ],
+            [
+              "L1",
+              "M3",
+              "L1",
+              "L2",
+              "M3"
+            ]
+          ],
+          "isFreeSpin": true,
+          "index": 12
+        },
+        {
+          "type": "skyjumpScatterResult",
+          "schemaVersion": 2,
+          "positions": [
+            {
+              "reel": 2,
+              "row": 2
+            }
+          ],
+          "count": 1,
+          "perfectV": false,
+          "trigger": null,
+          "fromBoard": "initialReveal",
+          "index": 13
+        },
+        {
+          "type": "skyjumpWorldRecord",
+          "schemaVersion": 2,
+          "position": {
+            "reel": 0,
+            "row": 0
+          },
+          "bonusTier": "LARGE_HILL",
+          "freeSpinIndex": 1,
+          "accruedRoundWinXBefore": 0.0,
+          "worldRecordIncrementX": 50000.0,
+          "maxWinX": 50000.0,
+          "finalRoundWinX": 50000.0,
+          "terminated": true,
+          "remainingFreeSpinsCancelled": 9,
+          "pendingRejumpsCancelled": true,
+          "tierIntensity": 1.0,
+          "symbolId": "SPECIAL_WORLD_RECORD",
+          "candidateOrigin": "H2",
+          "index": 14
+        },
+        {
+          "type": "skyjumpCapReached",
+          "schemaVersion": 2,
+          "rawTotalWinX": 50000.0,
+          "cappedTotalWinX": 50000.0,
+          "capDragX": 0.0,
+          "maxWinX": 50000,
+          "terminated": true,
+          "reason": "WORLD_RECORD",
+          "index": 15
+        },
+        {
+          "type": "skyjumpFreeSpinEnd",
+          "schemaVersion": 2,
+          "spinIndex": 1,
+          "spinWinX": 50000.0,
+          "spinWinXRaw": 50000.0,
+          "bonusWinRunningX": 50000.0,
+          "spinsRemainingAfter": 0,
+          "currentTier": "LARGE_HILL",
+          "index": 16
+        },
+        {
+          "type": "skyjumpFreeSpinState",
+          "schemaVersion": 2,
+          "bonusActive": true,
+          "bonusTier": "LARGE_HILL",
+          "freeSpinsInitial": 10,
+          "freeSpinsRemaining": 0,
+          "freeSpinsPlayed": 1,
+          "totalFreeSpinsAwarded": 10,
+          "upgradeCount": 0,
+          "retriggerCount": 0,
+          "tokenFloorTier": 1,
+          "persistentMysteryTargets": [],
+          "guaranteedGateUsed": false,
+          "coachGuaranteeState": {},
+          "bonusWinXRaw": 50000.0,
+          "bonusWinXCapped": 50000.0,
+          "triggerSpinWinX": 0.0,
+          "roundWinXRaw": 50000.0,
+          "roundWinXCapped": 50000.0,
+          "maxWinReached": true,
+          "pendingTierUpgrade": null,
+          "flightMultiplierRunUp": 1.0,
+          "flightMultiplierTakeoff": 1.0,
+          "flightMultiplierFlight": 1.0,
+          "flightMultiplier": {
+            "runUp": {
+              "value": 1,
+              "charge": 0
+            },
+            "takeoff": {
+              "value": 1,
+              "charge": 0
+            },
+            "flight": {
+              "value": 1,
+              "charge": 0
+            }
+          },
+          "windKeysCollected": 0,
+          "rejumpsThisBonus": 0,
+          "featureBatchIndex": 0,
+          "rejumpState": null,
+          "globalFlightMultiplier": 1,
+          "index": 17
+        },
+        {
+          "type": "setTotalWin",
+          "amount": 5000000,
+          "index": 18
+        },
+        {
+          "type": "skyjumpFreeSpinsEnd",
+          "schemaVersion": 2,
+          "totalSpinsPlayed": 1,
+          "finalTier": "LARGE_HILL",
+          "bonusWinX": 50000.0,
+          "bonusWinXRaw": 50000.0,
+          "triggerSpinWinX": 0.0,
+          "roundWinXRaw": 50000.0,
+          "roundWinXCapped": 50000.0,
+          "upgradeCount": 0,
+          "retriggerCount": 0,
+          "maxWinReached": true,
+          "tokenFloorTier": 1,
+          "persistentMysteryTargets": [],
+          "guaranteedGateUsed": false,
+          "index": 19
+        },
+        {
+          "type": "setTotalWin",
+          "amount": 5000000,
+          "index": 20
+        },
+        {
+          "type": "finalWin",
+          "amount": 5000000,
+          "index": 21
+        }
+      ]
+    },
+    {
+      "id": "07",
+      "title": "WR after accrued bonus win",
+      "resumeIndex": null,
+      "flags": {
+        "prior": 120.0
+      },
+      "eventCount": 17,
+      "wrEventIndex": 9,
+      "wrPosition": {
+        "reel": 2,
+        "row": 2
+      },
+      "roundWinXCapped": 50000.0,
+      "maxWinReached": true,
+      "events": [
+        {
+          "index": 0,
+          "type": "skyjumpSpinStart",
+          "schemaVersion": 2,
+          "mode": "BASE",
+          "isFreeSpin": false,
+          "source": "math",
+          "stops": [
+            0,
+            45,
+            0,
+            24,
+            0
+          ]
+        },
+        {
+          "index": 1,
+          "type": "skyjumpBoardReveal",
+          "schemaVersion": 2,
+          "board": [
+            [
+              "L1",
+              "P3",
+              "M3",
+              "S",
+              "L1"
+            ],
+            [
+              "M2",
+              "L2",
+              "M1",
+              "L2",
+              "S"
+            ],
+            [
+              "M2",
+              "P3",
+              "P3",
+              "S",
+              "L2"
+            ],
+            [
+              "L3",
+              "M2",
+              "L2",
+              "L1",
+              "S"
+            ],
+            [
+              "L1",
+              "M3",
+              "L1",
+              "L2",
+              "M3"
+            ]
+          ]
+        },
+        {
+          "index": 2,
+          "type": "skyjumpLineWins",
+          "schemaVersion": 2,
+          "wins": [],
+          "lineWinX": 0.0
+        },
+        {
+          "index": 3,
+          "type": "skyjumpScatterResult",
+          "schemaVersion": 2,
+          "positions": [
+            {
+              "reel": 0,
+              "row": 3
+            },
+            {
+              "reel": 1,
+              "row": 4
+            },
+            {
+              "reel": 2,
+              "row": 3
+            },
+            {
+              "reel": 3,
+              "row": 4
+            }
+          ],
+          "count": 4,
+          "perfectV": false,
+          "trigger": {
+            "tier": "SKI_FLYING",
+            "directTriggerType": "SCATTER_4"
+          },
+          "fromBoard": "initialReveal"
+        },
+        {
+          "index": 4,
+          "type": "skyjumpResult",
+          "schemaVersion": 2,
+          "totalLineWinX": 0.0,
+          "totalFeatureWinX": 0.0,
+          "totalFeatureWinXRaw": 0.0,
+          "totalWinX": 120.0,
+          "totalWinXRaw": 120.0,
+          "amount": 12000,
+          "latentTokenValueX": 0.0,
+          "tokenFloorTier": 1,
+          "capHit": false,
+          "devSyntheticCapPrior": true
+        },
+        {
+          "type": "skyjumpFreeSpinsStart",
+          "schemaVersion": 2,
+          "initialTier": "SKI_FLYING",
+          "spinsAwarded": 10,
+          "directTriggerType": "SCATTER_4",
+          "triggeringScatterPositions": [
+            {
+              "reel": 0,
+              "row": 3
+            },
+            {
+              "reel": 1,
+              "row": 4
+            },
+            {
+              "reel": 2,
+              "row": 3
+            },
+            {
+              "reel": 3,
+              "row": 4
+            }
+          ],
+          "triggerSpinWinX": 120.0,
+          "wagerCostMultiplier": 0,
+          "index": 5
+        },
+        {
+          "type": "skyjumpFreeSpinStart",
+          "schemaVersion": 2,
+          "spinIndex": 1,
+          "currentTier": "SKI_FLYING",
+          "spinsRemainingBefore": 10,
+          "index": 6
+        },
+        {
+          "type": "skyjumpBoardReveal",
+          "schemaVersion": 2,
+          "board": [
+            [
+              "L1",
+              "M3",
+              "L3",
+              "L1",
+              "M3"
+            ],
+            [
+              "P3",
+              "L1",
+              "M2",
+              "L1",
+              "C"
+            ],
+            [
+              "L2",
+              "L2",
+              "SPECIAL_WORLD_RECORD",
+              "M2",
+              "M2"
+            ],
+            [
+              "L1",
+              "L1",
+              "L2",
+              "M1",
+              "C"
+            ],
+            [
+              "L1",
+              "M3",
+              "L1",
+              "L2",
+              "M3"
+            ]
+          ],
+          "isFreeSpin": true,
+          "index": 7
+        },
+        {
+          "type": "skyjumpScatterResult",
+          "schemaVersion": 2,
+          "positions": [],
+          "count": 0,
+          "perfectV": false,
+          "trigger": null,
+          "fromBoard": "initialReveal",
+          "index": 8
+        },
+        {
+          "type": "skyjumpWorldRecord",
+          "schemaVersion": 2,
+          "position": {
+            "reel": 2,
+            "row": 2
+          },
+          "bonusTier": "SKI_FLYING",
+          "freeSpinIndex": 1,
+          "accruedRoundWinXBefore": 120.0,
+          "worldRecordIncrementX": 49880.0,
+          "maxWinX": 50000.0,
+          "finalRoundWinX": 50000.0,
+          "terminated": true,
+          "remainingFreeSpinsCancelled": 9,
+          "pendingRejumpsCancelled": true,
+          "tierIntensity": 3.0,
+          "symbolId": "SPECIAL_WORLD_RECORD",
+          "candidateOrigin": "H2",
+          "index": 9
+        },
+        {
+          "type": "skyjumpCapReached",
+          "schemaVersion": 2,
+          "rawTotalWinX": 50000.0,
+          "cappedTotalWinX": 50000.0,
+          "capDragX": 0.0,
+          "maxWinX": 50000,
+          "terminated": true,
+          "reason": "WORLD_RECORD",
+          "index": 10
+        },
+        {
+          "type": "skyjumpFreeSpinEnd",
+          "schemaVersion": 2,
+          "spinIndex": 1,
+          "spinWinX": 49880.0,
+          "spinWinXRaw": 49880.0,
+          "bonusWinRunningX": 49880.0,
+          "spinsRemainingAfter": 0,
+          "currentTier": "SKI_FLYING",
+          "index": 11
+        },
+        {
+          "type": "skyjumpFreeSpinState",
+          "schemaVersion": 2,
+          "bonusActive": true,
+          "bonusTier": "SKI_FLYING",
+          "freeSpinsInitial": 10,
+          "freeSpinsRemaining": 0,
+          "freeSpinsPlayed": 1,
+          "totalFreeSpinsAwarded": 10,
+          "upgradeCount": 0,
+          "retriggerCount": 0,
+          "tokenFloorTier": 1,
+          "persistentMysteryTargets": [],
+          "guaranteedGateUsed": false,
+          "coachGuaranteeState": {},
+          "bonusWinXRaw": 49880.0,
+          "bonusWinXCapped": 49880.0,
+          "triggerSpinWinX": 120.0,
+          "roundWinXRaw": 50000.0,
+          "roundWinXCapped": 50000.0,
+          "maxWinReached": true,
+          "pendingTierUpgrade": null,
+          "flightMultiplierRunUp": 1.0,
+          "flightMultiplierTakeoff": 1.0,
+          "flightMultiplierFlight": 1.0,
+          "flightMultiplier": {
+            "runUp": {
+              "value": 1,
+              "charge": 0
+            },
+            "takeoff": {
+              "value": 1,
+              "charge": 0
+            },
+            "flight": {
+              "value": 1,
+              "charge": 0
+            }
+          },
+          "windKeysCollected": 0,
+          "rejumpsThisBonus": 0,
+          "featureBatchIndex": 0,
+          "rejumpState": null,
+          "globalFlightMultiplier": 1,
+          "index": 12
+        },
+        {
+          "type": "setTotalWin",
+          "amount": 5000000,
+          "index": 13
+        },
+        {
+          "type": "skyjumpFreeSpinsEnd",
+          "schemaVersion": 2,
+          "totalSpinsPlayed": 1,
+          "finalTier": "SKI_FLYING",
+          "bonusWinX": 49880.0,
+          "bonusWinXRaw": 49880.0,
+          "triggerSpinWinX": 120.0,
+          "roundWinXRaw": 50000.0,
+          "roundWinXCapped": 50000.0,
+          "upgradeCount": 0,
+          "retriggerCount": 0,
+          "maxWinReached": true,
+          "tokenFloorTier": 1,
+          "persistentMysteryTargets": [],
+          "guaranteedGateUsed": false,
+          "index": 14
+        },
+        {
+          "type": "setTotalWin",
+          "amount": 5000000,
+          "index": 15
+        },
+        {
+          "type": "finalWin",
+          "amount": 5000000,
+          "index": 16
+        }
+      ]
+    },
+    {
+      "id": "08",
+      "title": "WR after large accrued feature win",
+      "resumeIndex": null,
+      "flags": {
+        "prior": 12500.0
+      },
+      "eventCount": 17,
+      "wrEventIndex": 9,
+      "wrPosition": {
+        "reel": 2,
+        "row": 2
+      },
+      "roundWinXCapped": 50000.0,
+      "maxWinReached": true,
+      "events": [
+        {
+          "index": 0,
+          "type": "skyjumpSpinStart",
+          "schemaVersion": 2,
+          "mode": "BASE",
+          "isFreeSpin": false,
+          "source": "math",
+          "stops": [
+            0,
+            45,
+            0,
+            24,
+            24
+          ]
+        },
+        {
+          "index": 1,
+          "type": "skyjumpBoardReveal",
+          "schemaVersion": 2,
+          "board": [
+            [
+              "L1",
+              "P3",
+              "M3",
+              "S",
+              "L1"
+            ],
+            [
+              "M2",
+              "L2",
+              "M1",
+              "L2",
+              "S"
+            ],
+            [
+              "M2",
+              "P3",
+              "P3",
+              "S",
+              "L2"
+            ],
+            [
+              "L3",
+              "M2",
+              "L2",
+              "L1",
+              "S"
+            ],
+            [
+              "M1",
+              "L2",
+              "L3",
+              "M2",
+              "S"
+            ]
+          ]
+        },
+        {
+          "index": 2,
+          "type": "skyjumpLineWins",
+          "schemaVersion": 2,
+          "wins": [],
+          "lineWinX": 0.0
+        },
+        {
+          "index": 3,
+          "type": "skyjumpScatterResult",
+          "schemaVersion": 2,
+          "positions": [
+            {
+              "reel": 0,
+              "row": 3
+            },
+            {
+              "reel": 1,
+              "row": 4
+            },
+            {
+              "reel": 2,
+              "row": 3
+            },
+            {
+              "reel": 3,
+              "row": 4
+            },
+            {
+              "reel": 4,
+              "row": 4
+            }
+          ],
+          "count": 5,
+          "perfectV": false,
+          "trigger": {
+            "tier": "WORLD_CUP",
+            "directTriggerType": "SCATTER_5_PLUS"
+          },
+          "fromBoard": "initialReveal"
+        },
+        {
+          "index": 4,
+          "type": "skyjumpResult",
+          "schemaVersion": 2,
+          "totalLineWinX": 0.0,
+          "totalFeatureWinX": 0.0,
+          "totalFeatureWinXRaw": 0.0,
+          "totalWinX": 12500.0,
+          "totalWinXRaw": 12500.0,
+          "amount": 1250000,
+          "latentTokenValueX": 0.0,
+          "tokenFloorTier": 1,
+          "capHit": false,
+          "devSyntheticCapPrior": true
+        },
+        {
+          "type": "skyjumpFreeSpinsStart",
+          "schemaVersion": 2,
+          "initialTier": "WORLD_CUP",
+          "spinsAwarded": 10,
+          "directTriggerType": "SCATTER_5_PLUS",
+          "triggeringScatterPositions": [
+            {
+              "reel": 0,
+              "row": 3
+            },
+            {
+              "reel": 1,
+              "row": 4
+            },
+            {
+              "reel": 2,
+              "row": 3
+            },
+            {
+              "reel": 3,
+              "row": 4
+            },
+            {
+              "reel": 4,
+              "row": 4
+            }
+          ],
+          "triggerSpinWinX": 12500.0,
+          "wagerCostMultiplier": 0,
+          "index": 5
+        },
+        {
+          "type": "skyjumpFreeSpinStart",
+          "schemaVersion": 2,
+          "spinIndex": 1,
+          "currentTier": "WORLD_CUP",
+          "spinsRemainingBefore": 10,
+          "index": 6
+        },
+        {
+          "type": "skyjumpBoardReveal",
+          "schemaVersion": 2,
+          "board": [
+            [
+              "L1",
+              "M3",
+              "L3",
+              "L1",
+              "M3"
+            ],
+            [
+              "P3",
+              "L1",
+              "M2",
+              "L1",
+              "C"
+            ],
+            [
+              "L2",
+              "L2",
+              "SPECIAL_WORLD_RECORD",
+              "M2",
+              "M2"
+            ],
+            [
+              "L1",
+              "L1",
+              "L2",
+              "M1",
+              "C"
+            ],
+            [
+              "L1",
+              "M3",
+              "L1",
+              "L2",
+              "M3"
+            ]
+          ],
+          "isFreeSpin": true,
+          "index": 7
+        },
+        {
+          "type": "skyjumpScatterResult",
+          "schemaVersion": 2,
+          "positions": [],
+          "count": 0,
+          "perfectV": false,
+          "trigger": null,
+          "fromBoard": "initialReveal",
+          "index": 8
+        },
+        {
+          "type": "skyjumpWorldRecord",
+          "schemaVersion": 2,
+          "position": {
+            "reel": 2,
+            "row": 2
+          },
+          "bonusTier": "WORLD_CUP",
+          "freeSpinIndex": 1,
+          "accruedRoundWinXBefore": 12500.0,
+          "worldRecordIncrementX": 37500.0,
+          "maxWinX": 50000.0,
+          "finalRoundWinX": 50000.0,
+          "terminated": true,
+          "remainingFreeSpinsCancelled": 9,
+          "pendingRejumpsCancelled": true,
+          "tierIntensity": 6.0,
+          "symbolId": "SPECIAL_WORLD_RECORD",
+          "candidateOrigin": "H2",
+          "index": 9
+        },
+        {
+          "type": "skyjumpCapReached",
+          "schemaVersion": 2,
+          "rawTotalWinX": 50000.0,
+          "cappedTotalWinX": 50000.0,
+          "capDragX": 0.0,
+          "maxWinX": 50000,
+          "terminated": true,
+          "reason": "WORLD_RECORD",
+          "index": 10
+        },
+        {
+          "type": "skyjumpFreeSpinEnd",
+          "schemaVersion": 2,
+          "spinIndex": 1,
+          "spinWinX": 37500.0,
+          "spinWinXRaw": 37500.0,
+          "bonusWinRunningX": 37500.0,
+          "spinsRemainingAfter": 0,
+          "currentTier": "WORLD_CUP",
+          "index": 11
+        },
+        {
+          "type": "skyjumpFreeSpinState",
+          "schemaVersion": 2,
+          "bonusActive": true,
+          "bonusTier": "WORLD_CUP",
+          "freeSpinsInitial": 10,
+          "freeSpinsRemaining": 0,
+          "freeSpinsPlayed": 1,
+          "totalFreeSpinsAwarded": 10,
+          "upgradeCount": 0,
+          "retriggerCount": 0,
+          "tokenFloorTier": 1,
+          "persistentMysteryTargets": [],
+          "guaranteedGateUsed": false,
+          "coachGuaranteeState": {},
+          "bonusWinXRaw": 37500.0,
+          "bonusWinXCapped": 37500.0,
+          "triggerSpinWinX": 12500.0,
+          "roundWinXRaw": 50000.0,
+          "roundWinXCapped": 50000.0,
+          "maxWinReached": true,
+          "pendingTierUpgrade": null,
+          "flightMultiplierRunUp": 1.0,
+          "flightMultiplierTakeoff": 1.0,
+          "flightMultiplierFlight": 1.0,
+          "flightMultiplier": {
+            "runUp": {
+              "value": 1,
+              "charge": 0
+            },
+            "takeoff": {
+              "value": 1,
+              "charge": 0
+            },
+            "flight": {
+              "value": 1,
+              "charge": 0
+            }
+          },
+          "windKeysCollected": 0,
+          "rejumpsThisBonus": 0,
+          "featureBatchIndex": 0,
+          "rejumpState": null,
+          "globalFlightMultiplier": 1,
+          "index": 12
+        },
+        {
+          "type": "setTotalWin",
+          "amount": 5000000,
+          "index": 13
+        },
+        {
+          "type": "skyjumpFreeSpinsEnd",
+          "schemaVersion": 2,
+          "totalSpinsPlayed": 1,
+          "finalTier": "WORLD_CUP",
+          "bonusWinX": 37500.0,
+          "bonusWinXRaw": 37500.0,
+          "triggerSpinWinX": 12500.0,
+          "roundWinXRaw": 50000.0,
+          "roundWinXCapped": 50000.0,
+          "upgradeCount": 0,
+          "retriggerCount": 0,
+          "maxWinReached": true,
+          "tokenFloorTier": 1,
+          "persistentMysteryTargets": [],
+          "guaranteedGateUsed": false,
+          "index": 14
+        },
+        {
+          "type": "setTotalWin",
+          "amount": 5000000,
+          "index": 15
+        },
+        {
+          "type": "finalWin",
+          "amount": 5000000,
+          "index": 16
+        }
+      ]
+    },
+    {
+      "id": "09",
+      "title": "WR when near cap",
+      "resumeIndex": null,
+      "flags": {
+        "prior": 49900.0
+      },
+      "eventCount": 17,
+      "wrEventIndex": 9,
+      "wrPosition": {
+        "reel": 2,
+        "row": 2
+      },
+      "roundWinXCapped": 50000.0,
+      "maxWinReached": true,
+      "events": [
+        {
+          "index": 0,
+          "type": "skyjumpSpinStart",
+          "schemaVersion": 2,
+          "mode": "BASE",
+          "isFreeSpin": false,
+          "source": "math",
+          "stops": [
+            0,
+            45,
+            0,
+            24,
+            24
+          ]
+        },
+        {
+          "index": 1,
+          "type": "skyjumpBoardReveal",
+          "schemaVersion": 2,
+          "board": [
+            [
+              "L1",
+              "P3",
+              "M3",
+              "S",
+              "L1"
+            ],
+            [
+              "M2",
+              "L2",
+              "M1",
+              "L2",
+              "S"
+            ],
+            [
+              "M2",
+              "P3",
+              "P3",
+              "S",
+              "L2"
+            ],
+            [
+              "L3",
+              "M2",
+              "L2",
+              "L1",
+              "S"
+            ],
+            [
+              "M1",
+              "L2",
+              "L3",
+              "M2",
+              "S"
+            ]
+          ]
+        },
+        {
+          "index": 2,
+          "type": "skyjumpLineWins",
+          "schemaVersion": 2,
+          "wins": [],
+          "lineWinX": 0.0
+        },
+        {
+          "index": 3,
+          "type": "skyjumpScatterResult",
+          "schemaVersion": 2,
+          "positions": [
+            {
+              "reel": 0,
+              "row": 3
+            },
+            {
+              "reel": 1,
+              "row": 4
+            },
+            {
+              "reel": 2,
+              "row": 3
+            },
+            {
+              "reel": 3,
+              "row": 4
+            },
+            {
+              "reel": 4,
+              "row": 4
+            }
+          ],
+          "count": 5,
+          "perfectV": false,
+          "trigger": {
+            "tier": "WORLD_CUP",
+            "directTriggerType": "SCATTER_5_PLUS"
+          },
+          "fromBoard": "initialReveal"
+        },
+        {
+          "index": 4,
+          "type": "skyjumpResult",
+          "schemaVersion": 2,
+          "totalLineWinX": 0.0,
+          "totalFeatureWinX": 0.0,
+          "totalFeatureWinXRaw": 0.0,
+          "totalWinX": 49900.0,
+          "totalWinXRaw": 49900.0,
+          "amount": 4990000,
+          "latentTokenValueX": 0.0,
+          "tokenFloorTier": 1,
+          "capHit": false,
+          "devSyntheticCapPrior": true
+        },
+        {
+          "type": "skyjumpFreeSpinsStart",
+          "schemaVersion": 2,
+          "initialTier": "WORLD_CUP",
+          "spinsAwarded": 10,
+          "directTriggerType": "SCATTER_5_PLUS",
+          "triggeringScatterPositions": [
+            {
+              "reel": 0,
+              "row": 3
+            },
+            {
+              "reel": 1,
+              "row": 4
+            },
+            {
+              "reel": 2,
+              "row": 3
+            },
+            {
+              "reel": 3,
+              "row": 4
+            },
+            {
+              "reel": 4,
+              "row": 4
+            }
+          ],
+          "triggerSpinWinX": 49900.0,
+          "wagerCostMultiplier": 0,
+          "index": 5
+        },
+        {
+          "type": "skyjumpFreeSpinStart",
+          "schemaVersion": 2,
+          "spinIndex": 1,
+          "currentTier": "WORLD_CUP",
+          "spinsRemainingBefore": 10,
+          "index": 6
+        },
+        {
+          "type": "skyjumpBoardReveal",
+          "schemaVersion": 2,
+          "board": [
+            [
+              "L1",
+              "M3",
+              "L3",
+              "L1",
+              "M3"
+            ],
+            [
+              "P3",
+              "L1",
+              "M2",
+              "L1",
+              "C"
+            ],
+            [
+              "L2",
+              "L2",
+              "SPECIAL_WORLD_RECORD",
+              "M2",
+              "M2"
+            ],
+            [
+              "L1",
+              "L1",
+              "L2",
+              "M1",
+              "C"
+            ],
+            [
+              "L1",
+              "M3",
+              "L1",
+              "L2",
+              "M3"
+            ]
+          ],
+          "isFreeSpin": true,
+          "index": 7
+        },
+        {
+          "type": "skyjumpScatterResult",
+          "schemaVersion": 2,
+          "positions": [],
+          "count": 0,
+          "perfectV": false,
+          "trigger": null,
+          "fromBoard": "initialReveal",
+          "index": 8
+        },
+        {
+          "type": "skyjumpWorldRecord",
+          "schemaVersion": 2,
+          "position": {
+            "reel": 2,
+            "row": 2
+          },
+          "bonusTier": "WORLD_CUP",
+          "freeSpinIndex": 1,
+          "accruedRoundWinXBefore": 49900.0,
+          "worldRecordIncrementX": 100.0,
+          "maxWinX": 50000.0,
+          "finalRoundWinX": 50000.0,
+          "terminated": true,
+          "remainingFreeSpinsCancelled": 9,
+          "pendingRejumpsCancelled": true,
+          "tierIntensity": 6.0,
+          "symbolId": "SPECIAL_WORLD_RECORD",
+          "candidateOrigin": "H2",
+          "index": 9
+        },
+        {
+          "type": "skyjumpCapReached",
+          "schemaVersion": 2,
+          "rawTotalWinX": 50000.0,
+          "cappedTotalWinX": 50000.0,
+          "capDragX": 0.0,
+          "maxWinX": 50000,
+          "terminated": true,
+          "reason": "WORLD_RECORD",
+          "index": 10
+        },
+        {
+          "type": "skyjumpFreeSpinEnd",
+          "schemaVersion": 2,
+          "spinIndex": 1,
+          "spinWinX": 100.0,
+          "spinWinXRaw": 100.0,
+          "bonusWinRunningX": 100.0,
+          "spinsRemainingAfter": 0,
+          "currentTier": "WORLD_CUP",
+          "index": 11
+        },
+        {
+          "type": "skyjumpFreeSpinState",
+          "schemaVersion": 2,
+          "bonusActive": true,
+          "bonusTier": "WORLD_CUP",
+          "freeSpinsInitial": 10,
+          "freeSpinsRemaining": 0,
+          "freeSpinsPlayed": 1,
+          "totalFreeSpinsAwarded": 10,
+          "upgradeCount": 0,
+          "retriggerCount": 0,
+          "tokenFloorTier": 1,
+          "persistentMysteryTargets": [],
+          "guaranteedGateUsed": false,
+          "coachGuaranteeState": {},
+          "bonusWinXRaw": 100.0,
+          "bonusWinXCapped": 100.0,
+          "triggerSpinWinX": 49900.0,
+          "roundWinXRaw": 50000.0,
+          "roundWinXCapped": 50000.0,
+          "maxWinReached": true,
+          "pendingTierUpgrade": null,
+          "flightMultiplierRunUp": 1.0,
+          "flightMultiplierTakeoff": 1.0,
+          "flightMultiplierFlight": 1.0,
+          "flightMultiplier": {
+            "runUp": {
+              "value": 1,
+              "charge": 0
+            },
+            "takeoff": {
+              "value": 1,
+              "charge": 0
+            },
+            "flight": {
+              "value": 1,
+              "charge": 0
+            }
+          },
+          "windKeysCollected": 0,
+          "rejumpsThisBonus": 0,
+          "featureBatchIndex": 0,
+          "rejumpState": null,
+          "globalFlightMultiplier": 1,
+          "index": 12
+        },
+        {
+          "type": "setTotalWin",
+          "amount": 5000000,
+          "index": 13
+        },
+        {
+          "type": "skyjumpFreeSpinsEnd",
+          "schemaVersion": 2,
+          "totalSpinsPlayed": 1,
+          "finalTier": "WORLD_CUP",
+          "bonusWinX": 100.0,
+          "bonusWinXRaw": 100.0,
+          "triggerSpinWinX": 49900.0,
+          "roundWinXRaw": 50000.0,
+          "roundWinXCapped": 50000.0,
+          "upgradeCount": 0,
+          "retriggerCount": 0,
+          "maxWinReached": true,
+          "tokenFloorTier": 1,
+          "persistentMysteryTargets": [],
+          "guaranteedGateUsed": false,
+          "index": 14
+        },
+        {
+          "type": "setTotalWin",
+          "amount": 5000000,
+          "index": 15
+        },
+        {
+          "type": "finalWin",
+          "amount": 5000000,
+          "index": 16
+        }
+      ]
+    },
+    {
+      "id": "10",
+      "title": "WR when already capped",
+      "resumeIndex": null,
+      "flags": {
+        "prior": 50000.0,
+        "expectZeroInc": true
+      },
+      "eventCount": 17,
+      "wrEventIndex": 9,
+      "wrPosition": {
+        "reel": 2,
+        "row": 2
+      },
+      "roundWinXCapped": 50000.0,
+      "maxWinReached": true,
+      "events": [
+        {
+          "index": 0,
+          "type": "skyjumpSpinStart",
+          "schemaVersion": 2,
+          "mode": "BASE",
+          "isFreeSpin": false,
+          "source": "math",
+          "stops": [
+            0,
+            45,
+            0,
+            24,
+            24
+          ]
+        },
+        {
+          "index": 1,
+          "type": "skyjumpBoardReveal",
+          "schemaVersion": 2,
+          "board": [
+            [
+              "L1",
+              "P3",
+              "M3",
+              "S",
+              "L1"
+            ],
+            [
+              "M2",
+              "L2",
+              "M1",
+              "L2",
+              "S"
+            ],
+            [
+              "M2",
+              "P3",
+              "P3",
+              "S",
+              "L2"
+            ],
+            [
+              "L3",
+              "M2",
+              "L2",
+              "L1",
+              "S"
+            ],
+            [
+              "M1",
+              "L2",
+              "L3",
+              "M2",
+              "S"
+            ]
+          ]
+        },
+        {
+          "index": 2,
+          "type": "skyjumpLineWins",
+          "schemaVersion": 2,
+          "wins": [],
+          "lineWinX": 0.0
+        },
+        {
+          "index": 3,
+          "type": "skyjumpScatterResult",
+          "schemaVersion": 2,
+          "positions": [
+            {
+              "reel": 0,
+              "row": 3
+            },
+            {
+              "reel": 1,
+              "row": 4
+            },
+            {
+              "reel": 2,
+              "row": 3
+            },
+            {
+              "reel": 3,
+              "row": 4
+            },
+            {
+              "reel": 4,
+              "row": 4
+            }
+          ],
+          "count": 5,
+          "perfectV": false,
+          "trigger": {
+            "tier": "WORLD_CUP",
+            "directTriggerType": "SCATTER_5_PLUS"
+          },
+          "fromBoard": "initialReveal"
+        },
+        {
+          "index": 4,
+          "type": "skyjumpResult",
+          "schemaVersion": 2,
+          "totalLineWinX": 0.0,
+          "totalFeatureWinX": 0.0,
+          "totalFeatureWinXRaw": 0.0,
+          "totalWinX": 50000.0,
+          "totalWinXRaw": 50000.0,
+          "amount": 5000000,
+          "latentTokenValueX": 0.0,
+          "tokenFloorTier": 1,
+          "capHit": false,
+          "devSyntheticCapPrior": true
+        },
+        {
+          "type": "skyjumpFreeSpinsStart",
+          "schemaVersion": 2,
+          "initialTier": "WORLD_CUP",
+          "spinsAwarded": 10,
+          "directTriggerType": "SCATTER_5_PLUS",
+          "triggeringScatterPositions": [
+            {
+              "reel": 0,
+              "row": 3
+            },
+            {
+              "reel": 1,
+              "row": 4
+            },
+            {
+              "reel": 2,
+              "row": 3
+            },
+            {
+              "reel": 3,
+              "row": 4
+            },
+            {
+              "reel": 4,
+              "row": 4
+            }
+          ],
+          "triggerSpinWinX": 50000.0,
+          "wagerCostMultiplier": 0,
+          "index": 5
+        },
+        {
+          "type": "skyjumpFreeSpinStart",
+          "schemaVersion": 2,
+          "spinIndex": 1,
+          "currentTier": "WORLD_CUP",
+          "spinsRemainingBefore": 10,
+          "index": 6
+        },
+        {
+          "type": "skyjumpBoardReveal",
+          "schemaVersion": 2,
+          "board": [
+            [
+              "L1",
+              "M3",
+              "L3",
+              "L1",
+              "M3"
+            ],
+            [
+              "P3",
+              "L1",
+              "M2",
+              "L1",
+              "C"
+            ],
+            [
+              "L2",
+              "L2",
+              "SPECIAL_WORLD_RECORD",
+              "M2",
+              "M2"
+            ],
+            [
+              "L1",
+              "L1",
+              "L2",
+              "M1",
+              "C"
+            ],
+            [
+              "L1",
+              "M3",
+              "L1",
+              "L2",
+              "M3"
+            ]
+          ],
+          "isFreeSpin": true,
+          "index": 7
+        },
+        {
+          "type": "skyjumpScatterResult",
+          "schemaVersion": 2,
+          "positions": [],
+          "count": 0,
+          "perfectV": false,
+          "trigger": null,
+          "fromBoard": "initialReveal",
+          "index": 8
+        },
+        {
+          "type": "skyjumpWorldRecord",
+          "schemaVersion": 2,
+          "position": {
+            "reel": 2,
+            "row": 2
+          },
+          "bonusTier": "WORLD_CUP",
+          "freeSpinIndex": 1,
+          "accruedRoundWinXBefore": 50000.0,
+          "worldRecordIncrementX": 0.0,
+          "maxWinX": 50000.0,
+          "finalRoundWinX": 50000.0,
+          "terminated": true,
+          "remainingFreeSpinsCancelled": 9,
+          "pendingRejumpsCancelled": true,
+          "tierIntensity": 6.0,
+          "symbolId": "SPECIAL_WORLD_RECORD",
+          "candidateOrigin": "H2",
+          "index": 9
+        },
+        {
+          "type": "skyjumpCapReached",
+          "schemaVersion": 2,
+          "rawTotalWinX": 50000.0,
+          "cappedTotalWinX": 50000.0,
+          "capDragX": 0.0,
+          "maxWinX": 50000,
+          "terminated": true,
+          "reason": "WORLD_RECORD",
+          "index": 10
+        },
+        {
+          "type": "skyjumpFreeSpinEnd",
+          "schemaVersion": 2,
+          "spinIndex": 1,
+          "spinWinX": 0.0,
+          "spinWinXRaw": 0.0,
+          "bonusWinRunningX": 0.0,
+          "spinsRemainingAfter": 0,
+          "currentTier": "WORLD_CUP",
+          "index": 11
+        },
+        {
+          "type": "skyjumpFreeSpinState",
+          "schemaVersion": 2,
+          "bonusActive": true,
+          "bonusTier": "WORLD_CUP",
+          "freeSpinsInitial": 10,
+          "freeSpinsRemaining": 0,
+          "freeSpinsPlayed": 1,
+          "totalFreeSpinsAwarded": 10,
+          "upgradeCount": 0,
+          "retriggerCount": 0,
+          "tokenFloorTier": 1,
+          "persistentMysteryTargets": [],
+          "guaranteedGateUsed": false,
+          "coachGuaranteeState": {},
+          "bonusWinXRaw": 0.0,
+          "bonusWinXCapped": 0.0,
+          "triggerSpinWinX": 50000.0,
+          "roundWinXRaw": 50000.0,
+          "roundWinXCapped": 50000.0,
+          "maxWinReached": true,
+          "pendingTierUpgrade": null,
+          "flightMultiplierRunUp": 1.0,
+          "flightMultiplierTakeoff": 1.0,
+          "flightMultiplierFlight": 1.0,
+          "flightMultiplier": {
+            "runUp": {
+              "value": 1,
+              "charge": 0
+            },
+            "takeoff": {
+              "value": 1,
+              "charge": 0
+            },
+            "flight": {
+              "value": 1,
+              "charge": 0
+            }
+          },
+          "windKeysCollected": 0,
+          "rejumpsThisBonus": 0,
+          "featureBatchIndex": 0,
+          "rejumpState": null,
+          "globalFlightMultiplier": 1,
+          "index": 12
+        },
+        {
+          "type": "setTotalWin",
+          "amount": 5000000,
+          "index": 13
+        },
+        {
+          "type": "skyjumpFreeSpinsEnd",
+          "schemaVersion": 2,
+          "totalSpinsPlayed": 1,
+          "finalTier": "WORLD_CUP",
+          "bonusWinX": 0.0,
+          "bonusWinXRaw": 0.0,
+          "triggerSpinWinX": 50000.0,
+          "roundWinXRaw": 50000.0,
+          "roundWinXCapped": 50000.0,
+          "upgradeCount": 0,
+          "retriggerCount": 0,
+          "maxWinReached": true,
+          "tokenFloorTier": 1,
+          "persistentMysteryTargets": [],
+          "guaranteedGateUsed": false,
+          "index": 14
+        },
+        {
+          "type": "setTotalWin",
+          "amount": 5000000,
+          "index": 15
+        },
+        {
+          "type": "finalWin",
+          "amount": 5000000,
+          "index": 16
+        }
+      ]
+    },
+    {
+      "id": "11",
+      "title": "WR with pending Rejump",
+      "resumeIndex": null,
+      "flags": {
+        "noRejumpAfterWr": true
+      },
+      "eventCount": 17,
+      "wrEventIndex": 9,
+      "wrPosition": {
+        "reel": 2,
+        "row": 2
+      },
+      "roundWinXCapped": 50000.0,
+      "maxWinReached": true,
+      "events": [
+        {
+          "index": 0,
+          "type": "skyjumpSpinStart",
+          "schemaVersion": 2,
+          "mode": "BASE",
+          "isFreeSpin": false,
+          "source": "math",
+          "stops": [
+            0,
+            45,
+            0,
+            24,
+            0
+          ]
+        },
+        {
+          "index": 1,
+          "type": "skyjumpBoardReveal",
+          "schemaVersion": 2,
+          "board": [
+            [
+              "L1",
+              "P3",
+              "M3",
+              "S",
+              "L1"
+            ],
+            [
+              "M2",
+              "L2",
+              "M1",
+              "L2",
+              "S"
+            ],
+            [
+              "M2",
+              "P3",
+              "P3",
+              "S",
+              "L2"
+            ],
+            [
+              "L3",
+              "M2",
+              "L2",
+              "L1",
+              "S"
+            ],
+            [
+              "L1",
+              "M3",
+              "L1",
+              "L2",
+              "M3"
+            ]
+          ]
+        },
+        {
+          "index": 2,
+          "type": "skyjumpLineWins",
+          "schemaVersion": 2,
+          "wins": [],
+          "lineWinX": 0.0
+        },
+        {
+          "index": 3,
+          "type": "skyjumpScatterResult",
+          "schemaVersion": 2,
+          "positions": [
+            {
+              "reel": 0,
+              "row": 3
+            },
+            {
+              "reel": 1,
+              "row": 4
+            },
+            {
+              "reel": 2,
+              "row": 3
+            },
+            {
+              "reel": 3,
+              "row": 4
+            }
+          ],
+          "count": 4,
+          "perfectV": false,
+          "trigger": {
+            "tier": "SKI_FLYING",
+            "directTriggerType": "SCATTER_4"
+          },
+          "fromBoard": "initialReveal"
+        },
+        {
+          "index": 4,
+          "type": "skyjumpResult",
+          "schemaVersion": 2,
+          "totalLineWinX": 0.0,
+          "totalFeatureWinX": 0.0,
+          "totalFeatureWinXRaw": 0.0,
+          "totalWinX": 0.0,
+          "totalWinXRaw": 0.0,
+          "amount": 0,
+          "latentTokenValueX": 0.0,
+          "tokenFloorTier": 1,
+          "capHit": false
+        },
+        {
+          "type": "skyjumpFreeSpinsStart",
+          "schemaVersion": 2,
+          "initialTier": "SKI_FLYING",
+          "spinsAwarded": 10,
+          "directTriggerType": "SCATTER_4",
+          "triggeringScatterPositions": [
+            {
+              "reel": 0,
+              "row": 3
+            },
+            {
+              "reel": 1,
+              "row": 4
+            },
+            {
+              "reel": 2,
+              "row": 3
+            },
+            {
+              "reel": 3,
+              "row": 4
+            }
+          ],
+          "triggerSpinWinX": 0.0,
+          "wagerCostMultiplier": 0,
+          "index": 5
+        },
+        {
+          "type": "skyjumpFreeSpinStart",
+          "schemaVersion": 2,
+          "spinIndex": 1,
+          "currentTier": "SKI_FLYING",
+          "spinsRemainingBefore": 10,
+          "index": 6
+        },
+        {
+          "type": "skyjumpBoardReveal",
+          "schemaVersion": 2,
+          "board": [
+            [
+              "L1",
+              "M3",
+              "L3",
+              "L1",
+              "M3"
+            ],
+            [
+              "P3",
+              "L1",
+              "M2",
+              "L1",
+              "C"
+            ],
+            [
+              "L2",
+              "L2",
+              "SPECIAL_WORLD_RECORD",
+              "M2",
+              "M2"
+            ],
+            [
+              "L1",
+              "L1",
+              "L2",
+              "M1",
+              "C"
+            ],
+            [
+              "L1",
+              "M3",
+              "L1",
+              "L2",
+              "M3"
+            ]
+          ],
+          "isFreeSpin": true,
+          "index": 7
+        },
+        {
+          "type": "skyjumpScatterResult",
+          "schemaVersion": 2,
+          "positions": [],
+          "count": 0,
+          "perfectV": false,
+          "trigger": null,
+          "fromBoard": "initialReveal",
+          "index": 8
+        },
+        {
+          "type": "skyjumpWorldRecord",
+          "schemaVersion": 2,
+          "position": {
+            "reel": 2,
+            "row": 2
+          },
+          "bonusTier": "SKI_FLYING",
+          "freeSpinIndex": 1,
+          "accruedRoundWinXBefore": 0.0,
+          "worldRecordIncrementX": 50000.0,
+          "maxWinX": 50000.0,
+          "finalRoundWinX": 50000.0,
+          "terminated": true,
+          "remainingFreeSpinsCancelled": 9,
+          "pendingRejumpsCancelled": true,
+          "tierIntensity": 3.0,
+          "symbolId": "SPECIAL_WORLD_RECORD",
+          "candidateOrigin": "H2",
+          "index": 9
+        },
+        {
+          "type": "skyjumpCapReached",
+          "schemaVersion": 2,
+          "rawTotalWinX": 50000.0,
+          "cappedTotalWinX": 50000.0,
+          "capDragX": 0.0,
+          "maxWinX": 50000,
+          "terminated": true,
+          "reason": "WORLD_RECORD",
+          "index": 10
+        },
+        {
+          "type": "skyjumpFreeSpinEnd",
+          "schemaVersion": 2,
+          "spinIndex": 1,
+          "spinWinX": 50000.0,
+          "spinWinXRaw": 50000.0,
+          "bonusWinRunningX": 50000.0,
+          "spinsRemainingAfter": 0,
+          "currentTier": "SKI_FLYING",
+          "index": 11
+        },
+        {
+          "type": "skyjumpFreeSpinState",
+          "schemaVersion": 2,
+          "bonusActive": true,
+          "bonusTier": "SKI_FLYING",
+          "freeSpinsInitial": 10,
+          "freeSpinsRemaining": 0,
+          "freeSpinsPlayed": 1,
+          "totalFreeSpinsAwarded": 10,
+          "upgradeCount": 0,
+          "retriggerCount": 0,
+          "tokenFloorTier": 1,
+          "persistentMysteryTargets": [],
+          "guaranteedGateUsed": false,
+          "coachGuaranteeState": {},
+          "bonusWinXRaw": 50000.0,
+          "bonusWinXCapped": 50000.0,
+          "triggerSpinWinX": 0.0,
+          "roundWinXRaw": 50000.0,
+          "roundWinXCapped": 50000.0,
+          "maxWinReached": true,
+          "pendingTierUpgrade": null,
+          "flightMultiplierRunUp": 1.0,
+          "flightMultiplierTakeoff": 1.0,
+          "flightMultiplierFlight": 1.0,
+          "flightMultiplier": {
+            "runUp": {
+              "value": 1,
+              "charge": 0
+            },
+            "takeoff": {
+              "value": 1,
+              "charge": 0
+            },
+            "flight": {
+              "value": 1,
+              "charge": 0
+            }
+          },
+          "windKeysCollected": 0,
+          "rejumpsThisBonus": 0,
+          "featureBatchIndex": 0,
+          "rejumpState": null,
+          "globalFlightMultiplier": 1,
+          "index": 12
+        },
+        {
+          "type": "setTotalWin",
+          "amount": 5000000,
+          "index": 13
+        },
+        {
+          "type": "skyjumpFreeSpinsEnd",
+          "schemaVersion": 2,
+          "totalSpinsPlayed": 1,
+          "finalTier": "SKI_FLYING",
+          "bonusWinX": 50000.0,
+          "bonusWinXRaw": 50000.0,
+          "triggerSpinWinX": 0.0,
+          "roundWinXRaw": 50000.0,
+          "roundWinXCapped": 50000.0,
+          "upgradeCount": 0,
+          "retriggerCount": 0,
+          "maxWinReached": true,
+          "tokenFloorTier": 1,
+          "persistentMysteryTargets": [],
+          "guaranteedGateUsed": false,
+          "index": 14
+        },
+        {
+          "type": "setTotalWin",
+          "amount": 5000000,
+          "index": 15
+        },
+        {
+          "type": "finalWin",
+          "amount": 5000000,
+          "index": 16
+        }
+      ]
+    },
+    {
+      "id": "12",
+      "title": "WR with Free Spins remaining",
+      "resumeIndex": null,
+      "flags": {
+        "cancelled": 9
+      },
+      "eventCount": 22,
+      "wrEventIndex": 14,
+      "wrPosition": {
+        "reel": 2,
+        "row": 2
+      },
+      "roundWinXCapped": 50000.0,
+      "maxWinReached": true,
+      "events": [
+        {
+          "index": 0,
+          "type": "skyjumpSpinStart",
+          "schemaVersion": 2,
+          "mode": "BASE",
+          "isFreeSpin": false,
+          "source": "math",
+          "stops": [
+            0,
+            45,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "index": 1,
+          "type": "skyjumpBoardReveal",
+          "schemaVersion": 2,
+          "board": [
+            [
+              "L1",
+              "P3",
+              "M3",
+              "S",
+              "L1"
+            ],
+            [
+              "M2",
+              "L2",
+              "M1",
+              "L2",
+              "S"
+            ],
+            [
+              "M2",
+              "P3",
+              "P3",
+              "S",
+              "L2"
+            ],
+            [
+              "L1",
+              "L1",
+              "L2",
+              "M1",
+              "C"
+            ],
+            [
+              "L1",
+              "M3",
+              "L1",
+              "L2",
+              "M3"
+            ]
+          ]
+        },
+        {
+          "index": 2,
+          "type": "skyjumpLineWins",
+          "schemaVersion": 2,
+          "wins": [],
+          "lineWinX": 0.0
+        },
+        {
+          "index": 3,
+          "type": "skyjumpScatterResult",
+          "schemaVersion": 2,
+          "positions": [
+            {
+              "reel": 0,
+              "row": 3
+            },
+            {
+              "reel": 1,
+              "row": 4
+            },
+            {
+              "reel": 2,
+              "row": 3
+            }
+          ],
+          "count": 3,
+          "perfectV": false,
+          "trigger": {
+            "tier": "LARGE_HILL",
+            "directTriggerType": "SCATTER_3"
+          },
+          "fromBoard": "initialReveal"
+        },
+        {
+          "index": 4,
+          "type": "skyjumpCoachSignal",
+          "schemaVersion": 2,
+          "coachPosition": {
+            "reel": 3,
+            "row": 4
+          },
+          "selectedSymbolId": "M3",
+          "selectedPositions": [
+            {
+              "reel": 0,
+              "row": 2
+            },
+            {
+              "reel": 4,
+              "row": 1
+            },
+            {
+              "reel": 4,
+              "row": 4
+            }
+          ],
+          "sequenceIndex": 0,
+          "noOp": false,
+          "reason": null
+        },
+        {
+          "index": 5,
+          "type": "skyjumpMysteryTransform",
+          "schemaVersion": 2,
+          "sourceSymbolId": "M3",
+          "positions": [
+            {
+              "reel": 0,
+              "row": 2
+            },
+            {
+              "reel": 4,
+              "row": 1
+            },
+            {
+              "reel": 4,
+              "row": 4
+            }
+          ],
+          "sequenceIndex": 0
+        },
+        {
+          "index": 6,
+          "type": "skyjumpMysteryResolve",
+          "schemaVersion": 2,
+          "position": {
+            "reel": 0,
+            "row": 2
+          },
+          "resultType": "FLIGHT_TOKEN",
+          "tokenTier": 1,
+          "tokenId": "T1",
+          "tokenName": "ROOKIE_TOKEN",
+          "tokenValueX": 1.0,
+          "faceValueX": 1.0,
+          "effectiveValueX": 1.0
+        },
+        {
+          "index": 7,
+          "type": "skyjumpMysteryResolve",
+          "schemaVersion": 2,
+          "position": {
+            "reel": 4,
+            "row": 1
+          },
+          "resultType": "FLIGHT_TOKEN",
+          "tokenTier": 1,
+          "tokenId": "T1",
+          "tokenName": "ROOKIE_TOKEN",
+          "tokenValueX": 2.0,
+          "faceValueX": 2.0,
+          "effectiveValueX": 2.0
+        },
+        {
+          "index": 8,
+          "type": "skyjumpMysteryResolve",
+          "schemaVersion": 2,
+          "position": {
+            "reel": 4,
+            "row": 4
+          },
+          "resultType": "FLIGHT_TOKEN",
+          "tokenTier": 1,
+          "tokenId": "T1",
+          "tokenName": "ROOKIE_TOKEN",
+          "tokenValueX": 1.0,
+          "faceValueX": 1.0,
+          "effectiveValueX": 1.0
+        },
+        {
+          "index": 9,
+          "type": "skyjumpResult",
+          "schemaVersion": 2,
+          "totalLineWinX": 0.0,
+          "totalFeatureWinX": 0.0,
+          "totalFeatureWinXRaw": 0.0,
+          "totalWinX": 0.0,
+          "totalWinXRaw": 0.0,
+          "amount": 0,
+          "latentTokenValueX": 4.0,
+          "tokenFloorTier": 1,
+          "capHit": false
+        },
+        {
+          "type": "skyjumpFreeSpinsStart",
+          "schemaVersion": 2,
+          "initialTier": "LARGE_HILL",
+          "spinsAwarded": 10,
+          "directTriggerType": "SCATTER_3",
+          "triggeringScatterPositions": [
+            {
+              "reel": 0,
+              "row": 3
+            },
+            {
+              "reel": 1,
+              "row": 4
+            },
+            {
+              "reel": 2,
+              "row": 3
+            }
+          ],
+          "triggerSpinWinX": 0.0,
+          "wagerCostMultiplier": 0,
+          "index": 10
+        },
+        {
+          "type": "skyjumpFreeSpinStart",
+          "schemaVersion": 2,
+          "spinIndex": 1,
+          "currentTier": "LARGE_HILL",
+          "spinsRemainingBefore": 10,
+          "index": 11
+        },
+        {
+          "type": "skyjumpBoardReveal",
+          "schemaVersion": 2,
+          "board": [
+            [
+              "L1",
+              "M3",
+              "L3",
+              "L1",
+              "M3"
+            ],
+            [
+              "P3",
+              "L1",
+              "M2",
+              "L1",
+              "C"
+            ],
+            [
+              "L2",
+              "L2",
+              "SPECIAL_WORLD_RECORD",
+              "M2",
+              "M2"
+            ],
+            [
+              "L1",
+              "L1",
+              "L2",
+              "M1",
+              "C"
+            ],
+            [
+              "L1",
+              "M3",
+              "L1",
+              "L2",
+              "M3"
+            ]
+          ],
+          "isFreeSpin": true,
+          "index": 12
+        },
+        {
+          "type": "skyjumpScatterResult",
+          "schemaVersion": 2,
+          "positions": [],
+          "count": 0,
+          "perfectV": false,
+          "trigger": null,
+          "fromBoard": "initialReveal",
+          "index": 13
+        },
+        {
+          "type": "skyjumpWorldRecord",
+          "schemaVersion": 2,
+          "position": {
+            "reel": 2,
+            "row": 2
+          },
+          "bonusTier": "LARGE_HILL",
+          "freeSpinIndex": 1,
+          "accruedRoundWinXBefore": 0.0,
+          "worldRecordIncrementX": 50000.0,
+          "maxWinX": 50000.0,
+          "finalRoundWinX": 50000.0,
+          "terminated": true,
+          "remainingFreeSpinsCancelled": 9,
+          "pendingRejumpsCancelled": true,
+          "tierIntensity": 1.0,
+          "symbolId": "SPECIAL_WORLD_RECORD",
+          "candidateOrigin": "H2",
+          "index": 14
+        },
+        {
+          "type": "skyjumpCapReached",
+          "schemaVersion": 2,
+          "rawTotalWinX": 50000.0,
+          "cappedTotalWinX": 50000.0,
+          "capDragX": 0.0,
+          "maxWinX": 50000,
+          "terminated": true,
+          "reason": "WORLD_RECORD",
+          "index": 15
+        },
+        {
+          "type": "skyjumpFreeSpinEnd",
+          "schemaVersion": 2,
+          "spinIndex": 1,
+          "spinWinX": 50000.0,
+          "spinWinXRaw": 50000.0,
+          "bonusWinRunningX": 50000.0,
+          "spinsRemainingAfter": 0,
+          "currentTier": "LARGE_HILL",
+          "index": 16
+        },
+        {
+          "type": "skyjumpFreeSpinState",
+          "schemaVersion": 2,
+          "bonusActive": true,
+          "bonusTier": "LARGE_HILL",
+          "freeSpinsInitial": 10,
+          "freeSpinsRemaining": 0,
+          "freeSpinsPlayed": 1,
+          "totalFreeSpinsAwarded": 10,
+          "upgradeCount": 0,
+          "retriggerCount": 0,
+          "tokenFloorTier": 1,
+          "persistentMysteryTargets": [],
+          "guaranteedGateUsed": false,
+          "coachGuaranteeState": {},
+          "bonusWinXRaw": 50000.0,
+          "bonusWinXCapped": 50000.0,
+          "triggerSpinWinX": 0.0,
+          "roundWinXRaw": 50000.0,
+          "roundWinXCapped": 50000.0,
+          "maxWinReached": true,
+          "pendingTierUpgrade": null,
+          "flightMultiplierRunUp": 1.0,
+          "flightMultiplierTakeoff": 1.0,
+          "flightMultiplierFlight": 1.0,
+          "flightMultiplier": {
+            "runUp": {
+              "value": 1,
+              "charge": 0
+            },
+            "takeoff": {
+              "value": 1,
+              "charge": 0
+            },
+            "flight": {
+              "value": 1,
+              "charge": 0
+            }
+          },
+          "windKeysCollected": 0,
+          "rejumpsThisBonus": 0,
+          "featureBatchIndex": 0,
+          "rejumpState": null,
+          "globalFlightMultiplier": 1,
+          "index": 17
+        },
+        {
+          "type": "setTotalWin",
+          "amount": 5000000,
+          "index": 18
+        },
+        {
+          "type": "skyjumpFreeSpinsEnd",
+          "schemaVersion": 2,
+          "totalSpinsPlayed": 1,
+          "finalTier": "LARGE_HILL",
+          "bonusWinX": 50000.0,
+          "bonusWinXRaw": 50000.0,
+          "triggerSpinWinX": 0.0,
+          "roundWinXRaw": 50000.0,
+          "roundWinXCapped": 50000.0,
+          "upgradeCount": 0,
+          "retriggerCount": 0,
+          "maxWinReached": true,
+          "tokenFloorTier": 1,
+          "persistentMysteryTargets": [],
+          "guaranteedGateUsed": false,
+          "index": 19
+        },
+        {
+          "type": "setTotalWin",
+          "amount": 5000000,
+          "index": 20
+        },
+        {
+          "type": "finalWin",
+          "amount": 5000000,
+          "index": 21
+        }
+      ]
+    },
+    {
+      "id": "13",
+      "title": "resume before WR",
+      "resumeIndex": 12,
+      "flags": {},
+      "eventCount": 21,
+      "wrEventIndex": 13,
+      "wrPosition": {
+        "reel": 2,
+        "row": 2
+      },
+      "roundWinXCapped": 50000.0,
+      "maxWinReached": true,
+      "events": [
+        {
+          "index": 0,
+          "type": "skyjumpSpinStart",
+          "schemaVersion": 2,
+          "mode": "BASE",
+          "isFreeSpin": false,
+          "source": "math",
+          "stops": [
+            0,
+            45,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "index": 1,
+          "type": "skyjumpBoardReveal",
+          "schemaVersion": 2,
+          "board": [
+            [
+              "L1",
+              "P3",
+              "M3",
+              "S",
+              "L1"
+            ],
+            [
+              "M2",
+              "L2",
+              "M1",
+              "L2",
+              "S"
+            ],
+            [
+              "M2",
+              "P3",
+              "P3",
+              "S",
+              "L2"
+            ],
+            [
+              "L1",
+              "L1",
+              "L2",
+              "M1",
+              "C"
+            ],
+            [
+              "L1",
+              "M3",
+              "L1",
+              "L2",
+              "M3"
+            ]
+          ]
+        },
+        {
+          "index": 2,
+          "type": "skyjumpLineWins",
+          "schemaVersion": 2,
+          "wins": [],
+          "lineWinX": 0.0
+        },
+        {
+          "index": 3,
+          "type": "skyjumpScatterResult",
+          "schemaVersion": 2,
+          "positions": [
+            {
+              "reel": 0,
+              "row": 3
+            },
+            {
+              "reel": 1,
+              "row": 4
+            },
+            {
+              "reel": 2,
+              "row": 3
+            }
+          ],
+          "count": 3,
+          "perfectV": false,
+          "trigger": {
+            "tier": "LARGE_HILL",
+            "directTriggerType": "SCATTER_3"
+          },
+          "fromBoard": "initialReveal"
+        },
+        {
+          "index": 4,
+          "type": "skyjumpCoachSignal",
+          "schemaVersion": 2,
+          "coachPosition": {
+            "reel": 3,
+            "row": 4
+          },
+          "selectedSymbolId": "M1",
+          "selectedPositions": [
+            {
+              "reel": 1,
+              "row": 2
+            },
+            {
+              "reel": 3,
+              "row": 3
+            }
+          ],
+          "sequenceIndex": 0,
+          "noOp": false,
+          "reason": null
+        },
+        {
+          "index": 5,
+          "type": "skyjumpMysteryTransform",
+          "schemaVersion": 2,
+          "sourceSymbolId": "M1",
+          "positions": [
+            {
+              "reel": 1,
+              "row": 2
+            },
+            {
+              "reel": 3,
+              "row": 3
+            }
+          ],
+          "sequenceIndex": 0
+        },
+        {
+          "index": 6,
+          "type": "skyjumpMysteryResolve",
+          "schemaVersion": 2,
+          "position": {
+            "reel": 1,
+            "row": 2
+          },
+          "resultType": "FLIGHT_TOKEN",
+          "tokenTier": 1,
+          "tokenId": "T1",
+          "tokenName": "ROOKIE_TOKEN",
+          "tokenValueX": 1.0,
+          "faceValueX": 1.0,
+          "effectiveValueX": 1.0
+        },
+        {
+          "index": 7,
+          "type": "skyjumpMysteryResolve",
+          "schemaVersion": 2,
+          "position": {
+            "reel": 3,
+            "row": 3
+          },
+          "resultType": "FLIGHT_TOKEN",
+          "tokenTier": 1,
+          "tokenId": "T1",
+          "tokenName": "ROOKIE_TOKEN",
+          "tokenValueX": 1.0,
+          "faceValueX": 1.0,
+          "effectiveValueX": 1.0
+        },
+        {
+          "index": 8,
+          "type": "skyjumpResult",
+          "schemaVersion": 2,
+          "totalLineWinX": 0.0,
+          "totalFeatureWinX": 0.0,
+          "totalFeatureWinXRaw": 0.0,
+          "totalWinX": 0.0,
+          "totalWinXRaw": 0.0,
+          "amount": 0,
+          "latentTokenValueX": 2.0,
+          "tokenFloorTier": 1,
+          "capHit": false
+        },
+        {
+          "type": "skyjumpFreeSpinsStart",
+          "schemaVersion": 2,
+          "initialTier": "LARGE_HILL",
+          "spinsAwarded": 10,
+          "directTriggerType": "SCATTER_3",
+          "triggeringScatterPositions": [
+            {
+              "reel": 0,
+              "row": 3
+            },
+            {
+              "reel": 1,
+              "row": 4
+            },
+            {
+              "reel": 2,
+              "row": 3
+            }
+          ],
+          "triggerSpinWinX": 0.0,
+          "wagerCostMultiplier": 0,
+          "index": 9
+        },
+        {
+          "type": "skyjumpFreeSpinStart",
+          "schemaVersion": 2,
+          "spinIndex": 1,
+          "currentTier": "LARGE_HILL",
+          "spinsRemainingBefore": 10,
+          "index": 10
+        },
+        {
+          "type": "skyjumpBoardReveal",
+          "schemaVersion": 2,
+          "board": [
+            [
+              "L1",
+              "M3",
+              "L3",
+              "L1",
+              "M3"
+            ],
+            [
+              "P3",
+              "L1",
+              "M2",
+              "L1",
+              "C"
+            ],
+            [
+              "L2",
+              "L2",
+              "SPECIAL_WORLD_RECORD",
+              "M2",
+              "M2"
+            ],
+            [
+              "L1",
+              "L1",
+              "L2",
+              "M1",
+              "C"
+            ],
+            [
+              "L1",
+              "M3",
+              "L1",
+              "L2",
+              "M3"
+            ]
+          ],
+          "isFreeSpin": true,
+          "index": 11
+        },
+        {
+          "type": "skyjumpScatterResult",
+          "schemaVersion": 2,
+          "positions": [],
+          "count": 0,
+          "perfectV": false,
+          "trigger": null,
+          "fromBoard": "initialReveal",
+          "index": 12
+        },
+        {
+          "type": "skyjumpWorldRecord",
+          "schemaVersion": 2,
+          "position": {
+            "reel": 2,
+            "row": 2
+          },
+          "bonusTier": "LARGE_HILL",
+          "freeSpinIndex": 1,
+          "accruedRoundWinXBefore": 0.0,
+          "worldRecordIncrementX": 50000.0,
+          "maxWinX": 50000.0,
+          "finalRoundWinX": 50000.0,
+          "terminated": true,
+          "remainingFreeSpinsCancelled": 9,
+          "pendingRejumpsCancelled": true,
+          "tierIntensity": 1.0,
+          "symbolId": "SPECIAL_WORLD_RECORD",
+          "candidateOrigin": "H2",
+          "index": 13
+        },
+        {
+          "type": "skyjumpCapReached",
+          "schemaVersion": 2,
+          "rawTotalWinX": 50000.0,
+          "cappedTotalWinX": 50000.0,
+          "capDragX": 0.0,
+          "maxWinX": 50000,
+          "terminated": true,
+          "reason": "WORLD_RECORD",
+          "index": 14
+        },
+        {
+          "type": "skyjumpFreeSpinEnd",
+          "schemaVersion": 2,
+          "spinIndex": 1,
+          "spinWinX": 50000.0,
+          "spinWinXRaw": 50000.0,
+          "bonusWinRunningX": 50000.0,
+          "spinsRemainingAfter": 0,
+          "currentTier": "LARGE_HILL",
+          "index": 15
+        },
+        {
+          "type": "skyjumpFreeSpinState",
+          "schemaVersion": 2,
+          "bonusActive": true,
+          "bonusTier": "LARGE_HILL",
+          "freeSpinsInitial": 10,
+          "freeSpinsRemaining": 0,
+          "freeSpinsPlayed": 1,
+          "totalFreeSpinsAwarded": 10,
+          "upgradeCount": 0,
+          "retriggerCount": 0,
+          "tokenFloorTier": 1,
+          "persistentMysteryTargets": [],
+          "guaranteedGateUsed": false,
+          "coachGuaranteeState": {},
+          "bonusWinXRaw": 50000.0,
+          "bonusWinXCapped": 50000.0,
+          "triggerSpinWinX": 0.0,
+          "roundWinXRaw": 50000.0,
+          "roundWinXCapped": 50000.0,
+          "maxWinReached": true,
+          "pendingTierUpgrade": null,
+          "flightMultiplierRunUp": 1.0,
+          "flightMultiplierTakeoff": 1.0,
+          "flightMultiplierFlight": 1.0,
+          "flightMultiplier": {
+            "runUp": {
+              "value": 1,
+              "charge": 0
+            },
+            "takeoff": {
+              "value": 1,
+              "charge": 0
+            },
+            "flight": {
+              "value": 1,
+              "charge": 0
+            }
+          },
+          "windKeysCollected": 0,
+          "rejumpsThisBonus": 0,
+          "featureBatchIndex": 0,
+          "rejumpState": null,
+          "globalFlightMultiplier": 1,
+          "index": 16
+        },
+        {
+          "type": "setTotalWin",
+          "amount": 5000000,
+          "index": 17
+        },
+        {
+          "type": "skyjumpFreeSpinsEnd",
+          "schemaVersion": 2,
+          "totalSpinsPlayed": 1,
+          "finalTier": "LARGE_HILL",
+          "bonusWinX": 50000.0,
+          "bonusWinXRaw": 50000.0,
+          "triggerSpinWinX": 0.0,
+          "roundWinXRaw": 50000.0,
+          "roundWinXCapped": 50000.0,
+          "upgradeCount": 0,
+          "retriggerCount": 0,
+          "maxWinReached": true,
+          "tokenFloorTier": 1,
+          "persistentMysteryTargets": [],
+          "guaranteedGateUsed": false,
+          "index": 18
+        },
+        {
+          "type": "setTotalWin",
+          "amount": 5000000,
+          "index": 19
+        },
+        {
+          "type": "finalWin",
+          "amount": 5000000,
+          "index": 20
+        }
+      ]
+    },
+    {
+      "id": "14",
+      "title": "resume after WR",
+      "resumeIndex": 18,
+      "flags": {},
+      "eventCount": 25,
+      "wrEventIndex": 17,
+      "wrPosition": {
+        "reel": 2,
+        "row": 2
+      },
+      "roundWinXCapped": 50000.0,
+      "maxWinReached": true,
+      "events": [
+        {
+          "index": 0,
+          "type": "skyjumpSpinStart",
+          "schemaVersion": 2,
+          "mode": "BASE",
+          "isFreeSpin": false,
+          "source": "math",
+          "stops": [
+            0,
+            45,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "index": 1,
+          "type": "skyjumpBoardReveal",
+          "schemaVersion": 2,
+          "board": [
+            [
+              "L1",
+              "P3",
+              "M3",
+              "S",
+              "L1"
+            ],
+            [
+              "M2",
+              "L2",
+              "M1",
+              "L2",
+              "S"
+            ],
+            [
+              "M2",
+              "P3",
+              "P3",
+              "S",
+              "L2"
+            ],
+            [
+              "L1",
+              "L1",
+              "L2",
+              "M1",
+              "C"
+            ],
+            [
+              "L1",
+              "M3",
+              "L1",
+              "L2",
+              "M3"
+            ]
+          ]
+        },
+        {
+          "index": 2,
+          "type": "skyjumpLineWins",
+          "schemaVersion": 2,
+          "wins": [],
+          "lineWinX": 0.0
+        },
+        {
+          "index": 3,
+          "type": "skyjumpScatterResult",
+          "schemaVersion": 2,
+          "positions": [
+            {
+              "reel": 0,
+              "row": 3
+            },
+            {
+              "reel": 1,
+              "row": 4
+            },
+            {
+              "reel": 2,
+              "row": 3
+            }
+          ],
+          "count": 3,
+          "perfectV": false,
+          "trigger": {
+            "tier": "LARGE_HILL",
+            "directTriggerType": "SCATTER_3"
+          },
+          "fromBoard": "initialReveal"
+        },
+        {
+          "index": 4,
+          "type": "skyjumpCoachSignal",
+          "schemaVersion": 2,
+          "coachPosition": {
+            "reel": 3,
+            "row": 4
+          },
+          "selectedSymbolId": "L1",
+          "selectedPositions": [
+            {
+              "reel": 0,
+              "row": 0
+            },
+            {
+              "reel": 0,
+              "row": 4
+            },
+            {
+              "reel": 3,
+              "row": 0
+            },
+            {
+              "reel": 3,
+              "row": 1
+            },
+            {
+              "reel": 4,
+              "row": 0
+            },
+            {
+              "reel": 4,
+              "row": 2
+            }
+          ],
+          "sequenceIndex": 0,
+          "noOp": false,
+          "reason": null
+        },
+        {
+          "index": 5,
+          "type": "skyjumpMysteryTransform",
+          "schemaVersion": 2,
+          "sourceSymbolId": "L1",
+          "positions": [
+            {
+              "reel": 0,
+              "row": 0
+            },
+            {
+              "reel": 0,
+              "row": 4
+            },
+            {
+              "reel": 3,
+              "row": 0
+            },
+            {
+              "reel": 3,
+              "row": 1
+            },
+            {
+              "reel": 4,
+              "row": 0
+            },
+            {
+              "reel": 4,
+              "row": 2
+            }
+          ],
+          "sequenceIndex": 0
+        },
+        {
+          "index": 6,
+          "type": "skyjumpMysteryResolve",
+          "schemaVersion": 2,
+          "position": {
+            "reel": 0,
+            "row": 0
+          },
+          "resultType": "FLIGHT_TOKEN",
+          "tokenTier": 1,
+          "tokenId": "T1",
+          "tokenName": "ROOKIE_TOKEN",
+          "tokenValueX": 1.0,
+          "faceValueX": 1.0,
+          "effectiveValueX": 1.0
+        },
+        {
+          "index": 7,
+          "type": "skyjumpMysteryResolve",
+          "schemaVersion": 2,
+          "position": {
+            "reel": 0,
+            "row": 4
+          },
+          "resultType": "FLIGHT_TOKEN",
+          "tokenTier": 1,
+          "tokenId": "T1",
+          "tokenName": "ROOKIE_TOKEN",
+          "tokenValueX": 1.0,
+          "faceValueX": 1.0,
+          "effectiveValueX": 1.0
+        },
+        {
+          "index": 8,
+          "type": "skyjumpMysteryResolve",
+          "schemaVersion": 2,
+          "position": {
+            "reel": 3,
+            "row": 0
+          },
+          "resultType": "FLIGHT_TOKEN",
+          "tokenTier": 1,
+          "tokenId": "T1",
+          "tokenName": "ROOKIE_TOKEN",
+          "tokenValueX": 1.0,
+          "faceValueX": 1.0,
+          "effectiveValueX": 1.0
+        },
+        {
+          "index": 9,
+          "type": "skyjumpMysteryResolve",
+          "schemaVersion": 2,
+          "position": {
+            "reel": 3,
+            "row": 1
+          },
+          "resultType": "FLIGHT_TOKEN",
+          "tokenTier": 1,
+          "tokenId": "T1",
+          "tokenName": "ROOKIE_TOKEN",
+          "tokenValueX": 1.0,
+          "faceValueX": 1.0,
+          "effectiveValueX": 1.0
+        },
+        {
+          "index": 10,
+          "type": "skyjumpMysteryResolve",
+          "schemaVersion": 2,
+          "position": {
+            "reel": 4,
+            "row": 0
+          },
+          "resultType": "FLIGHT_TOKEN",
+          "tokenTier": 1,
+          "tokenId": "T1",
+          "tokenName": "ROOKIE_TOKEN",
+          "tokenValueX": 2.0,
+          "faceValueX": 2.0,
+          "effectiveValueX": 2.0
+        },
+        {
+          "index": 11,
+          "type": "skyjumpMysteryResolve",
+          "schemaVersion": 2,
+          "position": {
+            "reel": 4,
+            "row": 2
+          },
+          "resultType": "FLIGHT_TOKEN",
+          "tokenTier": 1,
+          "tokenId": "T1",
+          "tokenName": "ROOKIE_TOKEN",
+          "tokenValueX": 1.0,
+          "faceValueX": 1.0,
+          "effectiveValueX": 1.0
+        },
+        {
+          "index": 12,
+          "type": "skyjumpResult",
+          "schemaVersion": 2,
+          "totalLineWinX": 0.0,
+          "totalFeatureWinX": 0.0,
+          "totalFeatureWinXRaw": 0.0,
+          "totalWinX": 0.0,
+          "totalWinXRaw": 0.0,
+          "amount": 0,
+          "latentTokenValueX": 7.0,
+          "tokenFloorTier": 1,
+          "capHit": false
+        },
+        {
+          "type": "skyjumpFreeSpinsStart",
+          "schemaVersion": 2,
+          "initialTier": "LARGE_HILL",
+          "spinsAwarded": 10,
+          "directTriggerType": "SCATTER_3",
+          "triggeringScatterPositions": [
+            {
+              "reel": 0,
+              "row": 3
+            },
+            {
+              "reel": 1,
+              "row": 4
+            },
+            {
+              "reel": 2,
+              "row": 3
+            }
+          ],
+          "triggerSpinWinX": 0.0,
+          "wagerCostMultiplier": 0,
+          "index": 13
+        },
+        {
+          "type": "skyjumpFreeSpinStart",
+          "schemaVersion": 2,
+          "spinIndex": 1,
+          "currentTier": "LARGE_HILL",
+          "spinsRemainingBefore": 10,
+          "index": 14
+        },
+        {
+          "type": "skyjumpBoardReveal",
+          "schemaVersion": 2,
+          "board": [
+            [
+              "L1",
+              "M3",
+              "L3",
+              "L1",
+              "M3"
+            ],
+            [
+              "P3",
+              "L1",
+              "M2",
+              "L1",
+              "C"
+            ],
+            [
+              "L2",
+              "L2",
+              "SPECIAL_WORLD_RECORD",
+              "M2",
+              "M2"
+            ],
+            [
+              "L1",
+              "L1",
+              "L2",
+              "M1",
+              "C"
+            ],
+            [
+              "L1",
+              "M3",
+              "L1",
+              "L2",
+              "M3"
+            ]
+          ],
+          "isFreeSpin": true,
+          "index": 15
+        },
+        {
+          "type": "skyjumpScatterResult",
+          "schemaVersion": 2,
+          "positions": [],
+          "count": 0,
+          "perfectV": false,
+          "trigger": null,
+          "fromBoard": "initialReveal",
+          "index": 16
+        },
+        {
+          "type": "skyjumpWorldRecord",
+          "schemaVersion": 2,
+          "position": {
+            "reel": 2,
+            "row": 2
+          },
+          "bonusTier": "LARGE_HILL",
+          "freeSpinIndex": 1,
+          "accruedRoundWinXBefore": 0.0,
+          "worldRecordIncrementX": 50000.0,
+          "maxWinX": 50000.0,
+          "finalRoundWinX": 50000.0,
+          "terminated": true,
+          "remainingFreeSpinsCancelled": 9,
+          "pendingRejumpsCancelled": true,
+          "tierIntensity": 1.0,
+          "symbolId": "SPECIAL_WORLD_RECORD",
+          "candidateOrigin": "H2",
+          "index": 17
+        },
+        {
+          "type": "skyjumpCapReached",
+          "schemaVersion": 2,
+          "rawTotalWinX": 50000.0,
+          "cappedTotalWinX": 50000.0,
+          "capDragX": 0.0,
+          "maxWinX": 50000,
+          "terminated": true,
+          "reason": "WORLD_RECORD",
+          "index": 18
+        },
+        {
+          "type": "skyjumpFreeSpinEnd",
+          "schemaVersion": 2,
+          "spinIndex": 1,
+          "spinWinX": 50000.0,
+          "spinWinXRaw": 50000.0,
+          "bonusWinRunningX": 50000.0,
+          "spinsRemainingAfter": 0,
+          "currentTier": "LARGE_HILL",
+          "index": 19
+        },
+        {
+          "type": "skyjumpFreeSpinState",
+          "schemaVersion": 2,
+          "bonusActive": true,
+          "bonusTier": "LARGE_HILL",
+          "freeSpinsInitial": 10,
+          "freeSpinsRemaining": 0,
+          "freeSpinsPlayed": 1,
+          "totalFreeSpinsAwarded": 10,
+          "upgradeCount": 0,
+          "retriggerCount": 0,
+          "tokenFloorTier": 1,
+          "persistentMysteryTargets": [],
+          "guaranteedGateUsed": false,
+          "coachGuaranteeState": {},
+          "bonusWinXRaw": 50000.0,
+          "bonusWinXCapped": 50000.0,
+          "triggerSpinWinX": 0.0,
+          "roundWinXRaw": 50000.0,
+          "roundWinXCapped": 50000.0,
+          "maxWinReached": true,
+          "pendingTierUpgrade": null,
+          "flightMultiplierRunUp": 1.0,
+          "flightMultiplierTakeoff": 1.0,
+          "flightMultiplierFlight": 1.0,
+          "flightMultiplier": {
+            "runUp": {
+              "value": 1,
+              "charge": 0
+            },
+            "takeoff": {
+              "value": 1,
+              "charge": 0
+            },
+            "flight": {
+              "value": 1,
+              "charge": 0
+            }
+          },
+          "windKeysCollected": 0,
+          "rejumpsThisBonus": 0,
+          "featureBatchIndex": 0,
+          "rejumpState": null,
+          "globalFlightMultiplier": 1,
+          "index": 20
+        },
+        {
+          "type": "setTotalWin",
+          "amount": 5000000,
+          "index": 21
+        },
+        {
+          "type": "skyjumpFreeSpinsEnd",
+          "schemaVersion": 2,
+          "totalSpinsPlayed": 1,
+          "finalTier": "LARGE_HILL",
+          "bonusWinX": 50000.0,
+          "bonusWinXRaw": 50000.0,
+          "triggerSpinWinX": 0.0,
+          "roundWinXRaw": 50000.0,
+          "roundWinXCapped": 50000.0,
+          "upgradeCount": 0,
+          "retriggerCount": 0,
+          "maxWinReached": true,
+          "tokenFloorTier": 1,
+          "persistentMysteryTargets": [],
+          "guaranteedGateUsed": false,
+          "index": 22
+        },
+        {
+          "type": "setTotalWin",
+          "amount": 5000000,
+          "index": 23
+        },
+        {
+          "type": "finalWin",
+          "amount": 5000000,
+          "index": 24
+        }
+      ]
+    }
+  ]
+}

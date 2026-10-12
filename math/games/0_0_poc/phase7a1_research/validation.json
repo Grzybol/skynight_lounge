@@ -1,0 +1,29 @@
+{
+  "configSha256": "1a737f24ff3b75ceebb80b276e4fa23dde076699d2cfc7ac8e9a6f7fbcc7b8fe",
+  "pt2Monotonic": true,
+  "pt2Grain01": true,
+  "pt2ClassHierarchyPass": false,
+  "pt2HierarchyBreaks": [
+    {
+      "match": 4,
+      "left": "M1",
+      "right": "M2",
+      "vals": [
+        3.3,
+        6.1
+      ]
+    }
+  ],
+  "body1T5T6Unchanged": true,
+  "baseExact": {
+    "PT0": 59.6961766439716,
+    "PT2": 60.28839016193175,
+    "deltaPp": 0.592213517960154
+  },
+  "wrRatio": {
+    "LARGE_HILL": 1.0,
+    "SKI_FLYING": 3.0,
+    "WORLD_CUP": 6.0,
+    "PERFECT_V": 12.0
+  }
+}

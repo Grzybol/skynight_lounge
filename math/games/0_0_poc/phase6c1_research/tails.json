@@ -1,0 +1,11 @@
+{
+  "n": 100000,
+  "pCap": 1e-05,
+  "meanCapDragX": 0.104775,
+  "capDragPp": 0.06841470391087277,
+  "cases": {
+    "active_mult_ge2": 1125,
+    "active_mult_ge4": 188
+  },
+  "maxPayoutOk": true
+}

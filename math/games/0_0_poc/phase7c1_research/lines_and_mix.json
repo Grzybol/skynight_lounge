@@ -1,0 +1,24 @@
+{
+  "exactLineRtpPct": 60.29945972727959,
+  "expectedLineRtpPct": 60.29946,
+  "lineAnchorPass": true,
+  "scatter": {
+    "exact3": 0.0062135906602437665,
+    "exact4": 0.00030991400836999946,
+    "fivePlusNonPv": 6.171610276639861e-06,
+    "perfectV": 1.9755474637131444e-09,
+    "ge3": 0.00652967825443787
+  },
+  "startTierAbsolute": {
+    "LARGE_HILL": 0.0062135906602437665,
+    "SKI_FLYING": 0.00030991400836999946,
+    "WORLD_CUP": 6.171610276639861e-06,
+    "PERFECT_V": 1.9755474637131444e-09
+  },
+  "startTierConditional": {
+    "LARGE_HILL": 0.9515921639815444,
+    "SKI_FLYING": 0.047462370471220025,
+    "WORLD_CUP": 0.0009451629982603432,
+    "PERFECT_V": 3.0254897511534684e-07
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "mode": "BASE",
+  "strata": [
+    {
+      "name": "basegame",
+      "bookCount": 100000,
+      "sumWeight": 993470300000,
+      "normalizedP": 0.9934702935821819,
+      "theoreticalP": 0.9934703217455622,
+      "pDelta": -2.8163380294543572e-08,
+      "meanPayoutX": 0.7264310000002436,
+      "rtpContribution": 0.7216876188374399
+    },
+    {
+      "name": "freegame_LARGE_HILL",
+      "bookCount": 40000,
+      "sumWeight": 6213520000,
+      "normalizedP": 0.006213519959860661,
+      "theoreticalP": 0.006213503632774804,
+      "pDelta": 1.6327085856915335e-08,
+      "meanPayoutX": 31.144479999999916,
+      "rtpContribution": 0.19351684811948064
+    },
+    {
+      "name": "freegame_SKI_FLYING",
+      "bookCount": 25000,
+      "sumWeight": 309900000,
+      "normalizedP": 0.000309899997998046,
+      "theoreticalP": 0.00030990966771847944,
+      "pDelta": -9.669720433440679e-09,
+      "meanPayoutX": 190.2517360000002,
+      "rtpContribution": 0.058959012605524844
+    },
+    {
+      "name": "freegame_WORLD_CUP",
+      "bookCount": 20000,
+      "sumWeight": 6180000,
+      "normalizedP": 6.1799999600772e-06,
+      "theoreticalP": 6.1715238371476e-06,
+      "pDelta": 8.476122929600444e-09,
+      "meanPayoutX": 394.8133950000014,
+      "rtpContribution": 0.0024399467653379524
+    },
+    {
+      "name": "world_record",
+      "bookCount": 20,
+      "sumWeight": 91460,
+      "normalizedP": 9.14599994091684e-08,
+      "theoreticalP": 9.145458764342853e-08,
+      "pDelta": 5.411765739874376e-12,
+      "meanPayoutX": 50000.0,
+      "rtpContribution": 0.0045729999704584206
+    },
+    {
+      "name": "freegame_PERFECT_V",
+      "bookCount": 15000,
+      "sumWeight": 15000,
+      "normalizedP": 1.4999999903100002e-08,
+      "theoreticalP": 1.9755197942213834e-09,
+      "pDelta": 1.3024480108878618e-08,
+      "meanPayoutX": 1316.580066666672,
+      "rtpContribution": 1.9748700872423474e-05
+    }
+  ],
+  "sumNormalizedP": 1.0,
+  "partitionPass": true,
+  "rtpDirectFromLut": 0.9811961749988727,
+  "rtpFromStratumMeans": 0.9811961749991143,
+  "stratumReconMatch": true,
+  "targets": {
+    "basegame": 0.9934703217455622,
+    "world_record": 9.145458764342853e-08,
+    "freegame_LARGE_HILL": 0.006213503632774804,
+    "freegame_SKI_FLYING": 0.00030990966771847944,
+    "freegame_WORLD_CUP": 6.1715238371476e-06,
+    "freegame_PERFECT_V": 1.9755197942213834e-09
+  },
+  "writerCategories": [
+    "basegame",
+    "freegame_LARGE_HILL",
+    "freegame_PERFECT_V",
+    "freegame_SKI_FLYING",
+    "freegame_WORLD_CUP",
+    "world_record"
+  ],
+  "mutuallyExclusiveNote": "criteria field partitions books; one book \u2192 one criteria",
+  "collectivelyExhaustiveNote": "all BASE books have criteria in {basegame, freegame_*, world_record}",
+  "noT4T5T6ForcedStrata": true,
+  "bonusSource": "buy_mode_books (freegame_*) + rejection non-bonus + forced WR"
+}

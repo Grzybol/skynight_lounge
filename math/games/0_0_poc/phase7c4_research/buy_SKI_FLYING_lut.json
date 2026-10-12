@@ -1,0 +1,22 @@
+{
+  "tier": "SKI_FLYING",
+  "authMeanFinal": 190.0141150209348,
+  "targetNatMean": 188.35928817789687,
+  "pWr": 3.322168913511003e-05,
+  "lutMean": 190.01411502084562,
+  "lutMeanPathB": 190.01411502084053,
+  "meanDelta": 8.918732419260778e-11,
+  "nNat": 80000,
+  "nWr": 24,
+  "bookCount": 80024,
+  "rawNatMean": 188.34813,
+  "weightedNatMean": 188.35928817781317,
+  "shaBook": "1de81d6700a15f47070f61af973ff52004d7af002f27c87d31cfa68809aa3778",
+  "shaLut": "531fafe4cbed839d5f773bae760840896b51c16d145f7bdb6dcfbb33f4820cbb",
+  "paths": {
+    "books": "C:\\Users\\grzyb\\OneDrive\\Dokumenty\\skifly-casino-v2\\math\\games\\0_0_poc\\library_v2_phase7c4\\publish_files\\books_SKI_FLYING.jsonl.zst",
+    "lut": "C:\\Users\\grzyb\\OneDrive\\Dokumenty\\skifly-casino-v2\\math\\games\\0_0_poc\\library_v2_phase7c4\\publish_files\\lookUpTable_SKI_FLYING_0.csv"
+  },
+  "wallSeconds": 190.1796169281006,
+  "dualPathMatch": false
+}

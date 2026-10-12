@@ -1,0 +1,10 @@
+{
+  "nOps": 10432835,
+  "eAccruedBonusWeighted": 36.37892455426362,
+  "eIncrementalFillWeighted": 49963.621075445735,
+  "eAccruedBonusFlat": 14.225871730934113,
+  "eIncrementalFillFlat": 49985.77412826907,
+  "note": "Weights = WR-C tier intensity 1:3:6:12 on opportunity spins; BASE prior not included",
+  "fillMassPerBonus": 666425.2203010999,
+  "meanOpsPerBonus": 10.432835
+}
