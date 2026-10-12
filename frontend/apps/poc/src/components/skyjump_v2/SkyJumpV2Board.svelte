@@ -197,7 +197,7 @@
 	const SUMMARY_GRID_GAP = 12;
 	const SUMMARY_BOTTOM_LIMIT = 581;
 	/** Visible top of the frame art (alpha bounds) as a fraction of the art height. */
-	const FRAME_ART_VISIBLE_TOP = 0.0244;
+	const FRAME_ART_VISIBLE_TOP = 0.1124;
 	/**
 	 * Summary extends this many px into the BetUI crest (intentional meet).
 	 * Extra overlap frees budget for BOARD_SCALE without crowding READY.
@@ -223,7 +223,7 @@
 	 * The larger frame is raised by this many px @1280x720 (its crest runs over the top edge) so the
 	 * last row ends at the BetUI instead of behind it.
 	 */
-	const BOARD_RISE = -15;
+	const BOARD_RISE = 0;
 	const availH = $derived(Math.max(120, maxBoardH + framePadEstimate * 2 + 4));
 	const FRAME_BORDER = 2;
 	const framePadEstimate = $derived(Math.max(12, Math.min(15, Math.round(availW * 0.013))));

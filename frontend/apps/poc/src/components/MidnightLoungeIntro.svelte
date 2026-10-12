@@ -179,6 +179,9 @@
 		top: calc((100cqh - max(100cqh, calc(100cqw * 1086 / 1448))) * 0.1);
 		container-type: size;
 		pointer-events: none;
+		/* Own stacking context: the figures always stay under the CTA button. */
+		isolation: isolate;
+		z-index: 0;
 	}
 
 	.entrance {
@@ -239,6 +242,7 @@
 
 	.hit {
 		position: absolute;
+		z-index: 5;
 		inset: 0;
 		padding: 0;
 		border: 0;

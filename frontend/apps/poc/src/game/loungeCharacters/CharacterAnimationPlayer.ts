@@ -152,8 +152,11 @@ export class CharacterAnimationPlayer {
 		try {
 			const [pack, manifest] = await Promise.all([this.store.acquire(id), loadManifest()]);
 			if (this.destroyed) return false;
-			const size = manifest.frames?.[id.split('_')[0]] ?? manifest.frame;
-			if (this.canvas.width !== size.w || this.canvas.height !== size.h) {
+			const base = manifest.frames?.[id.split('_')[0]] ?? manifest.frame;
+			const size = { w: pack.entry.w ?? base.w, h: pack.entry.h ?? base.h };
+			// The canvas only grows: clips of one character can differ in resolution (same aspect) and
+			// every frame is drawn scaled to the canvas, so a switch never shrinks or clears it.
+			if (size.w > this.canvas.width || size.h > this.canvas.height || this.canvas.width === 0) {
 				this.canvas.width = size.w;
 				this.canvas.height = size.h;
 			}
@@ -299,7 +302,7 @@ export class CharacterAnimationPlayer {
 		const bmp = this.bitmaps.get(this.key(clip.id, frame + clip.head));
 		if (!bmp || !this.ctx) return false;
 		this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
-		this.ctx.drawImage(bmp, 0, 0);
+		this.ctx.drawImage(bmp, 0, 0, this.canvas.width, this.canvas.height);
 		this.drawnFrame = frame;
 		this.drawnClipToken = clip.token;
 		this.fpsDrawn += 1;

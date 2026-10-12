@@ -138,6 +138,9 @@ export const packUrl = (file: string) => resolveGameAsset(`${CHARACTER_BASE_URL}
 export type PackManifestEntry = {
 	file: string;
 	frames: number;
+	/** Frame size of this clip (clips of one character may differ; all share the 3:4 aspect). */
+	w?: number;
+	h?: number;
 	fps: number;
 	durationMs: number;
 	loop: boolean;

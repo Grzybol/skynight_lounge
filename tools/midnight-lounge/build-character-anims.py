@@ -35,10 +35,10 @@ import numpy as np
 MAP = {
     'woman_idle': 'feet2_podstawowa1_spritesheet',
     'woman_idle_alt': 'feet2_podstawowa2_spritesheet',
-    'woman_idle_1': 'feet2_przerywnik1_spritesheet',
+    'woman_idle_1': 'feet2_przerywnik1_v1_spritesheet',  # 1124x1496 (2x), drawn scaled to the character canvas
     'woman_idle_2': 'feet2_przerywnik2_spritesheet',
     'woman_idle_3': 'feet2_przerywnik3_spritesheet',
-    'woman_idle_4': 'feet2_extra_przerywnik_spritesheet',
+    'woman_idle_4': 'feet2_extra_przerywnik_v8_spritesheet',  # 1124x1496 (2x)
     'woman_mini_win': 'feet2_win_spritesheet',
     'woman_big_win': 'feet2_bigwin_v1_spritesheet',
     'woman_mega_win': 'feet2_bigwin_spritesheet',
@@ -62,7 +62,8 @@ def encode(args):
         else:
             fr.save(buf, 'WEBP', quality=quality, alpha_quality=100, method=4)
         arr = np.asarray(fr)
-        out.append((idx, buf.getvalue(), arr))
+        # Keep pixels only for the loop-seam check (first/last frame): 150 full frames would be GBs.
+        out.append((idx, buf.getvalue(), arr if idx in (0, 149) else None, bool(arr[..., 3].max() == 0)))
     return out
 
 def main():
@@ -122,21 +123,24 @@ def main():
                         assert x + w <= im.width and y + h <= im.height, f'{aid}: frame outside sheet'
                 jobs.append((str(p), by_sheet.get(name, []), a.lossy_quality))
             frames = {}
+            empties = set()
             for res in pool.map(encode, jobs):
-                for idx, blob, arr in res:
+                for idx, blob, arr, is_empty in res:
                     frames[idx] = (blob, arr)
+                    if is_empty:
+                        empties.add(idx)
             assert sorted(frames) == list(range(150)), aid
             offsets, sizes, pos = [], [], 0
             with open(out / f'{aid}.pack', 'wb') as fp:
                 for i in range(150):
                     b = frames[i][0]
                     fp.write(b); offsets.append(pos); sizes.append(len(b)); pos += len(b)
-            empty = [i for i in range(150) if frames[i][1][..., 3].max() == 0]
+            empty = sorted(empties)
             durs = sorted({f['duration_ms'] for f in meta['frames']})
-            manifest['frames'][aid.split('_')[0]] = {'w': fw, 'h': fh}
+            manifest['frames'].setdefault(aid.split('_')[0], {'w': fw, 'h': fh})
             manifest['frame'] = manifest['frame'] or {'w': fw, 'h': fh}
             manifest['animations'][aid] = {
-                'file': f'{aid}.pack', 'frames': 150, 'fps': meta['fps'],
+                'file': f'{aid}.pack', 'frames': 150, 'w': fw, 'h': fh, 'fps': meta['fps'],
                 'durationMs': meta['duration_ms'], 'loop': meta['loop'],
                 'offsets': offsets, 'sizes': sizes, 'bytes': pos,
             }
@@ -149,6 +153,12 @@ def main():
             print(f'{aid:20s} {zp.name:46s} frames=150 pack={pos/1e6:6.2f} MB empty={empty}', flush=True)
     def diff(x, y):
         # alpha-weighted mean abs RGB diff + alpha diff, 0..255
+        if x.shape != y.shape:  # clips of different resolution: compare at the smaller one
+            f = max(x.shape[0] // y.shape[0], y.shape[0] // x.shape[0], 1)
+            if x.shape[0] > y.shape[0]:
+                x = x[::f, ::f]
+            else:
+                y = y[::f, ::f]
         return float(np.abs(x - y).mean())
     for aid in table:
         ch = aid.split('_')[0]

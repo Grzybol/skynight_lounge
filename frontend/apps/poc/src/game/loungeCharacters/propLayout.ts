@@ -57,7 +57,7 @@ export const INTRO_PLANTS: PropAnchor[] = [
  * (x = the pot's highlight); the rope runs off the right edge. The base sits below the window's bottom
  * edge (0.775), so it is cut slightly.
  */
-export const INTRO_STANCHION: PropAnchor = { x: 0.9175, y: 0.8, h: 0.4 };
+export const INTRO_STANCHION: PropAnchor = { x: 0.9175, y: 0.825, h: 0.22 };
 
 /** Plants in the slot scene, fractions of the play area (just in front of the balustrade, behind the characters and the board). */
 export const SCENE_PLANTS: PropAnchor[] = [

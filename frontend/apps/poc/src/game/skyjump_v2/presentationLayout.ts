@@ -97,10 +97,10 @@ export const V2_PANEL_DECOR = {
  * Scale 1 keeps that hole on the grid — about 6% tighter than the previous 1.078.
  */
 export const V2_SLOT_BOARD_FRAME = {
-	/** Union of the five reel windows in ui_slot_board_frame_midnight_lounge.png. */
-	holeLeft: 0.0508,
-	holeRight: 0.9492,
-	holeTop: 0.1387,
-	holeBottom: 0.8604,
+	/** Union of the five reel windows in ui_slot_board_frame_midnight_lounge.png (Art Deco frame, 1254x1254). */
+	holeLeft: 0.0478,
+	holeRight: 0.9522,
+	holeTop: 0.1643,
+	holeBottom: 0.8461,
 	scale: 1,
 } as const;

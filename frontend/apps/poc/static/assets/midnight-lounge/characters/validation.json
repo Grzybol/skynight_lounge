@@ -1,131 +1,5 @@
 {
  "animations": {
-  "woman_idle": {
-   "zip": "feet2_podstawowa1_spritesheet.zip",
-   "sheets": 30,
-   "frameSize": [
-    562,
-    748
-   ],
-   "frames": 150,
-   "frameDurationsMs": [
-    33
-   ],
-   "emptyFrames": [],
-   "packBytes": 31134392
-  },
-  "woman_idle_alt": {
-   "zip": "feet2_podstawowa2_spritesheet.zip",
-   "sheets": 30,
-   "frameSize": [
-    562,
-    748
-   ],
-   "frames": 150,
-   "frameDurationsMs": [
-    33
-   ],
-   "emptyFrames": [],
-   "packBytes": 31217848
-  },
-  "woman_idle_1": {
-   "zip": "feet2_przerywnik1_spritesheet.zip",
-   "sheets": 30,
-   "frameSize": [
-    562,
-    748
-   ],
-   "frames": 150,
-   "frameDurationsMs": [
-    33
-   ],
-   "emptyFrames": [],
-   "packBytes": 31247944
-  },
-  "woman_idle_2": {
-   "zip": "feet2_przerywnik2_spritesheet.zip",
-   "sheets": 30,
-   "frameSize": [
-    562,
-    748
-   ],
-   "frames": 150,
-   "frameDurationsMs": [
-    33
-   ],
-   "emptyFrames": [],
-   "packBytes": 30860082
-  },
-  "woman_idle_3": {
-   "zip": "feet2_przerywnik3_spritesheet.zip",
-   "sheets": 30,
-   "frameSize": [
-    562,
-    748
-   ],
-   "frames": 150,
-   "frameDurationsMs": [
-    33
-   ],
-   "emptyFrames": [],
-   "packBytes": 31160784
-  },
-  "woman_idle_4": {
-   "zip": "feet2_extra_przerywnik_spritesheet.zip",
-   "sheets": 30,
-   "frameSize": [
-    562,
-    748
-   ],
-   "frames": 150,
-   "frameDurationsMs": [
-    33
-   ],
-   "emptyFrames": [],
-   "packBytes": 31318470
-  },
-  "woman_mini_win": {
-   "zip": "feet2_win_spritesheet.zip",
-   "sheets": 30,
-   "frameSize": [
-    562,
-    748
-   ],
-   "frames": 150,
-   "frameDurationsMs": [
-    33
-   ],
-   "emptyFrames": [],
-   "packBytes": 30961870
-  },
-  "woman_big_win": {
-   "zip": "feet2_bigwin_v1_spritesheet.zip",
-   "sheets": 30,
-   "frameSize": [
-    562,
-    748
-   ],
-   "frames": 150,
-   "frameDurationsMs": [
-    33
-   ],
-   "emptyFrames": [],
-   "packBytes": 30945562
-  },
-  "woman_mega_win": {
-   "zip": "feet2_bigwin_spritesheet.zip",
-   "sheets": 30,
-   "frameSize": [
-    562,
-    748
-   ],
-   "frames": 150,
-   "frameDurationsMs": [
-    33
-   ],
-   "emptyFrames": [],
-   "packBytes": 30980764
-  },
   "bartender_idle": {
    "zip": "barman2_idle_spritesheet.zip",
    "sheets": 30,
@@ -209,54 +83,135 @@
    ],
    "emptyFrames": [],
    "packBytes": 14365796
+  },
+  "woman_idle": {
+   "zip": "feet2_podstawowa1_spritesheet.zip",
+   "sheets": 30,
+   "frameSize": [
+    562,
+    748
+   ],
+   "frames": 150,
+   "frameDurationsMs": [
+    33
+   ],
+   "emptyFrames": [],
+   "packBytes": 31134392
+  },
+  "woman_idle_alt": {
+   "zip": "feet2_podstawowa2_spritesheet.zip",
+   "sheets": 30,
+   "frameSize": [
+    562,
+    748
+   ],
+   "frames": 150,
+   "frameDurationsMs": [
+    33
+   ],
+   "emptyFrames": [],
+   "packBytes": 31217848
+  },
+  "woman_idle_1": {
+   "zip": "feet2_przerywnik1_v1_spritesheet.zip",
+   "sheets": 75,
+   "frameSize": [
+    1124,
+    1496
+   ],
+   "frames": 150,
+   "frameDurationsMs": [
+    33
+   ],
+   "emptyFrames": [],
+   "packBytes": 101264062
+  },
+  "woman_idle_2": {
+   "zip": "feet2_przerywnik2_spritesheet.zip",
+   "sheets": 30,
+   "frameSize": [
+    562,
+    748
+   ],
+   "frames": 150,
+   "frameDurationsMs": [
+    33
+   ],
+   "emptyFrames": [],
+   "packBytes": 30860082
+  },
+  "woman_idle_3": {
+   "zip": "feet2_przerywnik3_spritesheet.zip",
+   "sheets": 30,
+   "frameSize": [
+    562,
+    748
+   ],
+   "frames": 150,
+   "frameDurationsMs": [
+    33
+   ],
+   "emptyFrames": [],
+   "packBytes": 31160784
+  },
+  "woman_idle_4": {
+   "zip": "feet2_extra_przerywnik_v8_spritesheet.zip",
+   "sheets": 75,
+   "frameSize": [
+    1124,
+    1496
+   ],
+   "frames": 150,
+   "frameDurationsMs": [
+    33
+   ],
+   "emptyFrames": [],
+   "packBytes": 100646012
+  },
+  "woman_mini_win": {
+   "zip": "feet2_win_spritesheet.zip",
+   "sheets": 30,
+   "frameSize": [
+    562,
+    748
+   ],
+   "frames": 150,
+   "frameDurationsMs": [
+    33
+   ],
+   "emptyFrames": [],
+   "packBytes": 30961870
+  },
+  "woman_big_win": {
+   "zip": "feet2_bigwin_v1_spritesheet.zip",
+   "sheets": 30,
+   "frameSize": [
+    562,
+    748
+   ],
+   "frames": 150,
+   "frameDurationsMs": [
+    33
+   ],
+   "emptyFrames": [],
+   "packBytes": 30945562
+  },
+  "woman_mega_win": {
+   "zip": "feet2_bigwin_spritesheet.zip",
+   "sheets": 30,
+   "frameSize": [
+    562,
+    748
+   ],
+   "frames": 150,
+   "frameDurationsMs": [
+    33
+   ],
+   "emptyFrames": [],
+   "packBytes": 30980764
   }
  },
  "seams": {
-  "woman_idle": {
-   "lastToOwnFirst": 0.7150812605857613,
-   "lastToIdleFirst": 0.7150812605857613,
-   "idleLastToFirst": 0.7150812605857613
-  },
-  "woman_idle_alt": {
-   "lastToOwnFirst": 0.7156040068890708,
-   "lastToIdleFirst": 0.7172525310674254,
-   "idleLastToFirst": 0.716604896568786
-  },
-  "woman_idle_1": {
-   "lastToOwnFirst": 0.7296301406360021,
-   "lastToIdleFirst": 0.7274636277998744,
-   "idleLastToFirst": 0.7195909138485547
-  },
-  "woman_idle_2": {
-   "lastToOwnFirst": 0.7118656869088625,
-   "lastToIdleFirst": 0.7022772470359868,
-   "idleLastToFirst": 0.7210324804460768
-  },
-  "woman_idle_3": {
-   "lastToOwnFirst": 0.7196438426551468,
-   "lastToIdleFirst": 0.7230491274478086,
-   "idleLastToFirst": 0.7210390222086893
-  },
-  "woman_idle_4": {
-   "lastToOwnFirst": 0.7319185681389994,
-   "lastToIdleFirst": 0.726107104116315,
-   "idleLastToFirst": 0.7183616571830932
-  },
-  "woman_mini_win": {
-   "lastToOwnFirst": 0.7246268816488096,
-   "lastToIdleFirst": 0.7147559565722116,
-   "idleLastToFirst": 0.7259346394656212
-  },
-  "woman_big_win": {
-   "lastToOwnFirst": 0.720491298266314,
-   "lastToIdleFirst": 0.7194874350581384,
-   "idleLastToFirst": 0.724000656555084
-  },
-  "woman_mega_win": {
-   "lastToOwnFirst": 0.721249548023674,
-   "lastToIdleFirst": 0.7205703941233562,
-   "idleLastToFirst": 0.7246631586960245
-  },
   "bartender_idle": {
    "lastToOwnFirst": 0.44933940091727403,
    "lastToIdleFirst": 0.44933940091727403,
@@ -282,6 +237,51 @@
   },
   "guard_loop": {
    "lastToOwnFirst": 0.3790056483207181
+  },
+  "woman_idle": {
+   "lastToOwnFirst": 0.7150812605857613,
+   "lastToIdleFirst": 0.7150812605857613,
+   "idleLastToFirst": 0.7150812605857613
+  },
+  "woman_idle_alt": {
+   "lastToOwnFirst": 0.7156040068890708,
+   "lastToIdleFirst": 0.7172525310674254,
+   "idleLastToFirst": 0.716604896568786
+  },
+  "woman_idle_1": {
+   "lastToOwnFirst": 0.5735539433745028,
+   "lastToIdleFirst": 1.9126847155879498,
+   "idleLastToFirst": 1.9526941357261118
+  },
+  "woman_idle_2": {
+   "lastToOwnFirst": 0.7118656869088625,
+   "lastToIdleFirst": 0.7022772470359868,
+   "idleLastToFirst": 0.7210324804460768
+  },
+  "woman_idle_3": {
+   "lastToOwnFirst": 0.7196438426551468,
+   "lastToIdleFirst": 0.7230491274478086,
+   "idleLastToFirst": 0.7210390222086893
+  },
+  "woman_idle_4": {
+   "lastToOwnFirst": 0.5612227208499058,
+   "lastToIdleFirst": 2.080721187698632,
+   "idleLastToFirst": 2.1139355005994633
+  },
+  "woman_mini_win": {
+   "lastToOwnFirst": 0.7246268816488096,
+   "lastToIdleFirst": 0.7147559565722116,
+   "idleLastToFirst": 0.7259346394656212
+  },
+  "woman_big_win": {
+   "lastToOwnFirst": 0.720491298266314,
+   "lastToIdleFirst": 0.7194874350581384,
+   "idleLastToFirst": 0.724000656555084
+  },
+  "woman_mega_win": {
+   "lastToOwnFirst": 0.721249548023674,
+   "lastToIdleFirst": 0.7205703941233562,
+   "idleLastToFirst": 0.7246631586960245
   }
  },
  "totalFrames": 2250

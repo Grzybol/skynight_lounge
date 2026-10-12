@@ -200,3 +200,7 @@ from production builds.
 - **Start screen**: `start_screen.png` is the doorway artwork; the animated bodyguard, plants and the velvet-rope stanchion
   (`intro_stanchion.png`, over the right plant) are placed over it (`INTRO_*` in `propLayout.ts`). Leaving it: the background
   blurs for 0.45 s while the figures fade out, then 0.45 s of full-screen backdrop blur clearing over the slot.
+- `woman_idle_1` (`feet2_przerywnik1_v1`) and `woman_idle_4` (`feet2_extra_przerywnik_v8`) are 1124x1496 (2x, same 3:4 aspect,
+  ~101 MB each as lossless WebP). Manifest entries carry their own `w`/`h`; the player's canvas only grows and every frame is
+  drawn scaled to it, so placement and on-screen size match the 562x748 clips.
+- Slot frame: `ui_slot_board_frame_midnight_lounge.png` is the Art Deco frame; hole fractions live in `V2_SLOT_BOARD_FRAME`.
