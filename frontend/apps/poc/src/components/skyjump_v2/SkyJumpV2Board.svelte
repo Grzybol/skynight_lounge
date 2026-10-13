@@ -5,7 +5,7 @@
 	import { waitForTimeout } from 'utils-shared/wait';
 
 	import { getContext } from '../../game/context';
-	import { loungeShown, loungeSlotFrameSrc } from '../../game/midnightLoungeTheme';
+	import { loungeShown, loungeSlotBackSrc, loungeSlotFrameSrc } from '../../game/midnightLoungeTheme';
 	import { V2_PAYLINES, V2_PAYLINE_IDS, V2_SCATTER_ID } from '../../game/skyjump_v2/config';
 	import { bonusHud, bonusShowsTargets, tierLabel } from '../../game/skyjump_v2/bonusHud.svelte';
 	import { V2_PLACEHOLDERS, reelFillerBand, v2Placeholder } from '../../game/skyjump_v2/placeholders';
@@ -21,7 +21,10 @@
 		markV2SymbolArtMissing,
 		markV2SymbolArtReady,
 		v2SymbolVisual,
-	} from '../../game/skyjump_v2/symbolAssetRegistry';
+		v2RollingAssetUrls,
+	v2SymbolBlurUrl,
+	v2TileUrl,
+} from '../../game/skyjump_v2/symbolAssetRegistry';
 	import {
 		v2FxAssetUrl,
 		v2ModeTitleUrl,
@@ -129,6 +132,17 @@
 
 	let winFocusTimer: ReturnType<typeof setTimeout> | undefined;
 
+	// Warm the rolling (blurred) symbols and the tier tiles so the first spin never pops images in.
+	$effect(() => {
+		const keep = v2RollingAssetUrls().map((url) => {
+			const img = new Image();
+			img.decoding = 'async';
+			img.src = url;
+			return img;
+		});
+		return () => void keep.length;
+	});
+
 	$effect(() => {
 		if (typeof document === 'undefined') return;
 		const viewport = document.querySelector('.skyjump-viewport');
@@ -214,7 +228,8 @@
 	const SUMMARY_GRID_GAP = 12;
 	const SUMMARY_BOTTOM_LIMIT = 581;
 	/** Visible top of the frame art (alpha bounds) as a fraction of the art height. */
-	const FRAME_ART_VISIBLE_TOP = 0.1124;
+	/** The new frame art starts at the very top of its canvas (crest at y = 0). */
+	const FRAME_ART_VISIBLE_TOP = 0;
 	/**
 	 * Summary extends this many px into the BetUI crest (intentional meet).
 	 * Extra overlap frees budget for BOARD_SCALE without crowding READY.
@@ -234,7 +249,7 @@
 	 * Slot size: 490 px grid height (10 % less than the 544 px pass, itself 25 % over the original 435 px) and cells 10 % wider (aspect 1.247) (the summary tile under it is gone, so the
 	 * whole height down to the BetUI is free).
 	 */
-	const BOARD_GRID_H = 515;
+	const BOARD_GRID_H = 540;
 	const maxBoardH = $derived(px(BOARD_GRID_H));
 	/**
 	 * The larger frame is raised by this many px @1280x720 (its crest runs over the top edge) so the
@@ -242,18 +257,12 @@
 	 */
 	const BOARD_RISE = 0;
 	const availH = $derived(Math.max(120, maxBoardH + framePadEstimate * 2 + 4));
-	const FRAME_BORDER = 2;
-	const framePadEstimate = $derived(Math.max(12, Math.min(15, Math.round(availW * 0.013))));
-	const gap = $derived(Math.max(5, Math.min(10, Math.round(availW * 0.0095))));
-	const framePad = $derived(Math.max(12, Math.min(15, Math.round(availW * 0.013))));
-	const BOARD_ASPECT = 1.247;
-	const maxInnerW = $derived(Math.max(100, availW - framePad * 2 - FRAME_BORDER * 2));
-	const maxInnerH = $derived(Math.max(80, availH - framePad * 2 - FRAME_BORDER * 2));
-	const fitCellW = $derived(Math.max(22, Math.floor((maxInnerW - gap * 4) / 5)));
-	const fitCellH = $derived(Math.max(22, Math.floor((maxInnerH - gap * 4) / 5)));
-	const baseCellH = $derived(Math.min(fitCellW, fitCellH));
-	const cellH = $derived(Math.min(fitCellH, Math.max(22, Math.round(baseCellH * BOARD_SCALE))));
-	const cellW = $derived(Math.min(fitCellW, Math.max(cellH, Math.round(cellH * BOARD_ASPECT))));
+	/** No CSS frame any more: the artwork provides all chrome, the grid is a flush 5x5 of cell pitches. */
+	const FRAME_BORDER = 0;
+	const gap = 0;
+	const framePad = 0;
+	const cellH = $derived(Math.max(22, Math.round(maxBoardH / 5)));
+	const cellW = $derived(Math.max(22, Math.round(cellH * V2_SLOT_BOARD_FRAME.cellAspect)));
 	const boardW = $derived(cellW * 5 + gap * 4);
 	const boardH = $derived(cellH * 5 + gap * 4);
 	/** Edge-to-edge symbol pitch. The old row gutter is inside the slot, not a grid line. */
@@ -261,6 +270,7 @@
 	const surfaceW = $derived(boardW + framePad * 2 + FRAME_BORDER * 2);
 	const surfaceH = $derived(boardH + framePad * 2 + FRAME_BORDER * 2);
 	const slotFrameSrc = loungeSlotFrameSrc;
+	const slotBackSrc = loungeSlotBackSrc;
 	/** Art frame sized so its transparent hole stays centered on the grid, then +10%. */
 	const slotFrameW = $derived(
 		(boardW / (V2_SLOT_BOARD_FRAME.holeRight - V2_SLOT_BOARD_FRAME.holeLeft)) *
@@ -1080,7 +1090,18 @@
 			</div>
 		{/if}
 		<div class="board-surface" data-test="skyjump-v2-board-surface">
-			<div class="board-glass" aria-hidden="true"></div>
+			<img
+				class="board-art-back"
+				src={slotBackSrc}
+				alt=""
+				draggable="false"
+				aria-hidden="true"
+				data-test="skyjump-v2-slot-back"
+				style:left={`${slotFrameLeft}px`}
+				style:top={`${slotFrameTop}px`}
+				style:width={`${slotFrameW}px`}
+				style:height={`${slotFrameH}px`}
+			/>
 			<img
 				class="board-art-frame"
 				src={slotFrameSrc}
@@ -1112,6 +1133,7 @@
 						>
 							{#each ids as id, index (`${reel}-${index}-${id}`)}
 								{@const settled = !spinning[reel] && index < VISIBLE_ROWS}
+								{@const rolling = spinning[reel] && reelPace[reel] !== 'land'}
 								{@const visual = v2SymbolVisual(id)}
 								{@const tile = visual.placeholder}
 								{@const showArt = Boolean(visual.url && artReady[id] && !artBroken[id])}
@@ -1137,12 +1159,18 @@
 									data-row={settled ? index : undefined}
 									data-test={settled ? 'skyjump-v2-tile' : undefined}
 								>
+									<img
+										class="tile-bg"
+										src={v2TileUrl(id, rolling)}
+										alt=""
+										draggable="false"
+									/>
 									<div class="content-stage">
 										{#if visual.url && !artBroken[id]}
 											<img
 												class="sym-art"
 												class:ready={showArt}
-												src={visual.url}
+												src={rolling ? (v2SymbolBlurUrl(id) ?? visual.url) : visual.url}
 												alt=""
 												draggable="false"
 												onload={() => {
@@ -1519,6 +1547,17 @@
 		background: transparent;
 		box-shadow: none;
 		overflow: visible;
+	}
+
+	/* Behind the symbols (grid is z 1); the frame art (z 6) sits above them. */
+	.board-art-back {
+		position: absolute;
+		z-index: 0;
+		display: block;
+		pointer-events: none;
+		object-fit: fill;
+		user-select: none;
+		-webkit-user-drag: none;
 	}
 
 	.board-art-frame {
@@ -1948,14 +1987,6 @@
 		will-change: transform;
 	}
 
-	.reel.pace-soft .symbol {
-		filter: blur(0.4px) brightness(1.04);
-	}
-
-	.reel.pace-fast .symbol {
-		filter: blur(1.25px) brightness(1.05);
-	}
-
 	.reel.landing .symbol {
 		animation: reel-land var(--land-ms, 160ms) ease-out both;
 	}
@@ -2024,7 +2055,20 @@
 		letter-spacing: 0.04em;
 	}
 
+	/* Tier backdrop of the cell: inset by half a gold line so it fills the frame window exactly. */
+	.tile-bg {
+		position: absolute;
+		inset: 6% 6.6%;
+		width: auto;
+		height: auto;
+		object-fit: fill;
+		pointer-events: none;
+		user-select: none;
+	}
+
 	.content-stage {
+		position: relative;
+		z-index: 1;
 		box-sizing: border-box;
 		display: block;
 		width: 100%;

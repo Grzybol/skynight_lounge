@@ -186,7 +186,7 @@
 
 	/*
 	 * Clouds: a band raised above the top edge (lower edge at 26 cqh; the top part runs off the screen) (the planes above hide the rest). One tile
-	 * is 348 cqh wide (band 42 cqh tall, 6000x724 art). Tiles alternate normal / mirrored, so every seam
+	 * is 243.6 cqh wide (band 42 cqh tall, 4200x724 art). Tiles alternate normal / mirrored, so every seam
 	 * joins an image to its own mirror image and the loop never jumps; the strip drifts two tiles
 	 * (694.4 cqh) per cycle, at half the earlier speed (480 s per tile).
 	 */
@@ -195,14 +195,14 @@
 		left: 0;
 		top: -16cqh;
 		height: 42cqh;
-		width: 2088cqh;
+		width: 1462cqh;
 		display: flex;
-		animation: clouds-drift 960s linear infinite;
+		animation: clouds-drift 670s linear infinite;
 		pointer-events: none;
 	}
 
 	.clouds .tile {
-		flex: 0 0 348cqh;
+		flex: 0 0 243.6cqh;
 		/* Overlap the neighbours by 0.8 cqh: every seam joins an image to its own mirror, so it stays continuous. */
 		margin-left: -0.8cqh;
 		height: 100%;
@@ -216,7 +216,7 @@
 
 	@keyframes clouds-drift {
 		to {
-			transform: translateX(-694.4cqh);
+			transform: translateX(-485.6cqh);
 		}
 	}
 

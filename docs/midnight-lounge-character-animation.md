@@ -301,3 +301,14 @@ Fixed after the guideline review (verified against a local mock RGS, a productio
 - Font: Luckiest Guy (`luckiest-guy-400.ttf`, one weight, bold by design) replaces Marcellus everywhere; the weight range is declared so the browser does not fake a bold.
 - The SkyJump ice-blue FX and the world-record ice plate are removed; glints use `fx_glint_ruby_gold`, bursts `fx_luxury_burst_gold`, world record the royal overlay.
 - Clouds sit higher (top part runs off the screen); bartender and woman are 15% smaller (feet anchored) and re-spaced from the slot.
+
+## Slot frame, tier tiles, rolling blur (latest)
+
+- `scene/slot_background_2.png` (behind symbols) and `slot_background_1.png` (frame, above symbols) are the supplied art extended from
+  4 to 5 rows (a 155 px band of the middle row was duplicated, 1672x1096) because the game has 5 rows; bg2 got an alpha mask from the frame
+  silhouette. The board is a flush 5x5 grid of cell pitches (`V2_SLOT_BOARD_FRAME`), so each symbol is centred on its frame window.
+- Six tier tiles (`tiles/`, `tiles_blur/`, cropped to their solid bounds): low (L1-3), medium (M1-3), premium (P1-3), scatter (S),
+  concierge_mystery (C, Y), feature (specials, Midnight Crown, tokens T1-T6). Mapping: `v2SymbolTier` in `symbolAssetRegistry.ts`.
+- While a reel rolls the cells use `tiles_blur/` and `symbols_blur/`; they switch to the sharp art when the reel starts landing.
+- Woman: `brightness(0.6)` (measured: mean luminance 87 vs the bartender's 52). Sky: `background_farthest-sky.png`; clouds: `clouds_prop_v1.png`.
+- `ui_logo_midnight_lounge.png` from the new pack was NOT imported (it is the old Midnight Lounge logo; the SKYNIGHT LOUNGE emblem stays).

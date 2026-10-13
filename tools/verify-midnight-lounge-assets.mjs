@@ -12,6 +12,8 @@ const upload = resolve(repo, 'stake-upload/frontend');
 const required = [
 	'index.html',
 	'assets/midnight-lounge/symbols/sym_p1_champagne.png',
+	'assets/midnight-lounge/symbols_blur/sym_p1_champagne.png',
+	'assets/midnight-lounge/symbols_blur/sym_token_t6_royal_ruby.png',
 	'assets/midnight-lounge/symbols/sym_p2_crystal_cocktail.png',
 	'assets/midnight-lounge/symbols/sym_p3_masquerade_mask.png',
 	'assets/midnight-lounge/symbols/sym_m1_red_stiletto.png',
@@ -42,6 +44,12 @@ const required = [
 	'assets/midnight-lounge/scene/background_2_static.png',
 	'assets/midnight-lounge/scene/background_3_static.png',
 	'assets/midnight-lounge/scene/clouds_prop.png',
+	'assets/midnight-lounge/scene/slot_background_1.png',
+	'assets/midnight-lounge/scene/slot_background_2.png',
+	...['low', 'medium', 'premium', 'scatter', 'concierge_mystery', 'feature'].flatMap((tier) => [
+		`assets/midnight-lounge/tiles/tile_${tier}.png`,
+		`assets/midnight-lounge/tiles_blur/tile_${tier}.png`,
+	]),
 	...Array.from({ length: 13 }, (_, i) => `assets/midnight-lounge/scene/background_2_static_frame_${i + 2}.png`),
 	'assets/midnight-lounge/ui/intro_stanchion.png',
 	'assets/midnight-lounge/ui/start_loading.png',

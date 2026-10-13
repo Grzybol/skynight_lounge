@@ -11,6 +11,9 @@
 	let { character, onwin }: { character: CharacterId; onwin?: (c: WinCategory | null) => void } =
 		$props();
 
+	/** Measured: her frames are 1.7x as bright and contrasty as the bartender's (mean luminance 87 vs 52, spread 67 vs 42). */
+	const WOMAN_TONE = 'brightness(0.6)';
+
 	const ASPECT = CHARACTER_FRAME[character].w / CHARACTER_FRAME[character].h;
 
 	let canvas = $state<HTMLCanvasElement | null>(null);
@@ -87,6 +90,7 @@
 	style:top={box.top}
 	style:width={box.width}
 	style:height={box.height}
+	style:filter={character === 'woman' ? WOMAN_TONE : undefined}
 	style:clip-path={CHARACTER_PLACEMENT[character].clipBottomFrac
 		? `inset(0 0 ${CHARACTER_PLACEMENT[character].clipBottomFrac! * 100}% 0)`
 		: undefined}

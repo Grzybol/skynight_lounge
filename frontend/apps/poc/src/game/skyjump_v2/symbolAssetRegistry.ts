@@ -44,6 +44,45 @@ export const V2_SYMBOL_FILENAMES: Record<string, string> = {
 	T6: 'sym_token_t6_royal_ruby.png',
 };
 
+/** Blurred (motion) versions of the same symbols, used while a reel is rolling. */
+export const V2_SYMBOL_BLUR_DIR = 'assets/midnight-lounge/symbols_blur';
+export const V2_TILE_DIR = 'assets/midnight-lounge/tiles';
+export const V2_TILE_BLUR_DIR = 'assets/midnight-lounge/tiles_blur';
+
+export type V2SymbolTier = 'low' | 'medium' | 'premium' | 'scatter' | 'concierge_mystery' | 'feature';
+
+/** Six backdrop tiers: regular L / M / P, scatter, Concierge + Mystery Gift, and everything feature-chain (specials, crown, tokens). */
+export const v2SymbolTier = (symbolId: string): V2SymbolTier => {
+	const head = symbolId.charAt(0);
+	if (symbolId === 'S') return 'scatter';
+	if (symbolId === 'C' || symbolId === 'Y') return 'concierge_mystery';
+	if (/^L\d$/.test(symbolId)) return 'low';
+	if (/^M\d$/.test(symbolId)) return 'medium';
+	if (/^P\d$/.test(symbolId)) return 'premium';
+	void head;
+	return 'feature';
+};
+
+export const v2TileUrl = (symbolId: string, blurred = false): string =>
+	resolveGameAsset(`${blurred ? V2_TILE_BLUR_DIR : V2_TILE_DIR}/tile_${v2SymbolTier(symbolId)}.png`);
+
+export const v2SymbolBlurUrl = (symbolId: string): string | null => {
+	const file = V2_SYMBOL_FILENAMES[symbolId];
+	return file ? resolveGameAsset(`${V2_SYMBOL_BLUR_DIR}/${file}`) : null;
+};
+
+/** Every distinct image a rolling reel can show, for background preloading. */
+export const v2RollingAssetUrls = (): string[] => {
+	const urls = new Set<string>();
+	for (const id of Object.keys(V2_SYMBOL_FILENAMES)) {
+		const blur = v2SymbolBlurUrl(id);
+		if (blur) urls.add(blur);
+		urls.add(v2TileUrl(id, false));
+		urls.add(v2TileUrl(id, true));
+	}
+	return [...urls];
+};
+
 const missingArt = new Set<string>();
 const readyArt = new Set<string>();
 

@@ -97,10 +97,16 @@ export const V2_PANEL_DECOR = {
  * Scale 1 keeps that hole on the grid — about 6% tighter than the previous 1.078.
  */
 export const V2_SLOT_BOARD_FRAME = {
-	/** Union of the five reel windows in ui_slot_board_frame_midnight_lounge.png (Art Deco frame, 1254x1254). */
-	holeLeft: 0.0478,
-	holeRight: 0.9522,
-	holeTop: 0.1643,
-	holeBottom: 0.8461,
+	/**
+	 * `slot_background_1/2.png` (1672x1096, 5 rows). The playfield is the 5x5 block of cell pitches:
+	 * the hole union (430..1242 x 98..852) grown by half a gold line on every side
+	 * (pitch 167 x 154.5), so each symbol cell is centred exactly on its frame window.
+	 */
+	holeLeft: 0.2507,
+	holeRight: 0.7493,
+	holeTop: 0.081,
+	holeBottom: 0.7858,
 	scale: 1,
+	/** Cell pitch aspect (167 / 154.5). */
+	cellAspect: 1.081,
 } as const;
