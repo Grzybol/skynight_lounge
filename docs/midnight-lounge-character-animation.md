@@ -259,3 +259,12 @@ big-win clip, so it serves big and mega (`woman_mega_win` is gone). This superse
 - BetUI: panels are `border-box`, the WIN counter is centred on the bar, the turbo / auto / buy group is pushed against SPIN.
 - Still low-res / lossy and not part of the lounge UI: `src/assets/skyjump/**/*.webp` (ski-era leftovers) and the skyjump_v2
   `ui_header_*` (info, how-to-play, ~950 px wide) used above the Info/Paytable cards.
+
+## Ski-era assets removed
+
+Deleted because nothing reachable from the app used them: `src/assets/skyjump/{jumper,reel-icons,result,weather}`, the ski menu /
+gameplay / lounge-figure backgrounds, the dead components that imported them (`SkyJumpMainMenu`, `SkyJumpResultOverlay`,
+`SkyJumpReelStrip`, `SkyJumpWeatherDraw`, `SkyJumpPayTable`, `SkyJumpRoleIcons`, `SkyJumpHudFrame`, `skyjumpArt.ts`), their
+preload entries in `game/assets.ts`, the ski fallbacks in `static/assets/skyjump_v2` (logo, stages, tiers, modes, wins, bonus,
+decor, ice/snow fx, ski symbols) and the unused garden / mine backgrounds. Still shipped from `skyjump_v2`: the info / paytable /
+how-to-play / features headers, the world-record overlay, six fx sprites and the Pixi bet-UI buttons that `assets.ts` preloads.

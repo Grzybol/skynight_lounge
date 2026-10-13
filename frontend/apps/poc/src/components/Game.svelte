@@ -27,7 +27,6 @@
 	import SkyJumpV2Board from './skyjump_v2/SkyJumpV2Board.svelte';
 	import SkyJumpV2BuyBonus from './skyjump_v2/SkyJumpV2BuyBonus.svelte';
 	import SkyJumpV2PayTable from './skyjump_v2/SkyJumpV2PayTable.svelte';
-	import SkyJumpMainMenu from './skyjump/SkyJumpMainMenu.svelte';
 	import SkyJumpBrand from './skyjump/SkyJumpBrand.svelte';
 	import MidnightLoungeBetUI from './midnightLoungeBetUi/MidnightLoungeBetUI.svelte';
 	import SkyJumpUtilityBar from './skyjump/SkyJumpUtilityBar.svelte';
@@ -138,7 +137,6 @@
 	<SkyJumpAtmosphere />
 	<SkyJumpBrand />
 	<SkyJumpV2Board />
-	<SkyJumpMainMenu />
 
 	<Modals>
 		{#snippet version()}
