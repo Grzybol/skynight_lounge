@@ -93,6 +93,9 @@
 						<div class="price">
 							{numberToCurrencyString(stateBet.betAmount * mode.costMultiplier)}
 						</div>
+						<div class="max-win" data-test="mode-max-win">
+							MAX WIN {numberToCurrencyString(stateBet.betAmount * (mode.maxWin ?? 0))}
+						</div>
 						<button
 							type="button"
 							class="buy"
@@ -109,6 +112,15 @@
 </section>
 
 <style>
+	.max-win {
+		color: #f8e2a0;
+		font-size: 1.15rem;
+		font-weight: 800;
+		letter-spacing: 0.04em;
+		text-align: center;
+		text-shadow: 0 2px 0 rgba(60, 10, 20, 0.85);
+	}
+
 	.v2-buy {
 		--ice: #f3e2b8;
 		--muted: #cbb89a;

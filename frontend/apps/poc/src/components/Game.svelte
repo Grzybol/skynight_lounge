@@ -11,6 +11,7 @@
 		ENABLED_MODES as V1_ENABLED_MODES,
 	} from '../game/skyjump/config';
 	import { V2_ENABLED_MODES } from '../game/skyjump_v2/config';
+	import { MODE_BLURBS } from '../game/skyjump_v2/modeBlurbs';
 
 	import { skyjumpCodeBetUi, UI } from 'components-ui-pixi';
 	import { GameVersion, Modals } from 'components-ui-html';
@@ -68,7 +69,7 @@
 			text: {
 				title,
 				dialog: present(('dialog' in mode && mode.dialog) || `${title} feature buy`),
-				description: present(('description' in mode && mode.description) || title),
+				description: present(MODE_BLURBS[mode.rgsKey] ?? (('description' in mode && mode.description) || title)),
 				button: present(('button' in mode && mode.button) || title),
 				betAmountLabel: present(
 					('betAmountLabel' in mode && mode.betAmountLabel) || `${title} bet`,

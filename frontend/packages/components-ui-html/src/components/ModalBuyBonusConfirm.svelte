@@ -47,13 +47,19 @@
 				</BaseTitle>
 			{/if}
 			<BaseScrollable type="column">
-				{stateBonusDerived.selectedBetModeData().text.dialog}
+				{#if stateUi.config.theme === 'skyjump'}
+					<p class="mode-blurb" data-test="mode-blurb">
+						{stateBonusDerived.selectedBetModeData().text.description}
+					</p>
+				{:else}
+					{stateBonusDerived.selectedBetModeData().text.dialog}
+				{/if}
 				<p>
 					TOTAL COST {numberToCurrencyString(
 						stateBet.betAmount * stateBonusDerived.selectedBetModeData().costMultiplier,
 					)}
 				</p>
-				<p>
+				<p class:max-win={stateUi.config.theme === 'skyjump'}>
 					{#if stateUi.config.theme === 'skyjump'}
 						MAX WIN {numberToCurrencyString(
 							stateBet.betAmount * (stateBonusDerived.selectedBetModeData().maxWin ?? 0),
@@ -82,7 +88,9 @@
 				>
 					<BaseIcon width="100%" height="3rem" />
 					<BaseButtonContent>
-						<span style="font-size: 1rem;">{i18nDerived.confirm()}</span>
+						<span style="font-size: 1rem;"
+							>{stateUi.config.theme === 'skyjump' ? 'ENTER THE ROOM' : i18nDerived.confirm()}</span
+						>
 					</BaseButtonContent>
 				</Button>
 			</BaseButtonWrap>
@@ -91,12 +99,30 @@
 {/if}
 
 <style>
+	/* Mode banner: twice the earlier size (220x110 -> 440x220), flush with the top edge of the tile. */
 	.mode-art {
 		display: block;
-		width: min(100%, 360px);
-		max-height: 110px;
+		width: min(100%, 720px);
+		max-height: 220px;
 		margin: 0 auto 0.5rem;
 		object-fit: contain;
 		pointer-events: none;
+	}
+
+	.mode-blurb {
+		margin: 0 0 0.6rem;
+		font-size: 1.05rem;
+		line-height: 1.5;
+		text-align: center;
+	}
+
+	.max-win {
+		margin: 0.4rem 0 0;
+		color: #f8e2a0;
+		font-size: 1.45rem;
+		font-weight: 800;
+		letter-spacing: 0.04em;
+		text-align: center;
+		text-shadow: 0 2px 0 rgba(60, 10, 20, 0.85);
 	}
 </style>

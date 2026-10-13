@@ -424,6 +424,11 @@ body.theme-skyjump .ui-popup-standard-content-wrap {
 		inset 0 0 28px rgba(74, 20, 36, 0.45);
 }
 
+/* Buy-bonus confirmation: the mode banner sits on the top edge of the tile. */
+body.theme-skyjump .ui-popup-standard-content-wrap:has(.mode-art) {
+	padding-top: 0;
+}
+
 body.theme-skyjump .ui-popup-standard-content-wrap:has(.lounge-settings) {
 	width: auto;
 	max-width: min(560px, calc(100% - 48px));
