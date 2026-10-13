@@ -41,7 +41,6 @@
 			<div class="header-slot header-art" data-art-slot="buy-header">
 				<img class="section-header" src={headerSrc} alt="Buy Bonus" draggable="false" />
 			</div>
-			<span class="kicker">SKYNIGHT LOUNGE</span>
 			<p>Choose a free-spin room. The price follows your bet.</p>
 		</header>
 
@@ -94,7 +93,10 @@
 							{numberToCurrencyString(stateBet.betAmount * mode.costMultiplier)}
 						</div>
 						<div class="max-win" data-test="mode-max-win">
-							MAX WIN {numberToCurrencyString(stateBet.betAmount * (mode.maxWin ?? 0))}
+							MAX WIN {Math.max(
+								1,
+								Math.round((mode.maxWin ?? 0) / (mode.costMultiplier || 1)),
+							).toLocaleString('en-US')}×
 						</div>
 						<button
 							type="button"
@@ -205,10 +207,10 @@
 	}
 
 	.hero p {
-		margin: 2px 0 0;
+		margin: 6px 0 0;
 		color: var(--muted);
-		font-size: 0.74rem;
-		line-height: 1.2;
+		font-size: 1.1rem;
+		line-height: 1.3;
 	}
 
 	.body {

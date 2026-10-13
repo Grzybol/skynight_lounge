@@ -47,6 +47,7 @@
 				</BaseTitle>
 			{/if}
 			<BaseScrollable type="column">
+				<div class="mode-info">
 				{#if stateUi.config.theme === 'skyjump'}
 					<p class="mode-blurb" data-test="mode-blurb">
 						{stateBonusDerived.selectedBetModeData().text.description}
@@ -75,6 +76,7 @@
 						MAX WIN {stateBonusDerived.selectedBetModeData().maxWin ?? '—'}x
 					{/if}
 				</p>
+				</div>
 			</BaseScrollable>
 			<BaseButtonWrap type="max-width">
 				<Button
@@ -109,15 +111,26 @@
 		pointer-events: none;
 	}
 
+	/* Tight spacing so the whole tile fits without scrolling. */
+	.mode-info {
+		display: grid;
+		gap: 0.3rem;
+		text-align: center;
+	}
+
+	.mode-info p {
+		margin: 0;
+	}
+
 	.mode-blurb {
-		margin: 0 0 0.6rem;
+		margin: 0;
 		font-size: 1.05rem;
 		line-height: 1.5;
 		text-align: center;
 	}
 
 	.max-win {
-		margin: 0.4rem 0 0;
+		margin: 0.2rem 0 0;
 		color: #f8e2a0;
 		font-size: 1.45rem;
 		font-weight: 800;

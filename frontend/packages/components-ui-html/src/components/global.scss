@@ -427,6 +427,8 @@ body.theme-skyjump .ui-popup-standard-content-wrap {
 /* Buy-bonus confirmation: the mode banner sits on the top edge of the tile. */
 body.theme-skyjump .ui-popup-standard-content-wrap:has(.mode-art) {
 	padding-top: 0;
+	gap: 0.45rem;
+	max-height: none;
 }
 
 body.theme-skyjump .ui-popup-standard-content-wrap:has(.lounge-settings) {

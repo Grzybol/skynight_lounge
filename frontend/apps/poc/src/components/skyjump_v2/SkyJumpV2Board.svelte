@@ -51,6 +51,9 @@
 	let board = $state(emptyBoard());
 	let spinning = $state([false, false, false, false, false]);
 	let reelPace = $state<ReelPace[]>(['', '', '', '', '']);
+	/** Jelly landing: true for a moment after a reel stops (settled symbols squash and rebound). */
+	let jelly = $state([false, false, false, false, false]);
+	const JELLY_MS = 620;
 	let landMs = $state(160);
 	/** Long presentation strips. Null uses the settled board column. */
 	let spinIds = $state<(string[] | null)[]>([null, null, null, null, null]);
@@ -589,6 +592,11 @@
 						spinIds[reel] = null;
 						spinOffset[reel] = 0;
 						landed[reel] = true;
+						if (settleMs > 0) {
+							jelly[reel] = true;
+							const stopped = reel;
+							setTimeout(() => (jelly[stopped] = false), JELLY_MS);
+						}
 						if (result[reel]?.some((id) => id === V2_SCATTER_ID)) {
 							playV2AudioHook('SCATTER_LAND', { catchUp: false });
 						}
@@ -1084,6 +1092,7 @@
 						class:pace-soft={reelPace[reel] === 'soft'}
 						class:pace-fast={reelPace[reel] === 'fast'}
 						class:landing={reelPace[reel] === 'land'}
+						class:jelly={jelly[reel]}
 						data-reel={reel + 1}
 						style:--land-ms={`${landMs}ms`}
 					>
@@ -1939,6 +1948,39 @@
 
 	.reel.landing .symbol {
 		animation: reel-land var(--land-ms, 160ms) ease-out both;
+	}
+
+	/*
+	 * Jelly landing: a dropped blob. Anchored at the bottom edge: wide and flat, then narrow and tall,
+	 * then a smaller wide-flat rebound, then back to rest.
+	 */
+	.reel.jelly .content-stage {
+		transform-origin: 50% 100%;
+		animation: symbol-jelly 560ms ease-out both;
+	}
+
+	@keyframes symbol-jelly {
+		0% {
+			transform: scale(1, 1);
+		}
+		18% {
+			transform: scale(1.1, 0.86);
+		}
+		42% {
+			transform: scale(0.92, 1.1);
+		}
+		68% {
+			transform: scale(1.04, 0.96);
+		}
+		100% {
+			transform: scale(1, 1);
+		}
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.reel.jelly .content-stage {
+			animation: none;
+		}
 	}
 
 	@keyframes reel-land {
