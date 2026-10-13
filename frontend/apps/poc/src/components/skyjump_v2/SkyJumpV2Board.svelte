@@ -23,6 +23,7 @@
 		v2SymbolVisual,
 		v2RollingAssetUrls,
 	v2SymbolBlurUrl,
+	v2SymbolTier,
 	v2TileUrl,
 } from '../../game/skyjump_v2/symbolAssetRegistry';
 	import {
@@ -39,7 +40,12 @@
 	} from '../../game/skyjump_v2/winPresentation';
 	import { reactToWin } from '../../game/loungeCharacters/winReaction';
 	import { statusLabel as playerLabel, statusSub as playerSub } from '../../game/skyjump_v2/statusText';
-	import { V2_PAYLINE_FX, V2_SLOT_BOARD_FRAME } from '../../game/skyjump_v2/presentationLayout';
+	import {
+		V2_FRAME_WINDOWS,
+		V2_PAYLINE_FX,
+		V2_SLOT_BOARD_FRAME,
+		V2_TIER_SCALE,
+	} from '../../game/skyjump_v2/presentationLayout';
 	import type { V2BannerKind } from '../../game/skyjump_v2/presentationLayout';
 	import { playV2AudioHook } from '../../game/skyjump_v2/audio';
 	import type { SkyJumpMysteryResultType } from '../../game/typesBookEvent';
@@ -261,14 +267,40 @@
 	const FRAME_BORDER = 0;
 	const gap = 0;
 	const framePad = 0;
-	const cellH = $derived(Math.max(22, Math.round(maxBoardH / 5)));
-	const cellW = $derived(Math.max(22, Math.round(cellH * V2_SLOT_BOARD_FRAME.cellAspect)));
+	/** Slot width (px @1280): the frame art is scaled so the 5x5 playfield is this wide. */
+	const BOARD_GRID_W = 585;
+	const cellW = $derived(Math.max(22, Math.round(px(BOARD_GRID_W) / 5)));
+	const cellH = $derived(Math.max(22, Math.round(cellW / V2_SLOT_BOARD_FRAME.cellAspect)));
 	const boardW = $derived(cellW * 5 + gap * 4);
 	const boardH = $derived(cellH * 5 + gap * 4);
 	/** Edge-to-edge symbol pitch. The old row gutter is inside the slot, not a grid line. */
 	const symbolPitch = $derived(boardH / VISIBLE_ROWS);
 	const surfaceW = $derived(boardW + framePad * 2 + FRAME_BORDER * 2);
 	const surfaceH = $derived(boardH + framePad * 2 + FRAME_BORDER * 2);
+	/** Pixels per art pixel of the frame. */
+	const artK = $derived(cellW / V2_FRAME_WINDOWS.pitch.w);
+	/** Per-cell geometry: the tier tile fills the real window; the symbol is centred on it. Offsets are from the nominal cell. */
+	const cellGeo = (reel: number, row: number) => {
+		const W = V2_FRAME_WINDOWS;
+		const r = Math.min(4, Math.max(0, row));
+		const nx = W.origin.x + W.pitch.w * reel;
+		const ny = W.origin.y + W.pitch.h * r;
+		const hx = W.colX[reel];
+		const hy = W.rowY[r];
+		const tw = W.colW[reel];
+		const th = W.tileH[r];
+		const clip = r === 4 ? ((W.tileH[r] - W.rowH[r]) / W.tileH[r]) * 100 : 0;
+		return {
+			tx: (hx - nx) * artK,
+			ty: (hy - ny) * artK,
+			tw: tw * artK,
+			th: th * artK,
+			clip,
+			dx: (hx + tw / 2 - (nx + W.pitch.w / 2)) * artK,
+			// Symbols sit in the visible window (the last row is a short window under the frame's bottom bar).
+			dy: (hy + W.rowH[r] / 2 - (ny + W.pitch.h / 2)) * artK,
+		};
+	};
 	const slotFrameSrc = loungeSlotFrameSrc;
 	const slotBackSrc = loungeSlotBackSrc;
 	/** Art frame sized so its transparent hole stays centered on the grid, then +10%. */
@@ -1129,11 +1161,12 @@
 					>
 						<div
 							class="reel-strip"
-							style:transform={`translate3d(0, ${spinIds[reel] ? spinOffset[reel] : 0}px, 0)`}
+							style:transform={spinIds[reel] ? `translate3d(0, ${spinOffset[reel]}px, 0)` : undefined}
 						>
 							{#each ids as id, index (`${reel}-${index}-${id}`)}
 								{@const settled = !spinning[reel] && index < VISIBLE_ROWS}
 								{@const rolling = spinning[reel] && reelPace[reel] !== 'land'}
+								{@const geo = cellGeo(reel, settled ? index : 2)}
 								{@const visual = v2SymbolVisual(id)}
 								{@const tile = visual.placeholder}
 								{@const showArt = Boolean(visual.url && artReady[id] && !artBroken[id])}
@@ -1156,6 +1189,7 @@
 										worldRecordPos?.row === index}
 									style:color={tile.ink}
 									data-symbol={id}
+									data-tier={v2SymbolTier(id)}
 									data-row={settled ? index : undefined}
 									data-test={settled ? 'skyjump-v2-tile' : undefined}
 								>
@@ -1164,8 +1198,17 @@
 										src={v2TileUrl(id, rolling)}
 										alt=""
 										draggable="false"
+										style:left={`${geo.tx}px`}
+										style:top={`${geo.ty}px`}
+										style:width={`${geo.tw}px`}
+										style:height={`${geo.th}px`}
+										style:clip-path={geo.clip > 0 ? `inset(0 0 ${geo.clip}% 0)` : undefined}
 									/>
-									<div class="content-stage">
+									<div
+										class="content-stage"
+										style:--tier-scale={V2_TIER_SCALE[v2SymbolTier(id)] ?? 1}
+										style:translate={`${geo.dx}px ${geo.dy}px`}
+									>
 										{#if visual.url && !artBroken[id]}
 											<img
 												class="sym-art"
@@ -1924,9 +1967,10 @@
 		opacity: 0.9;
 	}
 
+	/* No own stacking context: settled reels sit above the frame art (z 6), rolling reels under it. */
 	.grid {
 		position: relative;
-		z-index: 1;
+		z-index: auto;
 		box-sizing: border-box;
 		display: grid;
 		width: var(--board-w);
@@ -1975,6 +2019,31 @@
 		min-width: 0;
 		min-height: 0;
 		overflow: hidden;
+	}
+
+	/* Settled reels: overflow visible, tiles and symbols above the frame art, higher tiers on top. */
+	.reel:not(.spinning) {
+		overflow: visible;
+	}
+
+	.reel:not(.spinning) .symbol {
+		overflow: visible;
+		z-index: 8;
+	}
+
+	.reel:not(.spinning) .symbol[data-tier='medium'] {
+		z-index: 9;
+	}
+
+	.reel:not(.spinning) .symbol[data-tier='premium'],
+	.reel:not(.spinning) .symbol[data-tier='scatter'],
+	.reel:not(.spinning) .symbol[data-tier='concierge_mystery'],
+	.reel:not(.spinning) .symbol[data-tier='feature'] {
+		z-index: 10;
+	}
+
+	.reel:not(.spinning) .content-stage {
+		overflow: visible;
 	}
 
 	.reel-strip {
@@ -2055,12 +2124,10 @@
 		letter-spacing: 0.04em;
 	}
 
-	/* Tier backdrop of the cell: inset by half a gold line so it fills the frame window exactly. */
+	/* Tier backdrop: exactly the frame window (position and size set per cell). */
 	.tile-bg {
 		position: absolute;
-		inset: 6% 6.6%;
-		width: auto;
-		height: auto;
+		max-width: none;
 		object-fit: fill;
 		pointer-events: none;
 		user-select: none;
@@ -2081,6 +2148,8 @@
 
 	.symbol .sym-art {
 		display: block;
+		transform: scale(var(--tier-scale, 1));
+		transform-origin: 50% 50%;
 		width: 100%;
 		height: 100%;
 		margin: 0;

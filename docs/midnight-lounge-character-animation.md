@@ -312,3 +312,12 @@ Fixed after the guideline review (verified against a local mock RGS, a productio
 - While a reel rolls the cells use `tiles_blur/` and `symbols_blur/`; they switch to the sharp art when the reel starts landing.
 - Woman: `brightness(0.6)` (measured: mean luminance 87 vs the bartender's 52). Sky: `background_farthest-sky.png`; clouds: `clouds_prop_v1.png`.
 - `ui_logo_midnight_lounge.png` from the new pack was NOT imported (it is the old Midnight Lounge logo; the SKYNIGHT LOUNGE emblem stays).
+
+## Slot frame v2 (5x5 art), per-window tiles, tier sizes
+
+- `slot_frame_layer1/2.png` (1672x941, true 5x5) replace the stretched 4-row frame. Window rectangles are in `V2_FRAME_WINDOWS`
+  (the bottom row is a short window under the frame's bar): tier tiles are placed and sized per window (last row cut, not squashed).
+- Settled reels are drawn above the frame (tiles z 7, symbols z 8-10 by tier); rolling reels stay under it. `.grid` has no stacking context of its own.
+- Symbol size by tier (`V2_TIER_SCALE`, relative to cell height): low 0.6, medium 0.9, premium 1.35 (x1.5 per regular tier);
+  scatter, concierge/mystery and feature use the premium size.
+- Woman tone: `brightness(0.66) contrast(1.05)` (matched to the bartender's upper body).

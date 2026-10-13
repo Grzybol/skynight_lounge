@@ -98,15 +98,43 @@ export const V2_PANEL_DECOR = {
  */
 export const V2_SLOT_BOARD_FRAME = {
 	/**
-	 * `slot_background_1/2.png` (1672x1096, 5 rows). The playfield is the 5x5 block of cell pitches:
-	 * the hole union (430..1242 x 98..852) grown by half a gold line on every side
-	 * (pitch 167 x 154.5), so each symbol cell is centred exactly on its frame window.
+	 * `slot_background_1/2.png` (1672x941, 5x5 windows). The playfield is a 5x5 block of nominal cell pitches
+	 * (166.75 x 130.25 art px) centred on the windows; per-cell offsets to the real windows are in V2_FRAME_WINDOWS.
 	 */
-	holeLeft: 0.2507,
-	holeRight: 0.7493,
-	holeTop: 0.081,
-	holeBottom: 0.7858,
+	holeLeft: 0.251,
+	holeRight: 0.7496,
+	holeTop: 0.0961,
+	holeBottom: 0.7882,
 	scale: 1,
-	/** Cell pitch aspect (167 / 154.5). */
-	cellAspect: 1.081,
+	/** Nominal cell pitch aspect (166.75 / 130.25). */
+	cellAspect: 1.28,
 } as const;
+
+/** The frame's real windows in art pixels (1672x941). The last row is cut short by the frame's bottom bar. */
+export const V2_FRAME_WINDOWS = {
+	art: { w: 1672, h: 941 },
+	/** Nominal grid: origin and pitch, art px. */
+	origin: { x: 419.6, y: 90.4 },
+	pitch: { w: 166.75, h: 130.25 },
+	colX: [433, 596, 765, 932, 1100],
+	colW: [140, 144, 143, 144, 139],
+	rowY: [100, 232, 365, 496, 624],
+	/** Visible window height per row. */
+	rowH: [111, 110, 109, 105, 73],
+	/** Full tile height per row (the last row's tile is cut by the frame, not squashed). */
+	tileH: [111, 110, 109, 105, 105],
+} as const;
+
+/**
+ * Symbol size by tier, relative to the cell height. Each regular tier is 1.5x the previous one
+ * (low -> medium -> premium); scatter, Concierge / Mystery and feature symbols match premium.
+ * Settled symbols are drawn above the frame, so they may grow past their window.
+ */
+export const V2_TIER_SCALE: Record<string, number> = {
+	low: 0.6,
+	medium: 0.9,
+	premium: 1.35,
+	scatter: 1.35,
+	concierge_mystery: 1.35,
+	feature: 1.35,
+};

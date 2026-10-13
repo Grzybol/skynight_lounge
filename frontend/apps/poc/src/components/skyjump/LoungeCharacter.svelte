@@ -11,8 +11,8 @@
 	let { character, onwin }: { character: CharacterId; onwin?: (c: WinCategory | null) => void } =
 		$props();
 
-	/** Measured: her frames are 1.7x as bright and contrasty as the bartender's (mean luminance 87 vs 52, spread 67 vs 42). */
-	const WOMAN_TONE = 'brightness(0.6)';
+	/** Matched to the bartender's upper body (the trousers skew his whole-figure mean): luminance mean ~60, spread ~46. */
+	const WOMAN_TONE = 'brightness(0.66) contrast(1.05)';
 
 	const ASPECT = CHARACTER_FRAME[character].w / CHARACTER_FRAME[character].h;
 
