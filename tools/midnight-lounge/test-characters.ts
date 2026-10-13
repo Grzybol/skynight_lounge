@@ -122,8 +122,8 @@ await test("tier -> category mapping reuses existing celebration tiers", () => {
   }
 });
 
-await test("animation table: 7 woman + 3 bartender clips, every win category uses the win clip", () => {
-  assert.equal(animationIdsFor("woman").length, 7);
+await test("animation table: 6 woman + 3 bartender clips, every win category uses the win clip", () => {
+  assert.equal(animationIdsFor("woman").length, 6);
   assert.equal(animationIdsFor("bartender").length, 3);
   assert.equal(CHARACTER_ANIMATIONS.bartender.wins.mega, CHARACTER_ANIMATIONS.bartender.wins.big);
   assert.deepEqual(CHARACTER_ANIMATIONS.bartender.variations, ["bartender_idle_1"]);

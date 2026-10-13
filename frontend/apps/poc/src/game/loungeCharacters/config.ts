@@ -23,7 +23,9 @@ export type CharacterAnimationSet = {
 export const CHARACTER_ANIMATIONS: Record<CharacterId, CharacterAnimationSet> = {
 	woman: {
 		idle: 'woman_idle',
-		variations: ['woman_idle_alt', 'woman_idle_1', 'woman_idle_2', 'woman_idle_3', 'woman_idle_4'],
+		// `woman_idle_4` (extra interruption) is switched off: its pack stays in the repo and the manifest,
+		// add it back here to play it again.
+		variations: ['woman_idle_alt', 'woman_idle_1', 'woman_idle_2', 'woman_idle_3'],
 		// No separate big-win clips: every win category plays the win clip.
 			wins: { mini: 'woman_mini_win', big: 'woman_mini_win', mega: 'woman_mini_win' },
 	},
@@ -90,8 +92,6 @@ export const CHARACTER_TUNING: Record<CharacterId, CharacterTuning> = {
 		variationPrefetchLeadMs: 10_000,
 		idleLoopsMin: 1,
 		idleLoopsMax: 4,
-		// The extra interruption plays less often (weight 0.3 against 1 for the others).
-		variationWeights: { woman_idle_4: 0.3 },
 		// 0.2 s off each end (30 fps): 0.1 s from the earlier pass plus 0.1 s more.
 		trimHeadFrames: 6,
 		trimTailFrames: 6,
