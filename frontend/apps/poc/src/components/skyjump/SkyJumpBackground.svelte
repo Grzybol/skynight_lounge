@@ -7,6 +7,7 @@
 		acquireBuildings,
 		BUILDINGS_FADE_MS,
 		BUILDINGS_POOL,
+		buildingsFilter,
 		buildingsState,
 	} from '../../game/loungeScene/buildingsPool.svelte';
 	import LoungeCharacter from './LoungeCharacter.svelte';
@@ -80,12 +81,19 @@
 	<!-- Second plane: buildings and the smoke over their chimneys share one raised layer. -->
 	<div class="buildings-layer">
 		<!-- Always-visible base: whatever happens in the cross-fade, the houses never let the sky through. -->
-		<img class="plane" src={planeTwoBase} alt="" draggable="false" />
+		<img
+			class="plane"
+			src={planeTwoBase}
+			style:filter={buildingsFilter(planeTwoBase)}
+			alt=""
+			draggable="false"
+		/>
 		<img
 			class="plane fade"
 			class:front={buildingsState.front === 'a'}
 			style:--fade={`${BUILDINGS_FADE_MS}ms`}
 			src={buildingsState.a}
+			style:filter={buildingsFilter(buildingsState.a)}
 			alt=""
 			draggable="false"
 		/>
@@ -94,6 +102,7 @@
 			class:front={buildingsState.front === 'b'}
 			style:--fade={`${BUILDINGS_FADE_MS}ms`}
 			src={buildingsState.b}
+			style:filter={buildingsFilter(buildingsState.b)}
 			alt=""
 			draggable="false"
 		/>

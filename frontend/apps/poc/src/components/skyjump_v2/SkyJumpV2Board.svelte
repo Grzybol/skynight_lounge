@@ -54,6 +54,18 @@
 	/** Jelly landing: true for a moment after a reel stops (settled symbols squash and rebound). */
 	let jelly = $state([false, false, false, false, false]);
 	const JELLY_MS = 620;
+	/** The squash starts this long before the reel has fully stopped (it is almost at rest by then). */
+	const JELLY_LEAD_MS = 90;
+	const jellyTimers: Array<ReturnType<typeof setTimeout> | null> = [null, null, null, null, null];
+	/** Idempotent: the first call per stop starts the squash, later calls (done after land) do nothing. */
+	const startJelly = (reel: number, settleMs: number) => {
+		if (settleMs <= 0 || jelly[reel] || jellyTimers[reel]) return;
+		jelly[reel] = true;
+		jellyTimers[reel] = setTimeout(() => {
+			jelly[reel] = false;
+			jellyTimers[reel] = null;
+		}, JELLY_MS);
+	};
 	let landMs = $state(160);
 	/** Long presentation strips. Null uses the settled board column. */
 	let spinIds = $state<(string[] | null)[]>([null, null, null, null, null]);
@@ -592,11 +604,7 @@
 						spinIds[reel] = null;
 						spinOffset[reel] = 0;
 						landed[reel] = true;
-						if (settleMs > 0) {
-							jelly[reel] = true;
-							const stopped = reel;
-							setTimeout(() => (jelly[stopped] = false), JELLY_MS);
-						}
+						startJelly(reel, settleMs);
 						if (result[reel]?.some((id) => id === V2_SCATTER_ID)) {
 							playV2AudioHook('SCATTER_LAND', { catchUp: false });
 						}
@@ -604,6 +612,8 @@
 						spinOffset[reel] = offset;
 						const nextPace = phaseElapsed >= travelMs ? 'land' : reelTravelPace(phaseElapsed, travelMs);
 						if (reelPace[reel] !== nextPace) reelPace[reel] = nextPace;
+						// The jelly starts when the reel is nearly stopped (landing begins), not after it has stopped.
+						if (nextPace === 'land' || phaseElapsed >= travelMs - JELLY_LEAD_MS) startJelly(reel, settleMs);
 					}
 				}
 			}

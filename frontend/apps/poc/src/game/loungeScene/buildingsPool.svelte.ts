@@ -65,3 +65,11 @@ export const acquireBuildings = () => {
 		}
 	};
 };
+
+/**
+ * The original skyline (`background_2_static.png`) is about 1.45x brighter than the 13 extra frames
+ * (mean luminance 89 vs 62). A CSS brightness factor matches it to the rest; the files stay untouched.
+ */
+export const BUILDINGS_BRIGHTNESS: Record<string, number> = { [BUILDINGS_POOL[0]]: 0.69 };
+export const buildingsFilter = (url: string) =>
+	BUILDINGS_BRIGHTNESS[url] ? `brightness(${BUILDINGS_BRIGHTNESS[url]})` : undefined;

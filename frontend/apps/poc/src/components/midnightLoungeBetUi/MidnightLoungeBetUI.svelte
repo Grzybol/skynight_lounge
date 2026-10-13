@@ -556,7 +556,7 @@
 	}
 
 	.cap {
-		font-size: 10px;
+		font-size: 13px;
 		font-weight: 800;
 		letter-spacing: 0.08em;
 		line-height: 1;
@@ -631,7 +631,7 @@
 
 	.kicker {
 		color: var(--gold);
-		font-size: 10px;
+		font-size: 15px;
 		font-weight: 800;
 		letter-spacing: 0.14em;
 		line-height: 1;
@@ -640,7 +640,7 @@
 
 	.value {
 		color: var(--gold-soft);
-		font-size: 18px;
+		font-size: 24px;
 		font-weight: 800;
 		line-height: 1;
 		white-space: nowrap;
@@ -648,7 +648,7 @@
 	}
 
 	.value.big {
-		font-size: 24px;
+		font-size: 32px;
 	}
 
 	.balance {
@@ -725,7 +725,7 @@
 	}
 
 	.win .kicker {
-		font-size: 20px;
+		font-size: 26px;
 	}
 
 	.free-spins {
