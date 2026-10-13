@@ -31,7 +31,7 @@ const fixElement = (el: Element) => {
 			label.textContent = hit[1];
 			label.setAttribute(
 				'style',
-				"display:block;text-align:center;color:#f0c75a;font:700 1.7rem/1.2 'Marcellus',Georgia,serif;letter-spacing:.06em;text-transform:uppercase;margin:0 auto;",
+				"display:block;text-align:center;color:#f0c75a;font:700 1.7rem/1.2 'Luckiest Guy',Georgia,serif;letter-spacing:.06em;text-transform:uppercase;margin:0 auto;",
 			);
 			el.insertAdjacentElement('afterend', label);
 		}

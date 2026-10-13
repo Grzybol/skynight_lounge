@@ -292,3 +292,12 @@ Fixed after the guideline review (verified against a local mock RGS, a productio
 - 77 / 188 / 225 social mode: `utils-shared/social.ts` word table applied to all HTML text by `game/socialWording.ts`; baked "BUY BONUS" and
   "PAYTABLE" header art is replaced by text. Test: `node --experimental-transform-types tools/midnight-lounge/test-social.ts`.
 - 171-174 replay: no wallet calls, currency / amount applied, bet and real cost shown, REPLAY restarts the event, load failure shows an error screen.
+
+## Performance, fonts, FX (latest)
+
+- Character / prop packs are now lossy WebP (quality 90, alpha stays lossless): 370 MB -> 93 MB in the repo, ~190 MB -> ~50 MB downloaded
+  before the first spin. Rebuild: `python -I tools/midnight-lounge/build-character-anims.py --lossy-quality 90 --zips <dirs>`
+  (omit `--lossy-quality` for lossless, packs above 90 MB are split automatically).
+- Font: Luckiest Guy (`luckiest-guy-400.ttf`, one weight, bold by design) replaces Marcellus everywhere; the weight range is declared so the browser does not fake a bold.
+- The SkyJump ice-blue FX and the world-record ice plate are removed; glints use `fx_glint_ruby_gold`, bursts `fx_luxury_burst_gold`, world record the royal overlay.
+- Clouds sit higher (top part runs off the screen); bartender and woman are 15% smaller (feet anchored) and re-spaced from the slot.

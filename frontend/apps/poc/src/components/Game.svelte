@@ -183,17 +183,16 @@
 	}
 
 	/*
-	 * Info, paytable, settings, bet menu and buy bonus: Marcellus bold (the family ships one weight, so
-	 * the bold is the browser's). The white bold captions under the section headers (h2/h3) keep theirs.
+	 * Info, paytable, settings, bet menu and buy bonus: Luckiest Guy (one weight, bold by design). The white bold captions under the section headers (h2/h3) keep theirs.
 	 */
 	.skyjump-viewport :global(.pop-up-wrap) {
-		--skyjump-font-display: 'Marcellus', 'Cinzel', Georgia, 'Times New Roman', serif;
-		--skyjump-font-ui: 'Marcellus', 'Cinzel', Georgia, 'Times New Roman', serif;
-		--skyjump-font-sans: 'Marcellus', 'Cinzel', Georgia, 'Times New Roman', serif;
+		--skyjump-font-display: 'Luckiest Guy', 'Cinzel', Georgia, 'Times New Roman', serif;
+		--skyjump-font-ui: 'Luckiest Guy', 'Cinzel', Georgia, 'Times New Roman', serif;
+		--skyjump-font-sans: 'Luckiest Guy', 'Cinzel', Georgia, 'Times New Roman', serif;
 	}
 
 	.skyjump-viewport :global(.pop-up-wrap *:not(h2):not(h3)) {
-		font-family: 'Marcellus', 'Cinzel', Georgia, 'Times New Roman', serif;
+		font-family: 'Luckiest Guy', 'Cinzel', Georgia, 'Times New Roman', serif;
 		font-weight: 700;
 	}
 

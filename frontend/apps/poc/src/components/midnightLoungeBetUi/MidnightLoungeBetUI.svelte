@@ -363,7 +363,7 @@
 		inset: 0;
 		pointer-events: none;
 		color: var(--gold-soft);
-		font-family: var(--ml-font-gold, 'Marcellus', serif);
+		font-family: var(--ml-font-gold, 'Luckiest Guy', serif);
 	}
 
 	.backdrop {

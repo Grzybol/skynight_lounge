@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { Snippet } from 'svelte';
 
-	import { MARCELLUS_STACK } from '../../game/skyjump_v2/fonts';
+	import { LUCKIEST_GUY_STACK } from '../../game/skyjump_v2/fonts';
 
 	type Props = {
 		label: string;
@@ -37,7 +37,7 @@
 		<polygon points="464,43 458,37 458,49" fill="#e4c57a" />
 	</svg>
 	<div class="copy">
-		<strong style:font-family={MARCELLUS_STACK}>{props.label}</strong>
+		<strong style:font-family={LUCKIEST_GUY_STACK}>{props.label}</strong>
 		{#if props.sub || props.children}
 			<div class="row">
 				{#if props.sub}
@@ -93,7 +93,7 @@
 		margin: 0;
 		padding: 0;
 		color: var(--ml-gold, #f0c75a);
-		font-family: var(--ml-font-gold, 'Marcellus', serif);
+		font-family: var(--ml-font-gold, 'Luckiest Guy', serif);
 		font-weight: 800;
 		letter-spacing: 0.06em;
 		text-align: center;

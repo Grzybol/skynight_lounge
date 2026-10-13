@@ -176,7 +176,7 @@
 	}
 
 	/*
-	 * Clouds: a band whose lower edge sits 3/5 up the scene (40 % from the top) (the planes above hide the rest). One tile
+	 * Clouds: a band raised above the top edge (lower edge at 26 cqh; the top part runs off the screen) (the planes above hide the rest). One tile
 	 * is 348 cqh wide (band 42 cqh tall, 6000x724 art). Tiles alternate normal / mirrored, so every seam
 	 * joins an image to its own mirror image and the loop never jumps; the strip drifts two tiles
 	 * (694.4 cqh) per cycle, at half the earlier speed (480 s per tile).
@@ -184,7 +184,7 @@
 	.clouds {
 		position: absolute;
 		left: 0;
-		top: -2cqh;
+		top: -16cqh;
 		height: 42cqh;
 		width: 2088cqh;
 		display: flex;

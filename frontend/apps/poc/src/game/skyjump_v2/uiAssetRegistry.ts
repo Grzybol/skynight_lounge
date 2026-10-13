@@ -133,6 +133,8 @@ const LOUNGE_UI_URL: Partial<Record<V2UiKey, string>> = {
 	betuiAuto: `${LOUNGE_UI_ROOT}/ui/betui/betui_auto_button_midnight_lounge.png`,
 	betuiTurbo: `${LOUNGE_UI_ROOT}/ui/betui/betui_turbo_button_midnight_lounge.png`,
 	modeBadgePlate: `${LOUNGE_UI_ROOT}/ui/ui_buy_bonus_badge.png`,
+	// World record: the royal plate in the lounge palette (the SkyJump ice crystal plate is gone).
+	overlayWorldRecord: `${LOUNGE_UI_ROOT}/overlays/ui_overlay_royal_midnight_lounge.png`,
 };
 
 export const v2UiAssetUrl = (key: V2UiKey): string => {
@@ -145,9 +147,20 @@ export const v2UiAssetUrl = (key: V2UiKey): string => {
 	return resolveGameAsset(`${V2_UI_RUNTIME_DIR}/${file}`);
 };
 
+/** Lounge-palette FX. The SkyJump ice-blue sprites are gone: glints use the ruby-gold glint, bursts the gold burst. */
+const LOUNGE_FX_URL: Partial<Record<V2FxKey, string>> = {
+	iceGlint: `${LOUNGE_UI_ROOT}/fx/fx_glint_ruby_gold.png`,
+	paylineSparkHead: `${LOUNGE_UI_ROOT}/fx/fx_glint_ruby_gold.png`,
+	paylineEndGlint: `${LOUNGE_UI_ROOT}/fx/fx_glint_ruby_gold.png`,
+	smallSparkle: `${LOUNGE_UI_ROOT}/fx/fx_glint_ruby_gold.png`,
+	snowBurst: `${LOUNGE_UI_ROOT}/fx/fx_luxury_burst_gold.png`,
+	winGlowRing: `${LOUNGE_UI_ROOT}/fx/fx_luxury_burst_gold.png`,
+	screenFlashAccent: `${LOUNGE_UI_ROOT}/fx/fx_luxury_burst_gold.png`,
+};
+
 export const v2FxAssetUrl = (key: V2FxKey): string => {
-	if (key === 'iceGlint') return resolveGameAsset(`${LOUNGE_UI_ROOT}/fx/fx_glint_ruby_gold.png`);
-	if (key === 'snowBurst') return resolveGameAsset(`${LOUNGE_UI_ROOT}/fx/fx_luxury_burst_gold.png`);
+	const lounge = LOUNGE_FX_URL[key];
+	if (lounge) return resolveGameAsset(lounge);
 	return resolveGameAsset(`${V2_FX_RUNTIME_DIR}/${V2_FX_FILENAMES[key]}`);
 };
 

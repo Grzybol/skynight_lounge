@@ -203,7 +203,7 @@
 		box-sizing: border-box;
 		background: #12060b;
 		color: #f3e2b8;
-		font-family: 'Marcellus', Georgia, serif;
+		font-family: 'Luckiest Guy', Georgia, serif;
 		font-size: 1.1rem;
 		text-align: center;
 	}

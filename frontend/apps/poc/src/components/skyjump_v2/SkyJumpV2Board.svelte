@@ -1350,7 +1350,7 @@
 		overflow: hidden;
 		padding: 0.45rem 0.7rem 0.5rem;
 		color: var(--ml-gold, #f0c75a);
-		font-family: var(--ml-font-gold, 'Marcellus', serif);
+		font-family: var(--ml-font-gold, 'Luckiest Guy', serif);
 		text-align: center;
 		background:
 			radial-gradient(120% 80% at 50% 0%, rgba(228, 197, 122, 0.14), transparent 58%),
@@ -1395,7 +1395,7 @@
 	.hud-label {
 		margin: 0;
 		color: var(--ml-gold, #f0c75a);
-		font-family: var(--ml-font-gold, 'Marcellus', serif);
+		font-family: var(--ml-font-gold, 'Luckiest Guy', serif);
 		font-size: 0.62rem;
 		font-weight: 800;
 		letter-spacing: 0.16em;
@@ -1441,7 +1441,7 @@
 
 	.hud-value {
 		color: var(--ml-gold, #f0c75a);
-		font-family: var(--ml-font-gold, 'Marcellus', serif);
+		font-family: var(--ml-font-gold, 'Luckiest Guy', serif);
 		font-size: 1.15rem;
 		font-weight: 800;
 		line-height: 1;
@@ -1450,7 +1450,7 @@
 	.hud-meta {
 		margin: 0;
 		color: var(--ml-gold, #f0c75a);
-		font-family: var(--ml-font-gold, 'Marcellus', serif);
+		font-family: var(--ml-font-gold, 'Luckiest Guy', serif);
 		font-size: 0.68rem;
 		font-weight: 700;
 		letter-spacing: 0.04em;
@@ -1753,7 +1753,7 @@
 	}
 
 	.win-banner :global(.copy strong) {
-		font-family: var(--ml-font-gold, 'Marcellus', serif);
+		font-family: var(--ml-font-gold, 'Luckiest Guy', serif);
 		font-size: 1.05rem;
 	}
 
@@ -2062,9 +2062,9 @@
 		left: 50%;
 		z-index: 2;
 		transform: translateX(-50%);
-		/* Marcellus, gold; 0.62em -> 0.93em (+50 %) -> 1.86em (+100 %). */
+		/* Luckiest Guy, gold; 0.62em -> 0.93em (+50 %) -> 1.86em (+100 %). */
 		color: var(--ml-gold, #f0c75a);
-		font-family: var(--ml-font-gold, 'Marcellus', serif);
+		font-family: var(--ml-font-gold, 'Luckiest Guy', serif);
 		font-size: 1.86em;
 		letter-spacing: 0;
 		line-height: 1;
