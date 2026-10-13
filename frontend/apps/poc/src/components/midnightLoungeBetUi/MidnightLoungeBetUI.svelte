@@ -4,13 +4,16 @@
 		stateBet,
 		stateBetDerived,
 		stateConfig,
+		stateModal,
 		stateSound,
 		stateUi,
+		stateUrlDerived,
 	} from 'state-shared';
 	import { OnHotkey } from 'components-shared';
 	import { bookEventAmountToCurrencyString, numberToCurrencyString } from 'utils-shared/amount';
 
 	import { getContext } from '../../game/context';
+	import { loungeShown } from '../../game/midnightLoungeTheme';
 	import { resolveGameAsset } from '../../game/resolveGameAsset';
 	import { i18nDerived } from '../../i18n/i18nDerived';
 	import {
@@ -107,6 +110,10 @@
 	const buyEmblemSrc = resolveGameAsset('assets/midnight-lounge/ui/ui_logo_midnight_lounge.png');
 	/** Big win and above: the whole BetUI is unavailable (inert) until the celebration ends. */
 	const celebrating = $derived(context.stateGame.celebrationActive);
+	const isReplay = $derived(stateUi.config.mode === 'replay');
+	const socialMode = stateUrlDerived.social();
+	/** Idle, but the balance cannot cover bet x mode cost: the player is told why the spin is unavailable. */
+	const insufficient = $derived(!isReplay && idle && !stateBetDerived.isBetCostAvailable());
 	const spinLabel = $derived(stopMode ? i18nDerived.stop() : 'SPIN');
 </script>
 
@@ -126,9 +133,57 @@
 			></button>
 		{/if}
 
-		<OnHotkey hotkey="Space" disabled={spaceLocked || celebrating} onpress={onSpin} />
+		{#if isReplay}
+			<!-- Replay: no betting controls, no route into real play. Shows what was played and a way to run it again. -->
+			<div class="bar replay-bar" data-test="ml-replay-bar">
+				<span class="bar-line top"></span>
+				<span class="bar-line bottom"></span>
+				<div class="panel replay-info" data-test="ml-replay-info">
+					<span class="text">
+						<span class="kicker">{socialMode ? 'PLAY AMOUNT' : 'BET'}</span>
+						<span class="value">{numberToCurrencyString(stateBet.betAmount)}</span>
+					</span>
+					{#if stateBet.replayCostMultiplier > 1}
+						<span class="text">
+							<span class="kicker">{loungeShown(stateBet.activeBetModeKey, stateBet.activeBetModeKey)} · REAL COST</span>
+							<span class="value">
+								{stateBet.replayCostMultiplier}× · {numberToCurrencyString(
+									stateBet.betAmount * stateBet.replayCostMultiplier,
+								)}
+							</span>
+						</span>
+					{/if}
+				</div>
+				<div class="panel win replay-win" aria-label={i18nDerived.win()}>
+					<span class="kicker">{i18nDerived.win()}</span>
+					<span class="value big">{bookEventAmountToCurrencyString(winTween.current)}</span>
+				</div>
+				<button
+					type="button"
+					class="tile action push replay-again"
+					data-test="ml-replay-again"
+					onpointerenter={hover}
+					onclick={() => window.location.reload()}
+				>
+					<span class="cap">REPLAY</span>
+				</button>
+			</div>
+		{:else}
+		<OnHotkey
+				hotkey="Space"
+				disabled={spaceLocked || celebrating || stateUi.menuOpen || Boolean(stateModal.modal)}
+				onpress={() => {
+					// Space places a bet when betting is available; mid-round it does nothing.
+					if (idle) onSpin();
+				}}
+			/>
 
 		<div class="bar">
+			{#if insufficient}
+				<span class="funds-note" role="status" data-test="ml-insufficient"
+					>{socialMode ? 'NOT ENOUGH BALANCE FOR THIS PLAY' : 'INSUFFICIENT FUNDS FOR THIS BET'}</span
+				>
+			{/if}
 			<span class="bar-line top"></span>
 			<span class="bar-line bottom"></span>
 
@@ -295,6 +350,7 @@
 				</span>
 			</div>
 		{/if}
+		{/if}
 	</div>
 {/if}
 
@@ -423,6 +479,31 @@
 	/* The right-hand buttons sit against the SPIN button; the WIN counter is centred on the bar on its own. */
 	.push {
 		margin-left: auto;
+	}
+
+	.funds-note {
+		position: absolute;
+		left: 50%;
+		top: -34px;
+		transform: translateX(-50%);
+		padding: 6px 14px;
+		color: #fbe9b0;
+		background: rgba(60, 10, 22, 0.92);
+		border: 1.5px solid rgba(228, 190, 100, 0.85);
+		border-radius: 999px;
+		font-size: 12px;
+		font-weight: 800;
+		letter-spacing: 0.12em;
+		white-space: nowrap;
+		pointer-events: none;
+	}
+
+	.replay-bar {
+		padding-right: 22px;
+	}
+
+	.replay-win {
+		position: absolute;
 	}
 
 	.tile.wide {

@@ -4,7 +4,7 @@
 	import { EnablePixiExtension } from 'components-pixi';
 	import { EnableHotkey } from 'components-shared';
 	import { App, Text } from 'pixi-svelte';
-	import { stateMeta, stateModal, stateUi } from 'state-shared';
+	import { stateMeta, stateModal, stateUi, stateUrlDerived } from 'state-shared';
 	import {
 		PLACEHOLDER_IDENTITY,
 		PUBLIC_GAME_TITLE,
@@ -16,6 +16,7 @@
 	import { GameVersion, Modals } from 'components-ui-html';
 
 	import { getContext } from '../game/context';
+	import { installSocialWording } from '../game/socialWording';
 	import { loungePhrase } from '../game/midnightLoungeTheme';
 	import EnableSound from './EnableSound.svelte';
 	import EnableGameActor from './EnableGameActor.svelte';
@@ -83,8 +84,13 @@
 
 	onMount(() => {
 		document.body.classList.add('theme-skyjump');
+		// social=true: restricted words are replaced everywhere the player can read them.
+		const stopSocial = stateUrlDerived.social() ? installSocialWording() : undefined;
 
-		return () => document.body.classList.remove('theme-skyjump');
+		return () => {
+			stopSocial?.();
+			document.body.classList.remove('theme-skyjump');
+		};
 	});
 
 	context.eventEmitter.subscribeOnMount({

@@ -1,7 +1,7 @@
 import { fromPromise } from 'xstate';
 
 import { API_AMOUNT_MULTIPLIER } from 'constants-shared/bet';
-import { stateBet, stateUrlDerived, stateModal } from 'state-shared';
+import { stateBet, stateBetDerived, stateUrlDerived, stateModal } from 'state-shared';
 import { requestBet, requestEndRound } from 'rgs-requests';
 
 import type { BaseBet } from './types';
@@ -25,6 +25,10 @@ const handleRequestBet = async <TBet extends BaseBet>({
 	requestOverride?: () => Promise<RequestBetData<TBet>> | null;
 }) => {
 	try {
+		// Never send /wallet/play when the balance cannot cover bet x mode cost (space bar, autoplay, buy bonus).
+		if (!requestOverride && !stateBetDerived.isBetCostAvailable()) {
+			throw { error: 'ERR_IPB', message: 'Insufficient balance for this bet.' };
+		}
 		const overrideRequest = requestOverride?.();
 		const data = overrideRequest
 			? await overrideRequest

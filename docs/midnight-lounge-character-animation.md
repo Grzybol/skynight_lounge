@@ -278,3 +278,17 @@ how-to-play / features headers, the world-record overlay, six fx sprites and the
 - No blur, no lifted plate, no characters over the BetUI: a light dimming layer (`.win-dim`, z 21, 38 % dark) fades in over the
   screen; the celebration (z 22) sits above it. Characters keep z 20.
 - While a big win runs, the BetUI is `inert` (`stateGame.celebrationActive`, set by `SkyJumpV2Board`) and Space does not spin.
+
+## Engine approval self-check fixes
+
+Fixed after the guideline review (verified against a local mock RGS, a production build served statically, and a replay URL):
+- 275 no Stake Engine loader; 223 viewport locks zoom (`maximum-scale=1, user-scalable=no`, `touch-action: manipulation`).
+- 181 `rgs_url` accepted with or without scheme (`rgsBaseUrl`); 274 a failed authenticate shows a clear error screen and the game does not start.
+- 242 the game opens on `defaultBetLevel`; 187 an active round's `round.amount` overrides it.
+- 219 / 273 / 78 currency formatting: per-currency decimals (JPY 0), extra decimals for sub-cent amounts, XSC/XGC/XEC as `10.00 SC` / `10.00 GC`.
+- 222 `/wallet/play` is never sent when balance < bet x mode cost (guard in `handleRequestBet`, spin disabled, visible note);
+  228 Space only bets when idle and is ignored in menus and modals.
+- 25 / 235: Info lists RTP and max win per mode (`modeStats.ts`, regenerate with `tools/skyjump/gen-mode-stats.py`) and a Controls card.
+- 77 / 188 / 225 social mode: `utils-shared/social.ts` word table applied to all HTML text by `game/socialWording.ts`; baked "BUY BONUS" and
+  "PAYTABLE" header art is replaced by text. Test: `node --experimental-transform-types tools/midnight-lounge/test-social.ts`.
+- 171-174 replay: no wallet calls, currency / amount applied, bet and real cost shown, REPLAY restarts the event, load failure shows an error screen.
