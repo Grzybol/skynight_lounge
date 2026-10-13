@@ -264,7 +264,7 @@ export const V2_AUDIO_CATALOG: Record<string, HookBinding> = {
 	},
 	WIN_BIG: {
 		kind: 'v2',
-		file: 'sfx_win_big.mp3',
+		file: 'sfx_win_bigwin_universal.mp3', // one 5 s sound for big win and every tier above
 		gain: 0.95,
 		status: 'READY',
 		overlap: 'allow',
@@ -272,7 +272,7 @@ export const V2_AUDIO_CATALOG: Record<string, HookBinding> = {
 	},
 	WIN_MEGA: {
 		kind: 'v2',
-		file: 'sfx_win_mega.mp3',
+		file: 'sfx_win_bigwin_universal.mp3',
 		gain: 1,
 		status: 'READY',
 		overlap: 'allow',

@@ -102,6 +102,7 @@
 	<SkyJumpBackground />
 	<MidnightLoungeBetUI />
 	<SkyJumpUtilityBar />
+	<div class="win-dim" aria-hidden="true"></div>
 	<App>
 		{#if introAudio}
 			<EnableSound />
@@ -190,52 +191,21 @@
 	}
 
 	/*
-	 * Win focus: the HUD blurs in while a celebration opens and blurs back out when it closes
-	 * (700 ms, V2_WIN_BLUR_FADE_MS). `data-win-plate` is set for the whole celebration.
+	 * Big win and above: no blur. A light dimming layer fades in over the whole screen (scene, slot,
+	 * characters and BetUI) while the celebration, which sits above it, plays. `data-win-plate` is set
+	 * for the whole celebration. The BetUI is inert meanwhile (see MidnightLoungeBetUI).
 	 */
-	:global(.skyjump-viewport .viewport-light-sweep),
-	:global(.skyjump-viewport .ml-betui),
-	:global(.skyjump-viewport .brand),
-	:global(.skyjump-viewport .snow),
-	:global(.skyjump-viewport .utility),
-	:global(.skyjump-viewport .win-banner),
-	:global(.skyjump-viewport canvas:not(.figure)) {
-		transition:
-			filter 700ms ease,
-			transform 700ms ease;
-	}
-
-	/* The slot (frame + symbols) fades out with the lifted plate so no trace of it can show through. */
-	:global(.skyjump-viewport .v2-board-stage) {
+	.win-dim {
+		position: absolute;
+		inset: 0;
+		z-index: 21;
+		background: rgba(6, 2, 8, 0.38);
+		opacity: 0;
+		pointer-events: none;
 		transition: opacity 700ms ease;
 	}
 
-	:global(.skyjump-viewport[data-win-plate] .v2-board-stage) {
-		opacity: 0;
-	}
-
-	:global(.skyjump-viewport[data-win-plate] .viewport-light-sweep),
-	:global(.skyjump-viewport[data-win-plate] .ml-betui),
-	:global(.skyjump-viewport[data-win-plate] .brand),
-	:global(.skyjump-viewport[data-win-plate] .snow),
-	:global(.skyjump-viewport[data-win-plate] .utility),
-	:global(.skyjump-viewport[data-win-plate] .win-banner),
-	:global(.skyjump-viewport[data-win-plate] canvas:not(.figure)) {
-		/* 14 px -> 11.9 px (-15 %). */
-		filter: blur(11.9px);
-	}
-
-	/*
-	 * Smooth blur edges: a blurred box fades to transparent at its own border, which draws a
-	 * visible rectangle with hard corners. Full-screen canvases are scaled past the screen
-	 * edge, and the summary tile may no longer clip its own blur.
-	 */
-	:global(.skyjump-viewport[data-win-plate] canvas:not(.figure)) {
-		transform: scale(1.04);
-		transform-origin: center;
-	}
-
-	:global(.skyjump-viewport[data-win-plate] .win-banner) {
-		overflow: visible;
+	:global(.skyjump-viewport[data-win-plate]) .win-dim {
+		opacity: 1;
 	}
 </style>

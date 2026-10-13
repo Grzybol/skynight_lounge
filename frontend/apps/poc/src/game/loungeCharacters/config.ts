@@ -24,15 +24,15 @@ export const CHARACTER_ANIMATIONS: Record<CharacterId, CharacterAnimationSet> = 
 	woman: {
 		idle: 'woman_idle',
 		variations: ['woman_idle_alt', 'woman_idle_1', 'woman_idle_2', 'woman_idle_3', 'woman_idle_4'],
-		// One big-win clip serves big and everything above (like the bartender).
-			wins: { mini: 'woman_mini_win', big: 'woman_big_win', mega: 'woman_big_win' },
+		// No separate big-win clips: every win category plays the win clip.
+			wins: { mini: 'woman_mini_win', big: 'woman_mini_win', mega: 'woman_mini_win' },
 	},
 	bartender: {
 		idle: 'bartender_idle',
 		// One interruption (a one-shot that returns to the main idle).
 		variations: ['bartender_idle_1'],
-		// The pack has a single big-win clip: it serves big and every tier above.
-		wins: { mini: 'bartender_mini_win', big: 'bartender_big_win', mega: 'bartender_big_win' },
+		// No separate big-win clips: every win category plays the win clip.
+		wins: { mini: 'bartender_mini_win', big: 'bartender_mini_win', mega: 'bartender_mini_win' },
 	},
 };
 

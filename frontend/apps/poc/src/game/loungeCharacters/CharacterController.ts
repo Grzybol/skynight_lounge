@@ -118,6 +118,8 @@ export class CharacterController {
 	requestWin(category: WinCategory, opts: { turbo?: boolean } = {}): boolean {
 		if (this.destroyed || !this.started) return false;
 		const turbo = Boolean(opts.turbo);
+		// Every category plays the same win clip: a request for the clip that is already playing adds nothing.
+		if (this.mode === 'win' && this.player.activeId === this.set.wins[category]) return true;
 		if (this.mode === 'win' && this.winCategory) {
 			const waiting = this.pendingWin ? WIN_PRIORITY[this.pendingWin.category] : 0;
 			const active = WIN_PRIORITY[this.winCategory];
@@ -137,8 +139,8 @@ export class CharacterController {
 		this.mode = 'win';
 		this.winCategory = category;
 		this.emit();
-		// Normal speed: big/mega play forward then in reverse (10 s); turbo and mini play once (5 s).
-		const pingPong = !turbo && category !== 'mini';
+		// Win clips play once (5 s).
+		const pingPong = false;
 		void this.runClip(epoch, this.set.wins[category], 'win', pingPong);
 	}
 

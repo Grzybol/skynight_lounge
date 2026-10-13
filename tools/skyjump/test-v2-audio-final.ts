@@ -47,13 +47,12 @@ const expectedCustom = [
 	'sfx_bad_miss.mp3',
 	// Midnight Lounge win reactions (mini / big / mega).
 	'sfx_win_mini.mp3',
-	'sfx_win_big.mp3',
-	'sfx_win_mega.mp3',
+	'sfx_win_bigwin_universal.mp3',
 ];
 
 const onDisk = existsSync(V2_DIR) ? readdirSync(V2_DIR).filter((f) => f.endsWith('.mp3')) : [];
 ok('v2 sfx directory exists', existsSync(V2_DIR));
-ok('custom attachment count 24', onDisk.length === 24, `got ${onDisk.length}`);
+ok('custom attachment count 23', onDisk.length === 23, `got ${onDisk.length}`);
 for (const f of expectedCustom) {
 	ok(`file on disk ${f}`, existsSync(resolve(V2_DIR, f)));
 }

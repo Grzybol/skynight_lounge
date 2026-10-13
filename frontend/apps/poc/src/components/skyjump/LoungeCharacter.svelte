@@ -106,13 +106,4 @@
 	:global(.skyjump-viewport canvas.lounge-character.figure[data-ready='1']) {
 		opacity: 1;
 	}
-
-	/*
-	 * During a celebration the characters sit above the win overlay and the lifted plate, never
-	 * blurred. `data-win-focus` lasts the whole celebration plus the plate's fade-out.
-	 */
-	:global(.skyjump-viewport[data-win-focus] canvas.lounge-character.figure) {
-		z-index: 30;
-		filter: none;
-	}
 </style>

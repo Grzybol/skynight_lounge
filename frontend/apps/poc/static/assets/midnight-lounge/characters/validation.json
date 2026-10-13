@@ -14,6 +14,20 @@
    "emptyFrames": [],
    "packBytes": 14365796
   },
+  "plant_loop": {
+   "zip": "background_prop_plant_v4.zip",
+   "sheets": 30,
+   "frameSize": [
+    562,
+    748
+   ],
+   "frames": 150,
+   "frameDurationsMs": [
+    33
+   ],
+   "emptyFrames": [],
+   "packBytes": 29454774
+  },
   "bartender_idle": {
    "zip": "barman2_idle_v1_spritesheet.zip",
    "sheets": 30,
@@ -55,34 +69,6 @@
    ],
    "emptyFrames": [],
    "packBytes": 16206032
-  },
-  "bartender_big_win": {
-   "zip": "barman2_bigwin_v1_spritesheet.zip",
-   "sheets": 30,
-   "frameSize": [
-    562,
-    748
-   ],
-   "frames": 150,
-   "frameDurationsMs": [
-    33
-   ],
-   "emptyFrames": [],
-   "packBytes": 16790306
-  },
-  "plant_loop": {
-   "zip": "background_prop_plant_v4.zip",
-   "sheets": 30,
-   "frameSize": [
-    562,
-    748
-   ],
-   "frames": 150,
-   "frameDurationsMs": [
-    33
-   ],
-   "emptyFrames": [],
-   "packBytes": 29454774
   },
   "woman_idle": {
    "zip": "feet2_podstawowa1_v3_spritesheet.zip",
@@ -188,26 +174,14 @@
    ],
    "emptyFrames": [],
    "packBytes": 32428182
-  },
-  "woman_big_win": {
-   "zip": "feet2_bigwin_v4_spritesheet.zip",
-   "sheets": 5,
-   "frameSize": [
-    562,
-    748
-   ],
-   "frames": 150,
-   "frameDurationsMs": [
-    33,
-    34
-   ],
-   "emptyFrames": [],
-   "packBytes": 32471120
   }
  },
  "seams": {
   "guard_loop": {
    "lastToOwnFirst": 0.3790056483207181
+  },
+  "plant_loop": {
+   "lastToOwnFirst": 0.5464054798561288
   },
   "bartender_idle": {
    "lastToOwnFirst": 0.3270940776828363,
@@ -223,14 +197,6 @@
    "lastToOwnFirst": 0.32036379336593906,
    "lastToIdleFirst": 0.3211630778160504,
    "idleLastToFirst": 0.3229061601994405
-  },
-  "bartender_big_win": {
-   "lastToOwnFirst": 0.31668197042647533,
-   "lastToIdleFirst": 0.31731830551696577,
-   "idleLastToFirst": 0.32233643214645935
-  },
-  "plant_loop": {
-   "lastToOwnFirst": 0.5464054798561288
   },
   "woman_idle": {
    "lastToOwnFirst": 0.5830982263497441,
@@ -266,12 +232,7 @@
    "lastToOwnFirst": 0.5819462814242488,
    "lastToIdleFirst": 0.5805403971682493,
    "idleLastToFirst": 0.5882923858640836
-  },
-  "woman_big_win": {
-   "lastToOwnFirst": 0.5792534540506594,
-   "lastToIdleFirst": 0.5790375758844463,
-   "idleLastToFirst": 0.5869239680666831
   }
  },
- "totalFrames": 2100
+ "totalFrames": 1800
 }

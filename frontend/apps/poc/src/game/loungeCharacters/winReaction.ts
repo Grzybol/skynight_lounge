@@ -13,11 +13,23 @@ const SFX_HOOK: Record<WinCategory, string> = {
 	mega: 'WIN_MEGA',
 };
 
+/**
+ * Big win and every tier above share one 5 s sound. The counter announces big and then mega during
+ * one celebration, so the sound starts once per window instead of stacking.
+ */
+const BIG_SOUND_WINDOW_MS = 5000;
+let lastBigSoundAt = -Infinity;
+
 export const reactToWin = (
 	category: WinCategory,
 	tier: LoungeWinEvent['tier'],
 	opts: { turbo?: boolean } = {},
 ) => {
 	emitLoungeWin(category, tier, opts);
+	if (category !== 'mini') {
+		const now = performance.now();
+		if (now - lastBigSoundAt < BIG_SOUND_WINDOW_MS) return;
+		lastBigSoundAt = now;
+	}
 	playV2AudioHook(SFX_HOOK[category]);
 };

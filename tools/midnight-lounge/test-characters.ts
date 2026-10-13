@@ -122,9 +122,9 @@ await test("tier -> category mapping reuses existing celebration tiers", () => {
   }
 });
 
-await test("animation table: 8 woman + 4 bartender clips, big and mega share one clip per character", () => {
-  assert.equal(animationIdsFor("woman").length, 8);
-  assert.equal(animationIdsFor("bartender").length, 4);
+await test("animation table: 7 woman + 3 bartender clips, every win category uses the win clip", () => {
+  assert.equal(animationIdsFor("woman").length, 7);
+  assert.equal(animationIdsFor("bartender").length, 3);
   assert.equal(CHARACTER_ANIMATIONS.bartender.wins.mega, CHARACTER_ANIMATIONS.bartender.wins.big);
   assert.deepEqual(CHARACTER_ANIMATIONS.bartender.variations, ["bartender_idle_1"]);
   assert.ok(CHARACTER_ANIMATIONS.woman.variations.includes("woman_idle_alt"));
@@ -191,63 +191,36 @@ await test("controller: starts default idle as a loop and does not restart it", 
   c.destroy();
 });
 
-await test("controller: wins queue behind the playing clip, nothing is cut", async () => {
-  const f = fakePlayer();
-  const c = new CharacterController("woman", f.player as any, quiet);
-  c.start();
-  f.calls[0].resolve(true);
-  await tick();
-  assert.equal(c.requestWin("mini"), true);
-  const mini = f.calls[1];
-  assert.equal(mini.id, "woman_mini_win");
-  assert.equal(mini.loop, false);
-  assert.equal(mini.opts.pingPong, false, "mini plays once");
-  mini.resolve(true);
-  await tick();
-  // Higher wins arrive while the mini clip is still playing: they wait.
-  assert.equal(c.requestWin("big"), true);
-  assert.equal(c.requestWin("mega"), true);
-  assert.equal(c.requestWin("big"), false, "lower than the waiting mega is ignored");
-  assert.equal(c.requestWin("mini"), false, "not above the playing clip");
-  assert.equal(f.calls.length, 2, "the playing clip was not interrupted");
-  assert.equal(c.getState().winCategory, "mini");
-  // Mini finishes: the waiting MEGA (the highest) starts directly, never idle.
-  mini.opts.onComplete();
-  await tick();
-  const mega = f.calls[2];
-  assert.equal(mega.id, "woman_big_win");
-  assert.equal(mega.opts.pingPong, true, "normal speed plays big/mega forward then reverse");
-  assert.equal(c.getState().winCategory, "mega");
-  mega.resolve(true);
-  await tick();
-  mega.opts.onComplete();
-  await tick();
-  assert.equal(c.getState().mode, "idle");
-  assert.equal(f.calls.at(-1)!.id, "woman_idle");
-  c.destroy();
-});
-
-await test("controller: turbo plays big/mega once; reverse is skipped when a win is waiting", async () => {
-  const f = fakePlayer();
-  const c = new CharacterController("bartender", f.player as any, quiet);
-  c.start();
-  f.calls[0].resolve(true);
-  await tick();
-  c.requestWin("big", { turbo: true });
-  const turboBig = f.calls[1];
-  assert.equal(turboBig.opts.pingPong, false, "turbo: single pass");
-  turboBig.opts.onComplete();
-  await tick();
-  c.requestWin("big");
-  const big = f.calls.at(-1)!;
-  assert.equal(big.id, "bartender_big_win");
-  assert.equal(big.opts.pingPong, true);
-  assert.equal(big.opts.reverseIf(), true, "nothing waiting: reverse");
-  big.resolve(true);
-  await tick();
-  c.requestWin("mega");
-  assert.equal(big.opts.reverseIf(), false, "mega waiting: end at the turning point");
-  c.destroy();
+await test("controller: every win category plays the one win clip once; requests for the playing clip are absorbed", async () => {
+  for (const ch of ["woman", "bartender"] as const) {
+    const f = fakePlayer();
+    const c = new CharacterController(ch, f.player as any, quiet);
+    c.start();
+    f.calls[0].resolve(true);
+    await tick();
+    assert.equal(c.requestWin("mini"), true);
+    const win = f.calls[1];
+    assert.equal(win.id, `${ch}_mini_win`);
+    assert.equal(win.loop, false);
+    assert.equal(win.opts.pingPong, false, "win clips play once");
+    win.resolve(true);
+    await tick();
+    // The counter later crosses the big and mega thresholds: same clip, nothing restarts.
+    assert.equal(c.requestWin("big"), true);
+    assert.equal(c.requestWin("mega", { turbo: true }), true);
+    assert.equal(f.calls.length, 2, "the playing clip was not touched");
+    win.opts.onComplete();
+    await tick();
+    assert.equal(c.getState().mode, "idle");
+    assert.equal(f.calls.at(-1)!.id, `${ch}_idle`);
+    // A big win on its own starts the same clip, also once.
+    f.calls.at(-1)!.resolve(true);
+    await tick();
+    c.requestWin("mega");
+    assert.equal(f.calls.at(-1)!.id, `${ch}_mini_win`);
+    assert.equal(f.calls.at(-1)!.opts.pingPong, false);
+    c.destroy();
+  }
 });
 
 await test("controller: a stale completion from a replaced clip is ignored", async () => {
@@ -281,17 +254,6 @@ await test("win counter categories: mini only above the bet", () => {
   assert.equal(categoryForWinX(10, th), "big");
   assert.equal(categoryForWinX(50, th), "mega");
   assert.equal(categoryForWinX(1000, th), "mega");
-});
-
-await test("controller: bartender mega plays the shared big-win clip", async () => {
-  const f = fakePlayer();
-  const c = new CharacterController("bartender", f.player as any, quiet);
-  c.start();
-  f.calls[0].resolve(true);
-  await tick();
-  c.requestWin("mega");
-  assert.equal(f.calls.at(-1)!.id, "bartender_big_win");
-  c.destroy();
 });
 
 await test("controller: a failed clip load falls back to idle", async () => {
@@ -448,13 +410,13 @@ await test("win clips drop their first 0.1 s (3 frames) for both characters; pro
   assert.equal(PROP_ANIMATION.guard, "guard_loop");
 });
 
-await test("celebration timing: big 8+2 s, mega and above 12+3 s, turbo 3.4+1.5 s", async () => {
+await test("celebration timing: big and above 4+1 s (5 s), turbo 3.4+1.5 s", async () => {
   const m = await import("../../frontend/apps/poc/src/game/skyjump_v2/winPresentation.ts");
-  assert.equal(m.v2WinCountUpMs({ tier: "big" }), 8000);
-  assert.equal(m.v2WinHoldMs({ tier: "big" }), 2000);
+  assert.equal(m.v2WinCountUpMs({ tier: "big" }), 4000);
+  assert.equal(m.v2WinHoldMs({ tier: "big" }), 1000);
   for (const tier of ["mega", "super", "max", "worldRecord"] as const) {
-    assert.equal(m.v2WinCountUpMs({ tier }), 12000, tier);
-    assert.equal(m.v2WinHoldMs({ tier }), 3000, tier);
+    assert.equal(m.v2WinCountUpMs({ tier }), 4000, tier);
+    assert.equal(m.v2WinHoldMs({ tier }), 1000, tier);
   }
   for (const tier of ["big", "mega", "max"] as const) {
     assert.equal(m.v2WinCountUpMs({ tier, turbo: true }), 3400);

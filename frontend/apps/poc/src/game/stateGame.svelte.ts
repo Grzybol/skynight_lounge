@@ -94,6 +94,8 @@ export const stateGame = $state({
 	},
 	presentationPhase: 'idle' as 'idle' | 'weather' | 'reels' | 'slot6' | 'takeoff' | 'result',
 	weatherDrawing: false,
+	/** True while a big win (or higher) celebration runs: the BetUI is unavailable. */
+	celebrationActive: false,
 });
 
 const GARDEN_SLOT_SCALE = {

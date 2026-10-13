@@ -15,8 +15,6 @@
 
 	const context = getContext();
 	let plate = $state<HTMLDivElement | null>(null);
-	/** True while a celebration (plus the plate's fade-out) runs: the lifted copy then also animates the plants. */
-	let winFocus = $state(false);
 
 	let plateFrame = $state({ left: '0px', top: '0px', width: '100%', height: '100%' });
 
@@ -33,20 +31,6 @@
 	const clouds = resolveGameAsset('assets/midnight-lounge/scene/clouds_prop.png');
 
 	$effect(() => acquireBuildings());
-
-	$effect(() => {
-		const el = plate;
-		if (!el) return;
-		const viewport = el.closest('.skyjump-viewport');
-		if (!(viewport instanceof HTMLElement)) return;
-		const sync = () => {
-			winFocus = viewport.hasAttribute('data-win-focus');
-		};
-		sync();
-		const observer = new MutationObserver(sync);
-		observer.observe(viewport, { attributes: true, attributeFilter: ['data-win-focus'] });
-		return () => observer.disconnect();
-	});
 
 	$effect(() => {
 		const el = plate;
@@ -85,7 +69,7 @@
 	});
 </script>
 
-{#snippet scene(withPlants: boolean)}
+{#snippet scene()}
 	<img class="plane" src={planeThree} alt="" draggable="false" />
 	<!-- Drifting clouds between the farthest sky and the houses, upper half only. -->
 	<div class="clouds">
@@ -118,8 +102,7 @@
 		{/each}
 	</div>
 	<img class="plane" src={planeOne} alt="" draggable="false" />
-	{#if withPlants}
-		{#each SCENE_PLANTS as anchor, i}
+	{#each SCENE_PLANTS as anchor, i}
 			<LoopingProp
 				prop="plant"
 				{...propBox('plant', anchor)}
@@ -129,7 +112,6 @@
 				sharp
 			/>
 		{/each}
-	{/if}
 {/snippet}
 
 {#if context.stateGame.screen === 'play'}
@@ -141,19 +123,8 @@
 			style:width={plateFrame.width}
 			style:height={plateFrame.height}
 		>
-			{@render scene(true)}
+			{@render scene()}
 		</div>
-	</div>
-	<!-- Same scene, lifted above the board while a celebration runs: fades in and out. -->
-	<div
-		class="win-plate scene"
-		data-lounge-win-plate
-		style:left={plateFrame.left}
-		style:top={plateFrame.top}
-		style:width={plateFrame.width}
-		style:height={plateFrame.height}
-	>
-		{@render scene(winFocus)}
 	</div>
 	<LoungeCharacter character="bartender" />
 	<LoungeCharacter character="woman" />
@@ -243,20 +214,5 @@
 		inset: 0;
 		transform: translateY(-13%);
 		pointer-events: none;
-	}
-
-	/*
-	 * Celebration: the scene is lifted above the board (z 20) and fades in and out over 700 ms
-	 * (V2_WIN_BLUR_FADE_MS) together with the HUD blur. `data-win-focus` outlives the celebration
-	 * by the fade time, so the characters (z 30) never drop behind the fading plate.
-	 */
-	.win-plate {
-		z-index: 20;
-		opacity: 0;
-		transition: opacity 700ms ease;
-	}
-
-	:global(.skyjump-viewport[data-win-plate]) .win-plate {
-		opacity: 1;
 	}
 </style>

@@ -105,11 +105,18 @@
 	);
 	/** The SKYNIGHT LOUNGE emblem is the buy-bonus button (same 108x66 box as the old tile). */
 	const buyEmblemSrc = resolveGameAsset('assets/midnight-lounge/ui/ui_logo_midnight_lounge.png');
+	/** Big win and above: the whole BetUI is unavailable (inert) until the celebration ends. */
+	const celebrating = $derived(context.stateGame.celebrationActive);
 	const spinLabel = $derived(stopMode ? i18nDerived.stop() : 'SPIN');
 </script>
 
 {#if context.stateGame.screen === 'play'}
-	<div class="ml-betui" data-test="ml-betui">
+	<div
+		class="ml-betui"
+		class:celebrating={celebrating}
+		inert={celebrating}
+		data-test="ml-betui"
+	>
 		{#if stateUi.menuOpen}
 			<button
 				type="button"
@@ -119,7 +126,7 @@
 			></button>
 		{/if}
 
-		<OnHotkey hotkey="Space" disabled={spaceLocked} onpress={onSpin} />
+		<OnHotkey hotkey="Space" disabled={spaceLocked || celebrating} onpress={onSpin} />
 
 		<div class="bar">
 			<span class="bar-line top"></span>

@@ -268,3 +268,13 @@ gameplay / lounge-figure backgrounds, the dead components that imported them (`S
 preload entries in `game/assets.ts`, the ski fallbacks in `static/assets/skyjump_v2` (logo, stages, tiers, modes, wins, bonus,
 decor, ice/snow fx, ski symbols) and the unused garden / mine backgrounds. Still shipped from `skyjump_v2`: the info / paytable /
 how-to-play / features headers, the world-record overlay, six fx sprites and the Pixi bet-UI buttons that `assets.ts` preloads.
+
+## Big win and above (current)
+
+- No separate big / mega clips for the bartender or the woman: `wins.mini`, `wins.big` and `wins.mega` all point to the win
+  clip (`*_mini_win`, played once, never ping-pong). A request for the clip that is already playing is absorbed.
+- Sound: `sfx_win_bigwin_universal.mp3` (5 s) for `WIN_BIG` and `WIN_MEGA`; `winReaction.ts` starts it once per 5 s window.
+- Celebration length for big and every tier above: 4 s count + 1 s pulse = 5 s (turbo 3.4 + 1.5 s).
+- No blur, no lifted plate, no characters over the BetUI: a light dimming layer (`.win-dim`, z 21, 38 % dark) fades in over the
+  screen; the celebration (z 22) sits above it. Characters keep z 20.
+- While a big win runs, the BetUI is `inert` (`stateGame.celebrationActive`, set by `SkyJumpV2Board`) and Space does not spin.

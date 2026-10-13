@@ -362,16 +362,7 @@
     "peakDbfs": -3.0,
     "dir": "v2"
   },
-  "sfx_win_big.mp3": {
-    "totalSec": 5.0,
-    "audibleSec": 5.0,
-    "audibleEndSec": 5.0,
-    "trailSec": 0.0,
-    "problematicTail": false,
-    "peakDbfs": -3.0,
-    "dir": "v2"
-  },
-  "sfx_win_mega.mp3": {
+  "sfx_win_bigwin_universal.mp3": {
     "totalSec": 5.0,
     "audibleSec": 5.0,
     "audibleEndSec": 5.0,

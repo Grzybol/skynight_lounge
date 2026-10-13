@@ -166,17 +166,16 @@ export const v2WinFxIntensity = (tier: V2WinCelebrationTier): V2WinFxIntensity =
 
 /**
  * Celebration timing (ms). Cosmetic only.
- * Big counts for 8 s and pulses the final figure for 2 s (10 s). Mega and above count for 12 s and
- * pulse for 3 s (15 s). Turbo: 3.4 s + 1.5 s (4.9 s).
+ * Big and above: count 4 s, pulse the final figure 1 s (5 s, matching the big-win sound). Turbo: 3.4 s + 1.5 s (4.9 s).
  */
 /** Fade of the room blur / lifted plate in and out. Keep in sync with the CSS transitions (700 ms). */
 export const V2_WIN_BLUR_FADE_MS = 700;
 
 export const V2_WIN_CELEBRATION_TIMING = {
-	/** Big: 8 s count + 2 s pulse. */
-	normal: { countMs: 8000, holdMs: 2000 },
-	/** Mega, super, max, world record: 12 s count + 3 s pulse, long enough for mini + big + mega clips. */
-	normalMega: { countMs: 12000, holdMs: 3000 },
+	/** Big: 4 s count + 1 s pulse = 5 s, the length of the universal big-win sound. */
+	normal: { countMs: 4000, holdMs: 1000 },
+	/** Mega, super, max, world record: the same 5 s. */
+	normalMega: { countMs: 4000, holdMs: 1000 },
 	turbo: { countMs: 3400, holdMs: 1500 },
 } as const;
 

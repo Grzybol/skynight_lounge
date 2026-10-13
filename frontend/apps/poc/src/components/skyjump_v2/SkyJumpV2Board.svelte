@@ -122,6 +122,7 @@
 		// celebration exactly (CSS fades the blur and the plate in and out); `winFocus` outlives
 		// it by the fade time so the characters and bar stay in front while the plate fades out.
 		const active = celebrationShow && celebrationTier !== 'none';
+		context.stateGame.celebrationActive = active;
 		clearTimeout(winFocusTimer);
 		if (active) {
 			viewport.dataset.winPlate = celebrationTier;
@@ -141,6 +142,7 @@
 			if (!viewport) return;
 			delete viewport.dataset.winPlate;
 			delete viewport.dataset.winFocus;
+			context.stateGame.celebrationActive = false;
 		},
 	);
 
