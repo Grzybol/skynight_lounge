@@ -365,3 +365,11 @@ Fixed after the guideline review (verified against a local mock RGS, a productio
 - BetUI: new `betui2/minus.png` / `plus.png`; BONUS / TURBO / AUTO labels live inside their buttons so they press with the art; every
   control is 10 % smaller (each cluster shrinks towards its screen edge); switched-on buttons get a pulsing gold ring that stays under hover.
 - Woman moved up (`bottomFrac` 0.955) so the BetUI no longer covers her.
+
+## Slim frame v1, tile fixes (latest)
+
+- `scene/slot_background_1.png` is `slot_background_100x100px_windows_slim_v1.png` (1672x941, transparent): windows ~127.5x118 on a 153.9x142.9 pitch,
+  snapped to an even grid in `V2_FRAME_WINDOWS` so every cell has the same tile/symbol offset (rolling and settled used to differ by a few px = the
+  small jump when a reel stopped). Tile grow on landing now starts at 94 %. `BOARD_GRID_W` 570: the slot (frame, windows, symbols) is 15 % bigger.
+- Non-winning symbols are darkened (`filter`), not made transparent, so the window background no longer shows through the tiles; winners get a gold glow.
+- `tiles_blur/` comes from `slot_tile_backgrounds_tiers_cartoon_named_blurred.zip` (same crop and alpha as the sharp tiles), WebP q60.

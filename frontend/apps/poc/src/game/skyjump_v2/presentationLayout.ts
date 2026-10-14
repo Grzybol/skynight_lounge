@@ -97,42 +97,46 @@ export const V2_PANEL_DECOR = {
  * Scale 1 keeps that hole on the grid — about 6% tighter than the previous 1.078.
  */
 /**
- * `slot_background_1.png` (1536x1024, slim frame): 25 near-square windows (137.5 x 134 art px) on a
- * 148.75 x 144.75 pitch. The frame is drawn as one piece (SlotFrameLayer with one band).
+ * `slot_background_1.png` (1672x941, slim frame v1): 25 windows of about 127.5 x 118 art px on a
+ * 153.9 x 142.9 pitch, measured from the transparent holes and snapped to an even grid (so a symbol or tile has
+ * the same offset in every cell and nothing shifts when a reel stops). Drawn as one piece (SlotFrameLayer, one band).
  */
 export const V2_FRAME_BANDS = {
-	srcH: 1024,
-	outH: 1024,
-	bands: [{ srcStart: 0, srcEnd: 1024, outStart: 0, outEnd: 1024 }],
+	srcH: 941,
+	outH: 941,
+	bands: [{ srcStart: 0, srcEnd: 941, outStart: 0, outEnd: 941 }],
 } as const;
 
-const GRID_ORIGIN = { x: 396.1, y: 140.6 };
-const PITCH = { w: 148.75, h: 144.75 };
+const PITCH = { w: 153.9, h: 142.9 };
+const WIN = { w: 127.5, h: 118 };
+/** First window's top-left corner in the art. */
+const FIRST = { x: 527 - WIN.w / 2, y: 145 };
+const GRID_ORIGIN = { x: FIRST.x - (PITCH.w - WIN.w) / 2, y: FIRST.y - (PITCH.h - WIN.h) / 2 };
 
 export const V2_SLOT_BOARD_FRAME = {
 	/** Playfield: the 5x5 block of pitches around the windows, as fractions of the art. */
-	holeLeft: GRID_ORIGIN.x / 1536,
-	holeRight: (GRID_ORIGIN.x + 5 * PITCH.w) / 1536,
-	holeTop: GRID_ORIGIN.y / 1024,
-	holeBottom: (GRID_ORIGIN.y + 5 * PITCH.h) / 1024,
+	holeLeft: GRID_ORIGIN.x / 1672,
+	holeRight: (GRID_ORIGIN.x + 5 * PITCH.w) / 1672,
+	holeTop: GRID_ORIGIN.y / 941,
+	holeBottom: (GRID_ORIGIN.y + 5 * PITCH.h) / 941,
 	scale: 1,
 	cellAspect: PITCH.w / PITCH.h,
 } as const;
 
-/** The frame's windows in art pixels (1536x1024), measured from the transparent holes. */
+/** The frame's windows in art pixels (1672x941). */
 export const V2_FRAME_WINDOWS = {
-	art: { w: 1536, h: 1024 },
+	art: { w: 1672, h: 941 },
 	origin: GRID_ORIGIN,
 	pitch: PITCH,
-	colX: [401.75, 550.25, 699.75, 848.25, 996.75],
-	rowY: [146, 290.5, 436.5, 582, 725],
+	colX: [0, 1, 2, 3, 4].map((i) => FIRST.x + PITCH.w * i),
+	rowY: [0, 1, 2, 3, 4].map((i) => FIRST.y + PITCH.h * i),
 	/** Window size, art px. */
-	winW: 137.5,
-	winH: 134,
+	winW: WIN.w,
+	winH: WIN.h,
 } as const;
 
 /** Window height / cell height: the symbol box is a whole cell, the visible window is smaller. */
-const WINDOW_FIT = 134 / PITCH.h;
+const WINDOW_FIT = WIN.h / PITCH.h;
 
 /**
  * Symbol height by tier as a fraction of the frame WINDOW height. Steps between regular tiers are 5 %

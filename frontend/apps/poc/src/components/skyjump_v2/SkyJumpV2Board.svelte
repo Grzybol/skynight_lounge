@@ -286,7 +286,7 @@
 	const gap = 0;
 	const framePad = 0;
 	/** Slot width (px @1280): the frame art is scaled so the 5x5 playfield is this wide. */
-	const BOARD_GRID_W = 440;
+	const BOARD_GRID_W = 570;
 	// Not rounded: a rounded cell height drifts away from the frame's 133.2 art-px row pitch (up to 2.5 px by the last row).
 	const cellW = $derived(Math.max(22, px(BOARD_GRID_W) / 5));
 	const cellH = $derived(Math.max(22, cellW / V2_SLOT_BOARD_FRAME.cellAspect));
@@ -2096,7 +2096,7 @@
 
 	@keyframes tile-grow {
 		from {
-			transform: scale(0.85);
+			transform: scale(0.94);
 		}
 		to {
 			transform: scale(1);
@@ -2234,8 +2234,9 @@
 		pointer-events: none;
 	}
 
+	/* Non-winning symbols are darkened, never made see-through (that showed the window background behind the tile). */
 	.symbol.dim {
-		opacity: 0.38;
+		filter: brightness(0.45) saturate(0.7);
 	}
 
 	/* Payline pop: the symbol swells slightly and a warm backlight blooms behind it. */
@@ -2291,9 +2292,16 @@
 		}
 	}
 
+	/* Winning symbols: a golden glow around the tile and the symbol. */
 	.symbol.hit {
-		z-index: 5;
-		filter: drop-shadow(0 0 7px rgba(255, 211, 107, 0.9)) brightness(1.08);
+		z-index: 11;
+		filter: drop-shadow(0 0 5px #ffe9a0) drop-shadow(0 0 14px rgba(255, 196, 64, 1))
+			drop-shadow(0 0 26px rgba(255, 164, 32, 0.85));
+	}
+
+	.reel:not(.spinning) .symbol.hit,
+	.reel:not(.spinning) .symbol.popped {
+		z-index: 11;
 	}
 
 	.symbol.preserved {
