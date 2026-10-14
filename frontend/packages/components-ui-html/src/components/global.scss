@@ -424,6 +424,13 @@ body.theme-skyjump .ui-popup-standard-content-wrap {
 		inset 0 0 28px rgba(74, 20, 36, 0.45);
 }
 
+/* Buy-bonus confirmation: the mode banner sits on the top edge of the tile. */
+body.theme-skyjump .ui-popup-standard-content-wrap:has(.mode-art) {
+	padding-top: 0;
+	gap: 0.45rem;
+	max-height: none;
+}
+
 body.theme-skyjump .ui-popup-standard-content-wrap:has(.lounge-settings) {
 	width: auto;
 	max-width: min(560px, calc(100% - 48px));
@@ -450,8 +457,12 @@ body.theme-skyjump .ui-popup-standard-content-wrap:has(.v2-pay),
 body.theme-skyjump .ui-popup-standard-content-wrap:has(.v2-rules),
 body.theme-skyjump .ui-popup-standard-content-wrap:has(.v2-buy) {
 	position: relative;
-	/* Anchored 29px from the stage top. 682px keeps the shell top put and adds 56px downward. */
-	height: 682px;
+	/*
+	 * The wrap starts 29px down and the shell inside it another 28px (panelShiftY), so the visible
+	 * window is 57px from the top. The same 57px is left at the bottom and at both sides:
+	 * wrap bottom = 720 - 57 = 663 -> height 634px; width = 100% - 2 x 57px.
+	 */
+	height: 634px;
 	max-height: none;
 	overflow: visible;
 	padding: 0;
@@ -463,6 +474,13 @@ body.theme-skyjump .ui-popup-standard-content-wrap:has(.v2-buy) {
 
 body.theme-skyjump .ui-popup-standard-content-wrap:has(.v2-buy) {
 	height: auto;
+}
+
+/* Info / Paytable use the full width minus the same 57px margin as at the top and bottom. */
+body.theme-skyjump .ui-popup-standard-content-wrap:has(.v2-pay),
+body.theme-skyjump .ui-popup-standard-content-wrap:has(.v2-rules) {
+	width: calc(100% - 114px);
+	max-width: none;
 }
 
 body.theme-skyjump .ui-popup-standard-content-wrap > .content.scrollY {

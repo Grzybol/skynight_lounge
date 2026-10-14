@@ -11,6 +11,9 @@
 	let { character, onwin }: { character: CharacterId; onwin?: (c: WinCategory | null) => void } =
 		$props();
 
+	/** Matched to the bartender's upper body (the trousers skew his whole-figure mean): luminance mean ~60, spread ~46. */
+	const WOMAN_TONE = 'brightness(0.935) contrast(1.05)';
+
 	const ASPECT = CHARACTER_FRAME[character].w / CHARACTER_FRAME[character].h;
 
 	let canvas = $state<HTMLCanvasElement | null>(null);
@@ -87,6 +90,7 @@
 	style:top={box.top}
 	style:width={box.width}
 	style:height={box.height}
+	style:filter={character === 'woman' ? WOMAN_TONE : undefined}
 	style:clip-path={CHARACTER_PLACEMENT[character].clipBottomFrac
 		? `inset(0 0 ${CHARACTER_PLACEMENT[character].clipBottomFrac! * 100}% 0)`
 		: undefined}
@@ -105,14 +109,5 @@
 
 	:global(.skyjump-viewport canvas.lounge-character.figure[data-ready='1']) {
 		opacity: 1;
-	}
-
-	/*
-	 * During a celebration the characters sit above the win overlay and the lifted plate, never
-	 * blurred. `data-win-focus` lasts the whole celebration plus the plate's fade-out.
-	 */
-	:global(.skyjump-viewport[data-win-focus] canvas.lounge-character.figure) {
-		z-index: 30;
-		filter: none;
 	}
 </style>

@@ -2,7 +2,7 @@
 	import { page } from '$app/state';
 	import { type Snippet } from 'svelte';
 	import { GlobalStyle } from 'components-ui-html';
-	import { Authenticate, LoaderStakeEngine, LoaderExample, LoadI18n } from 'components-shared';
+	import { Authenticate, LoaderExample, LoadI18n } from 'components-shared';
 	import Game from '../components/Game.svelte';
 	import { setContext } from '../game/context';
 
@@ -12,12 +12,10 @@
 
 	const props: Props = $props();
 
-	let showYourLoader = $state(false);
 	const isLocalHarness = $derived(
 		page.url.pathname.startsWith('/dev-preview') || page.url.pathname.startsWith('/live-preview'),
 	);
 
-	const loaderUrlStakeEngine = new URL('../../stake-engine-loader.gif', import.meta.url).href;
 	const loaderUrl = new URL('../../skyhighfly-studios.png', import.meta.url).href;
 
 	setContext();
@@ -34,11 +32,8 @@
 		</Authenticate>
 	</GlobalStyle>
 
-	<LoaderStakeEngine src={loaderUrlStakeEngine} oncomplete={() => (showYourLoader = true)} />
-
-	{#if showYourLoader}
-		<LoaderExample src={loaderUrl} maxWidth={720} label="" />
-	{/if}
+	<!-- Our own loader only: no platform loader at any point (guideline 275). -->
+	<LoaderExample src={loaderUrl} maxWidth={720} label="" />
 
 	{@render props.children()}
 {/if}

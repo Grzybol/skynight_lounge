@@ -10,9 +10,12 @@
 	const props: Props = $props();
 
 	let authenticated = $state(false);
+	/** Set when authenticate (or the replay fetch) fails: the game is not started, a clear message is shown. */
+	let failure = $state<string | null>(null);
 
-	const authenticate = async () => {
+	const authenticate = async (): Promise<boolean> => {
 		try {
+			if (!stateUrlDerived.rgsUrl()) throw { error: 'ERR_VAL', message: 'rgs_url is missing' };
 			const authenticateData = await requestAuthenticate({
 				rgsUrl: stateUrlDerived.rgsUrl(),
 				sessionID: stateUrlDerived.sessionID(),
@@ -66,6 +69,18 @@
 				stateConfig.betMenuOptions = stateConfig.betAmountOptions.filter((_, index) =>
 					MOST_USED_BET_INDEXES.includes(index),
 				);
+
+				// The game opens on defaultBetLevel (an active round below overrides it with round.amount).
+				const defaultLevel = authenticateData.config?.defaultBetLevel;
+				if (typeof defaultLevel === 'number' && stateConfig.betAmountOptions.length > 0) {
+					const wanted = defaultLevel / API_AMOUNT_MULTIPLIER;
+					const options = stateConfig.betAmountOptions;
+					const start = options.includes(wanted)
+						? wanted
+						: options.reduce((best, o) => (Math.abs(o - wanted) < Math.abs(best - wanted) ? o : best));
+					stateBet.betAmount = start;
+					stateBet.wageredBetAmount = start;
+				}
 			}
 
 			// round
@@ -100,26 +115,45 @@
 					stateBet.activeBetModeKey = authenticateData.round.mode;
 				};
 			}
+			return true;
 		} catch (error) {
 			console.error(error);
 			stateModal.modal = { name: 'error', error };
+			failure = 'Could not connect to the game server or authenticate your session. Please check your link and reload.';
+			return false;
 		}
 	};
 
-	const handleReplay = async () => {
-		stateBet.betAmount = (stateUrlDerived.amount() / API_AMOUNT_MULTIPLIER) || 0;
-		stateBet.wageredBetAmount = (stateUrlDerived.amount() / API_AMOUNT_MULTIPLIER) || 0;
+	const handleReplay = async (): Promise<boolean> => {
+		// Invalid or missing params must not break the replay.
+		const currency = stateUrlDerived.currency();
+		if (currency) {
+			try {
+				new Intl.NumberFormat('en-US', { style: 'currency', currency });
+				stateBet.currency = currency;
+			} catch {
+				if (['XSC', 'XGC', 'XEC'].includes(currency)) stateBet.currency = currency;
+			}
+		}
+		const amount = stateUrlDerived.amount() / API_AMOUNT_MULTIPLIER || 0;
+		stateBet.betAmount = amount;
+		stateBet.wageredBetAmount = amount;
 		stateBet.activeBetModeKey = stateUrlDerived.mode();
 
-		const data = await requestReplay({
-			rgsUrl: stateUrlDerived.rgsUrl(),
-			game: stateUrlDerived.game(),
-			mode: stateUrlDerived.mode(),
-			version: stateUrlDerived.version(),
-			event: stateUrlDerived.event(),
-		});
+		try {
+			const data = await requestReplay({
+				rgsUrl: stateUrlDerived.rgsUrl(),
+				game: stateUrlDerived.game(),
+				mode: stateUrlDerived.mode(),
+				version: stateUrlDerived.version(),
+				event: stateUrlDerived.event(),
+			});
 
-		if(data) {
+			// @ts-ignore
+			if (!data || data.error || !data.state) throw data ?? { error: 'ERR_GEN' };
+
+			// @ts-ignore
+			stateBet.replayCostMultiplier = Number(data.costMultiplier) > 0 ? Number(data.costMultiplier) : 1;
 			// @ts-ignore
 			stateBet.betToResume = {
 				...data,
@@ -127,22 +161,56 @@
 				active: true,
 				mode: stateUrlDerived.mode(),
 			};
+			return true;
+		} catch (error) {
+			console.error(error);
+			failure = 'This replay could not be loaded. Please check the link and try again.';
+			return false;
 		}
 	};
 
 	onMount(async () => {
-		if(stateUrlDerived.replay()) {
+		let ok: boolean;
+		if (stateUrlDerived.replay()) {
 			stateUi.config.mode = 'replay';
-			await handleReplay();
+			ok = await handleReplay();
 		} else {
 			stateUi.config.mode = 'default';
-			await authenticate();
-		};
+			ok = await authenticate();
+		}
 
-		authenticated = true;
+		if (ok) authenticated = true;
 	});
 </script>
 
 {#if authenticated}
 	{@render props.children()}
+{:else if failure}
+	<div class="auth-failure" role="alert" data-test="auth-failure">
+		<p>{failure}</p>
+	</div>
 {/if}
+
+<style>
+	.auth-failure {
+		position: fixed;
+		inset: 0;
+		z-index: 9999;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 24px;
+		box-sizing: border-box;
+		background: #12060b;
+		color: #f3e2b8;
+		font-family: 'Luckiest Guy', Georgia, serif;
+		font-size: 1.1rem;
+		text-align: center;
+	}
+
+	.auth-failure p {
+		max-width: 520px;
+		margin: 0;
+		line-height: 1.5;
+	}
+</style>

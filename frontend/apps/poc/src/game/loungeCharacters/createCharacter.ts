@@ -19,7 +19,12 @@ export const createCharacter = (
 ): CharacterHandle => {
 	const tuning = CHARACTER_TUNING[id];
 	let controller: CharacterController | null = null;
-	const store = new FramePackStore(tuning.maxPacks, () => controller?.pinnedIds() ?? new Set());
+	const store = new FramePackStore(
+		tuning.maxPacks,
+		() => controller?.pinnedIds() ?? new Set(),
+		// The characters stand behind the start screen: their clips load after its own pieces.
+		'low',
+	);
 	const player = new CharacterAnimationPlayer(canvas, store, tuning);
 	controller = new CharacterController(id, player, opts);
 	return {

@@ -7,6 +7,7 @@
 		acquireBuildings,
 		BUILDINGS_FADE_MS,
 		BUILDINGS_POOL,
+		buildingsFilter,
 		buildingsState,
 	} from '../../game/loungeScene/buildingsPool.svelte';
 	import LoungeCharacter from './LoungeCharacter.svelte';
@@ -15,8 +16,6 @@
 
 	const context = getContext();
 	let plate = $state<HTMLDivElement | null>(null);
-	/** True while a celebration (plus the plate's fade-out) runs: the lifted copy then also animates the plants. */
-	let winFocus = $state(false);
 
 	let plateFrame = $state({ left: '0px', top: '0px', width: '100%', height: '100%' });
 
@@ -33,20 +32,6 @@
 	const clouds = resolveGameAsset('assets/midnight-lounge/scene/clouds_prop.png');
 
 	$effect(() => acquireBuildings());
-
-	$effect(() => {
-		const el = plate;
-		if (!el) return;
-		const viewport = el.closest('.skyjump-viewport');
-		if (!(viewport instanceof HTMLElement)) return;
-		const sync = () => {
-			winFocus = viewport.hasAttribute('data-win-focus');
-		};
-		sync();
-		const observer = new MutationObserver(sync);
-		observer.observe(viewport, { attributes: true, attributeFilter: ['data-win-focus'] });
-		return () => observer.disconnect();
-	});
 
 	$effect(() => {
 		const el = plate;
@@ -85,8 +70,8 @@
 	});
 </script>
 
-{#snippet scene(withPlants: boolean)}
-	<img class="plane" src={planeThree} alt="" draggable="false" />
+{#snippet scene()}
+	<img class="plane" src={planeThree} alt="" draggable="false" fetchpriority="low" />
 	<!-- Drifting clouds between the farthest sky and the houses, upper half only. -->
 	<div class="clouds">
 		{#each [0, 1, 2, 3, 4, 5] as n}
@@ -96,30 +81,40 @@
 	<!-- Second plane: buildings and the smoke over their chimneys share one raised layer. -->
 	<div class="buildings-layer">
 		<!-- Always-visible base: whatever happens in the cross-fade, the houses never let the sky through. -->
-		<img class="plane" src={planeTwoBase} alt="" draggable="false" />
+		<img
+			class="plane"
+			src={planeTwoBase}
+			style:filter={buildingsFilter(planeTwoBase)}
+			alt=""
+			draggable="false"
+			fetchpriority="low"
+		/>
 		<img
 			class="plane fade"
 			class:front={buildingsState.front === 'a'}
 			style:--fade={`${BUILDINGS_FADE_MS}ms`}
 			src={buildingsState.a}
+			style:filter={buildingsFilter(buildingsState.a)}
 			alt=""
 			draggable="false"
+			fetchpriority="low"
 		/>
 		<img
 			class="plane fade"
 			class:front={buildingsState.front === 'b'}
 			style:--fade={`${BUILDINGS_FADE_MS}ms`}
 			src={buildingsState.b}
+			style:filter={buildingsFilter(buildingsState.b)}
 			alt=""
 			draggable="false"
+			fetchpriority="low"
 		/>
 		{#each CHIMNEYS as chimney}
 			<ChimneySmoke {...chimney} />
 		{/each}
 	</div>
-	<img class="plane" src={planeOne} alt="" draggable="false" />
-	{#if withPlants}
-		{#each SCENE_PLANTS as anchor, i}
+	<img class="plane" src={planeOne} alt="" draggable="false" fetchpriority="low" />
+	{#each SCENE_PLANTS as anchor, i}
 			<LoopingProp
 				prop="plant"
 				{...propBox('plant', anchor)}
@@ -129,7 +124,6 @@
 				sharp
 			/>
 		{/each}
-	{/if}
 {/snippet}
 
 {#if context.stateGame.screen === 'play'}
@@ -141,19 +135,8 @@
 			style:width={plateFrame.width}
 			style:height={plateFrame.height}
 		>
-			{@render scene(true)}
+			{@render scene()}
 		</div>
-	</div>
-	<!-- Same scene, lifted above the board while a celebration runs: fades in and out. -->
-	<div
-		class="win-plate scene"
-		data-lounge-win-plate
-		style:left={plateFrame.left}
-		style:top={plateFrame.top}
-		style:width={plateFrame.width}
-		style:height={plateFrame.height}
-	>
-		{@render scene(winFocus)}
 	</div>
 	<LoungeCharacter character="bartender" />
 	<LoungeCharacter character="woman" />
@@ -205,24 +188,26 @@
 	}
 
 	/*
-	 * Clouds: a band whose lower edge sits 3/5 up the scene (40 % from the top) (the planes above hide the rest). One tile
-	 * is 348 cqh wide (band 42 cqh tall, 6000x724 art). Tiles alternate normal / mirrored, so every seam
+	 * Clouds: a band raised above the top edge (lower edge at 26 cqh; the top part runs off the screen) (the planes above hide the rest). One tile
+	 * is 243.6 cqh wide (band 42 cqh tall, 4200x724 art). Tiles alternate normal / mirrored, so every seam
 	 * joins an image to its own mirror image and the loop never jumps; the strip drifts two tiles
-	 * (696 cqh) per cycle, at half the earlier speed (480 s per tile).
+	 * (694.4 cqh) per cycle, at half the earlier speed (480 s per tile).
 	 */
 	.clouds {
 		position: absolute;
 		left: 0;
-		top: -2cqh;
+		top: -16cqh;
 		height: 42cqh;
-		width: 2088cqh;
+		width: 1462cqh;
 		display: flex;
-		animation: clouds-drift 960s linear infinite;
+		animation: clouds-drift 670s linear infinite;
 		pointer-events: none;
 	}
 
 	.clouds .tile {
-		flex: 0 0 348cqh;
+		flex: 0 0 243.6cqh;
+		/* Overlap the neighbours by 0.8 cqh: every seam joins an image to its own mirror, so it stays continuous. */
+		margin-left: -0.8cqh;
 		height: 100%;
 		background-size: 100% 100%;
 		background-repeat: no-repeat;
@@ -234,7 +219,7 @@
 
 	@keyframes clouds-drift {
 		to {
-			transform: translateX(-696cqh);
+			transform: translateX(-485.6cqh);
 		}
 	}
 
@@ -243,20 +228,5 @@
 		inset: 0;
 		transform: translateY(-13%);
 		pointer-events: none;
-	}
-
-	/*
-	 * Celebration: the scene is lifted above the board (z 20) and fades in and out over 700 ms
-	 * (V2_WIN_BLUR_FADE_MS) together with the HUD blur. `data-win-focus` outlives the celebration
-	 * by the fade time, so the characters (z 30) never drop behind the fading plate.
-	 */
-	.win-plate {
-		z-index: 20;
-		opacity: 0;
-		transition: opacity 700ms ease;
-	}
-
-	:global(.skyjump-viewport[data-win-plate]) .win-plate {
-		opacity: 1;
 	}
 </style>

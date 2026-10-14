@@ -8,16 +8,13 @@
  * `shown` is the old ski label. `lounge` is what the player sees.
  */
 import { v2UiAssetUrl } from './skyjump_v2/uiAssetRegistry';
-
-export {
-	menuBgSrc as loungeMenuPlateSrc,
-	jumperMenuSrc as loungeMenuFigureSrc,
-} from '../components/skyjump/skyjumpArt';
+import { resolveGameAsset } from './resolveGameAsset';
 
 export const TBD_MIDNIGHT_LOUNGE_LABEL = 'TBD_MIDNIGHT_LOUNGE_LABEL';
 
 export const loungeLogoSrc = v2UiAssetUrl('logo');
-export const loungeSlotFrameSrc = v2UiAssetUrl('slotBoardFrame');
+export const loungeSlotFrameSrc = resolveGameAsset('assets/midnight-lounge/scene/slot_background_1.png');
+export const loungeSlotWindowSrc = resolveGameAsset('assets/midnight-lounge/scene/slot_window_bg.png');
 
 /** Internal id → ski label and the Midnight Lounge label on screen. */
 export const LOUNGE_PRESENTATION = {
@@ -100,10 +97,6 @@ export const LOUNGE_CHARACTER_FILES = {
 } as const;
 
 export const WAITING_FOR_REPLACEMENT = [
-	'src/assets/skyjump/jumper/*',
-	'src/assets/skyjump/weather/*',
-	'src/assets/skyjump/reel-icons/*',
-	'src/assets/skyjump/backgrounds/menu.webp',
 	'fonts SkyjumpDisplay / SkyjumpUI',
 	'bet UI C05–C15',
 	'fx D16–D21',

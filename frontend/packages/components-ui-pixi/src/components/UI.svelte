@@ -3,6 +3,7 @@
 
 	import { stateUi } from 'state-shared';
 
+	import { skyjumpCodeBetUi } from '../skyjumpCodeBetUi';
 	import UIDefault from './UIDefault.svelte';
 	import UIReplay from './UIReplay.svelte';
 
@@ -21,6 +22,8 @@
 	const UIComponent = $derived(UI_COMPONENT_MAP[stateUi.config.mode]);
 </script>
 
+<!-- The code-built BetUI owns the controls (including replay): no second Pixi control layer in replay. -->
+{#if !(skyjumpCodeBetUi.active && stateUi.config.mode === 'replay')}
 <UIComponent>
 	{#snippet gameName()}
 		{@render props.gameName()}
@@ -30,3 +33,4 @@
 		{@render props.logo()}
 	{/snippet}
 </UIComponent>
+{/if}

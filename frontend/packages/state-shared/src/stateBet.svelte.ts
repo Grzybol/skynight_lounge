@@ -22,6 +22,8 @@ export const stateBet = $state({
 	isSpaceHold: false,
 	isTurbo: false,
 	overlayOpen: false,
+	/** Replay only: cost multiplier of the replayed mode (real cost = amount x this). */
+	replayCostMultiplier: 1,
 });
 
 /** The RGS only accepts bets in whole cents; a fractional balance must never become a bet. */

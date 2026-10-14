@@ -11,6 +11,7 @@
 		propBox,
 	} from '../game/loungeCharacters/propLayout';
 	import { loungeLogoSrc } from '../game/midnightLoungeTheme';
+	import { openWarmGate } from '../game/loungeCharacters/warmGate';
 	import LoopingProp from './skyjump/LoopingProp.svelte';
 
 	type Props = {
@@ -56,6 +57,8 @@
 		locked = true;
 		ctaIdle = false;
 		props.onunlock();
+		// The player is in: the rest of the downloads (variations, symbols, tiles) may start now.
+		openWarmGate();
 		startSkyJumpBgm();
 		// 0.9 s in total: 0.45 s of growing blur over the start screen's background (the figures
 		// fade out instead of blurring), 0.45 s of the blur clearing over the whole slot screen.

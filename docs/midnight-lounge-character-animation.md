@@ -250,3 +250,139 @@ big-win clip, so it serves big and mega (`woman_mega_win` is gone). This superse
   scene, 240 s per tile, CSS only) -> buildings (14-image pool, `buildingsPool.svelte.ts`: a random other image cross-fades in every
   10-20 s, identical placement) + 3 chimney smokes (left, middle, right; opacity 0.15) -> balustrade/floor -> plants.
 - SPIN / STOP buttons: `spin_cartoon` / `stop_cartoon` (as `ui/betui2/spin.png`, `stop.png`).
+
+## Headers, buy-bonus plate, modal size, BetUI
+
+- The 15 section headers (`ui/headers/hdr_*.png`) are the byte-exact PNGs from `new_assets.zip` (2172x724). The buy-bonus screen's
+  header is `ui/ui_buy_bonus_badge.png`: it was a 1024x341 leftover and is now the zip's "BUY BONUS" plate (2172x724, byte copy).
+- Info / Paytable: the visible window is 57 px from every edge of the 1280x720 stage (`global.scss`).
+- BetUI: panels are `border-box`, the WIN counter is centred on the bar, the turbo / auto / buy group is pushed against SPIN.
+- Still low-res / lossy and not part of the lounge UI: `src/assets/skyjump/**/*.webp` (ski-era leftovers) and the skyjump_v2
+  `ui_header_*` (info, how-to-play, ~950 px wide) used above the Info/Paytable cards.
+
+## Ski-era assets removed
+
+Deleted because nothing reachable from the app used them: `src/assets/skyjump/{jumper,reel-icons,result,weather}`, the ski menu /
+gameplay / lounge-figure backgrounds, the dead components that imported them (`SkyJumpMainMenu`, `SkyJumpResultOverlay`,
+`SkyJumpReelStrip`, `SkyJumpWeatherDraw`, `SkyJumpPayTable`, `SkyJumpRoleIcons`, `SkyJumpHudFrame`, `skyjumpArt.ts`), their
+preload entries in `game/assets.ts`, the ski fallbacks in `static/assets/skyjump_v2` (logo, stages, tiers, modes, wins, bonus,
+decor, ice/snow fx, ski symbols) and the unused garden / mine backgrounds. Still shipped from `skyjump_v2`: the info / paytable /
+how-to-play / features headers, the world-record overlay, six fx sprites and the Pixi bet-UI buttons that `assets.ts` preloads.
+
+## Big win and above (current)
+
+- No separate big / mega clips for the bartender or the woman: `wins.mini`, `wins.big` and `wins.mega` all point to the win
+  clip (`*_mini_win`, played once, never ping-pong). A request for the clip that is already playing is absorbed.
+- Sound: `sfx_win_bigwin_universal.mp3` (5 s) for `WIN_BIG` and `WIN_MEGA`; `winReaction.ts` starts it once per 5 s window.
+- Celebration length for big and every tier above: 4 s count + 1 s pulse = 5 s (turbo 3.4 + 1.5 s).
+- No blur, no lifted plate, no characters over the BetUI: a light dimming layer (`.win-dim`, z 21, 38 % dark) fades in over the
+  screen; the celebration (z 22) sits above it. Characters keep z 20.
+- While a big win runs, the BetUI is `inert` (`stateGame.celebrationActive`, set by `SkyJumpV2Board`) and Space does not spin.
+
+## Engine approval self-check fixes
+
+Fixed after the guideline review (verified against a local mock RGS, a production build served statically, and a replay URL):
+- 275 no Stake Engine loader; 223 viewport locks zoom (`maximum-scale=1, user-scalable=no`, `touch-action: manipulation`).
+- 181 `rgs_url` accepted with or without scheme (`rgsBaseUrl`); 274 a failed authenticate shows a clear error screen and the game does not start.
+- 242 the game opens on `defaultBetLevel`; 187 an active round's `round.amount` overrides it.
+- 219 / 273 / 78 currency formatting: per-currency decimals (JPY 0), extra decimals for sub-cent amounts, XSC/XGC/XEC as `10.00 SC` / `10.00 GC`.
+- 222 `/wallet/play` is never sent when balance < bet x mode cost (guard in `handleRequestBet`, spin disabled, visible note);
+  228 Space only bets when idle and is ignored in menus and modals.
+- 25 / 235: Info lists RTP and max win per mode (`modeStats.ts`, regenerate with `tools/skyjump/gen-mode-stats.py`) and a Controls card.
+- 77 / 188 / 225 social mode: `utils-shared/social.ts` word table applied to all HTML text by `game/socialWording.ts`; baked "BUY BONUS" and
+  "PAYTABLE" header art is replaced by text. Test: `node --experimental-transform-types tools/midnight-lounge/test-social.ts`.
+- 171-174 replay: no wallet calls, currency / amount applied, bet and real cost shown, REPLAY restarts the event, load failure shows an error screen.
+
+## Performance, fonts, FX (latest)
+
+- Character / prop packs are now lossy WebP (quality 90, alpha stays lossless): 370 MB -> 93 MB in the repo, ~190 MB -> ~50 MB downloaded
+  before the first spin. Rebuild: `python -I tools/midnight-lounge/build-character-anims.py --lossy-quality 90 --zips <dirs>`
+  (omit `--lossy-quality` for lossless, packs above 90 MB are split automatically).
+- Font: Luckiest Guy (`luckiest-guy-400.ttf`, one weight, bold by design) replaces Marcellus everywhere; the weight range is declared so the browser does not fake a bold.
+- The SkyJump ice-blue FX and the world-record ice plate are removed; glints use `fx_glint_ruby_gold`, bursts `fx_luxury_burst_gold`, world record the royal overlay.
+- Clouds sit higher (top part runs off the screen); bartender and woman are 15% smaller (feet anchored) and re-spaced from the slot.
+
+## Slot frame, tier tiles, rolling blur (latest)
+
+- `scene/slot_background_2.png` (behind symbols) and `slot_background_1.png` (frame, above symbols) are the supplied art extended from
+  4 to 5 rows (a 155 px band of the middle row was duplicated, 1672x1096) because the game has 5 rows; bg2 got an alpha mask from the frame
+  silhouette. The board is a flush 5x5 grid of cell pitches (`V2_SLOT_BOARD_FRAME`), so each symbol is centred on its frame window.
+- Six tier tiles (`tiles/`, `tiles_blur/`, cropped to their solid bounds): low (L1-3), medium (M1-3), premium (P1-3), scatter (S),
+  concierge_mystery (C, Y), feature (specials, Midnight Crown, tokens T1-T6). Mapping: `v2SymbolTier` in `symbolAssetRegistry.ts`.
+- While a reel rolls the cells use `tiles_blur/` and `symbols_blur/`; they switch to the sharp art when the reel starts landing.
+- Woman: `brightness(0.6)` (measured: mean luminance 87 vs the bartender's 52). Sky: `background_farthest-sky.png`; clouds: `clouds_prop_v1.png`.
+- `ui_logo_midnight_lounge.png` from the new pack was NOT imported (it is the old Midnight Lounge logo; the SKYNIGHT LOUNGE emblem stays).
+
+## Slot frame v2 (5x5 art), per-window tiles, tier sizes
+
+- `slot_frame_layer1/2.png` (1672x941, true 5x5) replace the stretched 4-row frame. Window rectangles are in `V2_FRAME_WINDOWS`
+  (the bottom row is a short window under the frame's bar): tier tiles are placed and sized per window (last row cut, not squashed).
+- Settled reels are drawn above the frame (tiles z 7, symbols z 8-10 by tier); rolling reels stay under it. `.grid` has no stacking context of its own.
+- Symbol size by tier (`V2_TIER_SCALE`, relative to cell height): low 0.6, medium 0.9, premium 1.35 (x1.5 per regular tier);
+  scatter, concierge/mystery and feature use the premium size.
+- Woman tone: `brightness(0.66) contrast(1.05)` (matched to the bartender's upper body).
+
+## Frame v3 and tuning
+
+- `slot_frame_layer1/2.png` (second delivery, uniform windows) are now `slot_background_1/2.png`; window rects in `V2_FRAME_WINDOWS`.
+- Tier sizes: low 0.8, medium 1.04, premium 1.35 (x1.3 per regular tier). Woman: `brightness(0.85) contrast(1.05)`. SPIN/STOP image: `brightness(0.9)`.
+
+## New BetUI and equal frame rows
+
+- BetUI is image based, no bar behind it: `ui/betui2/{spin,stop,balance,bet_background,minus,plus,menu,autospin,turbo,bonus}.png`, placed by the
+  visible bounds of each file on the 1280x720 stage (`HUD` / `L` in `MidnightLoungeBetUI.svelte`, layout from `new_betui_preview.png`).
+  Texts (balance, bet, WIN, labels) are code, Luckiest Guy. The old SPIN/STOP `brightness(0.9)` was dropped with the old art.
+  The bonus pill replaces the emblem as the buy-bonus button.
+- Slot frame rows: the art's rows were 138 / 136 / 134 / 131 / 127 px tall. `SlotFrameLayer.svelte` redraws both frame layers as a top piece, five row
+  bands stretched to one height (`V2_FRAME_BANDS`) and a bottom piece; tiles and symbols use one uniform window height (`V2_FRAME_WINDOWS.winH`).
+
+## Frame v4 (100x100 windows) and v1 tier tiles
+
+- `scene/slot_background_1.png` = `slot_background_100x100px_windows.png` (25 equal windows of ~98.5 art px on a 128 x 126.25 pitch, one band, no equalising needed).
+  `scene/slot_window_bg.png` = `slot_frame_default_background.png`, drawn per window as the very first layer.
+- Layer order of the slot: window backgrounds -> rolling symbols and their blurred tiles -> frame -> settled symbols and their tiles (over the frame).
+- Tier tiles come from `slot_tile_backgrounds_tiers_v1_renamed.zip` (black corners turned transparent, cropped); the rolling versions are generated from them with a
+  vertical motion blur (script was run once, see `tiles_blur/`). Tile and symbol are centred on the window (tile matches the window to the pixel; symbols sit 6 art px higher).
+- Tier sizes relative to the window height: low 0.80, medium 0.84, premium 0.88 (5 % steps). BetUI elements (not SPIN/STOP) are 10 % smaller; the bet +/- circles are symmetric.
+
+## Loading on slow connections
+
+- Before: ~144 MB were requested while the start screen was still shown (all at once). Causes: a duplicated eager preload effect in the board, 1254 px symbol / tile / HUD PNGs
+  (1.2-1.4 MB each for ~100 px on screen), variation and win packs prefetched during the intro.
+- Now: symbols, rolling symbols and tier tiles are 512 / 384 px (still lossless PNG), HUD art 40 %, clouds half width (101 MB -> 20 MB in the repo); the preload of every symbol/tile
+  waits for `warmGate` (opened when the player continues) and runs four at a time at low priority; character variation / win clips wait for the gate too; character packs and slot-scene images
+  use low fetch priority, the start screen's own pieces (background, bodyguard, plants) high priority; the woman keeps all 6 packs in memory (no re-downloads).
+- Start screen weight: ~58 MB (idle packs 14 MB + plant/guard 13.5 MB + images) instead of ~144 MB; after that ~50 MB more in the background.
+
+## Slim frame, new +/- buttons, quality 80/60 (latest)
+
+- Character / prop packs rebuilt at lossy WebP quality 80 (alpha lossless): `python -I tools/midnight-lounge/build-character-anims.py --lossy-quality 80 --zips ~/Downloads D:/ai_gif_upscaling/output`.
+- Rolling-blur assets (`symbols_blur/`, `tiles_blur/`) are lossy WebP quality 60 (`.webp`; the sharp symbols and tiles stay PNG).
+- Tier tiles come from `slot_tile_backgrounds_tiers_cartoon_named.zip` (black corners -> alpha, 384 px; blurred copies built from the same crop).
+- `scene/slot_background_1.png` is `slot_background_100x100px_windows_slim.png` (1536x1024). Its 137.5x134 px windows sit on a 148.75x144.75 pitch
+  (`V2_FRAME_WINDOWS`); `BOARD_GRID_W` is 440 so the windows stay about as large as before. Symbols are 5 % bigger (`V2_TIER_SCALE`) and
+  centred on the window (`SYMBOL_LIFT = 0`).
+- BetUI: new `betui2/minus.png` / `plus.png`; BONUS / TURBO / AUTO labels live inside their buttons so they press with the art; every
+  control is 10 % smaller (each cluster shrinks towards its screen edge); switched-on buttons get a pulsing gold ring that stays under hover.
+- Woman moved up (`bottomFrac` 0.955) so the BetUI no longer covers her.
+
+## Slim frame v1, tile fixes (latest)
+
+- `scene/slot_background_1.png` is `slot_background_100x100px_windows_slim_v1.png` (1672x941, transparent): windows ~127.5x118 on a 153.9x142.9 pitch,
+  snapped to an even grid in `V2_FRAME_WINDOWS` so every cell has the same tile/symbol offset (rolling and settled used to differ by a few px = the
+  small jump when a reel stopped). Tile grow on landing now starts at 94 %. `BOARD_GRID_W` 570: the slot (frame, windows, symbols) is 15 % bigger.
+- Non-winning symbols are darkened (`filter`), not made transparent, so the window background no longer shows through the tiles; winners get a gold glow.
+- `tiles_blur/` comes from `slot_tile_backgrounds_tiers_cartoon_named_blurred.zip` (same crop and alpha as the sharp tiles), WebP q60.
+
+## Slot frame 5x5 slim fixed (latest)
+
+- `scene/slot_background_1.png` is `slot_frame_5x5_100x100_slim_fixed.png` (1147x849): even 102x102 windows on a 128.4 pitch (`V2_FRAME_WINDOWS`).
+  `tileGrow` 1.14: tier tiles and the default window background are drawn 14 % larger than the window so the frame lattice hides their edges.
+- Symbol cells are no longer stacking contexts: the tile (z 3) stays under the frame (z 6), the symbol art (z 8-11) is above it, so a landing
+  tile can never show over the frame. Dim / win glow filters moved from `.symbol` to its children for the same reason; `reel-land` removed.
+- Symbols rest 3 art px above the window centre (`SYMBOL_LIFT`); `BOARD_GRID_W` 515 so the last row ends above the WIN plate.
+
+## Gothic rose frame (latest)
+
+- `scene/slot_background_1.png` is `Gotycka rama inwentarza z różami.png` (1448x1086). Its 25 hand-drawn windows (~133x128 art px) are snapped to an even
+  167 x 162.4 grid (measured deviation <= ~3 px, hidden by `tileGrow`); `BOARD_GRID_W` 524 keeps the windows ~82 px and the last row above the WIN plate.

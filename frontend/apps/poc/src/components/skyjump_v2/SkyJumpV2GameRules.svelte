@@ -8,6 +8,7 @@
 	import { v2UiAssetUrl } from '../../game/skyjump_v2/uiAssetRegistry';
 	import { INFO_SECTION_HEADERS, sectionHeaderUrl } from '../../game/skyjump_v2/sectionHeaders';
 	import { loungePhrase, loungeShown } from '../../game/midnightLoungeTheme';
+	import { V2_MODE_STATS } from '../../game/skyjump_v2/modeStats';
 	import SkyJumpV2PanelDecor from './SkyJumpV2PanelDecor.svelte';
 
 	const maxWinX = Number(V2_DEFAULT_BET_MODE?.maxWin ?? 50_000);
@@ -77,6 +78,14 @@
 			body: `The round cannot exceed ${maxWinX.toLocaleString('en-US')}× your bet. Line wins, feature wins, and Royal Win all count toward the same cap.`,
 		},
 		{
+			title: 'RTP & Max Win',
+			body: 'Return to player and the maximum win of every mode. Max win is a multiple of your bet.',
+			items: Object.entries(V2_MODE_STATS).map(
+				([mode, stat]) =>
+					`${loungeShown(mode)} — RTP ${stat.rtpPct.toFixed(2)}% · max win ${stat.maxWinX.toLocaleString('en-US')}× bet`,
+			),
+		},
+		{
 			title: 'Buy Bonus',
 			body:
 				V2_ENABLED_BUY_MODES.length > 0
@@ -92,6 +101,21 @@
 							return `${loungePhrase(mode.playerName ?? mode.label)} — ${mode.costMultiplier}× bet · starts ${tier}`;
 						})
 					: [],
+		},
+		{
+			title: 'Controls',
+			wide: true,
+			body: 'Every button of the control bar:',
+			items: [
+				'Menu — opens Info, Paytable, Sound, Settings and the language switch.',
+				'Balance — your current balance. Win — the win of the last round.',
+				'− / + — lower or raise the bet. The bet button opens the list of bet levels.',
+				'Spin — starts a round (Space bar does the same). While a round runs it becomes Stop and ends the animation early.',
+				'Turbo — faster rounds.',
+				'Auto Spin — opens a panel to choose the number of automatic rounds and limits; nothing starts until you confirm.',
+				'Buy Bonus (the SKYNIGHT LOUNGE emblem) — choose a bonus room and confirm its cost.',
+				'Sound — mutes or restores all sound. Settings — sound and display options. Info — this guide. Paytable — symbol values.',
+			],
 		},
 		{
 			title: 'Notice',
@@ -159,7 +183,7 @@
 		display: flex;
 		flex-direction: column;
 		width: 100%;
-		max-width: 760px;
+		max-width: none;
 		height: 100%;
 		max-height: 100%;
 		min-height: 0;

@@ -61,6 +61,6 @@ export const INTRO_STANCHION: PropAnchor = { x: 0.9136, y: 0.825, h: 0.22 };
 
 /** Plants in the slot scene, fractions of the play area (just in front of the balustrade, behind the characters and the board). */
 export const SCENE_PLANTS: PropAnchor[] = [
-	{ x: 0.097, y: 0.67, h: 0.477 },
-	{ x: 0.964, y: 0.67, h: 0.477, flip: true },
+	{ x: 0.113, y: 0.67, h: 0.477 },
+	{ x: 0.955, y: 0.67, h: 0.477, flip: true },
 ];

@@ -23,16 +23,18 @@ export type CharacterAnimationSet = {
 export const CHARACTER_ANIMATIONS: Record<CharacterId, CharacterAnimationSet> = {
 	woman: {
 		idle: 'woman_idle',
-		variations: ['woman_idle_alt', 'woman_idle_1', 'woman_idle_2', 'woman_idle_3', 'woman_idle_4'],
-		// One big-win clip serves big and everything above (like the bartender).
-			wins: { mini: 'woman_mini_win', big: 'woman_big_win', mega: 'woman_big_win' },
+		// `woman_idle_4` (extra interruption) is switched off: its pack stays in the repo and the manifest,
+		// add it back here to play it again.
+		variations: ['woman_idle_alt', 'woman_idle_1', 'woman_idle_2', 'woman_idle_3'],
+		// No separate big-win clips: every win category plays the win clip.
+			wins: { mini: 'woman_mini_win', big: 'woman_mini_win', mega: 'woman_mini_win' },
 	},
 	bartender: {
 		idle: 'bartender_idle',
 		// One interruption (a one-shot that returns to the main idle).
 		variations: ['bartender_idle_1'],
-		// The pack has a single big-win clip: it serves big and every tier above.
-		wins: { mini: 'bartender_mini_win', big: 'bartender_big_win', mega: 'bartender_big_win' },
+		// No separate big-win clips: every win category plays the win clip.
+		wins: { mini: 'bartender_mini_win', big: 'bartender_mini_win', mega: 'bartender_mini_win' },
 	},
 };
 
@@ -90,13 +92,12 @@ export const CHARACTER_TUNING: Record<CharacterId, CharacterTuning> = {
 		variationPrefetchLeadMs: 10_000,
 		idleLoopsMin: 1,
 		idleLoopsMax: 4,
-		// The extra interruption plays less often (weight 0.3 against 1 for the others).
-		variationWeights: { woman_idle_4: 0.3 },
 		// 0.2 s off each end (30 fps): 0.1 s from the earlier pass plus 0.1 s more.
 		trimHeadFrames: 6,
 		trimTailFrames: 6,
 		winTrimHeadFrames: 6,
-		maxPacks: 5,
+		// All six woman packs stay in memory (9 MB each): an evicted pack would be downloaded again.
+		maxPacks: 7,
 		decodeAhead: 18,
 		startBuffer: 6,
 	},
@@ -135,10 +136,10 @@ export type CharacterPlacement = {
 };
 
 export const CHARACTER_PLACEMENT: Record<CharacterId, CharacterPlacement> = {
-	woman: { heightFrac: 0.713, centerXFrac: 0.855, bottomFrac: 0.98 },
+	woman: { heightFrac: 0.606, centerXFrac: 0.8815, bottomFrac: 0.955 },
 	// Placed from the first animation frame: the bartender's drink stops at the slot's left edge (his
 	// tray may reach over it); the woman's foot may reach over the slot's right edge, her face never.
-	bartender: { heightFrac: 0.86, centerXFrac: 0.127, bottomFrac: 0.93 },
+	bartender: { heightFrac: 0.731, centerXFrac: 0.143, bottomFrac: 0.97 },
 };
 
 /** Source frame size per character (bartender V3 is 562x748, woman 554x740). */

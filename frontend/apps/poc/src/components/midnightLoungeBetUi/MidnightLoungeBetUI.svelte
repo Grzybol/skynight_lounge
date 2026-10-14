@@ -4,13 +4,16 @@
 		stateBet,
 		stateBetDerived,
 		stateConfig,
+		stateModal,
 		stateSound,
 		stateUi,
+		stateUrlDerived,
 	} from 'state-shared';
 	import { OnHotkey } from 'components-shared';
 	import { bookEventAmountToCurrencyString, numberToCurrencyString } from 'utils-shared/amount';
 
 	import { getContext } from '../../game/context';
+	import { loungeShown } from '../../game/midnightLoungeTheme';
 	import { resolveGameAsset } from '../../game/resolveGameAsset';
 	import { i18nDerived } from '../../i18n/i18nDerived';
 	import {
@@ -100,16 +103,118 @@
 		context.eventEmitter.broadcast({ type: 'soundUiHover' });
 	};
 
-	const spinSrc = $derived(
-		resolveGameAsset(`assets/midnight-lounge/ui/betui2/${stopMode ? 'stop' : 'spin'}.png`),
-	);
-	/** The SKYNIGHT LOUNGE emblem is the buy-bonus button (same 108x66 box as the old tile). */
-	const buyEmblemSrc = resolveGameAsset('assets/midnight-lounge/ui/ui_logo_midnight_lounge.png');
+	/** Big win and above: the whole BetUI is unavailable (inert) until the celebration ends. */
+	const celebrating = $derived(context.stateGame.celebrationActive);
+	const isReplay = $derived(stateUi.config.mode === 'replay');
+	const socialMode = stateUrlDerived.social();
+	/** Idle, but the balance cannot cover bet x mode cost: the player is told why the spin is unavailable. */
+	const insufficient = $derived(!isReplay && idle && !stateBetDerived.isBetCostAvailable());
+	/**
+	 * HUD artwork (betui2/*.png). `b` is the visible bounds inside the file; every control is placed by its
+	 * visible rectangle on the 1280x720 stage, so the artwork keeps its aspect ratio.
+	 */
+	const HUD = {
+		balance: { w: 2172, h: 724, b: [87, 98, 2082, 635] },
+		bet_background: { w: 2172, h: 724, b: [100, 98, 2069, 623] },
+		minus: { w: 1254, h: 1254, b: [51, 53, 1205, 1193] },
+		plus: { w: 1254, h: 1254, b: [43, 57, 1215, 1203] },
+		menu: { w: 1254, h: 1254, b: [109, 208, 1145, 1052] },
+		autospin: { w: 2172, h: 724, b: [164, 80, 2005, 647] },
+		turbo: { w: 2172, h: 724, b: [89, 52, 2064, 667] },
+		bonus: { w: 2172, h: 724, b: [101, 102, 2066, 622] },
+		spin: { w: 1254, h: 1254, b: [18, 23, 1236, 1229] },
+		stop: { w: 1254, h: 1254, b: [18, 20, 1236, 1229] },
+	} as const;
+	type HudKey = keyof typeof HUD;
+	type HudBox = { key: HudKey; x: number; y: number; w: number; h: number; kx: number; ky: number };
+
+	/** Rect on the stage from the visible width (height by aspect, or given to stretch the art). */
+	const box = (key: HudKey, x: number, y: number, w: number, h?: number): HudBox => {
+		const a = HUD[key];
+		const kx = w / (a.b[2] - a.b[0]);
+		const ky = h === undefined ? kx : h / (a.b[3] - a.b[1]);
+		return { key, x, y, w, h: (a.b[3] - a.b[1]) * ky, kx, ky };
+	};
+	const imgStyle = (r: HudBox) => {
+		const a = HUD[r.key];
+		return `left:${-a.b[0] * r.kx}px;top:${-a.b[1] * r.ky}px;width:${a.w * r.kx}px;height:${a.h * r.ky}px;`;
+	};
+	const boxStyle = (r: HudBox) => `left:${r.x}px;top:${r.y}px;width:${r.w}px;height:${r.h}px;`;
+	/** A point of the artwork (file px) on the stage. */
+	const at = (r: HudBox, fx: number, fy: number) => {
+		const a = HUD[r.key];
+		return `left:${r.x + (fx - a.b[0]) * r.kx}px;top:${r.y + (fy - a.b[1]) * r.ky}px;`;
+	};
+	/** A point of the artwork (file px) relative to the control's own box, for labels that live inside the button. */
+	const inBox = (r: HudBox, fx: number, fy: number) => {
+		const a = HUD[r.key];
+		return `left:${(fx - a.b[0]) * r.kx}px;top:${(fy - a.b[1]) * r.ky}px;`;
+	};
+	const hudUrl = (key: HudKey) => resolveGameAsset(`assets/midnight-lounge/ui/betui2/${key}.png`);
+
+	// Layout (stage px, from new_betui_preview.png): bottom-left bonus + menu/balance, bottom-right turbo, auto, bet, spin.
+	const L = (() => {
+		// Every control is 10 % smaller than the previous pass. Each cluster shrinks towards its own screen edge:
+		// bonus / balance / menu towards the bottom-left, bet / turbo / auto / spin towards the bottom-right,
+		// the WIN plate towards the bottom centre.
+		const K = 0.9;
+		const toward = (ax: number, x: number, y: number) => [ax + (x - ax) * K, 720 + (y - 720) * K] as const;
+		const bet = box('bet_background', ...toward(1280, 804, 614), 286 * K);
+		const d = bet.w * 0.2;
+		const m = bet.w * 0.04;
+		const cy = bet.y + (bet.h - d) / 2;
+		return {
+			bonus: box('bonus', ...toward(0, 9, 543), 207 * K),
+			balance: box('balance', ...toward(0, 6, 606), 347 * K),
+			menu: box('menu', ...toward(0, 3, 609), 96 * K, 91 * K),
+			win: box('bet_background', ...toward(640, 448, 617), 261 * K),
+			bet,
+			minus: box('minus', bet.x + m, cy, d),
+			plus: box('plus', bet.x + bet.w - m - d, cy, d),
+			turbo: box('turbo', ...toward(1280, 936, 509), 154 * K),
+			auto: box('autospin', ...toward(1280, 938, 562), 152 * K),
+			spin: box('spin', ...toward(1280, 1082, 501), 193 * K),
+		};
+	})();
+	/** The HUD is laid out on a 1280x720 stage and scaled to the play area like the rest of the scene. */
+	let hudRoot = $state<HTMLDivElement | null>(null);
+	let hudFrame = $state('left:0px;top:0px;transform:scale(1);');
+	$effect(() => {
+		const el = hudRoot;
+		if (!el) return;
+		const viewport = el.closest('.skyjump-viewport');
+		if (!(viewport instanceof HTMLElement)) return;
+		const place = () => {
+			const css = getComputedStyle(viewport);
+			const read = (name: string) => parseFloat(css.getPropertyValue(name));
+			const left = read('--play-left');
+			const top = read('--play-top');
+			const width = read('--play-width');
+			if (![left, top, width].every(Number.isFinite) || width <= 0) return;
+			hudFrame = `left:${left}px;top:${top}px;transform:scale(${width / 1280});`;
+		};
+		place();
+		const observer = new ResizeObserver(place);
+		observer.observe(viewport);
+		const kick = requestAnimationFrame(place);
+		return () => {
+			cancelAnimationFrame(kick);
+			observer.disconnect();
+		};
+	});
+	const autoWord = $derived(i18nDerived.autoSpin().split(' ')[0]);
+	const spinBox = $derived(box(stopMode ? 'stop' : 'spin', L.spin.x, L.spin.y, L.spin.w));
+
 	const spinLabel = $derived(stopMode ? i18nDerived.stop() : 'SPIN');
 </script>
 
 {#if context.stateGame.screen === 'play'}
-	<div class="ml-betui" data-test="ml-betui">
+	<div
+		class="ml-betui"
+		class:celebrating={celebrating}
+		inert={celebrating}
+		data-test="ml-betui"
+	>
 		{#if stateUi.menuOpen}
 			<button
 				type="button"
@@ -119,16 +224,83 @@
 			></button>
 		{/if}
 
-		<OnHotkey hotkey="Space" disabled={spaceLocked} onpress={onSpin} />
+		{#if isReplay}
+			<!-- Replay: no betting controls, no route into real play. Shows what was played and a way to run it again. -->
+			<div class="bar replay-bar" data-test="ml-replay-bar">
+				<span class="bar-line top"></span>
+				<span class="bar-line bottom"></span>
+				<div class="panel replay-info" data-test="ml-replay-info">
+					<span class="text">
+						<span class="kicker">{socialMode ? 'PLAY AMOUNT' : 'BET'}</span>
+						<span class="value">{numberToCurrencyString(stateBet.betAmount)}</span>
+					</span>
+					{#if stateBet.replayCostMultiplier > 1}
+						<span class="text">
+							<span class="kicker">{loungeShown(stateBet.activeBetModeKey, stateBet.activeBetModeKey)} · REAL COST</span>
+							<span class="value">
+								{stateBet.replayCostMultiplier}× · {numberToCurrencyString(
+									stateBet.betAmount * stateBet.replayCostMultiplier,
+								)}
+							</span>
+						</span>
+					{/if}
+				</div>
+				<div class="panel win replay-win" aria-label={i18nDerived.win()}>
+					<span class="kicker">{i18nDerived.win()}</span>
+					<span class="value big">{bookEventAmountToCurrencyString(winTween.current)}</span>
+				</div>
+				<button
+					type="button"
+					class="tile action push replay-again"
+					data-test="ml-replay-again"
+					onpointerenter={hover}
+					onclick={() => window.location.reload()}
+				>
+					<span class="cap">REPLAY</span>
+				</button>
+			</div>
+		{:else}
+		<OnHotkey
+				hotkey="Space"
+				disabled={spaceLocked || celebrating || stateUi.menuOpen || Boolean(stateModal.modal)}
+				onpress={() => {
+					// Space places a bet when betting is available; mid-round it does nothing.
+					if (idle) onSpin();
+				}}
+			/>
 
-		<div class="bar">
-			<span class="bar-line top"></span>
-			<span class="bar-line bottom"></span>
+		<div class="hud" data-test="ml-hud" bind:this={hudRoot} style={hudFrame}>
+			{#if insufficient}
+				<span class="funds-note" role="status" data-test="ml-insufficient"
+					>{socialMode ? 'NOT ENOUGH BALANCE FOR THIS PLAY' : 'INSUFFICIENT FUNDS FOR THIS BET'}</span
+				>
+			{/if}
 
+			<!-- Bonus (buy bonus) -->
 			<button
 				type="button"
-				class="tile menu"
+				class="hud-btn"
+				class:active={buyActive}
+				style={boxStyle(L.bonus)}
+				aria-label={buyActive ? i18nDerived.disable() : i18nDerived.buyBonus()}
+				aria-pressed={buyActive}
+				disabled={!idle}
+				onpointerenter={hover}
+				onclick={() => pressBuy(context.eventEmitter)}
+			>
+				<img src={hudUrl('bonus')} style={imgStyle(L.bonus)} alt="" draggable="false" fetchpriority="low" />
+				<span class="hud-label bonus-label" style={inBox(L.bonus, 1250, 360)}>BONUS</span>
+			</button>
+
+			<!-- Menu + balance plate -->
+			<div class="hud-plate-frame" style={boxStyle(L.balance)} aria-hidden="true">
+				<img src={hudUrl('balance')} style={imgStyle(L.balance)} alt="" draggable="false" fetchpriority="low" />
+			</div>
+			<button
+				type="button"
+				class="hud-btn"
 				class:active={stateUi.menuOpen}
+				style={boxStyle(L.menu)}
 				aria-label={stateUi.menuOpen ? i18nDerived.menuExit() : i18nDerived.menu()}
 				aria-pressed={stateUi.menuOpen}
 				onpointerenter={hover}
@@ -137,132 +309,117 @@
 					else openMenu(context.eventEmitter);
 				}}
 			>
-				<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 7.5h14M5 12h14M5 16.5h14" /></svg>
+				<img src={hudUrl('menu')} style={imgStyle(L.menu)} alt="" draggable="false" fetchpriority="low" />
 			</button>
-
-			<div class="panel balance" aria-label={i18nDerived.balance()}>
-				<svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
-					<path d="M4.5 8.5h13a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2h-11a2 2 0 0 1-2-2v-9z" />
-					<path d="M4.5 8.5l10-3.2 1.2 3.2M15.5 14h4" />
-				</svg>
-				<span class="text">
-					<span class="kicker">{i18nDerived.balance()}</span>
-					<span class="value">{numberToCurrencyString(balanceTween.current)}</span>
-				</span>
+			<div class="hud-text" style={at(L.balance, 1390, 366)} aria-label={i18nDerived.balance()}>
+				<span class="kicker">{i18nDerived.balance()}</span>
+				<span class="value">{numberToCurrencyString(balanceTween.current)}</span>
 			</div>
 
-			<span class="sep"></span>
-
-			<div class="panel bet">
-				<button
-					type="button"
-					class="round"
-					aria-label={`${i18nDerived.decrease()} ${i18nDerived.bet()}`}
-					disabled={stepLocked || stateBet.betAmount === smallest}
-					onpointerenter={hover}
-					onclick={() => stepBet(context.eventEmitter, -1)}
-				>
-					<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 12h11" /></svg>
-				</button>
-				<button
-					type="button"
-					class="text bet-btn"
-					aria-label={i18nDerived.bet()}
-					disabled={stepLocked}
-					onpointerenter={hover}
-					onclick={() => {
-						if (stepLocked) return;
-						openBetMenu(context.eventEmitter);
-					}}
-				>
-					<span class="kicker">{i18nDerived.bet()}</span>
-					<span class="value">{numberToCurrencyString(stateBetDerived.betCost())}</span>
-				</button>
-				<button
-					type="button"
-					class="round"
-					aria-label={`${i18nDerived.increase()} ${i18nDerived.bet()}`}
-					disabled={stepLocked || stateBet.betAmount === biggest}
-					onpointerenter={hover}
-					onclick={() => stepBet(context.eventEmitter, 1)}
-				>
-					<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 6.5v11M6.5 12h11" /></svg>
-				</button>
+			<!-- WIN: its own plate between balance and bet -->
+			<div class="hud-plate-frame" style={boxStyle(L.win)} aria-hidden="true">
+				<img src={hudUrl('bet_background')} style={imgStyle(L.win)} alt="" draggable="false" fetchpriority="low" />
 			</div>
-
-			<span class="win-gap" aria-hidden="true"></span>
-			<div class="panel win" aria-label={i18nDerived.win()}>
+			<div class="hud-win" style={at(L.win, 1085, 360)} aria-label={i18nDerived.win()}>
 				{#if stateUi.freeSpinCounterShow}
 					<span class="free-spins">
 						{i18nDerived.freeSpins()}
 						{stateUi.freeSpinCounterCurrent} / {stateUi.freeSpinCounterTotal}
 					</span>
 				{/if}
-				<span class="kicker">{i18nDerived.win()}</span>
+				<span class="kicker win-kicker">{i18nDerived.win()}</span>
 				<span class="value big">{bookEventAmountToCurrencyString(winTween.current)}</span>
 			</div>
 
+			<!-- Turbo / Auto -->
 			<button
 				type="button"
-				class="tile action"
+				class="hud-btn"
 				class:active={stateBet.isTurbo}
+				style={boxStyle(L.turbo)}
 				aria-label={i18nDerived.turbo()}
 				aria-pressed={stateBet.isTurbo}
 				disabled={turboDisabled}
 				onpointerenter={hover}
 				onclick={() => pressTurbo(context.eventEmitter)}
 			>
-				<svg viewBox="0 0 24 24" aria-hidden="true">
-					<path d="M13 3.5L6.5 13H12l-1 7.5L17.5 11H12L13 3.5z" />
-				</svg>
-				<span class="cap">{i18nDerived.turbo()}</span>
+				<img src={hudUrl('turbo')} style={imgStyle(L.turbo)} alt="" draggable="false" fetchpriority="low" />
+				<span class="hud-label" style={inBox(L.turbo, 1300, 360)}>{i18nDerived.turbo()}</span>
 			</button>
 
 			<button
 				type="button"
-				class="tile action"
+				class="hud-btn"
 				class:active={autoOn}
+				style={boxStyle(L.auto)}
 				aria-label={i18nDerived.autoSpin()}
 				aria-pressed={autoOn}
 				disabled={autoDisabled}
 				onpointerenter={hover}
 				onclick={() => pressAuto(context.eventEmitter)}
 			>
-				<svg viewBox="0 0 24 24" aria-hidden="true">
-					<path d="M16.5 7.5A6 6 0 1 0 18 12" />
-					<path d="M16.2 4.8v3.2H19.4" />
-				</svg>
-				<span class="cap">{i18nDerived.autoSpin()}</span>
-				{#if autoBadge}<span class="badge">{autoBadge}</span>{/if}
+				<img src={hudUrl('autospin')} style={imgStyle(L.auto)} alt="" draggable="false" fetchpriority="low" />
+				<span class="hud-label" style={inBox(L.auto, 1350, 360)}>{autoWord}</span>
 			</button>
+			{#if autoBadge}<span class="hud-badge" style={at(L.auto, 1900, 130)}>{autoBadge}</span>{/if}
 
+			<!-- Bet -->
+			<div class="hud-plate-frame" style={boxStyle(L.bet)} aria-hidden="true">
+				<img src={hudUrl('bet_background')} style={imgStyle(L.bet)} alt="" draggable="false" fetchpriority="low" />
+			</div>
 			<button
 				type="button"
-				class="buy-emblem"
-				class:active={buyActive}
-				aria-label={buyActive ? i18nDerived.disable() : i18nDerived.buyBonus()}
-				aria-pressed={buyActive}
-				disabled={!idle}
+				class="hud-btn"
+				style={boxStyle(L.minus)}
+				aria-label={`${i18nDerived.decrease()} ${i18nDerived.bet()}`}
+				disabled={stepLocked || stateBet.betAmount === smallest}
 				onpointerenter={hover}
-				onclick={() => pressBuy(context.eventEmitter)}
+				onclick={() => stepBet(context.eventEmitter, -1)}
 			>
-				<img src={buyEmblemSrc} alt="" draggable="false" />
+				<img src={hudUrl('minus')} style={imgStyle(L.minus)} alt="" draggable="false" fetchpriority="low" />
+			</button>
+			<button
+				type="button"
+				class="hud-text bet-btn"
+				style={`left:${L.minus.x + L.minus.w + 6}px;top:${L.bet.y + 6}px;width:${L.plus.x - (L.minus.x + L.minus.w) - 12}px;height:${L.bet.h - 12}px;`}
+				aria-label={i18nDerived.bet()}
+				disabled={stepLocked}
+				onpointerenter={hover}
+				onclick={() => {
+					if (stepLocked) return;
+					openBetMenu(context.eventEmitter);
+				}}
+			>
+				<span class="kicker">{i18nDerived.bet()}</span>
+				<span class="value">{numberToCurrencyString(stateBetDerived.betCost())}</span>
+			</button>
+			<button
+				type="button"
+				class="hud-btn"
+				style={boxStyle(L.plus)}
+				aria-label={`${i18nDerived.increase()} ${i18nDerived.bet()}`}
+				disabled={stepLocked || stateBet.betAmount === biggest}
+				onpointerenter={hover}
+				onclick={() => stepBet(context.eventEmitter, 1)}
+			>
+				<img src={hudUrl('plus')} style={imgStyle(L.plus)} alt="" draggable="false" fetchpriority="low" />
+			</button>
+
+			<!-- SPIN / STOP -->
+			<button
+				type="button"
+				class="hud-btn spin-btn"
+				class:stop={stopMode}
+				style={boxStyle(L.spin)}
+				data-test="ml-spin"
+				aria-label={spinLabel}
+				disabled={spinDisabled || spinKey.endsWith('disabled')}
+				onpointerenter={hover}
+				onclick={onSpin}
+			>
+				<img src={hudUrl(stopMode ? 'stop' : 'spin')} style={imgStyle(spinBox)} alt="" draggable="false" fetchpriority="low" />
 			</button>
 		</div>
-
-		<!-- SPIN / STOP: the only image-based control. It overlaps the bar at the right. -->
-		<button
-			type="button"
-			class="spin"
-			class:stop={stopMode}
-			data-test="ml-spin"
-			aria-label={spinLabel}
-			disabled={spinDisabled || spinKey.endsWith('disabled')}
-			onpointerenter={hover}
-			onclick={onSpin}
-		>
-			<img src={spinSrc} alt="" draggable="false" />
-		</button>
 
 		{#if stateUi.menuOpen}
 			<div class="flyout" role="menu">
@@ -289,6 +446,7 @@
 				</span>
 			</div>
 		{/if}
+		{/if}
 	</div>
 {/if}
 
@@ -301,7 +459,7 @@
 		inset: 0;
 		pointer-events: none;
 		color: var(--gold-soft);
-		font-family: var(--ml-font-gold, 'Marcellus', serif);
+		font-family: var(--ml-font-gold, 'Luckiest Guy', serif);
 	}
 
 	.backdrop {
@@ -414,6 +572,221 @@
 		height: 30px;
 	}
 
+	/* The right-hand buttons sit against the SPIN button; the WIN counter is centred on the bar on its own. */
+	.push {
+		margin-left: auto;
+	}
+
+	/* New HUD: image buttons placed on the stage, no bar behind them. */
+	.hud {
+		position: absolute;
+		width: 1280px;
+		height: 720px;
+		transform-origin: 0 0;
+		pointer-events: none;
+	}
+
+	.hud-btn,
+	.hud-plate-frame {
+		position: absolute;
+		padding: 0;
+		background: none;
+		border: 0;
+		overflow: visible;
+		pointer-events: none;
+	}
+
+	.hud-btn {
+		pointer-events: auto;
+		cursor: pointer;
+		transition:
+			transform 120ms ease,
+			filter 120ms ease;
+	}
+
+	.hud-btn img,
+	.hud-plate-frame img {
+		position: absolute;
+		max-width: none;
+		pointer-events: none;
+		user-select: none;
+		filter: drop-shadow(0 3px 5px rgba(0, 0, 0, 0.45));
+	}
+
+	.hud-btn:hover:not(:disabled) {
+		transform: translateY(-1px);
+		filter: brightness(1.1);
+	}
+
+	.hud-btn:active:not(:disabled) {
+		transform: scale(0.96);
+	}
+
+	/* Switched on (turbo, auto, bonus, open menu): a strong gold halo that also stays while hovered. */
+	.hud-btn.active,
+	.hud-btn.active:hover:not(:disabled) {
+		filter: drop-shadow(0 0 5px #fff1b0) drop-shadow(0 0 14px rgba(255, 196, 64, 1))
+			drop-shadow(0 0 28px rgba(255, 168, 32, 0.9)) brightness(1.22) saturate(1.2);
+		animation: hud-glow 1.4s ease-in-out infinite alternate;
+	}
+
+	/* A bright ring around the switched-on pill, so the state reads at a glance on the gold artwork. */
+	.hud-btn.active::before {
+		content: '';
+		position: absolute;
+		inset: -4px;
+		border-radius: 999px;
+		border: 3px solid #fff3b8;
+		box-shadow:
+			0 0 10px 3px rgba(255, 222, 120, 0.95),
+			0 0 26px 8px rgba(255, 180, 50, 0.75),
+			inset 0 0 12px 2px rgba(255, 222, 120, 0.7);
+		pointer-events: none;
+		animation: hud-ring 1.4s ease-in-out infinite alternate;
+	}
+
+	@keyframes hud-ring {
+		from {
+			opacity: 0.65;
+		}
+		to {
+			opacity: 1;
+		}
+	}
+
+	@keyframes hud-glow {
+		from {
+			filter: drop-shadow(0 0 4px #fff1b0) drop-shadow(0 0 11px rgba(255, 196, 64, 0.95))
+				drop-shadow(0 0 22px rgba(255, 168, 32, 0.75)) brightness(1.15) saturate(1.15);
+		}
+		to {
+			filter: drop-shadow(0 0 7px #fff7cc) drop-shadow(0 0 18px rgba(255, 206, 80, 1))
+				drop-shadow(0 0 34px rgba(255, 176, 40, 1)) brightness(1.3) saturate(1.25);
+		}
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.hud-btn.active,
+		.hud-btn.active:hover:not(:disabled),
+		.hud-btn.active::before {
+			animation: none;
+		}
+	}
+
+	.hud-btn:disabled {
+		cursor: default;
+		opacity: 0.5;
+	}
+
+	.hud-label,
+	.hud-badge,
+	.hud-text {
+		position: absolute;
+		transform: translate(-50%, -50%);
+		color: #fbe9b0;
+		font-family: var(--ml-font-gold, 'Luckiest Guy', serif);
+		white-space: nowrap;
+		pointer-events: none;
+		text-shadow: 0 2px 0 rgba(40, 8, 16, 0.85);
+	}
+
+	.hud-label {
+		font-size: 13px;
+		letter-spacing: 0.06em;
+		text-transform: uppercase;
+	}
+
+	.hud-badge {
+		min-width: 22px;
+		padding: 1px 6px;
+		font-size: 12.6px;
+		text-align: center;
+		background: #1b0a10;
+		border: 1px solid rgba(228, 190, 100, 0.9);
+		border-radius: 999px;
+	}
+
+	.hud-text {
+		display: grid;
+		justify-items: center;
+		gap: 2px;
+	}
+
+	.hud-text.bet-btn {
+		transform: none;
+		align-content: center;
+		background: none;
+		border: 0;
+		padding: 0;
+		pointer-events: auto;
+		cursor: pointer;
+	}
+
+	.hud-win {
+		position: absolute;
+		transform: translate(-50%, -50%);
+		display: grid;
+		justify-items: center;
+		gap: 2px;
+		color: #fbe9b0;
+		font-family: var(--ml-font-gold, 'Luckiest Guy', serif);
+		text-shadow: 0 2px 0 rgba(40, 8, 16, 0.9);
+		pointer-events: none;
+	}
+
+	.hud-win .win-kicker {
+		font-size: 13.8px;
+	}
+
+	.hud .kicker {
+		font-size: 11.3px;
+	}
+
+	.hud .value {
+		font-size: 17.8px;
+	}
+
+	.hud .value.big {
+		font-size: 24.3px;
+	}
+
+	.hud .bonus-label {
+		font-size: 18px;
+	}
+
+	.hud-win .free-spins {
+		position: static;
+	}
+
+	.spin-btn img {
+		filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.55));
+	}
+
+	.funds-note {
+		position: absolute;
+		left: 584px;
+		top: 574px;
+		transform: translateX(-50%);
+		padding: 6px 14px;
+		color: #fbe9b0;
+		background: rgba(60, 10, 22, 0.92);
+		border: 1.5px solid rgba(228, 190, 100, 0.85);
+		border-radius: 999px;
+		font-size: 12px;
+		font-weight: 800;
+		letter-spacing: 0.12em;
+		white-space: nowrap;
+		pointer-events: none;
+	}
+
+	.replay-bar {
+		padding-right: 22px;
+	}
+
+	.replay-win {
+		position: absolute;
+	}
+
 	.tile.wide {
 		width: 108px;
 	}
@@ -464,7 +837,7 @@
 	}
 
 	.cap {
-		font-size: 10px;
+		font-size: 13px;
 		font-weight: 800;
 		letter-spacing: 0.08em;
 		line-height: 1;
@@ -512,6 +885,7 @@
 	}
 
 	.panel {
+		box-sizing: border-box;
 		display: flex;
 		align-items: center;
 		gap: 10px;
@@ -538,7 +912,7 @@
 
 	.kicker {
 		color: var(--gold);
-		font-size: 10px;
+		font-size: 15px;
 		font-weight: 800;
 		letter-spacing: 0.14em;
 		line-height: 1;
@@ -547,7 +921,7 @@
 
 	.value {
 		color: var(--gold-soft);
-		font-size: 18px;
+		font-size: 24px;
 		font-weight: 800;
 		line-height: 1;
 		white-space: nowrap;
@@ -555,7 +929,7 @@
 	}
 
 	.value.big {
-		font-size: 24px;
+		font-size: 32px;
 	}
 
 	.balance {
@@ -614,13 +988,6 @@
 		height: 22px;
 	}
 
-	/* Keeps the buttons to the right of the WIN counter where they were; the counter itself is centred on the bar. */
-	.win-gap {
-		flex: 0 0 auto;
-		width: 189px;
-		height: 1px;
-	}
-
 	.win {
 		position: absolute;
 		left: 50%;
@@ -631,14 +998,15 @@
 		flex-direction: column;
 		justify-content: center;
 		gap: 6px;
-		width: 168px;
+		width: 190px;
+		padding: 0;
 		background: transparent;
 		border-color: transparent;
 		box-shadow: none;
 	}
 
 	.win .kicker {
-		font-size: 20px;
+		font-size: 26px;
 	}
 
 	.free-spins {
@@ -671,6 +1039,8 @@
 	}
 
 	.spin img {
+		/* 10 % darker than the artwork. */
+		filter: brightness(0.9);
 		display: block;
 		width: 100%;
 		height: 100%;

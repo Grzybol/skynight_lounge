@@ -41,11 +41,9 @@ MAP = {
     'woman_idle_3': 'feet2_przerywnik3_v3_spritesheet',
     'woman_idle_4': 'feet2_extra_przerywnik_v12_spritesheet',
     'woman_mini_win': 'feet2_win_v3_spritesheet',
-    'woman_big_win': 'feet2_bigwin_v4_spritesheet',
     'bartender_idle': 'barman2_idle_v1_spritesheet',
     'bartender_idle_1': 'barman2_przerywnik1_v1_spritesheet',
     'bartender_mini_win': 'barman2_win_v1_spritesheet',
-    'bartender_big_win': 'barman2_bigwin_v1_spritesheet',
     # Looping scene props (not characters): plant 562x748, bodyguard 488x862.
     'plant_loop': 'background_prop_plant_v4',
     'guard_loop': 'bodyguard_drawn',

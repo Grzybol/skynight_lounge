@@ -96,11 +96,60 @@ export const V2_PANEL_DECOR = {
  * innermost colored pixels so side diamonds and crests stay outside the 5×5.
  * Scale 1 keeps that hole on the grid — about 6% tighter than the previous 1.078.
  */
-export const V2_SLOT_BOARD_FRAME = {
-	/** Union of the five reel windows in ui_slot_board_frame_midnight_lounge.png (Art Deco frame, 1254x1254). */
-	holeLeft: 0.0478,
-	holeRight: 0.9522,
-	holeTop: 0.1643,
-	holeBottom: 0.8461,
-	scale: 1,
+/**
+ * `slot_background_1.png` (1448x1086, "Gotycka rama inwentarza z różami"): 25 hand-drawn windows of about 133 x 128 art px.
+ * Their measured centres deviate from an even 167 x 162.4 pitch by at most ~3 px, so the grid is snapped to an even one (a tile
+ * then has the same offset in every cell and nothing shifts when a reel stops). Drawn as one piece (SlotFrameLayer, one band).
+ */
+export const V2_FRAME_BANDS = {
+	srcH: 1086,
+	outH: 1086,
+	bands: [{ srcStart: 0, srcEnd: 1086, outStart: 0, outEnd: 1086 }],
 } as const;
+
+const ART = { w: 1448, h: 1086 };
+const PITCH = { w: 167, h: 162.4 };
+const WIN = { w: 133, h: 128 };
+/** First window's top-left corner in the art. */
+const FIRST = { x: 389.1 - WIN.w / 2, y: 258.9 - WIN.h / 2 };
+const GRID_ORIGIN = { x: FIRST.x - (PITCH.w - WIN.w) / 2, y: FIRST.y - (PITCH.h - WIN.h) / 2 };
+
+export const V2_SLOT_BOARD_FRAME = {
+	/** Playfield: the 5x5 block of pitches around the windows, as fractions of the art. */
+	holeLeft: GRID_ORIGIN.x / ART.w,
+	holeRight: (GRID_ORIGIN.x + 5 * PITCH.w) / ART.w,
+	holeTop: GRID_ORIGIN.y / ART.h,
+	holeBottom: (GRID_ORIGIN.y + 5 * PITCH.h) / ART.h,
+	scale: 1,
+	cellAspect: PITCH.w / PITCH.h,
+} as const;
+
+/** The frame's windows in art pixels. */
+export const V2_FRAME_WINDOWS = {
+	art: ART,
+	origin: GRID_ORIGIN,
+	pitch: PITCH,
+	colX: [0, 1, 2, 3, 4].map((i) => FIRST.x + PITCH.w * i),
+	rowY: [0, 1, 2, 3, 4].map((i) => FIRST.y + PITCH.h * i),
+	/** Window size, art px. */
+	winW: WIN.w,
+	winH: WIN.h,
+	/** Tier tiles and the default window background are drawn this much larger than the window, under the frame lattice. */
+	tileGrow: 1.14,
+} as const;
+
+/** Window height / cell height: the symbol box is a whole cell, the visible window is smaller. */
+const WINDOW_FIT = WIN.h / PITCH.h;
+
+/**
+ * Symbol height by tier as a fraction of the frame WINDOW height. Steps between regular tiers are 5 %
+ * (low -> medium -> premium), all +5 % on the previous pass; scatter, Concierge / Mystery and feature symbols match premium.
+ */
+export const V2_TIER_SCALE: Record<string, number> = {
+	low: 0.84 * WINDOW_FIT,
+	medium: 0.882 * WINDOW_FIT,
+	premium: 0.924 * WINDOW_FIT,
+	scatter: 0.924 * WINDOW_FIT,
+	concierge_mystery: 0.924 * WINDOW_FIT,
+	feature: 0.924 * WINDOW_FIT,
+};

@@ -5,7 +5,7 @@
 	import { waitForTimeout } from 'utils-shared/wait';
 
 	import { getContext } from '../../game/context';
-	import { loungeShown, loungeSlotFrameSrc } from '../../game/midnightLoungeTheme';
+	import { loungeShown, loungeSlotFrameSrc, loungeSlotWindowSrc } from '../../game/midnightLoungeTheme';
 	import { V2_PAYLINES, V2_PAYLINE_IDS, V2_SCATTER_ID } from '../../game/skyjump_v2/config';
 	import { bonusHud, bonusShowsTargets, tierLabel } from '../../game/skyjump_v2/bonusHud.svelte';
 	import { V2_PLACEHOLDERS, reelFillerBand, v2Placeholder } from '../../game/skyjump_v2/placeholders';
@@ -21,7 +21,11 @@
 		markV2SymbolArtMissing,
 		markV2SymbolArtReady,
 		v2SymbolVisual,
-	} from '../../game/skyjump_v2/symbolAssetRegistry';
+		v2RollingAssetUrls,
+	v2SymbolBlurUrl,
+	v2SymbolTier,
+	v2TileUrl,
+} from '../../game/skyjump_v2/symbolAssetRegistry';
 	import {
 		v2FxAssetUrl,
 		v2ModeTitleUrl,
@@ -36,7 +40,14 @@
 	} from '../../game/skyjump_v2/winPresentation';
 	import { reactToWin } from '../../game/loungeCharacters/winReaction';
 	import { statusLabel as playerLabel, statusSub as playerSub } from '../../game/skyjump_v2/statusText';
-	import { V2_PAYLINE_FX, V2_SLOT_BOARD_FRAME } from '../../game/skyjump_v2/presentationLayout';
+	import { warmGate } from '../../game/loungeCharacters/warmGate';
+	import SlotFrameLayer from './SlotFrameLayer.svelte';
+	import {
+		V2_FRAME_WINDOWS,
+		V2_PAYLINE_FX,
+		V2_SLOT_BOARD_FRAME,
+		V2_TIER_SCALE,
+	} from '../../game/skyjump_v2/presentationLayout';
 	import type { V2BannerKind } from '../../game/skyjump_v2/presentationLayout';
 	import { playV2AudioHook } from '../../game/skyjump_v2/audio';
 	import type { SkyJumpMysteryResultType } from '../../game/typesBookEvent';
@@ -51,6 +62,21 @@
 	let board = $state(emptyBoard());
 	let spinning = $state([false, false, false, false, false]);
 	let reelPace = $state<ReelPace[]>(['', '', '', '', '']);
+	/** Jelly landing: true for a moment after a reel stops (settled symbols squash and rebound). */
+	let jelly = $state([false, false, false, false, false]);
+	const JELLY_MS = 620;
+	/** The squash starts this long before the reel has fully stopped (it is almost at rest by then). */
+	const JELLY_LEAD_MS = 90;
+	const jellyTimers: Array<ReturnType<typeof setTimeout> | null> = [null, null, null, null, null];
+	/** Idempotent: the first call per stop starts the squash, later calls (done after land) do nothing. */
+	const startJelly = (reel: number, settleMs: number) => {
+		if (settleMs <= 0 || jelly[reel] || jellyTimers[reel]) return;
+		jelly[reel] = true;
+		jellyTimers[reel] = setTimeout(() => {
+			jelly[reel] = false;
+			jellyTimers[reel] = null;
+		}, JELLY_MS);
+	};
 	let landMs = $state(160);
 	/** Long presentation strips. Null uses the settled board column. */
 	let spinIds = $state<(string[] | null)[]>([null, null, null, null, null]);
@@ -114,6 +140,33 @@
 
 	let winFocusTimer: ReturnType<typeof setTimeout> | undefined;
 
+	// Warm every symbol (sharp and rolling) and the tier tiles so the first spin never pops images in: but only after the
+	// player has left the start screen, and one at a time at low priority, so a slow link serves the start screen first.
+	$effect(() => {
+		let cancelled = false;
+		const keep: HTMLImageElement[] = [];
+		void warmGate.then(async () => {
+			const queue = v2RollingAssetUrls();
+			// Four at a time, low priority.
+			const worker = async () => {
+				for (let url = queue.shift(); url && !cancelled; url = queue.shift()) {
+					const img = new Image();
+					img.decoding = 'async';
+					img.fetchPriority = 'low';
+					img.src = url;
+					keep.push(img);
+					await new Promise<void>((resolve) => {
+						img.onload = img.onerror = () => resolve();
+					});
+				}
+			};
+			await Promise.all([worker(), worker(), worker(), worker()]);
+		});
+		return () => {
+			cancelled = true;
+		};
+	});
+
 	$effect(() => {
 		if (typeof document === 'undefined') return;
 		const viewport = document.querySelector('.skyjump-viewport');
@@ -122,6 +175,7 @@
 		// celebration exactly (CSS fades the blur and the plate in and out); `winFocus` outlives
 		// it by the fade time so the characters and bar stay in front while the plate fades out.
 		const active = celebrationShow && celebrationTier !== 'none';
+		context.stateGame.celebrationActive = active;
 		clearTimeout(winFocusTimer);
 		if (active) {
 			viewport.dataset.winPlate = celebrationTier;
@@ -141,6 +195,7 @@
 			if (!viewport) return;
 			delete viewport.dataset.winPlate;
 			delete viewport.dataset.winFocus;
+			context.stateGame.celebrationActive = false;
 		},
 	);
 
@@ -197,7 +252,8 @@
 	const SUMMARY_GRID_GAP = 12;
 	const SUMMARY_BOTTOM_LIMIT = 581;
 	/** Visible top of the frame art (alpha bounds) as a fraction of the art height. */
-	const FRAME_ART_VISIBLE_TOP = 0.1124;
+	/** The new frame art starts at the very top of its canvas (crest at y = 0). */
+	const FRAME_ART_VISIBLE_TOP = 0;
 	/**
 	 * Summary extends this many px into the BetUI crest (intentional meet).
 	 * Extra overlap frees budget for BOARD_SCALE without crowding READY.
@@ -217,7 +273,7 @@
 	 * Slot size: 490 px grid height (10 % less than the 544 px pass, itself 25 % over the original 435 px) and cells 10 % wider (aspect 1.247) (the summary tile under it is gone, so the
 	 * whole height down to the BetUI is free).
 	 */
-	const BOARD_GRID_H = 515;
+	const BOARD_GRID_H = 540;
 	const maxBoardH = $derived(px(BOARD_GRID_H));
 	/**
 	 * The larger frame is raised by this many px @1280x720 (its crest runs over the top edge) so the
@@ -225,25 +281,45 @@
 	 */
 	const BOARD_RISE = 0;
 	const availH = $derived(Math.max(120, maxBoardH + framePadEstimate * 2 + 4));
-	const FRAME_BORDER = 2;
-	const framePadEstimate = $derived(Math.max(12, Math.min(15, Math.round(availW * 0.013))));
-	const gap = $derived(Math.max(5, Math.min(10, Math.round(availW * 0.0095))));
-	const framePad = $derived(Math.max(12, Math.min(15, Math.round(availW * 0.013))));
-	const BOARD_ASPECT = 1.247;
-	const maxInnerW = $derived(Math.max(100, availW - framePad * 2 - FRAME_BORDER * 2));
-	const maxInnerH = $derived(Math.max(80, availH - framePad * 2 - FRAME_BORDER * 2));
-	const fitCellW = $derived(Math.max(22, Math.floor((maxInnerW - gap * 4) / 5)));
-	const fitCellH = $derived(Math.max(22, Math.floor((maxInnerH - gap * 4) / 5)));
-	const baseCellH = $derived(Math.min(fitCellW, fitCellH));
-	const cellH = $derived(Math.min(fitCellH, Math.max(22, Math.round(baseCellH * BOARD_SCALE))));
-	const cellW = $derived(Math.min(fitCellW, Math.max(cellH, Math.round(cellH * BOARD_ASPECT))));
+	/** No CSS frame any more: the artwork provides all chrome, the grid is a flush 5x5 of cell pitches. */
+	const FRAME_BORDER = 0;
+	const gap = 0;
+	const framePad = 0;
+	/** Slot width (px @1280): the frame art is scaled so the 5x5 playfield is this wide. */
+	const BOARD_GRID_W = 524;
+	// Not rounded: a rounded cell height drifts away from the frame's 133.2 art-px row pitch (up to 2.5 px by the last row).
+	const cellW = $derived(Math.max(22, px(BOARD_GRID_W) / 5));
+	const cellH = $derived(Math.max(22, cellW / V2_SLOT_BOARD_FRAME.cellAspect));
 	const boardW = $derived(cellW * 5 + gap * 4);
 	const boardH = $derived(cellH * 5 + gap * 4);
 	/** Edge-to-edge symbol pitch. The old row gutter is inside the slot, not a grid line. */
 	const symbolPitch = $derived(boardH / VISIBLE_ROWS);
 	const surfaceW = $derived(boardW + framePad * 2 + FRAME_BORDER * 2);
 	const surfaceH = $derived(boardH + framePad * 2 + FRAME_BORDER * 2);
+	/** Settled symbols rest this many art px off the window centre (negative = up). */
+	const SYMBOL_LIFT = -3;
+	/** Pixels per art pixel of the frame. */
+	const artK = $derived(cellW / V2_FRAME_WINDOWS.pitch.w);
+	/** Per-cell geometry: the tier tile fills the real window; the symbol is centred on it. Offsets are from the nominal cell. */
+	const cellGeo = (reel: number, row: number) => {
+		const W = V2_FRAME_WINDOWS;
+		const r = Math.min(4, Math.max(0, row));
+		const nx = W.origin.x + W.pitch.w * reel;
+		const ny = W.origin.y + W.pitch.h * r;
+		const g = W.tileGrow;
+		return {
+			// Backdrop rect inside its cell (px): the window grown by `tileGrow`, so the frame lattice hides its edges.
+			tx: (W.colX[reel] - (W.winW * (g - 1)) / 2 - nx) * artK,
+			ty: (W.rowY[r] - (W.winH * (g - 1)) / 2 - ny) * artK,
+			tw: W.winW * g * artK,
+			th: W.winH * g * artK,
+			// Window centre relative to the cell centre: symbols are centred on the window.
+			dx: (W.colX[reel] + W.winW / 2 - (nx + W.pitch.w / 2)) * artK,
+			dy: (W.rowY[r] + W.winH / 2 - (ny + W.pitch.h / 2)) * artK + SYMBOL_LIFT * artK,
+		};
+	};
 	const slotFrameSrc = loungeSlotFrameSrc;
+	const windowBgSrc = loungeSlotWindowSrc;
 	/** Art frame sized so its transparent hole stays centered on the grid, then +10%. */
 	const slotFrameW = $derived(
 		(boardW / (V2_SLOT_BOARD_FRAME.holeRight - V2_SLOT_BOARD_FRAME.holeLeft)) *
@@ -587,6 +663,7 @@
 						spinIds[reel] = null;
 						spinOffset[reel] = 0;
 						landed[reel] = true;
+						startJelly(reel, settleMs);
 						if (result[reel]?.some((id) => id === V2_SCATTER_ID)) {
 							playV2AudioHook('SCATTER_LAND', { catchUp: false });
 						}
@@ -594,6 +671,8 @@
 						spinOffset[reel] = offset;
 						const nextPace = phaseElapsed >= travelMs ? 'land' : reelTravelPace(phaseElapsed, travelMs);
 						if (reelPace[reel] !== nextPace) reelPace[reel] = nextPace;
+						// The jelly starts when the reel is nearly stopped (landing begins), not after it has stopped.
+						if (nextPace === 'land' || phaseElapsed >= travelMs - JELLY_LEAD_MS) startJelly(reel, settleMs);
 					}
 				}
 			}
@@ -1060,19 +1139,34 @@
 			</div>
 		{/if}
 		<div class="board-surface" data-test="skyjump-v2-board-surface">
-			<div class="board-glass" aria-hidden="true"></div>
-			<img
+			<!-- Layer 1: the default window background, behind the rolling symbols and the frame. -->
+			<div class="window-bgs" aria-hidden="true" data-test="skyjump-v2-window-bgs">
+				{#each Array.from({ length: 25 }, (_, i) => i) as n}
+					{@const wg = cellGeo(n % 5, Math.floor(n / 5))}
+					<img
+						src={windowBgSrc}
+						alt=""
+						draggable="false"
+						fetchpriority="low"
+						style:left={`${(n % 5) * cellW + wg.tx}px`}
+						style:top={`${Math.floor(n / 5) * cellH + wg.ty}px`}
+						style:width={`${wg.tw}px`}
+						style:height={`${wg.th}px`}
+					/>
+				{/each}
+			</div>
+			<div
 				class="board-art-frame"
-				src={slotFrameSrc}
-				alt=""
-				draggable="false"
-				aria-hidden="true"
-				data-test="skyjump-v2-slot-frame"
 				style:left={`${slotFrameLeft}px`}
 				style:top={`${slotFrameTop}px`}
-				style:width={`${slotFrameW}px`}
-				style:height={`${slotFrameH}px`}
-			/>
+			>
+				<SlotFrameLayer
+					src={slotFrameSrc}
+					width={slotFrameW}
+					height={slotFrameH}
+					testId="skyjump-v2-slot-frame"
+				/>
+			</div>
 			<div class="grid" class:rejumping aria-hidden="true">
 				{#each Array.from({ length: 5 }, (_, reel) => reel) as reel}
 					{@const ids = spinIds[reel] ?? board[reel]}
@@ -1082,15 +1176,18 @@
 						class:pace-soft={reelPace[reel] === 'soft'}
 						class:pace-fast={reelPace[reel] === 'fast'}
 						class:landing={reelPace[reel] === 'land'}
+						class:jelly={jelly[reel]}
 						data-reel={reel + 1}
 						style:--land-ms={`${landMs}ms`}
 					>
 						<div
 							class="reel-strip"
-							style:transform={`translate3d(0, ${spinIds[reel] ? spinOffset[reel] : 0}px, 0)`}
+							style:transform={spinIds[reel] ? `translate3d(0, ${spinOffset[reel]}px, 0)` : undefined}
 						>
 							{#each ids as id, index (`${reel}-${index}-${id}`)}
 								{@const settled = !spinning[reel] && index < VISIBLE_ROWS}
+								{@const rolling = spinning[reel] && reelPace[reel] !== 'land'}
+								{@const geo = cellGeo(reel, settled ? index : 2)}
 								{@const visual = v2SymbolVisual(id)}
 								{@const tile = visual.placeholder}
 								{@const showArt = Boolean(visual.url && artReady[id] && !artBroken[id])}
@@ -1113,15 +1210,30 @@
 										worldRecordPos?.row === index}
 									style:color={tile.ink}
 									data-symbol={id}
+									data-tier={v2SymbolTier(id)}
 									data-row={settled ? index : undefined}
 									data-test={settled ? 'skyjump-v2-tile' : undefined}
 								>
-									<div class="content-stage">
+									<img
+										class="tile-bg"
+										src={v2TileUrl(id, rolling)}
+										alt=""
+										draggable="false"
+										style:left={`${geo.tx}px`}
+										style:top={`${geo.ty}px`}
+										style:width={`${geo.tw}px`}
+										style:height={`${geo.th}px`}
+									/>
+									<div
+										class="content-stage"
+										style:--tier-scale={V2_TIER_SCALE[v2SymbolTier(id)] ?? 1}
+										style:translate={`${geo.dx}px ${geo.dy}px`}
+									>
 										{#if visual.url && !artBroken[id]}
 											<img
 												class="sym-art"
 												class:ready={showArt}
-												src={visual.url}
+												src={rolling ? (v2SymbolBlurUrl(id) ?? visual.url) : visual.url}
 												alt=""
 												draggable="false"
 												onload={() => {
@@ -1339,7 +1451,7 @@
 		overflow: hidden;
 		padding: 0.45rem 0.7rem 0.5rem;
 		color: var(--ml-gold, #f0c75a);
-		font-family: var(--ml-font-gold, 'Marcellus', serif);
+		font-family: var(--ml-font-gold, 'Luckiest Guy', serif);
 		text-align: center;
 		background:
 			radial-gradient(120% 80% at 50% 0%, rgba(228, 197, 122, 0.14), transparent 58%),
@@ -1384,7 +1496,7 @@
 	.hud-label {
 		margin: 0;
 		color: var(--ml-gold, #f0c75a);
-		font-family: var(--ml-font-gold, 'Marcellus', serif);
+		font-family: var(--ml-font-gold, 'Luckiest Guy', serif);
 		font-size: 0.62rem;
 		font-weight: 800;
 		letter-spacing: 0.16em;
@@ -1430,7 +1542,7 @@
 
 	.hud-value {
 		color: var(--ml-gold, #f0c75a);
-		font-family: var(--ml-font-gold, 'Marcellus', serif);
+		font-family: var(--ml-font-gold, 'Luckiest Guy', serif);
 		font-size: 1.15rem;
 		font-weight: 800;
 		line-height: 1;
@@ -1439,7 +1551,7 @@
 	.hud-meta {
 		margin: 0;
 		color: var(--ml-gold, #f0c75a);
-		font-family: var(--ml-font-gold, 'Marcellus', serif);
+		font-family: var(--ml-font-gold, 'Luckiest Guy', serif);
 		font-size: 0.68rem;
 		font-weight: 700;
 		letter-spacing: 0.04em;
@@ -1498,6 +1610,22 @@
 		background: transparent;
 		box-shadow: none;
 		overflow: visible;
+	}
+
+	/* Behind everything in the grid (rolling symbols), under the frame art (z 6). */
+	.window-bgs {
+		position: absolute;
+		left: var(--frame-pad, 0px);
+		top: var(--frame-pad, 0px);
+		z-index: 0;
+		pointer-events: none;
+	}
+
+	.window-bgs img {
+		position: absolute;
+		max-width: none;
+		object-fit: fill;
+		user-select: none;
 	}
 
 	.board-art-frame {
@@ -1742,7 +1870,7 @@
 	}
 
 	.win-banner :global(.copy strong) {
-		font-family: var(--ml-font-gold, 'Marcellus', serif);
+		font-family: var(--ml-font-gold, 'Luckiest Guy', serif);
 		font-size: 1.05rem;
 	}
 
@@ -1864,9 +1992,10 @@
 		opacity: 0.9;
 	}
 
+	/* No own stacking context: settled reels sit above the frame art (z 6), rolling reels under it. */
 	.grid {
 		position: relative;
-		z-index: 1;
+		z-index: auto;
 		box-sizing: border-box;
 		display: grid;
 		width: var(--board-w);
@@ -1917,6 +2046,47 @@
 		overflow: hidden;
 	}
 
+	/* Settled reels: overflow visible, tiles and symbols above the frame art, higher tiers on top. */
+	.reel:not(.spinning) {
+		overflow: visible;
+	}
+
+	/*
+	 * A symbol cell is NOT a stacking context (no z-index / filter / transform on .symbol), so its two layers sort
+	 * against the frame art (z 6) on their own: the tier tile stays under the frame lattice (its edges are hidden),
+	 * the symbol art sits above the frame. Nothing of the tile ever pokes out over the frame.
+	 */
+	.reel:not(.spinning) .symbol {
+		overflow: visible;
+	}
+
+	.reel:not(.spinning) .symbol .tile-bg {
+		z-index: 3;
+	}
+
+	.reel:not(.spinning) .symbol .content-stage {
+		z-index: 8;
+	}
+
+	.reel:not(.spinning) .symbol[data-tier='medium'] .content-stage {
+		z-index: 9;
+	}
+
+	.reel:not(.spinning) .symbol[data-tier='premium'] .content-stage,
+	.reel:not(.spinning) .symbol[data-tier='scatter'] .content-stage,
+	.reel:not(.spinning) .symbol[data-tier='concierge_mystery'] .content-stage,
+	.reel:not(.spinning) .symbol[data-tier='feature'] .content-stage {
+		z-index: 10;
+	}
+
+	.reel:not(.spinning) .symbol small {
+		z-index: 12;
+	}
+
+	.reel:not(.spinning) .content-stage {
+		overflow: visible;
+	}
+
 	.reel-strip {
 		display: flex;
 		flex-direction: column;
@@ -1927,16 +2097,53 @@
 		will-change: transform;
 	}
 
-	.reel.pace-soft .symbol {
-		filter: blur(0.4px) brightness(1.04);
+	/*
+	 * Jelly landing: a dropped blob. Anchored at the bottom edge: wide and flat, then narrow and tall,
+	 * then a smaller wide-flat rebound, then back to rest.
+	 */
+	/* The tier tile grows from 85 % to its window size as the reel lands, over the frame (z 8+ above the frame art). */
+	.reel.jelly .tile-bg {
+		transform-origin: 50% 50%;
+		animation: tile-grow 420ms cubic-bezier(0.2, 0.8, 0.3, 1) both;
 	}
 
-	.reel.pace-fast .symbol {
-		filter: blur(1.25px) brightness(1.05);
+	@keyframes tile-grow {
+		from {
+			transform: scale(0.94);
+		}
+		to {
+			transform: scale(1);
+		}
 	}
 
-	.reel.landing .symbol {
-		animation: reel-land var(--land-ms, 160ms) ease-out both;
+	.reel.jelly .content-stage {
+		transform-origin: 50% 100%;
+		animation: symbol-jelly 560ms ease-out both;
+	}
+
+	@keyframes symbol-jelly {
+		0% {
+			transform: scale(1, 1);
+		}
+		18% {
+			transform: scale(1.1, 0.86);
+		}
+		42% {
+			transform: scale(0.92, 1.1);
+		}
+		68% {
+			transform: scale(1.04, 0.96);
+		}
+		100% {
+			transform: scale(1, 1);
+		}
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.reel.jelly .content-stage,
+		.reel.jelly .tile-bg {
+			animation: none;
+		}
 	}
 
 	@keyframes reel-land {
@@ -1952,7 +2159,7 @@
 
 	.symbol {
 		position: relative;
-		z-index: 1;
+		z-index: auto;
 		box-sizing: border-box;
 		display: grid;
 		place-items: center;
@@ -1970,7 +2177,18 @@
 		letter-spacing: 0.04em;
 	}
 
+	/* Tier backdrop: exactly the frame window (position and size set per cell). */
+	.tile-bg {
+		position: absolute;
+		max-width: none;
+		object-fit: fill;
+		pointer-events: none;
+		user-select: none;
+	}
+
 	.content-stage {
+		position: relative;
+		z-index: 1;
 		box-sizing: border-box;
 		display: block;
 		width: 100%;
@@ -1983,6 +2201,8 @@
 
 	.symbol .sym-art {
 		display: block;
+		transform: scale(var(--tier-scale, 1));
+		transform-origin: 50% 50%;
 		width: 100%;
 		height: 100%;
 		margin: 0;
@@ -2007,8 +2227,7 @@
 		text-align: center;
 	}
 
-	.symbol.world-record {
-		z-index: 5;
+	.symbol.world-record .content-stage {
 		filter: drop-shadow(0 0 8px rgba(253, 230, 138, 0.85));
 	}
 
@@ -2018,29 +2237,30 @@
 		left: 50%;
 		z-index: 2;
 		transform: translateX(-50%);
-		/* Marcellus, gold; 0.62em -> 0.93em (+50 %) -> 1.86em (+100 %). */
+		/* Luckiest Guy, gold; 0.62em -> 0.93em (+50 %) -> 1.86em (+100 %). */
 		color: var(--ml-gold, #f0c75a);
-		font-family: var(--ml-font-gold, 'Marcellus', serif);
+		font-family: var(--ml-font-gold, 'Luckiest Guy', serif);
 		font-size: 1.86em;
 		letter-spacing: 0;
 		line-height: 1;
 		pointer-events: none;
 	}
 
-	.symbol.dim {
-		opacity: 0.38;
+	/* Non-winning symbols are darkened, never made see-through (that showed the window background behind the tile). */
+	.symbol.dim .tile-bg,
+	.symbol.dim .content-stage {
+		filter: brightness(0.45) saturate(0.7);
 	}
 
 	/* Payline pop: the symbol swells slightly and a warm backlight blooms behind it. */
 	.symbol.popped {
-		z-index: 7;
 		overflow: visible;
 	}
 
 	.symbol.popped::before {
 		content: '';
 		position: absolute;
-		z-index: 0;
+		z-index: 7;
 		inset: -22%;
 		border-radius: 50%;
 		background: radial-gradient(
@@ -2084,13 +2304,18 @@
 		}
 	}
 
-	.symbol.hit {
-		z-index: 5;
-		filter: drop-shadow(0 0 7px rgba(255, 211, 107, 0.9)) brightness(1.08);
+	/* Winning symbols: a golden glow around the tile and the symbol. */
+	.symbol.hit .content-stage {
+		filter: drop-shadow(0 0 5px #ffe9a0) drop-shadow(0 0 14px rgba(255, 196, 64, 1))
+			drop-shadow(0 0 26px rgba(255, 164, 32, 0.85));
 	}
 
-	.symbol.preserved {
-		z-index: 5;
+	.reel:not(.spinning) .symbol.hit .content-stage,
+	.reel:not(.spinning) .symbol.popped .content-stage {
+		z-index: 11;
+	}
+
+	.symbol.preserved .content-stage {
 		filter: drop-shadow(0 0 7px rgba(126, 214, 255, 0.85));
 	}
 

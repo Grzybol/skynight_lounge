@@ -25,7 +25,11 @@ export class FramePack {
 	rate = 0;
 	lastUsed = 0;
 
-	constructor(id: string, entry: PackManifestEntry) {
+	constructor(
+		id: string,
+		entry: PackManifestEntry,
+		readonly priority: 'high' | 'low' | 'auto' = 'auto',
+	) {
 		this.id = id;
 		this.entry = entry;
 		this.data = new Uint8Array(entry.bytes);
@@ -84,7 +88,8 @@ export class FramePack {
 			// A pack is one file, or several parts that concatenate into it (see PackManifestEntry.parts).
 			const files = this.entry.parts?.map((part) => part.file) ?? [this.entry.file];
 			for (const file of files) {
-				const res = await fetch(packUrl(file), { signal });
+				// `priority` is a fetch hint (Chrome): on a slow link low-priority packs yield to the start screen's own assets.
+				const res = await fetch(packUrl(file), { signal, priority: this.priority } as RequestInit);
 				if (!res.ok || !res.body) throw new Error(`pack ${this.id}: HTTP ${res.status}`);
 				const reader = res.body.getReader();
 				for (;;) {
@@ -141,6 +146,7 @@ export class FramePackStore {
 	constructor(
 		private readonly maxPacks: number,
 		private readonly pinned: () => ReadonlySet<string>,
+		private readonly priority: 'high' | 'low' | 'auto' = 'auto',
 	) {}
 
 	get size() {
@@ -183,7 +189,7 @@ export class FramePackStore {
 			return raced;
 		}
 		this.evictFor(id);
-		const pack = new FramePack(id, entry);
+		const pack = new FramePack(id, entry, this.priority);
 		pack.lastUsed = ++this.clock;
 		this.packs.set(id, pack);
 		pack.start();

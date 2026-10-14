@@ -2,7 +2,7 @@
 	import { BOOK_AMOUNT_MULTIPLIER } from 'constants-shared/bet';
 	import { bookEventAmountToCurrencyString } from 'utils-shared/amount';
 
-	import { MARCELLUS_STACK } from '../../game/skyjump_v2/fonts';
+	import { LUCKIEST_GUY_STACK } from '../../game/skyjump_v2/fonts';
 	import {
 		V2_WIN_TITLE_SLOT,
 		v2WinTitleScale,
@@ -297,7 +297,7 @@
 					class="amount"
 					class:pulse={amountDone}
 					data-test="skyjump-v2-win-amount"
-					style:font-family={MARCELLUS_STACK}
+					style:font-family={LUCKIEST_GUY_STACK}
 					style:--amount-scale={amountScale}
 				>
 					{formatAmount(displayValue)}
