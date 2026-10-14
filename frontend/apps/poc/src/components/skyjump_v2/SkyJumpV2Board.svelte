@@ -2062,6 +2062,21 @@
 	 * Jelly landing: a dropped blob. Anchored at the bottom edge: wide and flat, then narrow and tall,
 	 * then a smaller wide-flat rebound, then back to rest.
 	 */
+	/* The tier tile grows from 85 % to its window size as the reel lands, over the frame (z 8+ above the frame art). */
+	.reel.jelly .tile-bg {
+		transform-origin: 50% 50%;
+		animation: tile-grow 420ms cubic-bezier(0.2, 0.8, 0.3, 1) both;
+	}
+
+	@keyframes tile-grow {
+		from {
+			transform: scale(0.85);
+		}
+		to {
+			transform: scale(1);
+		}
+	}
+
 	.reel.jelly .content-stage {
 		transform-origin: 50% 100%;
 		animation: symbol-jelly 560ms ease-out both;
@@ -2086,7 +2101,8 @@
 	}
 
 	@media (prefers-reduced-motion: reduce) {
-		.reel.jelly .content-stage {
+		.reel.jelly .content-stage,
+		.reel.jelly .tile-bg {
 			animation: none;
 		}
 	}

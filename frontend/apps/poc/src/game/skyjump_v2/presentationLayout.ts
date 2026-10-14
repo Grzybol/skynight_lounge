@@ -146,16 +146,19 @@ export const V2_FRAME_WINDOWS = {
 	winH: 116,
 } as const;
 
+/** Window height / cell pitch of the frame art: the symbol box is a whole cell, the visible window is smaller. */
+const WINDOW_FIT = 116 / ROW_T;
+
 /**
- * Symbol size by tier, relative to the cell height. Each regular tier is 1.1x the previous one
- * (low -> medium -> premium); scatter, Concierge / Mystery and feature symbols match premium.
- * Settled symbols are drawn above the frame, so they may grow past their window.
+ * Symbol height by tier as a fraction of the frame WINDOW height (not of the cell). Each regular tier is 1.1x the
+ * previous one; scatter, Concierge / Mystery and feature symbols match premium. Overall 5 % smaller than before.
+ * Settled symbols are drawn above the frame, so premium may just touch the window's gold lines.
  */
 export const V2_TIER_SCALE: Record<string, number> = {
-	low: 0.95,
-	medium: 1.045,
-	premium: 1.15,
-	scatter: 1.15,
-	concierge_mystery: 1.15,
-	feature: 1.15,
+	low: 0.86 * WINDOW_FIT,
+	medium: 0.95 * WINDOW_FIT,
+	premium: 1.04 * WINDOW_FIT,
+	scatter: 1.04 * WINDOW_FIT,
+	concierge_mystery: 1.04 * WINDOW_FIT,
+	feature: 1.04 * WINDOW_FIT,
 };

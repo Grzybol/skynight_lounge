@@ -149,16 +149,17 @@
 
 	// Layout (stage px, from new_betui_preview.png): bottom-left bonus + menu/balance, bottom-right turbo, auto, bet, spin.
 	const L = {
-		bonus: box('bonus', 9, 494, 247),
-		// The menu button replaces the plate's left blob (87..597 x 123..628 in the file): same rectangle, stretched.
-		balance: box('balance', 6, 592, 415),
-		menu: box('menu', 6, 597, 96, 105),
-		win: box('bet_background', 428, 601, 312),
-		bet: box('bet_background', 749, 601, 342),
-		minus: box('minus', 760, 616, 71),
-		plus: box('plus', 1007, 616, 71),
-		turbo: box('turbo', 906, 468, 184),
-		auto: box('autospin', 906, 534, 182),
+		// Everything but SPIN/STOP is 7 % smaller than in the preview, with tighter gaps.
+		bonus: box('bonus', 9, 527, 230),
+		balance: box('balance', 6, 596, 386),
+		// The menu button replaces the plate's left blob (87..597 x 123..628 in the file), stretched and widened to hide it.
+		menu: box('menu', 4, 600, 104, 98),
+		win: box('bet_background', 438, 615, 290),
+		bet: box('bet_background', 775, 615, 318),
+		minus: box('minus', 785, 629, 66),
+		plus: box('plus', 1015, 629, 66),
+		turbo: box('turbo', 919, 498, 171),
+		auto: box('autospin', 921, 557, 169),
 		spin: box('spin', 1082, 501, 193),
 	};
 	/** The HUD is laid out on a 1280x720 stage and scaled to the play area like the rest of the scene. */
@@ -629,7 +630,7 @@
 	}
 
 	.hud-label {
-		font-size: 17px;
+		font-size: 16px;
 		letter-spacing: 0.06em;
 		text-transform: uppercase;
 	}
@@ -673,7 +674,19 @@
 	}
 
 	.hud-win .win-kicker {
-		font-size: 18px;
+		font-size: 17px;
+	}
+
+	.hud .kicker {
+		font-size: 14px;
+	}
+
+	.hud .value {
+		font-size: 22px;
+	}
+
+	.hud .value.big {
+		font-size: 30px;
 	}
 
 	.hud-win .free-spins {
