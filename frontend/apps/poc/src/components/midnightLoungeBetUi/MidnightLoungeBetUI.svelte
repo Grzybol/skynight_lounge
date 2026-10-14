@@ -157,17 +157,22 @@
 		// Every control is 10 % smaller than the previous pass. Each cluster shrinks towards its own screen edge:
 		// bonus / balance / menu towards the bottom-left, bet / turbo / auto / spin towards the bottom-right,
 		// the WIN plate towards the bottom centre.
-		const K = 0.9;
+		const K = 0.855;
 		const toward = (ax: number, x: number, y: number) => [ax + (x - ax) * K, 720 + (y - 720) * K] as const;
 		const bet = box('bet_background', ...toward(1280, 804, 614), 286 * K);
-		const d = bet.w * 0.2;
-		const m = bet.w * 0.04;
+		// +/- circles 3 % smaller than before and tucked further into the plate.
+		const d = bet.w * 0.194;
+		const m = bet.w * 0.068;
 		const cy = bet.y + (bet.h - d) / 2;
 		return {
 			bonus: box('bonus', ...toward(0, 9, 543), 207 * K),
 			balance: box('balance', ...toward(0, 6, 606), 347 * K),
 			menu: box('menu', ...toward(0, 3, 609), 96 * K, 91 * K),
-			win: box('bet_background', ...toward(640, 448, 617), 261 * K),
+			win: (() => {
+				// WIN sits exactly under the middle of the slot (stage x = 640), whatever the scale.
+				const w = 261 * K;
+				return box('bet_background', 640 - w / 2, 720 + (617 - 720) * K, w);
+			})(),
 			bet,
 			minus: box('minus', bet.x + m, cy, d),
 			plus: box('plus', bet.x + bet.w - m - d, cy, d),
@@ -625,8 +630,7 @@
 	/* Switched on (turbo, auto, bonus, open menu): a strong gold halo that also stays while hovered. */
 	.hud-btn.active,
 	.hud-btn.active:hover:not(:disabled) {
-		filter: drop-shadow(0 0 5px #fff1b0) drop-shadow(0 0 14px rgba(255, 196, 64, 1))
-			drop-shadow(0 0 28px rgba(255, 168, 32, 0.9)) brightness(1.22) saturate(1.2);
+		filter: drop-shadow(0 0 3px #fff1b0) drop-shadow(0 0 7px rgba(255, 196, 64, 1)) brightness(1.2) saturate(1.2);
 		animation: hud-glow 1.4s ease-in-out infinite alternate;
 	}
 
@@ -634,13 +638,13 @@
 	.hud-btn.active::before {
 		content: '';
 		position: absolute;
-		inset: -4px;
+		inset: -2px;
 		border-radius: 999px;
-		border: 3px solid #fff3b8;
+		border: 2px solid #fff3b8;
 		box-shadow:
-			0 0 10px 3px rgba(255, 222, 120, 0.95),
-			0 0 26px 8px rgba(255, 180, 50, 0.75),
-			inset 0 0 12px 2px rgba(255, 222, 120, 0.7);
+			0 0 5px 1px rgba(255, 222, 120, 0.95),
+			0 0 11px 3px rgba(255, 180, 50, 0.7),
+			inset 0 0 6px 1px rgba(255, 222, 120, 0.7);
 		pointer-events: none;
 		animation: hud-ring 1.4s ease-in-out infinite alternate;
 	}
@@ -656,12 +660,10 @@
 
 	@keyframes hud-glow {
 		from {
-			filter: drop-shadow(0 0 4px #fff1b0) drop-shadow(0 0 11px rgba(255, 196, 64, 0.95))
-				drop-shadow(0 0 22px rgba(255, 168, 32, 0.75)) brightness(1.15) saturate(1.15);
+			filter: drop-shadow(0 0 2px #fff1b0) drop-shadow(0 0 5px rgba(255, 196, 64, 0.95)) brightness(1.12) saturate(1.15);
 		}
 		to {
-			filter: drop-shadow(0 0 7px #fff7cc) drop-shadow(0 0 18px rgba(255, 206, 80, 1))
-				drop-shadow(0 0 34px rgba(255, 176, 40, 1)) brightness(1.3) saturate(1.25);
+			filter: drop-shadow(0 0 4px #fff7cc) drop-shadow(0 0 9px rgba(255, 206, 80, 1)) brightness(1.25) saturate(1.25);
 		}
 	}
 
@@ -691,7 +693,7 @@
 	}
 
 	.hud-label {
-		font-size: 13px;
+		font-size: 12.4px;
 		letter-spacing: 0.06em;
 		text-transform: uppercase;
 	}
@@ -699,7 +701,7 @@
 	.hud-badge {
 		min-width: 22px;
 		padding: 1px 6px;
-		font-size: 12.6px;
+		font-size: 12px;
 		text-align: center;
 		background: #1b0a10;
 		border: 1px solid rgba(228, 190, 100, 0.9);
@@ -735,23 +737,23 @@
 	}
 
 	.hud-win .win-kicker {
-		font-size: 13.8px;
+		font-size: 13.1px;
 	}
 
 	.hud .kicker {
-		font-size: 11.3px;
+		font-size: 10.7px;
 	}
 
 	.hud .value {
-		font-size: 17.8px;
+		font-size: 16.9px;
 	}
 
 	.hud .value.big {
-		font-size: 24.3px;
+		font-size: 23.1px;
 	}
 
 	.hud .bonus-label {
-		font-size: 18px;
+		font-size: 17.1px;
 	}
 
 	.hud-win .free-spins {
@@ -1073,35 +1075,40 @@
 	.flyout {
 		position: absolute;
 		left: 24px;
-		bottom: 128px;
+		bottom: 164px;
 		display: flex;
 		flex-direction: column;
 		gap: 6px;
-		min-width: 170px;
-		padding: 8px;
+		min-width: 200px;
+		padding: 30px 28px;
 		pointer-events: auto;
-		background: linear-gradient(180deg, #3a1422, #14080d);
-		border: 1px solid rgba(212, 168, 92, 0.72);
-		border-radius: 12px;
-		box-shadow: 0 11px 26px rgba(0, 0, 0, 0.42);
+		background: none;
+		border: 1px solid transparent;
+		border-image: var(--ml-panel) 64 fill / 26px stretch;
+		filter: drop-shadow(0 11px 20px rgba(0, 0, 0, 0.5));
 	}
 
 	.flyout button {
-		min-height: 32px;
+		min-height: 40px;
 		padding: 0 14px;
 		color: #f3e2b8;
-		background: #1a0c10;
-		border: 1px solid rgba(212, 168, 92, 0.72);
-		border-radius: 8px;
+		background: none;
+		border: 1px solid transparent;
+		border-image: var(--ml-button) 34 fill / 13px stretch;
 		cursor: pointer;
 		font-size: 13px;
 		font-weight: 800;
 		letter-spacing: 0.06em;
-		text-align: left;
+		text-align: center;
+		transition: transform 0.12s ease, filter 0.12s ease;
 	}
 
 	.flyout button:hover {
-		border-color: #f3e2b8;
+		filter: brightness(1.12);
+	}
+
+	.flyout button:active {
+		transform: scale(0.97);
 	}
 
 	.flyout button.off {

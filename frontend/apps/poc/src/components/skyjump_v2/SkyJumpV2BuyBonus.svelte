@@ -6,12 +6,13 @@
 	import { numberToCurrencyString } from 'utils-shared/amount';
 	import { stateBet, stateConfig, stateMetaDerived, type BetModeData } from 'state-shared';
 	import { V2_PANEL_DECOR } from '../../game/skyjump_v2/presentationLayout';
-	import { v2ModeTitleUrl, v2UiAssetUrl } from '../../game/skyjump_v2/uiAssetRegistry';
+	import { v2ModeTitleUrl } from '../../game/skyjump_v2/uiAssetRegistry';
+	import { loungeUiArt } from '../../game/midnightLoungeTheme';
 	import SkyJumpV2PanelDecor from './SkyJumpV2PanelDecor.svelte';
 
 	const { eventEmitter } = getContextEventEmitter<EmitterEventModal>();
 
-	const headerSrc = v2UiAssetUrl('modeBadgePlate');
+	const headerSrc = loungeUiArt.buyBonusHeader;
 
 	const buyModes = $derived(
 		stateMetaDerived.betModeMetaList().filter((item) => item.type === 'buy'),
@@ -63,7 +64,7 @@
 							onclick={toggleDown}
 							aria-label="Decrease bet"
 						>
-							−
+							<img src={loungeUiArt.minus} alt="" draggable="false" />
 						</button>
 						<span class="amount">{numberToCurrencyString(stateBet.betAmount)}</span>
 						<button
@@ -74,7 +75,7 @@
 							onclick={toggleUp}
 							aria-label="Increase bet"
 						>
-							+
+							<img src={loungeUiArt.plus} alt="" draggable="false" />
 						</button>
 					</div>
 				{/snippet}
@@ -150,16 +151,13 @@
 		min-height: 0;
 		max-height: 100%;
 		gap: 8px;
-		padding: 5px 4.5rem 1.75rem;
-		border: 1px solid rgba(212, 168, 92, 0.72);
-		border-radius: 18px;
-		background:
-			radial-gradient(120% 70% at 50% 0%, rgba(228, 197, 122, 0.12), transparent 52%),
-			linear-gradient(180deg, #4a1424, #12080c);
-		box-shadow:
-			0 18px 40px rgba(0, 0, 0, 0.48),
-			inset 0 0 28px rgba(74, 20, 36, 0.45),
-			inset 0 1px 0 rgba(243, 226, 184, 0.16);
+		padding: 30px 4.5rem calc(1.75rem + 14px);
+		/* Window art: the supplied gold / blue panel (9-slice) drawn over the padding area. */
+		border: 1px solid transparent;
+		border-image: var(--ml-panel) 64 fill / 26px stretch;
+		border-radius: 0;
+		background: none;
+		filter: drop-shadow(0 18px 28px rgba(0, 0, 0, 0.5));
 		overflow: visible;
 	}
 
@@ -179,10 +177,9 @@
 		z-index: 2;
 		display: grid;
 		place-items: center;
-		width: min(94%, var(--header-w, 620px));
-		aspect-ratio: 1024 / 341;
-		height: auto;
-		margin: 4px auto 10px;
+		width: 100%;
+		height: 150px;
+		margin: 0 auto 6px;
 	}
 
 	.section-header {
@@ -236,17 +233,25 @@
 	.step {
 		display: grid;
 		place-items: center;
-		width: 46px;
-		height: 46px;
+		width: 50px;
+		height: 50px;
 		padding: 0;
-		border: 1px solid rgba(212, 168, 92, 0.72);
-		border-radius: 12px;
-		background: linear-gradient(180deg, #4a1424, #2a0b14);
-		color: #f3e2b8;
-		font-size: 1.4rem;
-		font-weight: 700;
-		line-height: 1;
+		border: 0;
+		background: none;
 		cursor: pointer;
+		transition: transform 0.12s ease, filter 0.12s ease;
+	}
+
+	.step img {
+		width: 100%;
+		height: 100%;
+		object-fit: contain;
+		pointer-events: none;
+		filter: drop-shadow(0 3px 4px rgba(0, 0, 0, 0.45));
+	}
+
+	.step:not(:disabled):active {
+		transform: scale(0.94);
 	}
 
 	.step:disabled {
@@ -312,12 +317,14 @@
 	}
 
 	.buy {
+		box-sizing: border-box;
 		width: 100%;
+		min-height: 2.5rem;
 		margin-top: auto;
-		padding: 0.38rem 0.4rem;
-		border: 1px solid rgba(212, 168, 92, 0.72);
-		border-radius: 12px;
-		background: linear-gradient(180deg, #4a1424, #2a0b14);
+		padding: 0.3rem 0.4rem;
+		border: 1px solid transparent;
+		border-image: var(--ml-button) 34 fill / 13px stretch;
+		background: none;
 		color: #f3e2b8;
 		font-family: inherit;
 		font-size: 0.78rem;
@@ -325,6 +332,11 @@
 		letter-spacing: 0.06em;
 		text-transform: uppercase;
 		cursor: pointer;
+		transition: transform 0.12s ease, filter 0.12s ease;
+	}
+
+	.buy:not(:disabled):active {
+		transform: scale(0.97);
 	}
 
 	.buy:not(:disabled):hover {

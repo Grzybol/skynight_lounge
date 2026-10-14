@@ -27,6 +27,7 @@
 
 <style>
 	.panel-decor {
+		display: none; /* the panel art carries its own frame */
 		position: absolute;
 		inset: 0;
 		pointer-events: none;

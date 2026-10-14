@@ -41,6 +41,7 @@
 	import { reactToWin } from '../../game/loungeCharacters/winReaction';
 	import { statusLabel as playerLabel, statusSub as playerSub } from '../../game/skyjump_v2/statusText';
 	import { warmGate } from '../../game/loungeCharacters/warmGate';
+	import GemPulse from './GemPulse.svelte';
 	import SlotFrameLayer from './SlotFrameLayer.svelte';
 	import {
 		V2_FRAME_WINDOWS,
@@ -297,7 +298,7 @@
 	const surfaceW = $derived(boardW + framePad * 2 + FRAME_BORDER * 2);
 	const surfaceH = $derived(boardH + framePad * 2 + FRAME_BORDER * 2);
 	/** Settled symbols rest this many art px off the window centre (negative = up). */
-	const SYMBOL_LIFT = -3;
+	const SYMBOL_LIFT = -1;
 	/** Pixels per art pixel of the frame. */
 	const artK = $derived(cellW / V2_FRAME_WINDOWS.pitch.w);
 	/** Per-cell geometry: the tier tile fills the real window; the symbol is centred on it. Offsets are from the nominal cell. */
@@ -306,13 +307,13 @@
 		const r = Math.min(4, Math.max(0, row));
 		const nx = W.origin.x + W.pitch.w * reel;
 		const ny = W.origin.y + W.pitch.h * r;
-		const g = W.tileGrow;
 		return {
-			// Backdrop rect inside its cell (px): the window grown by `tileGrow`, so the frame lattice hides its edges.
-			tx: (W.colX[reel] - (W.winW * (g - 1)) / 2 - nx) * artK,
-			ty: (W.rowY[r] - (W.winH * (g - 1)) / 2 - ny) * artK,
-			tw: W.winW * g * artK,
-			th: W.winH * g * artK,
+			// Backdrop rect inside its cell (px): the whole cell (+1 px so neighbours overlap), so tiles touch each other both
+			// while the reel rolls and when it has stopped; the frame lattice, drawn over them, hides the overlap.
+			tx: -0.5,
+			ty: -0.5,
+			tw: cellW + 1,
+			th: cellH + 1,
 			// Window centre relative to the cell centre: symbols are centred on the window.
 			dx: (W.colX[reel] + W.winW / 2 - (nx + W.pitch.w / 2)) * artK,
 			dy: (W.rowY[r] + W.winH / 2 - (ny + W.pitch.h / 2)) * artK + SYMBOL_LIFT * artK,
@@ -1166,6 +1167,7 @@
 					height={slotFrameH}
 					testId="skyjump-v2-slot-frame"
 				/>
+				<GemPulse width={slotFrameW} height={slotFrameH} />
 			</div>
 			<div class="grid" class:rejumping aria-hidden="true">
 				{#each Array.from({ length: 5 }, (_, reel) => reel) as reel}

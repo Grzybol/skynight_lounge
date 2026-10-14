@@ -39,17 +39,12 @@
 	.lounge-settings {
 		box-sizing: border-box;
 		width: min(560px, calc(100vw - 48px));
-		padding: 1.4rem 1.6rem 1.6rem;
+		padding: calc(1.4rem + 22px) calc(1.6rem + 22px) calc(1.6rem + 22px);
 		color: #f3e2b8;
-		background:
-			radial-gradient(120% 70% at 50% 0%, rgba(228, 197, 122, 0.12), transparent 52%),
-			linear-gradient(180deg, #4a1424, #12080c);
-		border: 1px solid rgba(212, 168, 92, 0.72);
-		border-radius: 18px;
-		box-shadow:
-			0 18px 40px rgba(0, 0, 0, 0.48),
-			inset 0 0 28px rgba(74, 20, 36, 0.45),
-			inset 0 1px 0 rgba(243, 226, 184, 0.16);
+		background: none;
+		border: 1px solid transparent;
+		border-image: var(--ml-panel) 64 fill / 26px stretch;
+		filter: drop-shadow(0 18px 28px rgba(0, 0, 0, 0.5));
 	}
 
 	.lounge-settings :global(.ui-modal-title-wrap) {

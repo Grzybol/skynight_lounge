@@ -102,3 +102,13 @@ export const WAITING_FOR_REPLACEMENT = [
 	'fx D16–D21',
 	'modal headers E01–E09',
 ] as const;
+
+/** Panel art (9-slice), button art (9-slice) and square button art; Game.svelte publishes them as CSS variables on <body>. */
+export const loungeUiArt = {
+	panel: resolveGameAsset('assets/midnight-lounge/ui/panels/panel.png'),
+	button: resolveGameAsset('assets/midnight-lounge/ui/panels/button.png'),
+	square: resolveGameAsset('assets/midnight-lounge/ui/panels/square.png'),
+	buyBonusHeader: resolveGameAsset('assets/midnight-lounge/ui/panels/buy_bonus_header.png'),
+	minus: resolveGameAsset('assets/midnight-lounge/ui/betui2/minus.png'),
+	plus: resolveGameAsset('assets/midnight-lounge/ui/betui2/plus.png'),
+};

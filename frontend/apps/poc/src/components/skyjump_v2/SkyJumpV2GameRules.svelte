@@ -202,16 +202,13 @@
 		min-height: 0;
 		max-height: 100%;
 		gap: 8px;
-		padding: 5px 1.6rem 1.75rem;
-		border: 1px solid rgba(212, 168, 92, 0.72);
-		border-radius: 18px;
-		background:
-			radial-gradient(120% 70% at 50% 0%, rgba(228, 197, 122, 0.12), transparent 52%),
-			linear-gradient(180deg, #4a1424, #12080c);
-		box-shadow:
-			0 18px 40px rgba(0, 0, 0, 0.48),
-			inset 0 0 28px rgba(74, 20, 36, 0.45),
-			inset 0 1px 0 rgba(243, 226, 184, 0.16);
+		padding: 28px calc(1.6rem + 12px) calc(1.75rem + 12px);
+		/* Window art: the supplied gold / blue panel (9-slice) drawn over the padding area. */
+		border: 1px solid transparent;
+		border-image: var(--ml-panel) 64 fill / 26px stretch;
+		border-radius: 0;
+		background: none;
+		filter: drop-shadow(0 18px 28px rgba(0, 0, 0, 0.5));
 		overflow: visible;
 	}
 

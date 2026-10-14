@@ -18,7 +18,7 @@
 
 	import { getContext } from '../game/context';
 	import { installSocialWording } from '../game/socialWording';
-	import { loungePhrase } from '../game/midnightLoungeTheme';
+	import { loungePhrase, loungeUiArt } from '../game/midnightLoungeTheme';
 	import EnableSound from './EnableSound.svelte';
 	import EnableGameActor from './EnableGameActor.svelte';
 	import ResumeBet from './ResumeBet.svelte';
@@ -85,12 +85,16 @@
 
 	onMount(() => {
 		document.body.classList.add('theme-skyjump');
+		document.body.style.setProperty('--ml-panel', `url("${loungeUiArt.panel}")`);
+		document.body.style.setProperty('--ml-button', `url("${loungeUiArt.button}")`);
+		document.body.style.setProperty('--ml-square', `url("${loungeUiArt.square}")`);
 		// social=true: restricted words are replaced everywhere the player can read them.
 		const stopSocial = stateUrlDerived.social() ? installSocialWording() : undefined;
 
 		return () => {
 			stopSocial?.();
 			document.body.classList.remove('theme-skyjump');
+			for (const name of ['--ml-panel', '--ml-button', '--ml-square']) document.body.style.removeProperty(name);
 		};
 	});
 

@@ -96,10 +96,10 @@
 	.button-wrap :global(button) {
 		width: 3.4rem;
 		height: 2.1rem;
-		border: 1px solid rgba(212, 168, 92, 0.55);
-		border-radius: 10px;
-		background: transparent;
-		color: #f3e2b8;
+		border: 0;
+		border-radius: 0;
+		background: var(--ml-square) center / 100% 100% no-repeat;
+		color: #fff1c8;
 		transition:
 			transform 120ms ease,
 			border-color 120ms ease,
@@ -111,14 +111,11 @@
 	.button-wrap :global(button:hover) {
 		transform: translateY(-1px);
 		color: #fff6df;
-		border-color: #f3e2b8;
-		background: rgba(228, 197, 122, 0.14);
-		box-shadow: 0 0 0 1px rgba(212, 168, 92, 0.35);
+		filter: brightness(1.15);
 	}
 
 	.button-wrap :global(button:active) {
-		transform: translateY(1px);
-		background: rgba(228, 197, 122, 0.08);
+		transform: translateY(1px) scale(0.96);
 	}
 
 	.button-wrap :global(.base-button-content) {

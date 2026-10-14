@@ -412,16 +412,14 @@ body.theme-skyjump .ui-popup-standard-content-wrap {
 	flex-direction: column;
 	align-items: stretch;
 	justify-content: flex-start;
-	padding: clamp(0.85rem, 1.8%, 1.35rem);
+	padding: calc(clamp(0.85rem, 1.8%, 1.35rem) + 22px);
 	color: #f3e2b8;
-	background:
-		radial-gradient(120% 70% at 50% 0%, rgba(228, 197, 122, 0.12), transparent 52%),
-		linear-gradient(180deg, #4a1424, #12080c);
-	border: 1px solid rgba(212, 168, 92, 0.72);
-	border-radius: 22px;
-	box-shadow:
-		0 18px 40px rgba(0, 0, 0, 0.48),
-		inset 0 0 28px rgba(74, 20, 36, 0.45);
+	/* Window art: the supplied gold / blue panel, stretched as a 9-slice (works in any orientation). */
+	background: none;
+	border: 1px solid transparent;
+	border-image: var(--ml-panel) 64 fill / 26px stretch;
+	border-radius: 0;
+	filter: drop-shadow(0 18px 28px rgba(0, 0, 0, 0.5));
 }
 
 /* Buy-bonus confirmation: the mode banner sits on the top edge of the tile. */
@@ -524,11 +522,23 @@ body.theme-skyjump .ui-modal-title-wrap {
 	text-shadow: none;
 }
 
+/* Buttons: the supplied horizontal gold / blue plate as a 9-slice. */
 body.theme-skyjump .rectangle {
-	--background-value: linear-gradient(180deg, #4a1424, #2a0b14) !important;
-	--border-value: 1px solid rgba(212, 168, 92, 0.72) !important;
-	border-radius: 16px;
-	box-shadow: 0 8px 18px rgba(3, 14, 29, 0.28);
+	--background-value: none !important;
+	box-sizing: border-box;
+	min-height: 3.3rem;
+	background: none !important;
+	border: 1px solid transparent !important;
+	border-image: var(--ml-button) 34 fill / 13px stretch !important;
+	border-radius: 0;
+	box-shadow: none;
+	transition:
+		filter 0.12s ease,
+		transform 0.12s ease;
+}
+
+body.theme-skyjump .button:not(.disabled):active .rectangle {
+	transform: scale(0.97);
 }
 
 body.theme-skyjump .button:not(.disabled):hover .rectangle {
@@ -544,19 +554,13 @@ body.theme-skyjump .base-button-content {
 }
 
 body.theme-skyjump .button.selected .rectangle {
-	--background-value: linear-gradient(180deg, #5a1a2c, #2a0b14) !important;
-	--border-value: 1px solid #e4c57a !important;
-	box-shadow: 0 0 0 2px rgba(255, 201, 64, 0.28);
+	filter: brightness(1.18) drop-shadow(0 0 6px rgba(255, 205, 90, 0.95));
 }
 
 body.theme-skyjump .button.selected .base-button-content {
 	color: #f6ead0;
 }
 
-body.theme-skyjump .button.primary .rectangle {
-	--background-value: linear-gradient(180deg, #4a1424, #2a0b14) !important;
-	--border-value: 1px solid rgba(212, 168, 92, 0.72) !important;
-}
 
 body.theme-skyjump .button.primary .base-button-content {
 	color: #f6ead0;
@@ -578,14 +582,20 @@ body.theme-skyjump .bonus-card-wrap .price {
 	font-weight: 800;
 }
 
+/* Every close (X) button uses the square plate art. */
 body.theme-skyjump .close-button {
 	top: 0.5rem;
 	right: 0.5rem;
-	color: #f3e2b8;
-	background: linear-gradient(180deg, #4a1424, #2a0b14);
-	border: 1px solid rgba(212, 168, 92, 0.72);
-	border-radius: 50%;
-	line-height: 2.4rem;
+	width: 2.7rem;
+	height: 2.5rem;
+	color: #fff1c8;
+	background: var(--ml-square) center / 100% 100% no-repeat;
+	border: 0;
+	border-radius: 0;
+	box-shadow: none;
+	font-family: var(--ml-font-gold, 'Luckiest Guy', serif);
+	font-size: 2rem;
+	line-height: 2.2rem;
 }
 
 body.theme-skyjump input[type='range'] {

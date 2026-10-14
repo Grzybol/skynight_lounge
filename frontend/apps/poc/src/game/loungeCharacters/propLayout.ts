@@ -63,4 +63,7 @@ export const INTRO_STANCHION: PropAnchor = { x: 0.9136, y: 0.825, h: 0.22 };
 export const SCENE_PLANTS: PropAnchor[] = [
 	{ x: 0.113, y: 0.67, h: 0.477 },
 	{ x: 0.955, y: 0.67, h: 0.477, flip: true },
+	// Behind the slot, half hidden by its frame (the frame's outer edges are at about 0.242 and 0.756 of the width).
+	{ x: 0.247, y: 0.64, h: 0.44 },
+	{ x: 0.753, y: 0.64, h: 0.44, flip: true },
 ];

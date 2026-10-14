@@ -393,3 +393,18 @@ Fixed after the guideline review (verified against a local mock RGS, a productio
   centres as measured. Tier tiles and the default window background are rendered 135x135 art px (`tileGrow` = 135/130) under the frame lattice.
 - Tier growth: step between tiers +50 % (low 0.84, medium 0.903, premium and feature symbols 0.966 of the 130 px window).
 - `BOARD_GRID_W` 521 (the frame is 1199 art px tall; the last row has to end above the WIN plate).
+
+## UI panels, gems, plants (latest)
+
+- Window art: `ui/panels/panel.png` (from `vertical_UI_asset.png`) is a 9-slice (`border-image`, slice 64, width 26 px) behind every window: bet menu, autoplay,
+  buy-bonus confirm, error, settings, paytable, info, buy bonus (`.ui-popup-standard-content-wrap`, `.decor-shell`, `.lounge-settings`) and the menu flyout.
+  Game.svelte publishes `--ml-panel`, `--ml-button`, `--ml-square` on `<body>`.
+- Buttons: `ui/panels/button.png` (`horizontal_rectangle_ui_asset.png`) 9-slice on every `.rectangle` (autoplay options / start, bet menu), the menu flyout
+  buttons and the buy-bonus buttons. `ui/panels/square.png` (`square_UI_asset.png`) is the plate of all close (X) buttons and the settings ON/OFF buttons.
+  The buy-bonus header is `ui/panels/buy_bonus_header.png` (`buy bonus new.png`); its bet +/- use the BetUI +/- art.
+- Intro: the "click anywhere to continue" art is replaced by Luckiest Guy text (white, black outline) that floats up and down.
+- Slot: tier tiles and the default window background fill the whole cell (+1 px), so they touch while rolling and when stopped (frame lattice hides it);
+  symbols 2 px lower. 16 red gems of the frame (`frameGems.ts`, cut from the art) pulse (0.9 s, scale 1.28, brighter), 1-3 at a time every 1-3 s (`GemPulse.svelte`).
+- Two more animated plants stand behind the slot, half hidden by its frame (`SCENE_PLANTS`).
+- BetUI: all controls another 5 % smaller (K = 0.855), +/- 3 % smaller and further inside the BET plate, WIN centred on the slot (stage x = 640),
+  smaller glow on switched-on buttons.

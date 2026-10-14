@@ -25,9 +25,6 @@
 	const startSrc = resolveGameAsset('assets/midnight-lounge/ui/start_screen.png');
 	const stanchionSrc = resolveGameAsset('assets/midnight-lounge/ui/intro_stanchion.png');
 	const stanchionBox = propBox('stanchion', INTRO_STANCHION);
-	const ctaSrc = resolveGameAsset(
-		'assets/midnight-lounge/ui/ui_click_anywhere_to_continue_midnight_lounge.png',
-	);
 
 	const loadingSrc = resolveGameAsset('assets/midnight-lounge/ui/start_loading.png');
 	const logoSrc = loungeLogoSrc;
@@ -84,8 +81,6 @@
 	};
 
 	onMount(() => {
-		const ctaPreload = new Image();
-		ctaPreload.src = ctaSrc;
 		const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
 		reduceMotion = motion.matches;
 		const onMotion = () => {
@@ -151,16 +146,14 @@
 	<img class="placeholder" class:hide={ready} src={loadingSrc} alt="" draggable="false" />
 	{#if ready}
 		<button class="hit" type="button" aria-label="Click anywhere to continue" onclick={continueIn}>
-			<img
+			<span
 				class="cta"
 				class:in={ctaIn}
 				class:idle={ctaIdle && !reduceMotion}
 				class:gone={veil !== 'off'}
-				src={ctaSrc}
-				alt=""
-				draggable="false"
-				onanimationend={() => (ctaIdle = true)}
-			/>
+				aria-hidden="true"
+				onanimationend={() => (ctaIdle = true)}>CLICK ANYWHERE TO CONTINUE</span
+			>
 		</button>
 	{:else}
 		<div class="loading" aria-hidden="true">
@@ -314,8 +307,19 @@
 		position: absolute;
 		left: 50%;
 		top: 77%;
-		width: min(600px, calc(100% - 48px));
-		height: auto;
+		width: max-content;
+		max-width: calc(100% - 48px);
+		color: #fff;
+		font-family: var(--ml-font-gold, 'Luckiest Guy', serif);
+		font-size: clamp(22px, 3.3vw, 44px);
+		letter-spacing: 0.05em;
+		line-height: 1.1;
+		text-align: center;
+		white-space: nowrap;
+		/* White lettering with a black outline. */
+		-webkit-text-stroke: 0.11em #000;
+		paint-order: stroke fill;
+		text-shadow: 0 0.06em 0 #000;
 		opacity: 0;
 		transform: translate(-50%, -50%) translateY(8px);
 		pointer-events: none;
@@ -416,17 +420,16 @@
 		}
 	}
 
+	/* Idle: the text floats a few pixels up and down. */
 	@keyframes lounge-cta-breathe {
 		0%,
 		100% {
-			opacity: 0.82;
-			transform: translate(-50%, -50%) scale(0.99);
-			filter: drop-shadow(0 0 8px rgba(212, 175, 90, 0.28));
+			opacity: 1;
+			transform: translate(-50%, -50%) translateY(-6px);
 		}
 		50% {
 			opacity: 1;
-			transform: translate(-50%, -50%) scale(1.015);
-			filter: drop-shadow(0 0 18px rgba(232, 196, 110, 0.55));
+			transform: translate(-50%, -50%) translateY(6px);
 		}
 	}
 </style>
