@@ -321,3 +321,8 @@ Fixed after the guideline review (verified against a local mock RGS, a productio
 - Symbol size by tier (`V2_TIER_SCALE`, relative to cell height): low 0.6, medium 0.9, premium 1.35 (x1.5 per regular tier);
   scatter, concierge/mystery and feature use the premium size.
 - Woman tone: `brightness(0.66) contrast(1.05)` (matched to the bartender's upper body).
+
+## Frame v3 and tuning
+
+- `slot_frame_layer1/2.png` (second delivery, uniform windows) are now `slot_background_1/2.png`; window rects in `V2_FRAME_WINDOWS`.
+- Tier sizes: low 0.8, medium 1.04, premium 1.35 (x1.3 per regular tier). Woman: `brightness(0.85) contrast(1.05)`. SPIN/STOP image: `brightness(0.9)`.

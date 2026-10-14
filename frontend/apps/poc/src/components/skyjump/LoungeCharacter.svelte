@@ -12,7 +12,7 @@
 		$props();
 
 	/** Matched to the bartender's upper body (the trousers skew his whole-figure mean): luminance mean ~60, spread ~46. */
-	const WOMAN_TONE = 'brightness(0.66) contrast(1.05)';
+	const WOMAN_TONE = 'brightness(0.85) contrast(1.05)';
 
 	const ASPECT = CHARACTER_FRAME[character].w / CHARACTER_FRAME[character].h;
 

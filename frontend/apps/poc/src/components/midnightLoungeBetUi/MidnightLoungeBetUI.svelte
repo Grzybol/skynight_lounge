@@ -758,6 +758,8 @@
 	}
 
 	.spin img {
+		/* 10 % darker than the artwork. */
+		filter: brightness(0.9);
 		display: block;
 		width: 100%;
 		height: 100%;

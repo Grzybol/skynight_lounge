@@ -98,41 +98,39 @@ export const V2_PANEL_DECOR = {
  */
 export const V2_SLOT_BOARD_FRAME = {
 	/**
-	 * `slot_background_1/2.png` (1672x941, 5x5 windows). The playfield is a 5x5 block of nominal cell pitches
-	 * (166.75 x 130.25 art px) centred on the windows; per-cell offsets to the real windows are in V2_FRAME_WINDOWS.
+	 * `slot_background_1/2.png` (1672x941, 5x5 windows of equal size). The playfield is a 5x5 block of nominal
+	 * cell pitches (163.25 x 134.75 art px) centred on the windows; exact rects are in V2_FRAME_WINDOWS.
 	 */
-	holeLeft: 0.251,
-	holeRight: 0.7496,
-	holeTop: 0.0961,
-	holeBottom: 0.7882,
+	holeLeft: 0.2565,
+	holeRight: 0.7447,
+	holeTop: 0.0947,
+	holeBottom: 0.8107,
 	scale: 1,
-	/** Nominal cell pitch aspect (166.75 / 130.25). */
-	cellAspect: 1.28,
+	/** Nominal cell pitch aspect (163.25 / 134.75). */
+	cellAspect: 1.2115,
 } as const;
 
-/** The frame's real windows in art pixels (1672x941). The last row is cut short by the frame's bottom bar. */
+/** The frame's real windows in art pixels (1672x941). */
 export const V2_FRAME_WINDOWS = {
 	art: { w: 1672, h: 941 },
 	/** Nominal grid: origin and pitch, art px. */
-	origin: { x: 419.6, y: 90.4 },
-	pitch: { w: 166.75, h: 130.25 },
-	colX: [433, 596, 765, 932, 1100],
-	colW: [140, 144, 143, 144, 139],
-	rowY: [100, 232, 365, 496, 624],
-	/** Visible window height per row. */
-	rowH: [111, 110, 109, 105, 73],
-	/** Full tile height per row (the last row's tile is cut by the frame, not squashed). */
-	tileH: [111, 110, 109, 105, 105],
+	origin: { x: 428.9, y: 89.1 },
+	pitch: { w: 163.25, h: 134.75 },
+	colX: [440, 600, 764, 929, 1093],
+	colW: [141, 144, 145, 144, 140],
+	rowY: [96, 234, 370, 504, 635],
+	rowH: [121, 119, 117, 114, 110],
+	tileH: [121, 119, 117, 114, 110],
 } as const;
 
 /**
- * Symbol size by tier, relative to the cell height. Each regular tier is 1.5x the previous one
+ * Symbol size by tier, relative to the cell height. Each regular tier is 1.3x the previous one
  * (low -> medium -> premium); scatter, Concierge / Mystery and feature symbols match premium.
  * Settled symbols are drawn above the frame, so they may grow past their window.
  */
 export const V2_TIER_SCALE: Record<string, number> = {
-	low: 0.6,
-	medium: 0.9,
+	low: 0.8,
+	medium: 1.04,
 	premium: 1.35,
 	scatter: 1.35,
 	concierge_mystery: 1.35,
