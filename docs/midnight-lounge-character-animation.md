@@ -386,3 +386,10 @@ Fixed after the guideline review (verified against a local mock RGS, a productio
 
 - `scene/slot_background_1.png` is `Gotycka rama inwentarza z różami.png` (1448x1086). Its 25 hand-drawn windows (~133x128 art px) are snapped to an even
   167 x 162.4 grid (measured deviation <= ~3 px, hidden by `tileGrow`); `BOARD_GRID_W` 524 keeps the windows ~82 px and the last row above the WIN plate.
+
+## Vine-stone frame, 135 px tiles (latest)
+
+- `scene/slot_background_1.png` is `slot_frame_vine_stone_5x5_132ish_fixed.png` (1312x1199, windows 130 +-3 px). Rows snapped to an even 176.7 pitch, column
+  centres as measured. Tier tiles and the default window background are rendered 135x135 art px (`tileGrow` = 135/130) under the frame lattice.
+- Tier growth: step between tiers +50 % (low 0.84, medium 0.903, premium and feature symbols 0.966 of the 130 px window).
+- `BOARD_GRID_W` 521 (the frame is 1199 art px tall; the last row has to end above the WIN plate).

@@ -97,22 +97,25 @@ export const V2_PANEL_DECOR = {
  * Scale 1 keeps that hole on the grid — about 6% tighter than the previous 1.078.
  */
 /**
- * `slot_background_1.png` (1448x1086, "Gotycka rama inwentarza z różami"): 25 hand-drawn windows of about 133 x 128 art px.
- * Their measured centres deviate from an even 167 x 162.4 pitch by at most ~3 px, so the grid is snapped to an even one (a tile
- * then has the same offset in every cell and nothing shifts when a reel stops). Drawn as one piece (SlotFrameLayer, one band).
+ * `slot_background_1.png` (1312x1199, `slot_frame_vine_stone_5x5_132ish_fixed.png`): 25 windows of 130 +-3 art px.
+ * Rows are snapped to an even pitch (a tile has the same vertical offset in every row, so nothing shifts when a reel
+ * stops); column centres are the measured ones (a reel keeps its own column, so they cannot cause a jump).
+ * Drawn as one piece (SlotFrameLayer, one band).
  */
 export const V2_FRAME_BANDS = {
-	srcH: 1086,
-	outH: 1086,
-	bands: [{ srcStart: 0, srcEnd: 1086, outStart: 0, outEnd: 1086 }],
+	srcH: 1199,
+	outH: 1199,
+	bands: [{ srcStart: 0, srcEnd: 1199, outStart: 0, outEnd: 1199 }],
 } as const;
 
-const ART = { w: 1448, h: 1086 };
-const PITCH = { w: 167, h: 162.4 };
-const WIN = { w: 133, h: 128 };
-/** First window's top-left corner in the art. */
-const FIRST = { x: 389.1 - WIN.w / 2, y: 258.9 - WIN.h / 2 };
-const GRID_ORIGIN = { x: FIRST.x - (PITCH.w - WIN.w) / 2, y: FIRST.y - (PITCH.h - WIN.h) / 2 };
+const ART = { w: 1312, h: 1199 };
+const PITCH = { w: 176.5, h: 176.7 };
+/** Nominal window (symbol reference size) and the tier tile, in art px. The tile is larger and sits under the frame lattice. */
+const WIN = { w: 130, h: 130 };
+const TILE = 135;
+const COL_CENTERS = [303.4, 484.6, 656.6, 829.0, 1009.3];
+const ROW_CENTER0 = 270.2;
+const GRID_ORIGIN = { x: COL_CENTERS[2] - 2.5 * PITCH.w, y: ROW_CENTER0 + 2 * PITCH.h - 2.5 * PITCH.h };
 
 export const V2_SLOT_BOARD_FRAME = {
 	/** Playfield: the 5x5 block of pitches around the windows, as fractions of the art. */
@@ -129,13 +132,13 @@ export const V2_FRAME_WINDOWS = {
 	art: ART,
 	origin: GRID_ORIGIN,
 	pitch: PITCH,
-	colX: [0, 1, 2, 3, 4].map((i) => FIRST.x + PITCH.w * i),
-	rowY: [0, 1, 2, 3, 4].map((i) => FIRST.y + PITCH.h * i),
+	colX: COL_CENTERS.map((c) => c - WIN.w / 2),
+	rowY: [0, 1, 2, 3, 4].map((i) => ROW_CENTER0 + PITCH.h * i - WIN.h / 2),
 	/** Window size, art px. */
 	winW: WIN.w,
 	winH: WIN.h,
-	/** Tier tiles and the default window background are drawn this much larger than the window, under the frame lattice. */
-	tileGrow: 1.14,
+	/** Tier tiles and the default window background are drawn TILE x TILE art px, under the frame lattice. */
+	tileGrow: TILE / WIN.h,
 } as const;
 
 /** Window height / cell height: the symbol box is a whole cell, the visible window is smaller. */
@@ -143,13 +146,13 @@ const WINDOW_FIT = WIN.h / PITCH.h;
 
 /**
  * Symbol height by tier as a fraction of the frame WINDOW height. Steps between regular tiers are 5 %
- * (low -> medium -> premium), all +5 % on the previous pass; scatter, Concierge / Mystery and feature symbols match premium.
+ * (low -> medium -> premium), tier step +50 % (4.2 -> 6.3 points of window height); scatter, Concierge / Mystery and feature symbols match premium.
  */
 export const V2_TIER_SCALE: Record<string, number> = {
 	low: 0.84 * WINDOW_FIT,
-	medium: 0.882 * WINDOW_FIT,
-	premium: 0.924 * WINDOW_FIT,
-	scatter: 0.924 * WINDOW_FIT,
-	concierge_mystery: 0.924 * WINDOW_FIT,
-	feature: 0.924 * WINDOW_FIT,
+	medium: 0.903 * WINDOW_FIT,
+	premium: 0.966 * WINDOW_FIT,
+	scatter: 0.966 * WINDOW_FIT,
+	concierge_mystery: 0.966 * WINDOW_FIT,
+	feature: 0.966 * WINDOW_FIT,
 };
