@@ -97,20 +97,21 @@ export const V2_PANEL_DECOR = {
  * Scale 1 keeps that hole on the grid — about 6% tighter than the previous 1.078.
  */
 /**
- * `slot_background_1.png` (1147x849, `slot_frame_5x5_100x100_slim_fixed.png`): 25 even windows of 102 x 102 art px on a
- * 128.4 pitch, measured from the transparent holes. Drawn as one piece (SlotFrameLayer, one band).
+ * `slot_background_1.png` (1448x1086, "Gotycka rama inwentarza z różami"): 25 hand-drawn windows of about 133 x 128 art px.
+ * Their measured centres deviate from an even 167 x 162.4 pitch by at most ~3 px, so the grid is snapped to an even one (a tile
+ * then has the same offset in every cell and nothing shifts when a reel stops). Drawn as one piece (SlotFrameLayer, one band).
  */
 export const V2_FRAME_BANDS = {
-	srcH: 849,
-	outH: 849,
-	bands: [{ srcStart: 0, srcEnd: 849, outStart: 0, outEnd: 849 }],
+	srcH: 1086,
+	outH: 1086,
+	bands: [{ srcStart: 0, srcEnd: 1086, outStart: 0, outEnd: 1086 }],
 } as const;
 
-const ART = { w: 1147, h: 849 };
-const PITCH = { w: 128.4, h: 128.45 };
-const WIN = { w: 102, h: 102 };
+const ART = { w: 1448, h: 1086 };
+const PITCH = { w: 167, h: 162.4 };
+const WIN = { w: 133, h: 128 };
 /** First window's top-left corner in the art. */
-const FIRST = { x: 317.55 - WIN.w / 2, y: 206.4 - WIN.h / 2 };
+const FIRST = { x: 389.1 - WIN.w / 2, y: 258.9 - WIN.h / 2 };
 const GRID_ORIGIN = { x: FIRST.x - (PITCH.w - WIN.w) / 2, y: FIRST.y - (PITCH.h - WIN.h) / 2 };
 
 export const V2_SLOT_BOARD_FRAME = {

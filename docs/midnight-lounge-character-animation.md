@@ -381,3 +381,8 @@ Fixed after the guideline review (verified against a local mock RGS, a productio
 - Symbol cells are no longer stacking contexts: the tile (z 3) stays under the frame (z 6), the symbol art (z 8-11) is above it, so a landing
   tile can never show over the frame. Dim / win glow filters moved from `.symbol` to its children for the same reason; `reel-land` removed.
 - Symbols rest 3 art px above the window centre (`SYMBOL_LIFT`); `BOARD_GRID_W` 515 so the last row ends above the WIN plate.
+
+## Gothic rose frame (latest)
+
+- `scene/slot_background_1.png` is `Gotycka rama inwentarza z różami.png` (1448x1086). Its 25 hand-drawn windows (~133x128 art px) are snapped to an even
+  167 x 162.4 grid (measured deviation <= ~3 px, hidden by `tileGrow`); `BOARD_GRID_W` 524 keeps the windows ~82 px and the last row above the WIN plate.
