@@ -344,3 +344,12 @@ Fixed after the guideline review (verified against a local mock RGS, a productio
 - Tier tiles come from `slot_tile_backgrounds_tiers_v1_renamed.zip` (black corners turned transparent, cropped); the rolling versions are generated from them with a
   vertical motion blur (script was run once, see `tiles_blur/`). Tile and symbol are centred on the window (tile matches the window to the pixel; symbols sit 6 art px higher).
 - Tier sizes relative to the window height: low 0.80, medium 0.84, premium 0.88 (5 % steps). BetUI elements (not SPIN/STOP) are 10 % smaller; the bet +/- circles are symmetric.
+
+## Loading on slow connections
+
+- Before: ~144 MB were requested while the start screen was still shown (all at once). Causes: a duplicated eager preload effect in the board, 1254 px symbol / tile / HUD PNGs
+  (1.2-1.4 MB each for ~100 px on screen), variation and win packs prefetched during the intro.
+- Now: symbols, rolling symbols and tier tiles are 512 / 384 px (still lossless PNG), HUD art 40 %, clouds half width (101 MB -> 20 MB in the repo); the preload of every symbol/tile
+  waits for `warmGate` (opened when the player continues) and runs four at a time at low priority; character variation / win clips wait for the gate too; character packs and slot-scene images
+  use low fetch priority, the start screen's own pieces (background, bodyguard, plants) high priority; the woman keeps all 6 packs in memory (no re-downloads).
+- Start screen weight: ~58 MB (idle packs 14 MB + plant/guard 13.5 MB + images) instead of ~144 MB; after that ~50 MB more in the background.

@@ -96,7 +96,8 @@ export const CHARACTER_TUNING: Record<CharacterId, CharacterTuning> = {
 		trimHeadFrames: 6,
 		trimTailFrames: 6,
 		winTrimHeadFrames: 6,
-		maxPacks: 5,
+		// All six woman packs stay in memory (9 MB each): an evicted pack would be downloaded again.
+		maxPacks: 7,
 		decodeAhead: 18,
 		startBuffer: 6,
 	},

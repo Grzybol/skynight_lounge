@@ -71,10 +71,12 @@ export const v2SymbolBlurUrl = (symbolId: string): string | null => {
 	return file ? resolveGameAsset(`${V2_SYMBOL_BLUR_DIR}/${file}`) : null;
 };
 
-/** Every distinct image a rolling reel can show, for background preloading. */
+/** Every distinct image a reel can show (sharp and rolling), for background preloading. */
 export const v2RollingAssetUrls = (): string[] => {
 	const urls = new Set<string>();
 	for (const id of Object.keys(V2_SYMBOL_FILENAMES)) {
+		const sharp = v2SymbolAssetUrl(id);
+		if (sharp) urls.add(sharp);
 		const blur = v2SymbolBlurUrl(id);
 		if (blur) urls.add(blur);
 		urls.add(v2TileUrl(id, false));

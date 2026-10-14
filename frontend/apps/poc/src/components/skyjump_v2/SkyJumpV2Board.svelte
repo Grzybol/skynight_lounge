@@ -40,6 +40,7 @@
 	} from '../../game/skyjump_v2/winPresentation';
 	import { reactToWin } from '../../game/loungeCharacters/winReaction';
 	import { statusLabel as playerLabel, statusSub as playerSub } from '../../game/skyjump_v2/statusText';
+	import { warmGate } from '../../game/loungeCharacters/warmGate';
 	import SlotFrameLayer from './SlotFrameLayer.svelte';
 	import {
 		V2_FRAME_WINDOWS,
@@ -139,15 +140,31 @@
 
 	let winFocusTimer: ReturnType<typeof setTimeout> | undefined;
 
-	// Warm the rolling (blurred) symbols and the tier tiles so the first spin never pops images in.
+	// Warm every symbol (sharp and rolling) and the tier tiles so the first spin never pops images in: but only after the
+	// player has left the start screen, and one at a time at low priority, so a slow link serves the start screen first.
 	$effect(() => {
-		const keep = v2RollingAssetUrls().map((url) => {
-			const img = new Image();
-			img.decoding = 'async';
-			img.src = url;
-			return img;
+		let cancelled = false;
+		const keep: HTMLImageElement[] = [];
+		void warmGate.then(async () => {
+			const queue = v2RollingAssetUrls();
+			// Four at a time, low priority.
+			const worker = async () => {
+				for (let url = queue.shift(); url && !cancelled; url = queue.shift()) {
+					const img = new Image();
+					img.decoding = 'async';
+					img.fetchPriority = 'low';
+					img.src = url;
+					keep.push(img);
+					await new Promise<void>((resolve) => {
+						img.onload = img.onerror = () => resolve();
+					});
+				}
+			};
+			await Promise.all([worker(), worker(), worker(), worker()]);
 		});
-		return () => void keep.length;
+		return () => {
+			cancelled = true;
+		};
 	});
 
 	$effect(() => {
@@ -1129,6 +1146,7 @@
 						src={windowBgSrc}
 						alt=""
 						draggable="false"
+						fetchpriority="low"
 						style:left={`${(n % 5) * cellW + wg.tx}px`}
 						style:top={`${Math.floor(n / 5) * cellH + wg.ty}px`}
 						style:width={`${wg.tw}px`}

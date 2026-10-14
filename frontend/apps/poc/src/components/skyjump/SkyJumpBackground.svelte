@@ -71,7 +71,7 @@
 </script>
 
 {#snippet scene()}
-	<img class="plane" src={planeThree} alt="" draggable="false" />
+	<img class="plane" src={planeThree} alt="" draggable="false" fetchpriority="low" />
 	<!-- Drifting clouds between the farthest sky and the houses, upper half only. -->
 	<div class="clouds">
 		{#each [0, 1, 2, 3, 4, 5] as n}
@@ -87,6 +87,7 @@
 			style:filter={buildingsFilter(planeTwoBase)}
 			alt=""
 			draggable="false"
+			fetchpriority="low"
 		/>
 		<img
 			class="plane fade"
@@ -96,6 +97,7 @@
 			style:filter={buildingsFilter(buildingsState.a)}
 			alt=""
 			draggable="false"
+			fetchpriority="low"
 		/>
 		<img
 			class="plane fade"
@@ -105,12 +107,13 @@
 			style:filter={buildingsFilter(buildingsState.b)}
 			alt=""
 			draggable="false"
+			fetchpriority="low"
 		/>
 		{#each CHIMNEYS as chimney}
 			<ChimneySmoke {...chimney} />
 		{/each}
 	</div>
-	<img class="plane" src={planeOne} alt="" draggable="false" />
+	<img class="plane" src={planeOne} alt="" draggable="false" fetchpriority="low" />
 	{#each SCENE_PLANTS as anchor, i}
 			<LoopingProp
 				prop="plant"

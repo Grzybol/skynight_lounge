@@ -279,13 +279,13 @@
 				onpointerenter={hover}
 				onclick={() => pressBuy(context.eventEmitter)}
 			>
-				<img src={hudUrl('bonus')} style={imgStyle(L.bonus)} alt="" draggable="false" />
+				<img src={hudUrl('bonus')} style={imgStyle(L.bonus)} alt="" draggable="false" fetchpriority="low" />
 			</button>
 			<span class="hud-label bonus-label" style={at(L.bonus, 1250, 360)}>BONUS</span>
 
 			<!-- Menu + balance plate -->
 			<div class="hud-plate-frame" style={boxStyle(L.balance)} aria-hidden="true">
-				<img src={hudUrl('balance')} style={imgStyle(L.balance)} alt="" draggable="false" />
+				<img src={hudUrl('balance')} style={imgStyle(L.balance)} alt="" draggable="false" fetchpriority="low" />
 			</div>
 			<button
 				type="button"
@@ -300,7 +300,7 @@
 					else openMenu(context.eventEmitter);
 				}}
 			>
-				<img src={hudUrl('menu')} style={imgStyle(L.menu)} alt="" draggable="false" />
+				<img src={hudUrl('menu')} style={imgStyle(L.menu)} alt="" draggable="false" fetchpriority="low" />
 			</button>
 			<div class="hud-text" style={at(L.balance, 1390, 366)} aria-label={i18nDerived.balance()}>
 				<span class="kicker">{i18nDerived.balance()}</span>
@@ -309,7 +309,7 @@
 
 			<!-- WIN: its own plate between balance and bet -->
 			<div class="hud-plate-frame" style={boxStyle(L.win)} aria-hidden="true">
-				<img src={hudUrl('bet_background')} style={imgStyle(L.win)} alt="" draggable="false" />
+				<img src={hudUrl('bet_background')} style={imgStyle(L.win)} alt="" draggable="false" fetchpriority="low" />
 			</div>
 			<div class="hud-win" style={at(L.win, 1085, 360)} aria-label={i18nDerived.win()}>
 				{#if stateUi.freeSpinCounterShow}
@@ -334,7 +334,7 @@
 				onpointerenter={hover}
 				onclick={() => pressTurbo(context.eventEmitter)}
 			>
-				<img src={hudUrl('turbo')} style={imgStyle(L.turbo)} alt="" draggable="false" />
+				<img src={hudUrl('turbo')} style={imgStyle(L.turbo)} alt="" draggable="false" fetchpriority="low" />
 			</button>
 			<span class="hud-label" style={at(L.turbo, 1300, 360)}>{i18nDerived.turbo()}</span>
 
@@ -349,14 +349,14 @@
 				onpointerenter={hover}
 				onclick={() => pressAuto(context.eventEmitter)}
 			>
-				<img src={hudUrl('autospin')} style={imgStyle(L.auto)} alt="" draggable="false" />
+				<img src={hudUrl('autospin')} style={imgStyle(L.auto)} alt="" draggable="false" fetchpriority="low" />
 			</button>
 			<span class="hud-label" style={at(L.auto, 1350, 360)}>{autoWord}</span>
 			{#if autoBadge}<span class="hud-badge" style={at(L.auto, 1900, 130)}>{autoBadge}</span>{/if}
 
 			<!-- Bet -->
 			<div class="hud-plate-frame" style={boxStyle(L.bet)} aria-hidden="true">
-				<img src={hudUrl('bet_background')} style={imgStyle(L.bet)} alt="" draggable="false" />
+				<img src={hudUrl('bet_background')} style={imgStyle(L.bet)} alt="" draggable="false" fetchpriority="low" />
 			</div>
 			<button
 				type="button"
@@ -367,7 +367,7 @@
 				onpointerenter={hover}
 				onclick={() => stepBet(context.eventEmitter, -1)}
 			>
-				<img src={hudUrl('minus')} style={imgStyle(L.minus)} alt="" draggable="false" />
+				<img src={hudUrl('minus')} style={imgStyle(L.minus)} alt="" draggable="false" fetchpriority="low" />
 			</button>
 			<button
 				type="button"
@@ -393,7 +393,7 @@
 				onpointerenter={hover}
 				onclick={() => stepBet(context.eventEmitter, 1)}
 			>
-				<img src={hudUrl('plus')} style={imgStyle(L.plus)} alt="" draggable="false" />
+				<img src={hudUrl('plus')} style={imgStyle(L.plus)} alt="" draggable="false" fetchpriority="low" />
 			</button>
 
 			<!-- SPIN / STOP -->
@@ -408,7 +408,7 @@
 				onpointerenter={hover}
 				onclick={onSpin}
 			>
-				<img src={hudUrl(stopMode ? 'stop' : 'spin')} style={imgStyle(spinBox)} alt="" draggable="false" />
+				<img src={hudUrl(stopMode ? 'stop' : 'spin')} style={imgStyle(spinBox)} alt="" draggable="false" fetchpriority="low" />
 			</button>
 		</div>
 
