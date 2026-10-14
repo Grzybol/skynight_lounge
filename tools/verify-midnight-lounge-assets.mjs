@@ -45,7 +45,7 @@ const required = [
 	'assets/midnight-lounge/scene/background_3_static.png',
 	'assets/midnight-lounge/scene/clouds_prop.png',
 	'assets/midnight-lounge/scene/slot_background_1.png',
-	'assets/midnight-lounge/scene/slot_background_2.png',
+	'assets/midnight-lounge/scene/slot_window_bg.png',
 	...['low', 'medium', 'premium', 'scatter', 'concierge_mystery', 'feature'].flatMap((tier) => [
 		`assets/midnight-lounge/tiles/tile_${tier}.png`,
 		`assets/midnight-lounge/tiles_blur/tile_${tier}.png`,

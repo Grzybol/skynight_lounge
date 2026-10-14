@@ -335,3 +335,12 @@ Fixed after the guideline review (verified against a local mock RGS, a productio
   The bonus pill replaces the emblem as the buy-bonus button.
 - Slot frame rows: the art's rows were 138 / 136 / 134 / 131 / 127 px tall. `SlotFrameLayer.svelte` redraws both frame layers as a top piece, five row
   bands stretched to one height (`V2_FRAME_BANDS`) and a bottom piece; tiles and symbols use one uniform window height (`V2_FRAME_WINDOWS.winH`).
+
+## Frame v4 (100x100 windows) and v1 tier tiles
+
+- `scene/slot_background_1.png` = `slot_background_100x100px_windows.png` (25 equal windows of ~98.5 art px on a 128 x 126.25 pitch, one band, no equalising needed).
+  `scene/slot_window_bg.png` = `slot_frame_default_background.png`, drawn per window as the very first layer.
+- Layer order of the slot: window backgrounds -> rolling symbols and their blurred tiles -> frame -> settled symbols and their tiles (over the frame).
+- Tier tiles come from `slot_tile_backgrounds_tiers_v1_renamed.zip` (black corners turned transparent, cropped); the rolling versions are generated from them with a
+  vertical motion blur (script was run once, see `tiles_blur/`). Tile and symbol are centred on the window (tile matches the window to the pixel; symbols sit 6 art px higher).
+- Tier sizes relative to the window height: low 0.80, medium 0.84, premium 0.88 (5 % steps). BetUI elements (not SPIN/STOP) are 10 % smaller; the bet +/- circles are symmetric.

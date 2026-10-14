@@ -5,7 +5,7 @@
 	import { waitForTimeout } from 'utils-shared/wait';
 
 	import { getContext } from '../../game/context';
-	import { loungeShown, loungeSlotBackSrc, loungeSlotFrameSrc } from '../../game/midnightLoungeTheme';
+	import { loungeShown, loungeSlotFrameSrc, loungeSlotWindowSrc } from '../../game/midnightLoungeTheme';
 	import { V2_PAYLINES, V2_PAYLINE_IDS, V2_SCATTER_ID } from '../../game/skyjump_v2/config';
 	import { bonusHud, bonusShowsTargets, tierLabel } from '../../game/skyjump_v2/bonusHud.svelte';
 	import { V2_PLACEHOLDERS, reelFillerBand, v2Placeholder } from '../../game/skyjump_v2/placeholders';
@@ -269,7 +269,7 @@
 	const gap = 0;
 	const framePad = 0;
 	/** Slot width (px @1280): the frame art is scaled so the 5x5 playfield is this wide. */
-	const BOARD_GRID_W = 585;
+	const BOARD_GRID_W = 520;
 	// Not rounded: a rounded cell height drifts away from the frame's 133.2 art-px row pitch (up to 2.5 px by the last row).
 	const cellW = $derived(Math.max(22, px(BOARD_GRID_W) / 5));
 	const cellH = $derived(Math.max(22, cellW / V2_SLOT_BOARD_FRAME.cellAspect));
@@ -279,28 +279,29 @@
 	const symbolPitch = $derived(boardH / VISIBLE_ROWS);
 	const surfaceW = $derived(boardW + framePad * 2 + FRAME_BORDER * 2);
 	const surfaceH = $derived(boardH + framePad * 2 + FRAME_BORDER * 2);
+	/** Settled symbols rest this many art px above the window centre. */
+	const SYMBOL_LIFT = -6;
 	/** Pixels per art pixel of the frame. */
 	const artK = $derived(cellW / V2_FRAME_WINDOWS.pitch.w);
 	/** Per-cell geometry: the tier tile fills the real window; the symbol is centred on it. Offsets are from the nominal cell. */
 	const cellGeo = (reel: number, row: number) => {
 		const W = V2_FRAME_WINDOWS;
+		const r = Math.min(4, Math.max(0, row));
 		const nx = W.origin.x + W.pitch.w * reel;
-		const hx = W.colX[reel];
-		const tw = W.colW[reel];
-		const offY = (W.pitch.h - W.winH) / 2;
+		const ny = W.origin.y + W.pitch.h * r;
 		return {
-			tx: (hx - nx) * artK,
-			ty: offY * artK,
-			tw: tw * artK,
+			// Window rect inside its cell (px).
+			tx: (W.colX[reel] - nx) * artK,
+			ty: (W.rowY[r] - ny) * artK,
+			tw: W.winW * artK,
 			th: W.winH * artK,
-			clip: 0,
-			dx: (hx + tw / 2 - (nx + W.pitch.w / 2)) * artK,
-			// Symbols rest a little above the window centre (more room under them, less over the frame below).
-			dy: -0.035 * W.pitch.h * artK,
+			// Window centre relative to the cell centre: symbols are centred on the window.
+			dx: (W.colX[reel] + W.winW / 2 - (nx + W.pitch.w / 2)) * artK,
+			dy: (W.rowY[r] + W.winH / 2 - (ny + W.pitch.h / 2)) * artK + SYMBOL_LIFT * artK,
 		};
 	};
 	const slotFrameSrc = loungeSlotFrameSrc;
-	const slotBackSrc = loungeSlotBackSrc;
+	const windowBgSrc = loungeSlotWindowSrc;
 	/** Art frame sized so its transparent hole stays centered on the grid, then +10%. */
 	const slotFrameW = $derived(
 		(boardW / (V2_SLOT_BOARD_FRAME.holeRight - V2_SLOT_BOARD_FRAME.holeLeft)) *
@@ -1120,17 +1121,20 @@
 			</div>
 		{/if}
 		<div class="board-surface" data-test="skyjump-v2-board-surface">
-			<div
-				class="board-art-back"
-				style:left={`${slotFrameLeft}px`}
-				style:top={`${slotFrameTop}px`}
-			>
-				<SlotFrameLayer
-					src={slotBackSrc}
-					width={slotFrameW}
-					height={slotFrameH}
-					testId="skyjump-v2-slot-back"
-				/>
+			<!-- Layer 1: the default window background, behind the rolling symbols and the frame. -->
+			<div class="window-bgs" aria-hidden="true" data-test="skyjump-v2-window-bgs">
+				{#each Array.from({ length: 25 }, (_, i) => i) as n}
+					{@const wg = cellGeo(n % 5, Math.floor(n / 5))}
+					<img
+						src={windowBgSrc}
+						alt=""
+						draggable="false"
+						style:left={`${(n % 5) * cellW + wg.tx}px`}
+						style:top={`${Math.floor(n / 5) * cellH + wg.ty}px`}
+						style:width={`${wg.tw}px`}
+						style:height={`${wg.th}px`}
+					/>
+				{/each}
 			</div>
 			<div
 				class="board-art-frame"
@@ -1200,7 +1204,6 @@
 										style:top={`${geo.ty}px`}
 										style:width={`${geo.tw}px`}
 										style:height={`${geo.th}px`}
-										style:clip-path={geo.clip > 0 ? `inset(0 0 ${geo.clip}% 0)` : undefined}
 									/>
 									<div
 										class="content-stage"
@@ -1590,15 +1593,20 @@
 		overflow: visible;
 	}
 
-	/* Behind the symbols (grid is z 1); the frame art (z 6) sits above them. */
-	.board-art-back {
+	/* Behind everything in the grid (rolling symbols), under the frame art (z 6). */
+	.window-bgs {
 		position: absolute;
+		left: var(--frame-pad, 0px);
+		top: var(--frame-pad, 0px);
 		z-index: 0;
-		display: block;
 		pointer-events: none;
+	}
+
+	.window-bgs img {
+		position: absolute;
+		max-width: none;
 		object-fit: fill;
 		user-select: none;
-		-webkit-user-drag: none;
 	}
 
 	.board-art-frame {

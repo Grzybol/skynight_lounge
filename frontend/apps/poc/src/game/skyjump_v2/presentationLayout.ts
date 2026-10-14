@@ -96,69 +96,53 @@ export const V2_PANEL_DECOR = {
  * innermost colored pixels so side diamonds and crests stay outside the 5×5.
  * Scale 1 keeps that hole on the grid — about 6% tighter than the previous 1.078.
  */
-/** Row cut lines in the 1672x941 frame art (centre of the gold line between two windows), art px. */
-const CUTS = [87.5, 225.5, 361.5, 495.5, 626.5, 753.5] as const;
-/** Every row band is stretched to this height (mean of the five art rows 138 / 136 / 134 / 131 / 127). */
-const ROW_T = (CUTS[5] - CUTS[0]) / 5;
-
 /**
- * The frame art's rows are not equally tall, so it is redrawn as bands (see SlotFrameLayer.svelte):
- * a top piece, five row bands stretched to the same height, and a bottom piece. Output height = source height.
+ * `slot_background_1.png` (1672x941): the frame with 25 near-square windows (about 98.5 art px) on a
+ * 128 x 126.25 pitch. Rows are equal, so the frame is drawn as one piece (SlotFrameLayer with one band).
  */
 export const V2_FRAME_BANDS = {
 	srcH: 941,
 	outH: 941,
-	bands: [
-		{ srcStart: 0, srcEnd: CUTS[0], outStart: 0, outEnd: CUTS[0] },
-		...[0, 1, 2, 3, 4].map((k) => ({
-			srcStart: CUTS[k],
-			srcEnd: CUTS[k + 1],
-			outStart: CUTS[0] + k * ROW_T,
-			outEnd: CUTS[0] + (k + 1) * ROW_T,
-		})),
-		{ srcStart: CUTS[5], srcEnd: 941, outStart: CUTS[5], outEnd: 941 },
-	],
+	bands: [{ srcStart: 0, srcEnd: 941, outStart: 0, outEnd: 941 }],
 } as const;
+
+const GRID_ORIGIN = { x: 516.25, y: 115.9 };
+const PITCH = { w: 128, h: 126.25 };
 
 export const V2_SLOT_BOARD_FRAME = {
-	/**
-	 * `slot_background_1/2.png` (1672x941, 5x5 windows). After the row equalisation the playfield is a
-	 * uniform 5x5 grid of 163.25 x 133.2 art px cells starting at (428.9, 87.5).
-	 */
-	holeLeft: 0.2565,
-	holeRight: 0.7447,
-	holeTop: 87.5 / 941,
-	holeBottom: (87.5 + 5 * ROW_T) / 941,
+	/** Playfield: the 5x5 block of pitches around the windows, as fractions of the art. */
+	holeLeft: GRID_ORIGIN.x / 1672,
+	holeRight: (GRID_ORIGIN.x + 5 * PITCH.w) / 1672,
+	holeTop: GRID_ORIGIN.y / 941,
+	holeBottom: (GRID_ORIGIN.y + 5 * PITCH.h) / 941,
 	scale: 1,
-	/** Cell pitch aspect (163.25 / 133.2). */
-	cellAspect: 163.25 / ROW_T,
+	cellAspect: PITCH.w / PITCH.h,
 } as const;
 
-/** The frame's windows in art pixels (1672x941), after the row equalisation. */
+/** The frame's windows in art pixels (1672x941). */
 export const V2_FRAME_WINDOWS = {
 	art: { w: 1672, h: 941 },
-	/** Nominal grid: origin and pitch, art px. */
-	origin: { x: 428.9, y: CUTS[0] },
-	pitch: { w: 163.25, h: ROW_T },
-	colX: [440, 600, 764, 929, 1093],
-	colW: [141, 144, 145, 144, 140],
-	/** Every window is this tall (the art's 121 .. 110 px windows, stretched with their bands) and centred in its cell. */
-	winH: 116,
+	origin: GRID_ORIGIN,
+	pitch: PITCH,
+	colX: [531, 659, 787, 915, 1043],
+	rowY: [130, 257, 383, 509, 635],
+	/** Window size, art px. */
+	winW: 98.5,
+	winH: 98.5,
 } as const;
 
-/** Window height / cell pitch of the frame art: the symbol box is a whole cell, the visible window is smaller. */
-const WINDOW_FIT = 116 / ROW_T;
+/** Window height / cell height: the symbol box is a whole cell, the visible window is smaller. */
+const WINDOW_FIT = 98.5 / PITCH.h;
 
 /**
- * Symbol height by tier as a fraction of the frame WINDOW height (not of the cell). Each regular tier is 1.1x the
- * previous one; scatter, Concierge / Mystery and feature symbols match premium. Overall 5 % smaller than before.
- * Settled symbols are drawn above the frame, so premium may just touch the window's gold lines.
+ * Symbol height by tier as a fraction of the frame WINDOW height. Steps between regular tiers are 5 %
+ * (low -> medium -> premium); scatter, Concierge / Mystery and feature symbols match premium.
  */
 export const V2_TIER_SCALE: Record<string, number> = {
-	low: 0.86 * WINDOW_FIT,
-	medium: 0.95 * WINDOW_FIT,
-	premium: 1.04 * WINDOW_FIT,
-	scatter: 1.04 * WINDOW_FIT,
-	concierge_mystery: 1.04 * WINDOW_FIT,
-	feature: 1.04 * WINDOW_FIT,
+	low: 0.8 * WINDOW_FIT,
+	medium: 0.84 * WINDOW_FIT,
+	premium: 0.88 * WINDOW_FIT,
+	scatter: 0.88 * WINDOW_FIT,
+	concierge_mystery: 0.88 * WINDOW_FIT,
+	feature: 0.88 * WINDOW_FIT,
 };

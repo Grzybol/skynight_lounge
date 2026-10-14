@@ -148,20 +148,25 @@
 	const hudUrl = (key: HudKey) => resolveGameAsset(`assets/midnight-lounge/ui/betui2/${key}.png`);
 
 	// Layout (stage px, from new_betui_preview.png): bottom-left bonus + menu/balance, bottom-right turbo, auto, bet, spin.
-	const L = {
-		// Everything but SPIN/STOP is 7 % smaller than in the preview, with tighter gaps.
-		bonus: box('bonus', 9, 527, 230),
-		balance: box('balance', 6, 596, 386),
-		// The menu button replaces the plate's left blob (87..597 x 123..628 in the file), stretched and widened to hide it.
-		menu: box('menu', 4, 600, 104, 98),
-		win: box('bet_background', 438, 615, 290),
-		bet: box('bet_background', 775, 615, 318),
-		minus: box('minus', 785, 629, 66),
-		plus: box('plus', 1015, 629, 66),
-		turbo: box('turbo', 919, 498, 171),
-		auto: box('autospin', 921, 557, 169),
-		spin: box('spin', 1082, 501, 193),
-	};
+	const L = (() => {
+		// Everything but SPIN/STOP is 10 % smaller than the previous pass (menu 3 % bigger first), tight gaps.
+		const bet = box('bet_background', 804, 614, 286);
+		const d = bet.w * 0.2;
+		const m = bet.w * 0.04;
+		const cy = bet.y + (bet.h - d) / 2;
+		return {
+			bonus: box('bonus', 9, 543, 207),
+			balance: box('balance', 6, 606, 347),
+			menu: box('menu', 3, 609, 96, 91),
+			win: box('bet_background', 448, 617, 261),
+			bet,
+			minus: box('minus', bet.x + m, cy, d),
+			plus: box('plus', bet.x + bet.w - m - d, cy, d),
+			turbo: box('turbo', 936, 509, 154),
+			auto: box('autospin', 938, 562, 152),
+			spin: box('spin', 1082, 501, 193),
+		};
+	})();
 	/** The HUD is laid out on a 1280x720 stage and scaled to the play area like the rest of the scene. */
 	let hudRoot = $state<HTMLDivElement | null>(null);
 	let hudFrame = $state('left:0px;top:0px;transform:scale(1);');
@@ -276,7 +281,7 @@
 			>
 				<img src={hudUrl('bonus')} style={imgStyle(L.bonus)} alt="" draggable="false" />
 			</button>
-			<span class="hud-label" style={at(L.bonus, 1250, 360)}>BONUS</span>
+			<span class="hud-label bonus-label" style={at(L.bonus, 1250, 360)}>BONUS</span>
 
 			<!-- Menu + balance plate -->
 			<div class="hud-plate-frame" style={boxStyle(L.balance)} aria-hidden="true">
@@ -630,7 +635,7 @@
 	}
 
 	.hud-label {
-		font-size: 16px;
+		font-size: 14.4px;
 		letter-spacing: 0.06em;
 		text-transform: uppercase;
 	}
@@ -674,19 +679,23 @@
 	}
 
 	.hud-win .win-kicker {
-		font-size: 17px;
+		font-size: 15.3px;
 	}
 
 	.hud .kicker {
-		font-size: 14px;
+		font-size: 12.6px;
 	}
 
 	.hud .value {
-		font-size: 22px;
+		font-size: 19.8px;
 	}
 
 	.hud .value.big {
-		font-size: 30px;
+		font-size: 27px;
+	}
+
+	.hud .bonus-label {
+		font-size: 20px;
 	}
 
 	.hud-win .free-spins {
