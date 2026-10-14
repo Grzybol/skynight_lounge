@@ -286,7 +286,7 @@
 	const gap = 0;
 	const framePad = 0;
 	/** Slot width (px @1280): the frame art is scaled so the 5x5 playfield is this wide. */
-	const BOARD_GRID_W = 570;
+	const BOARD_GRID_W = 515;
 	// Not rounded: a rounded cell height drifts away from the frame's 133.2 art-px row pitch (up to 2.5 px by the last row).
 	const cellW = $derived(Math.max(22, px(BOARD_GRID_W) / 5));
 	const cellH = $derived(Math.max(22, cellW / V2_SLOT_BOARD_FRAME.cellAspect));
@@ -297,7 +297,7 @@
 	const surfaceW = $derived(boardW + framePad * 2 + FRAME_BORDER * 2);
 	const surfaceH = $derived(boardH + framePad * 2 + FRAME_BORDER * 2);
 	/** Settled symbols rest this many art px off the window centre (negative = up). */
-	const SYMBOL_LIFT = 0;
+	const SYMBOL_LIFT = -3;
 	/** Pixels per art pixel of the frame. */
 	const artK = $derived(cellW / V2_FRAME_WINDOWS.pitch.w);
 	/** Per-cell geometry: the tier tile fills the real window; the symbol is centred on it. Offsets are from the nominal cell. */
@@ -306,12 +306,13 @@
 		const r = Math.min(4, Math.max(0, row));
 		const nx = W.origin.x + W.pitch.w * reel;
 		const ny = W.origin.y + W.pitch.h * r;
+		const g = W.tileGrow;
 		return {
-			// Window rect inside its cell (px).
-			tx: (W.colX[reel] - nx) * artK,
-			ty: (W.rowY[r] - ny) * artK,
-			tw: W.winW * artK,
-			th: W.winH * artK,
+			// Backdrop rect inside its cell (px): the window grown by `tileGrow`, so the frame lattice hides its edges.
+			tx: (W.colX[reel] - (W.winW * (g - 1)) / 2 - nx) * artK,
+			ty: (W.rowY[r] - (W.winH * (g - 1)) / 2 - ny) * artK,
+			tw: W.winW * g * artK,
+			th: W.winH * g * artK,
 			// Window centre relative to the cell centre: symbols are centred on the window.
 			dx: (W.colX[reel] + W.winW / 2 - (nx + W.pitch.w / 2)) * artK,
 			dy: (W.rowY[r] + W.winH / 2 - (ny + W.pitch.h / 2)) * artK + SYMBOL_LIFT * artK,
@@ -2050,20 +2051,36 @@
 		overflow: visible;
 	}
 
+	/*
+	 * A symbol cell is NOT a stacking context (no z-index / filter / transform on .symbol), so its two layers sort
+	 * against the frame art (z 6) on their own: the tier tile stays under the frame lattice (its edges are hidden),
+	 * the symbol art sits above the frame. Nothing of the tile ever pokes out over the frame.
+	 */
 	.reel:not(.spinning) .symbol {
 		overflow: visible;
+	}
+
+	.reel:not(.spinning) .symbol .tile-bg {
+		z-index: 3;
+	}
+
+	.reel:not(.spinning) .symbol .content-stage {
 		z-index: 8;
 	}
 
-	.reel:not(.spinning) .symbol[data-tier='medium'] {
+	.reel:not(.spinning) .symbol[data-tier='medium'] .content-stage {
 		z-index: 9;
 	}
 
-	.reel:not(.spinning) .symbol[data-tier='premium'],
-	.reel:not(.spinning) .symbol[data-tier='scatter'],
-	.reel:not(.spinning) .symbol[data-tier='concierge_mystery'],
-	.reel:not(.spinning) .symbol[data-tier='feature'] {
+	.reel:not(.spinning) .symbol[data-tier='premium'] .content-stage,
+	.reel:not(.spinning) .symbol[data-tier='scatter'] .content-stage,
+	.reel:not(.spinning) .symbol[data-tier='concierge_mystery'] .content-stage,
+	.reel:not(.spinning) .symbol[data-tier='feature'] .content-stage {
 		z-index: 10;
+	}
+
+	.reel:not(.spinning) .symbol small {
+		z-index: 12;
 	}
 
 	.reel:not(.spinning) .content-stage {
@@ -2078,10 +2095,6 @@
 
 	.reel.spinning .reel-strip {
 		will-change: transform;
-	}
-
-	.reel.landing .symbol {
-		animation: reel-land var(--land-ms, 160ms) ease-out both;
 	}
 
 	/*
@@ -2146,7 +2159,7 @@
 
 	.symbol {
 		position: relative;
-		z-index: 1;
+		z-index: auto;
 		box-sizing: border-box;
 		display: grid;
 		place-items: center;
@@ -2214,8 +2227,7 @@
 		text-align: center;
 	}
 
-	.symbol.world-record {
-		z-index: 5;
+	.symbol.world-record .content-stage {
 		filter: drop-shadow(0 0 8px rgba(253, 230, 138, 0.85));
 	}
 
@@ -2235,20 +2247,20 @@
 	}
 
 	/* Non-winning symbols are darkened, never made see-through (that showed the window background behind the tile). */
-	.symbol.dim {
+	.symbol.dim .tile-bg,
+	.symbol.dim .content-stage {
 		filter: brightness(0.45) saturate(0.7);
 	}
 
 	/* Payline pop: the symbol swells slightly and a warm backlight blooms behind it. */
 	.symbol.popped {
-		z-index: 7;
 		overflow: visible;
 	}
 
 	.symbol.popped::before {
 		content: '';
 		position: absolute;
-		z-index: 0;
+		z-index: 7;
 		inset: -22%;
 		border-radius: 50%;
 		background: radial-gradient(
@@ -2293,19 +2305,17 @@
 	}
 
 	/* Winning symbols: a golden glow around the tile and the symbol. */
-	.symbol.hit {
-		z-index: 11;
+	.symbol.hit .content-stage {
 		filter: drop-shadow(0 0 5px #ffe9a0) drop-shadow(0 0 14px rgba(255, 196, 64, 1))
 			drop-shadow(0 0 26px rgba(255, 164, 32, 0.85));
 	}
 
-	.reel:not(.spinning) .symbol.hit,
-	.reel:not(.spinning) .symbol.popped {
+	.reel:not(.spinning) .symbol.hit .content-stage,
+	.reel:not(.spinning) .symbol.popped .content-stage {
 		z-index: 11;
 	}
 
-	.symbol.preserved {
-		z-index: 5;
+	.symbol.preserved .content-stage {
 		filter: drop-shadow(0 0 7px rgba(126, 214, 255, 0.85));
 	}
 

@@ -373,3 +373,11 @@ Fixed after the guideline review (verified against a local mock RGS, a productio
   small jump when a reel stopped). Tile grow on landing now starts at 94 %. `BOARD_GRID_W` 570: the slot (frame, windows, symbols) is 15 % bigger.
 - Non-winning symbols are darkened (`filter`), not made transparent, so the window background no longer shows through the tiles; winners get a gold glow.
 - `tiles_blur/` comes from `slot_tile_backgrounds_tiers_cartoon_named_blurred.zip` (same crop and alpha as the sharp tiles), WebP q60.
+
+## Slot frame 5x5 slim fixed (latest)
+
+- `scene/slot_background_1.png` is `slot_frame_5x5_100x100_slim_fixed.png` (1147x849): even 102x102 windows on a 128.4 pitch (`V2_FRAME_WINDOWS`).
+  `tileGrow` 1.14: tier tiles and the default window background are drawn 14 % larger than the window so the frame lattice hides their edges.
+- Symbol cells are no longer stacking contexts: the tile (z 3) stays under the frame (z 6), the symbol art (z 8-11) is above it, so a landing
+  tile can never show over the frame. Dim / win glow filters moved from `.symbol` to its children for the same reason; `reel-land` removed.
+- Symbols rest 3 art px above the window centre (`SYMBOL_LIFT`); `BOARD_GRID_W` 515 so the last row ends above the WIN plate.

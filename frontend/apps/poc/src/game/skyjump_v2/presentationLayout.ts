@@ -97,35 +97,35 @@ export const V2_PANEL_DECOR = {
  * Scale 1 keeps that hole on the grid — about 6% tighter than the previous 1.078.
  */
 /**
- * `slot_background_1.png` (1672x941, slim frame v1): 25 windows of about 127.5 x 118 art px on a
- * 153.9 x 142.9 pitch, measured from the transparent holes and snapped to an even grid (so a symbol or tile has
- * the same offset in every cell and nothing shifts when a reel stops). Drawn as one piece (SlotFrameLayer, one band).
+ * `slot_background_1.png` (1147x849, `slot_frame_5x5_100x100_slim_fixed.png`): 25 even windows of 102 x 102 art px on a
+ * 128.4 pitch, measured from the transparent holes. Drawn as one piece (SlotFrameLayer, one band).
  */
 export const V2_FRAME_BANDS = {
-	srcH: 941,
-	outH: 941,
-	bands: [{ srcStart: 0, srcEnd: 941, outStart: 0, outEnd: 941 }],
+	srcH: 849,
+	outH: 849,
+	bands: [{ srcStart: 0, srcEnd: 849, outStart: 0, outEnd: 849 }],
 } as const;
 
-const PITCH = { w: 153.9, h: 142.9 };
-const WIN = { w: 127.5, h: 118 };
+const ART = { w: 1147, h: 849 };
+const PITCH = { w: 128.4, h: 128.45 };
+const WIN = { w: 102, h: 102 };
 /** First window's top-left corner in the art. */
-const FIRST = { x: 527 - WIN.w / 2, y: 145 };
+const FIRST = { x: 317.55 - WIN.w / 2, y: 206.4 - WIN.h / 2 };
 const GRID_ORIGIN = { x: FIRST.x - (PITCH.w - WIN.w) / 2, y: FIRST.y - (PITCH.h - WIN.h) / 2 };
 
 export const V2_SLOT_BOARD_FRAME = {
 	/** Playfield: the 5x5 block of pitches around the windows, as fractions of the art. */
-	holeLeft: GRID_ORIGIN.x / 1672,
-	holeRight: (GRID_ORIGIN.x + 5 * PITCH.w) / 1672,
-	holeTop: GRID_ORIGIN.y / 941,
-	holeBottom: (GRID_ORIGIN.y + 5 * PITCH.h) / 941,
+	holeLeft: GRID_ORIGIN.x / ART.w,
+	holeRight: (GRID_ORIGIN.x + 5 * PITCH.w) / ART.w,
+	holeTop: GRID_ORIGIN.y / ART.h,
+	holeBottom: (GRID_ORIGIN.y + 5 * PITCH.h) / ART.h,
 	scale: 1,
 	cellAspect: PITCH.w / PITCH.h,
 } as const;
 
-/** The frame's windows in art pixels (1672x941). */
+/** The frame's windows in art pixels. */
 export const V2_FRAME_WINDOWS = {
-	art: { w: 1672, h: 941 },
+	art: ART,
 	origin: GRID_ORIGIN,
 	pitch: PITCH,
 	colX: [0, 1, 2, 3, 4].map((i) => FIRST.x + PITCH.w * i),
@@ -133,6 +133,8 @@ export const V2_FRAME_WINDOWS = {
 	/** Window size, art px. */
 	winW: WIN.w,
 	winH: WIN.h,
+	/** Tier tiles and the default window background are drawn this much larger than the window, under the frame lattice. */
+	tileGrow: 1.14,
 } as const;
 
 /** Window height / cell height: the symbol box is a whole cell, the visible window is smaller. */
