@@ -96,31 +96,54 @@ export const V2_PANEL_DECOR = {
  * innermost colored pixels so side diamonds and crests stay outside the 5×5.
  * Scale 1 keeps that hole on the grid — about 6% tighter than the previous 1.078.
  */
+/** Row cut lines in the 1672x941 frame art (centre of the gold line between two windows), art px. */
+const CUTS = [87.5, 225.5, 361.5, 495.5, 626.5, 753.5] as const;
+/** Every row band is stretched to this height (mean of the five art rows 138 / 136 / 134 / 131 / 127). */
+const ROW_T = (CUTS[5] - CUTS[0]) / 5;
+
+/**
+ * The frame art's rows are not equally tall, so it is redrawn as bands (see SlotFrameLayer.svelte):
+ * a top piece, five row bands stretched to the same height, and a bottom piece. Output height = source height.
+ */
+export const V2_FRAME_BANDS = {
+	srcH: 941,
+	outH: 941,
+	bands: [
+		{ srcStart: 0, srcEnd: CUTS[0], outStart: 0, outEnd: CUTS[0] },
+		...[0, 1, 2, 3, 4].map((k) => ({
+			srcStart: CUTS[k],
+			srcEnd: CUTS[k + 1],
+			outStart: CUTS[0] + k * ROW_T,
+			outEnd: CUTS[0] + (k + 1) * ROW_T,
+		})),
+		{ srcStart: CUTS[5], srcEnd: 941, outStart: CUTS[5], outEnd: 941 },
+	],
+} as const;
+
 export const V2_SLOT_BOARD_FRAME = {
 	/**
-	 * `slot_background_1/2.png` (1672x941, 5x5 windows of equal size). The playfield is a 5x5 block of nominal
-	 * cell pitches (163.25 x 134.75 art px) centred on the windows; exact rects are in V2_FRAME_WINDOWS.
+	 * `slot_background_1/2.png` (1672x941, 5x5 windows). After the row equalisation the playfield is a
+	 * uniform 5x5 grid of 163.25 x 133.2 art px cells starting at (428.9, 87.5).
 	 */
 	holeLeft: 0.2565,
 	holeRight: 0.7447,
-	holeTop: 0.0947,
-	holeBottom: 0.8107,
+	holeTop: 87.5 / 941,
+	holeBottom: (87.5 + 5 * ROW_T) / 941,
 	scale: 1,
-	/** Nominal cell pitch aspect (163.25 / 134.75). */
-	cellAspect: 1.2115,
+	/** Cell pitch aspect (163.25 / 133.2). */
+	cellAspect: 163.25 / ROW_T,
 } as const;
 
-/** The frame's real windows in art pixels (1672x941). */
+/** The frame's windows in art pixels (1672x941), after the row equalisation. */
 export const V2_FRAME_WINDOWS = {
 	art: { w: 1672, h: 941 },
 	/** Nominal grid: origin and pitch, art px. */
-	origin: { x: 428.9, y: 89.1 },
-	pitch: { w: 163.25, h: 134.75 },
+	origin: { x: 428.9, y: CUTS[0] },
+	pitch: { w: 163.25, h: ROW_T },
 	colX: [440, 600, 764, 929, 1093],
 	colW: [141, 144, 145, 144, 140],
-	rowY: [96, 234, 370, 504, 635],
-	rowH: [121, 119, 117, 114, 110],
-	tileH: [121, 119, 117, 114, 110],
+	/** Every window is this tall (the art's 121 .. 110 px windows, stretched with their bands) and centred in its cell. */
+	winH: 116,
 } as const;
 
 /**

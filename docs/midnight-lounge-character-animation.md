@@ -326,3 +326,12 @@ Fixed after the guideline review (verified against a local mock RGS, a productio
 
 - `slot_frame_layer1/2.png` (second delivery, uniform windows) are now `slot_background_1/2.png`; window rects in `V2_FRAME_WINDOWS`.
 - Tier sizes: low 0.8, medium 1.04, premium 1.35 (x1.3 per regular tier). Woman: `brightness(0.85) contrast(1.05)`. SPIN/STOP image: `brightness(0.9)`.
+
+## New BetUI and equal frame rows
+
+- BetUI is image based, no bar behind it: `ui/betui2/{spin,stop,balance,bet_background,minus,plus,menu,autospin,turbo,bonus}.png`, placed by the
+  visible bounds of each file on the 1280x720 stage (`HUD` / `L` in `MidnightLoungeBetUI.svelte`, layout from `new_betui_preview.png`).
+  Texts (balance, bet, WIN, labels) are code, Luckiest Guy. The old SPIN/STOP `brightness(0.9)` was dropped with the old art.
+  The bonus pill replaces the emblem as the buy-bonus button.
+- Slot frame rows: the art's rows were 138 / 136 / 134 / 131 / 127 px tall. `SlotFrameLayer.svelte` redraws both frame layers as a top piece, five row
+  bands stretched to one height (`V2_FRAME_BANDS`) and a bottom piece; tiles and symbols use one uniform window height (`V2_FRAME_WINDOWS.winH`).

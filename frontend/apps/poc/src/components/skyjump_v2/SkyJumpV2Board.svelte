@@ -40,6 +40,7 @@
 	} from '../../game/skyjump_v2/winPresentation';
 	import { reactToWin } from '../../game/loungeCharacters/winReaction';
 	import { statusLabel as playerLabel, statusSub as playerSub } from '../../game/skyjump_v2/statusText';
+	import SlotFrameLayer from './SlotFrameLayer.svelte';
 	import {
 		V2_FRAME_WINDOWS,
 		V2_PAYLINE_FX,
@@ -282,23 +283,18 @@
 	/** Per-cell geometry: the tier tile fills the real window; the symbol is centred on it. Offsets are from the nominal cell. */
 	const cellGeo = (reel: number, row: number) => {
 		const W = V2_FRAME_WINDOWS;
-		const r = Math.min(4, Math.max(0, row));
 		const nx = W.origin.x + W.pitch.w * reel;
-		const ny = W.origin.y + W.pitch.h * r;
 		const hx = W.colX[reel];
-		const hy = W.rowY[r];
 		const tw = W.colW[reel];
-		const th = W.tileH[r];
-		const clip = r === 4 ? ((W.tileH[r] - W.rowH[r]) / W.tileH[r]) * 100 : 0;
+		const offY = (W.pitch.h - W.winH) / 2;
 		return {
 			tx: (hx - nx) * artK,
-			ty: (hy - ny) * artK,
+			ty: offY * artK,
 			tw: tw * artK,
-			th: th * artK,
-			clip,
+			th: W.winH * artK,
+			clip: 0,
 			dx: (hx + tw / 2 - (nx + W.pitch.w / 2)) * artK,
-			// Symbols sit in the visible window (the last row is a short window under the frame's bottom bar).
-			dy: (hy + W.rowH[r] / 2 - (ny + W.pitch.h / 2)) * artK,
+			dy: 0,
 		};
 	};
 	const slotFrameSrc = loungeSlotFrameSrc;
@@ -1122,30 +1118,30 @@
 			</div>
 		{/if}
 		<div class="board-surface" data-test="skyjump-v2-board-surface">
-			<img
+			<div
 				class="board-art-back"
-				src={slotBackSrc}
-				alt=""
-				draggable="false"
-				aria-hidden="true"
-				data-test="skyjump-v2-slot-back"
 				style:left={`${slotFrameLeft}px`}
 				style:top={`${slotFrameTop}px`}
-				style:width={`${slotFrameW}px`}
-				style:height={`${slotFrameH}px`}
-			/>
-			<img
+			>
+				<SlotFrameLayer
+					src={slotBackSrc}
+					width={slotFrameW}
+					height={slotFrameH}
+					testId="skyjump-v2-slot-back"
+				/>
+			</div>
+			<div
 				class="board-art-frame"
-				src={slotFrameSrc}
-				alt=""
-				draggable="false"
-				aria-hidden="true"
-				data-test="skyjump-v2-slot-frame"
 				style:left={`${slotFrameLeft}px`}
 				style:top={`${slotFrameTop}px`}
-				style:width={`${slotFrameW}px`}
-				style:height={`${slotFrameH}px`}
-			/>
+			>
+				<SlotFrameLayer
+					src={slotFrameSrc}
+					width={slotFrameW}
+					height={slotFrameH}
+					testId="skyjump-v2-slot-frame"
+				/>
+			</div>
 			<div class="grid" class:rejumping aria-hidden="true">
 				{#each Array.from({ length: 5 }, (_, reel) => reel) as reel}
 					{@const ids = spinIds[reel] ?? board[reel]}
