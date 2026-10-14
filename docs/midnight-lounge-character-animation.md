@@ -353,3 +353,15 @@ Fixed after the guideline review (verified against a local mock RGS, a productio
   waits for `warmGate` (opened when the player continues) and runs four at a time at low priority; character variation / win clips wait for the gate too; character packs and slot-scene images
   use low fetch priority, the start screen's own pieces (background, bodyguard, plants) high priority; the woman keeps all 6 packs in memory (no re-downloads).
 - Start screen weight: ~58 MB (idle packs 14 MB + plant/guard 13.5 MB + images) instead of ~144 MB; after that ~50 MB more in the background.
+
+## Slim frame, new +/- buttons, quality 80/60 (latest)
+
+- Character / prop packs rebuilt at lossy WebP quality 80 (alpha lossless): `python -I tools/midnight-lounge/build-character-anims.py --lossy-quality 80 --zips ~/Downloads D:/ai_gif_upscaling/output`.
+- Rolling-blur assets (`symbols_blur/`, `tiles_blur/`) are lossy WebP quality 60 (`.webp`; the sharp symbols and tiles stay PNG).
+- Tier tiles come from `slot_tile_backgrounds_tiers_cartoon_named.zip` (black corners -> alpha, 384 px; blurred copies built from the same crop).
+- `scene/slot_background_1.png` is `slot_background_100x100px_windows_slim.png` (1536x1024). Its 137.5x134 px windows sit on a 148.75x144.75 pitch
+  (`V2_FRAME_WINDOWS`); `BOARD_GRID_W` is 440 so the windows stay about as large as before. Symbols are 5 % bigger (`V2_TIER_SCALE`) and
+  centred on the window (`SYMBOL_LIFT = 0`).
+- BetUI: new `betui2/minus.png` / `plus.png`; BONUS / TURBO / AUTO labels live inside their buttons so they press with the art; every
+  control is 10 % smaller (each cluster shrinks towards its screen edge); switched-on buttons get a pulsing gold ring that stays under hover.
+- Woman moved up (`bottomFrac` 0.955) so the BetUI no longer covers her.

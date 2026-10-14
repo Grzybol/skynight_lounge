@@ -116,8 +116,8 @@
 	const HUD = {
 		balance: { w: 2172, h: 724, b: [87, 98, 2082, 635] },
 		bet_background: { w: 2172, h: 724, b: [100, 98, 2069, 623] },
-		minus: { w: 1254, h: 1254, b: [65, 74, 1190, 1180] },
-		plus: { w: 1254, h: 1254, b: [52, 57, 1203, 1191] },
+		minus: { w: 1254, h: 1254, b: [51, 53, 1205, 1193] },
+		plus: { w: 1254, h: 1254, b: [43, 57, 1215, 1203] },
 		menu: { w: 1254, h: 1254, b: [109, 208, 1145, 1052] },
 		autospin: { w: 2172, h: 724, b: [164, 80, 2005, 647] },
 		turbo: { w: 2172, h: 724, b: [89, 52, 2064, 667] },
@@ -145,26 +145,35 @@
 		const a = HUD[r.key];
 		return `left:${r.x + (fx - a.b[0]) * r.kx}px;top:${r.y + (fy - a.b[1]) * r.ky}px;`;
 	};
+	/** A point of the artwork (file px) relative to the control's own box, for labels that live inside the button. */
+	const inBox = (r: HudBox, fx: number, fy: number) => {
+		const a = HUD[r.key];
+		return `left:${(fx - a.b[0]) * r.kx}px;top:${(fy - a.b[1]) * r.ky}px;`;
+	};
 	const hudUrl = (key: HudKey) => resolveGameAsset(`assets/midnight-lounge/ui/betui2/${key}.png`);
 
 	// Layout (stage px, from new_betui_preview.png): bottom-left bonus + menu/balance, bottom-right turbo, auto, bet, spin.
 	const L = (() => {
-		// Everything but SPIN/STOP is 10 % smaller than the previous pass (menu 3 % bigger first), tight gaps.
-		const bet = box('bet_background', 804, 614, 286);
+		// Every control is 10 % smaller than the previous pass. Each cluster shrinks towards its own screen edge:
+		// bonus / balance / menu towards the bottom-left, bet / turbo / auto / spin towards the bottom-right,
+		// the WIN plate towards the bottom centre.
+		const K = 0.9;
+		const toward = (ax: number, x: number, y: number) => [ax + (x - ax) * K, 720 + (y - 720) * K] as const;
+		const bet = box('bet_background', ...toward(1280, 804, 614), 286 * K);
 		const d = bet.w * 0.2;
 		const m = bet.w * 0.04;
 		const cy = bet.y + (bet.h - d) / 2;
 		return {
-			bonus: box('bonus', 9, 543, 207),
-			balance: box('balance', 6, 606, 347),
-			menu: box('menu', 3, 609, 96, 91),
-			win: box('bet_background', 448, 617, 261),
+			bonus: box('bonus', ...toward(0, 9, 543), 207 * K),
+			balance: box('balance', ...toward(0, 6, 606), 347 * K),
+			menu: box('menu', ...toward(0, 3, 609), 96 * K, 91 * K),
+			win: box('bet_background', ...toward(640, 448, 617), 261 * K),
 			bet,
 			minus: box('minus', bet.x + m, cy, d),
 			plus: box('plus', bet.x + bet.w - m - d, cy, d),
-			turbo: box('turbo', 936, 509, 154),
-			auto: box('autospin', 938, 562, 152),
-			spin: box('spin', 1082, 501, 193),
+			turbo: box('turbo', ...toward(1280, 936, 509), 154 * K),
+			auto: box('autospin', ...toward(1280, 938, 562), 152 * K),
+			spin: box('spin', ...toward(1280, 1082, 501), 193 * K),
 		};
 	})();
 	/** The HUD is laid out on a 1280x720 stage and scaled to the play area like the rest of the scene. */
@@ -280,8 +289,8 @@
 				onclick={() => pressBuy(context.eventEmitter)}
 			>
 				<img src={hudUrl('bonus')} style={imgStyle(L.bonus)} alt="" draggable="false" fetchpriority="low" />
+				<span class="hud-label bonus-label" style={inBox(L.bonus, 1250, 360)}>BONUS</span>
 			</button>
-			<span class="hud-label bonus-label" style={at(L.bonus, 1250, 360)}>BONUS</span>
 
 			<!-- Menu + balance plate -->
 			<div class="hud-plate-frame" style={boxStyle(L.balance)} aria-hidden="true">
@@ -335,8 +344,8 @@
 				onclick={() => pressTurbo(context.eventEmitter)}
 			>
 				<img src={hudUrl('turbo')} style={imgStyle(L.turbo)} alt="" draggable="false" fetchpriority="low" />
+				<span class="hud-label" style={inBox(L.turbo, 1300, 360)}>{i18nDerived.turbo()}</span>
 			</button>
-			<span class="hud-label" style={at(L.turbo, 1300, 360)}>{i18nDerived.turbo()}</span>
 
 			<button
 				type="button"
@@ -350,8 +359,8 @@
 				onclick={() => pressAuto(context.eventEmitter)}
 			>
 				<img src={hudUrl('autospin')} style={imgStyle(L.auto)} alt="" draggable="false" fetchpriority="low" />
+				<span class="hud-label" style={inBox(L.auto, 1350, 360)}>{autoWord}</span>
 			</button>
-			<span class="hud-label" style={at(L.auto, 1350, 360)}>{autoWord}</span>
 			{#if autoBadge}<span class="hud-badge" style={at(L.auto, 1900, 130)}>{autoBadge}</span>{/if}
 
 			<!-- Bet -->
@@ -613,8 +622,55 @@
 		transform: scale(0.96);
 	}
 
-	.hud-btn.active {
-		filter: drop-shadow(0 0 8px rgba(255, 205, 90, 0.9)) brightness(1.1);
+	/* Switched on (turbo, auto, bonus, open menu): a strong gold halo that also stays while hovered. */
+	.hud-btn.active,
+	.hud-btn.active:hover:not(:disabled) {
+		filter: drop-shadow(0 0 5px #fff1b0) drop-shadow(0 0 14px rgba(255, 196, 64, 1))
+			drop-shadow(0 0 28px rgba(255, 168, 32, 0.9)) brightness(1.22) saturate(1.2);
+		animation: hud-glow 1.4s ease-in-out infinite alternate;
+	}
+
+	/* A bright ring around the switched-on pill, so the state reads at a glance on the gold artwork. */
+	.hud-btn.active::before {
+		content: '';
+		position: absolute;
+		inset: -4px;
+		border-radius: 999px;
+		border: 3px solid #fff3b8;
+		box-shadow:
+			0 0 10px 3px rgba(255, 222, 120, 0.95),
+			0 0 26px 8px rgba(255, 180, 50, 0.75),
+			inset 0 0 12px 2px rgba(255, 222, 120, 0.7);
+		pointer-events: none;
+		animation: hud-ring 1.4s ease-in-out infinite alternate;
+	}
+
+	@keyframes hud-ring {
+		from {
+			opacity: 0.65;
+		}
+		to {
+			opacity: 1;
+		}
+	}
+
+	@keyframes hud-glow {
+		from {
+			filter: drop-shadow(0 0 4px #fff1b0) drop-shadow(0 0 11px rgba(255, 196, 64, 0.95))
+				drop-shadow(0 0 22px rgba(255, 168, 32, 0.75)) brightness(1.15) saturate(1.15);
+		}
+		to {
+			filter: drop-shadow(0 0 7px #fff7cc) drop-shadow(0 0 18px rgba(255, 206, 80, 1))
+				drop-shadow(0 0 34px rgba(255, 176, 40, 1)) brightness(1.3) saturate(1.25);
+		}
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.hud-btn.active,
+		.hud-btn.active:hover:not(:disabled),
+		.hud-btn.active::before {
+			animation: none;
+		}
 	}
 
 	.hud-btn:disabled {
@@ -635,7 +691,7 @@
 	}
 
 	.hud-label {
-		font-size: 14.4px;
+		font-size: 13px;
 		letter-spacing: 0.06em;
 		text-transform: uppercase;
 	}
@@ -643,7 +699,7 @@
 	.hud-badge {
 		min-width: 22px;
 		padding: 1px 6px;
-		font-size: 14px;
+		font-size: 12.6px;
 		text-align: center;
 		background: #1b0a10;
 		border: 1px solid rgba(228, 190, 100, 0.9);
@@ -679,23 +735,23 @@
 	}
 
 	.hud-win .win-kicker {
-		font-size: 15.3px;
+		font-size: 13.8px;
 	}
 
 	.hud .kicker {
-		font-size: 12.6px;
+		font-size: 11.3px;
 	}
 
 	.hud .value {
-		font-size: 19.8px;
+		font-size: 17.8px;
 	}
 
 	.hud .value.big {
-		font-size: 27px;
+		font-size: 24.3px;
 	}
 
 	.hud .bonus-label {
-		font-size: 20px;
+		font-size: 18px;
 	}
 
 	.hud-win .free-spins {

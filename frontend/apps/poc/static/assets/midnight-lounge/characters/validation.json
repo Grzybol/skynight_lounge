@@ -13,7 +13,7 @@
     34
    ],
    "emptyFrames": [],
-   "packBytes": 9146272
+   "packBytes": 6777376
   },
   "woman_idle_alt": {
    "zip": "feet2_podstawowa2_v3_spritesheet.zip",
@@ -28,7 +28,7 @@
     34
    ],
    "emptyFrames": [],
-   "packBytes": 9147012
+   "packBytes": 6785072
   },
   "woman_idle_1": {
    "zip": "feet2_przerywnik1_v4_spritesheet.zip",
@@ -43,7 +43,7 @@
     34
    ],
    "emptyFrames": [],
-   "packBytes": 9148536
+   "packBytes": 6818712
   },
   "woman_idle_2": {
    "zip": "feet2_przerywnik2_v3_spritesheet.zip",
@@ -58,7 +58,7 @@
     34
    ],
    "emptyFrames": [],
-   "packBytes": 9026216
+   "packBytes": 6724250
   },
   "woman_idle_3": {
    "zip": "feet2_przerywnik3_v3_spritesheet.zip",
@@ -73,7 +73,7 @@
     34
    ],
    "emptyFrames": [],
-   "packBytes": 9079156
+   "packBytes": 6730258
   },
   "woman_idle_4": {
    "zip": "feet2_extra_przerywnik_v12_spritesheet.zip",
@@ -88,7 +88,7 @@
     34
    ],
    "emptyFrames": [],
-   "packBytes": 9141588
+   "packBytes": 6809500
   },
   "woman_mini_win": {
    "zip": "feet2_win_v3_spritesheet.zip",
@@ -103,7 +103,7 @@
     34
    ],
    "emptyFrames": [],
-   "packBytes": 9032082
+   "packBytes": 6721976
   },
   "bartender_idle": {
    "zip": "barman2_idle_v1_spritesheet.zip",
@@ -117,7 +117,7 @@
     33
    ],
    "emptyFrames": [],
-   "packBytes": 5432782
+   "packBytes": 4016750
   },
   "bartender_idle_1": {
    "zip": "barman2_przerywnik1_v1_spritesheet.zip",
@@ -131,7 +131,7 @@
     33
    ],
    "emptyFrames": [],
-   "packBytes": 5372534
+   "packBytes": 3955968
   },
   "bartender_mini_win": {
    "zip": "barman2_win_v1_spritesheet.zip",
@@ -145,7 +145,7 @@
     33
    ],
    "emptyFrames": [],
-   "packBytes": 5336924
+   "packBytes": 3969398
   },
   "plant_loop": {
    "zip": "background_prop_plant_v4.zip",
@@ -159,7 +159,7 @@
     33
    ],
    "emptyFrames": [],
-   "packBytes": 8800308
+   "packBytes": 6501918
   },
   "guard_loop": {
    "zip": "bodyguard_drawn.zip",
@@ -173,7 +173,7 @@
     33
    ],
    "emptyFrames": [],
-   "packBytes": 4739590
+   "packBytes": 3465532
   }
  },
  "seams": {

@@ -44,7 +44,7 @@ export const V2_SYMBOL_FILENAMES: Record<string, string> = {
 	T6: 'sym_token_t6_royal_ruby.png',
 };
 
-/** Blurred (motion) versions of the same symbols, used while a reel is rolling. */
+/** Blurred (motion) versions of the same symbols (lossy WebP q60), used while a reel is rolling. */
 export const V2_SYMBOL_BLUR_DIR = 'assets/midnight-lounge/symbols_blur';
 export const V2_TILE_DIR = 'assets/midnight-lounge/tiles';
 export const V2_TILE_BLUR_DIR = 'assets/midnight-lounge/tiles_blur';
@@ -64,11 +64,11 @@ export const v2SymbolTier = (symbolId: string): V2SymbolTier => {
 };
 
 export const v2TileUrl = (symbolId: string, blurred = false): string =>
-	resolveGameAsset(`${blurred ? V2_TILE_BLUR_DIR : V2_TILE_DIR}/tile_${v2SymbolTier(symbolId)}.png`);
+	resolveGameAsset(`${blurred ? V2_TILE_BLUR_DIR : V2_TILE_DIR}/tile_${v2SymbolTier(symbolId)}.${blurred ? 'webp' : 'png'}`);
 
 export const v2SymbolBlurUrl = (symbolId: string): string | null => {
 	const file = V2_SYMBOL_FILENAMES[symbolId];
-	return file ? resolveGameAsset(`${V2_SYMBOL_BLUR_DIR}/${file}`) : null;
+	return file ? resolveGameAsset(`${V2_SYMBOL_BLUR_DIR}/${file.replace(/\.png$/, '.webp')}`) : null;
 };
 
 /** Every distinct image a reel can show (sharp and rolling), for background preloading. */

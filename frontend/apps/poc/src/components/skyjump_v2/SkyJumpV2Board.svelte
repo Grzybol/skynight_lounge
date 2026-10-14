@@ -286,7 +286,7 @@
 	const gap = 0;
 	const framePad = 0;
 	/** Slot width (px @1280): the frame art is scaled so the 5x5 playfield is this wide. */
-	const BOARD_GRID_W = 520;
+	const BOARD_GRID_W = 440;
 	// Not rounded: a rounded cell height drifts away from the frame's 133.2 art-px row pitch (up to 2.5 px by the last row).
 	const cellW = $derived(Math.max(22, px(BOARD_GRID_W) / 5));
 	const cellH = $derived(Math.max(22, cellW / V2_SLOT_BOARD_FRAME.cellAspect));
@@ -296,8 +296,8 @@
 	const symbolPitch = $derived(boardH / VISIBLE_ROWS);
 	const surfaceW = $derived(boardW + framePad * 2 + FRAME_BORDER * 2);
 	const surfaceH = $derived(boardH + framePad * 2 + FRAME_BORDER * 2);
-	/** Settled symbols rest this many art px above the window centre. */
-	const SYMBOL_LIFT = -6;
+	/** Settled symbols rest this many art px off the window centre (negative = up). */
+	const SYMBOL_LIFT = 0;
 	/** Pixels per art pixel of the frame. */
 	const artK = $derived(cellW / V2_FRAME_WINDOWS.pitch.w);
 	/** Per-cell geometry: the tier tile fills the real window; the symbol is centred on it. Offsets are from the nominal cell. */

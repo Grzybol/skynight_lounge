@@ -97,52 +97,52 @@ export const V2_PANEL_DECOR = {
  * Scale 1 keeps that hole on the grid — about 6% tighter than the previous 1.078.
  */
 /**
- * `slot_background_1.png` (1672x941): the frame with 25 near-square windows (about 98.5 art px) on a
- * 128 x 126.25 pitch. Rows are equal, so the frame is drawn as one piece (SlotFrameLayer with one band).
+ * `slot_background_1.png` (1536x1024, slim frame): 25 near-square windows (137.5 x 134 art px) on a
+ * 148.75 x 144.75 pitch. The frame is drawn as one piece (SlotFrameLayer with one band).
  */
 export const V2_FRAME_BANDS = {
-	srcH: 941,
-	outH: 941,
-	bands: [{ srcStart: 0, srcEnd: 941, outStart: 0, outEnd: 941 }],
+	srcH: 1024,
+	outH: 1024,
+	bands: [{ srcStart: 0, srcEnd: 1024, outStart: 0, outEnd: 1024 }],
 } as const;
 
-const GRID_ORIGIN = { x: 516.25, y: 115.9 };
-const PITCH = { w: 128, h: 126.25 };
+const GRID_ORIGIN = { x: 396.1, y: 140.6 };
+const PITCH = { w: 148.75, h: 144.75 };
 
 export const V2_SLOT_BOARD_FRAME = {
 	/** Playfield: the 5x5 block of pitches around the windows, as fractions of the art. */
-	holeLeft: GRID_ORIGIN.x / 1672,
-	holeRight: (GRID_ORIGIN.x + 5 * PITCH.w) / 1672,
-	holeTop: GRID_ORIGIN.y / 941,
-	holeBottom: (GRID_ORIGIN.y + 5 * PITCH.h) / 941,
+	holeLeft: GRID_ORIGIN.x / 1536,
+	holeRight: (GRID_ORIGIN.x + 5 * PITCH.w) / 1536,
+	holeTop: GRID_ORIGIN.y / 1024,
+	holeBottom: (GRID_ORIGIN.y + 5 * PITCH.h) / 1024,
 	scale: 1,
 	cellAspect: PITCH.w / PITCH.h,
 } as const;
 
-/** The frame's windows in art pixels (1672x941). */
+/** The frame's windows in art pixels (1536x1024), measured from the transparent holes. */
 export const V2_FRAME_WINDOWS = {
-	art: { w: 1672, h: 941 },
+	art: { w: 1536, h: 1024 },
 	origin: GRID_ORIGIN,
 	pitch: PITCH,
-	colX: [531, 659, 787, 915, 1043],
-	rowY: [130, 257, 383, 509, 635],
+	colX: [401.75, 550.25, 699.75, 848.25, 996.75],
+	rowY: [146, 290.5, 436.5, 582, 725],
 	/** Window size, art px. */
-	winW: 98.5,
-	winH: 98.5,
+	winW: 137.5,
+	winH: 134,
 } as const;
 
 /** Window height / cell height: the symbol box is a whole cell, the visible window is smaller. */
-const WINDOW_FIT = 98.5 / PITCH.h;
+const WINDOW_FIT = 134 / PITCH.h;
 
 /**
  * Symbol height by tier as a fraction of the frame WINDOW height. Steps between regular tiers are 5 %
- * (low -> medium -> premium); scatter, Concierge / Mystery and feature symbols match premium.
+ * (low -> medium -> premium), all +5 % on the previous pass; scatter, Concierge / Mystery and feature symbols match premium.
  */
 export const V2_TIER_SCALE: Record<string, number> = {
-	low: 0.8 * WINDOW_FIT,
-	medium: 0.84 * WINDOW_FIT,
-	premium: 0.88 * WINDOW_FIT,
-	scatter: 0.88 * WINDOW_FIT,
-	concierge_mystery: 0.88 * WINDOW_FIT,
-	feature: 0.88 * WINDOW_FIT,
+	low: 0.84 * WINDOW_FIT,
+	medium: 0.882 * WINDOW_FIT,
+	premium: 0.924 * WINDOW_FIT,
+	scatter: 0.924 * WINDOW_FIT,
+	concierge_mystery: 0.924 * WINDOW_FIT,
+	feature: 0.924 * WINDOW_FIT,
 };
