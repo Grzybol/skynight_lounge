@@ -126,38 +126,68 @@
 		stop: { w: 1254, h: 1254, b: [18, 20, 1236, 1229] },
 	} as const;
 	type HudKey = keyof typeof HUD;
-	type HudBox = { key: HudKey; x: number; y: number; w: number; h: number; k: number };
+	type HudBox = { key: HudKey; x: number; y: number; w: number; h: number; kx: number; ky: number };
 
-	/** Rect on the stage from the visible width. */
-	const box = (key: HudKey, x: number, y: number, w: number): HudBox => {
+	/** Rect on the stage from the visible width (height by aspect, or given to stretch the art). */
+	const box = (key: HudKey, x: number, y: number, w: number, h?: number): HudBox => {
 		const a = HUD[key];
-		const k = w / (a.b[2] - a.b[0]);
-		return { key, x, y, w, h: (a.b[3] - a.b[1]) * k, k };
+		const kx = w / (a.b[2] - a.b[0]);
+		const ky = h === undefined ? kx : h / (a.b[3] - a.b[1]);
+		return { key, x, y, w, h: (a.b[3] - a.b[1]) * ky, kx, ky };
 	};
 	const imgStyle = (r: HudBox) => {
 		const a = HUD[r.key];
-		return `left:${-a.b[0] * r.k}px;top:${-a.b[1] * r.k}px;width:${a.w * r.k}px;height:${a.h * r.k}px;`;
+		return `left:${-a.b[0] * r.kx}px;top:${-a.b[1] * r.ky}px;width:${a.w * r.kx}px;height:${a.h * r.ky}px;`;
 	};
 	const boxStyle = (r: HudBox) => `left:${r.x}px;top:${r.y}px;width:${r.w}px;height:${r.h}px;`;
 	/** A point of the artwork (file px) on the stage. */
 	const at = (r: HudBox, fx: number, fy: number) => {
 		const a = HUD[r.key];
-		return `left:${r.x + (fx - a.b[0]) * r.k}px;top:${r.y + (fy - a.b[1]) * r.k}px;`;
+		return `left:${r.x + (fx - a.b[0]) * r.kx}px;top:${r.y + (fy - a.b[1]) * r.ky}px;`;
 	};
 	const hudUrl = (key: HudKey) => resolveGameAsset(`assets/midnight-lounge/ui/betui2/${key}.png`);
 
 	// Layout (stage px, from new_betui_preview.png): bottom-left bonus + menu/balance, bottom-right turbo, auto, bet, spin.
 	const L = {
 		bonus: box('bonus', 9, 494, 247),
+		// The menu button replaces the plate's left blob (87..597 x 123..628 in the file): same rectangle, stretched.
 		balance: box('balance', 6, 592, 415),
-		turbo: box('turbo', 938, 468, 152),
-		auto: box('autospin', 938, 534, 148),
-		bet: box('bet_background', 735, 601, 356),
-		minus: box('minus', 749, 614, 72),
-		plus: box('plus', 1009, 614, 72),
-		menu: box('menu', 12, 604, 92),
+		menu: box('menu', 6, 597, 96, 105),
+		win: box('bet_background', 428, 601, 312),
+		bet: box('bet_background', 749, 601, 342),
+		minus: box('minus', 760, 616, 71),
+		plus: box('plus', 1007, 616, 71),
+		turbo: box('turbo', 906, 468, 184),
+		auto: box('autospin', 906, 534, 182),
 		spin: box('spin', 1082, 501, 193),
 	};
+	/** The HUD is laid out on a 1280x720 stage and scaled to the play area like the rest of the scene. */
+	let hudRoot = $state<HTMLDivElement | null>(null);
+	let hudFrame = $state('left:0px;top:0px;transform:scale(1);');
+	$effect(() => {
+		const el = hudRoot;
+		if (!el) return;
+		const viewport = el.closest('.skyjump-viewport');
+		if (!(viewport instanceof HTMLElement)) return;
+		const place = () => {
+			const css = getComputedStyle(viewport);
+			const read = (name: string) => parseFloat(css.getPropertyValue(name));
+			const left = read('--play-left');
+			const top = read('--play-top');
+			const width = read('--play-width');
+			if (![left, top, width].every(Number.isFinite) || width <= 0) return;
+			hudFrame = `left:${left}px;top:${top}px;transform:scale(${width / 1280});`;
+		};
+		place();
+		const observer = new ResizeObserver(place);
+		observer.observe(viewport);
+		const kick = requestAnimationFrame(place);
+		return () => {
+			cancelAnimationFrame(kick);
+			observer.disconnect();
+		};
+	});
+	const autoWord = $derived(i18nDerived.autoSpin().split(' ')[0]);
 	const spinBox = $derived(box(stopMode ? 'stop' : 'spin', L.spin.x, L.spin.y, L.spin.w));
 
 	const spinLabel = $derived(stopMode ? i18nDerived.stop() : 'SPIN');
@@ -224,7 +254,7 @@
 				}}
 			/>
 
-		<div class="hud" data-test="ml-hud">
+		<div class="hud" data-test="ml-hud" bind:this={hudRoot} style={hudFrame}>
 			{#if insufficient}
 				<span class="funds-note" role="status" data-test="ml-insufficient"
 					>{socialMode ? 'NOT ENOUGH BALANCE FOR THIS PLAY' : 'INSUFFICIENT FUNDS FOR THIS BET'}</span
@@ -271,8 +301,11 @@
 				<span class="value">{numberToCurrencyString(balanceTween.current)}</span>
 			</div>
 
-			<!-- WIN, centred on the screen -->
-			<div class="hud-win" aria-label={i18nDerived.win()}>
+			<!-- WIN: its own plate between balance and bet -->
+			<div class="hud-plate-frame" style={boxStyle(L.win)} aria-hidden="true">
+				<img src={hudUrl('bet_background')} style={imgStyle(L.win)} alt="" draggable="false" />
+			</div>
+			<div class="hud-win" style={at(L.win, 1085, 360)} aria-label={i18nDerived.win()}>
 				{#if stateUi.freeSpinCounterShow}
 					<span class="free-spins">
 						{i18nDerived.freeSpins()}
@@ -312,7 +345,7 @@
 			>
 				<img src={hudUrl('autospin')} style={imgStyle(L.auto)} alt="" draggable="false" />
 			</button>
-			<span class="hud-label" style={at(L.auto, 1350, 360)}>{i18nDerived.autoSpin()}</span>
+			<span class="hud-label" style={at(L.auto, 1350, 360)}>{autoWord}</span>
 			{#if autoBadge}<span class="hud-badge" style={at(L.auto, 1900, 130)}>{autoBadge}</span>{/if}
 
 			<!-- Bet -->
@@ -333,7 +366,7 @@
 			<button
 				type="button"
 				class="hud-text bet-btn"
-				style={`left:${L.minus.x + L.minus.w + 8}px;top:${L.bet.y + 6}px;width:${L.plus.x - (L.minus.x + L.minus.w) - 16}px;height:${L.bet.h - 12}px;`}
+				style={`left:${L.minus.x + L.minus.w + 6}px;top:${L.bet.y + 6}px;width:${L.plus.x - (L.minus.x + L.minus.w) - 12}px;height:${L.bet.h - 12}px;`}
 				aria-label={i18nDerived.bet()}
 				disabled={stepLocked}
 				onpointerenter={hover}
@@ -532,7 +565,9 @@
 	/* New HUD: image buttons placed on the stage, no bar behind them. */
 	.hud {
 		position: absolute;
-		inset: 0;
+		width: 1280px;
+		height: 720px;
+		transform-origin: 0 0;
 		pointer-events: none;
 	}
 
@@ -627,22 +662,18 @@
 
 	.hud-win {
 		position: absolute;
-		left: 640px;
-		top: 648px;
 		transform: translate(-50%, -50%);
 		display: grid;
 		justify-items: center;
-		gap: 4px;
+		gap: 2px;
 		color: #fbe9b0;
 		font-family: var(--ml-font-gold, 'Luckiest Guy', serif);
-		text-shadow:
-			0 2px 0 rgba(40, 8, 16, 0.9),
-			0 0 10px rgba(0, 0, 0, 0.6);
+		text-shadow: 0 2px 0 rgba(40, 8, 16, 0.9);
 		pointer-events: none;
 	}
 
 	.hud-win .win-kicker {
-		font-size: 26px;
+		font-size: 18px;
 	}
 
 	.hud-win .free-spins {
@@ -655,8 +686,8 @@
 
 	.funds-note {
 		position: absolute;
-		left: 640px;
-		top: 570px;
+		left: 584px;
+		top: 574px;
 		transform: translateX(-50%);
 		padding: 6px 14px;
 		color: #fbe9b0;

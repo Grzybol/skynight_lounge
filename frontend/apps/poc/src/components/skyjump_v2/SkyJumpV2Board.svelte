@@ -270,8 +270,9 @@
 	const framePad = 0;
 	/** Slot width (px @1280): the frame art is scaled so the 5x5 playfield is this wide. */
 	const BOARD_GRID_W = 585;
-	const cellW = $derived(Math.max(22, Math.round(px(BOARD_GRID_W) / 5)));
-	const cellH = $derived(Math.max(22, Math.round(cellW / V2_SLOT_BOARD_FRAME.cellAspect)));
+	// Not rounded: a rounded cell height drifts away from the frame's 133.2 art-px row pitch (up to 2.5 px by the last row).
+	const cellW = $derived(Math.max(22, px(BOARD_GRID_W) / 5));
+	const cellH = $derived(Math.max(22, cellW / V2_SLOT_BOARD_FRAME.cellAspect));
 	const boardW = $derived(cellW * 5 + gap * 4);
 	const boardH = $derived(cellH * 5 + gap * 4);
 	/** Edge-to-edge symbol pitch. The old row gutter is inside the slot, not a grid line. */
@@ -294,7 +295,8 @@
 			th: W.winH * artK,
 			clip: 0,
 			dx: (hx + tw / 2 - (nx + W.pitch.w / 2)) * artK,
-			dy: 0,
+			// Symbols rest a little above the window centre (more room under them, less over the frame below).
+			dy: -0.035 * W.pitch.h * artK,
 		};
 	};
 	const slotFrameSrc = loungeSlotFrameSrc;

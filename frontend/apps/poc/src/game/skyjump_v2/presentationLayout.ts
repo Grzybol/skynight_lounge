@@ -147,15 +147,15 @@ export const V2_FRAME_WINDOWS = {
 } as const;
 
 /**
- * Symbol size by tier, relative to the cell height. Each regular tier is 1.3x the previous one
+ * Symbol size by tier, relative to the cell height. Each regular tier is 1.1x the previous one
  * (low -> medium -> premium); scatter, Concierge / Mystery and feature symbols match premium.
  * Settled symbols are drawn above the frame, so they may grow past their window.
  */
 export const V2_TIER_SCALE: Record<string, number> = {
-	low: 0.8,
-	medium: 1.04,
-	premium: 1.35,
-	scatter: 1.35,
-	concierge_mystery: 1.35,
-	feature: 1.35,
+	low: 0.95,
+	medium: 1.045,
+	premium: 1.15,
+	scatter: 1.15,
+	concierge_mystery: 1.15,
+	feature: 1.15,
 };

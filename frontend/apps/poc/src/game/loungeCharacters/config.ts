@@ -135,10 +135,10 @@ export type CharacterPlacement = {
 };
 
 export const CHARACTER_PLACEMENT: Record<CharacterId, CharacterPlacement> = {
-	woman: { heightFrac: 0.606, centerXFrac: 0.8615, bottomFrac: 0.98 },
+	woman: { heightFrac: 0.606, centerXFrac: 0.8715, bottomFrac: 1.015 },
 	// Placed from the first animation frame: the bartender's drink stops at the slot's left edge (his
 	// tray may reach over it); the woman's foot may reach over the slot's right edge, her face never.
-	bartender: { heightFrac: 0.731, centerXFrac: 0.143, bottomFrac: 0.93 },
+	bartender: { heightFrac: 0.731, centerXFrac: 0.143, bottomFrac: 0.97 },
 };
 
 /** Source frame size per character (bartender V3 is 562x748, woman 554x740). */
