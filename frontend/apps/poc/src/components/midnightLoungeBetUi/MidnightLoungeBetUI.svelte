@@ -1115,7 +1115,7 @@
 		min-width: 200px;
 		padding: 30px 28px;
 		pointer-events: auto;
-		background: var(--ml-panel) center / 100% 100% no-repeat;
+		background: none;
 		border: 1px solid transparent;
 		border-image: var(--ml-panel) 64 fill / 26px stretch;
 		filter: drop-shadow(0 11px 20px rgba(0, 0, 0, 0.5));
@@ -1125,7 +1125,7 @@
 		min-height: 40px;
 		padding: 0 14px;
 		color: #f3e2b8;
-		background: var(--ml-button) center / 100% 100% no-repeat;
+		background: none;
 		border: 1px solid transparent;
 		border-image: var(--ml-button) 34 fill / 13px stretch;
 		cursor: pointer;

@@ -438,3 +438,10 @@ Fixed after the guideline review (verified against a local mock RGS, a productio
 - Crest ruby: every 3-7 s, 0.7-1.6 s long, about half the growth of the small gems; the per-symbol flashing while rolling and the double flash are gone.
 - 9-slice plates (panels, buttons, intro CTA) have a stretched copy of the art under the slices, so no transparent cut line shows through.
 - Headers of Paytable / Info / Buy Bonus replaced by `paytable_info_headers_cartoon_renamed.zip` (the titles `ui_header_paytable/info/how_to_play` were not in the pack).
+
+## Calmer frame wind, new headers, EN/PL plates (latest)
+
+- Frame wind halved in amplitude (1.5 art px), speed and spatial frequency (`SlotFrameWind.svelte`).
+- Headers from `skynight_lounge_headers_named.zip` (2048x682): the 15 `hdr_*` plus `hdr_paytable`, `hdr_info`, `hdr_how_to_play`, which replace
+  `skyjump_v2/ui/headers/ui_header_paytable|info|how_to_play.png` (same paths, so no code change).
+- The stretched-copy background under the 9-slice art stays only on the intro CTA; on the flyout buttons it showed as a second outline (EN / PL), so it is removed again there and on the panels.

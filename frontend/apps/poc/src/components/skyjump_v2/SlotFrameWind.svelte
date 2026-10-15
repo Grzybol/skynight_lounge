@@ -20,7 +20,7 @@
 	const { src, maskSrc, width, height, testId }: Props = $props();
 
 	/** How far the foliage moves, in art pixels of the 1312 x 1199 frame. */
-	const AMPLITUDE = 3.0;
+	const AMPLITUDE = 1.5;
 	/** Art size of the frame (the shader works in art pixels). */
 	const ART_W = 1312;
 	const ART_H = 1199;
@@ -57,10 +57,10 @@ void main() {
 	vec2 p = vUv * uArt;
 	float m = texture(uMask, vUv).r;
 	float t = uTime;
-	// Two slow waves at different scales, so neighbouring leaves do not move in step.
+	// Two slow, wide waves at different scales (half the speed and the frequency of the first version).
 	vec2 w = vec2(
-		sin(t * 1.9 + p.x * 0.045 + p.y * 0.031) + 0.6 * sin(t * 3.1 + p.y * 0.07 - p.x * 0.02),
-		cos(t * 1.5 + p.y * 0.04 - p.x * 0.028) + 0.6 * sin(t * 2.6 + p.x * 0.06 + p.y * 0.05)
+		sin(t * 0.95 + p.x * 0.0225 + p.y * 0.0155) + 0.6 * sin(t * 1.55 + p.y * 0.035 - p.x * 0.01),
+		cos(t * 0.75 + p.y * 0.02 - p.x * 0.014) + 0.6 * sin(t * 1.3 + p.x * 0.03 + p.y * 0.025)
 	);
 	vec2 off = w * m * uAmp / uArt;
 	outColor = texture(uFrame, vUv + off);

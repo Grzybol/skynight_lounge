@@ -156,7 +156,7 @@
 		border: 1px solid transparent;
 		border-image: var(--ml-panel) 64 fill / 26px stretch;
 		border-radius: 0;
-		background: var(--ml-panel) center / 100% 100% no-repeat;
+		background: none;
 		filter: drop-shadow(0 18px 28px rgba(0, 0, 0, 0.5));
 		overflow: visible;
 	}
@@ -324,7 +324,7 @@
 		padding: 0.3rem 0.4rem;
 		border: 1px solid transparent;
 		border-image: var(--ml-button) 34 fill / 13px stretch;
-		background: var(--ml-button) center / 100% 100% no-repeat;
+		background: none;
 		color: #f3e2b8;
 		font-family: inherit;
 		font-size: 0.78rem;

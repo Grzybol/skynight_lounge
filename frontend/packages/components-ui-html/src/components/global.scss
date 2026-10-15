@@ -415,7 +415,7 @@ body.theme-skyjump .ui-popup-standard-content-wrap {
 	padding: calc(clamp(0.85rem, 1.8%, 1.35rem) + 22px);
 	color: #f3e2b8;
 	/* Window art: the supplied gold / blue panel, stretched as a 9-slice (works in any orientation). */
-	background: var(--ml-panel) center / 100% 100% no-repeat;
+	background: none;
 	border: 1px solid transparent;
 	border-image: var(--ml-panel) 64 fill / 26px stretch;
 	border-radius: 0;
@@ -527,7 +527,7 @@ body.theme-skyjump .rectangle {
 	--background-value: none !important;
 	box-sizing: border-box;
 	min-height: 3.3rem;
-	background: var(--ml-button) center / 100% 100% no-repeat !important;
+	background: none !important;
 	border: 1px solid transparent !important;
 	border-image: var(--ml-button) 34 fill / 13px stretch !important;
 	border-radius: 0;

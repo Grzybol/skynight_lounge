@@ -41,7 +41,7 @@
 		width: min(560px, calc(100vw - 48px));
 		padding: calc(1.4rem + 22px) calc(1.6rem + 22px) calc(1.6rem + 22px);
 		color: #f3e2b8;
-		background: var(--ml-panel) center / 100% 100% no-repeat;
+		background: none;
 		border: 1px solid transparent;
 		border-image: var(--ml-panel) 64 fill / 26px stretch;
 		filter: drop-shadow(0 18px 28px rgba(0, 0, 0, 0.5));
