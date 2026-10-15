@@ -408,3 +408,12 @@ Fixed after the guideline review (verified against a local mock RGS, a productio
 - Two more animated plants stand behind the slot, half hidden by its frame (`SCENE_PLANTS`).
 - BetUI: all controls another 5 % smaller (K = 0.855), +/- 3 % smaller and further inside the BET plate, WIN centred on the slot (stage x = 640),
   smaller glow on switched-on buttons.
+
+## Slot to the bottom edge, symbols, panel URLs (latest)
+
+- `BOARD_GRID_W` 555: the crest stays on the top edge and the frame's visible bottom (art y 1145) lands on the bottom edge of the stage.
+  The WIN plate sits on that lower edge (bottom 6 px above the stage bottom). Plants behind the slot moved out to the new frame edges (x 0.226 / 0.774).
+- Settled symbols +5 %; tier growth over `low` raised by 50 % (medium x1.1125, premium and feature x1.225 of low). BET +/- circles 5 % smaller.
+  Bartender and woman +5 % (bottom anchor unchanged).
+- Fix: `--ml-panel`, `--ml-button`, `--ml-square` hold absolute URLs; a `url()` in a custom property resolves against the stylesheet using it
+  (`/_app/immutable/assets/` in the build), which gave 404s for the panel, button and square art on Stake Engine.

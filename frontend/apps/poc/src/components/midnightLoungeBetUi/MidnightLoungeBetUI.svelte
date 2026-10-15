@@ -161,17 +161,19 @@
 		const toward = (ax: number, x: number, y: number) => [ax + (x - ax) * K, 720 + (y - 720) * K] as const;
 		const bet = box('bet_background', ...toward(1280, 804, 614), 286 * K);
 		// +/- circles 3 % smaller than before and tucked further into the plate.
-		const d = bet.w * 0.194;
-		const m = bet.w * 0.068;
+		const d = bet.w * 0.194 * 0.95;
+		const m = bet.w * 0.068 + (bet.w * 0.194 * 0.05) / 2;
 		const cy = bet.y + (bet.h - d) / 2;
 		return {
 			bonus: box('bonus', ...toward(0, 9, 543), 207 * K),
 			balance: box('balance', ...toward(0, 6, 606), 347 * K),
 			menu: box('menu', ...toward(0, 3, 609), 96 * K, 91 * K),
 			win: (() => {
-				// WIN sits exactly under the middle of the slot (stage x = 640), whatever the scale.
+				// WIN sits exactly under the middle of the slot (stage x = 640) on the lower edge of the frame:
+				// its bottom is 6 px above the bottom edge of the stage, where the frame ends.
 				const w = 261 * K;
-				return box('bet_background', 640 - w / 2, 720 + (617 - 720) * K, w);
+				const h = box('bet_background', 0, 0, w).h;
+				return box('bet_background', 640 - w / 2, 720 - 6 - h, w);
 			})(),
 			bet,
 			minus: box('minus', bet.x + m, cy, d),

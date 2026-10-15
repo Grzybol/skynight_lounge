@@ -146,13 +146,13 @@ const WINDOW_FIT = WIN.h / PITCH.h;
 
 /**
  * Symbol height by tier as a fraction of the frame WINDOW height. Steps between regular tiers are 5 %
- * (low -> medium -> premium), tier step +50 % (4.2 -> 6.3 points of window height); scatter, Concierge / Mystery and feature symbols match premium.
+ * (low -> medium -> premium), symbols +5 % again, and the tier growth over low (+7.5 % / +15 %) raised by 50 % (+11.25 % / +22.5 %); scatter, Concierge / Mystery and feature symbols match premium.
  */
 export const V2_TIER_SCALE: Record<string, number> = {
-	low: 0.84 * WINDOW_FIT,
-	medium: 0.903 * WINDOW_FIT,
-	premium: 0.966 * WINDOW_FIT,
-	scatter: 0.966 * WINDOW_FIT,
-	concierge_mystery: 0.966 * WINDOW_FIT,
-	feature: 0.966 * WINDOW_FIT,
+	low: 0.882 * WINDOW_FIT,
+	medium: 0.9812 * WINDOW_FIT,
+	premium: 1.0805 * WINDOW_FIT,
+	scatter: 1.0805 * WINDOW_FIT,
+	concierge_mystery: 1.0805 * WINDOW_FIT,
+	feature: 1.0805 * WINDOW_FIT,
 };

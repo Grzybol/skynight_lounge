@@ -85,9 +85,12 @@
 
 	onMount(() => {
 		document.body.classList.add('theme-skyjump');
-		document.body.style.setProperty('--ml-panel', `url("${loungeUiArt.panel}")`);
-		document.body.style.setProperty('--ml-button', `url("${loungeUiArt.button}")`);
-		document.body.style.setProperty('--ml-square', `url("${loungeUiArt.square}")`);
+		// A url() inside a custom property resolves against the stylesheet that uses it (/_app/immutable/assets/ in the
+		// build), so the paths must be absolute.
+		const abs = (path: string) => `url("${new URL(path, document.baseURI).href}")`;
+		document.body.style.setProperty('--ml-panel', abs(loungeUiArt.panel));
+		document.body.style.setProperty('--ml-button', abs(loungeUiArt.button));
+		document.body.style.setProperty('--ml-square', abs(loungeUiArt.square));
 		// social=true: restricted words are replaced everywhere the player can read them.
 		const stopSocial = stateUrlDerived.social() ? installSocialWording() : undefined;
 
