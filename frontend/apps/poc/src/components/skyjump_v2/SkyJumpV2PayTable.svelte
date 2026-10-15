@@ -1,6 +1,7 @@
 <script lang="ts">
 	import {
 		V2_CANONICAL_PAYTABLE,
+		V2_CONFIG,
 		V2_DEFAULT_BET_MODE,
 		V2_PAYLINE_IDS,
 		V2_PAYLINES,
@@ -11,6 +12,7 @@
 		markV2SymbolArtMissing,
 		markV2SymbolArtReady,
 		v2SymbolVisual,
+		v2TileUrl,
 	} from '../../game/skyjump_v2/symbolAssetRegistry';
 	import { V2_MODAL_HEADER, V2_PANEL_DECOR } from '../../game/skyjump_v2/presentationLayout';
 	import { v2UiAssetUrl } from '../../game/skyjump_v2/uiAssetRegistry';
@@ -36,6 +38,27 @@
 		{ id: 'T5', name: loungeSymbolName('T5') },
 		{ id: 'T6', name: loungeSymbolName('T6') },
 	] as const;
+
+	/** Prize values of each Lounge Token tier (x bet), straight from the math config; Free Spins scale them. */
+	const TOKEN_VALUES = Object.fromEntries(
+		Object.entries(V2_CONFIG.flightTokens.valueWeights as Record<string, Record<string, number>>).map(
+			([tier, values]) => [`T${tier}`, Object.keys(values).map(Number).sort((a, b) => a - b)],
+		),
+	) as Record<string, number[]>;
+	const TOKEN_FS_SCALE = Number(
+		(V2_CONFIG.freeSpins as { economy?: { tokenValueScale?: number } }).economy?.tokenValueScale ?? 1,
+	);
+	const TOKEN_RARITY: Record<string, { label: string; color: string }> = {
+		T1: { label: 'Common', color: '#b9d3a0' },
+		T2: { label: 'Uncommon', color: '#7fd1c8' },
+		T3: { label: 'Rare', color: '#7fb0ff' },
+		T4: { label: 'Very rare', color: '#c49bff' },
+		T5: { label: 'Epic', color: '#ff9f6b' },
+		T6: { label: 'Legendary', color: '#ff5d73' },
+	};
+	const fmtX = (value: number) => `${value.toLocaleString('en-US')}×`;
+	const fmtValues = (id: string, scale = 1) =>
+		(TOKEN_VALUES[id] ?? []).map((value) => fmtX(Math.round(value * scale * 100) / 100)).join(' · ');
 
 	const FEATURE_CARDS = [
 		{
@@ -167,151 +190,6 @@
 		</header>
 
 		<div class="scroll-body" data-test="skyjump-v2-paytable-scroll">
-			<section class="block">
-				<img class="block-header" src={sectionHeaderUrl('regular_symbols')} alt="Regular symbols" draggable="false" />
-				<p class="lede">
-					Pays 3, 4, or 5 of a kind left to right on a payline. Highest length wins per line.
-				</p>
-				<div class="symbol-grid">
-					{#each V2_REGULAR_SYMBOLS as symbol}
-						{@const visual = v2SymbolVisual(symbol.id)}
-						{@const tile = visual.placeholder}
-						{@const awards = V2_CANONICAL_PAYTABLE.awards[symbol.id]}
-						{@const showArt = Boolean(visual.url && artReady[symbol.id] && !artBroken[symbol.id])}
-						<article class="symbol-card">
-							<span
-								class="swatch"
-								style:background={showArt ? 'transparent' : tile.fill}
-								style:color={tile.ink}
-							>
-								{#if visual.url && !artBroken[symbol.id]}
-									<img
-										class:ready={showArt}
-										src={visual.url}
-										alt=""
-										onload={() => onArtLoad(symbol.id)}
-										onerror={() => onArtError(symbol.id)}
-									/>
-								{/if}
-								{#if !showArt}
-									{tile.label}
-								{/if}
-							</span>
-							<div class="symbol-copy">
-								<strong>{symbol.id}</strong>
-								<span class="name">{loungeSymbolName(symbol.id, displayName(symbol.name))}</span>
-								{#if awards}
-									<ul class="awards">
-										<li><em>3</em> {formatAward(awards['3'])}×</li>
-										<li><em>4</em> {formatAward(awards['4'])}×</li>
-										<li><em>5</em> {formatAward(awards['5'])}×</li>
-									</ul>
-								{/if}
-							</div>
-						</article>
-					{/each}
-				</div>
-			</section>
-
-			<section class="block">
-				<img class="block-header" src={sectionHeaderUrl('paylines_rules')} alt="Payline rules" draggable="false" />
-				<ul class="rule-list">
-					<li><strong>28</strong> fixed lines on every spin</li>
-					<li>Wins evaluate <strong>left → right</strong></li>
-					<li>A win must <strong>start on reel 1</strong> (leftmost)</li>
-					<li>
-						At least <strong>3 matching</strong> symbols on adjacent reels — gaps break the line
-					</li>
-					<li>Only the <strong>highest length</strong> pays on each line (3 / 4 / 5)</li>
-					<li><strong>Multiple lines</strong> can win together; overlapping cells are fine</li>
-					<li><strong>VIP Invitation</strong> (scatter) is never evaluated on lines</li>
-				</ul>
-			</section>
-
-			<section class="block">
-				<img class="block-header" src={sectionHeaderUrl('features')} alt="Features" draggable="false" />
-				<div class="feature-grid">
-					{#each FEATURE_CARDS as feature}
-						{@const visual = v2SymbolVisual(feature.id)}
-						{@const tile = visual.placeholder}
-						{@const showArt = Boolean(visual.url && artReady[feature.id] && !artBroken[feature.id])}
-						<article class="feature-card">
-							<span
-								class="swatch lg"
-								style:background={showArt ? 'transparent' : tile.fill}
-								style:color={tile.ink}
-							>
-								{#if visual.url && !artBroken[feature.id]}
-									<img
-										class:ready={showArt}
-										src={visual.url}
-										alt=""
-										onload={() => onArtLoad(feature.id)}
-										onerror={() => onArtError(feature.id)}
-									/>
-								{/if}
-								{#if !showArt}
-									{tile.label}
-								{/if}
-							</span>
-							<div>
-								<strong>{feature.title}</strong>
-								<p>{feature.body}</p>
-							</div>
-						</article>
-					{/each}
-				</div>
-
-				<div class="token-row">
-					{#each TOKEN_TIERS as token}
-						{@const visual = v2SymbolVisual(token.id)}
-						{@const tile = visual.placeholder}
-						{@const showArt = Boolean(visual.url && artReady[token.id] && !artBroken[token.id])}
-						<span class="token-chip" title={token.name}>
-							<span
-								class="swatch sm"
-								style:background={showArt ? 'transparent' : tile.fill}
-								style:color={tile.ink}
-							>
-								{#if visual.url && !artBroken[token.id]}
-									<img
-										class:ready={showArt}
-										src={visual.url}
-										alt=""
-										onload={() => onArtLoad(token.id)}
-										onerror={() => onArtError(token.id)}
-									/>
-								{/if}
-								{#if !showArt}
-									{tile.label}
-								{/if}
-							</span>
-							{token.id}
-						</span>
-					{/each}
-				</div>
-			</section>
-
-			<section class="block callout">
-				<img class="block-header" src={sectionHeaderUrl('tokens_collectors_max_win')} alt="Tokens, collectors &amp; max win" draggable="false" />
-				<ul class="rule-list">
-					<li>
-						Lounge Tokens <strong>do not auto-pay</strong> — they wait for a Lounge Dealer or Pit Boss
-					</li>
-					<li>The Pit Boss runs <strong>two collection passes</strong></li>
-					<li>Golden Spotlight changes a neighbour token’s <strong>effective</strong> value only</li>
-					<li>
-						Black Access Pass charges / upgrades
-						<strong>{loungeShown('RUN_UP')} · {loungeShown('TAKEOFF')} · {loungeShown('FLIGHT')}</strong>
-					</li>
-					<li>
-						<strong>Midnight Crown</strong> ≠ <strong>T6 Royal Ruby</strong> — different
-						symbols, different outcomes
-					</li>
-					<li>Terminal max win: <strong>{maxWinX.toLocaleString('en-US')}×</strong> bet</li>
-				</ul>
-			</section>
-
 			<section class="block inspector">
 				<img class="block-header" src={sectionHeaderUrl('payline_inspector')} alt="Payline inspector" draggable="false" />
 				<p class="lede">Preview any of the {V2_PAYLINE_IDS.length} fixed lines on the 5×5 grid.</p>
@@ -376,6 +254,164 @@
 					Line {selectedLineId}: rows [{selectedRows.join(', ')}] · reel 1 → 5
 				</p>
 			</section>
+
+			<section class="block">
+				<img class="block-header" src={sectionHeaderUrl('regular_symbols')} alt="Regular symbols" draggable="false" />
+				<p class="lede">
+					Pays 3, 4, or 5 of a kind left to right on a payline. Highest length wins per line.
+				</p>
+				<div class="symbol-grid">
+					{#each V2_REGULAR_SYMBOLS as symbol}
+						{@const visual = v2SymbolVisual(symbol.id)}
+						{@const tile = visual.placeholder}
+						{@const awards = V2_CANONICAL_PAYTABLE.awards[symbol.id]}
+						{@const showArt = Boolean(visual.url && artReady[symbol.id] && !artBroken[symbol.id])}
+						<article class="symbol-card">
+							<span
+								class="swatch"
+								style:background-image={`url(${v2TileUrl(symbol.id)})`}
+								style:background-color={showArt ? 'transparent' : tile.fill}
+								style:color={tile.ink}
+							>
+								{#if visual.url && !artBroken[symbol.id]}
+									<img
+										class:ready={showArt}
+										src={visual.url}
+										alt=""
+										onload={() => onArtLoad(symbol.id)}
+										onerror={() => onArtError(symbol.id)}
+									/>
+								{/if}
+								{#if !showArt}
+									{tile.label}
+								{/if}
+							</span>
+							<div class="symbol-copy">
+								<strong>{symbol.id}</strong>
+								<span class="name">{loungeSymbolName(symbol.id, displayName(symbol.name))}</span>
+								
+							</div>
+							{#if awards}
+									<ul class="awards">
+										<li><span class="cnt">3 symbols</span><b class="mult">{formatAward(awards['3'])}×</b></li>
+										<li><span class="cnt">4 symbols</span><b class="mult">{formatAward(awards['4'])}×</b></li>
+										<li><span class="cnt">5 symbols</span><b class="mult">{formatAward(awards['5'])}×</b></li>
+									</ul>
+								{/if}
+						</article>
+					{/each}
+				</div>
+			</section>
+
+			<section class="block">
+				<img class="block-header" src={sectionHeaderUrl('paylines_rules')} alt="Payline rules" draggable="false" />
+				<ul class="rule-list">
+					<li><strong>28</strong> fixed lines on every spin</li>
+					<li>Wins evaluate <strong>left → right</strong></li>
+					<li>A win must <strong>start on reel 1</strong> (leftmost)</li>
+					<li>
+						At least <strong>3 matching</strong> symbols on adjacent reels — gaps break the line
+					</li>
+					<li>Only the <strong>highest length</strong> pays on each line (3 / 4 / 5)</li>
+					<li><strong>Multiple lines</strong> can win together; overlapping cells are fine</li>
+					<li><strong>VIP Invitation</strong> (scatter) is never evaluated on lines</li>
+				</ul>
+			</section>
+
+			<section class="block">
+				<img class="block-header" src={sectionHeaderUrl('features')} alt="Features" draggable="false" />
+				<div class="feature-grid">
+					{#each FEATURE_CARDS as feature}
+						{@const visual = v2SymbolVisual(feature.id)}
+						{@const tile = visual.placeholder}
+						{@const showArt = Boolean(visual.url && artReady[feature.id] && !artBroken[feature.id])}
+						<article class="feature-card">
+							<span
+								class="swatch lg"
+								style:background-image={`url(${v2TileUrl(feature.id)})`}
+								style:background-color={showArt ? 'transparent' : tile.fill}
+								style:color={tile.ink}
+							>
+								{#if visual.url && !artBroken[feature.id]}
+									<img
+										class:ready={showArt}
+										src={visual.url}
+										alt=""
+										onload={() => onArtLoad(feature.id)}
+										onerror={() => onArtError(feature.id)}
+									/>
+								{/if}
+								{#if !showArt}
+									{tile.label}
+								{/if}
+							</span>
+							<div>
+								<strong>{feature.title}</strong>
+								<p>{feature.body}</p>
+							</div>
+						</article>
+					{/each}
+				</div>
+
+					<div class="token-list" data-test="skyjump-v2-token-list">
+						{#each TOKEN_TIERS as token}
+							{@const visual = v2SymbolVisual(token.id)}
+							{@const tile = visual.placeholder}
+							{@const showArt = Boolean(visual.url && artReady[token.id] && !artBroken[token.id])}
+							{@const rarity = TOKEN_RARITY[token.id]}
+							<article class="token-card" style:--rarity={rarity.color}>
+								<span
+									class="swatch lg"
+									style:background-image={`url(${v2TileUrl(token.id)})`}
+									style:background-color={showArt ? 'transparent' : tile.fill}
+									style:color={tile.ink}
+								>
+									{#if visual.url && !artBroken[token.id]}
+										<img
+											class:ready={showArt}
+											src={visual.url}
+											alt=""
+											onload={() => onArtLoad(token.id)}
+											onerror={() => onArtError(token.id)}
+										/>
+									{/if}
+									{#if !showArt}
+										{tile.label}
+									{/if}
+								</span>
+								<div class="token-copy">
+									<strong>{token.id} · {token.name}</strong>
+									<span class="rarity">{rarity.label}</span>
+									<p>
+										Prize <b class="mult">{fmtValues(token.id)}</b> bet
+									</p>
+									<p class="fs-note">In Free Spins: values <b>×{TOKEN_FS_SCALE}</b> (round max win still applies)</p>
+								</div>
+							</article>
+						{/each}
+					</div>
+			</section>
+
+			<section class="block callout">
+				<img class="block-header" src={sectionHeaderUrl('tokens_collectors_max_win')} alt="Tokens, collectors &amp; max win" draggable="false" />
+				<ul class="rule-list">
+					<li>
+						Lounge Tokens <strong>do not auto-pay</strong> — they wait for a Lounge Dealer or Pit Boss
+					</li>
+					<li>The Pit Boss runs <strong>two collection passes</strong></li>
+					<li>Golden Spotlight changes a neighbour token’s <strong>effective</strong> value only</li>
+					<li>
+						Black Access Pass charges / upgrades
+						<strong>{loungeShown('RUN_UP')} · {loungeShown('TAKEOFF')} · {loungeShown('FLIGHT')}</strong>
+					</li>
+					<li>
+						<strong>Midnight Crown</strong> ≠ <strong>T6 Royal Ruby</strong> — different
+						symbols, different outcomes
+					</li>
+					<li>Terminal max win: <strong>{maxWinX.toLocaleString('en-US')}×</strong> bet</li>
+				</ul>
+			</section>
+
 		</div>
 	</div>
 </section>
@@ -541,7 +577,7 @@
 
 	.symbol-grid {
 		display: grid;
-		grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+		grid-template-columns: repeat(auto-fill, minmax(176px, 1fr));
 		gap: 0.45rem;
 	}
 
@@ -554,6 +590,19 @@
 		border-radius: 10px;
 		background: rgba(18, 8, 12, 0.55);
 		border: 1px solid rgba(212, 168, 92, 0.18);
+	}
+
+	/* Symbol cards: picture and name on top, the three awards under them across the full width. */
+	.symbol-card {
+		display: grid;
+		grid-template-columns: auto minmax(0, 1fr);
+		align-items: center;
+	}
+
+	.symbol-card .awards {
+		grid-column: 1 / -1;
+		padding-top: 0.25rem;
+		border-top: 1px solid rgba(212, 168, 92, 0.18);
 	}
 
 	.symbol-copy {
@@ -574,21 +623,81 @@
 	}
 
 	.awards {
-		display: flex;
-		flex-wrap: wrap;
-		gap: 0.3rem;
-		margin: 0.15rem 0 0;
+		display: grid;
+		gap: 0.12rem;
+		margin: 0.2rem 0 0;
 		padding: 0;
 		list-style: none;
-		font-size: 0.936rem;
+		font-size: 0.9rem;
 		font-weight: 700;
 	}
 
-	.awards em {
-		font-style: normal;
-		color: var(--muted);
+	.awards li {
+		display: flex;
+		align-items: baseline;
+		justify-content: space-between;
+		gap: 0.5rem;
+	}
+
+	/* How many symbols: the normal text colour. What they pay: gold and a little bigger. */
+	.awards .cnt {
+		color: var(--ice);
 		font-weight: 600;
-		margin-right: 0.12rem;
+	}
+
+	.mult {
+		color: #ffd24d;
+		font-size: 1.2em;
+		font-weight: 900;
+		letter-spacing: 0.02em;
+		text-shadow: 0 1px 0 rgba(74, 20, 0, 0.85);
+	}
+
+	.token-list {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+		gap: 0.45rem;
+	}
+
+	.token-card {
+		display: flex;
+		gap: 0.5rem;
+		align-items: flex-start;
+		padding: 0.45rem;
+		border-radius: 10px;
+		background: rgba(18, 8, 12, 0.55);
+		border: 1px solid color-mix(in srgb, var(--rarity, #d4a85c) 55%, transparent);
+		box-shadow: inset 3px 0 0 var(--rarity, #d4a85c);
+	}
+
+	.token-copy {
+		display: grid;
+		gap: 0.1rem;
+		min-width: 0;
+	}
+
+	.token-copy strong {
+		color: #f6ead0;
+		font-size: 1.01rem;
+	}
+
+	.token-copy .rarity {
+		color: var(--rarity, var(--gold));
+		font-size: 0.82rem;
+		font-weight: 800;
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
+	}
+
+	.token-copy p {
+		margin: 0;
+		color: var(--muted);
+		font-size: 0.93rem;
+		line-height: 1.3;
+	}
+
+	.token-copy .fs-note b {
+		color: #ffe9a0;
 	}
 
 	.feature-grid {
@@ -643,8 +752,10 @@
 	.swatch {
 		position: relative;
 		display: grid;
-		width: 36px;
-		height: 36px;
+		width: 46px;
+		height: 46px;
+		background-size: 100% 100%;
+		background-repeat: no-repeat;
 		flex: 0 0 auto;
 		place-items: center;
 		border-radius: 9px;
@@ -655,8 +766,8 @@
 	}
 
 	.swatch.lg {
-		width: 40px;
-		height: 40px;
+		width: 52px;
+		height: 52px;
 	}
 
 	.swatch.sm {
@@ -668,9 +779,9 @@
 
 	.swatch img {
 		position: absolute;
-		inset: 0;
-		width: 100%;
-		height: 100%;
+		inset: 7%;
+		width: 86%;
+		height: 86%;
 		object-fit: contain;
 		opacity: 0;
 	}

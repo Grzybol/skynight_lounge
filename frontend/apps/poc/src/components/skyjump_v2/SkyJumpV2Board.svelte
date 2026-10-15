@@ -288,10 +288,10 @@
 	const gap = 0;
 	const framePad = 0;
 	/**
-	 * Slot width (px @1280): the frame art is scaled so the 5x5 playfield is this wide. 555 = 5 x 176.5 x (720 / 1145):
-	 * the crest sits on the top edge and the frame's visible bottom (art y 1145) lands on the bottom edge of the stage.
+	 * Slot width (px @1280): the frame art is scaled so the 5x5 playfield is this wide. 548 = 5 x 170.6 x (720 / 1120):
+	 * the crest sits on the top edge and the frame's visible bottom (art y 1120) lands on the bottom edge of the stage.
 	 */
-	const BOARD_GRID_W = 555;
+	const BOARD_GRID_W = 548;
 	// Not rounded: a rounded cell height drifts away from the frame's 133.2 art-px row pitch (up to 2.5 px by the last row).
 	const cellW = $derived(Math.max(22, px(BOARD_GRID_W) / 5));
 	const cellH = $derived(Math.max(22, cellW / V2_SLOT_BOARD_FRAME.cellAspect));

@@ -445,3 +445,15 @@ Fixed after the guideline review (verified against a local mock RGS, a productio
 - Headers from `skynight_lounge_headers_named.zip` (2048x682): the 15 `hdr_*` plus `hdr_paytable`, `hdr_info`, `hdr_how_to_play`, which replace
   `skyjump_v2/ui/headers/ui_header_paytable|info|how_to_play.png` (same paths, so no code change).
 - The stretched-copy background under the 9-slice art stays only on the intro CTA; on the flyout buttons it showed as a second outline (EN / PL), so it is removed again there and on the panels.
+
+## Frame piecewise, BetUI bottom line, paytable (latest)
+
+- `scene/slot_background_1.png` is `slot_grid_130px_piecewise.png` (1286x1174, windows ~130 px): rows on an even 171 pitch, columns as measured (`COL_CENTERS`);
+  `BOARD_GRID_W` 548 (frame bottom on the stage's bottom edge before the 18 px raise). Frame gems, wind mask and the wind shader's art size regenerated for it.
+- BetUI: the lowest opaque pixels of balance / menu (left), spin and bet (right) and WIN all sit on stage y = 719 (`BOTTOM`); bonus, turbo and auto move with their cluster.
+- Default master volume 50 (music and effects stay 75). Woman brightness 0.907 (-3 %).
+- Paytable: Payline Inspector first; regular symbols show "3 / 4 / 5 symbols" in the normal colour and the multiplier in bigger gold, on the tier tile of the symbol;
+  token cards T1-T6 list the prize values from the math config (valueWeights) and the Free Spins x1.5 (`freeSpins.economy.tokenValueScale`).
+- Checked against `skyjump_v2_config.json` / the engines: 28 lines, awards, 10 initial / 40 max Free Spins, +5 spins and a room step on 3+ invitations in Free Spins
+  (rule U1), 3/4/5 invitations -> Large Hill / Ski Flying / World Cup and the V -> Perfect V, persistence from Ski Flying, guaranteed VIP Upgrade from World Cup,
+  guaranteed Concierge in Perfect V, Encore and Black Access Pass only in Free Spins, max win 50,000x.

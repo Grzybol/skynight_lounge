@@ -1,7 +1,9 @@
 const DEFAULT_VOLUME_VALUE = 75;
+/** The game starts at half of the master volume. */
+const DEFAULT_MASTER_VOLUME_VALUE = 50;
 
 export const stateSound = $state({
-	volumeValueMaster: DEFAULT_VOLUME_VALUE,
+	volumeValueMaster: DEFAULT_MASTER_VOLUME_VALUE,
 	volumeValueMusic: DEFAULT_VOLUME_VALUE,
 	volumeValueSoundEffect: DEFAULT_VOLUME_VALUE,
 });

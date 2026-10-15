@@ -97,24 +97,24 @@ export const V2_PANEL_DECOR = {
  * Scale 1 keeps that hole on the grid — about 6% tighter than the previous 1.078.
  */
 /**
- * `slot_background_1.png` (1312x1199, `slot_frame_vine_stone_5x5_132ish_fixed.png`): 25 windows of 130 +-3 art px.
+ * `slot_background_1.png` (1286x1174, `slot_grid_130px_piecewise.png`): 25 windows of about 130 art px.
  * Rows are snapped to an even pitch (a tile has the same vertical offset in every row, so nothing shifts when a reel
  * stops); column centres are the measured ones (a reel keeps its own column, so they cannot cause a jump).
  * Drawn as one piece (SlotFrameLayer, one band).
  */
 export const V2_FRAME_BANDS = {
-	srcH: 1199,
-	outH: 1199,
-	bands: [{ srcStart: 0, srcEnd: 1199, outStart: 0, outEnd: 1199 }],
+	srcH: 1174,
+	outH: 1174,
+	bands: [{ srcStart: 0, srcEnd: 1174, outStart: 0, outEnd: 1174 }],
 } as const;
 
-const ART = { w: 1312, h: 1199 };
-const PITCH = { w: 176.5, h: 176.7 };
+const ART = { w: 1286, h: 1174 };
+const PITCH = { w: 170.6, h: 171 };
 /** Nominal window (symbol reference size) and the tier tile, in art px. The tile is larger and sits under the frame lattice. */
 const WIN = { w: 130, h: 130 };
 const TILE = 135;
-const COL_CENTERS = [303.4, 484.6, 656.6, 829.0, 1009.3];
-const ROW_CENTER0 = 270.2;
+const COL_CENTERS = [301.7, 476.5, 642.6, 809.5, 984.2];
+const ROW_CENTER0 = 269.2;
 const GRID_ORIGIN = { x: COL_CENTERS[2] - 2.5 * PITCH.w, y: ROW_CENTER0 + 2 * PITCH.h - 2.5 * PITCH.h };
 
 export const V2_SLOT_BOARD_FRAME = {

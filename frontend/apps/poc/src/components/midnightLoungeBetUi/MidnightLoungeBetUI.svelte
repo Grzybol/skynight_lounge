@@ -159,7 +159,11 @@
 		// the WIN plate towards the bottom centre.
 		const K = 0.855;
 		const toward = (ax: number, x: number, y: number) => [ax + (x - ax) * K, 720 + (y - 720) * K] as const;
-		const spin = box('spin', ...toward(1280, 1082, 501), 193 * K);
+		// Bottom line shared with the WIN plate (its lowest opaque pixel): 719 on the 720 px stage.
+		const BOTTOM = 719;
+		const spin0 = box('spin', ...toward(1280, 1082, 501), 193 * K);
+		const dyR = BOTTOM - (spin0.y + spin0.h);
+		const spin = box('spin', spin0.x, spin0.y + dyR, 193 * K);
 		/** SPIN is a disc: the controls to its left keep the same gap to its curve (measured at their closest point). */
 		const spinCx = spin.x + spin.w / 2;
 		const spinCy = spin.y + spin.h / 2;
@@ -173,29 +177,36 @@
 		};
 		const placed = (key: HudKey, fromX: number, fromY: number, w: number) => {
 			const probe = box(key, 0, 0, w);
-			const [, y] = toward(1280, fromX, fromY);
+			const [, y0] = toward(1280, fromX, fromY);
+			const y = y0 + dyR;
 			return box(key, leftOfSpin(w, y, probe.h), y, w);
 		};
 		// BET plate and its content 10 % smaller, centred on the old row.
 		const betOld = box('bet_background', ...toward(1280, 804, 614), 286 * K);
 		const betW = betOld.w * 0.9;
 		const betH = box('bet_background', 0, 0, betW).h;
-		const betY = betOld.y + betOld.h / 2 - betH / 2;
+		const betY = BOTTOM - betH;
 		const bet = box('bet_background', leftOfSpin(betW, betY, betH), betY, betW);
 		// +/- circles: another 5 % smaller; their centres keep their distance from the plate edge.
 		const d = bet.w * 0.194 * 0.95 * 0.95;
 		const m = bet.w * 0.165 - d / 2;
 		const cy = bet.y + (bet.h - d) / 2;
+		// Left part: balance and menu end on the same line, the bonus plate moves with them.
+		const balance0 = box('balance', ...toward(0, 6, 606), 347 * K);
+		const menu0 = box('menu', ...toward(0, 3, 609), 96 * K, 91 * K);
+		const dyL = BOTTOM - Math.max(balance0.y + balance0.h, menu0.y + menu0.h);
+		const lowered = (r: HudBox): HudBox => ({ ...r, y: r.y + dyL });
+		const bonus0 = box('bonus', ...toward(0, 9, 543), 207 * K);
 		return {
-			bonus: box('bonus', ...toward(0, 9, 543), 207 * K),
-			balance: box('balance', ...toward(0, 6, 606), 347 * K),
-			menu: box('menu', ...toward(0, 3, 609), 96 * K, 91 * K),
+			bonus: lowered(bonus0),
+			balance: lowered(balance0),
+			menu: lowered(menu0),
 			win: (() => {
 				// WIN sits exactly under the middle of the slot (stage x = 640) on the lower edge of the frame:
-				// its bottom is 1 px above the bottom edge of the stage.
+				// its lowest pixel is on the shared bottom line.
 				const w = 261 * K;
 				const h = box('bet_background', 0, 0, w).h;
-				return box('bet_background', 640 - w / 2, 720 - 1 - h, w);
+				return box('bet_background', 640 - w / 2, BOTTOM - h, w);
 			})(),
 			bet,
 			minus: box('minus', bet.x + m, cy, d),

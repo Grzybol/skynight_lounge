@@ -51,7 +51,7 @@
 		},
 		{
 			title: 'Lounge Tokens',
-			body: 'T1 Bronze Guest through T6 Royal Ruby carry prize values. They do not pay alone — a Lounge Dealer or Pit Boss must collect them in the same feature chain. Uncollected tokens do not bank for later spins.',
+			body: 'T1 Bronze Guest (1–4× bet) through T6 Royal Ruby (10,000–50,000× bet) carry prize values; in Free Spins they are multiplied by 1.5. They do not pay alone — a Lounge Dealer or Pit Boss must collect them in the same feature chain. Uncollected tokens do not bank for later spins.',
 		},
 		{
 			title: 'Spotlight & VIP Upgrade',

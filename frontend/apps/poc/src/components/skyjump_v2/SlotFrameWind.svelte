@@ -19,11 +19,11 @@
 
 	const { src, maskSrc, width, height, testId }: Props = $props();
 
-	/** How far the foliage moves, in art pixels of the 1312 x 1199 frame. */
+	/** How far the foliage moves, in art pixels of the 1286 x 1174 frame. */
 	const AMPLITUDE = 1.5;
 	/** Art size of the frame (the shader works in art pixels). */
-	const ART_W = 1312;
-	const ART_H = 1199;
+	const ART_W = 1286;
+	const ART_H = 1174;
 
 	let canvas = $state<HTMLCanvasElement | null>(null);
 	let ready = $state(false);
