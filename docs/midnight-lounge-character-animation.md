@@ -428,3 +428,13 @@ Fixed after the guideline review (verified against a local mock RGS, a productio
 - Win celebration: fixed one-column stage, so the title no longer moves when the amount gets wider. Amounts show at most 2 decimals (JPY 0).
 - Intro CTA sits on the horizontal plate; settings ON/OFF plates are not clipped; plants behind the slot are ~60 % hidden.
 - `exports/paytable_info_headers.zip` (not in git): all header images of the Paytable / Info / Buy Bonus screens with a README of where each is used.
+
+## Frame wind, calmer crest ruby, new headers (latest)
+
+- `SlotFrameWind.svelte` draws the slot frame with WebGL2; the foliage and golden thorns around the windows sway through an animated displacement
+  (3 art px), limited by `scene/slot_frame_wind_mask.png` (white = leaves / thorns around the windows, black = pillars, crest, base). The plain image layer is
+  the fallback (no WebGL2, reduced motion, before the first frame). The mask is made from the frame alpha (distance to the window holes); regenerate it
+  when the frame art changes.
+- Crest ruby: every 3-7 s, 0.7-1.6 s long, about half the growth of the small gems; the per-symbol flashing while rolling and the double flash are gone.
+- 9-slice plates (panels, buttons, intro CTA) have a stretched copy of the art under the slices, so no transparent cut line shows through.
+- Headers of Paytable / Info / Buy Bonus replaced by `paytable_info_headers_cartoon_renamed.zip` (the titles `ui_header_paytable/info/how_to_play` were not in the pack).

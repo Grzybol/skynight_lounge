@@ -324,6 +324,8 @@
 		box-sizing: content-box;
 		padding: 0.35em 1.1em 0.4em;
 		border: 1px solid transparent;
+		/* A stretched copy of the plate sits under the slices, so no cut line can show through. */
+		background: var(--ml-button) center / 100% 100% no-repeat;
 		border-image: var(--ml-button) 34 fill / 18px stretch;
 		filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.5));
 		opacity: 0;

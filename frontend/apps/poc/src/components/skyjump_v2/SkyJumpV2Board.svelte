@@ -5,7 +5,7 @@
 	import { waitForTimeout } from 'utils-shared/wait';
 
 	import { getContext } from '../../game/context';
-	import { loungeShown, loungeSlotFrameSrc, loungeSlotWindowSrc } from '../../game/midnightLoungeTheme';
+	import { loungeShown, loungeSlotFrameSrc, loungeSlotWindMaskSrc, loungeSlotWindowSrc } from '../../game/midnightLoungeTheme';
 	import { V2_PAYLINES, V2_PAYLINE_IDS, V2_SCATTER_ID } from '../../game/skyjump_v2/config';
 	import { bonusHud, bonusShowsTargets, tierLabel } from '../../game/skyjump_v2/bonusHud.svelte';
 	import { V2_PLACEHOLDERS, reelFillerBand, v2Placeholder } from '../../game/skyjump_v2/placeholders';
@@ -42,7 +42,7 @@
 	import { statusLabel as playerLabel, statusSub as playerSub } from '../../game/skyjump_v2/statusText';
 	import { warmGate } from '../../game/loungeCharacters/warmGate';
 	import GemPulse from './GemPulse.svelte';
-	import SlotFrameLayer from './SlotFrameLayer.svelte';
+	import SlotFrameWind from './SlotFrameWind.svelte';
 	import {
 		V2_FRAME_WINDOWS,
 		V2_PAYLINE_FX,
@@ -82,8 +82,6 @@
 	/** Long presentation strips. Null uses the settled board column. */
 	let spinIds = $state<(string[] | null)[]>([null, null, null, null, null]);
 	let spinOffset = $state([0, 0, 0, 0, 0]);
-	/** Counts symbols entering at the top of a rolling reel (drives the crest ruby flash). */
-	let crestKick = $state(0);
 	const anyRolling = $derived(spinning.some(Boolean));
 	let reelSpinToken = 0;
 	let wins = $state<V2LineWin[]>([]);
@@ -629,7 +627,6 @@
 			spinIds = [null, null, null, null, null];
 			spinOffset = [0, 0, 0, 0, 0];
 
-			const lastCell = [-1, -1, -1, -1, -1];
 			while (landed.some((done) => !done)) {
 				if (token !== reelSpinToken) return;
 				const now = await new Promise<number>((resolve) => {
@@ -676,11 +673,6 @@
 							playV2AudioHook('SCATTER_LAND', { catchUp: false });
 						}
 					} else {
-						const cell = Math.floor(Math.abs(offset) / pitch);
-						if (cell !== lastCell[reel]) {
-							lastCell[reel] = cell;
-							crestKick += 1;
-						}
 						spinOffset[reel] = offset;
 						const nextPace = phaseElapsed >= travelMs ? 'land' : reelTravelPace(phaseElapsed, travelMs);
 						if (reelPace[reel] !== nextPace) reelPace[reel] = nextPace;
@@ -1173,13 +1165,14 @@
 				style:left={`${slotFrameLeft}px`}
 				style:top={`${slotFrameTop}px`}
 			>
-				<SlotFrameLayer
+				<SlotFrameWind
 					src={slotFrameSrc}
+					maskSrc={loungeSlotWindMaskSrc}
 					width={slotFrameW}
 					height={slotFrameH}
 					testId="skyjump-v2-slot-frame"
 				/>
-				<GemPulse width={slotFrameW} height={slotFrameH} rolling={anyRolling} kick={crestKick} />
+				<GemPulse width={slotFrameW} height={slotFrameH} rolling={anyRolling} />
 			</div>
 			<div class="grid" class:rejumping aria-hidden="true">
 				{#each Array.from({ length: 5 }, (_, reel) => reel) as reel}

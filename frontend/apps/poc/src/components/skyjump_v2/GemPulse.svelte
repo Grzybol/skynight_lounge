@@ -5,11 +5,10 @@
 	/**
 	 * Red gems of the slot frame pulse: a little bigger and brighter for 0.9 s. Every 1-3 s one to three of the small gems
 	 * (never one that is still pulsing) start.
-	 * The big crest ruby has its own controller: it fires more often with varied length and strength, and while the reels
-	 * roll it flashes (faster) with every symbol that enters at the top of the slot (`kick` counts those symbols).
+	 * The big crest ruby has its own, calmer controller (rare, varied length, half the growth); it rests while the reels roll.
 	 */
-	type Props = { width: number; height: number; rolling?: boolean; kick?: number };
-	const { width, height, rolling = false, kick = 0 }: Props = $props();
+	type Props = { width: number; height: number; rolling?: boolean };
+	const { width, height, rolling = false }: Props = $props();
 
 	const ART = V2_FRAME_WINDOWS.art;
 	const PULSE_MS = 900;
@@ -58,42 +57,22 @@
 		};
 	});
 
-	// Crest ruby, idle: every 0.6-2 s, 0.5-1.8 s long, sometimes a quick double flash.
+	// Crest ruby: rare (every 3-7 s), 0.7-1.6 s long, and only about half as much growth as the small gems.
 	$effect(() => {
 		if (typeof window === 'undefined' || reduced()) return;
 		let stopped = false;
 		let timer: ReturnType<typeof setTimeout>;
 		const loop = () => {
 			if (stopped) return;
-			if (!rolling) {
-				const ms = 500 + Math.random() * 1300;
-				fireCrest(ms, 1.18 + Math.random() * 0.3, 1.5 + Math.random() * 0.9);
-				if (Math.random() < 0.25) {
-					setTimeout(() => !stopped && !rolling && fireCrest(380, 1.3, 2.2), ms * 0.85);
-				}
-			}
-			timer = setTimeout(loop, 600 + Math.random() * 1400);
+			if (!rolling) fireCrest(700 + Math.random() * 900, 1.07 + Math.random() * 0.1, 1.35 + Math.random() * 0.4);
+			timer = setTimeout(loop, 3000 + Math.random() * 4000);
 		};
-		timer = setTimeout(loop, 400);
+		timer = setTimeout(loop, 1500);
 		return () => {
 			stopped = true;
 			clearTimeout(timer);
 			clearTimeout(crestOffTimer);
 		};
-	});
-
-	// Crest ruby while the reels roll: one quick flash per new symbol at the top (at most one per 90 ms).
-	let lastKick = 0;
-	let lastKickAt = 0;
-	$effect(() => {
-		const k = kick;
-		if (k === lastKick) return;
-		lastKick = k;
-		if (reduced() || !rolling) return;
-		const now = Date.now();
-		if (now - lastKickAt < 90) return;
-		lastKickAt = now;
-		fireCrest(380, 1.32, 2.1);
 	});
 </script>
 
