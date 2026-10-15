@@ -34,18 +34,9 @@ export const normalisedAmountToBookEventAmount = (normalisedAmount: number) => {
 
 export const numberToFloat = (value: number) => Number.parseFloat(`${value}`);
 
-/** Decimals needed to show `value` exactly (up to 6), never fewer than `minimum`. */
-const neededDecimals = (value: number, minimum: number) => {
-	for (let digits = minimum; digits < 6; digits += 1) {
-		if (Math.abs(Number(value.toFixed(digits)) - value) < 1e-9) return digits;
-	}
-	return 6;
-};
-
 export const numberToCurrencyString = (value: number) => {
 	if (stateBet.currency in NO_LOCALISATION_CURRENCY_MAP) {
-		const digits = neededDecimals(value, 2);
-		return `${numberToFloat(value).toFixed(digits)} ${NO_LOCALISATION_CURRENCY_MAP[stateBet.currency]}`;
+		return `${numberToFloat(value).toFixed(2)} ${NO_LOCALISATION_CURRENCY_MAP[stateBet.currency]}`;
 	}
 
 	const currency = stateBet.currency || 'USD';
@@ -57,8 +48,8 @@ export const numberToCurrencyString = (value: number) => {
 	} catch {
 		/* unknown currency: keep 2 */
 	}
-	// Sub-cent payouts get the decimals they need so the shown amount matches the RGS amount.
-	const digits = neededDecimals(value, defaultDigits);
+	// Amounts are shown with the currency's own decimals (2 for USD / EUR, 0 for JPY), never more.
+	const digits = defaultDigits;
 
 	return new Intl.NumberFormat('en-US', {
 		minimumFractionDigits: digits,

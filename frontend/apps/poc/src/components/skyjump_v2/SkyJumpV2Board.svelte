@@ -82,6 +82,9 @@
 	/** Long presentation strips. Null uses the settled board column. */
 	let spinIds = $state<(string[] | null)[]>([null, null, null, null, null]);
 	let spinOffset = $state([0, 0, 0, 0, 0]);
+	/** Counts symbols entering at the top of a rolling reel (drives the crest ruby flash). */
+	let crestKick = $state(0);
+	const anyRolling = $derived(spinning.some(Boolean));
 	let reelSpinToken = 0;
 	let wins = $state<V2LineWin[]>([]);
 	let highlightKeys = $state<Set<string>>(new Set());
@@ -280,7 +283,7 @@
 	 * The larger frame is raised by this many px @1280x720 (its crest runs over the top edge) so the
 	 * last row ends at the BetUI instead of behind it.
 	 */
-	const BOARD_RISE = 0;
+	const BOARD_RISE = 18;
 	const availH = $derived(Math.max(120, maxBoardH + framePadEstimate * 2 + 4));
 	/** No CSS frame any more: the artwork provides all chrome, the grid is a flush 5x5 of cell pitches. */
 	const FRAME_BORDER = 0;
@@ -626,6 +629,7 @@
 			spinIds = [null, null, null, null, null];
 			spinOffset = [0, 0, 0, 0, 0];
 
+			const lastCell = [-1, -1, -1, -1, -1];
 			while (landed.some((done) => !done)) {
 				if (token !== reelSpinToken) return;
 				const now = await new Promise<number>((resolve) => {
@@ -672,6 +676,11 @@
 							playV2AudioHook('SCATTER_LAND', { catchUp: false });
 						}
 					} else {
+						const cell = Math.floor(Math.abs(offset) / pitch);
+						if (cell !== lastCell[reel]) {
+							lastCell[reel] = cell;
+							crestKick += 1;
+						}
 						spinOffset[reel] = offset;
 						const nextPace = phaseElapsed >= travelMs ? 'land' : reelTravelPace(phaseElapsed, travelMs);
 						if (reelPace[reel] !== nextPace) reelPace[reel] = nextPace;
@@ -1170,7 +1179,7 @@
 					height={slotFrameH}
 					testId="skyjump-v2-slot-frame"
 				/>
-				<GemPulse width={slotFrameW} height={slotFrameH} />
+				<GemPulse width={slotFrameW} height={slotFrameH} rolling={anyRolling} kick={crestKick} />
 			</div>
 			<div class="grid" class:rejumping aria-hidden="true">
 				{#each Array.from({ length: 5 }, (_, reel) => reel) as reel}

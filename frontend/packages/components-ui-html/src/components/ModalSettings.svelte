@@ -61,6 +61,9 @@
 		display: flex;
 		flex-direction: column;
 		gap: 1rem;
+		/* The scroll area clips whatever pokes out on the left (the ON/OFF plates). */
+		padding: 0.3rem 0.9rem;
+		box-sizing: border-box;
 
 		@media (min-width: 480px) {
 			min-width: 360px;

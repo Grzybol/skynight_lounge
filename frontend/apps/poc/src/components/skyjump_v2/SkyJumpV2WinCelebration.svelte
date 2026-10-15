@@ -491,6 +491,8 @@
 		position: relative;
 		z-index: 2;
 		display: grid;
+		/* One fixed column: a wide amount overflows the column on both sides instead of widening it (which moved the title). */
+		grid-template-columns: minmax(0, 1fr);
 		justify-items: center;
 		align-content: start;
 		gap: 0.35rem;

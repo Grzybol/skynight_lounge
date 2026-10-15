@@ -417,3 +417,14 @@ Fixed after the guideline review (verified against a local mock RGS, a productio
   Bartender and woman +5 % (bottom anchor unchanged).
 - Fix: `--ml-panel`, `--ml-button`, `--ml-square` hold absolute URLs; a `url()` in a custom property resolves against the stylesheet using it
   (`/_app/immutable/assets/` in the build), which gave 404s for the panel, button and square art on Stake Engine.
+
+## Stars, crest ruby, BetUI geometry (latest)
+
+- `SkyStars.svelte`: the 10 sparkle stars of `background_3_static.png` (`skyStars.ts`, cut from the art) twinkle at random like the frame gems (0.9 s, 1-3 at a time).
+- `GemPulse.svelte`: the crest ruby has its own controller (every 0.6-2 s, 0.5-1.8 s long, varied strength, sometimes a double flash) and, while any reel
+  rolls, a quick 0.38 s flash per symbol that enters at the top (`crestKick`, at most one per 90 ms).
+- Slot raised by 18 px (`BOARD_RISE`; the crest ruby stays inside the screen). WIN plate 1 px above the bottom edge.
+- BetUI: BET plate and its lettering 10 % smaller, +/- another 5 % smaller; BET, TURBO and AUTO keep one 11 px gap to the curve of the SPIN disc.
+- Win celebration: fixed one-column stage, so the title no longer moves when the amount gets wider. Amounts show at most 2 decimals (JPY 0).
+- Intro CTA sits on the horizontal plate; settings ON/OFF plates are not clipped; plants behind the slot are ~60 % hidden.
+- `exports/paytable_info_headers.zip` (not in git): all header images of the Paytable / Info / Buy Bonus screens with a README of where each is used.

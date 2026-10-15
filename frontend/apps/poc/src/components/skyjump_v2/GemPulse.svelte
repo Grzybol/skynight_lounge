@@ -3,25 +3,40 @@
 	import { V2_FRAME_WINDOWS } from '../../game/skyjump_v2/presentationLayout';
 
 	/**
-	 * Red gems of the slot frame pulse: a little bigger and brighter for 0.9 s. Every 1-3 s one to three gems
-	 * (never one that is still pulsing) start. The gems are cut out of the frame art, so the pulse sits exactly on them.
+	 * Red gems of the slot frame pulse: a little bigger and brighter for 0.9 s. Every 1-3 s one to three of the small gems
+	 * (never one that is still pulsing) start.
+	 * The big crest ruby has its own controller: it fires more often with varied length and strength, and while the reels
+	 * roll it flashes (faster) with every symbol that enters at the top of the slot (`kick` counts those symbols).
 	 */
-	type Props = { width: number; height: number };
-	const { width, height }: Props = $props();
+	type Props = { width: number; height: number; rolling?: boolean; kick?: number };
+	const { width, height, rolling = false, kick = 0 }: Props = $props();
 
 	const ART = V2_FRAME_WINDOWS.art;
 	const PULSE_MS = 900;
+	/** The crest ruby is the tallest gem. */
+	const CREST = FRAME_GEMS.reduce((best, gem, i) => (gem.h > FRAME_GEMS[best].h ? i : best), 0);
 	let active = $state<Record<number, number>>({});
+	/** Crest pulse: run id (restarts the animation), length, peak scale and brightness. */
+	let crest = $state({ run: 0, on: false, ms: 900, scale: 1.28, bright: 1.75 });
 
+	const reduced = () =>
+		typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+	let crestOffTimer: ReturnType<typeof setTimeout> | undefined;
+	const fireCrest = (ms: number, scale: number, bright: number) => {
+		crest = { run: crest.run + 1, on: true, ms, scale, bright };
+		clearTimeout(crestOffTimer);
+		crestOffTimer = setTimeout(() => (crest = { ...crest, on: false }), ms + 40);
+	};
+
+	// Small gems.
 	$effect(() => {
-		if (typeof window === 'undefined') return;
-		if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+		if (typeof window === 'undefined' || reduced()) return;
 		const timers = new Set<ReturnType<typeof setTimeout>>();
 		let stopped = false;
 		const fire = () => {
 			if (stopped) return;
 			const count = 1 + Math.floor(Math.random() * 3);
-			const free = FRAME_GEMS.map((_, i) => i).filter((i) => !(i in active));
+			const free = FRAME_GEMS.map((_, i) => i).filter((i) => i !== CREST && !(i in active));
 			for (let n = 0; n < count && free.length > 0; n++) {
 				const i = free.splice(Math.floor(Math.random() * free.length), 1)[0];
 				active = { ...active, [i]: Date.now() };
@@ -33,33 +48,79 @@
 				}, PULSE_MS + 40);
 				timers.add(done);
 			}
-			const wait = setTimeout(fire, 1000 + Math.random() * 2000);
-			timers.add(wait);
+			timers.add(setTimeout(fire, 1000 + Math.random() * 2000));
 		};
-		const first = setTimeout(fire, 800);
-		timers.add(first);
+		timers.add(setTimeout(fire, 800));
 		return () => {
 			stopped = true;
 			for (const t of timers) clearTimeout(t);
 			active = {};
 		};
 	});
+
+	// Crest ruby, idle: every 0.6-2 s, 0.5-1.8 s long, sometimes a quick double flash.
+	$effect(() => {
+		if (typeof window === 'undefined' || reduced()) return;
+		let stopped = false;
+		let timer: ReturnType<typeof setTimeout>;
+		const loop = () => {
+			if (stopped) return;
+			if (!rolling) {
+				const ms = 500 + Math.random() * 1300;
+				fireCrest(ms, 1.18 + Math.random() * 0.3, 1.5 + Math.random() * 0.9);
+				if (Math.random() < 0.25) {
+					setTimeout(() => !stopped && !rolling && fireCrest(380, 1.3, 2.2), ms * 0.85);
+				}
+			}
+			timer = setTimeout(loop, 600 + Math.random() * 1400);
+		};
+		timer = setTimeout(loop, 400);
+		return () => {
+			stopped = true;
+			clearTimeout(timer);
+			clearTimeout(crestOffTimer);
+		};
+	});
+
+	// Crest ruby while the reels roll: one quick flash per new symbol at the top (at most one per 90 ms).
+	let lastKick = 0;
+	let lastKickAt = 0;
+	$effect(() => {
+		const k = kick;
+		if (k === lastKick) return;
+		lastKick = k;
+		if (reduced() || !rolling) return;
+		const now = Date.now();
+		if (now - lastKickAt < 90) return;
+		lastKickAt = now;
+		fireCrest(380, 1.32, 2.1);
+	});
 </script>
 
-<div class="gems" style:width={`${width}px`} style:height={`${height}px`} aria-hidden="true" data-test="skyjump-v2-frame-gems">
+<div
+	class="gems"
+	style:width={`${width}px`}
+	style:height={`${height}px`}
+	aria-hidden="true"
+	data-test="skyjump-v2-frame-gems"
+>
 	{#each FRAME_GEMS as gem, i (i)}
-		<img
-			class="gem"
-			class:pulse={i in active}
-			src={gem.src}
-			alt=""
-			draggable="false"
-			style:left={`${(gem.x / ART.w) * 100}%`}
-			style:top={`${(gem.y / ART.h) * 100}%`}
-			style:width={`${(gem.w / ART.w) * 100}%`}
-			style:height={`${(gem.h / ART.h) * 100}%`}
-			style:--pulse-ms={`${PULSE_MS}ms`}
-		/>
+		{#key i === CREST ? crest.run : 0}
+			<img
+				class="gem"
+				class:pulse={i === CREST ? crest.on : i in active}
+				src={gem.src}
+				alt=""
+				draggable="false"
+				style:left={`${(gem.x / ART.w) * 100}%`}
+				style:top={`${(gem.y / ART.h) * 100}%`}
+				style:width={`${(gem.w / ART.w) * 100}%`}
+				style:height={`${(gem.h / ART.h) * 100}%`}
+				style:--pulse-ms={i === CREST ? `${crest.ms}ms` : `${PULSE_MS}ms`}
+				style:--pulse-scale={i === CREST ? crest.scale : 1.28}
+				style:--pulse-bright={i === CREST ? crest.bright : 1.75}
+			/>
+		{/key}
 	{/each}
 </div>
 
@@ -92,8 +153,9 @@
 		}
 		50% {
 			opacity: 1;
-			transform: scale(1.28);
-			filter: brightness(1.75) saturate(1.2) drop-shadow(0 0 5px rgba(255, 110, 110, 0.95));
+			transform: scale(var(--pulse-scale, 1.28));
+			filter: brightness(var(--pulse-bright, 1.75)) saturate(1.2)
+				drop-shadow(0 0 5px rgba(255, 110, 110, 0.95));
 		}
 	}
 </style>

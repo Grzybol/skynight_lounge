@@ -12,6 +12,7 @@
 	} from '../../game/loungeScene/buildingsPool.svelte';
 	import LoungeCharacter from './LoungeCharacter.svelte';
 	import LoopingProp from './LoopingProp.svelte';
+	import SkyStars from './SkyStars.svelte';
 	import ChimneySmoke from './ChimneySmoke.svelte';
 
 	const context = getContext();
@@ -72,6 +73,7 @@
 
 {#snippet scene()}
 	<img class="plane" src={planeThree} alt="" draggable="false" fetchpriority="low" />
+	<SkyStars />
 	<!-- Drifting clouds between the farthest sky and the houses, upper half only. -->
 	<div class="clouds">
 		{#each [0, 1, 2, 3, 4, 5] as n}

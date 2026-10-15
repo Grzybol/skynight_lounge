@@ -320,6 +320,12 @@
 		-webkit-text-stroke: 0.11em #000;
 		paint-order: stroke fill;
 		text-shadow: 0 0.06em 0 #000;
+		/* The horizontal gold / blue plate (9-slice) behind the lettering. */
+		box-sizing: content-box;
+		padding: 0.35em 1.1em 0.4em;
+		border: 1px solid transparent;
+		border-image: var(--ml-button) 34 fill / 18px stretch;
+		filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.5));
 		opacity: 0;
 		transform: translate(-50%, -50%) translateY(8px);
 		pointer-events: none;
