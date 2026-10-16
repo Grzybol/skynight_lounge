@@ -133,20 +133,32 @@ export const V2_FRAME_WINDOWS = {
 	tileGrow: 1,
 } as const;
 
-/** Where the stone tablet is drawn, in frame art px: the opening plus 5 % on every side (the frame hides the overlap). */
+/**
+ * Where the stone wall is drawn, in frame art px: the opening plus 3 % on every side (the frame hides the overlap). The
+ * picture (960 x 877) is the fully opaque centre of "Kamienna ściana w różanym splocie", so no transparent pixel can show.
+ */
 export const V2_TABLET_RECT = (() => {
-	const mx = HOLE.w * 0.05;
-	const my = HOLE.h * 0.05;
-	const rect = { x0: HOLE.x - mx, y0: HOLE.y - my, x1: HOLE.x + HOLE.w + mx, y1: HOLE.y + HOLE.h + my };
-	// The tablet image is 1254 x 1254 with its stone between (32, 46) and (1234, 1212): map that box onto the rectangle.
-	const sx = (rect.x1 - rect.x0) / (1234 - 32);
-	const sy = (rect.y1 - rect.y0) / (1212 - 46);
+	const mx = HOLE.w * 0.03;
+	const my = HOLE.h * 0.03;
+	return { left: HOLE.x - mx, top: HOLE.y - my, width: HOLE.w + 2 * mx, height: HOLE.h + 2 * my, texW: 960, texH: 877 };
+})();
+
+/**
+ * The four vine dividers between the five columns (`slot_column_1..4.png`, 482 x 1446): as tall as the opening plus 4 % at both
+ * ends (the frame bars hide the ends), as wide as the picture's own 1:3 ratio gives (`squeeze` < 1 would make them narrower).
+ */
+export const V2_COLUMN_DIVIDERS = (() => {
+	const height = HOLE.h * 1.08;
+	const squeeze = 0.58;
+	const width = (height / 3) * squeeze;
 	return {
-		left: rect.x0 - 32 * sx,
-		top: rect.y0 - 46 * sy,
-		width: 1254 * sx,
-		height: 1254 * sy,
-		texture: 1254,
+		width,
+		height,
+		top: HOLE.y - HOLE.h * 0.04,
+		/** Left edge of each divider: centred on the border between two columns. */
+		lefts: [1, 2, 3, 4].map((k) => HOLE.x + PITCH.w * k - width / 2),
+		texW: 482,
+		texH: 1446,
 	};
 })();
 

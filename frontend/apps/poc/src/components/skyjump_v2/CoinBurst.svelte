@@ -17,7 +17,7 @@
 		originY?: number;
 	};
 
-	const { count, originX = 0.5, originY = 0.36 }: Props = $props();
+	const { count, originX = 0.5, originY = 0.34 }: Props = $props();
 
 	const ATLAS = resolveGameAsset('assets/midnight-lounge/fx/win_coin_atlas.png');
 	const COLS = 5;
@@ -53,6 +53,18 @@
 
 		const boot = () => {
 			if (!layer) return;
+			// The celebration box is small: stretch the coin layer over the whole stage, so the coins leave through its bottom edge.
+			const stage = layer.closest('.skyjump-viewport');
+			const own = layer.getBoundingClientRect();
+			if (stage instanceof HTMLElement) {
+				const st = stage.getBoundingClientRect();
+				layer.style.left = `${st.left - own.left}px`;
+				layer.style.top = `${st.top - own.top}px`;
+				layer.style.width = `${st.width}px`;
+				layer.style.height = `${st.height}px`;
+				layer.style.right = 'auto';
+				layer.style.bottom = 'auto';
+			}
 			const box = layer.getBoundingClientRect();
 			const W = box.width || 1280;
 			const H = box.height || 720;
@@ -65,7 +77,7 @@
 				const vx = side * W * rnd(0.07, 0.2);
 				const vy = -H * rnd(0.55, 0.95);
 				const g = H * 1.5;
-				const x0 = W * originX;
+				const x0 = W * 0.5;
 				const y0 = H * originY;
 				const yExit = H + size;
 				// y(t) = y0 + vy t + g t^2 / 2 = yExit  ->  t = (-vy + sqrt(vy^2 - 2 g (y0 - yExit))) / g

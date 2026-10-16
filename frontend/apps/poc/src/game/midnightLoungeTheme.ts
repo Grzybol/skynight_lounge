@@ -114,3 +114,6 @@ export const loungeUiArt = {
 	minus: resolveGameAsset('assets/midnight-lounge/ui/betui2/minus.png'),
 	plus: resolveGameAsset('assets/midnight-lounge/ui/betui2/plus.png'),
 };
+
+export const loungeSlotColumnSrc = (n: number) => resolveGameAsset(`assets/midnight-lounge/scene/slot_column_${n}.png`);
+export const loungeSlotColumnMaskSrc = resolveGameAsset('assets/midnight-lounge/scene/slot_column_wind_mask.png');

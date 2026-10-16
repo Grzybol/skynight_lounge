@@ -7,6 +7,8 @@
 	import { getContext } from '../../game/context';
 	import {
 		loungeShown,
+		loungeSlotColumnMaskSrc,
+		loungeSlotColumnSrc,
 		loungeSlotFrameSrc,
 		loungeSlotTabletMaskSrc,
 		loungeSlotTabletSrc,
@@ -51,6 +53,7 @@
 	import GemPulse from './GemPulse.svelte';
 	import FoliageWind from './FoliageWind.svelte';
 	import {
+		V2_COLUMN_DIVIDERS,
 		V2_FRAME_ART,
 		V2_FRAME_VISIBLE,
 		V2_FRAME_WINDOWS,
@@ -1179,11 +1182,33 @@
 					top={V2_TABLET_RECT.top * frameK}
 					width={V2_TABLET_RECT.width * frameK}
 					height={V2_TABLET_RECT.height * frameK}
-					artW={V2_TABLET_RECT.texture}
-					artH={V2_TABLET_RECT.texture}
-					amplitude={2}
+					artW={V2_TABLET_RECT.texW}
+					artH={V2_TABLET_RECT.texH}
+					amplitude={1.4}
 					testId="skyjump-v2-slot-tablet"
 				/>
+			</div>
+			<!-- Vine dividers between the columns: above the tiles, under the symbols, their ends tucked under the frame bars. -->
+			<div
+				class="board-art-dividers"
+				style:left={`${slotFrameLeft}px`}
+				style:top={`${slotFrameTop}px`}
+			>
+				{#each V2_COLUMN_DIVIDERS.lefts as dividerLeft, k}
+					<FoliageWind
+						src={loungeSlotColumnSrc(k + 1)}
+						maskSrc={loungeSlotColumnMaskSrc}
+						left={dividerLeft * frameK}
+						top={V2_COLUMN_DIVIDERS.top * frameK}
+						width={V2_COLUMN_DIVIDERS.width * frameK}
+						height={V2_COLUMN_DIVIDERS.height * frameK}
+						artW={V2_COLUMN_DIVIDERS.texW}
+						artH={V2_COLUMN_DIVIDERS.texH}
+						amplitude={7}
+						phase={k * 1.7}
+						testId={`skyjump-v2-slot-divider-${k + 1}`}
+					/>
+				{/each}
 			</div>
 			<div
 				class="board-art-frame"
@@ -1654,6 +1679,13 @@
 	.board-art-back {
 		position: absolute;
 		z-index: 0;
+		pointer-events: none;
+	}
+
+	/* Above the tier tiles (z 3), under the symbols (z 8+) and the frame (z 6): its ends disappear under the frame bars. */
+	.board-art-dividers {
+		position: absolute;
+		z-index: 5;
 		pointer-events: none;
 	}
 

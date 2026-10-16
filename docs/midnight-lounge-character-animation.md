@@ -471,3 +471,11 @@ Fixed after the guideline review (verified against a local mock RGS, a productio
 - `slot_new_row.mp3` (`ROW_SPAWN`, gain 0.3, voices stack, one per 35 ms at most) plays for every new row entering a rolling reel.
 - Win coins (`CoinBurst.svelte`): 12 / 24 / 36 / 48 / 60 coins for big / mega / super / max / world record start behind the header, alternate left and right, rise a little and fall off the screen;
   one full turn per flight (atlas `fx/win_coin_atlas.png`, 20 frames 180 -> 90 degrees and back); `win_coin_spawn.mp3` on appearing, `win_coin_escape.mp3` on leaving.
+
+## Stone wall, vine dividers, coins over the whole stage (latest)
+
+- `scene/slot_tablet.png` is the fully opaque centre (1088x1008 of 1240x1268) of "Kamienna ściana w różanym splocie", 10 % darker, 960x877; `V2_TABLET_RECT` = the opening +3 %.
+  The crop is made so that no transparent pixel can show; the wind mask (`slot_tablet_wind_mask.png`) is rebuilt from its green / red pixels.
+- `slot_column_1..4.png` (482x1446) are four vine dividers between the five columns (`V2_COLUMN_DIVIDERS`, squeeze 0.58 of their 1:3 width): z 5 = above the tier tiles, under the symbols and the frame;
+  each sways through `FoliageWind` (own phase, ends pinned by `slot_column_wind_mask.png`).
+- Win coins: the coin layer is stretched over the whole `.skyjump-viewport`, so the coins leave through the bottom edge of the stage; `COIN_ESCAPE` (`win_coin_escape.mp3`) plays then.

@@ -18,10 +18,12 @@
 		artW: number;
 		artH: number;
 		amplitude?: number;
+		/** Seconds added to the clock, so neighbouring pictures do not sway in step. */
+		phase?: number;
 		testId?: string;
 	};
 
-	const { src, maskSrc, left = 0, top = 0, width, height, artW, artH, amplitude = 1.5, testId }: Props = $props();
+	const { src, maskSrc, left = 0, top = 0, width, height, artW, artH, amplitude = 1.5, phase = 0, testId }: Props = $props();
 
 	let canvas = $state<HTMLCanvasElement | null>(null);
 	let ready = $state(false);
@@ -49,12 +51,13 @@ uniform sampler2D uMask;
 uniform float uTime;
 uniform vec2 uArt;
 uniform float uAmp;
+uniform float uPhase;
 in vec2 vUv;
 out vec4 outColor;
 void main() {
 	vec2 p = vUv * uArt;
 	float m = texture(uMask, vUv).r;
-	float t = uTime;
+	float t = uTime + uPhase;
 	// Two slow, wide waves at different scales (half the speed and the frequency of the first version).
 	vec2 w = vec2(
 		sin(t * 0.95 + p.x * 0.0225 + p.y * 0.0155) + 0.6 * sin(t * 1.55 + p.y * 0.035 - p.x * 0.01),
@@ -135,6 +138,7 @@ void main() {
 				gl.uniform1i(gl.getUniformLocation(program, 'uMask'), 1);
 				gl.uniform2f(gl.getUniformLocation(program, 'uArt'), artW, artH);
 				gl.uniform1f(gl.getUniformLocation(program, 'uAmp'), amplitude);
+				gl.uniform1f(gl.getUniformLocation(program, 'uPhase'), phase);
 				const uTime = gl.getUniformLocation(program, 'uTime');
 				gl.enable(gl.BLEND);
 				gl.blendFunc(gl.ONE, gl.ONE_MINUS_SRC_ALPHA);
