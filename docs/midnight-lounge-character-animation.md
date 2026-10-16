@@ -547,3 +547,7 @@ Fixed after the guideline review (verified against a local mock RGS, a productio
 
 - Reels 3 / 4 / 5 (n = 1 / 2 / 3) roll `extension` = n x `extStep` longer (cap 100 %): step 5 % small win, 10 / 15 / 20 / 28 / 33 % for big / mega / super / max / world record; the teaser counts as big; turbo x0.4.
   The strip gets `travelCells x (1 + extension) / slowFactor` cells, so the longer roll is also the slower one (slow-down steps unchanged).
+
+## Frame gems no longer jump (wind mask)
+
+The pulsing gem overlays (`GemPulse`) are static copies of the gems, but the wind mask let six gems (crest ruby, the diamonds beside it at the top and bottom) sway with the frame. When an overlay appeared or vanished the gem jumped a few pixels. `slot_frame_wind_mask.png` is now black (feathered, 12 px margin) over all 16 gems, so they stay still and the overlays line up exactly.
