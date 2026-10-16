@@ -21,7 +21,7 @@ const ACTION_GAIN = 0.78;
 const STING_GAIN = 1;
 const STING_MAX_MS = 7000;
 const BGM_WATCHDOG_MS = 2000;
-const FALLBACK_BGM_FILES = ['midnight-vip-1.mp3', 'midnight-vip-2.mp3'];
+const FALLBACK_BGM_FILES = ['relaxed_background_music1.mp3', 'relaxed_background_music2.mp3'];
 
 let bgmTracks: string[] = FALLBACK_BGM_FILES.map((name) => `${BGM_BASE}${name}`);
 let bgmEl: HTMLAudioElement | null = null;

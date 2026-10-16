@@ -5,7 +5,13 @@
 	import { waitForTimeout } from 'utils-shared/wait';
 
 	import { getContext } from '../../game/context';
-	import { loungeShown, loungeSlotFrameSrc, loungeSlotWindMaskSrc, loungeSlotWindowSrc } from '../../game/midnightLoungeTheme';
+	import {
+		loungeShown,
+		loungeSlotFrameSrc,
+		loungeSlotTabletMaskSrc,
+		loungeSlotTabletSrc,
+		loungeSlotWindMaskSrc,
+	} from '../../game/midnightLoungeTheme';
 	import { V2_PAYLINES, V2_PAYLINE_IDS, V2_SCATTER_ID } from '../../game/skyjump_v2/config';
 	import { bonusHud, bonusShowsTargets, tierLabel } from '../../game/skyjump_v2/bonusHud.svelte';
 	import { V2_PLACEHOLDERS, reelFillerBand, v2Placeholder } from '../../game/skyjump_v2/placeholders';
@@ -24,6 +30,7 @@
 		v2RollingAssetUrls,
 	v2SymbolBlurUrl,
 	v2SymbolTier,
+	v2HasTile,
 	v2TileUrl,
 } from '../../game/skyjump_v2/symbolAssetRegistry';
 	import {
@@ -42,9 +49,12 @@
 	import { statusLabel as playerLabel, statusSub as playerSub } from '../../game/skyjump_v2/statusText';
 	import { warmGate } from '../../game/loungeCharacters/warmGate';
 	import GemPulse from './GemPulse.svelte';
-	import SlotFrameWind from './SlotFrameWind.svelte';
+	import FoliageWind from './FoliageWind.svelte';
 	import {
+		V2_FRAME_ART,
+		V2_FRAME_VISIBLE,
 		V2_FRAME_WINDOWS,
+		V2_TABLET_RECT,
 		V2_PAYLINE_FX,
 		V2_SLOT_BOARD_FRAME,
 		V2_TIER_SCALE,
@@ -255,7 +265,7 @@
 	const SUMMARY_BOTTOM_LIMIT = 581;
 	/** Visible top of the frame art (alpha bounds) as a fraction of the art height. */
 	/** The new frame art starts at the very top of its canvas (crest at y = 0). */
-	const FRAME_ART_VISIBLE_TOP = 0;
+	const FRAME_ART_VISIBLE_TOP = V2_FRAME_VISIBLE.top / V2_FRAME_ART.h;
 	/**
 	 * Summary extends this many px into the BetUI crest (intentional meet).
 	 * Extra overlap frees budget for BOARD_SCALE without crowding READY.
@@ -281,17 +291,17 @@
 	 * The larger frame is raised by this many px @1280x720 (its crest runs over the top edge) so the
 	 * last row ends at the BetUI instead of behind it.
 	 */
-	const BOARD_RISE = 18;
+	const BOARD_RISE = 0;
 	const availH = $derived(Math.max(120, maxBoardH + framePadEstimate * 2 + 4));
 	/** No CSS frame any more: the artwork provides all chrome, the grid is a flush 5x5 of cell pitches. */
 	const FRAME_BORDER = 0;
 	const gap = 0;
 	const framePad = 0;
 	/**
-	 * Slot width (px @1280): the frame art is scaled so the 5x5 playfield is this wide. 548 = 5 x 170.6 x (720 / 1120):
-	 * the crest sits on the top edge and the frame's visible bottom (art y 1120) lands on the bottom edge of the stage.
+	 * Slot width (px @1280): the frame art is scaled so the 5x5 playfield is this wide. 553 = 823 x (720 / 1072):
+	 * the crest sits on the top edge and the frame's visible bottom (art y 1089) lands on the bottom edge of the stage.
 	 */
-	const BOARD_GRID_W = 548;
+	const BOARD_GRID_W = 553;
 	// Not rounded: a rounded cell height drifts away from the frame's 133.2 art-px row pitch (up to 2.5 px by the last row).
 	const cellW = $derived(Math.max(22, px(BOARD_GRID_W) / 5));
 	const cellH = $derived(Math.max(22, cellW / V2_SLOT_BOARD_FRAME.cellAspect));
@@ -313,18 +323,19 @@
 		const ny = W.origin.y + W.pitch.h * r;
 		return {
 			// Backdrop rect inside its cell (px): the whole cell (+1 px so neighbours overlap), so tiles touch each other both
-			// while the reel rolls and when it has stopped; the frame lattice, drawn over them, hides the overlap.
+			// while the reel rolls and when it has stopped.
 			tx: -0.5,
 			ty: -0.5,
 			tw: cellW + 1,
 			th: cellH + 1,
-			// Window centre relative to the cell centre: symbols are centred on the window.
+			// A symbol is centred in its cell (a few art px up).
 			dx: (W.colX[reel] + W.winW / 2 - (nx + W.pitch.w / 2)) * artK,
 			dy: (W.rowY[r] + W.winH / 2 - (ny + W.pitch.h / 2)) * artK + SYMBOL_LIFT * artK,
 		};
 	};
 	const slotFrameSrc = loungeSlotFrameSrc;
-	const windowBgSrc = loungeSlotWindowSrc;
+	/** Frame px per art px (the frame and the tablet are drawn in the same coordinate system). */
+	const frameK = $derived(slotFrameW / V2_FRAME_ART.w);
 	/** Art frame sized so its transparent hole stays centered on the grid, then +10%. */
 	const slotFrameW = $derived(
 		(boardW / (V2_SLOT_BOARD_FRAME.holeRight - V2_SLOT_BOARD_FRAME.holeLeft)) *
@@ -627,6 +638,8 @@
 			spinIds = [null, null, null, null, null];
 			spinOffset = [0, 0, 0, 0, 0];
 
+			const lastCell = [-1, -1, -1, -1, -1];
+			let lastRowSfxAt = 0;
 			while (landed.some((done) => !done)) {
 				if (token !== reelSpinToken) return;
 				const now = await new Promise<number>((resolve) => {
@@ -673,6 +686,15 @@
 							playV2AudioHook('SCATTER_LAND', { catchUp: false });
 						}
 					} else {
+						// A new row of symbols has just entered at the top of this reel: one soft tick (they stack, never cut each other).
+						const cell = Math.floor(Math.abs(offset) / pitch);
+						if (cell !== lastCell[reel]) {
+							lastCell[reel] = cell;
+							if (now - lastRowSfxAt >= 35) {
+								lastRowSfxAt = now;
+								playV2AudioHook('ROW_SPAWN');
+							}
+						}
 						spinOffset[reel] = offset;
 						const nextPace = phaseElapsed >= travelMs ? 'land' : reelTravelPace(phaseElapsed, travelMs);
 						if (reelPace[reel] !== nextPace) reelPace[reel] = nextPace;
@@ -1144,32 +1166,38 @@
 			</div>
 		{/if}
 		<div class="board-surface" data-test="skyjump-v2-board-surface">
-			<!-- Layer 1: the default window background, behind the rolling symbols and the frame. -->
-			<div class="window-bgs" aria-hidden="true" data-test="skyjump-v2-window-bgs">
-				{#each Array.from({ length: 25 }, (_, i) => i) as n}
-					{@const wg = cellGeo(n % 5, Math.floor(n / 5))}
-					<img
-						src={windowBgSrc}
-						alt=""
-						draggable="false"
-						fetchpriority="low"
-						style:left={`${(n % 5) * cellW + wg.tx}px`}
-						style:top={`${Math.floor(n / 5) * cellH + wg.ty}px`}
-						style:width={`${wg.tw}px`}
-						style:height={`${wg.th}px`}
-					/>
-				{/each}
+			<!-- Layer 0: the stone tablet behind the opening (its vines sway), under the rolling symbols and the frame. -->
+			<div
+				class="board-art-back"
+				style:left={`${slotFrameLeft}px`}
+				style:top={`${slotFrameTop}px`}
+			>
+				<FoliageWind
+					src={loungeSlotTabletSrc}
+					maskSrc={loungeSlotTabletMaskSrc}
+					left={V2_TABLET_RECT.left * frameK}
+					top={V2_TABLET_RECT.top * frameK}
+					width={V2_TABLET_RECT.width * frameK}
+					height={V2_TABLET_RECT.height * frameK}
+					artW={V2_TABLET_RECT.texture}
+					artH={V2_TABLET_RECT.texture}
+					amplitude={2}
+					testId="skyjump-v2-slot-tablet"
+				/>
 			</div>
 			<div
 				class="board-art-frame"
 				style:left={`${slotFrameLeft}px`}
 				style:top={`${slotFrameTop}px`}
 			>
-				<SlotFrameWind
+				<FoliageWind
 					src={slotFrameSrc}
 					maskSrc={loungeSlotWindMaskSrc}
 					width={slotFrameW}
 					height={slotFrameH}
+					artW={V2_FRAME_ART.w}
+					artH={V2_FRAME_ART.h}
+					amplitude={1.5}
 					testId="skyjump-v2-slot-frame"
 				/>
 				<GemPulse width={slotFrameW} height={slotFrameH} rolling={anyRolling} />
@@ -1221,16 +1249,18 @@
 									data-row={settled ? index : undefined}
 									data-test={settled ? 'skyjump-v2-tile' : undefined}
 								>
-									<img
-										class="tile-bg"
-										src={v2TileUrl(id, rolling)}
-										alt=""
-										draggable="false"
-										style:left={`${geo.tx}px`}
-										style:top={`${geo.ty}px`}
-										style:width={`${geo.tw}px`}
-										style:height={`${geo.th}px`}
-									/>
+									{#if v2HasTile(id)}
+										<img
+											class="tile-bg"
+											src={v2TileUrl(id, rolling)}
+											alt=""
+											draggable="false"
+											style:left={`${geo.tx}px`}
+											style:top={`${geo.ty}px`}
+											style:width={`${geo.tw}px`}
+											style:height={`${geo.th}px`}
+										/>
+									{/if}
 									<div
 										class="content-stage"
 										style:--tier-scale={V2_TIER_SCALE[v2SymbolTier(id)] ?? 1}
@@ -1620,19 +1650,11 @@
 	}
 
 	/* Behind everything in the grid (rolling symbols), under the frame art (z 6). */
-	.window-bgs {
+	/* Behind everything in the grid (rolling symbols), under the frame art (z 6). */
+	.board-art-back {
 		position: absolute;
-		left: var(--frame-pad, 0px);
-		top: var(--frame-pad, 0px);
 		z-index: 0;
 		pointer-events: none;
-	}
-
-	.window-bgs img {
-		position: absolute;
-		max-width: none;
-		object-fit: fill;
-		user-select: none;
 	}
 
 	.board-art-frame {

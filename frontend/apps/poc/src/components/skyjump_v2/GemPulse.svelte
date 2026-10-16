@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { FRAME_GEMS } from '../../game/skyjump_v2/frameGems';
-	import { V2_FRAME_WINDOWS } from '../../game/skyjump_v2/presentationLayout';
+	import { V2_FRAME_ART } from '../../game/skyjump_v2/presentationLayout';
 
 	/**
 	 * Red gems of the slot frame pulse: a little bigger and brighter for 0.9 s. Every 1-3 s one to three of the small gems
@@ -10,7 +10,7 @@
 	type Props = { width: number; height: number; rolling?: boolean };
 	const { width, height, rolling = false }: Props = $props();
 
-	const ART = V2_FRAME_WINDOWS.art;
+	const ART = V2_FRAME_ART;
 	const PULSE_MS = 900;
 	/** The crest ruby is the tallest gem. */
 	const CREST = FRAME_GEMS.reduce((best, gem, i) => (gem.h > FRAME_GEMS[best].h ? i : best), 0);

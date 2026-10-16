@@ -45,14 +45,13 @@ const expectedCustom = [
 	'sfx_max_win.mp3',
 	'sfx_bonus_end.mp3',
 	'sfx_bad_miss.mp3',
-	// Midnight Lounge win reactions (mini / big / mega).
+	// Midnight Lounge win reaction (mini; big and above use midnight-lounge/audio/sfx_win_background_sound.mp3).
 	'sfx_win_mini.mp3',
-	'sfx_win_bigwin_universal.mp3',
 ];
 
 const onDisk = existsSync(V2_DIR) ? readdirSync(V2_DIR).filter((f) => f.endsWith('.mp3')) : [];
 ok('v2 sfx directory exists', existsSync(V2_DIR));
-ok('custom attachment count 23', onDisk.length === 23, `got ${onDisk.length}`);
+ok('custom attachment count 22', onDisk.length === 22, `got ${onDisk.length}`);
 for (const f of expectedCustom) {
 	ok(`file on disk ${f}`, existsSync(resolve(V2_DIR, f)));
 }
@@ -119,7 +118,11 @@ let m: RegExpExecArray | null;
 const catalogV2 = new Set<string>();
 while ((m = v2FileRe.exec(audioSrc))) catalogV2.add(m[1]);
 for (const file of catalogV2) {
-	ok(`catalog v2 file exists ${file}`, existsSync(resolve(V2_DIR, file)));
+	ok(
+		`catalog v2 file exists ${file}`,
+		existsSync(resolve(V2_DIR, file)) ||
+			existsSync(resolve(V2_DIR, '..', '..', '..', '..', 'midnight-lounge', 'audio', file)),
+	);
 }
 
 const legacyUi = ['ui_click.mp3', 'button_hover_sound.mp3', 'bet_button_sound.mp3', 'bet_increase_sound.mp3', 'bet_decrease_sound.mp3'];

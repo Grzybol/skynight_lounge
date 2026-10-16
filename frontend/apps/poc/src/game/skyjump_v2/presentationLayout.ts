@@ -97,62 +97,68 @@ export const V2_PANEL_DECOR = {
  * Scale 1 keeps that hole on the grid — about 6% tighter than the previous 1.078.
  */
 /**
- * `slot_background_1.png` (1286x1174, `slot_grid_130px_piecewise.png`): 25 windows of about 130 art px.
- * Rows are snapped to an even pitch (a tile has the same vertical offset in every row, so nothing shifts when a reel
- * stops); column centres are the measured ones (a reel keeps its own column, so they cannot cause a jump).
- * Drawn as one piece (SlotFrameLayer, one band).
+ * `slot_background_1.png` (1352x1163, "Gotycka rama z różami i klejnotami"): one square frame with a single opening of
+ * 823 x 738 art px (x 244, y 200). The 5x5 board fills the opening, cells are 164.6 x 147.6 art px; the stone tablet
+ * (`slot_tablet.png`) sits behind the opening and the symbols (and the tier tiles of the rarer tiers) on top of it.
  */
-export const V2_FRAME_BANDS = {
-	srcH: 1174,
-	outH: 1174,
-	bands: [{ srcStart: 0, srcEnd: 1174, outStart: 0, outEnd: 1174 }],
-} as const;
+export const V2_FRAME_ART = { w: 1352, h: 1163 } as const;
+/** Visible top / bottom of the frame art (alpha bounds), art px. */
+export const V2_FRAME_VISIBLE = { top: 17, bottom: 1089 } as const;
 
-const ART = { w: 1286, h: 1174 };
-const PITCH = { w: 170.6, h: 171 };
-/** Nominal window (symbol reference size) and the tier tile, in art px. The tile is larger and sits under the frame lattice. */
-const WIN = { w: 130, h: 130 };
-const TILE = 135;
-const COL_CENTERS = [301.7, 476.5, 642.6, 809.5, 984.2];
-const ROW_CENTER0 = 269.2;
-const GRID_ORIGIN = { x: COL_CENTERS[2] - 2.5 * PITCH.w, y: ROW_CENTER0 + 2 * PITCH.h - 2.5 * PITCH.h };
+const ART = V2_FRAME_ART;
+const HOLE = { x: 244, y: 200, w: 823, h: 738 };
+const PITCH = { w: HOLE.w / 5, h: HOLE.h / 5 };
+const GRID_ORIGIN = { x: HOLE.x, y: HOLE.y };
 
 export const V2_SLOT_BOARD_FRAME = {
-	/** Playfield: the 5x5 block of pitches around the windows, as fractions of the art. */
-	holeLeft: GRID_ORIGIN.x / ART.w,
-	holeRight: (GRID_ORIGIN.x + 5 * PITCH.w) / ART.w,
-	holeTop: GRID_ORIGIN.y / ART.h,
-	holeBottom: (GRID_ORIGIN.y + 5 * PITCH.h) / ART.h,
+	/** Playfield: the opening of the frame, as fractions of the art. */
+	holeLeft: HOLE.x / ART.w,
+	holeRight: (HOLE.x + HOLE.w) / ART.w,
+	holeTop: HOLE.y / ART.h,
+	holeBottom: (HOLE.y + HOLE.h) / ART.h,
 	scale: 1,
 	cellAspect: PITCH.w / PITCH.h,
 } as const;
 
-/** The frame's windows in art pixels. */
+/** The 5x5 cells in art pixels. There are no separate windows any more: a symbol is centred in its cell. */
 export const V2_FRAME_WINDOWS = {
 	art: ART,
 	origin: GRID_ORIGIN,
 	pitch: PITCH,
-	colX: COL_CENTERS.map((c) => c - WIN.w / 2),
-	rowY: [0, 1, 2, 3, 4].map((i) => ROW_CENTER0 + PITCH.h * i - WIN.h / 2),
-	/** Window size, art px. */
-	winW: WIN.w,
-	winH: WIN.h,
-	/** Tier tiles and the default window background are drawn TILE x TILE art px, under the frame lattice. */
-	tileGrow: TILE / WIN.h,
+	colX: [0, 1, 2, 3, 4].map((i) => HOLE.x + PITCH.w * i),
+	rowY: [0, 1, 2, 3, 4].map((i) => HOLE.y + PITCH.h * i),
+	winW: PITCH.w,
+	winH: PITCH.h,
+	/** Tier tiles fill the whole cell (they touch each other). */
+	tileGrow: 1,
 } as const;
 
-/** Window height / cell height: the symbol box is a whole cell, the visible window is smaller. */
-const WINDOW_FIT = WIN.h / PITCH.h;
+/** Where the stone tablet is drawn, in frame art px: the opening plus 5 % on every side (the frame hides the overlap). */
+export const V2_TABLET_RECT = (() => {
+	const mx = HOLE.w * 0.05;
+	const my = HOLE.h * 0.05;
+	const rect = { x0: HOLE.x - mx, y0: HOLE.y - my, x1: HOLE.x + HOLE.w + mx, y1: HOLE.y + HOLE.h + my };
+	// The tablet image is 1254 x 1254 with its stone between (32, 46) and (1234, 1212): map that box onto the rectangle.
+	const sx = (rect.x1 - rect.x0) / (1234 - 32);
+	const sy = (rect.y1 - rect.y0) / (1212 - 46);
+	return {
+		left: rect.x0 - 32 * sx,
+		top: rect.y0 - 46 * sy,
+		width: 1254 * sx,
+		height: 1254 * sy,
+		texture: 1254,
+	};
+})();
 
 /**
- * Symbol height by tier as a fraction of the frame WINDOW height. Steps between regular tiers are 5 %
- * (low -> medium -> premium), symbols +5 % again, and the tier growth over low (+7.5 % / +15 %) raised by 50 % (+11.25 % / +22.5 %); scatter, Concierge / Mystery and feature symbols match premium.
+ * Symbol height by tier as a fraction of the CELL height (cells are 147.6 art px tall, about 99 px on the 1280x720 stage).
+ * Low is 0.745; the growth over low is +11.25 % (medium) and +22.5 % (premium, scatter, Concierge / Mystery, features).
  */
 export const V2_TIER_SCALE: Record<string, number> = {
-	low: 0.882 * WINDOW_FIT,
-	medium: 0.9812 * WINDOW_FIT,
-	premium: 1.0805 * WINDOW_FIT,
-	scatter: 1.0805 * WINDOW_FIT,
-	concierge_mystery: 1.0805 * WINDOW_FIT,
-	feature: 1.0805 * WINDOW_FIT,
+	low: 0.745,
+	medium: 0.829,
+	premium: 0.913,
+	scatter: 0.913,
+	concierge_mystery: 0.913,
+	feature: 0.913,
 };

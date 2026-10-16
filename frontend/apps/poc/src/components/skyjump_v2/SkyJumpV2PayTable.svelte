@@ -12,6 +12,7 @@
 		markV2SymbolArtMissing,
 		markV2SymbolArtReady,
 		v2SymbolVisual,
+		v2HasTile,
 		v2TileUrl,
 	} from '../../game/skyjump_v2/symbolAssetRegistry';
 	import { V2_MODAL_HEADER, V2_PANEL_DECOR } from '../../game/skyjump_v2/presentationLayout';
@@ -269,7 +270,7 @@
 						<article class="symbol-card">
 							<span
 								class="swatch"
-								style:background-image={`url(${v2TileUrl(symbol.id)})`}
+								style:background-image={v2HasTile(symbol.id) ? `url(${v2TileUrl(symbol.id)})` : undefined}
 								style:background-color={showArt ? 'transparent' : tile.fill}
 								style:color={tile.ink}
 							>
@@ -328,7 +329,7 @@
 						<article class="feature-card">
 							<span
 								class="swatch lg"
-								style:background-image={`url(${v2TileUrl(feature.id)})`}
+								style:background-image={v2HasTile(feature.id) ? `url(${v2TileUrl(feature.id)})` : undefined}
 								style:background-color={showArt ? 'transparent' : tile.fill}
 								style:color={tile.ink}
 							>
@@ -362,7 +363,7 @@
 							<article class="token-card" style:--rarity={rarity.color}>
 								<span
 									class="swatch lg"
-									style:background-image={`url(${v2TileUrl(token.id)})`}
+									style:background-image={v2HasTile(token.id) ? `url(${v2TileUrl(token.id)})` : undefined}
 									style:background-color={showArt ? 'transparent' : tile.fill}
 									style:color={tile.ink}
 								>

@@ -1,29 +1,27 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 
-	import SlotFrameLayer from './SlotFrameLayer.svelte';
-
 	/**
-	 * The slot frame, drawn with WebGL so the leaves and the golden thorns that reach into the windows can sway in the wind.
-	 * The frame art is sampled through a small animated displacement; a mask (`slot_frame_wind_mask.png`, white = foliage around
-	 * the windows, black = pillars, crest and base) keeps everything else perfectly still. Until the first frame is drawn
-	 * (and whenever WebGL2 is missing or motion is reduced) the plain image layer is shown instead.
+	 * A picture drawn with WebGL so its foliage (leaves, stems, roses) can sway in the wind. The art is sampled through a small
+	 * animated displacement; a mask (white = foliage, black = stone / metal) keeps everything else perfectly still. Until the first
+	 * frame is drawn (and whenever WebGL2 is missing or motion is reduced) the plain image is shown instead.
+	 * `left`, `top`, `width`, `height` are CSS px inside the parent; `artW` x `artH` is the size of the texture in art px
+	 * (the displacement is `amplitude` art px).
 	 */
 	type Props = {
 		src: string;
 		maskSrc: string;
+		left?: number;
+		top?: number;
 		width: number;
 		height: number;
+		artW: number;
+		artH: number;
+		amplitude?: number;
 		testId?: string;
 	};
 
-	const { src, maskSrc, width, height, testId }: Props = $props();
-
-	/** How far the foliage moves, in art pixels of the 1286 x 1174 frame. */
-	const AMPLITUDE = 1.5;
-	/** Art size of the frame (the shader works in art pixels). */
-	const ART_W = 1286;
-	const ART_H = 1174;
+	const { src, maskSrc, left = 0, top = 0, width, height, artW, artH, amplitude = 1.5, testId }: Props = $props();
 
 	let canvas = $state<HTMLCanvasElement | null>(null);
 	let ready = $state(false);
@@ -135,8 +133,8 @@ void main() {
 				upload(mask, 1, false);
 				gl.uniform1i(gl.getUniformLocation(program, 'uFrame'), 0);
 				gl.uniform1i(gl.getUniformLocation(program, 'uMask'), 1);
-				gl.uniform2f(gl.getUniformLocation(program, 'uArt'), ART_W, ART_H);
-				gl.uniform1f(gl.getUniformLocation(program, 'uAmp'), AMPLITUDE);
+				gl.uniform2f(gl.getUniformLocation(program, 'uArt'), artW, artH);
+				gl.uniform1f(gl.getUniformLocation(program, 'uAmp'), amplitude);
 				const uTime = gl.getUniformLocation(program, 'uTime');
 				gl.enable(gl.BLEND);
 				gl.blendFunc(gl.ONE, gl.ONE_MINUS_SRC_ALPHA);
@@ -169,9 +167,17 @@ void main() {
 	});
 </script>
 
-<div class="frame-wind" style:width={`${width}px`} style:height={`${height}px`} data-test={testId} aria-hidden="true">
+<div
+	class="frame-wind"
+	style:left={`${left}px`}
+	style:top={`${top}px`}
+	style:width={`${width}px`}
+	style:height={`${height}px`}
+	data-test={testId}
+	aria-hidden="true"
+>
 	{#if !ready}
-		<SlotFrameLayer {src} {width} {height} />
+		<img class="frame-still" {src} alt="" draggable="false" />
 	{/if}
 	<canvas bind:this={canvas} class="frame-canvas" class:ready></canvas>
 </div>
@@ -179,10 +185,17 @@ void main() {
 <style>
 	.frame-wind {
 		position: absolute;
-		left: 0;
-		top: 0;
 		pointer-events: none;
 		user-select: none;
+	}
+
+	.frame-still {
+		position: absolute;
+		inset: 0;
+		width: 100%;
+		height: 100%;
+		max-width: none;
+		object-fit: fill;
 	}
 
 	/* Beats Game.svelte's `.skyjump-viewport canvas { position: relative; z-index: 19 }`. */

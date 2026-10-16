@@ -63,6 +63,18 @@ export const v2SymbolTier = (symbolId: string): V2SymbolTier => {
 	return 'feature';
 };
 
+/**
+ * Tiers that get a tile behind the symbol. Low and medium are 86 % of everything that lands (57.3 % + 28.5 % of the base reel
+ * strips), so they sit straight on the stone tablet and a tile marks a rarer symbol at a glance.
+ */
+export const V2_TILE_TIERS: ReadonlySet<V2SymbolTier> = new Set<V2SymbolTier>([
+	'premium',
+	'scatter',
+	'concierge_mystery',
+	'feature',
+]);
+export const v2HasTile = (symbolId: string): boolean => V2_TILE_TIERS.has(v2SymbolTier(symbolId));
+
 export const v2TileUrl = (symbolId: string, blurred = false): string =>
 	resolveGameAsset(`${blurred ? V2_TILE_BLUR_DIR : V2_TILE_DIR}/tile_${v2SymbolTier(symbolId)}.${blurred ? 'webp' : 'png'}`);
 

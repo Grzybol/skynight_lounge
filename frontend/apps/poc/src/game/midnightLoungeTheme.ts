@@ -15,7 +15,8 @@ export const TBD_MIDNIGHT_LOUNGE_LABEL = 'TBD_MIDNIGHT_LOUNGE_LABEL';
 export const loungeLogoSrc = v2UiAssetUrl('logo');
 export const loungeSlotFrameSrc = resolveGameAsset('assets/midnight-lounge/scene/slot_background_1.png');
 export const loungeSlotWindMaskSrc = resolveGameAsset('assets/midnight-lounge/scene/slot_frame_wind_mask.png');
-export const loungeSlotWindowSrc = resolveGameAsset('assets/midnight-lounge/scene/slot_window_bg.png');
+export const loungeSlotTabletSrc = resolveGameAsset('assets/midnight-lounge/scene/slot_tablet.png');
+export const loungeSlotTabletMaskSrc = resolveGameAsset('assets/midnight-lounge/scene/slot_tablet_wind_mask.png');
 
 /** Internal id → ski label and the Midnight Lounge label on screen. */
 export const LOUNGE_PRESENTATION = {

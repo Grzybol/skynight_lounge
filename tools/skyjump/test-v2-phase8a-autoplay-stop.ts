@@ -126,7 +126,7 @@ let m: RegExpExecArray | null;
 const mappedFiles = new Set<string>();
 while ((m = fileRe.exec(audioSrc))) mappedFiles.add(m[1]);
 for (const file of mappedFiles) {
-	if (file.startsWith('midnight-vip')) {
+	if (file.startsWith('relaxed_background')) {
 		ok(
 			`bgm ${file}`,
 			existsSync(resolve(POC, 'static/assets/audio/skyjump/bgm', file)),
@@ -134,12 +134,21 @@ for (const file of mappedFiles) {
 		continue;
 	}
 	if (file.startsWith('sfx_')) {
-		ok(`v2 custom ${file}`, existsSync(resolve(V2_DIR, file)));
+		ok(
+			`v2 custom ${file}`,
+			existsSync(resolve(V2_DIR, file)) ||
+				existsSync(resolve(POC, 'static/assets/midnight-lounge/audio', file)),
+		);
 		continue;
 	}
 	const legacy = resolve(LEGACY_DIR, file);
 	const existing = resolve(POC, 'static/assets/audio/skyjump/sfx', file);
-	ok(`mapped audio exists ${file}`, existsSync(legacy) || existsSync(existing));
+	ok(
+		`mapped audio exists ${file}`,
+		existsSync(legacy) ||
+			existsSync(existing) ||
+			existsSync(resolve(POC, 'static/assets/midnight-lounge/audio', file)),
+	);
 }
 
 if (failed) {

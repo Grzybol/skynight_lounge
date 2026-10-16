@@ -2,6 +2,7 @@
 	import { BOOK_AMOUNT_MULTIPLIER } from 'constants-shared/bet';
 	import { bookEventAmountToCurrencyString } from 'utils-shared/amount';
 
+	import CoinBurst from './CoinBurst.svelte';
 	import { LUCKIEST_GUY_STACK } from '../../game/skyjump_v2/fonts';
 	import {
 		V2_WIN_TITLE_SLOT,
@@ -53,6 +54,9 @@
 	const coinSrc = v2FxAssetUrl('coinSparkle');
 	const flashSrc = v2FxAssetUrl('screenFlashAccent');
 	const iceGlintSrc = v2FxAssetUrl('iceGlint');
+
+	/** Coins thrown out from behind the header: 12 at Big Win, then 24, 36, 48, 60 for the tiers above. */
+	const COIN_COUNT: Record<string, number> = { big: 12, mega: 24, super: 36, max: 48, worldRecord: 60 };
 
 	let displayValue = $state(0);
 	let amountDone = $state(false);
@@ -277,6 +281,12 @@
 				style:--scale={p.scale}
 			/>
 		{/each}
+
+		{#if COIN_COUNT[props.tier]}
+			{#key props.tier}
+				<CoinBurst count={COIN_COUNT[props.tier]} />
+			{/key}
+		{/if}
 
 		<div class="stage">
 			{#if props.worldRecordOverlay && props.tier === 'worldRecord' && !sceneOverlaySrc}

@@ -52,6 +52,10 @@ const LOUNGE_SFX_FILES = new Set([
 	'sfx_wind_transition.mp3',
 	'sfx_wind_upgrade.mp3',
 	'sfx_world_record.mp3',
+	'sfx_win_background_sound.mp3',
+	'slot_new_row.mp3',
+	'win_coin_spawn.mp3',
+	'win_coin_escape.mp3',
 ]);
 const LEGACY_BASE = resolveGameAsset('/assets/audio/skyjump/sfx/legacy_v1/');
 const LEGACY_TRIMMED_BASE = resolveGameAsset('/assets/audio/skyjump/sfx/legacy_trimmed/');
@@ -264,7 +268,7 @@ export const V2_AUDIO_CATALOG: Record<string, HookBinding> = {
 	},
 	WIN_BIG: {
 		kind: 'v2',
-		file: 'sfx_win_bigwin_universal.mp3', // one 5 s sound for big win and every tier above
+		file: 'sfx_win_background_sound.mp3', // one sound for every win screen (big win and every tier above)
 		gain: 0.95,
 		status: 'READY',
 		overlap: 'allow',
@@ -272,8 +276,35 @@ export const V2_AUDIO_CATALOG: Record<string, HookBinding> = {
 	},
 	WIN_MEGA: {
 		kind: 'v2',
-		file: 'sfx_win_bigwin_universal.mp3',
+		file: 'sfx_win_background_sound.mp3',
 		gain: 1,
+		status: 'READY',
+		overlap: 'allow',
+		minGapMs: 0,
+	},
+	// Reel rolling: one soft tick for every new row of symbols that enters at the top. Voices stack on themselves
+	// (no stop, no gap) but the gain is low so they never drown the other sounds.
+	ROW_SPAWN: {
+		kind: 'v2',
+		file: 'slot_new_row.mp3',
+		gain: 0.3,
+		status: 'READY',
+		overlap: 'allow',
+		minGapMs: 0,
+	},
+	// Win coins: one sound when a coin spawns behind the header, one when it leaves the screen.
+	COIN_SPAWN: {
+		kind: 'v2',
+		file: 'win_coin_spawn.mp3',
+		gain: 0.4,
+		status: 'READY',
+		overlap: 'allow',
+		minGapMs: 0,
+	},
+	COIN_ESCAPE: {
+		kind: 'v2',
+		file: 'win_coin_escape.mp3',
+		gain: 0.4,
 		status: 'READY',
 		overlap: 'allow',
 		minGapMs: 0,
@@ -421,7 +452,7 @@ export const V2_AUDIO_CATALOG: Record<string, HookBinding> = {
 	},
 	BGM: {
 		kind: 'existing',
-		file: 'midnight-vip-1.mp3',
+		file: 'relaxed_background_music1.mp3',
 		gain: 0.72,
 		status: 'REUSE',
 		notes: 'Playlist via skyjumpAudio — not played via this hook',
@@ -471,7 +502,7 @@ export const resolveHookPlayUrl = (binding: FileBinding): string | null => {
 	if (binding.kind === 'v2') return `${V2_BASE}${binding.file}`;
 	if (binding.kind === 'legacy') return `${LEGACY_BASE}${binding.file}`;
 	if (binding.kind === 'existing') {
-		if (binding.file.startsWith('midnight-vip')) {
+		if (binding.file.startsWith('relaxed_background')) {
 			return resolveGameAsset(`/assets/audio/skyjump/bgm/${binding.file}`);
 		}
 		return `${EXISTING_SFX_BASE}${binding.file}`;

@@ -457,3 +457,17 @@ Fixed after the guideline review (verified against a local mock RGS, a productio
 - Checked against `skyjump_v2_config.json` / the engines: 28 lines, awards, 10 initial / 40 max Free Spins, +5 spins and a room step on 3+ invitations in Free Spins
   (rule U1), 3/4/5 invitations -> Large Hill / Ski Flying / World Cup and the V -> Perfect V, persistence from Ski Flying, guaranteed VIP Upgrade from World Cup,
   guaranteed Concierge in Perfect V, Encore and Black Access Pass only in Free Spins, max win 50,000x.
+
+## New frame + stone tablet, symbols, music, win coins (latest)
+
+- Frame: `slot_background_1.png` is "Gotycka rama z różami i klejnotami (1)" (1352x1163), one opening of 823x738 art px (x 244, y 200): the 5x5 cells fill it (`presentationLayout.ts`:
+  `V2_FRAME_ART`, `V2_SLOT_BOARD_FRAME`, `V2_FRAME_WINDOWS` = the cells). `BOARD_GRID_W` 553 puts the visible frame (art y 17..1089) on the stage; `BOARD_RISE` 0.
+- Stone tablet `scene/slot_tablet.png` ("Kamienna tablica z różami i bluszczem") sits behind the opening (`V2_TABLET_RECT`, opening +5 %), under symbols and frame; the old window background is gone.
+- Wind (`FoliageWind.svelte`, WebGL2, generic for any picture + mask): on the tablet the vines, leaves and roses sway (`slot_tablet_wind_mask.png`: green / red pixels); on the frame only the
+  foliage outside the stone columns (`slot_frame_wind_mask.png`: green + rose pixels outside the column bands; gems and columns stay still). `frameGems.ts` regenerated (16 gems).
+- Tier tiles: base reel strips land low 57.3 %, medium 28.5 %, premium 11.9 %, scatter 1.8 %, Concierge / Mystery 0.5 %. Low and medium have no tile any more (on the slot and in the paytable); `V2_TILE_TIERS`.
+- Symbols from `Midnight_Lounge_cartoon_renamed.zip` (512 px PNG), rolling versions from `..._motion_blur.zip` (512 px WebP q60), new `fx_glint_ruby_gold` and `fx_luxury_burst_gold`.
+- Music: `relaxed_background_music1/2.mp3` replace `midnight-vip-1/2.mp3` (`bgm/tracks.json`). Win screens (big and above) play `sfx_win_background_sound.mp3` (replaces `sfx_win_bigwin_universal.mp3`).
+- `slot_new_row.mp3` (`ROW_SPAWN`, gain 0.3, voices stack, one per 35 ms at most) plays for every new row entering a rolling reel.
+- Win coins (`CoinBurst.svelte`): 12 / 24 / 36 / 48 / 60 coins for big / mega / super / max / world record start behind the header, alternate left and right, rise a little and fall off the screen;
+  one full turn per flight (atlas `fx/win_coin_atlas.png`, 20 frames 180 -> 90 degrees and back); `win_coin_spawn.mp3` on appearing, `win_coin_escape.mp3` on leaving.
