@@ -168,7 +168,8 @@
 		const spinCx = spin.x + spin.w / 2;
 		const spinCy = spin.y + spin.h / 2;
 		const spinR = spin.w / 2;
-		const GAP = 11;
+		// Just a few transparent pixels between the controls and the SPIN disc.
+		const GAP = 3;
 		const leftOfSpin = (w: number, y: number, h: number) => {
 			const nearestY = Math.min(Math.max(spinCy, y), y + h);
 			const dy = Math.abs(spinCy - nearestY);
@@ -183,7 +184,7 @@
 		};
 		// BET plate and its content 10 % smaller, centred on the old row.
 		const betOld = box('bet_background', ...toward(1280, 804, 614), 286 * K);
-		const betW = betOld.w * 0.9;
+		const betW = betOld.w * 0.9 * 0.9;
 		const betH = box('bet_background', 0, 0, betW).h;
 		const betY = BOTTOM - betH;
 		const bet = box('bet_background', leftOfSpin(betW, betY, betH), betY, betW);
@@ -193,7 +194,7 @@
 		const cy = bet.y + (bet.h - d) / 2;
 		// Left part: balance and menu end on the same line, the bonus plate moves with them.
 		const balance0 = box('balance', ...toward(0, 6, 606), 347 * K);
-		const menu0 = box('menu', ...toward(0, 3, 609), 96 * K, 91 * K);
+		const menu0 = box('menu', ...toward(0, 3, 609), 96 * K * 0.9, 91 * K * 0.9);
 		const dyL = BOTTOM - Math.max(balance0.y + balance0.h, menu0.y + menu0.h);
 		const lowered = (r: HudBox): HudBox => ({ ...r, y: r.y + dyL });
 		const bonus0 = box('bonus', ...toward(0, 9, 543), 207 * K);
@@ -204,9 +205,11 @@
 			win: (() => {
 				// WIN sits exactly under the middle of the slot (stage x = 640) on the lower edge of the frame:
 				// its lowest pixel is on the shared bottom line.
-				const w = 261 * K;
-				const h = box('bet_background', 0, 0, w).h;
-				return box('bet_background', 640 - w / 2, BOTTOM - h, w);
+				// 10 % lower and 15 % longer than the plain plate (its art is stretched).
+				const base = box('bet_background', 0, 0, 261 * K);
+				const w = base.w * 1.15;
+				const h = base.h * 0.9;
+				return box('bet_background', 640 - w / 2, BOTTOM - h, w, h);
 			})(),
 			bet,
 			minus: box('minus', bet.x + m, cy, d),
@@ -762,9 +765,12 @@
 	.hud-win {
 		position: absolute;
 		transform: translate(-50%, -50%);
-		display: grid;
-		justify-items: center;
-		gap: 2px;
+		/* One line: WIN and the amount side by side. */
+		display: flex;
+		align-items: baseline;
+		justify-content: center;
+		gap: 8px;
+		white-space: nowrap;
 		color: #fbe9b0;
 		font-family: var(--ml-font-gold, 'Luckiest Guy', serif);
 		text-shadow: 0 2px 0 rgba(40, 8, 16, 0.9);
@@ -789,11 +795,13 @@
 
 	/* BET plate: its lettering is 10 % smaller with the plate. */
 	.hud .bet-btn .kicker {
-		font-size: 9.6px;
+		font-size: 10.1px;
+		transform: scaleX(1.14);
 	}
 
 	.hud .bet-btn .value {
-		font-size: 15.2px;
+		font-size: 16px;
+		transform: scaleX(1.14);
 	}
 
 	.hud .bonus-label {

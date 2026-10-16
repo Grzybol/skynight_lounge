@@ -46,12 +46,6 @@ const required = [
 	'assets/midnight-lounge/scene/clouds_prop.png',
 	'assets/midnight-lounge/scene/slot_background_1.png',
 	'assets/midnight-lounge/scene/slot_tablet.png',
-	'assets/midnight-lounge/scene/slot_tablet_wind_mask.png',
-	'assets/midnight-lounge/scene/slot_column_1.png',
-	'assets/midnight-lounge/scene/slot_column_2.png',
-	'assets/midnight-lounge/scene/slot_column_3.png',
-	'assets/midnight-lounge/scene/slot_column_4.png',
-	'assets/midnight-lounge/scene/slot_column_wind_mask.png',
 	'assets/midnight-lounge/scene/slot_frame_wind_mask.png',
 	...['low', 'medium', 'premium', 'scatter', 'concierge_mystery', 'feature'].flatMap((tier) => [
 		`assets/midnight-lounge/tiles/tile_${tier}.png`,

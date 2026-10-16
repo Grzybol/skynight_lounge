@@ -479,3 +479,10 @@ Fixed after the guideline review (verified against a local mock RGS, a productio
 - `slot_column_1..4.png` (482x1446) are four vine dividers between the five columns (`V2_COLUMN_DIVIDERS`, squeeze 0.58 of their 1:3 width): z 5 = above the tier tiles, under the symbols and the frame;
   each sways through `FoliageWind` (own phase, ends pinned by `slot_column_wind_mask.png`).
 - Win coins: the coin layer is stretched over the whole `.skyjump-viewport`, so the coins leave through the bottom edge of the stage; `COIN_ESCAPE` (`win_coin_escape.mp3`) plays then.
+
+## Flat wall, no dividers, BetUI trims (latest)
+
+- `scene/slot_tablet.png` is the fully opaque centre of `slot_background.png`, 10 % darker, drawn static at 50 % opacity (`.slot-wall`); the vine dividers (`slot_column_*`), the tablet wind mask and their code are removed.
+- Slot raised by 20 px and smaller (`BOARD_GRID_W` 514) so the frame ends at about y 650, above the WIN / BALANCE / BET plates.
+- BetUI: BET, TURBO and AUTO keep a 3 px gap to the SPIN disc (`GAP`); BET and menu another 10 % smaller; WIN plate 10 % lower and 15 % longer with the label and the amount on one line;
+  BET lettering 5 % bigger and 14 % wider (`scaleX`).

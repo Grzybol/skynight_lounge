@@ -7,10 +7,7 @@
 	import { getContext } from '../../game/context';
 	import {
 		loungeShown,
-		loungeSlotColumnMaskSrc,
-		loungeSlotColumnSrc,
 		loungeSlotFrameSrc,
-		loungeSlotTabletMaskSrc,
 		loungeSlotTabletSrc,
 		loungeSlotWindMaskSrc,
 	} from '../../game/midnightLoungeTheme';
@@ -53,7 +50,6 @@
 	import GemPulse from './GemPulse.svelte';
 	import FoliageWind from './FoliageWind.svelte';
 	import {
-		V2_COLUMN_DIVIDERS,
 		V2_FRAME_ART,
 		V2_FRAME_VISIBLE,
 		V2_FRAME_WINDOWS,
@@ -294,17 +290,17 @@
 	 * The larger frame is raised by this many px @1280x720 (its crest runs over the top edge) so the
 	 * last row ends at the BetUI instead of behind it.
 	 */
-	const BOARD_RISE = 0;
+	const BOARD_RISE = 20;
 	const availH = $derived(Math.max(120, maxBoardH + framePadEstimate * 2 + 4));
 	/** No CSS frame any more: the artwork provides all chrome, the grid is a flush 5x5 of cell pitches. */
 	const FRAME_BORDER = 0;
 	const gap = 0;
 	const framePad = 0;
 	/**
-	 * Slot width (px @1280): the frame art is scaled so the 5x5 playfield is this wide. 553 = 823 x (720 / 1072):
+	 * Slot width (px @1280): the frame art is scaled so the 5x5 playfield is this wide. 514 = 823 x ((650 + 20) / 1072):
 	 * the crest sits on the top edge and the frame's visible bottom (art y 1089) lands on the bottom edge of the stage.
 	 */
-	const BOARD_GRID_W = 553;
+	const BOARD_GRID_W = 514;
 	// Not rounded: a rounded cell height drifts away from the frame's 133.2 art-px row pitch (up to 2.5 px by the last row).
 	const cellW = $derived(Math.max(22, px(BOARD_GRID_W) / 5));
 	const cellH = $derived(Math.max(22, cellW / V2_SLOT_BOARD_FRAME.cellAspect));
@@ -1169,46 +1165,23 @@
 			</div>
 		{/if}
 		<div class="board-surface" data-test="skyjump-v2-board-surface">
-			<!-- Layer 0: the stone tablet behind the opening (its vines sway), under the rolling symbols and the frame. -->
+			<!-- Layer 0: the flat stone wall behind the opening (50 % opaque, static), under the rolling symbols and the frame. -->
 			<div
 				class="board-art-back"
 				style:left={`${slotFrameLeft}px`}
 				style:top={`${slotFrameTop}px`}
 			>
-				<FoliageWind
+				<img
+					class="slot-wall"
 					src={loungeSlotTabletSrc}
-					maskSrc={loungeSlotTabletMaskSrc}
-					left={V2_TABLET_RECT.left * frameK}
-					top={V2_TABLET_RECT.top * frameK}
-					width={V2_TABLET_RECT.width * frameK}
-					height={V2_TABLET_RECT.height * frameK}
-					artW={V2_TABLET_RECT.texW}
-					artH={V2_TABLET_RECT.texH}
-					amplitude={1.4}
-					testId="skyjump-v2-slot-tablet"
+					alt=""
+					draggable="false"
+					data-test="skyjump-v2-slot-wall"
+					style:left={`${V2_TABLET_RECT.left * frameK}px`}
+					style:top={`${V2_TABLET_RECT.top * frameK}px`}
+					style:width={`${V2_TABLET_RECT.width * frameK}px`}
+					style:height={`${V2_TABLET_RECT.height * frameK}px`}
 				/>
-			</div>
-			<!-- Vine dividers between the columns: above the tiles, under the symbols, their ends tucked under the frame bars. -->
-			<div
-				class="board-art-dividers"
-				style:left={`${slotFrameLeft}px`}
-				style:top={`${slotFrameTop}px`}
-			>
-				{#each V2_COLUMN_DIVIDERS.lefts as dividerLeft, k}
-					<FoliageWind
-						src={loungeSlotColumnSrc(k + 1)}
-						maskSrc={loungeSlotColumnMaskSrc}
-						left={dividerLeft * frameK}
-						top={V2_COLUMN_DIVIDERS.top * frameK}
-						width={V2_COLUMN_DIVIDERS.width * frameK}
-						height={V2_COLUMN_DIVIDERS.height * frameK}
-						artW={V2_COLUMN_DIVIDERS.texW}
-						artH={V2_COLUMN_DIVIDERS.texH}
-						amplitude={7}
-						phase={k * 1.7}
-						testId={`skyjump-v2-slot-divider-${k + 1}`}
-					/>
-				{/each}
 			</div>
 			<div
 				class="board-art-frame"
@@ -1682,11 +1655,12 @@
 		pointer-events: none;
 	}
 
-	/* Above the tier tiles (z 3), under the symbols (z 8+) and the frame (z 6): its ends disappear under the frame bars. */
-	.board-art-dividers {
+	.slot-wall {
 		position: absolute;
-		z-index: 5;
-		pointer-events: none;
+		max-width: none;
+		object-fit: fill;
+		opacity: 0.5;
+		user-select: none;
 	}
 
 	.board-art-frame {
