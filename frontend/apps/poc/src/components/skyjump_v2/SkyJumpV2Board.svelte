@@ -633,10 +633,16 @@
 			const token = ++reelSpinToken;
 			const reduced = prefersReducedMotion();
 			// Big wins: each next reel stops later than the one before (more suspense) and the scene zooms slowly towards the slot.
+			// Every money win slows the reels down and zooms in: a small win only slows the 3rd and 4th column a little and zooms 3 %.
 			const bigIndex = ['none', 'big', 'mega', 'super', 'max', 'worldRecord'].indexOf(bigWinTier);
-			const extraStopGapMs = reduced || bigIndex < 1 ? 0 : [0, 260, 380, 500, 620, 620][bigIndex] * (stateBet.isTurbo ? 0.4 : 1);
-			if (!reduced && bigIndex >= 1) {
-				slotZoom.zoomIn([1, 1.05, 1.08, 1.11, 1.14, 1.14][bigIndex], 2600 + extraStopGapMs * 4);
+			const isSmallWin = bigWinTier === 'small';
+			const turboScale = stateBet.isTurbo ? 0.4 : 1;
+			const extraStopGapMs = reduced || bigIndex < 1 ? 0 : [0, 260, 380, 500, 620, 620][bigIndex] * turboScale;
+			/** Extra stop delay of one reel: linear for big wins, only reels 3 and 4 (and what follows) for small wins. */
+			const extraForReel = (reel: number) =>
+				isSmallWin && !reduced ? [0, 0, 150, 320, 320][reel] * turboScale : reel * extraStopGapMs;
+			if (!reduced && (bigIndex >= 1 || isSmallWin)) {
+				slotZoom.zoomIn(isSmallWin ? 1.03 : [1, 1.05, 1.08, 1.11, 1.14, 1.14][bigIndex], 2600 + extraStopGapMs * 4);
 			}
 			const startStagger = reduced ? 40 : timings.reelStartStaggerMs;
 			const stopStagger = reduced ? 30 : timings.reelStopStaggerMs;
@@ -666,7 +672,7 @@
 				const elapsed = now - started;
 				for (let reel = 0; reel < 5; reel += 1) {
 					if (landed[reel]) continue;
-					const travelMs = reelTravelMs(baseTravel, reel, startStagger, stopStagger) + reel * extraStopGapMs;
+					const travelMs = reelTravelMs(baseTravel, reel, startStagger, stopStagger) + extraForReel(reel);
 					const startAt = reel * startStagger;
 					if (elapsed < startAt) continue;
 					const phaseElapsed = elapsed - startAt;
@@ -797,6 +803,8 @@
 			if (!celebrationShow && totalWinX > 1 && !catchUp) {
 				reactToWin('mini', 'small', { turbo: stateBet.isTurbo });
 			}
+			// A small win has no celebration: the zoom lets go slowly once the win is shown.
+			if (!celebrationShow) slotZoom.release(700, 1800);
 			if (celebrationShow && !catchUp) await waitForCelebration();
 		},
 		skyjumpV2ScatterResult: ({ count, perfectV }) => {
@@ -2142,11 +2150,11 @@
 		overflow: visible;
 	}
 
-	/* A tier tile may reach over the frame art (z 6); the symbol on it (z 8+) never leaves the tile. */
-	.reel:not(.spinning) .symbol .tile-bg {
-		z-index: 7;
-	}
-
+	/*
+	 * Stacking by tier: low (8) < medium (9) < the tiles and symbols of the tiled tiers, each tier over the one below:
+	 * premium (tile 12, symbol 16) < scatter (13, 17) < Concierge / Mystery (14, 18) < features and tokens (15, 19).
+	 * A tile may reach over the frame art (z 6) and over lower-tier symbols; its own symbol never leaves it.
+	 */
 	.reel:not(.spinning) .symbol .content-stage {
 		z-index: 8;
 	}
@@ -2155,11 +2163,36 @@
 		z-index: 9;
 	}
 
-	.reel:not(.spinning) .symbol[data-tier='premium'] .content-stage,
-	.reel:not(.spinning) .symbol[data-tier='scatter'] .content-stage,
-	.reel:not(.spinning) .symbol[data-tier='concierge_mystery'] .content-stage,
+	.reel:not(.spinning) .symbol[data-tier='premium'] .tile-bg {
+		z-index: 12;
+	}
+
+	.reel:not(.spinning) .symbol[data-tier='scatter'] .tile-bg {
+		z-index: 13;
+	}
+
+	.reel:not(.spinning) .symbol[data-tier='concierge_mystery'] .tile-bg {
+		z-index: 14;
+	}
+
+	.reel:not(.spinning) .symbol[data-tier='feature'] .tile-bg {
+		z-index: 15;
+	}
+
+	.reel:not(.spinning) .symbol[data-tier='premium'] .content-stage {
+		z-index: 16;
+	}
+
+	.reel:not(.spinning) .symbol[data-tier='scatter'] .content-stage {
+		z-index: 17;
+	}
+
+	.reel:not(.spinning) .symbol[data-tier='concierge_mystery'] .content-stage {
+		z-index: 18;
+	}
+
 	.reel:not(.spinning) .symbol[data-tier='feature'] .content-stage {
-		z-index: 10;
+		z-index: 19;
 	}
 
 	/*
@@ -2200,7 +2233,7 @@
 	}
 
 	.reel:not(.spinning) .symbol small {
-		z-index: 12;
+		z-index: 21;
 	}
 
 	.reel:not(.spinning) .content-stage {
@@ -2381,7 +2414,7 @@
 	.symbol.popped::before {
 		content: '';
 		position: absolute;
-		z-index: 7;
+		z-index: 19;
 		inset: -22%;
 		border-radius: 50%;
 		background: radial-gradient(
@@ -2433,7 +2466,7 @@
 
 	.reel:not(.spinning) .symbol.hit .content-stage,
 	.reel:not(.spinning) .symbol.popped .content-stage {
-		z-index: 11;
+		z-index: 20;
 	}
 
 	.symbol.preserved .content-stage {

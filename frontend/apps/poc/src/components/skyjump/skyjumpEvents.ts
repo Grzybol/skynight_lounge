@@ -93,7 +93,7 @@ export type EmitterEventSkyJump =
 			type: 'skyjumpV2BoardReveal';
 			board: string[][];
 			/** Tier of the round's final win (known from the book before the reels roll): big wins roll with wider gaps and a slow zoom. */
-			bigWinTier?: 'none' | 'big' | 'mega' | 'super' | 'max' | 'worldRecord';
+			bigWinTier?: 'none' | 'small' | 'big' | 'mega' | 'super' | 'max' | 'worldRecord';
 			timings: {
 				reelSpinMs: number;
 				reelStopMs: number;

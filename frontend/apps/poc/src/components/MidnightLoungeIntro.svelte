@@ -310,10 +310,13 @@
 		/* The whole horizontal plate (560 x 137), scaled as one picture; the lettering fits its blue field. */
 		width: min(500px, calc(100% - 48px));
 		aspect-ratio: 560 / 137;
-		display: grid;
-		place-items: center;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 		box-sizing: border-box;
-		padding: 0 7%;
+		padding: 0;
+		/* The letter-spacing trails the last letter: pull it back so the line is optically centred. */
+		text-indent: 0.04em;
 		color: #fff;
 		font-family: var(--ml-font-gold, 'Luckiest Guy', serif);
 		font-size: min(27px, 3.6vw);

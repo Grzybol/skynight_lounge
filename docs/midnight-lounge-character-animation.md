@@ -514,3 +514,10 @@ Fixed after the guideline review (verified against a local mock RGS, a productio
 - Brightness: wall x0.9025 baked (two 5 % steps), first background plane, scene plants, both characters (woman 0.862), the frame (`.board-art-frame`) and symbol art all x0.95.
 - Tier tiles: `V2_TILE_SCALE` (premium 1.10, scatter 1.14, Concierge / Mystery 1.18, features 1.22 of the cell), drawn at z 7 over the frame art; symbols (max 0.9965 of the cell) stay inside their tile.
 - TURBO and AUTO are as tall as the WIN plate (its opaque pixels).
+
+## Tier stacking, zoom on every win, CTA, woman (latest)
+
+- Stacking: tiled tiers lie over lower ones: tiles premium 12 < scatter 13 < Concierge / Mystery 14 < features 15, symbols 16-19, all above low (8) and medium (9) symbols; hit / popped symbols 20.
+- Every money win zooms the scene and slows the reels: small win (0 < x < big): zoom 1.03 and extra stop delay only for reels 3-5 (150 / 320 / 320 ms, x0.4 in turbo), released 0.7 s after the win is shown;
+  big and above as before (`bigWinTier` 'small' | ...).
+- CTA lettering is centred with flex (it overflowed to the right in a grid); the woman's `bottomFrac` 1.065 puts the chair legs behind the BetUI.

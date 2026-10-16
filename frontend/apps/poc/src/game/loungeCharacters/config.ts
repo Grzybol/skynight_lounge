@@ -136,7 +136,7 @@ export type CharacterPlacement = {
 };
 
 export const CHARACTER_PLACEMENT: Record<CharacterId, CharacterPlacement> = {
-	woman: { heightFrac: 0.6363, centerXFrac: 0.8815, bottomFrac: 0.955 },
+	woman: { heightFrac: 0.6363, centerXFrac: 0.8815, bottomFrac: 1.065 },
 	// Placed from the first animation frame: the bartender's drink stops at the slot's left edge (his
 	// tray may reach over it); the woman's foot may reach over the slot's right edge, her face never.
 	bartender: { heightFrac: 0.7676, centerXFrac: 0.143, bottomFrac: 0.97 },

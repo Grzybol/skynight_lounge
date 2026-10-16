@@ -47,7 +47,8 @@ const expectedWinTier = (bookEvents: BookEvent[] = []) => {
 		}
 		if ((event.type as string) === 'skyjumpWorldRecord') worldRecord = true;
 	}
-	return classifyV2WinCelebration({ totalWinX, capHit, worldRecord });
+	const tier = classifyV2WinCelebration({ totalWinX, capHit, worldRecord });
+	return tier === 'none' && totalWinX > 0 ? ('small' as const) : tier;
 };
 
 const isV2Result = (
