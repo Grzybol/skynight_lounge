@@ -551,3 +551,7 @@ Fixed after the guideline review (verified against a local mock RGS, a productio
 ## Frame gems no longer jump (wind mask)
 
 The pulsing gem overlays (`GemPulse`) are static copies of the gems, but the wind mask let six gems (crest ruby, the diamonds beside it at the top and bottom) sway with the frame. When an overlay appeared or vanished the gem jumped a few pixels. `slot_frame_wind_mask.png` is now black (feathered, 12 px margin) over all 16 gems, so they stay still and the overlays line up exactly.
+
+## Teaser without zoom
+
+The teaser (reels 1-2 on the same good symbol) no longer zooms the scene in, so there is no zoom that gets cut when a payline breaks. It still slows the last three reels down and makes them roll longer; the zoom stays for wins above the bet.

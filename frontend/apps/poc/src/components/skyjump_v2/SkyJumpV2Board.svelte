@@ -644,8 +644,7 @@
 			const isSmallWin = bigWinTier === 'small';
 			const turboScale = stateBet.isTurbo ? 0.4 : 1;
 			// Teaser: when reels 1 and 2 stop on the same good symbol (its 3-of-a-kind pays at least 1x) on one payline, the last
-			// three reels slow down and the scene zooms in like at a big win (from the moment reel 2 lands); the zoom ends at once
-			// when a landing reel breaks every such payline and the spin has no win above the bet.
+			// three reels slow down and roll longer like at a big win (no zoom).
 			const goodSymbol = (id: string) => (V2_CANONICAL_PAYTABLE.awards[id]?.['3'] ?? 0) >= 1;
 			const teaserLines = reduced || catchUp
 				? []
@@ -655,14 +654,6 @@
 						return Boolean(first) && first === next[1]?.[rows[1]] && goodSymbol(first);
 					});
 			const teaser = teaserLines.length > 0;
-			const lineAliveThrough = (reelIndex: number) =>
-				teaserLines.some((id) => {
-					const rows = V2_PAYLINES[id];
-					const symbol = next[0][rows[0]];
-					for (let r = 1; r <= reelIndex; r += 1) if (next[r]?.[rows[r]] !== symbol) return false;
-					return true;
-				});
-			const tierZoomed = bigIndex >= 1 || isSmallWin;
 			const slowStep = reduced
 				? 0
 				: Math.max(isSmallWin ? 0.025 : bigIndex >= 1 ? 0.05 * bigIndex : 0, teaser ? 0.05 : 0) * turboScale;
@@ -746,10 +737,6 @@
 						spinOffset[reel] = 0;
 						landed[reel] = true;
 						startJelly(reel, settleMs);
-						if (teaser && !tierZoomed) {
-							if (reel === 1) slotZoom.zoomIn(1.06, 1600);
-							else if (reel >= 2 && !lineAliveThrough(reel)) slotZoom.reset();
-						}
 						if (result[reel]?.some((id) => id === V2_SCATTER_ID)) {
 							playV2AudioHook('SCATTER_LAND', { catchUp: false });
 						}
