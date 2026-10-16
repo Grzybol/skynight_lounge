@@ -11,7 +11,12 @@
 		loungeSlotTabletSrc,
 		loungeSlotWindMaskSrc,
 	} from '../../game/midnightLoungeTheme';
-	import { V2_PAYLINES, V2_PAYLINE_IDS, V2_SCATTER_ID } from '../../game/skyjump_v2/config';
+	import {
+		V2_CANONICAL_PAYTABLE,
+		V2_PAYLINES,
+		V2_PAYLINE_IDS,
+		V2_SCATTER_ID,
+	} from '../../game/skyjump_v2/config';
 	import { bonusHud, bonusShowsTargets, tierLabel } from '../../game/skyjump_v2/bonusHud.svelte';
 	import { V2_PLACEHOLDERS, reelFillerBand, v2Placeholder } from '../../game/skyjump_v2/placeholders';
 	import {
@@ -638,7 +643,29 @@
 			const bigIndex = ['none', 'big', 'mega', 'super', 'max', 'worldRecord'].indexOf(bigWinTier);
 			const isSmallWin = bigWinTier === 'small';
 			const turboScale = stateBet.isTurbo ? 0.4 : 1;
-			const slowStep = reduced ? 0 : (isSmallWin ? 0.025 : bigIndex >= 1 ? 0.05 * bigIndex : 0) * turboScale;
+			// Teaser: when reels 1 and 2 stop on the same good symbol (its 3-of-a-kind pays at least 1x) on one payline, the last
+			// three reels slow down and the scene zooms in like at a big win (from the moment reel 2 lands); the zoom ends at once
+			// when a landing reel breaks every such payline and the spin has no win above the bet.
+			const goodSymbol = (id: string) => (V2_CANONICAL_PAYTABLE.awards[id]?.['3'] ?? 0) >= 1;
+			const teaserLines = reduced || catchUp
+				? []
+				: V2_PAYLINE_IDS.filter((id) => {
+						const rows = V2_PAYLINES[id];
+						const first = next[0]?.[rows[0]];
+						return Boolean(first) && first === next[1]?.[rows[1]] && goodSymbol(first);
+					});
+			const teaser = teaserLines.length > 0;
+			const lineAliveThrough = (reelIndex: number) =>
+				teaserLines.some((id) => {
+					const rows = V2_PAYLINES[id];
+					const symbol = next[0][rows[0]];
+					for (let r = 1; r <= reelIndex; r += 1) if (next[r]?.[rows[r]] !== symbol) return false;
+					return true;
+				});
+			const tierZoomed = bigIndex >= 1 || isSmallWin;
+			const slowStep = reduced
+				? 0
+				: Math.max(isSmallWin ? 0.025 : bigIndex >= 1 ? 0.05 * bigIndex : 0, teaser ? 0.05 : 0) * turboScale;
 			const slowFactor = (reel: number) => 1 + slowStep * Math.max(0, reel - 1);
 			if (!reduced && bigIndex < 1 && !isSmallWin) slotZoom.release(0, 900);
 			if (!reduced && (bigIndex >= 1 || isSmallWin)) {
@@ -705,6 +732,10 @@
 						spinOffset[reel] = 0;
 						landed[reel] = true;
 						startJelly(reel, settleMs);
+						if (teaser && !tierZoomed) {
+							if (reel === 1) slotZoom.zoomIn(1.06, 1600);
+							else if (reel >= 2 && !lineAliveThrough(reel)) slotZoom.reset();
+						}
 						if (result[reel]?.some((id) => id === V2_SCATTER_ID)) {
 							playV2AudioHook('SCATTER_LAND', { catchUp: false });
 						}
@@ -2152,9 +2183,8 @@
 	}
 
 	/*
-	 * Stacking by tier: low (8) < medium (9) < the tiles and symbols of the tiled tiers, each tier over the one below:
-	 * premium (tile 12, symbol 16) < scatter (13, 17) < Concierge / Mystery (14, 18) < features and tokens (15, 19).
-	 * A tile may reach over the frame art (z 6) and over lower-tier symbols; its own symbol never leaves it.
+	 * Stacking by tier: low (8) < medium (9) < the tiles of the tiled tiers (premium 12 ... features 15) < the frame (22) <
+	 * the symbols of the tiled tiers (premium 24 ... features 27). A tile lies over lower-tier symbols; its symbol is over the frame.
 	 */
 	.reel:not(.spinning) .symbol .content-stage {
 		z-index: 8;
@@ -2180,20 +2210,21 @@
 		z-index: 15;
 	}
 
+	/* The symbols of the tiled tiers lie over the frame (z 22), their tiles stay under it. */
 	.reel:not(.spinning) .symbol[data-tier='premium'] .content-stage {
-		z-index: 16;
+		z-index: 24;
 	}
 
 	.reel:not(.spinning) .symbol[data-tier='scatter'] .content-stage {
-		z-index: 17;
+		z-index: 25;
 	}
 
 	.reel:not(.spinning) .symbol[data-tier='concierge_mystery'] .content-stage {
-		z-index: 18;
+		z-index: 26;
 	}
 
 	.reel:not(.spinning) .symbol[data-tier='feature'] .content-stage {
-		z-index: 19;
+		z-index: 27;
 	}
 
 	/*
@@ -2234,7 +2265,7 @@
 	}
 
 	.reel:not(.spinning) .symbol small {
-		z-index: 21;
+		z-index: 29;
 	}
 
 	.reel:not(.spinning) .content-stage {
@@ -2415,7 +2446,7 @@
 	.symbol.popped::before {
 		content: '';
 		position: absolute;
-		z-index: 19;
+		z-index: 23;
 		inset: -22%;
 		border-radius: 50%;
 		background: radial-gradient(
@@ -2467,7 +2498,7 @@
 
 	.reel:not(.spinning) .symbol.hit .content-stage,
 	.reel:not(.spinning) .symbol.popped .content-stage {
-		z-index: 20;
+		z-index: 28;
 	}
 
 	.symbol.preserved .content-stage {

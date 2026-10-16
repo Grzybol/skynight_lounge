@@ -536,3 +536,9 @@ Fixed after the guideline review (verified against a local mock RGS, a productio
 
 - `expectedWinTier(bookEvents, revealIndex)` now reads the win of THIS spin: the next `setTotalWin` minus the previous one (free-spin books have no per-spin `skyjumpResult`, only the final one, so the
   old round-total read started the zoom on every spin or never). Only a spin win above the bet (> 1x) zooms and slows reels 3-5; a spin without one lets a running zoom go (0.9 s).
+
+## Teaser zoom, symbols over the frame, darker wall (latest)
+
+- Teaser: when reels 1 and 2 stop on the same good symbol (3-of-a-kind pays >= 1x: medium and premium) on one payline, reels 3-5 slow down by the big-win step (5 %/step) and the scene zooms to 1.06 from the moment reel 2
+  lands; as soon as a landing reel breaks every such payline (and the spin has no win above the bet) the zoom is reset at once.
+- The symbols of the tiled tiers are z 24-27 (over the frame, z 22); their tiles stay z 12-15 under it. Wall x0.95 again.
