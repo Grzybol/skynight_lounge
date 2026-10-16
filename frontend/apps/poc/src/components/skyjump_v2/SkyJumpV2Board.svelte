@@ -1165,7 +1165,7 @@
 			</div>
 		{/if}
 		<div class="board-surface" data-test="skyjump-v2-board-surface">
-			<!-- Layer 0: the flat stone wall behind the opening (10 % transparent, static), under the rolling symbols and the frame. -->
+			<!-- Layer 0: the flat stone wall behind the opening (static, fully opaque), under the rolling symbols and the frame. -->
 			<div
 				class="board-art-back"
 				style:left={`${slotFrameLeft}px`}
@@ -1182,6 +1182,17 @@
 					style:width={`${V2_TABLET_RECT.width * frameK}px`}
 					style:height={`${V2_TABLET_RECT.height * frameK}px`}
 				/>
+				<!-- Four vertical grooves between the five columns, drawn in CSS on the wall layer. -->
+				{#each [1, 2, 3, 4] as k}
+					<span
+						class="slot-divider"
+						aria-hidden="true"
+						style:left={`${(V2_FRAME_WINDOWS.origin.x + V2_FRAME_WINDOWS.pitch.w * k) * frameK - cellW * 0.045}px`}
+						style:top={`${V2_FRAME_WINDOWS.origin.y * frameK}px`}
+						style:width={`${cellW * 0.09}px`}
+						style:height={`${V2_FRAME_WINDOWS.pitch.h * 5 * frameK}px`}
+					></span>
+				{/each}
 			</div>
 			<div
 				class="board-art-frame"
@@ -1655,11 +1666,28 @@
 		pointer-events: none;
 	}
 
+	/* A groove cut into the wall: soft dark flanks around a darker core, a thin lit edge on each side. */
+	.slot-divider {
+		position: absolute;
+		pointer-events: none;
+		background:
+			linear-gradient(
+				90deg,
+				rgba(0, 0, 0, 0) 0%,
+				rgba(6, 6, 12, 0.6) 22%,
+				rgba(2, 2, 6, 0.96) 50%,
+				rgba(6, 6, 12, 0.6) 78%,
+				rgba(0, 0, 0, 0) 100%
+			);
+		box-shadow:
+			-1px 0 0 rgba(160, 170, 205, 0.24),
+			1px 0 0 rgba(160, 170, 205, 0.24);
+	}
+
 	.slot-wall {
 		position: absolute;
 		max-width: none;
 		object-fit: fill;
-		opacity: 0.9;
 		user-select: none;
 	}
 

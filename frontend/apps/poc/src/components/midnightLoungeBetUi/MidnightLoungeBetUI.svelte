@@ -206,7 +206,8 @@
 		// TURBO between balance and WIN, AUTO between WIN and BET, both on the shared bottom line.
 		const turboBase = box('turbo', 0, 0, 154 * K);
 		const autoBase = box('autospin', 0, 0, 152 * K);
-		const turboCx = (balance.x + balance.w + win.x) / 2;
+		// AUTO's clear distance to the WIN and BET plates; TURBO is stretched until it has the same distance to balance and WIN.
+		const autoGap = (bet.x - (win.x + win.w) - autoBase.w) / 2;
 		const autoCx = (win.x + win.w + bet.x) / 2;
 		return {
 			bonus: lowered(bonus0),
@@ -216,7 +217,7 @@
 			bet,
 			minus: box('minus', bet.x + m, cy, d),
 			plus: box('plus', bet.x + bet.w - m - d, cy, d),
-			turbo: box('turbo', turboCx - turboBase.w / 2, BOTTOM - turboBase.h, 154 * K),
+			turbo: box('turbo', balance.x + balance.w + autoGap, BOTTOM - turboBase.h, win.x - (balance.x + balance.w) - 2 * autoGap, turboBase.h),
 			auto: box('autospin', autoCx - autoBase.w / 2, BOTTOM - autoBase.h, 152 * K),
 			spin,
 		};

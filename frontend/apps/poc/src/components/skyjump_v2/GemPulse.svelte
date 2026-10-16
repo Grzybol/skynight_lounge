@@ -57,14 +57,15 @@
 		};
 	});
 
-	// Crest ruby: rare (every 3-7 s), 0.7-1.6 s long, and only about half as much growth as the small gems.
+	// Crest ruby: rare (every 3-7 s), 0.7-1.6 s long. It only brightens and glows: its size never changes (a scaled copy
+	// would not line up with the ruby drawn in the frame).
 	$effect(() => {
 		if (typeof window === 'undefined' || reduced()) return;
 		let stopped = false;
 		let timer: ReturnType<typeof setTimeout>;
 		const loop = () => {
 			if (stopped) return;
-			if (!rolling) fireCrest(700 + Math.random() * 900, 1.07 + Math.random() * 0.1, 1.35 + Math.random() * 0.4);
+			if (!rolling) fireCrest(700 + Math.random() * 900, 1, 1.4 + Math.random() * 0.5);
 			timer = setTimeout(loop, 3000 + Math.random() * 4000);
 		};
 		timer = setTimeout(loop, 1500);

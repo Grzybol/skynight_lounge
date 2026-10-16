@@ -491,3 +491,9 @@ Fixed after the guideline review (verified against a local mock RGS, a productio
 
 - The wall is 10 % transparent (opacity 0.9). TURBO sits between balance and WIN, AUTO between WIN and BET, all plates end on y 719; the menu button is centred on the balance plate's round end (`HUD.balance` end circle) and is 78x76.
 - Slot grows with the top where it was (raised 20 px): `BOARD_GRID_W` 524, the frame ends just above the bottom strip. "BET" label 15.2 px (the amount keeps 16 px).
+
+## Wall grooves, steady crest ruby, TURBO width (latest)
+
+- The wall is fully opaque again; four CSS grooves (`.slot-divider`) between the columns sit on the wall layer.
+- The crest ruby pulse only brightens and glows (scale 1): a scaled overlay never lined up with the ruby in the frame art and looked like the gem grew / shrank.
+- TURBO is stretched to the clear distance AUTO has to the WIN and BET plates (`autoGap`).
