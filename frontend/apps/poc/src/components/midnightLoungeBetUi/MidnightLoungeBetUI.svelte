@@ -155,20 +155,19 @@
 	// Layout (stage px, from new_betui_preview.png): bottom-left bonus + menu/balance, bottom-right turbo, auto, bet, spin.
 	const L = (() => {
 		// Every control is 10 % smaller than the first pass and 5 % than the second. Each cluster shrinks towards its own
-		// screen edge: bonus / balance / menu towards the bottom-left, bet / turbo / auto / spin towards the bottom-right,
-		// the WIN plate towards the bottom centre.
+		// screen edge: bonus / balance / menu towards the bottom-left, bet / spin towards the bottom-right, the WIN plate
+		// towards the bottom centre. TURBO and AUTO stand in the bottom strip, in the gaps between balance / WIN / bet.
 		const K = 0.855;
 		const toward = (ax: number, x: number, y: number) => [ax + (x - ax) * K, 720 + (y - 720) * K] as const;
-		// Bottom line shared with the WIN plate (its lowest opaque pixel): 719 on the 720 px stage.
+		// Bottom line shared by the lowest opaque pixels of every plate: 719 on the 720 px stage.
 		const BOTTOM = 719;
 		const spin0 = box('spin', ...toward(1280, 1082, 501), 193 * K);
 		const dyR = BOTTOM - (spin0.y + spin0.h);
 		const spin = box('spin', spin0.x, spin0.y + dyR, 193 * K);
-		/** SPIN is a disc: the controls to its left keep the same gap to its curve (measured at their closest point). */
+		/** SPIN is a disc: the BET plate keeps a few transparent pixels from its curve (measured at the closest point). */
 		const spinCx = spin.x + spin.w / 2;
 		const spinCy = spin.y + spin.h / 2;
 		const spinR = spin.w / 2;
-		// Just a few transparent pixels between the controls and the SPIN disc.
 		const GAP = 3;
 		const leftOfSpin = (w: number, y: number, h: number) => {
 			const nearestY = Math.min(Math.max(spinCy, y), y + h);
@@ -176,13 +175,7 @@
 			const right = spinCx - Math.sqrt((spinR + GAP) ** 2 - dy ** 2);
 			return right - w;
 		};
-		const placed = (key: HudKey, fromX: number, fromY: number, w: number) => {
-			const probe = box(key, 0, 0, w);
-			const [, y0] = toward(1280, fromX, fromY);
-			const y = y0 + dyR;
-			return box(key, leftOfSpin(w, y, probe.h), y, w);
-		};
-		// BET plate and its content 10 % smaller, centred on the old row.
+		// BET plate and its content 10 % smaller, twice.
 		const betOld = box('bet_background', ...toward(1280, 804, 614), 286 * K);
 		const betW = betOld.w * 0.9 * 0.9;
 		const betH = box('bet_background', 0, 0, betW).h;
@@ -192,30 +185,39 @@
 		const d = bet.w * 0.194 * 0.95 * 0.95;
 		const m = bet.w * 0.165 - d / 2;
 		const cy = bet.y + (bet.h - d) / 2;
-		// Left part: balance and menu end on the same line, the bonus plate moves with them.
+		// Left part: the balance plate's bottom is on the shared line, the bonus plate moves with it.
 		const balance0 = box('balance', ...toward(0, 6, 606), 347 * K);
-		const menu0 = box('menu', ...toward(0, 3, 609), 96 * K * 0.9, 91 * K * 0.9);
-		const dyL = BOTTOM - Math.max(balance0.y + balance0.h, menu0.y + menu0.h);
+		const dyL = BOTTOM - (balance0.y + balance0.h);
 		const lowered = (r: HudBox): HudBox => ({ ...r, y: r.y + dyL });
+		const balance = lowered(balance0);
+		// The menu button sits exactly on the balance plate's round left end (same centre) and covers it.
+		const ended = { x: 87 + (597 - 87) / 2, y: 123 + (628 - 123) / 2 };
+		const endCx = balance.x + (ended.x - HUD.balance.b[0]) * balance.kx;
+		const endCy = balance.y + (ended.y - HUD.balance.b[1]) * balance.ky;
+		const menuW = 78;
+		const menuH = 76;
+		const menu = box('menu', endCx - menuW / 2, endCy - menuH / 2, menuW, menuH);
 		const bonus0 = box('bonus', ...toward(0, 9, 543), 207 * K);
+		// WIN sits exactly under the middle of the slot (stage x = 640), 10 % lower and 15 % longer than the plain plate.
+		const winBase = box('bet_background', 0, 0, 261 * K);
+		const winW = winBase.w * 1.15;
+		const winH = winBase.h * 0.9;
+		const win = box('bet_background', 640 - winW / 2, BOTTOM - winH, winW, winH);
+		// TURBO between balance and WIN, AUTO between WIN and BET, both on the shared bottom line.
+		const turboBase = box('turbo', 0, 0, 154 * K);
+		const autoBase = box('autospin', 0, 0, 152 * K);
+		const turboCx = (balance.x + balance.w + win.x) / 2;
+		const autoCx = (win.x + win.w + bet.x) / 2;
 		return {
 			bonus: lowered(bonus0),
-			balance: lowered(balance0),
-			menu: lowered(menu0),
-			win: (() => {
-				// WIN sits exactly under the middle of the slot (stage x = 640) on the lower edge of the frame:
-				// its lowest pixel is on the shared bottom line.
-				// 10 % lower and 15 % longer than the plain plate (its art is stretched).
-				const base = box('bet_background', 0, 0, 261 * K);
-				const w = base.w * 1.15;
-				const h = base.h * 0.9;
-				return box('bet_background', 640 - w / 2, BOTTOM - h, w, h);
-			})(),
+			balance,
+			menu,
+			win,
 			bet,
 			minus: box('minus', bet.x + m, cy, d),
 			plus: box('plus', bet.x + bet.w - m - d, cy, d),
-			turbo: placed('turbo', 936, 509, 154 * K),
-			auto: placed('autospin', 938, 562, 152 * K),
+			turbo: box('turbo', turboCx - turboBase.w / 2, BOTTOM - turboBase.h, 154 * K),
+			auto: box('autospin', autoCx - autoBase.w / 2, BOTTOM - autoBase.h, 152 * K),
 			spin,
 		};
 	})();
@@ -795,7 +797,7 @@
 
 	/* BET plate: its lettering is 10 % smaller with the plate. */
 	.hud .bet-btn .kicker {
-		font-size: 10.1px;
+		font-size: 15.2px;
 		transform: scaleX(1.14);
 	}
 

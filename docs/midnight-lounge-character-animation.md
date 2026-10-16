@@ -486,3 +486,8 @@ Fixed after the guideline review (verified against a local mock RGS, a productio
 - Slot raised by 20 px and smaller (`BOARD_GRID_W` 514) so the frame ends at about y 650, above the WIN / BALANCE / BET plates.
 - BetUI: BET, TURBO and AUTO keep a 3 px gap to the SPIN disc (`GAP`); BET and menu another 10 % smaller; WIN plate 10 % lower and 15 % longer with the label and the amount on one line;
   BET lettering 5 % bigger and 14 % wider (`scaleX`).
+
+## TURBO / AUTO in the bottom strip (latest)
+
+- The wall is 10 % transparent (opacity 0.9). TURBO sits between balance and WIN, AUTO between WIN and BET, all plates end on y 719; the menu button is centred on the balance plate's round end (`HUD.balance` end circle) and is 78x76.
+- Slot grows with the top where it was (raised 20 px): `BOARD_GRID_W` 524, the frame ends just above the bottom strip. "BET" label 15.2 px (the amount keeps 16 px).

@@ -297,10 +297,10 @@
 	const gap = 0;
 	const framePad = 0;
 	/**
-	 * Slot width (px @1280): the frame art is scaled so the 5x5 playfield is this wide. 514 = 823 x ((650 + 20) / 1072):
+	 * Slot width (px @1280): the frame art is scaled so the 5x5 playfield is this wide. 524 = 823 x ((662 + 20) / 1072):
 	 * the crest sits on the top edge and the frame's visible bottom (art y 1089) lands on the bottom edge of the stage.
 	 */
-	const BOARD_GRID_W = 514;
+	const BOARD_GRID_W = 524;
 	// Not rounded: a rounded cell height drifts away from the frame's 133.2 art-px row pitch (up to 2.5 px by the last row).
 	const cellW = $derived(Math.max(22, px(BOARD_GRID_W) / 5));
 	const cellH = $derived(Math.max(22, cellW / V2_SLOT_BOARD_FRAME.cellAspect));
@@ -1165,7 +1165,7 @@
 			</div>
 		{/if}
 		<div class="board-surface" data-test="skyjump-v2-board-surface">
-			<!-- Layer 0: the flat stone wall behind the opening (50 % opaque, static), under the rolling symbols and the frame. -->
+			<!-- Layer 0: the flat stone wall behind the opening (10 % transparent, static), under the rolling symbols and the frame. -->
 			<div
 				class="board-art-back"
 				style:left={`${slotFrameLeft}px`}
@@ -1659,7 +1659,7 @@
 		position: absolute;
 		max-width: none;
 		object-fit: fill;
-		opacity: 0.5;
+		opacity: 0.9;
 		user-select: none;
 	}
 
