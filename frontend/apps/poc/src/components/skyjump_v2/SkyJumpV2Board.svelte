@@ -633,16 +633,15 @@
 			const token = ++reelSpinToken;
 			const reduced = prefersReducedMotion();
 			// Big wins: each next reel stops later than the one before (more suspense) and the scene zooms slowly towards the slot.
-			// Every money win slows the reels down and zooms in: a small win only slows the 3rd and 4th column a little and zooms 3 %.
+			// Every money win slows the last three reels down, each one more than the one before (columns 3 / 4 / 5 are
+			// n = 1 / 2 / 3 steps of `slowStep` longer): 2.5 % a step for a small win, 5 % at big win, then 10 / 15 / 20 / 25 %.
 			const bigIndex = ['none', 'big', 'mega', 'super', 'max', 'worldRecord'].indexOf(bigWinTier);
 			const isSmallWin = bigWinTier === 'small';
 			const turboScale = stateBet.isTurbo ? 0.4 : 1;
-			const extraStopGapMs = reduced || bigIndex < 1 ? 0 : [0, 260, 380, 500, 620, 620][bigIndex] * turboScale;
-			/** Extra stop delay of one reel: linear for big wins, only reels 3 and 4 (and what follows) for small wins. */
-			const extraForReel = (reel: number) =>
-				isSmallWin && !reduced ? [0, 0, 150, 320, 320][reel] * turboScale : reel * extraStopGapMs;
+			const slowStep = reduced ? 0 : (isSmallWin ? 0.025 : bigIndex >= 1 ? 0.05 * bigIndex : 0) * turboScale;
+			const slowFactor = (reel: number) => 1 + slowStep * Math.max(0, reel - 1);
 			if (!reduced && (bigIndex >= 1 || isSmallWin)) {
-				slotZoom.zoomIn(isSmallWin ? 1.03 : [1, 1.06, 1.1, 1.15, 1.2, 1.25][bigIndex], 2600 + extraStopGapMs * 4);
+				slotZoom.zoomIn(isSmallWin ? 1.03 : [1, 1.06, 1.1, 1.15, 1.2, 1.25][bigIndex], 2600 + slowStep * 1800 * 6);
 			}
 			const startStagger = reduced ? 40 : timings.reelStartStaggerMs;
 			const stopStagger = reduced ? 30 : timings.reelStopStaggerMs;
@@ -672,7 +671,7 @@
 				const elapsed = now - started;
 				for (let reel = 0; reel < 5; reel += 1) {
 					if (landed[reel]) continue;
-					const travelMs = reelTravelMs(baseTravel, reel, startStagger, stopStagger) + extraForReel(reel);
+					const travelMs = Math.round(reelTravelMs(baseTravel, reel, startStagger, stopStagger) * slowFactor(reel));
 					const startAt = reel * startStagger;
 					if (elapsed < startAt) continue;
 					const phaseElapsed = elapsed - startAt;

@@ -527,3 +527,7 @@ Fixed after the guideline review (verified against a local mock RGS, a productio
 - The frame (`.board-art-frame`) is z 22: tiles and symbols (z 8-21) are rendered under it. Frame foliage wind amplitude 1.875 (+25 %).
 - Woman `heightFrac` 0.7317 (+15 %, bottom anchored); the right foreground plant moved down with her (y 0.78); menu button +5 %.
 - Zoom by win size: small 1.03, big 1.06, mega 1.10, super 1.15, max 1.20, world record 1.25.
+
+## Column slow-down by win, smaller woman (latest)
+
+- Reels 3 / 4 / 5 run 1 / 2 / 3 steps longer (`slowFactor`): a step is 2.5 % for a small win, 5 % at big win and 10 / 15 / 20 / 25 % for mega / super / max / world record (x0.4 in turbo). Woman `heightFrac` 0.6585 (-10 %).
