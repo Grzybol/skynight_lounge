@@ -115,7 +115,7 @@
 			<ChimneySmoke {...chimney} />
 		{/each}
 	</div>
-	<img class="plane" src={planeOne} alt="" draggable="false" fetchpriority="low" />
+	<img class="plane" src={planeOne} style:filter="brightness(0.95)" alt="" draggable="false" fetchpriority="low" />
 	{#each SCENE_PLANTS as anchor, i}
 			<LoopingProp
 				prop="plant"
@@ -124,6 +124,7 @@
 				offsetMs={i * 2100}
 				z={1}
 				sharp
+				tone="brightness(0.95)"
 			/>
 		{/each}
 {/snippet}

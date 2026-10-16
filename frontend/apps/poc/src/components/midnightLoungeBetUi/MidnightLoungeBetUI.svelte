@@ -218,8 +218,8 @@
 			bet,
 			minus: box('minus', bet.x + m, cy, d),
 			plus: box('plus', bet.x + bet.w - m - d, cy, d),
-			turbo: box('turbo', balance.x + balance.w + autoGap, BOTTOM - turboBase.h, win.x - (balance.x + balance.w) - 2 * autoGap, turboBase.h),
-			auto: box('autospin', autoCx - autoBase.w / 2, BOTTOM - autoBase.h, 152 * K),
+			turbo: box('turbo', balance.x + balance.w + autoGap, BOTTOM - win.h, win.x - (balance.x + balance.w) - 2 * autoGap, win.h),
+			auto: box('autospin', autoCx - autoBase.w / 2, BOTTOM - win.h, 152 * K, win.h),
 			spin,
 		};
 	})();

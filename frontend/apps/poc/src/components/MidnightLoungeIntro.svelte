@@ -307,26 +307,25 @@
 		position: absolute;
 		left: 50%;
 		top: 77%;
-		width: max-content;
-		max-width: calc(100% - 48px);
+		/* The whole horizontal plate (560 x 137), scaled as one picture; the lettering fits its blue field. */
+		width: min(500px, calc(100% - 48px));
+		aspect-ratio: 560 / 137;
+		display: grid;
+		place-items: center;
+		box-sizing: border-box;
+		padding: 0 7%;
 		color: #fff;
 		font-family: var(--ml-font-gold, 'Luckiest Guy', serif);
-		font-size: clamp(22px, 3.3vw, 44px);
-		letter-spacing: 0.05em;
-		line-height: 1.1;
+		font-size: min(27px, 3.6vw);
+		letter-spacing: 0.04em;
+		line-height: 1;
 		text-align: center;
 		white-space: nowrap;
 		/* White lettering with a black outline. */
 		-webkit-text-stroke: 0.11em #000;
 		paint-order: stroke fill;
 		text-shadow: 0 0.06em 0 #000;
-		/* The horizontal gold / blue plate (9-slice) behind the lettering. */
-		box-sizing: content-box;
-		padding: 0.35em 1.1em 0.4em;
-		border: 1px solid transparent;
-		/* A stretched copy of the plate sits under the slices, so no cut line can show through. */
 		background: var(--ml-button) center / 100% 100% no-repeat;
-		border-image: var(--ml-button) 34 fill / 18px stretch;
 		filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.5));
 		opacity: 0;
 		transform: translate(-50%, -50%) translateY(8px);

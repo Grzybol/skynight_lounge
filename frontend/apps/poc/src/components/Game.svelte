@@ -91,13 +91,15 @@
 		document.body.style.setProperty('--ml-panel', abs(loungeUiArt.panel));
 		document.body.style.setProperty('--ml-button', abs(loungeUiArt.button));
 		document.body.style.setProperty('--ml-square', abs(loungeUiArt.square));
+		document.body.style.setProperty('--ml-minus', abs(loungeUiArt.minus));
+		document.body.style.setProperty('--ml-plus', abs(loungeUiArt.plus));
 		// social=true: restricted words are replaced everywhere the player can read them.
 		const stopSocial = stateUrlDerived.social() ? installSocialWording() : undefined;
 
 		return () => {
 			stopSocial?.();
 			document.body.classList.remove('theme-skyjump');
-			for (const name of ['--ml-panel', '--ml-button', '--ml-square']) document.body.style.removeProperty(name);
+			for (const name of ['--ml-panel', '--ml-button', '--ml-square', '--ml-minus', '--ml-plus']) document.body.style.removeProperty(name);
 		};
 	});
 

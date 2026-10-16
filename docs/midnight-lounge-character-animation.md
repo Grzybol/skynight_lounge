@@ -506,3 +506,11 @@ Fixed after the guideline review (verified against a local mock RGS, a productio
   standalone `scale` / `translate` properties, and lets go slowly from the middle of the celebration (`openCelebration`: half of count-up + hold). Reset on a new spin.
 - Wall 15 % darker again (x0.85), symbols 7 art px higher, tier growth +50 % (medium 0.871, premium and above 0.9965 of the cell), golden glow behind tiled symbols (premium 1.0, scatter 1.1,
   Concierge / Mystery 1.2, features 1.3), menu 3 % bigger and 3 px to the left.
+
+## Bet menu art, CTA plate, 5 % dimming, tier tiles over the frame (latest)
+
+- Bet menu: `BetMenuAmountToggle` uses the BetUI minus / plus art (`--ml-minus`, `--ml-plus` on `<body>`).
+- Intro CTA: the whole horizontal plate (`panels/button.png`) is the background, scaled as one picture (500 px wide, 27 px lettering); no 9-slice.
+- Brightness: wall x0.9025 baked (two 5 % steps), first background plane, scene plants, both characters (woman 0.862), the frame (`.board-art-frame`) and symbol art all x0.95.
+- Tier tiles: `V2_TILE_SCALE` (premium 1.10, scatter 1.14, Concierge / Mystery 1.18, features 1.22 of the cell), drawn at z 7 over the frame art; symbols (max 0.9965 of the cell) stay inside their tile.
+- TURBO and AUTO are as tall as the WIN plate (its opaque pixels).

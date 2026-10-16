@@ -60,6 +60,7 @@
 		V2_PAYLINE_FX,
 		V2_SLOT_BOARD_FRAME,
 		V2_TIER_SCALE,
+		V2_TILE_SCALE,
 	} from '../../game/skyjump_v2/presentationLayout';
 	import type { V2BannerKind } from '../../game/skyjump_v2/presentationLayout';
 	import { playV2AudioHook } from '../../game/skyjump_v2/audio';
@@ -1281,10 +1282,10 @@
 											src={v2TileUrl(id, rolling)}
 											alt=""
 											draggable="false"
-											style:left={`${geo.tx}px`}
-											style:top={`${geo.ty}px`}
-											style:width={`${geo.tw}px`}
-											style:height={`${geo.th}px`}
+											style:left={`${geo.tx - (geo.tw * ((V2_TILE_SCALE[v2SymbolTier(id)] ?? 1) - 1)) / 2}px`}
+											style:top={`${geo.ty - (geo.th * ((V2_TILE_SCALE[v2SymbolTier(id)] ?? 1) - 1)) / 2}px`}
+											style:width={`${geo.tw * (V2_TILE_SCALE[v2SymbolTier(id)] ?? 1)}px`}
+											style:height={`${geo.th * (V2_TILE_SCALE[v2SymbolTier(id)] ?? 1)}px`}
 										/>
 									{/if}
 									<div
@@ -1709,6 +1710,7 @@
 	}
 
 	.board-art-frame {
+		filter: brightness(0.95);
 		position: absolute;
 		z-index: 6;
 		display: block;
@@ -2140,8 +2142,9 @@
 		overflow: visible;
 	}
 
+	/* A tier tile may reach over the frame art (z 6); the symbol on it (z 8+) never leaves the tile. */
 	.reel:not(.spinning) .symbol .tile-bg {
-		z-index: 3;
+		z-index: 7;
 	}
 
 	.reel:not(.spinning) .symbol .content-stage {
@@ -2328,6 +2331,7 @@
 		object-fit: contain;
 		object-position: center center;
 		pointer-events: none;
+		filter: brightness(0.95);
 		opacity: 0;
 	}
 

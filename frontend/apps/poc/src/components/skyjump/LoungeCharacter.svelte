@@ -12,7 +12,8 @@
 		$props();
 
 	/** Matched to the bartender's upper body (the trousers skew his whole-figure mean): luminance mean ~60, spread ~46. */
-	const WOMAN_TONE = 'brightness(0.907) contrast(1.05)';
+	const WOMAN_TONE = 'brightness(0.862) contrast(1.05)';
+	const BARTENDER_TONE = 'brightness(0.95)';
 
 	const ASPECT = CHARACTER_FRAME[character].w / CHARACTER_FRAME[character].h;
 
@@ -90,7 +91,7 @@
 	style:top={box.top}
 	style:width={box.width}
 	style:height={box.height}
-	style:filter={character === 'woman' ? WOMAN_TONE : undefined}
+	style:filter={character === 'woman' ? WOMAN_TONE : BARTENDER_TONE}
 	style:clip-path={CHARACTER_PLACEMENT[character].clipBottomFrac
 		? `inset(0 0 ${CHARACTER_PLACEMENT[character].clipBottomFrac! * 100}% 0)`
 		: undefined}

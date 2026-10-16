@@ -155,3 +155,14 @@ export const V2_TIER_SCALE: Record<string, number> = {
 	concierge_mystery: 0.9965,
 	feature: 0.9965,
 };
+
+/**
+ * Tier tile size as a multiple of the cell: it grows with the tier and may reach over the frame art; every symbol is smaller than its
+ * tile (symbol height at most 0.9965 of the cell).
+ */
+export const V2_TILE_SCALE: Record<string, number> = {
+	premium: 1.1,
+	scatter: 1.14,
+	concierge_mystery: 1.18,
+	feature: 1.22,
+};
