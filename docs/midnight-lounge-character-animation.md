@@ -497,3 +497,12 @@ Fixed after the guideline review (verified against a local mock RGS, a productio
 - The wall is fully opaque again; four CSS grooves (`.slot-divider`) between the columns sit on the wall layer.
 - The crest ruby pulse only brightens and glows (scale 1): a scaled overlay never lined up with the ruby in the frame art and looked like the gem grew / shrank.
 - TURBO is stretched to the clear distance AUTO has to the WIN and BET plates (`autoGap`).
+
+## Big-win roll, zoom, glow (latest)
+
+- The book is read before the reels start (`expectedWinTier` in `bookEventHandlerMap.ts` -> `bigWinTier` on `skyjumpV2BoardReveal`). Big win and above add `extraStopGapMs` per reel
+  (260 / 380 / 500 / 620 ms, x0.4 in turbo): every next column stops later.
+- `slotZoom.ts`: the scene (background plate, characters, board; not the BetUI, the celebration or the modals) zooms slowly to 1.05 / 1.08 / 1.11 / 1.14 about the middle of the slot with the
+  standalone `scale` / `translate` properties, and lets go slowly from the middle of the celebration (`openCelebration`: half of count-up + hold). Reset on a new spin.
+- Wall 15 % darker again (x0.85), symbols 7 art px higher, tier growth +50 % (medium 0.871, premium and above 0.9965 of the cell), golden glow behind tiled symbols (premium 1.0, scatter 1.1,
+  Concierge / Mystery 1.2, features 1.3), menu 3 % bigger and 3 px to the left.

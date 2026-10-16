@@ -42,8 +42,11 @@
 	import {
 		classifyV2WinCelebration,
 		V2_WIN_BLUR_FADE_MS,
+		v2WinCountUpMs,
+		v2WinHoldMs,
 		type V2WinCelebrationTier,
 	} from '../../game/skyjump_v2/winPresentation';
+	import { slotZoom } from '../../game/skyjump_v2/slotZoom';
 	import { reactToWin } from '../../game/loungeCharacters/winReaction';
 	import { statusLabel as playerLabel, statusSub as playerSub } from '../../game/skyjump_v2/statusText';
 	import { warmGate } from '../../game/loungeCharacters/warmGate';
@@ -126,6 +129,7 @@
 	let artBroken = $state<Record<string, boolean>>({});
 	let celebrationShow = $state(false);
 	let celebrationTier = $state<V2WinCelebrationTier>('none');
+	$effect(() => () => slotZoom.reset());
 	let celebrationAmount = $state(0);
 	let celebrationCatchUp = $state(false);
 	let celebrationWorldRecordOverlay = $state(false);
@@ -311,7 +315,7 @@
 	const surfaceW = $derived(boardW + framePad * 2 + FRAME_BORDER * 2);
 	const surfaceH = $derived(boardH + framePad * 2 + FRAME_BORDER * 2);
 	/** Settled symbols rest this many art px off the window centre (negative = up). */
-	const SYMBOL_LIFT = -1;
+	const SYMBOL_LIFT = -7;
 	/** Pixels per art pixel of the frame. */
 	const artK = $derived(cellW / V2_FRAME_WINDOWS.pitch.w);
 	/** Per-cell geometry: the tier tile fills the real window; the symbol is centred on it. Offsets are from the nominal cell. */
@@ -508,6 +512,12 @@
 		celebrationCatchUp = Boolean(opts.catchUp);
 		celebrationWorldRecordOverlay = Boolean(opts.worldRecordOverlay);
 		celebrationShow = celebrationTier !== 'none';
+		if (celebrationShow) {
+			// The zoom lets go slowly from the middle of the big win animation.
+			const timingOpts = { tier: celebrationTier, turbo: stateBet.isTurbo, catchUp: opts.catchUp, reducedMotion: prefersReducedMotion() };
+			const total = v2WinCountUpMs(timingOpts) + v2WinHoldMs(timingOpts);
+			slotZoom.release(total / 2, Math.max(1200, total / 2));
+		}
 	};
 
 	/**
@@ -579,6 +589,7 @@
 
 	context.eventEmitter.subscribeOnMount({
 		skyjumpV2Reset: () => {
+			slotZoom.reset();
 			reelSpinToken += 1;
 			// Roses are only the board before the first reveal. Later spins roll
 			// the symbols already on screen; wiping them here flashed a rose grid.
@@ -599,7 +610,7 @@
 			worldRecordWinX = 0;
 			clearWin();
 		},
-		skyjumpV2BoardReveal: async ({ board: next, timings, catchUp }) => {
+		skyjumpV2BoardReveal: async ({ board: next, timings, catchUp, bigWinTier = 'none' }) => {
 			clearWin();
 			tokenFaces = {};
 			tokenEffective = {};
@@ -620,6 +631,12 @@
 			}
 			const token = ++reelSpinToken;
 			const reduced = prefersReducedMotion();
+			// Big wins: each next reel stops later than the one before (more suspense) and the scene zooms slowly towards the slot.
+			const bigIndex = ['none', 'big', 'mega', 'super', 'max', 'worldRecord'].indexOf(bigWinTier);
+			const extraStopGapMs = reduced || bigIndex < 1 ? 0 : [0, 260, 380, 500, 620, 620][bigIndex] * (stateBet.isTurbo ? 0.4 : 1);
+			if (!reduced && bigIndex >= 1) {
+				slotZoom.zoomIn([1, 1.05, 1.08, 1.11, 1.14, 1.14][bigIndex], 2600 + extraStopGapMs * 4);
+			}
 			const startStagger = reduced ? 40 : timings.reelStartStaggerMs;
 			const stopStagger = reduced ? 30 : timings.reelStopStaggerMs;
 			const baseTravel = reduced ? Math.min(280, timings.reelTravelMs) : timings.reelTravelMs;
@@ -648,7 +665,7 @@
 				const elapsed = now - started;
 				for (let reel = 0; reel < 5; reel += 1) {
 					if (landed[reel]) continue;
-					const travelMs = reelTravelMs(baseTravel, reel, startStagger, stopStagger);
+					const travelMs = reelTravelMs(baseTravel, reel, startStagger, stopStagger) + reel * extraStopGapMs;
 					const startAt = reel * startStagger;
 					if (elapsed < startAt) continue;
 					const phaseElapsed = elapsed - startAt;
@@ -2140,6 +2157,43 @@
 	.reel:not(.spinning) .symbol[data-tier='concierge_mystery'] .content-stage,
 	.reel:not(.spinning) .symbol[data-tier='feature'] .content-stage {
 		z-index: 10;
+	}
+
+	/*
+	 * Tiers with a tile get a soft golden glow behind the symbol. It gets 10 % stronger with every tier step:
+	 * premium 1.0, scatter 1.1, Concierge / Mystery 1.2, features and tokens 1.3.
+	 */
+	.reel:not(.spinning) .symbol[data-tier='premium'] {
+		--tier-glow: 1;
+	}
+
+	.reel:not(.spinning) .symbol[data-tier='scatter'] {
+		--tier-glow: 1.1;
+	}
+
+	.reel:not(.spinning) .symbol[data-tier='concierge_mystery'] {
+		--tier-glow: 1.2;
+	}
+
+	.reel:not(.spinning) .symbol[data-tier='feature'] {
+		--tier-glow: 1.3;
+	}
+
+	.reel:not(.spinning) .symbol[data-tier='premium'] .content-stage::before,
+	.reel:not(.spinning) .symbol[data-tier='scatter'] .content-stage::before,
+	.reel:not(.spinning) .symbol[data-tier='concierge_mystery'] .content-stage::before,
+	.reel:not(.spinning) .symbol[data-tier='feature'] .content-stage::before {
+		content: '';
+		position: absolute;
+		inset: 0;
+		z-index: -1;
+		background: radial-gradient(
+			circle at 50% 50%,
+			rgba(255, 208, 96, calc(0.4 * var(--tier-glow, 1))) 0%,
+			rgba(255, 176, 54, calc(0.2 * var(--tier-glow, 1))) 36%,
+			rgba(255, 160, 40, 0) 68%
+		);
+		pointer-events: none;
 	}
 
 	.reel:not(.spinning) .symbol small {

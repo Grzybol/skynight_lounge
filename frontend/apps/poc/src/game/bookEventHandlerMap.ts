@@ -23,6 +23,7 @@ import { getV2TimingsForState } from './skyjump_v2/timings';
 import { applyBonusHudEvent, bonusHud } from './skyjump_v2/bonusHud.svelte';
 import { lockV2Presentation, unlockV2Presentation } from './skyjump_v2/presentationLock';
 import { playV2AudioHook } from './skyjump_v2/audio';
+import { classifyV2WinCelebration } from './skyjump_v2/winPresentation';
 
 const activeTimings = () => getSkyJumpTimings(stateBet.isTurbo || stateGame.resumeCatchUp);
 const v2Timings = () => getV2TimingsForState(stateBet.isTurbo, stateGame.resumeCatchUp);
@@ -33,6 +34,21 @@ const resultFromBook = (bookEvents: BookEvent[] = []) =>
 		(event): event is Extract<BookEventOfType<'skyjumpResult'>, { distanceTotal: number }> =>
 			event.type === 'skyjumpResult' && 'distanceTotal' in event,
 	);
+
+/** The celebration tier of the whole round, read from the book before the reels start. */
+const expectedWinTier = (bookEvents: BookEvent[] = []) => {
+	let totalWinX = 0;
+	let capHit = false;
+	let worldRecord = false;
+	for (const event of bookEvents) {
+		if (event.type === 'skyjumpResult' && 'totalWinX' in event) {
+			totalWinX = Math.max(totalWinX, Number(event.totalWinX) || 0);
+			capHit = capHit || Boolean((event as { capHit?: boolean }).capHit);
+		}
+		if ((event.type as string) === 'skyjumpWorldRecord') worldRecord = true;
+	}
+	return classifyV2WinCelebration({ totalWinX, capHit, worldRecord });
+};
 
 const isV2Result = (
 	event: BookEventOfType<'skyjumpResult'>,
@@ -208,13 +224,17 @@ export const bookEventHandlerMap: BookEventHandlerMap<BookEvent, BookEventContex
 		lockV2Presentation('skyjumpSpinStart');
 		eventEmitter.broadcast({ type: 'skyjumpV2Reset' });
 	},
-	skyjumpBoardReveal: async (bookEvent: BookEventOfType<'skyjumpBoardReveal'>) => {
+	skyjumpBoardReveal: async (
+		bookEvent: BookEventOfType<'skyjumpBoardReveal'>,
+		{ bookEvents } = { bookEvents: [] },
+	) => {
 		lockV2Presentation('skyjumpBoardReveal');
 		const timings = v2Timings();
 		stateGame.presentationPhase = 'reels';
 		await eventEmitter.broadcastAsync({
 			type: 'skyjumpV2BoardReveal',
 			board: bookEvent.board,
+			bigWinTier: expectedWinTier(bookEvents),
 			timings,
 			catchUp: stateGame.resumeCatchUp,
 		});

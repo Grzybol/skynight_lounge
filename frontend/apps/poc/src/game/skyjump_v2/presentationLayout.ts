@@ -145,13 +145,13 @@ export const V2_TABLET_RECT = (() => {
 
 /**
  * Symbol height by tier as a fraction of the CELL height (cells are 147.6 art px tall, about 99 px on the 1280x720 stage).
- * Low is 0.745; the growth over low is +11.25 % (medium) and +22.5 % (premium, scatter, Concierge / Mystery, features).
+ * Low is 0.745; the growth over low is +16.9 % (medium) and +33.75 % (premium, scatter, Concierge / Mystery, features): the previous +11.25 % / +22.5 % raised by 50 %.
  */
 export const V2_TIER_SCALE: Record<string, number> = {
 	low: 0.745,
-	medium: 0.829,
-	premium: 0.913,
-	scatter: 0.913,
-	concierge_mystery: 0.913,
-	feature: 0.913,
+	medium: 0.871,
+	premium: 0.9965,
+	scatter: 0.9965,
+	concierge_mystery: 0.9965,
+	feature: 0.9965,
 };
