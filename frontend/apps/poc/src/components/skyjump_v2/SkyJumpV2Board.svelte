@@ -667,6 +667,17 @@
 				? 0
 				: Math.max(isSmallWin ? 0.025 : bigIndex >= 1 ? 0.05 * bigIndex : 0, teaser ? 0.05 : 0) * turboScale;
 			const slowFactor = (reel: number) => 1 + slowStep * Math.max(0, reel - 1);
+			// The last three reels also roll LONGER: +10 % per column at a big win (5 % at a small win), growing with the tier up to
+			// +100 % of the base roll for column 5 at a world record (the teaser counts as a big win). The strip gets the cells to
+			// match, so the longer roll is also the slower one.
+			const extStep = reduced
+				? 0
+				: Math.max(
+						isSmallWin ? 0.05 : 0,
+						bigIndex >= 1 ? [0, 0.1, 0.15, 0.2, 0.28, 0.33][bigIndex] : 0,
+						teaser ? 0.1 : 0,
+					) * turboScale;
+			const extension = (reel: number) => Math.min(1, extStep * Math.max(0, reel - 1));
 			if (!reduced && bigIndex < 1 && !isSmallWin) slotZoom.release(0, 900);
 			if (!reduced && (bigIndex >= 1 || isSmallWin)) {
 				slotZoom.zoomIn(isSmallWin ? 1.03 : [1, 1.06, 1.1, 1.15, 1.2, 1.25][bigIndex], 2600 + slowStep * 1800 * 6);
@@ -689,6 +700,9 @@
 			spinOffset = [0, 0, 0, 0, 0];
 
 			const lastCell = [-1, -1, -1, -1, -1];
+			/** Cells a reel runs through: longer roll, divided by the slow-down factor (that is the slower speed). */
+			const cellsFor = (reel: number) =>
+				reduced ? travelCells : Math.max(VISIBLE_ROWS, Math.round((travelCells * (1 + extension(reel))) / slowFactor(reel)));
 			let lastRowSfxAt = 0;
 			while (landed.some((done) => !done)) {
 				if (token !== reelSpinToken) return;
@@ -699,7 +713,7 @@
 				const elapsed = now - started;
 				for (let reel = 0; reel < 5; reel += 1) {
 					if (landed[reel]) continue;
-					const travelMs = Math.round(reelTravelMs(baseTravel, reel, startStagger, stopStagger) * slowFactor(reel));
+					const travelMs = Math.round(reelTravelMs(baseTravel, reel, startStagger, stopStagger) * (1 + extension(reel)));
 					const startAt = reel * startStagger;
 					if (elapsed < startAt) continue;
 					const phaseElapsed = elapsed - startAt;
@@ -710,7 +724,7 @@
 							reel,
 							previous: previous[reel],
 							result: result[reel],
-							travelCells,
+							travelCells: cellsFor(reel),
 							band: reelFillerBand(bonusHud.active ? bonusHud.tier : 'BASE'),
 						});
 					}
@@ -718,7 +732,7 @@
 						elapsedMs: phaseElapsed,
 						travelMs,
 						settleMs,
-						travelCells,
+						travelCells: cellsFor(reel),
 						pitch,
 						overshootPx: overshoot,
 					});

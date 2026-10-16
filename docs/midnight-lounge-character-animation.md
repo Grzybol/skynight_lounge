@@ -542,3 +542,8 @@ Fixed after the guideline review (verified against a local mock RGS, a productio
 - Teaser: when reels 1 and 2 stop on the same good symbol (3-of-a-kind pays >= 1x: medium and premium) on one payline, reels 3-5 slow down by the big-win step (5 %/step) and the scene zooms to 1.06 from the moment reel 2
   lands; as soon as a landing reel breaks every such payline (and the spin has no win above the bet) the zoom is reset at once.
 - The symbols of the tiled tiers are z 24-27 (over the frame, z 22); their tiles stay z 12-15 under it. Wall x0.95 again.
+
+## Longer roll of reels 3-5 (latest)
+
+- Reels 3 / 4 / 5 (n = 1 / 2 / 3) roll `extension` = n x `extStep` longer (cap 100 %): step 5 % small win, 10 / 15 / 20 / 28 / 33 % for big / mega / super / max / world record; the teaser counts as big; turbo x0.4.
+  The strip gets `travelCells x (1 + extension) / slowFactor` cells, so the longer roll is also the slower one (slow-down steps unchanged).
