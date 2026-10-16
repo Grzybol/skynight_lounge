@@ -640,6 +640,7 @@
 			const turboScale = stateBet.isTurbo ? 0.4 : 1;
 			const slowStep = reduced ? 0 : (isSmallWin ? 0.025 : bigIndex >= 1 ? 0.05 * bigIndex : 0) * turboScale;
 			const slowFactor = (reel: number) => 1 + slowStep * Math.max(0, reel - 1);
+			if (!reduced && bigIndex < 1 && !isSmallWin) slotZoom.release(0, 900);
 			if (!reduced && (bigIndex >= 1 || isSmallWin)) {
 				slotZoom.zoomIn(isSmallWin ? 1.03 : [1, 1.06, 1.1, 1.15, 1.2, 1.25][bigIndex], 2600 + slowStep * 1800 * 6);
 			}

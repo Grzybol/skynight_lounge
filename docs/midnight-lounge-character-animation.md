@@ -531,3 +531,8 @@ Fixed after the guideline review (verified against a local mock RGS, a productio
 ## Column slow-down by win, smaller woman (latest)
 
 - Reels 3 / 4 / 5 run 1 / 2 / 3 steps longer (`slowFactor`): a step is 2.5 % for a small win, 5 % at big win and 10 / 15 / 20 / 25 % for mega / super / max / world record (x0.4 in turbo). Woman `heightFrac` 0.6585 (-10 %).
+
+## Zoom and slow-down per spin, only for wins above the bet (latest)
+
+- `expectedWinTier(bookEvents, revealIndex)` now reads the win of THIS spin: the next `setTotalWin` minus the previous one (free-spin books have no per-spin `skyjumpResult`, only the final one, so the
+  old round-total read started the zoom on every spin or never). Only a spin win above the bet (> 1x) zooms and slows reels 3-5; a spin without one lets a running zoom go (0.9 s).

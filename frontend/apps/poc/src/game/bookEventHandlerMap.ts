@@ -2,6 +2,7 @@ import _ from 'lodash';
 
 import { recordBookEvent, type BookEventHandlerMap } from 'utils-book';
 import { stateBet } from 'state-shared';
+import { BOOK_AMOUNT_MULTIPLIER } from 'constants-shared/bet';
 import { waitForTimeout } from 'utils-shared/wait';
 
 import { eventEmitter } from './eventEmitter';
@@ -35,20 +36,34 @@ const resultFromBook = (bookEvents: BookEvent[] = []) =>
 			event.type === 'skyjumpResult' && 'distanceTotal' in event,
 	);
 
-/** The celebration tier of the whole round, read from the book before the reels start. */
-const expectedWinTier = (bookEvents: BookEvent[] = []) => {
-	let totalWinX = 0;
+/**
+ * The win tier of ONE spin, read from the book before its reels start: the spin's win is the next `setTotalWin` (the running
+ * total after this spin, feature chain included) minus the one before it. A win must be above the bet (more than 1x) to count:
+ * 'small' up to the big-win threshold, then the celebration tiers. Rounds without a `setTotalWin` fall back to the round result.
+ */
+const expectedWinTier = (bookEvents: BookEvent[] = [], revealIndex = -1) => {
+	let previousAmount = 0;
+	let nextAmount: number | null = null;
 	let capHit = false;
 	let worldRecord = false;
+	let resultWinX = 0;
 	for (const event of bookEvents) {
+		const index = (event as { index?: number }).index ?? -1;
+		if (event.type === 'setTotalWin') {
+			const amount = Number((event as { amount?: number }).amount) || 0;
+			if (index < revealIndex) previousAmount = amount;
+			else if (nextAmount === null) nextAmount = amount;
+		}
 		if (event.type === 'skyjumpResult' && 'totalWinX' in event) {
-			totalWinX = Math.max(totalWinX, Number(event.totalWinX) || 0);
+			resultWinX = Math.max(resultWinX, Number(event.totalWinX) || 0);
 			capHit = capHit || Boolean((event as { capHit?: boolean }).capHit);
 		}
 		if ((event.type as string) === 'skyjumpWorldRecord') worldRecord = true;
 	}
-	const tier = classifyV2WinCelebration({ totalWinX, capHit, worldRecord });
-	return tier === 'none' && totalWinX > 0 ? ('small' as const) : tier;
+	const totalWinX =
+		nextAmount === null ? resultWinX : Math.max(0, nextAmount - previousAmount) / BOOK_AMOUNT_MULTIPLIER;
+	const tier = classifyV2WinCelebration({ totalWinX, capHit: capHit && nextAmount === null, worldRecord: worldRecord && nextAmount === null });
+	return tier === 'none' && totalWinX > 1 ? ('small' as const) : tier;
 };
 
 const isV2Result = (
@@ -235,7 +250,7 @@ export const bookEventHandlerMap: BookEventHandlerMap<BookEvent, BookEventContex
 		await eventEmitter.broadcastAsync({
 			type: 'skyjumpV2BoardReveal',
 			board: bookEvent.board,
-			bigWinTier: expectedWinTier(bookEvents),
+			bigWinTier: expectedWinTier(bookEvents, (bookEvent as { index?: number }).index ?? -1),
 			timings,
 			catchUp: stateGame.resumeCatchUp,
 		});
