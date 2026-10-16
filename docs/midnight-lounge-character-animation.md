@@ -521,3 +521,9 @@ Fixed after the guideline review (verified against a local mock RGS, a productio
 - Every money win zooms the scene and slows the reels: small win (0 < x < big): zoom 1.03 and extra stop delay only for reels 3-5 (150 / 320 / 320 ms, x0.4 in turbo), released 0.7 s after the win is shown;
   big and above as before (`bigWinTier` 'small' | ...).
 - CTA lettering is centred with flex (it overflowed to the right in a grid); the woman's `bottomFrac` 1.065 puts the chair legs behind the BetUI.
+
+## Frame over symbols, bigger woman, stronger zoom steps (latest)
+
+- The frame (`.board-art-frame`) is z 22: tiles and symbols (z 8-21) are rendered under it. Frame foliage wind amplitude 1.875 (+25 %).
+- Woman `heightFrac` 0.7317 (+15 %, bottom anchored); the right foreground plant moved down with her (y 0.78); menu button +5 %.
+- Zoom by win size: small 1.03, big 1.06, mega 1.10, super 1.15, max 1.20, world record 1.25.

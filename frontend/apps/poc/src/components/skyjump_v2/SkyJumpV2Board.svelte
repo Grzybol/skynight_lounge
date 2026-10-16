@@ -642,7 +642,7 @@
 			const extraForReel = (reel: number) =>
 				isSmallWin && !reduced ? [0, 0, 150, 320, 320][reel] * turboScale : reel * extraStopGapMs;
 			if (!reduced && (bigIndex >= 1 || isSmallWin)) {
-				slotZoom.zoomIn(isSmallWin ? 1.03 : [1, 1.05, 1.08, 1.11, 1.14, 1.14][bigIndex], 2600 + extraStopGapMs * 4);
+				slotZoom.zoomIn(isSmallWin ? 1.03 : [1, 1.06, 1.1, 1.15, 1.2, 1.25][bigIndex], 2600 + extraStopGapMs * 4);
 			}
 			const startStagger = reduced ? 40 : timings.reelStartStaggerMs;
 			const stopStagger = reduced ? 30 : timings.reelStopStaggerMs;
@@ -1232,7 +1232,7 @@
 					height={slotFrameH}
 					artW={V2_FRAME_ART.w}
 					artH={V2_FRAME_ART.h}
-					amplitude={1.5}
+					amplitude={1.875}
 					testId="skyjump-v2-slot-frame"
 				/>
 				<GemPulse width={slotFrameW} height={slotFrameH} rolling={anyRolling} />
@@ -1717,10 +1717,11 @@
 		user-select: none;
 	}
 
+	/* The frame lies over the tiles and the symbols (their layers are 8-21). */
 	.board-art-frame {
 		filter: brightness(0.95);
 		position: absolute;
-		z-index: 6;
+		z-index: 22;
 		display: block;
 		pointer-events: none;
 		object-fit: fill;

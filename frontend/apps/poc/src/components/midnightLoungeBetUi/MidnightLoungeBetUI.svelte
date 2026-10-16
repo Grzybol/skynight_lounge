@@ -195,8 +195,8 @@
 		const endCx = balance.x + (ended.x - HUD.balance.b[0]) * balance.kx;
 		const endCy = balance.y + (ended.y - HUD.balance.b[1]) * balance.ky;
 		// 3 % bigger than before and 3 px to the left of the round end.
-		const menuW = 78 * 1.03;
-		const menuH = 76 * 1.03;
+		const menuW = 78 * 1.03 * 1.05;
+		const menuH = 76 * 1.03 * 1.05;
 		const menu = box('menu', endCx - menuW / 2 - 3, endCy - menuH / 2, menuW, menuH);
 		const bonus0 = box('bonus', ...toward(0, 9, 543), 207 * K);
 		// WIN sits exactly under the middle of the slot (stage x = 640), 10 % lower and 15 % longer than the plain plate.
